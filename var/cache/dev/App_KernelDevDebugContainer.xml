@@ -385,6 +385,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\GrosmotsController"/>
       </call>
     </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
+      </call>
+    </service>
     <service id="App\Controller\OffretravailController" class="App\Controller\OffretravailController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -441,6 +448,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\VideoController"/>
       </call>
     </service>
+    <service id="App\Controller\ViewController" class="App\Controller\ViewController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ViewController"/>
+      </call>
+    </service>
     <service id="App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -487,6 +501,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\VideoType" class="App\Form\VideoType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ViewType" class="App\Form\ViewType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\AllusersRepository" class="App\Repository\AllusersRepository" autowire="true" autoconfigure="true">
@@ -1354,6 +1371,7 @@
         <argument>App\Form\RatingType</argument>
         <argument>App\Form\TutorielType</argument>
         <argument>App\Form\VideoType</argument>
+        <argument>App\Form\ViewType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3493,7 +3511,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.arJ.01e"/>
+      <argument type="service" id=".service_locator.wMVTHk."/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6353,6 +6371,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GrosmotsController" class="App\Controller\GrosmotsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GrosmotsController" class="App\Controller\GrosmotsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GrosmotsController" class="App\Controller\GrosmotsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6377,6 +6398,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VideoController" class="App\Controller\VideoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VideoController" class="App\Controller\VideoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\VideoController" class="App\Controller\VideoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BanType" class="App\Form\BanType" autowire="true" abstract="true"/>
@@ -6409,6 +6433,8 @@
     <service id=".abstract.instanceof.App\Form\TutorielType" class="App\Form\TutorielType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VideoType" class="App\Form\VideoType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\VideoType" class="App\Form\VideoType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ViewType" class="App\Form\ViewType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ViewType" class="App\Form\ViewType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AllusersRepository" class="App\Repository\AllusersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AllusersRepository" class="App\Repository\AllusersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArtistepostulerRepository" class="App\Repository\ArtistepostulerRepository" autowire="true" abstract="true"/>
@@ -7084,7 +7110,26 @@
         <argument key="videoRepository" type="service_closure" id="App\Repository\VideoRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Hj.rTwV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QK8j6lT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1dRS022" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="view" type="service_closure" id=".errored..service_locator.1dRS022.App\Entity\View"/>
+      </argument>
+    </service>
+    <service id=".service_locator.CNncWvf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="view" type="service_closure" id=".errored..service_locator.CNncWvf.App\Entity\View"/>
+        <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9Wp1yyI" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7167,6 +7212,11 @@
         <argument key="App\Controller\VideoController::index" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController::new" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController::show" type="service_closure" id=".service_locator.QGG8A4p"/>
+        <argument key="App\Controller\ViewController::delete" type="service_closure" id=".service_locator.CNncWvf"/>
+        <argument key="App\Controller\ViewController::edit" type="service_closure" id=".service_locator.CNncWvf"/>
+        <argument key="App\Controller\ViewController::index" type="service_closure" id=".service_locator.QK8j6lT"/>
+        <argument key="App\Controller\ViewController::new" type="service_closure" id=".service_locator.QK8j6lT"/>
+        <argument key="App\Controller\ViewController::show" type="service_closure" id=".service_locator.1dRS022"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7251,6 +7301,11 @@
         <argument key="App\Controller\VideoController:index" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController:new" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController:show" type="service_closure" id=".service_locator.QGG8A4p"/>
+        <argument key="App\Controller\ViewController:delete" type="service_closure" id=".service_locator.CNncWvf"/>
+        <argument key="App\Controller\ViewController:edit" type="service_closure" id=".service_locator.CNncWvf"/>
+        <argument key="App\Controller\ViewController:index" type="service_closure" id=".service_locator.QK8j6lT"/>
+        <argument key="App\Controller\ViewController:new" type="service_closure" id=".service_locator.QK8j6lT"/>
+        <argument key="App\Controller\ViewController:show" type="service_closure" id=".service_locator.1dRS022"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7314,7 +7369,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.arJ.01e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wMVTHk." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
@@ -7333,6 +7388,7 @@
         <argument key="App\Form\RatingType" type="service_closure" id="App\Form\RatingType"/>
         <argument key="App\Form\TutorielType" type="service_closure" id="App\Form\TutorielType"/>
         <argument key="App\Form\VideoType" type="service_closure" id="App\Form\VideoType"/>
+        <argument key="App\Form\ViewType" type="service_closure" id="App\Form\ViewType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -7755,6 +7811,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\OffretravailController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\OffretravailController"/>
       <argument>App\Controller\OffretravailController</argument>
@@ -7800,6 +7862,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\VideoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\VideoController"/>
       <argument>App\Controller\VideoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ViewController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ViewController"/>
+      <argument>App\Controller\ViewController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -7985,12 +8053,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Hj.rTwV"/>
+      <argument type="service" id=".service_locator.9Wp1yyI"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Hj.rTwV"/>
+      <argument type="service" id=".service_locator.9Wp1yyI"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8042,6 +8110,8 @@
     <service id=".errored..service_locator.DiYfVrs.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.QGG8A4p.App\Entity\Video" class="App\Entity\Video"/>
     <service id=".errored..service_locator.JgKnByv.App\Entity\Video" class="App\Entity\Video"/>
+    <service id=".errored..service_locator.1dRS022.App\Entity\View" class="App\Entity\View"/>
+    <service id=".errored..service_locator.CNncWvf.App\Entity\View" class="App\Entity\View"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -8987,7 +9057,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Hj.rTwV"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9Wp1yyI"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9011,9 +9081,9 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.rdBJJJa" alias=".service_locator.Hj.rTwV"/>
+    <service id=".service_locator.3G2IENq" alias=".service_locator.9Wp1yyI"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.PoB21Rf" alias=".service_locator.arJ.01e"/>
+    <service id=".service_locator.WMEJ5g9" alias=".service_locator.wMVTHk."/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9087,6 +9157,9 @@
     <service id=".service_locator.HNj7LcS" alias=".service_locator.ErqXzhI"/>
     <service id=".service_locator.Cbgj.SB" alias=".service_locator.QGG8A4p"/>
     <service id=".service_locator.NSrCfjy" alias=".service_locator.JgKnByv"/>
+    <service id=".service_locator.eZcXz8l" alias=".service_locator.QK8j6lT"/>
+    <service id=".service_locator.W0aOy8B" alias=".service_locator.1dRS022"/>
+    <service id=".service_locator.fo4YL6y" alias=".service_locator.CNncWvf"/>
     <service id=".service_locator.A740LBW" alias=".service_locator.mx0UMmY"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>
