@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ban index{% endblock %}
+
+{% block body %}
+    <h1>Ban index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reason</th>
+                <th>DateB</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ban in bans %}
+            <tr>
+                <td>{{ ban.id }}</td>
+                <td>{{ ban.Reason }}</td>
+                <td>{{ ban.DateB ? ban.DateB|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_ban_show', {'id': ban.id}) }}">show</a>
+                    <a href="{{ path('app_ban_edit', {'id': ban.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ban_new') }}">Create new</a>
+{% endblock %}

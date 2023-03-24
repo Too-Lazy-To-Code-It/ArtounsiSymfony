@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tutoriel{% endblock %}
+
+{% block body %}
+    <h1>Tutoriel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id_tutoriel</th>
+                <td>{{ tutoriel.idTutoriel }}</td>
+            </tr>
+            <tr>
+                <th>Pathimg</th>
+                <td>{{ tutoriel.pathimg }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ tutoriel.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tutoriel.description }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ tutoriel.niveau }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tutoriel_index') }}">back to list</a>
+
+    <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.id_tutoriel}) }}">edit</a>
+
+    {{ include('tutoriel/_delete_form.html.twig') }}
+{% endblock %}

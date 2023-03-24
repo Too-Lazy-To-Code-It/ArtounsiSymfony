@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offretravailarchive index{% endblock %}
+
+{% block body %}
+    <h1>Offretravailarchive index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idoffre</th>
+                <th>Titreoffre</th>
+                <th>Descriptionoffre</th>
+                <th>Categorieoffre</th>
+                <th>Nickname</th>
+                <th>Dateajoutoffre</th>
+                <th>Typeoffre</th>
+                <th>Localisationoffre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offretravailarchive in offretravailarchives %}
+            <tr>
+                <td>{{ offretravailarchive.idoffre }}</td>
+                <td>{{ offretravailarchive.titreoffre }}</td>
+                <td>{{ offretravailarchive.descriptionoffre }}</td>
+                <td>{{ offretravailarchive.categorieoffre }}</td>
+                <td>{{ offretravailarchive.nickname }}</td>
+                <td>{{ offretravailarchive.dateajoutoffre ? offretravailarchive.dateajoutoffre|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ offretravailarchive.typeoffre }}</td>
+                <td>{{ offretravailarchive.localisationoffre }}</td>
+                <td>
+                    <a href="{{ path('app_offretravailarchive_show', {'idoffre': offretravailarchive.idoffre}) }}">show</a>
+                    <a href="{{ path('app_offretravailarchive_edit', {'idoffre': offretravailarchive.idoffre}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_offretravailarchive_new') }}">Create new</a>
+{% endblock %}
