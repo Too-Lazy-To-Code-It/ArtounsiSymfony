@@ -175,6 +175,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\public" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -190,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679588521956</updated>
       <workItem from="1679588523836" duration="3483000" />
-      <workItem from="1679646280498" duration="13334000" />
+      <workItem from="1679646280498" duration="13791000" />
     </task>
     <servers />
   </component>
