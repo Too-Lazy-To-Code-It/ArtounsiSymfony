@@ -20,7 +20,7 @@ class Panier
     private ?allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
-    private ?integer $nbr_produits = null;
+    private ?int $nbr_produits = null;
 
     #[ORM\Column]
     private ?float $montant_total = null;

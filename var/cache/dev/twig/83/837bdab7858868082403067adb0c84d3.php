@@ -24,16 +24,12 @@ class __TwigTemplate_cc2f1a910cc1c67b76db4d4d0e014a83 extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,8 +41,17 @@ class __TwigTemplate_cc2f1a910cc1c67b76db4d4d0e014a83 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "ban/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "ban/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+
+";
+        // line 3
+        $this->displayBlock('title', $context, $blocks);
+        // line 4
+        echo "
+";
+        // line 5
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -163,19 +168,14 @@ class __TwigTemplate_cc2f1a910cc1c67b76db4d4d0e014a83 extends Template
         return "ban/index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  155 => 36,  150 => 33,  141 => 29,  132 => 25,  128 => 24,  123 => 22,  119 => 21,  115 => 20,  112 => 19,  107 => 18,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
 
 {% block title %}Ban index{% endblock %}
 
