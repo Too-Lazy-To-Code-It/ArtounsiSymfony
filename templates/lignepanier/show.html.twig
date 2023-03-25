@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lignepanier{% endblock %}
+
+{% block body %}
+    <h1>Lignepanier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idlignepanier</th>
+                <td>{{ lignepanier.idlignepanier }}</td>
+            </tr>
+            <tr>
+                <th>Dateajout</th>
+                <td>{{ lignepanier.dateajout ? lignepanier.dateajout|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_lignepanier_index') }}">back to list</a>
+
+    <a href="{{ path('app_lignepanier_edit', {'idlignepanier': lignepanier.idlignepanier}) }}">edit</a>
+
+    {{ include('lignepanier/_delete_form.html.twig') }}
+{% endblock %}
