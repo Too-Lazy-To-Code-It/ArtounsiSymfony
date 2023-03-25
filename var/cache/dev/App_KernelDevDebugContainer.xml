@@ -542,11 +542,19 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\LignepanierRepository" class="App\Repository\LignepanierRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\OffretravailRepository" class="App\Repository\OffretravailRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\OffretravailarchiveRepository" class="App\Repository\OffretravailarchiveRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -559,6 +567,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4393,7 +4405,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.o_lFwzu"/>
+      <argument type="service" id=".service_locator.zPeQE10"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6453,16 +6465,22 @@
     <service id=".abstract.instanceof.App\Repository\FavorisTuroialRepository" class="App\Repository\FavorisTuroialRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GrosmotsRepository" class="App\Repository\GrosmotsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GrosmotsRepository" class="App\Repository\GrosmotsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LignepanierRepository" class="App\Repository\LignepanierRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LignepanierRepository" class="App\Repository\LignepanierRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OffretravailRepository" class="App\Repository\OffretravailRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\OffretravailRepository" class="App\Repository\OffretravailRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OffretravailarchiveRepository" class="App\Repository\OffretravailarchiveRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\OffretravailarchiveRepository" class="App\Repository\OffretravailarchiveRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ParticipationRepository" class="App\Repository\ParticipationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ParticipationRepository" class="App\Repository\ParticipationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostLikeRepository" class="App\Repository\PostLikeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostLikeRepository" class="App\Repository\PostLikeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RatingRepository" class="App\Repository\RatingRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\RatingRepository" class="App\Repository\RatingRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TutorielRepository" class="App\Repository\TutorielRepository" autowire="true" abstract="true"/>
@@ -7474,7 +7492,7 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.o_lFwzu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zPeQE10" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AllusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
@@ -7486,11 +7504,14 @@
         <argument key="App\Repository\DemandetravailRepository" type="service_closure" id="App\Repository\DemandetravailRepository"/>
         <argument key="App\Repository\FavorisTuroialRepository" type="service_closure" id="App\Repository\FavorisTuroialRepository"/>
         <argument key="App\Repository\GrosmotsRepository" type="service_closure" id="App\Repository\GrosmotsRepository"/>
+        <argument key="App\Repository\LignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
         <argument key="App\Repository\OffretravailRepository" type="service_closure" id="App\Repository\OffretravailRepository"/>
         <argument key="App\Repository\OffretravailarchiveRepository" type="service_closure" id="App\Repository\OffretravailarchiveRepository"/>
+        <argument key="App\Repository\PanierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
         <argument key="App\Repository\ParticipationRepository" type="service_closure" id="App\Repository\ParticipationRepository"/>
         <argument key="App\Repository\PostLikeRepository" type="service_closure" id="App\Repository\PostLikeRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="App\Repository\ProduitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
         <argument key="App\Repository\RatingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
         <argument key="App\Repository\TutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
         <argument key="App\Repository\VideoRepository" type="service_closure" id="App\Repository\VideoRepository"/>

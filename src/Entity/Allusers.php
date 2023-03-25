@@ -97,6 +97,12 @@ class Allusers
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Offretravailarchive::class)]
     private Collection $offretravailarchives;
 
+    #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Panier::class)]
+    private Collection $paniers;
+
+    #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Produits::class)]
+    private Collection $produits;
+
 
 
 
@@ -116,6 +122,8 @@ class Allusers
         $this->participations = new ArrayCollection();
         $this->favorisTuroials = new ArrayCollection();
         $this->offretravailarchives = new ArrayCollection();
+        $this->paniers = new ArrayCollection();
+        $this->produits = new ArrayCollection();
 
 
     }
@@ -695,6 +703,66 @@ class Allusers
             // set the owning side to null (unless already changed)
             if ($offretravailarchive->getIdUser() === $this) {
                 $offretravailarchive->setIdUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Panier>
+     */
+    public function getPaniers(): Collection
+    {
+        return $this->paniers;
+    }
+
+    public function addPanier(Panier $panier): self
+    {
+        if (!$this->paniers->contains($panier)) {
+            $this->paniers->add($panier);
+            $panier->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePanier(Panier $panier): self
+    {
+        if ($this->paniers->removeElement($panier)) {
+            // set the owning side to null (unless already changed)
+            if ($panier->getIdUser() === $this) {
+                $panier->setIdUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Produits>
+     */
+    public function getProduits(): Collection
+    {
+        return $this->produits;
+    }
+
+    public function addProduit(Produits $produit): self
+    {
+        if (!$this->produits->contains($produit)) {
+            $this->produits->add($produit);
+            $produit->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(Produits $produit): self
+    {
+        if ($this->produits->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getIdUser() === $this) {
+                $produit->setIdUser(null);
             }
         }
 

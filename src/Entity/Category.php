@@ -39,6 +39,9 @@ class Category
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Offretravailarchive::class)]
     private Collection $offretravailarchives;
 
+    #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Produits::class)]
+    private Collection $produits;
+
 
 
     public function __construct()
@@ -50,6 +53,7 @@ class Category
         $this->posts = new ArrayCollection();
         $this->tutoriels = new ArrayCollection();
         $this->offretravailarchives = new ArrayCollection();
+        $this->produits = new ArrayCollection();
 
     }
 
@@ -274,6 +278,36 @@ class Category
             // set the owning side to null (unless already changed)
             if ($offretravailarchive->getIdcategorie() === $this) {
                 $offretravailarchive->setIdcategorie(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Produits>
+     */
+    public function getProduits(): Collection
+    {
+        return $this->produits;
+    }
+
+    public function addProduit(Produits $produit): self
+    {
+        if (!$this->produits->contains($produit)) {
+            $this->produits->add($produit);
+            $produit->setIdcategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(Produits $produit): self
+    {
+        if ($this->produits->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getIdcategorie() === $this) {
+                $produit->setIdcategorie(null);
             }
         }
 

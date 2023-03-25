@@ -24,16 +24,12 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,8 +41,17 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "allusers/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "allusers/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+
+";
+        // line 3
+        $this->displayBlock('title', $context, $blocks);
+        // line 4
+        echo "
+";
+        // line 5
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -118,7 +123,7 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
             echo "            <tr>
                 <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "idUser", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
                 <td>";
             // line 32
@@ -218,19 +223,14 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
         return "allusers/index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  205 => 58,  200 => 55,  191 => 51,  182 => 47,  178 => 46,  173 => 44,  169 => 43,  165 => 42,  161 => 41,  157 => 40,  153 => 39,  149 => 38,  145 => 37,  141 => 36,  137 => 35,  133 => 34,  129 => 33,  125 => 32,  121 => 31,  118 => 30,  113 => 29,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  210 => 58,  205 => 55,  196 => 51,  187 => 47,  183 => 46,  178 => 44,  174 => 43,  170 => 42,  166 => 41,  162 => 40,  158 => 39,  154 => 38,  150 => 37,  146 => 36,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  123 => 30,  118 => 29,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
 
 {% block title %}Allusers index{% endblock %}
 
@@ -260,7 +260,7 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
         <tbody>
         {% for alluser in allusers %}
             <tr>
-                <td>{{ alluser.idUser }}</td>
+                <td>{{ alluser.id_user }}</td>
                 <td>{{ alluser.name }}</td>
                 <td>{{ alluser.LastName }}</td>
                 <td>{{ alluser.Email }}</td>

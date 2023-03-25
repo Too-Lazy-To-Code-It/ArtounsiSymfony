@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+
 
 {% block title %}Allusers index{% endblock %}
 
@@ -28,7 +28,7 @@
         <tbody>
         {% for alluser in allusers %}
             <tr>
-                <td>{{ alluser.idUser }}</td>
+                <td>{{ alluser.id_user }}</td>
                 <td>{{ alluser.name }}</td>
                 <td>{{ alluser.LastName }}</td>
                 <td>{{ alluser.Email }}</td>

@@ -43,7 +43,7 @@ return [
     'app_grosmots_show' => [['idMot'], ['_controller' => 'App\\Controller\\GrosmotsController::show'], [], [['variable', '/', '[^/]++', 'idMot', true], ['text', '/grosmots']], [], [], []],
     'app_grosmots_edit' => [['idMot'], ['_controller' => 'App\\Controller\\GrosmotsController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idMot', true], ['text', '/grosmots']], [], [], []],
     'app_grosmots_delete' => [['idMot'], ['_controller' => 'App\\Controller\\GrosmotsController::delete'], [], [['variable', '/', '[^/]++', 'idMot', true], ['text', '/grosmots']], [], [], []],
-    'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
+    'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], [], []],
     'app_offretravail_index' => [[], ['_controller' => 'App\\Controller\\OffretravailController::index'], [], [['text', '/offretravail/']], [], [], []],
     'app_offretravail_new' => [[], ['_controller' => 'App\\Controller\\OffretravailController::new'], [], [['text', '/offretravail/new']], [], [], []],
     'app_offretravail_show' => [['idoffre'], ['_controller' => 'App\\Controller\\OffretravailController::show'], [], [['variable', '/', '[^/]++', 'idoffre', true], ['text', '/offretravail']], [], [], []],
