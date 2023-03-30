@@ -1,0 +1,13 @@
+
+
+{% block title %}Edit Ban{% endblock %}
+
+{% block body %}
+    <h1>Edit Ban</h1>
+
+    {{ include('ban/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ban_index') }}">back to list</a>
+
+    {{ include('ban/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grosmots index{% endblock %}
+
+{% block body %}
+    <h1>Grosmots index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdMot</th>
+                <th>Mot</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for grosmot in grosmots %}
+            <tr>
+                <td>{{ grosmot.idMot }}</td>
+                <td>{{ grosmot.mot }}</td>
+                <td>
+                    <a href="{{ path('app_grosmots_show', {'idMot': grosmot.idMot}) }}">show</a>
+                    <a href="{{ path('app_grosmots_edit', {'idMot': grosmot.idMot}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_grosmots_new') }}">Create new</a>
+{% endblock %}

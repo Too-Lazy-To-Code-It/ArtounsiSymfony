@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit FavorisTuroial{% endblock %}
+
+{% block body %}
+    <h1>Edit FavorisTuroial</h1>
+
+    {{ include('favoris_turoial/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_favoris_turoial_index') }}">back to list</a>
+
+    {{ include('favoris_turoial/_delete_form.html.twig') }}
+{% endblock %}
