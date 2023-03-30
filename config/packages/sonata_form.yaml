@@ -1,0 +1,6 @@
+sonata_user:
+    resetting:
+        email:
+            address: 'no-reply@example.com'
+            sender_name: 'My Website'
+            template: 'resetting/email.html.twig'

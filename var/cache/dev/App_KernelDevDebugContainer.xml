@@ -20,6 +20,10 @@
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="SonataTwigBundle">Sonata\Twig\Bridge\Symfony\SonataTwigBundle</parameter>
+      <parameter key="SonataDoctrineBundle">Sonata\Doctrine\Bridge\Symfony\SonataDoctrineBundle</parameter>
+      <parameter key="SonataFormBundle">Sonata\Form\Bridge\Symfony\SonataFormBundle</parameter>
+      <parameter key="SonataUserBundle">Sonata\UserBundle\SonataUserBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -65,6 +69,22 @@
       <parameter key="SensioFrameworkExtraBundle" type="collection">
         <parameter key="path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
+      </parameter>
+      <parameter key="SonataTwigBundle" type="collection">
+        <parameter key="path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony</parameter>
+        <parameter key="namespace">Sonata\Twig\Bridge\Symfony</parameter>
+      </parameter>
+      <parameter key="SonataDoctrineBundle" type="collection">
+        <parameter key="path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\doctrine-extensions\src\Bridge\Symfony</parameter>
+        <parameter key="namespace">Sonata\Doctrine\Bridge\Symfony</parameter>
+      </parameter>
+      <parameter key="SonataFormBundle" type="collection">
+        <parameter key="path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony</parameter>
+        <parameter key="namespace">Sonata\Form\Bridge\Symfony</parameter>
+      </parameter>
+      <parameter key="SonataUserBundle" type="collection">
+        <parameter key="path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src</parameter>
+        <parameter key="namespace">Sonata\UserBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -203,6 +223,7 @@
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>@SonataUser/Form/form_admin_fields.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -235,6 +256,11 @@
         </parameter>
       </parameter>
     </parameter>
+    <parameter key="sonata.twig.flashmessage.manager.class">Sonata\Twig\FlashMessage\FlashManager</parameter>
+    <parameter key="sonata.twig.extension.flashmessage.class">Sonata\Twig\Extension\FlashMessageExtension</parameter>
+    <parameter key="sonata.twig.form_type">standard</parameter>
+    <parameter key="sonata.form.form_type">standard</parameter>
+    <parameter key="sonata.user.user.class">Sonata\UserBundle\Entity\BaseUser</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -842,6 +868,8 @@
       <argument type="iterator">
         <argument type="service" id="slugger"/>
         <argument type="service" id="translator.default"/>
+        <argument type="service" id="sonata.form.type.date_picker"/>
+        <argument type="service" id="sonata.form.type.datetime_picker"/>
       </argument>
       <argument type="service" id="request_stack"/>
     </service>
@@ -1395,6 +1423,8 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument>Sonata\Form\Type</argument>
+        <argument>Sonata\UserBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\AllusersType</argument>
@@ -1422,6 +1452,18 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>Sonata\Form\Type\ImmutableArrayType</argument>
+        <argument>Sonata\Form\Type\BooleanType</argument>
+        <argument>Sonata\Form\Type\CollectionType</argument>
+        <argument>Sonata\Form\Type\DateRangeType</argument>
+        <argument>Sonata\Form\Type\DateTimeRangeType</argument>
+        <argument>Sonata\Form\Type\DatePickerType</argument>
+        <argument>Sonata\Form\Type\DateTimePickerType</argument>
+        <argument>Sonata\Form\Type\DateRangePickerType</argument>
+        <argument>Sonata\Form\Type\DateTimeRangePickerType</argument>
+        <argument>Sonata\Form\Type\EqualType</argument>
+        <argument>Sonata\UserBundle\Form\Type\ResettingFormType</argument>
+        <argument>Sonata\UserBundle\Form\Type\ResetPasswordRequestFormType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1882,6 +1924,7 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1897,6 +1940,8 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.bg.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1907,11 +1952,17 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.ca.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.ca.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.cs.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.cs.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1925,6 +1976,10 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations\SonataTwigBundle.de.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.de.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.de.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1935,11 +1990,18 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations\SonataTwigBundle.en.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.en.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.en.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.es.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.es.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1950,21 +2012,32 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.fa.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.fa.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.fi.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.fi.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations\SonataTwigBundle.fr.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.fr.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.fr.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1980,11 +2053,16 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.hr.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.hu.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.hu.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -2000,21 +2078,31 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.it.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.it.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.ja.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.ja.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.lb.xliff</argument>
           </argument>
           <argument key="lt" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.lt.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.lt.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -2040,6 +2128,10 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations\SonataTwigBundle.nl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.nl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.nl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -2055,36 +2147,58 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations\SonataTwigBundle.pl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.pl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.pl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.pt.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.pt.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.pt.xliff</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.pt_BR.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.pt_BR.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.ro.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.ro.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.ru.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.ru.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.sk.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.sk.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.sk.xliff</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.sl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.sl.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.sl.xliff</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
@@ -2125,6 +2239,9 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.uk.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.uk.xliff</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\validators.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -2145,17 +2262,22 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations\SonataFormBundle.zh_CN.xliff</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations\SonataUserBundle.zh_TW.xliff</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2168,12 +2290,16 @@
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\monolog-bundle/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\maker-bundle\src/translations</argument>
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sensio\framework-extra-bundle\src/translations</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\doctrine-extensions\src\Bridge\Symfony/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\validator/Resources/translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/translations</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/translations</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/translations</argument>
             <argument>translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2186,6 +2312,7 @@
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\monolog-bundle/translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sensio\framework-extra-bundle\src/translations</argument>
+            <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\doctrine-extensions\src\Bridge\Symfony/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2971,6 +3098,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>security.interactive_login</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="sonata.user.listener.last_login"/>
+          <argument>onSecurityInteractiveLogin</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -3556,7 +3691,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.O3NFs6."/>
+      <argument type="service" id=".service_locator.EOENcHi"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3663,6 +3798,7 @@
       <call method="addXmlMappings">
         <argument type="collection">
           <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -3677,6 +3813,7 @@
       <call method="addObjectInitializers">
         <argument type="collection">
           <argument type="service" id="doctrine.orm.validator_initializer"/>
+          <argument type="service" id="sonata.user.validator.user_initializer"/>
         </argument>
       </call>
       <call method="addLoader">
@@ -3698,7 +3835,7 @@
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
-      <argument type="service" id=".service_locator.19_mNxd"/>
+      <argument type="service" id=".service_locator.1BRum_b"/>
     </service>
     <service id="validator.expression" class="Symfony\Component\Validator\Constraints\ExpressionValidator">
       <tag name="validator.constraint_validator" alias="validator.expression"/>
@@ -4338,12 +4475,14 @@
       </call>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.1kmbKC8"/>
+      <argument type="service" id=".service_locator.MWlOmGP"/>
       <argument type="collection">
         <argument>doctrine.orm.messenger.doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.doctrine_token_provider_schema_subscriber</argument>
+        <argument>sonata.doctrine.mapper</argument>
+        <argument>sonata.user.listener.user</argument>
         <argument type="collection">
           <argument type="collection">
             <argument>loadClassMetadata</argument>
@@ -4613,6 +4752,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
+          <argument key="SonataUserBundle">Sonata\UserBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCache">
@@ -4665,6 +4805,14 @@
       <argument type="collection">
         <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\src\Entity</argument>
       </argument>
+    </service>
+    <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver">
+      <argument type="collection">
+        <argument key="C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src\Resources\config\doctrine">Sonata\UserBundle\Entity</argument>
+      </argument>
+      <call method="setGlobalBasename">
+        <argument>mapping</argument>
+      </call>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
@@ -5056,6 +5204,21 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.twig.flashmessage.twig.extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.twig.extension.wrapping"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.twig.status_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.twig.template_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.form.twig.canonicalize_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5080,6 +5243,10 @@
           <argument type="service" id="twig.missing_extension_suggestor"/>
           <argument>suggestTag</argument>
         </argument>
+      </call>
+      <call method="addGlobal">
+        <argument>sonata_user</argument>
+        <argument type="service" id="sonata.user.twig.global"/>
       </call>
       <configurator service="twig.configurator.environment" method="configure"/>
     </service>
@@ -5154,6 +5321,30 @@
       <call method="addPath">
         <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/views</argument>
+        <argument>SonataTwig</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\twig-extensions\src\Bridge\Symfony/Resources/views</argument>
+        <argument>!SonataTwig</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/views</argument>
+        <argument>SonataForm</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\form-extensions\src\Bridge\Symfony/Resources/views</argument>
+        <argument>!SonataForm</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/views</argument>
+        <argument>SonataUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\vendor\sonata-project\user-bundle\src/Resources/views</argument>
+        <argument>!SonataUser</argument>
       </call>
       <call method="addPath">
         <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi/templates</argument>
@@ -5241,7 +5432,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.pTeli0u"/>
+      <argument type="service" id=".service_locator.ciy9Y70"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -5978,6 +6169,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>security.interactive_login</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="sonata.user.listener.last_login"/>
+          <argument>onSecurityInteractiveLogin</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -6183,6 +6382,10 @@
           <argument type="collection">
             <argument>App\Entity</argument>
             <argument type="service" id="doctrine.orm.default_attribute_metadata_driver"/>
+          </argument>
+          <argument type="collection">
+            <argument>Sonata\UserBundle\Entity</argument>
+            <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
           </argument>
         </argument>
       </argument>
@@ -6391,6 +6594,231 @@
     </service>
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
+    </service>
+    <service id="sonata.twig.flashmessage.manager" class="Sonata\Twig\FlashMessage\FlashManager" public="true">
+      <tag name="sonata.status.renderer"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="collection">
+        <argument key="success" type="collection">
+          <argument>success</argument>
+          <argument>sonata_flash_success</argument>
+          <argument>sonata_user_success</argument>
+        </argument>
+        <argument key="warning" type="collection">
+          <argument>warning</argument>
+          <argument>sonata_flash_info</argument>
+        </argument>
+        <argument key="danger" type="collection">
+          <argument>error</argument>
+          <argument>sonata_flash_error</argument>
+          <argument>sonata_user_error</argument>
+        </argument>
+      </argument>
+      <argument type="collection">
+        <argument key="success">success</argument>
+        <argument key="warning">warning</argument>
+        <argument key="danger">danger</argument>
+      </argument>
+    </service>
+    <service id="sonata.twig.flashmessage.twig.runtime" class="Sonata\Twig\Extension\FlashMessageRuntime">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="sonata.twig.flashmessage.manager"/>
+    </service>
+    <service id="sonata.twig.flashmessage.twig.extension" class="Sonata\Twig\Extension\FlashMessageExtension" public="true">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="sonata.twig.extension.wrapping" class="Sonata\Twig\Extension\FormTypeExtension">
+      <tag name="twig.extension"/>
+      <argument>standard</argument>
+    </service>
+    <service id="sonata.twig.status_runtime" class="Sonata\Twig\Extension\StatusRuntime">
+      <tag name="twig.runtime"/>
+    </service>
+    <service id="sonata.twig.status_extension" class="Sonata\Twig\Extension\StatusExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="sonata.twig.template_extension" class="Sonata\Twig\Extension\TemplateExtension">
+      <tag name="twig.extension"/>
+      <argument>true</argument>
+    </service>
+    <service id="sonata.doctrine.model.adapter.chain" class="Sonata\Doctrine\Adapter\AdapterChain" public="true">
+      <call method="addAdapter">
+        <argument type="service" id="sonata.doctrine.adapter.doctrine_orm"/>
+      </call>
+    </service>
+    <service id="sonata.doctrine.adapter.doctrine_orm" class="Sonata\Doctrine\Adapter\ORM\DoctrineORMAdapter">
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="sonata.doctrine.mapper" class="Sonata\Doctrine\Mapper\ORM\DoctrineORMMapper">
+      <tag name="doctrine.event_subscriber"/>
+    </service>
+    <service id="sonata.form.date.moment_format_converter" class="Sonata\Form\Date\MomentFormatConverter"/>
+    <service id="sonata.form.type.array" class="Sonata\Form\Type\ImmutableArrayType">
+      <tag name="form.type" alias="sonata_type_immutable_array"/>
+    </service>
+    <service id="sonata.form.type.boolean" class="Sonata\Form\Type\BooleanType">
+      <tag name="form.type" alias="sonata_type_boolean"/>
+    </service>
+    <service id="sonata.form.type.collection" class="Sonata\Form\Type\CollectionType">
+      <tag name="form.type" alias="sonata_type_collection"/>
+    </service>
+    <service id="sonata.form.type.date_range" class="Sonata\Form\Type\DateRangeType">
+      <tag name="form.type" alias="sonata_type_date_range"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="sonata.form.type.datetime_range" class="Sonata\Form\Type\DateTimeRangeType">
+      <tag name="form.type" alias="sonata_type_datetime_range"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="sonata.form.type.date_picker" class="Sonata\Form\Type\DatePickerType">
+      <tag name="kernel.locale_aware"/>
+      <tag name="form.type" alias="sonata_type_date_picker"/>
+      <argument type="service" id="sonata.form.date.moment_format_converter"/>
+      <argument type="service" id="translator.data_collector"/>
+      <argument>en</argument>
+    </service>
+    <service id="sonata.form.type.datetime_picker" class="Sonata\Form\Type\DateTimePickerType">
+      <tag name="kernel.locale_aware"/>
+      <tag name="form.type" alias="sonata_type_datetime_picker"/>
+      <argument type="service" id="sonata.form.date.moment_format_converter"/>
+      <argument type="service" id="translator.data_collector"/>
+      <argument>en</argument>
+    </service>
+    <service id="sonata.form.type.date_range_picker" class="Sonata\Form\Type\DateRangePickerType">
+      <tag name="form.type" alias="sonata_type_date_range_picker"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="sonata.form.type.datetime_range_picker" class="Sonata\Form\Type\DateTimeRangePickerType">
+      <tag name="form.type" alias="sonata_type_datetime_range_picker"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="sonata.form.type.equal" class="Sonata\Form\Type\EqualType">
+      <tag name="form.type" alias="sonata_type_equal"/>
+      <argument type="service" id="translator.data_collector"/>
+      <deprecated package="sonata-project/form-extensions" version="1.2">The "%service_id%" service is deprecated since sonata-project/form-extensions 1.2 and will be removed in 2.0. Use Sonata\AdminBundle\Form\Type\Operator\EqualOperatorType instead</deprecated>
+    </service>
+    <service id="sonata.form.twig.canonicalize_extension" class="Sonata\Form\Twig\Extension\CanonicalizeExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="sonata.form.twig.canonicalize_runtime" class="Sonata\Form\Twig\CanonicalizeRuntime">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="sonata.form.validator.inline" class="Sonata\Form\Validator\InlineValidator">
+      <tag name="validator.constraint_validator" alias="sonata.form.validator.inline"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="validator.validator_factory"/>
+    </service>
+    <service id="sonata.user.manager.user" class="Sonata\UserBundle\Entity\UserManager">
+      <argument>Sonata\UserBundle\Entity\BaseUser</argument>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="sonata.user.util.canonical_fields_updater"/>
+      <argument type="service" id="security.user_password_hasher"/>
+    </service>
+    <service id="sonata.user.twig.global" class="Sonata\UserBundle\Twig\GlobalVariables">
+      <argument>null</argument>
+      <argument>bundles/sonatauser/default_avatar.png</argument>
+      <argument>false</argument>
+      <argument></argument>
+      <argument type="collection"/>
+    </service>
+    <service id="sonata.user.command.activate_user" class="Sonata\UserBundle\Command\ActivateUserCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:activate</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Activate a user</argument>
+      </call>
+    </service>
+    <service id="sonata.user.command.change_password" class="Sonata\UserBundle\Command\ChangePasswordCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:change-password</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Change the password of a user</argument>
+      </call>
+    </service>
+    <service id="sonata.user.command.create_user" class="Sonata\UserBundle\Command\CreateUserCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:create</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Create a user</argument>
+      </call>
+    </service>
+    <service id="sonata.user.command.deactivate_user" class="Sonata\UserBundle\Command\DeactivateUserCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:deactivate</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Deactivate a user</argument>
+      </call>
+    </service>
+    <service id="sonata.user.command.promote_user" class="Sonata\UserBundle\Command\PromoteUserCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:promote</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Promotes a user by adding a role</argument>
+      </call>
+    </service>
+    <service id="sonata.user.command.demote_user" class="Sonata\UserBundle\Command\DemoteUserCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+      <call method="setName">
+        <argument>sonata:user:demote</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Demotes a user by removing a role</argument>
+      </call>
+    </service>
+    <service id="sonata.user.listener.user" class="Sonata\UserBundle\Listener\UserListener">
+      <tag name="doctrine.event_subscriber"/>
+      <argument type="service" id="sonata.user.util.canonical_fields_updater"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+    </service>
+    <service id="sonata.user.listener.last_login" class="Sonata\UserBundle\Listener\LastLoginListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="sonata.user.manager.user"/>
+    </service>
+    <service id="sonata.user.mailer.default" class="Sonata\UserBundle\Mailer\Mailer">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="mailer.mailer"/>
+      <argument type="collection"/>
+      <argument></argument>
+    </service>
+    <service id="sonata.user.form.type.resetting" class="Sonata\UserBundle\Form\Type\ResettingFormType">
+      <tag name="form.type" alias="sonata_user_resetting"/>
+      <argument>Sonata\UserBundle\Entity\BaseUser</argument>
+    </service>
+    <service id="sonata.user.form.type.reset_password_request" class="Sonata\UserBundle\Form\Type\ResetPasswordRequestFormType">
+      <tag name="form.type" alias="sonata_user_reset_password_request"/>
+    </service>
+    <service id="sonata.user.security.user_provider" class="Sonata\UserBundle\Security\UserProvider">
+      <argument type="service" id="sonata.user.manager.user"/>
+    </service>
+    <service id="sonata.user.util.canonical_fields_updater" class="Sonata\UserBundle\Util\CanonicalFieldsUpdater"/>
+    <service id="sonata.user.util.token_generator" class="Sonata\UserBundle\Util\TokenGenerator"/>
+    <service id="sonata.user.validator.user_initializer" class="Sonata\UserBundle\Validator\UserInitializer">
+      <tag name="validator.initializer"/>
+      <argument type="service" id="sonata.user.util.canonical_fields_updater"/>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
@@ -7463,9 +7891,10 @@
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
     </service>
-    <service id=".service_locator.19_mNxd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1BRum_b" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="Sonata\Form\Validator\InlineValidator" type="service_closure" id="sonata.form.validator.inline"/>
         <argument key="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator" type="service_closure" id="doctrine.orm.validator.unique"/>
         <argument key="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator" type="service_closure" id="security.validator.user_password"/>
         <argument key="Symfony\Component\Validator\Constraints\EmailValidator" type="service_closure" id="validator.email"/>
@@ -7473,6 +7902,7 @@
         <argument key="Symfony\Component\Validator\Constraints\NotCompromisedPasswordValidator" type="service_closure" id="validator.not_compromised_password"/>
         <argument key="doctrine.orm.validator.unique" type="service_closure" id="doctrine.orm.validator.unique"/>
         <argument key="security.validator.user_password" type="service_closure" id="security.validator.user_password"/>
+        <argument key="sonata.form.validator.inline" type="service_closure" id="sonata.form.validator.inline"/>
         <argument key="validator.expression" type="service_closure" id="validator.expression"/>
       </argument>
     </service>
@@ -7522,7 +7952,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.O3NFs6." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.EOENcHi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
@@ -7545,6 +7975,18 @@
         <argument key="App\Form\TutorielType" type="service_closure" id="App\Form\TutorielType"/>
         <argument key="App\Form\VideoType" type="service_closure" id="App\Form\VideoType"/>
         <argument key="App\Form\ViewType" type="service_closure" id="App\Form\ViewType"/>
+        <argument key="Sonata\Form\Type\BooleanType" type="service_closure" id="sonata.form.type.boolean"/>
+        <argument key="Sonata\Form\Type\CollectionType" type="service_closure" id="sonata.form.type.collection"/>
+        <argument key="Sonata\Form\Type\DatePickerType" type="service_closure" id="sonata.form.type.date_picker"/>
+        <argument key="Sonata\Form\Type\DateRangePickerType" type="service_closure" id="sonata.form.type.date_range_picker"/>
+        <argument key="Sonata\Form\Type\DateRangeType" type="service_closure" id="sonata.form.type.date_range"/>
+        <argument key="Sonata\Form\Type\DateTimePickerType" type="service_closure" id="sonata.form.type.datetime_picker"/>
+        <argument key="Sonata\Form\Type\DateTimeRangePickerType" type="service_closure" id="sonata.form.type.datetime_range_picker"/>
+        <argument key="Sonata\Form\Type\DateTimeRangeType" type="service_closure" id="sonata.form.type.datetime_range"/>
+        <argument key="Sonata\Form\Type\EqualType" type="service_closure" id="sonata.form.type.equal"/>
+        <argument key="Sonata\Form\Type\ImmutableArrayType" type="service_closure" id="sonata.form.type.array"/>
+        <argument key="Sonata\UserBundle\Form\Type\ResetPasswordRequestFormType" type="service_closure" id="sonata.user.form.type.reset_password_request"/>
+        <argument key="Sonata\UserBundle\Form\Type\ResettingFormType" type="service_closure" id="sonata.user.form.type.resetting"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -7620,7 +8062,7 @@
       <argument type="service" id=".debug.http_client.inner"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
     </service>
-    <service id=".service_locator.1kmbKC8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.MWlOmGP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
@@ -7628,6 +8070,8 @@
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber"/>
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
+        <argument key="sonata.doctrine.mapper" type="service_closure" id="sonata.doctrine.mapper"/>
+        <argument key="sonata.user.listener.user" type="service_closure" id="sonata.user.listener.user"/>
       </argument>
     </service>
     <service id=".service_locator.zPeQE10" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8253,6 +8697,10 @@
         <argument type="service" id="doctrine.orm.default_attribute_metadata_driver"/>
         <argument>App\Entity</argument>
       </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
+        <argument>Sonata\UserBundle\Entity</argument>
+      </call>
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.1iQsUAH.App\Entity\Allusers" class="App\Entity\Allusers"/>
@@ -8612,6 +9060,48 @@
       <argument>false</argument>
       <argument type="service_closure" id="security.command.user_password_hash"/>
     </service>
+    <service id=".sonata.user.command.activate_user.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:activate</argument>
+      <argument type="collection"/>
+      <argument>Activate a user</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.activate_user"/>
+    </service>
+    <service id=".sonata.user.command.change_password.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:change-password</argument>
+      <argument type="collection"/>
+      <argument>Change the password of a user</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.change_password"/>
+    </service>
+    <service id=".sonata.user.command.create_user.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:create</argument>
+      <argument type="collection"/>
+      <argument>Create a user</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.create_user"/>
+    </service>
+    <service id=".sonata.user.command.deactivate_user.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:deactivate</argument>
+      <argument type="collection"/>
+      <argument>Deactivate a user</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.deactivate_user"/>
+    </service>
+    <service id=".sonata.user.command.promote_user.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:promote</argument>
+      <argument type="collection"/>
+      <argument>Promotes a user by adding a role</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.promote_user"/>
+    </service>
+    <service id=".sonata.user.command.demote_user.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>sonata:user:demote</argument>
+      <argument type="collection"/>
+      <argument>Demotes a user by removing a role</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="sonata.user.command.demote_user"/>
+    </service>
     <service id=".maker.auto_command.make_auth.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>make:auth</argument>
       <argument type="collection"/>
@@ -8778,7 +9268,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.ttQ2U29"/>
+      <argument type="service" id=".service_locator.trc659O"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -8858,6 +9348,12 @@
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="sonata:user:activate">sonata.user.command.activate_user</argument>
+        <argument key="sonata:user:change-password">sonata.user.command.change_password</argument>
+        <argument key="sonata:user:create">sonata.user.command.create_user</argument>
+        <argument key="sonata:user:deactivate">sonata.user.command.deactivate_user</argument>
+        <argument key="sonata:user:promote">sonata.user.command.promote_user</argument>
+        <argument key="sonata:user:demote">sonata.user.command.demote_user</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -8885,7 +9381,7 @@
         <argument key="make:stimulus-controller">maker.auto_command.make_stimulus_controller</argument>
       </argument>
     </service>
-    <service id=".service_locator.ttQ2U29" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.trc659O" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -8965,6 +9461,12 @@
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_encoder" type="service_closure" id=".security.command.user_password_encoder.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+        <argument key="sonata.user.command.activate_user" type="service_closure" id=".sonata.user.command.activate_user.lazy"/>
+        <argument key="sonata.user.command.change_password" type="service_closure" id=".sonata.user.command.change_password.lazy"/>
+        <argument key="sonata.user.command.create_user" type="service_closure" id=".sonata.user.command.create_user.lazy"/>
+        <argument key="sonata.user.command.deactivate_user" type="service_closure" id=".sonata.user.command.deactivate_user.lazy"/>
+        <argument key="sonata.user.command.promote_user" type="service_closure" id=".sonata.user.command.promote_user.lazy"/>
+        <argument key="sonata.user.command.demote_user" type="service_closure" id=".sonata.user.command.demote_user.lazy"/>
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
@@ -9066,13 +9568,16 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.pTeli0u" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ciy9Y70" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service_closure" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service_closure" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Bridge\Twig\Extension\SerializerRuntime" type="service_closure" id="twig.runtime.serializer"/>
         <argument key="Symfony\Component\Form\FormRenderer" type="service_closure" id="twig.form.renderer"/>
+        <argument key="Sonata\Twig\Extension\FlashMessageRuntime" type="service_closure" id="sonata.twig.flashmessage.twig.runtime"/>
+        <argument key="Sonata\Twig\Extension\StatusRuntime" type="service_closure" id="sonata.twig.status_runtime"/>
+        <argument key="Sonata\Form\Twig\CanonicalizeRuntime" type="service_closure" id="sonata.form.twig.canonicalize_runtime"/>
       </argument>
     </service>
     <service id="Psr\Container\ContainerInterface" alias="service_container">
@@ -9238,6 +9743,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="sensio_framework_extra.converter.doctrine.orm.expression_language" alias="sensio_framework_extra.converter.doctrine.orm.expression_language.default"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
+    <service id="sonata.user.mailer" alias="sonata.user.mailer.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.Pp3WG_d"/>
@@ -9265,9 +9771,9 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator..0bojOG" alias=".service_locator.Pp3WG_d"/>
-    <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.cxRDELV" alias=".service_locator.O3NFs6."/>
-    <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
+    <service id=".service_locator.BF95HTT" alias=".service_locator.1BRum_b"/>
+    <service id=".service_locator.oKz.I6." alias=".service_locator.EOENcHi"/>
+    <service id=".service_locator.QJ97Jdn" alias=".service_locator.MWlOmGP"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
     <service id="validator" alias="debug.validator" public="true"/>

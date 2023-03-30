@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="zh-TW" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="title_user_account">
+        <source>title_user_account</source>
+        <target>User Profile</target>
+      </trans-unit>
+      <trans-unit id="title_user_edit_profile">
+        <source>title_user_edit_profile</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="sonata_user_submit">
+        <source>sonata_user_submit</source>
+        <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_user_list">
+        <source>breadcrumb.link_user_list</source>
+        <target>使用者</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_user_create">
+        <source>breadcrumb.link_user_create</source>
+        <target>建立</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_user_edit">
+        <source>breadcrumb.link_user_edit</source>
+        <target>編輯</target>
+      </trans-unit>
+      <trans-unit id="users">
+        <source>users</source>
+        <target>使用者</target>
+      </trans-unit>
+      <trans-unit id="show.group_users">
+        <source>show.group_users</source>
+        <target>使用者</target>
+      </trans-unit>
+      <trans-unit id="switch_user_exit">
+        <source>switch_user_exit</source>
+        <target>離開切換模式</target>
+      </trans-unit>
+      <trans-unit id="switch_user">
+        <source>switch_user</source>
+        <target>切換使用者</target>
+      </trans-unit>
+      <trans-unit id="user_block_logout">
+        <source>user_block_logout</source>
+        <target>登出</target>
+      </trans-unit>
+      <trans-unit id="sonata_user">
+        <source>sonata_user</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="form.label_date_of_birth">
+        <source>form.label_date_of_birth</source>
+        <target>Date of birth</target>
+      </trans-unit>
+      <trans-unit id="sonata_user_already_authenticated">
+        <source>sonata_user_already_authenticated</source>
+        <target>You are already logged in</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

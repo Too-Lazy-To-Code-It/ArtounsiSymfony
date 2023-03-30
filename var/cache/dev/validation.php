@@ -11,6 +11,13 @@ return [[
 'Traversable' => 4,
 'Countable' => 5,
 'ArrayAccess' => 6,
+'Sonata.UserBundle.Model.User' => 7,
+'Sonata.UserBundle.Model.UserInterface' => 8,
+'Stringable' => 9,
+'Symfony.Component.Security.Core.User.PasswordAuthenticatedUserInterface' => 10,
+'Sonata.UserBundle.Model.BCPasswordAuthenticatedUserInterface' => 11,
+'Symfony.Component.Security.Core.User.EquatableInterface' => 12,
+'Symfony.Component.Security.Core.User.UserInterface' => 13,
 
 ], [
 
@@ -172,6 +179,316 @@ return [[
                 ],
                 'defaultGroup' => [
                     'ArrayAccess',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+7 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+            clone $p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'],
+            ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+            clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+            clone ($p['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+            $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+            clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+            clone $p['Symfony\\Component\\Validator\\Constraints\\Length'],
+            clone ($p['Symfony\\Component\\Validator\\Constraints\\Email'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Email')),
+            $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+            clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+            clone $p['Symfony\\Component\\Validator\\Constraints\\Length'],
+        ],
+        null,
+        [
+            'stdClass' => [
+                'constraints' => [
+                    [
+                        $o[1],
+                        $o[2],
+                    ],
+                    3 => [
+                        $o[4],
+                        $o[5],
+                    ],
+                    6 => [
+                        $o[7],
+                        $o[8],
+                        $o[9],
+                    ],
+                    10 => [
+                        $o[11],
+                        $o[12],
+                    ],
+                ],
+                'constraintsByGroup' => [
+                    [
+                        'Registration' => [
+                            $o[1],
+                            $o[2],
+                        ],
+                        'Profile' => [
+                            $o[1],
+                            $o[2],
+                        ],
+                    ],
+                    3 => [
+                        'Registration' => [
+                            $o[4],
+                            $o[5],
+                        ],
+                        'Profile' => [
+                            $o[4],
+                            $o[5],
+                        ],
+                    ],
+                    6 => [
+                        'Registration' => [
+                            $o[7],
+                            $o[8],
+                            $o[9],
+                        ],
+                        'Profile' => [
+                            $o[7],
+                            $o[8],
+                            $o[9],
+                        ],
+                    ],
+                    10 => [
+                        'Registration' => [
+                            $o[11],
+                            $o[12],
+                        ],
+                        'ResetPassword' => [
+                            $o[11],
+                            $o[12],
+                        ],
+                        'ChangePassword' => [
+                            $o[11],
+                            $o[12],
+                        ],
+                        'Profile' => [
+                            $o[12],
+                        ],
+                    ],
+                ],
+                'name' => [
+                    'Sonata\\UserBundle\\Model\\User',
+                    3 => 'username',
+                    6 => 'email',
+                    10 => 'plainPassword',
+                ],
+                'defaultGroup' => [
+                    'User',
+                ],
+                'members' => [
+                    [
+                        'username' => [
+                            $o[3],
+                        ],
+                        'email' => [
+                            $o[6],
+                        ],
+                        'plainPassword' => [
+                            $o[10],
+                        ],
+                    ],
+                ],
+                'properties' => [
+                    [
+                        'username' => $o[3],
+                        'email' => $o[6],
+                        'plainPassword' => $o[10],
+                    ],
+                ],
+                'groups' => [
+                    1 => [
+                        'Registration',
+                        'Profile',
+                    ],
+                    [
+                        'Registration',
+                        'Profile',
+                    ],
+                    4 => [
+                        'Registration',
+                        'Profile',
+                    ],
+                    [
+                        'Registration',
+                        'Profile',
+                    ],
+                    7 => [
+                        'Registration',
+                        'Profile',
+                    ],
+                    [
+                        'Registration',
+                        'Profile',
+                    ],
+                    [
+                        'Registration',
+                        'Profile',
+                    ],
+                    11 => [
+                        'Registration',
+                        'ResetPassword',
+                        'ChangePassword',
+                    ],
+                    [
+                        'Registration',
+                        'Profile',
+                        'ResetPassword',
+                        'ChangePassword',
+                    ],
+                ],
+                'fields' => [
+                    1 => 'email',
+                    'username',
+                ],
+                'class' => [
+                    3 => 'Sonata\\UserBundle\\Model\\User',
+                    6 => 'Sonata\\UserBundle\\Model\\User',
+                    10 => 'Sonata\\UserBundle\\Model\\User',
+                ],
+                'property' => [
+                    3 => 'username',
+                    6 => 'email',
+                    10 => 'plainPassword',
+                ],
+                'max' => [
+                    5 => 180,
+                    8 => 180,
+                    12 => 4096,
+                ],
+                'min' => [
+                    5 => 2,
+                    8 => 2,
+                    12 => 2,
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+8 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Sonata\\UserBundle\\Model\\UserInterface',
+                ],
+                'defaultGroup' => [
+                    'UserInterface',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+9 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Stringable',
+                ],
+                'defaultGroup' => [
+                    'Stringable',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+10 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Symfony\\Component\\Security\\Core\\User\\PasswordAuthenticatedUserInterface',
+                ],
+                'defaultGroup' => [
+                    'PasswordAuthenticatedUserInterface',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+11 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Sonata\\UserBundle\\Model\\BCPasswordAuthenticatedUserInterface',
+                ],
+                'defaultGroup' => [
+                    'BCPasswordAuthenticatedUserInterface',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+12 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Symfony\\Component\\Security\\Core\\User\\EquatableInterface',
+                ],
+                'defaultGroup' => [
+                    'EquatableInterface',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+13 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'name' => [
+                    'Symfony\\Component\\Security\\Core\\User\\UserInterface',
+                ],
+                'defaultGroup' => [
+                    'UserInterface',
                 ],
             ],
         ],

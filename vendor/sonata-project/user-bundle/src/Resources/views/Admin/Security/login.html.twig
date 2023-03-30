@@ -1,0 +1,95 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends base_template %}
+
+{% block sonata_nav %}
+{% endblock sonata_nav %}
+
+{% block logo %}
+{% endblock logo %}
+
+{% block sonata_left_side %}
+{% endblock sonata_left_side %}
+
+{% block body_attributes %}class="sonata-bc login-page {% if _use_icheck %}sonata-icheck{% endif %}"{% endblock %}
+
+{% block sonata_wrapper %}
+    <div class="login-box">
+        {% block login_box_header %}
+            <div class="login-logo">
+                <a href="{{ path('sonata_admin_dashboard') }}">
+                    {% if 'icon' == sonata_config.getOption('logo_content') or 'all' == sonata_config.getOption('logo_content') %}
+                        <div>
+                            <img style="width:64px;" src="{{ asset(sonata_config.logo) }}" alt="{{ sonata_config.title }}">
+                        </div>
+                    {% endif %}
+                    {% if 'text' == sonata_config.getOption('logo_content') or 'all' == sonata_config.getOption('logo_content') %}
+                        <span>{{ sonata_config.title }}</span>
+                    {% endif %}
+                </a>
+            </div>
+        {% endblock %}
+        <div class="login-box-body">
+            {% block sonata_user_login_form %}
+                {% block sonata_user_login_error %}
+                    {% if error %}
+                        <div class="alert alert-danger alert-error">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+                <p class="login-box-msg">{{ 'title_user_authentication'|trans({}, 'SonataUserBundle') }}</p>
+
+                <form action="{{ path("sonata_user_admin_security_check") }}" method="post" role="form">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                    <div class="form-group has-feedback">
+                        <input class="form-control"
+                            id="username"
+                            name="_username"
+                            placeholder="{{ 'security.login.username'|trans({}, 'SonataUserBundle') }}"
+                            required="required"
+                            type="text"
+                            value="{{ last_username }}"/>
+                        <span class="fas fa-user form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <input class="form-control"
+                            id="password"
+                            name="_password"
+                            placeholder="{{ 'security.login.password'|trans({}, 'SonataUserBundle') }}"
+                            required="required"
+                            type="password"/>
+                        <span class="fas fa-lock form-control-feedback"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                                    {{ 'security.login.remember_me'|trans({}, 'SonataUserBundle') }}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="submit" name="submit" class="btn btn-primary btn-block btn-flat">{{ 'security.login.submit'|trans({}, 'SonataUserBundle') }}</button>
+                        </div>
+                    </div>
+                </form>
+
+                <a href="{{ reset_route }}">{{ 'forgotten_password'|trans({}, 'SonataUserBundle') }}</a>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock sonata_wrapper %}
