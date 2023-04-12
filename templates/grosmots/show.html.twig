@@ -1,0 +1,26 @@
+
+
+{% block title %}Grosmots{% endblock %}
+
+{% block body %}
+    <h1>Grosmots</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdMot</th>
+                <td>{{ grosmot.idMot }}</td>
+            </tr>
+            <tr>
+                <th>Mot</th>
+                <td>{{ grosmot.mot }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_grosmots_index') }}">back to list</a>
+
+    <a href="{{ path('app_grosmots_edit', {'idMot': grosmot.idMot}) }}">edit</a>
+
+    {{ include('grosmots/_delete_form.html.twig') }}
+{% endblock %}

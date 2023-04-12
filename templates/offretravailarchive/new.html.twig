@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Offretravailarchive{% endblock %}
+
+{% block body %}
+    <h1>Create new Offretravailarchive</h1>
+
+    {{ include('offretravailarchive/_form.html.twig') }}
+
+    <a href="{{ path('app_offretravailarchive_index') }}">back to list</a>
+{% endblock %}
