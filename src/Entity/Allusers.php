@@ -7,61 +7,75 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * @method string getUserIdentifier()
- */
+
 #[ORM\Entity(repositoryClass: AllusersRepository::class)]
-class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
+class Allusers
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id_user = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Ban::class, orphanRemoval: true)]
     private Collection $test;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $Last_Name = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
+    #[Assert\Email(message: "not valid email type")]
+
     private ?string $Email = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?\DateTimeInterface $Birthday = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
+    #[Assert\UserPassword(message: "not valid password type")]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
     private ?string $salt = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $nationality = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $type = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $nickname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $avatar = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $background = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "can't be empty")]
     private ?string $bio = null;
+
+    private ?string $token = null;
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Demandetravail::class)]
     private Collection $demandetravails;
@@ -108,7 +122,10 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Produits::class)]
     private Collection $produits;
 
-
+    public function __toString(): string
+    {
+        return $this->nickname;
+    }
 
 
     public function __construct()
@@ -775,7 +792,7 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-    public function getRoles():array
+    public function getRoles(): array
     {
         $roles = $this->type;
         // guarantee every user at least has ROLE_USER
@@ -792,5 +809,21 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUsername()
     {
         // TODO: Implement getUsername() method.
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string|null $token
+     */
+    public function setToken(?string $token): void
+    {
+        $this->token = $token;
     }
 }

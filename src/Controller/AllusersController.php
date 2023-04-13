@@ -4,19 +4,25 @@ namespace App\Controller;
 
 use App\Entity\Allusers;
 use App\Form\AllusersType;
+use App\Form\LoginType;
 use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 #[Route('/allusers')]
 class AllusersController extends AbstractController
 {
+
+
     #[Route('/', name: 'app_allusers_index', methods: ['GET'])]
     public function index(AllusersRepository $allusersRepository): Response
     {
-        return $this->render('allusers/index.html.twig', [
+        return $this->render('allusers/users.html.twig', [
             'allusers' => $allusersRepository->findAll(),
         ]);
     }
@@ -29,6 +35,42 @@ class AllusersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // handle avatar file upload
+            $avatarFile = $form->get('avatar')->getData();
+            if ($avatarFile) {
+                $avatarFileName = uniqid() . '.' . $avatarFile->guessExtension();
+
+                try {
+                    $avatarFile->move(
+                        $this->getParameter('avatars_directory'),
+                        $avatarFileName
+                    );
+                } catch (FileException $e) {
+                    // handle exception if something goes wrong during file upload
+                    // e.g. display a message to the user
+                }
+
+                $alluser->setAvatar($avatarFileName);
+            }
+
+            // handle background file upload
+            $backgroundFile = $form->get('background')->getData();
+            if ($backgroundFile) {
+                $backgroundFileName = uniqid() . '.' . $backgroundFile->guessExtension();
+
+                try {
+                    $backgroundFile->move(
+                        $this->getParameter('backgrounds_directory'),
+                        $backgroundFileName
+                    );
+                } catch (FileException $e) {
+                    // handle exception if something goes wrong during file upload
+                    // e.g. display a message to the user
+                }
+
+                $alluser->setBackground($backgroundFileName);
+            }
+
             $allusersRepository->save($alluser, true);
 
             return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
@@ -40,10 +82,11 @@ class AllusersController extends AbstractController
         ]);
     }
 
+
     #[Route('/{id_user}', name: 'app_allusers_show', methods: ['GET'])]
     public function show(Allusers $alluser): Response
     {
-        return $this->render('allusers/show.html.twig', [
+        return $this->render('allusers/usershow.html.twig', [
             'alluser' => $alluser,
         ]);
     }
@@ -69,7 +112,7 @@ class AllusersController extends AbstractController
     #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['POST'])]
     public function delete(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$alluser->getId_user(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $alluser->getId_user(), $request->request->get('_token'))) {
             $allusersRepository->remove($alluser, true);
         }
 

@@ -5,6 +5,10 @@ namespace App\Repository;
 use App\Entity\Allusers;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
+use RuntimeException;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @extends ServiceEntityRepository<Allusers>
@@ -16,6 +20,33 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class AllusersRepository extends ServiceEntityRepository
 {
+    function generateSalt(): string
+    {
+        $salt = random_bytes(16);
+        return base64_encode($salt);
+    }
+
+    function hashPassword($password, $salt): string
+    {
+        try {
+            $hashedPassword = hash('sha256', base64_decode($salt) . $password, true);
+            return base64_encode($hashedPassword);
+        } catch (Exception $e) {
+            throw new RuntimeException("Error hashing password: " . $e->getMessage());
+        }
+    }
+    function decryptPassword($encryptedPassword, $salt, $inputPassword): bool
+    {
+        try {
+            $hashedPassword = hash('sha256', base64_decode($salt) . $inputPassword, true);
+            $decodedHashedPassword = base64_encode($hashedPassword);
+            return ($decodedHashedPassword === $encryptedPassword);
+        } catch (Exception $e) {
+            throw new RuntimeException("Error decrypting password: " . $e->getMessage());
+        }
+    }
+
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Allusers::class);
@@ -23,6 +54,12 @@ class AllusersRepository extends ServiceEntityRepository
 
     public function save(Allusers $entity, bool $flush = false): void
     {
+        $salt = $this->generateSalt();
+        $hashedPassword = $this->hashPassword($entity->getPassword(), $salt);
+
+        $entity->setSalt($salt);
+        $entity->setPassword($hashedPassword);
+
         $this->getEntityManager()->persist($entity);
 
         if ($flush) {
@@ -38,6 +75,9 @@ class AllusersRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+
+
 
 //    /**
 //     * @return Allusers[] Returns an array of Allusers objects
@@ -63,4 +103,22 @@ class AllusersRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function findOneByEmailOrNickname(string $emailOrNickname): ?Allusers
+    {
+        $entityManager = $this->getEntityManager();
+
+        $queryBuilder = $entityManager->createQueryBuilder();
+
+        $queryBuilder->select('u')
+            ->from(Allusers::class, 'u')
+            ->where('u.Email = :emailOrNickname')
+            ->orWhere('u.nickname = :emailOrNickname')
+            ->setParameter('emailOrNickname', $emailOrNickname);
+
+        $query = $queryBuilder->getQuery();
+
+        return $query->getOneOrNullResult();
+    }
+
+
 }

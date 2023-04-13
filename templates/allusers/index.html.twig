@@ -4,10 +4,17 @@
 
 {% block body %}
     <h1>Allusers index</h1>
+    {% if app.user %}
+        <h1>Welcome, {{ app.user.email }}</h1>
+        {% else %}<h1>XDDDDDDDD</h1>
+
+    {% endif %}
 
     <table class="table">
         <thead>
             <tr>
+
+
                 <th>Id_user</th>
                 <th>Name</th>
                 <th>Last_Name</th>
@@ -45,6 +52,8 @@
                 <td>
                     <a href="{{ path('app_allusers_show', {'id_user': alluser.id_user}) }}">show</a>
                     <a href="{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}">edit</a>
+                    <a href="{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}">edit</a>
+
                 </td>
             </tr>
         {% else %}
