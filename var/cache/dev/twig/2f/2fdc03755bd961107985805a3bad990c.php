@@ -112,7 +112,10 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                                 </label>
                             </div>
                             <div class=\"w-50 text-md-right\">
-                                <a href=\"#\" style=\"color: #fff\">Forgot Password</a>
+                                <a href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_new");
+        echo "\" style=\"color: #fff\">Register</a>
                             </div>
                         </div>
                     ";
@@ -166,7 +169,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 62,  138 => 61,  134 => 60,  130 => 59,  120 => 52,  104 => 39,  97 => 35,  90 => 31,  85 => 29,  70 => 17,  63 => 13,  58 => 11,  52 => 8,  43 => 1,);
+        return array (  145 => 62,  141 => 61,  137 => 60,  133 => 59,  123 => 52,  117 => 49,  104 => 39,  97 => 35,  90 => 31,  85 => 29,  70 => 17,  63 => 13,  58 => 11,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -219,7 +222,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                                 </label>
                             </div>
                             <div class=\"w-50 text-md-right\">
-                                <a href=\"#\" style=\"color: #fff\">Forgot Password</a>
+                                <a href=\"{{ path('app_allusers_new') }}\" style=\"color: #fff\">Register</a>
                             </div>
                         </div>
                     {{ form_end(form) }}

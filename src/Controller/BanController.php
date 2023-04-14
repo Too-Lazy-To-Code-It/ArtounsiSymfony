@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Controller\AllusersController;
 use App\Entity\Ban;
 use App\Form\BanType;
 use App\Repository\AllusersRepository;
@@ -10,7 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Controller\AllusersController;
 
 #[Route('/ban')]
 class BanController extends AbstractController
@@ -31,8 +31,13 @@ class BanController extends AbstractController
     }
 
     #[Route('/new', name: 'app_ban_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, BanRepository $banRepository): Response
+    public function new(Request $request, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
     {
+        if (!$ac->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $ban = new Ban();
         $form = $this->createForm(BanType::class, $ban);
         $form->handleRequest($request);
@@ -46,6 +51,7 @@ class BanController extends AbstractController
         return $this->renderForm('ban/new.html.twig', [
             'ban' => $ban,
             'form' => $form,
+            'logged' => $user,
         ]);
     }
 
@@ -58,8 +64,14 @@ class BanController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_ban_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Ban $ban, BanRepository $banRepository): Response
+    public function edit(Request $request, Ban $ban, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
     {
+        if (!$ac->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
         $form = $this->createForm(BanType::class, $ban);
         $form->handleRequest($request);
 
@@ -69,16 +81,17 @@ class BanController extends AbstractController
             return $this->redirectToRoute('app_ban_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('ban/edit.html.twig', [
+        return $this->renderForm('ban/new.html.twig', [
             'ban' => $ban,
             'form' => $form,
+            'logged' => $user,
         ]);
     }
 
     #[Route('/{id}', name: 'app_ban_delete', methods: ['POST'])]
     public function delete(Request $request, Ban $ban, BanRepository $banRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$ban->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $ban->getId(), $request->request->get('_token'))) {
             $banRepository->remove($ban, true);
         }
 

@@ -7002,16 +7002,19 @@
         <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.zA44DHy" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.1V0mQ8V" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="ban" type="service_closure" id=".errored..service_locator.1V0mQ8V.App\Entity\Ban"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dcAGksr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ac" type="service_closure" id="App\Controller\AllusersController"/>
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="ban" type="service_closure" id=".errored..service_locator.dcAGksr.App\Entity\Ban"/>
+        <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
       </argument>
     </service>
     <service id=".service_locator.4WM7mxr" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7363,7 +7366,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.6mZO6oc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.tlGKbYZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7373,9 +7376,9 @@
         <argument key="App\Controller\AllusersController::new" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\AllusersController::show" type="service_closure" id=".service_locator._KOe8P1"/>
         <argument key="App\Controller\BanController::delete" type="service_closure" id=".service_locator.4WM7mxr"/>
-        <argument key="App\Controller\BanController::edit" type="service_closure" id=".service_locator.4WM7mxr"/>
+        <argument key="App\Controller\BanController::edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController::index" type="service_closure" id=".service_locator.bCnny4Z"/>
-        <argument key="App\Controller\BanController::new" type="service_closure" id=".service_locator.zA44DHy"/>
+        <argument key="App\Controller\BanController::new" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController::show" type="service_closure" id=".service_locator.1V0mQ8V"/>
         <argument key="App\Controller\CategoryController::delete" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController::edit" type="service_closure" id=".service_locator.bw8tvv2"/>
@@ -7478,9 +7481,9 @@
         <argument key="App\Controller\AllusersController:new" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\AllusersController:show" type="service_closure" id=".service_locator._KOe8P1"/>
         <argument key="App\Controller\BanController:delete" type="service_closure" id=".service_locator.4WM7mxr"/>
-        <argument key="App\Controller\BanController:edit" type="service_closure" id=".service_locator.4WM7mxr"/>
+        <argument key="App\Controller\BanController:edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController:index" type="service_closure" id=".service_locator.bCnny4Z"/>
-        <argument key="App\Controller\BanController:new" type="service_closure" id=".service_locator.zA44DHy"/>
+        <argument key="App\Controller\BanController:new" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController:show" type="service_closure" id=".service_locator.1V0mQ8V"/>
         <argument key="App\Controller\CategoryController:delete" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController:edit" type="service_closure" id=".service_locator.bw8tvv2"/>
@@ -8344,12 +8347,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.6mZO6oc"/>
+      <argument type="service" id=".service_locator.tlGKbYZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.6mZO6oc"/>
+      <argument type="service" id=".service_locator.tlGKbYZ"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8371,6 +8374,7 @@
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator._KOe8P1.App\Entity\Allusers" class="App\Entity\Allusers"/>
     <service id=".errored..service_locator.1V0mQ8V.App\Entity\Ban" class="App\Entity\Ban"/>
+    <service id=".errored..service_locator.dcAGksr.App\Entity\Ban" class="App\Entity\Ban"/>
     <service id=".errored..service_locator.4WM7mxr.App\Entity\Ban" class="App\Entity\Ban"/>
     <service id=".errored..service_locator.7P87fGM.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.bw8tvv2.App\Entity\Category" class="App\Entity\Category"/>
@@ -9352,7 +9356,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.6mZO6oc"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.tlGKbYZ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9378,7 +9382,8 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.hKIBk2X" alias=".service_locator.4YltF_L"/>
     <service id=".service_locator.LKpZXph" alias=".service_locator.bCnny4Z"/>
-    <service id=".service_locator.tltedUr" alias=".service_locator.6mZO6oc"/>
+    <service id=".service_locator.APd5.7A" alias=".service_locator.dcAGksr"/>
+    <service id=".service_locator.IGuLlUV" alias=".service_locator.tlGKbYZ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.GCxTDfO" alias=".service_locator.9J.6Tej"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9410,8 +9415,8 @@
     <service id=".service_locator.FGoTFtB" alias=".service_locator.h8IUTxs"/>
     <service id=".service_locator.Iz9j3xk" alias=".service_locator._KOe8P1"/>
     <service id=".service_locator.zljsNK3" alias=".service_locator.bCnny4Z"/>
-    <service id=".service_locator.J184imk" alias=".service_locator.zA44DHy"/>
     <service id=".service_locator.x.gYJj4" alias=".service_locator.1V0mQ8V"/>
+    <service id=".service_locator.LFN1Mh." alias=".service_locator.dcAGksr"/>
     <service id=".service_locator.cBy1QjV" alias=".service_locator.4WM7mxr"/>
     <service id=".service_locator.7u3DfCJ" alias=".service_locator.RdVbGrJ"/>
     <service id=".service_locator.u.sw5uD" alias=".service_locator.7P87fGM"/>

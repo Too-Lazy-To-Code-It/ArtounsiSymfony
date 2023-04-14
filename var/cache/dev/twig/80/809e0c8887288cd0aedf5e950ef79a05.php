@@ -180,10 +180,16 @@ class __TwigTemplate_a72fab944fe8e57d6eb3746887a24781 extends Template
                         <div class=\"w-50 text-md-right\">
                             <a href=\"#\" style=\"color: #fff\">Forgot Password</a>
                         </div>
+                        <div class=\"w-50 text-md-right\">
+                            <a href=\"";
+        // line 88
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_new");
+        echo "\" style=\"color: #fff\">Register</a>
+                        </div>
                     </div>
                     ";
-        // line 88
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 88, $this->source); })()), 'form_end');
+        // line 91
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 91, $this->source); })()), 'form_end');
         echo "
                     <!-- <p class=\"w-100 text-center\">&mdash; Or Sign In With &mdash;</p>
                      <div class=\"social d-flex text-center\">
@@ -197,19 +203,19 @@ class __TwigTemplate_a72fab944fe8e57d6eb3746887a24781 extends Template
 </section>
 
 <script src=\"";
-        // line 100
+        // line 103
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 101
+        // line 104
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popper.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 102
+        // line 105
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 103
+        // line 106
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/mainL.js"), "html", null, true);
         echo "\"></script>
 
@@ -238,7 +244,7 @@ class __TwigTemplate_a72fab944fe8e57d6eb3746887a24781 extends Template
 
     public function getDebugInfo()
     {
-        return array (  213 => 103,  209 => 102,  205 => 101,  201 => 100,  186 => 88,  170 => 75,  160 => 68,  154 => 65,  148 => 62,  141 => 58,  135 => 55,  129 => 52,  121 => 47,  115 => 44,  109 => 41,  103 => 38,  97 => 35,  91 => 32,  84 => 28,  69 => 16,  63 => 13,  58 => 11,  52 => 8,  43 => 1,);
+        return array (  219 => 106,  215 => 105,  211 => 104,  207 => 103,  192 => 91,  186 => 88,  170 => 75,  160 => 68,  154 => 65,  148 => 62,  141 => 58,  135 => 55,  129 => 52,  121 => 47,  115 => 44,  109 => 41,  103 => 38,  97 => 35,  91 => 32,  84 => 28,  69 => 16,  63 => 13,  58 => 11,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -328,6 +334,9 @@ class __TwigTemplate_a72fab944fe8e57d6eb3746887a24781 extends Template
                         </div>
                         <div class=\"w-50 text-md-right\">
                             <a href=\"#\" style=\"color: #fff\">Forgot Password</a>
+                        </div>
+                        <div class=\"w-50 text-md-right\">
+                            <a href=\"{{ path('app_allusers_new') }}\" style=\"color: #fff\">Register</a>
                         </div>
                     </div>
                     {{ form_end(form) }}
