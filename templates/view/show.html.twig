@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View{% endblock %}
+
+{% block body %}
+    <h1>View</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id_view</th>
+                <td>{{ view.idView }}</td>
+            </tr>
+            <tr>
+                <th>Date_v</th>
+                <td>{{ view.dateV ? view.dateV|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_view_index') }}">back to list</a>
+
+    <a href="{{ path('app_view_edit', {'id_view': view.id_view}) }}">edit</a>
+
+    {{ include('view/_delete_form.html.twig') }}
+{% endblock %}
