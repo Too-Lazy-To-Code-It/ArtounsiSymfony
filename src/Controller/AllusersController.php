@@ -23,25 +23,15 @@ class AllusersController extends AbstractController
 {
     private function isLoggedIn(Request $request)
     {
-        // Get session
         $session = $request->getSession();
-
-        // Check if user is logged in
         if (!$session->has('user_id')) {
             return false;
         }
-
-        // Get user ID from session
         $userId = $session->get('user_id');
-
-        // Get user from database
         $user = $this->getDoctrine()->getRepository(Allusers::class)->find($userId);
-
-        // Check if user exists
         if (!$user) {
             return false;
         }
-
         return true;
     }
 
@@ -60,8 +50,6 @@ class AllusersController extends AbstractController
             return $this->redirectToRoute('app_allusers_index');
         }
         $error = $authenticationUtils->getLastAuthenticationError();
-        $lastUsername = $authenticationUtils->getLastUsername();
-
         $allusers = new Allusers();
         $form = $this->createForm(LoginType::class, $allusers);
 
@@ -177,11 +165,16 @@ class AllusersController extends AbstractController
 
 
     #[Route('/{id_user}', name: 'app_allusers_show', methods: ['GET'])]
-    public function show(Allusers $alluser, Request $request): Response
+    public function show(Allusers $alluser, Request $request, AllusersRepository $allusersRepository, $id_user): Response
     {
         if (!$this->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
+        $userId = $request->getSession()->get('user_id');
+        if ($id_user != $userId) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
+
         return $this->render('allusers/usershow.html.twig', [
             'alluser' => $alluser,
         ]);
@@ -190,6 +183,9 @@ class AllusersController extends AbstractController
     #[Route('/{id_user}/edit', name: 'app_allusers_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
+        if (!$this->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
 
