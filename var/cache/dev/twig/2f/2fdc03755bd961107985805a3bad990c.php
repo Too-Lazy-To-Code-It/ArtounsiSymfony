@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* allusers/login.html.twig */
+/* allusers/Login.html.twig */
 class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "allusers/login.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "allusers/Login.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "allusers/login.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "allusers/Login.html.twig"));
 
         // line 1
         echo "<!doctype html>
@@ -87,7 +87,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                         <div class=\"form-group\">
                             ";
         // line 31
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "Emailornickname", [], "any", false, false, false, 31), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Nickname"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "Email", [], "any", false, false, false, 31), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Nickname"]]);
         echo "
 
                         </div>
@@ -156,7 +156,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
     public function getTemplateName()
     {
-        return "allusers/login.html.twig";
+        return "allusers/Login.html.twig";
     }
 
     public function isTraitable()
@@ -201,7 +201,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                     <h3 class=\"mb-4 text-center\">Have an account?</h3>
                     {{ form_start(form,{'attr':{'class':'signin-form'}}) }}
                         <div class=\"form-group\">
-                            {{ form_row(form.Emailornickname,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
+                            {{ form_row(form.Email,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
 
                         </div>
                         <div class=\"form-group\">
@@ -237,6 +237,6 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 </body>
 </html>
 
-", "allusers/login.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\allusers\\Login.html.twig");
+", "allusers/Login.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\allusers\\Login.html.twig");
     }
 }

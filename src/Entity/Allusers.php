@@ -7,10 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Exception\BadCredentialsException;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 #[ORM\Entity(repositoryClass: AllusersRepository::class)]
-class Allusers
+class Allusers implements UserInterface
 {
 
     #[ORM\Id]
@@ -32,7 +34,6 @@ class Allusers
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
     #[Assert\Email(message: "not valid email type")]
-
     private ?string $Email = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
@@ -340,6 +341,55 @@ class Allusers
 
         return $this;
     }
+
+
+    public function getRoles(): array
+    {
+        return [$this->type];
+    }
+
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function checkCredentials(string $password): bool
+    {
+        if (!password_verify($password, $this->getPassword())) {
+            throw new BadCredentialsException('Invalid credentials');
+        }
+
+        return true;
+    }
+
+
+    public function getUsername(): ?string
+    {
+        return $this->Email;
+    }
+
+    public function getUserIdentifier(): string
+    {
+        // TODO: Implement getUserIdentifier() method.
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string|null $token
+     */
+    public function setToken(?string $token): void
+    {
+        $this->token = $token;
+    }
+
 
     /**
      * @return Collection<int, Demandetravail>
@@ -792,38 +842,4 @@ class Allusers
     }
 
 
-    public function getRoles(): array
-    {
-        $roles = $this->type;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'Observer';
-
-        return array_unique($roles);
-    }
-
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
-    }
-
-    public function getUsername()
-    {
-        // TODO: Implement getUsername() method.
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getToken(): ?string
-    {
-        return $this->token;
-    }
-
-    /**
-     * @param string|null $token
-     */
-    public function setToken(?string $token): void
-    {
-        $this->token = $token;
-    }
 }

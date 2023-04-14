@@ -12,11 +12,59 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 #[Route('/allusers')]
 class AllusersController extends AbstractController
 {
+    #[Route('/Login', name: 'app_allusers_login', methods: ['GET','POST'])]
+    public function login(Request $request, AuthenticationUtils $authenticationUtils, AllusersRepository $allusersRepository): Response
+    {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        $allusers = new Allusers();
+        $form = $this->createForm(LoginType::class, $allusers);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $email = $allusers->getEmail();
+            $password = $allusers->getPassword();
+
+            // Find user by email
+            $user = $this->getDoctrine()->getRepository(Allusers::class)->findOneBy(['Email' => $email]);
+
+            // Check if user exists
+            if (!$user) {
+                $this->addFlash('error', 'Invalid credentials.');
+                return $this->redirectToRoute('app_allusers_new');
+            }
+
+            // Verify password
+            $encryptedPassword = $user->getPassword();
+            $salt = $user->getSalt();
+
+            if (!$allusersRepository->decryptPassword($encryptedPassword, $salt, $password)) {
+                $this->addFlash('error', 'Invalid credentials.');
+                return $this->redirectToRoute('app_allusers_new');
+            }
+
+            // Create session and redirect to home page
+            $session = $request->getSession();
+            $session->set('user_id', $user->getid_user());
+            return $this->redirectToRoute('app_allusers_index');
+        }
+
+        return $this->render('allusers/Login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'form' => $form->createView(),
+        ]);
+    }
+
+
 
 
     #[Route('/', name: 'app_allusers_index', methods: ['GET'])]
