@@ -21,7 +21,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 #[Route('/allusers')]
 class AllusersController extends AbstractController
 {
-    private function isLoggedIn(Request $request)
+    public function isLoggedIn(Request $request)
     {
         $session = $request->getSession();
         if (!$session->has('user_id')) {
@@ -154,7 +154,7 @@ class AllusersController extends AbstractController
 
             $allusersRepository->save($alluser, true);
 
-            return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_allusers_login', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('allusers/new.html.twig', [
@@ -208,9 +208,12 @@ class AllusersController extends AbstractController
         ]);
     }
 
-    #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['POST'])]
+    #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['GET','POST'])]
     public function delete(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
+        if (!$this->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
         if ($this->isCsrfTokenValid('delete' . $alluser->getId_user(), $request->request->get('_token'))) {
             $allusersRepository->remove($alluser, true);
         }

@@ -286,7 +286,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_allusers_index') }}">
+            <a class="nav-link collapsed" href="{{ path('app_ban_index') }}">
                 <i class="bi bi-briefcase"></i>
                 <span>Bans</span>
             </a>
@@ -364,20 +364,6 @@
                             </div>
                         </div>
 
-                        <div class="ligne">
-                            <div class="col-6">
-                                <a href="{{ path('app_allusers_index') }}">
-                                    <i class="fas fa-plus"></i>
-                                    Ajouter une offre
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="{{ path('app_allusers_index') }}">
-                                    <i class="fas fa-archive"></i>
-                                    Mon archive
-                                </a>
-                            </div>
-                        </div>
 
 
                         <!-- Table with stripped rows -->
@@ -426,7 +412,6 @@
                                 </td>
                                 <td>
                                     <a href="{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}">edit</a>
-                                    <a href="{{ path('app_allusers_delete', {'id_user': alluser.id_user}) }}">delete</a>
                                 </td>
                             {% else %}
                                 <tr>

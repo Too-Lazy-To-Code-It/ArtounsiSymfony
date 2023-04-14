@@ -4,20 +4,29 @@ namespace App\Controller;
 
 use App\Entity\Ban;
 use App\Form\BanType;
+use App\Repository\AllusersRepository;
 use App\Repository\BanRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Controller\AllusersController;
 
 #[Route('/ban')]
 class BanController extends AbstractController
 {
     #[Route('/', name: 'app_ban_index', methods: ['GET'])]
-    public function index(BanRepository $banRepository): Response
+    public function index(Request $request, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
     {
+        if (!$ac->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_login');
+        }
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
         return $this->render('ban/index.html.twig', [
             'bans' => $banRepository->findAll(),
+            'logged' => $user,
         ]);
     }
 

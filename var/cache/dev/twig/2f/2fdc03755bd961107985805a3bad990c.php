@@ -67,7 +67,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 </head>
 <body class=\"img js-fullheight\" style=\"background-image: url(";
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/bg.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/banner-bg.jpg"), "html", null, true);
         echo ");\">
 <section class=\"ftco-section\">
     <div class=\"container\">
@@ -187,7 +187,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
 
 </head>
-<body class=\"img js-fullheight\" style=\"background-image: url({{ asset('assets/images/bg.jpg') }});\">
+<body class=\"img js-fullheight\" style=\"background-image: url({{ asset('assets/images/banner-bg.jpg') }});\">
 <section class=\"ftco-section\">
     <div class=\"container\">
         <div class=\"row justify-content-center\">
