@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FavorisTuroial{% endblock %}
+
+{% block body %}
+    <h1>FavorisTuroial</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id_favoris</th>
+                <td>{{ favoris_turoial.idFavoris }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_favoris_turoial_index') }}">back to list</a>
+
+    <a href="{{ path('app_favoris_turoial_edit', {'id_favoris': favoris_turoial.id_favoris}) }}">edit</a>
+
+    {{ include('favoris_turoial/_delete_form.html.twig') }}
+{% endblock %}

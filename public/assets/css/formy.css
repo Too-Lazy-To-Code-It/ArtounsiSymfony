@@ -1,0 +1,24 @@
+
+.itemfor form form_start {
+ 
+    height: 46px;
+    border: 1px solid #7453fc;
+    outline: none;
+    border-radius: 23px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  .itemfor form form_end {
+ 
+    height: 46px;
+    border: 1px solid #7453fc;
+    outline: none;
+    border-radius: 23px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    margin-right: 15px;
+  }

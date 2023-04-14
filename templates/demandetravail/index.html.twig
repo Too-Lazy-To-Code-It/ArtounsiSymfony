@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demandetravail index{% endblock %}
+
+{% block body %}
+    <h1>Demandetravail index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdDemande</th>
+                <th>Nickname</th>
+                <th>TitreDemande</th>
+                <th>DescriptionDemande</th>
+                <th>Pdf</th>
+                <th>Dateajoutdemande</th>
+                <th>Categoriedemande</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demandetravail in demandetravails %}
+            <tr>
+                <td>{{ demandetravail.idDemande }}</td>
+                <td>{{ demandetravail.nickname }}</td>
+                <td>{{ demandetravail.titreDemande }}</td>
+                <td>{{ demandetravail.descriptionDemande }}</td>
+                <td>{{ demandetravail.pdf }}</td>
+                <td>{{ demandetravail.dateajoutdemande ? demandetravail.dateajoutdemande|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ demandetravail.categoriedemande }}</td>
+                <td>
+                    <a href="{{ path('app_demandetravail_show', {'idDemande': demandetravail.idDemande}) }}">show</a>
+                    <a href="{{ path('app_demandetravail_edit', {'idDemande': demandetravail.idDemande}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demandetravail_new') }}">Create new</a>
+{% endblock %}

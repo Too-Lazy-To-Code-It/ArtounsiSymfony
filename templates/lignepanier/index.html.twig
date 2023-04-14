@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lignepanier index{% endblock %}
+
+{% block body %}
+    <h1>Lignepanier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idlignepanier</th>
+                <th>Dateajout</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lignepanier in lignepaniers %}
+            <tr>
+                <td>{{ lignepanier.idlignepanier }}</td>
+                <td>{{ lignepanier.dateajout ? lignepanier.dateajout|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_lignepanier_show', {'idlignepanier': lignepanier.idlignepanier}) }}">show</a>
+                    <a href="{{ path('app_lignepanier_edit', {'idlignepanier': lignepanier.idlignepanier}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_lignepanier_new') }}">Create new</a>
+{% endblock %}
