@@ -167,6 +167,7 @@ class AllusersController extends AbstractController
     #[Route('/{id_user}', name: 'app_allusers_show', methods: ['GET'])]
     public function show(Allusers $alluser, Request $request, AllusersRepository $allusersRepository, $id_user): Response
     {
+
         if (!$this->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
@@ -174,9 +175,11 @@ class AllusersController extends AbstractController
         if ($id_user != $userId) {
             return $this->redirectToRoute('app_allusers_login');
         }
+        $user = $allusersRepository->find($userId);
 
         return $this->render('allusers/usershow.html.twig', [
             'alluser' => $alluser,
+            'logged' => $user,
         ]);
     }
 
@@ -195,9 +198,13 @@ class AllusersController extends AbstractController
             return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('allusers/edit.html.twig', [
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
+        return $this->renderForm('allusers/usershow.html.twig', [
             'alluser' => $alluser,
             'form' => $form,
+            'logged' => $user,
         ]);
     }
 

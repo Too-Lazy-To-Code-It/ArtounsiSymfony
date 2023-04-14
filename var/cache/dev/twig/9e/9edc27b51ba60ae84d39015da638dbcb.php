@@ -50,65 +50,69 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
     <title>Tables / Data - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
-
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css}\"
+          rel=\"stylesheet\">
+    <link rel=\"stylesheet\"
+          href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\">
     <!-- Favicons -->
     <link href=\"";
-        // line 13
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
     <link href=\"";
-        // line 14
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/apple-touch-icon.png"), "html", null, true);
         echo "\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
     <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\">
-    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\"
+          rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->
     <link href=\"";
-        // line 21
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 22
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 23
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/boxicons/css/boxicons.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 24
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.snow.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 25
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.bubble.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/remixicon/remixicon.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 27
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Template Main CSS File -->
     <link href=\"";
-        // line 30
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- =======================================================
-    * Template Name: NiceAdmin
-    * Updated: Mar 09 2023 with Bootstrap v5.2.3
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-</head>
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
 
 <body>
 
@@ -117,8 +121,12 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
     <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-            <img src=\"assets/img/logo.png\" alt=\"\">
-            <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"";
+        // line 52
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/ARTounsi.png"), "html", null, true);
+        echo "\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
+
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
     </div><!-- End Logo -->
@@ -234,10 +242,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                         <a href=\"#\">
                             <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>";
-        // line 165
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 165, $this->source); })()), "name", [], "any", false, false, false, 165), "html", null, true);
-        echo "</h4>
+                                <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
@@ -286,17 +291,31 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
             <li class=\"nav-item dropdown pe-3\">
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
+                    <img src=\"";
+        // line 219
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/Avatars/" . twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 219, $this->source); })()), "avatar", [], "any", false, false, false, 219))), "html", null, true);
+        echo "\" alt=\"Profile\" class=\"rounded-circle\">
+
                     <span class=\"d-none d-md-block dropdown-toggle ps-2\">";
-        // line 215
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 215, $this->source); })()), "name", [], "any", false, false, false, 215), "html", null, true);
+        // line 221
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 221, $this->source); })()), "name", [], "any", false, false, false, 221), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 221, $this->source); })()), "lastName", [], "any", false, false, false, 221), "html", null, true);
         echo "</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
                     <li class=\"dropdown-header\">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6>";
+        // line 226
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 226, $this->source); })()), "name", [], "any", false, false, false, 226), "html", null, true);
+        echo ".";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 226, $this->source); })()), "lastName", [], "any", false, false, false, 226), "html", null, true);
+        echo "</h6>
+                        <span>";
+        // line 227
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 227, $this->source); })()), "type", [], "any", false, false, false, 227), "html", null, true);
+        echo "</span>
                     </li>
                     <li>
                         <hr class=\"dropdown-divider\">
@@ -333,7 +352,10 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                     </li>
 
                     <li>
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"";
+        // line 264
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+        echo "\">
                             <i class=\"bi bi-box-arrow-right\"></i>
                             <span>Sign Out</span>
                         </a>
@@ -345,272 +367,132 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
         </ul>
     </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header>
 
-<!-- ======= Sidebar ======= -->
 <aside id=\"sidebar\" class=\"sidebar\">
 
     <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
 
         <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"index.html\">
-                <i class=\"bi bi-grid\"></i>
-                <span>Dashboard</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"components-alerts.html\">
-                        <i class=\"bi bi-circle\"></i><span>Alerts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-accordion.html\">
-                        <i class=\"bi bi-circle\"></i><span>Accordion</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-badges.html\">
-                        <i class=\"bi bi-circle\"></i><span>Badges</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-breadcrumbs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-buttons.html\">
-                        <i class=\"bi bi-circle\"></i><span>Buttons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-cards.html\">
-                        <i class=\"bi bi-circle\"></i><span>Cards</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-carousel.html\">
-                        <i class=\"bi bi-circle\"></i><span>Carousel</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-list-group.html\">
-                        <i class=\"bi bi-circle\"></i><span>List group</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-modal.html\">
-                        <i class=\"bi bi-circle\"></i><span>Modal</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-tabs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Tabs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-pagination.html\">
-                        <i class=\"bi bi-circle\"></i><span>Pagination</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-progress.html\">
-                        <i class=\"bi bi-circle\"></i><span>Progress</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-spinners.html\">
-                        <i class=\"bi bi-circle\"></i><span>Spinners</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-tooltips.html\">
-                        <i class=\"bi bi-circle\"></i><span>Tooltips</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Components Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"forms-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"forms-elements.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Elements</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-layouts.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-editors.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-validation.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Forms Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"tables-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"tables-general.html\">
-                        <i class=\"bi bi-circle\"></i><span>General Tables</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"tables-data.html\" class=\"active\">
-                        <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Tables Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"charts-chartjs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Chart.js</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"charts-apexcharts.html\">
-                        <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"charts-echarts.html\">
-                        <i class=\"bi bi-circle\"></i><span>ECharts</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Charts Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"icons-bootstrap.html\">
-                        <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"icons-remix.html\">
-                        <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"icons-boxicons.html\">
-                        <i class=\"bi bi-circle\"></i><span>Boxicons</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Icons Nav -->
-
-        <li class=\"nav-heading\">Pages</li>
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"users-profile.html\">
+            <a class=\"nav-link \" href=\"";
+        // line 283
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
                 <i class=\"bi bi-person\"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"";
+        // line 289
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
+                <i class=\"bi bi-briefcase\"></i>
+                <span>Bans</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"";
+        // line 295
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 295, $this->source); })()), "id_user", [], "any", false, false, false, 295)]), "html", null, true);
+        echo "\">
+                <i class=\"bi bi-person-badge\"></i>
                 <span>Profile</span>
             </a>
-        </li><!-- End Profile Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
-                <i class=\"bi bi-question-circle\"></i>
-                <span>F.A.Q</span>
-            </a>
-        </li><!-- End F.A.Q Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
-                <i class=\"bi bi-envelope\"></i>
-                <span>Contact</span>
-            </a>
-        </li><!-- End Contact Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-register.html\">
-                <i class=\"bi bi-card-list\"></i>
-                <span>Register</span>
-            </a>
-        </li><!-- End Register Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-login.html\">
-                <i class=\"bi bi-box-arrow-in-right\"></i>
-                <span>Login</span>
-            </a>
-        </li><!-- End Login Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
-                <i class=\"bi bi-dash-circle\"></i>
-                <span>Error 404</span>
-            </a>
-        </li><!-- End Error 404 Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
-                <i class=\"bi bi-file-earmark\"></i>
-                <span>Blank</span>
-            </a>
-        </li><!-- End Blank Page Nav -->
+        </li>
 
     </ul>
 
-</aside><!-- End Sidebar-->
+</aside>
+
+<!-- End Sidebar-->
 
 <main id=\"main\" class=\"main\">
 
     <div class=\"pagetitle\">
-        <h1>Data Tables</h1>
+        <h1>Users</h1>
         <nav>
             <ol class=\"breadcrumb\">
-                <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
-                <li class=\"breadcrumb-item\">Tables</li>
-                <li class=\"breadcrumb-item active\">Data</li>
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+
+                <li class=\"breadcrumb-item active\">Users</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .ligne {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
 
+        }
+
+        .bg-gradient-primary {
+            background-color: #007bff;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .table td {
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+        }
+
+        .table th {
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+            font-weight: bold;
+            color: #555555;
+        }
+
+        button {
+            color: white;
+            border: none;
+            background-color: white;
+        }
+
+
+    </style>
     <section class=\"section\">
         <div class=\"row\">
             <div class=\"col-lg-12\">
 
                 <div class=\"card\">
                     <div class=\"card-body\">
-                        <h5 class=\"card-title\">Datatables</h5>
-                        <p>Add lightweight datatables to your project with using the <a href=\"https://github.com/fiduswriter/Simple-DataTables\" target=\"_blank\">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+                        <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
+                            <div class=\"bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3\">
+                                <h4 class=\"text-white text-capitalize ps-31\">Users</h4>
+                            </div>
+                        </div>
+
+                        <div class=\"ligne\">
+                            <div class=\"col-6\">
+                                <a href=\"";
+        // line 369
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
+                                    <i class=\"fas fa-plus\"></i>
+                                    Ajouter une offre
+                                </a>
+                            </div>
+                            <div class=\"col-6\">
+                                <a href=\"";
+        // line 375
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
+                                    <i class=\"fas fa-archive\"></i>
+                                    Mon archive
+                                </a>
+                            </div>
+                        </div>
+
 
                         <!-- Table with stripped rows -->
                         <table class=\"table datatable\">
                             <thead>
                             <tr>
-                                <th scope=\"col\">#</th>
                                 <th scope=\"col\">Name</th>
                                 <th scope=\"col\">Last Name</th>
                                 <th scope=\"col\">Nickname</th>
@@ -622,77 +504,91 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                             </tr>
                             </thead>
                             <tbody>
+
                             ";
-        // line 547
+        // line 399
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["allusers"]) || array_key_exists("allusers", $context) ? $context["allusers"] : (function () { throw new RuntimeError('Variable "allusers" does not exist.', 547, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["allusers"]) || array_key_exists("allusers", $context) ? $context["allusers"] : (function () { throw new RuntimeError('Variable "allusers" does not exist.', 399, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["alluser"]) {
-            // line 548
-            echo "                            <tr>
-                                <th scope=\"row\">1</th>
+            // line 400
+            echo "
+                                <tr>
+
                                 <td>";
-            // line 550
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "name", [], "any", false, false, false, 550), "html", null, true);
+            // line 403
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "name", [], "any", false, false, false, 403), "html", null, true);
             echo "</td>
-                                <td>";
-            // line 551
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "LastName", [], "any", false, false, false, 551), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 552
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "nickname", [], "any", false, false, false, 552), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 553
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "type", [], "any", false, false, false, 553), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 554
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "Email", [], "any", false, false, false, 554), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 555
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "nationality", [], "any", false, false, false, 555), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 556
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "description", [], "any", false, false, false, 556), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 557
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "bio", [], "any", false, false, false, 557), "html", null, true);
-            echo "</td>
+
+
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 407
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "LastName", [], "any", false, false, false, 407), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 410
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "nickname", [], "any", false, false, false, 410), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 413
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "type", [], "any", false, false, false, 413), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 416
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "Email", [], "any", false, false, false, 416), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 419
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "nationality", [], "any", false, false, false, 419), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 422
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "description", [], "any", false, false, false, 422), "html", null, true);
+            echo "
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    ";
+            // line 425
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["alluser"], "bio", [], "any", false, false, false, 425), "html", null, true);
+            echo "
+                                </td>
                                 <td>
                                     <a href=\"";
-            // line 559
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_show", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 559)]), "html", null, true);
-            echo "\">show</a>
-                                    <a href=\"";
-            // line 560
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 560)]), "html", null, true);
+            // line 428
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 428)]), "html", null, true);
             echo "\">edit</a>
                                     <a href=\"";
-            // line 561
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_delete", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 561)]), "html", null, true);
+            // line 429
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_delete", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 429)]), "html", null, true);
             echo "\">delete</a>
                                 </td>
-                            </tr>
                             ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 565
+            // line 432
             echo "                                <tr>
                                     <td colspan=\"15\">no records found</td>
                                 </tr>
 
+                                </tr>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['alluser'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 570
+        // line 438
         echo "
                             </tbody>
                         </table>
@@ -705,66 +601,52 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
         </div>
     </section>
 
-</main><!-- End #main -->
+</main>
+<!-- End Footer -->
 
-<!-- ======= Footer ======= -->
-<footer id=\"footer\" class=\"footer\">
-    <div class=\"copyright\">
-        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class=\"credits\">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-        Designed by <a href=\"";
-        // line 594
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://bootstrapmade.com/"), "html", null, true);
-        echo "\">BootstrapMade</a>
-    </div>
-</footer><!-- End Footer -->
-
-<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
 
 <!-- Vendor JS Files -->
 <script src=\"";
-        // line 601
+        // line 457
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 602
+        // line 458
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 603
+        // line 459
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 604
+        // line 460
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 605
+        // line 461
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 606
+        // line 462
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 607
+        // line 463
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 608
+        // line 464
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
-
+<script src=\"https://kit.fontawesome.com/a076d05399.js\" crossorigin=\"anonymous\"></script>
 <!-- Template Main JS File -->
 <script src=\"";
-        // line 611
+        // line 467
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         echo "\"></script>
+
 
 </body>
 
@@ -789,7 +671,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
     public function getDebugInfo()
     {
-        return array (  766 => 611,  760 => 608,  756 => 607,  752 => 606,  748 => 605,  744 => 604,  740 => 603,  736 => 602,  732 => 601,  722 => 594,  696 => 570,  686 => 565,  677 => 561,  673 => 560,  669 => 559,  664 => 557,  660 => 556,  656 => 555,  652 => 554,  648 => 553,  644 => 552,  640 => 551,  636 => 550,  632 => 548,  627 => 547,  292 => 215,  239 => 165,  101 => 30,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  79 => 23,  75 => 22,  71 => 21,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  647 => 467,  641 => 464,  637 => 463,  633 => 462,  629 => 461,  625 => 460,  621 => 459,  617 => 458,  613 => 457,  592 => 438,  581 => 432,  573 => 429,  569 => 428,  563 => 425,  557 => 422,  551 => 419,  545 => 416,  539 => 413,  533 => 410,  527 => 407,  520 => 403,  515 => 400,  510 => 399,  483 => 375,  474 => 369,  397 => 295,  388 => 289,  379 => 283,  357 => 264,  317 => 227,  311 => 226,  301 => 221,  296 => 219,  126 => 52,  105 => 34,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  83 => 27,  79 => 26,  75 => 25,  64 => 17,  60 => 16,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -804,14 +686,18 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
     <title>Tables / Data - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
-
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css}\"
+          rel=\"stylesheet\">
+    <link rel=\"stylesheet\"
+          href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\">
     <!-- Favicons -->
     <link href=\"{{ asset('assets/img/favicon.png') }}\" rel=\"icon\">
     <link href=\"{{ asset('assets/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
     <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\">
-    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\"
+          rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->
     <link href=\"{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
@@ -826,13 +712,13 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
     <link href=\"{{ asset('assets/css/style.css') }}\" rel=\"stylesheet\">
 
     <!-- =======================================================
-    * Template Name: NiceAdmin
-    * Updated: Mar 09 2023 with Bootstrap v5.2.3
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-</head>
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
 
 <body>
 
@@ -841,8 +727,9 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
     <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-            <img src=\"assets/img/logo.png\" alt=\"\">
-            <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"{{ asset('assets/img/ARTounsi.png') }}\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
+
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
     </div><!-- End Logo -->
@@ -958,7 +845,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                         <a href=\"#\">
                             <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>{{ logged.name }}</h4>
+                                <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
@@ -1007,14 +894,15 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
             <li class=\"nav-item dropdown pe-3\">
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ logged.name }}</span>
+                    <img src=\"{{ asset('uploads/Avatars/' ~ logged.avatar) }}\" alt=\"Profile\" class=\"rounded-circle\">
+
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ logged.name }} {{ logged.lastName }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
                     <li class=\"dropdown-header\">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6>{{ logged.name }}.{{ logged.lastName }}</h6>
+                        <span>{{ logged.type }}</span>
                     </li>
                     <li>
                         <hr class=\"dropdown-divider\">
@@ -1051,7 +939,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                     </li>
 
                     <li>
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"{{ path('app_allusers_logout') }}\">
                             <i class=\"bi bi-box-arrow-right\"></i>
                             <span>Sign Out</span>
                         </a>
@@ -1063,272 +951,117 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
         </ul>
     </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header>
 
-<!-- ======= Sidebar ======= -->
 <aside id=\"sidebar\" class=\"sidebar\">
 
     <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
 
         <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"index.html\">
-                <i class=\"bi bi-grid\"></i>
-                <span>Dashboard</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"components-alerts.html\">
-                        <i class=\"bi bi-circle\"></i><span>Alerts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-accordion.html\">
-                        <i class=\"bi bi-circle\"></i><span>Accordion</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-badges.html\">
-                        <i class=\"bi bi-circle\"></i><span>Badges</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-breadcrumbs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-buttons.html\">
-                        <i class=\"bi bi-circle\"></i><span>Buttons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-cards.html\">
-                        <i class=\"bi bi-circle\"></i><span>Cards</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-carousel.html\">
-                        <i class=\"bi bi-circle\"></i><span>Carousel</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-list-group.html\">
-                        <i class=\"bi bi-circle\"></i><span>List group</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-modal.html\">
-                        <i class=\"bi bi-circle\"></i><span>Modal</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-tabs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Tabs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-pagination.html\">
-                        <i class=\"bi bi-circle\"></i><span>Pagination</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-progress.html\">
-                        <i class=\"bi bi-circle\"></i><span>Progress</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-spinners.html\">
-                        <i class=\"bi bi-circle\"></i><span>Spinners</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"components-tooltips.html\">
-                        <i class=\"bi bi-circle\"></i><span>Tooltips</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Components Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"forms-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"forms-elements.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Elements</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-layouts.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-editors.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"forms-validation.html\">
-                        <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Forms Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"tables-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"tables-general.html\">
-                        <i class=\"bi bi-circle\"></i><span>General Tables</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"tables-data.html\" class=\"active\">
-                        <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Tables Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"charts-chartjs.html\">
-                        <i class=\"bi bi-circle\"></i><span>Chart.js</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"charts-apexcharts.html\">
-                        <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"charts-echarts.html\">
-                        <i class=\"bi bi-circle\"></i><span>ECharts</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Charts Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-                <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-            </a>
-            <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-                <li>
-                    <a href=\"icons-bootstrap.html\">
-                        <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"icons-remix.html\">
-                        <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=\"icons-boxicons.html\">
-                        <i class=\"bi bi-circle\"></i><span>Boxicons</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Icons Nav -->
-
-        <li class=\"nav-heading\">Pages</li>
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"users-profile.html\">
+            <a class=\"nav-link \" href=\"{{ path('app_allusers_index') }}\">
                 <i class=\"bi bi-person\"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_index') }}\">
+                <i class=\"bi bi-briefcase\"></i>
+                <span>Bans</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_edit',{'id_user': logged.id_user}) }}\">
+                <i class=\"bi bi-person-badge\"></i>
                 <span>Profile</span>
             </a>
-        </li><!-- End Profile Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
-                <i class=\"bi bi-question-circle\"></i>
-                <span>F.A.Q</span>
-            </a>
-        </li><!-- End F.A.Q Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
-                <i class=\"bi bi-envelope\"></i>
-                <span>Contact</span>
-            </a>
-        </li><!-- End Contact Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-register.html\">
-                <i class=\"bi bi-card-list\"></i>
-                <span>Register</span>
-            </a>
-        </li><!-- End Register Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-login.html\">
-                <i class=\"bi bi-box-arrow-in-right\"></i>
-                <span>Login</span>
-            </a>
-        </li><!-- End Login Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
-                <i class=\"bi bi-dash-circle\"></i>
-                <span>Error 404</span>
-            </a>
-        </li><!-- End Error 404 Page Nav -->
-
-        <li class=\"nav-item\">
-            <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
-                <i class=\"bi bi-file-earmark\"></i>
-                <span>Blank</span>
-            </a>
-        </li><!-- End Blank Page Nav -->
+        </li>
 
     </ul>
 
-</aside><!-- End Sidebar-->
+</aside>
+
+<!-- End Sidebar-->
 
 <main id=\"main\" class=\"main\">
 
     <div class=\"pagetitle\">
-        <h1>Data Tables</h1>
+        <h1>Users</h1>
         <nav>
             <ol class=\"breadcrumb\">
-                <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
-                <li class=\"breadcrumb-item\">Tables</li>
-                <li class=\"breadcrumb-item active\">Data</li>
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+
+                <li class=\"breadcrumb-item active\">Users</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .ligne {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
 
+        }
+
+        .bg-gradient-primary {
+            background-color: #007bff;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .table td {
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+        }
+
+        .table th {
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+            font-weight: bold;
+            color: #555555;
+        }
+
+        button {
+            color: white;
+            border: none;
+            background-color: white;
+        }
+
+
+    </style>
     <section class=\"section\">
         <div class=\"row\">
             <div class=\"col-lg-12\">
 
                 <div class=\"card\">
                     <div class=\"card-body\">
-                        <h5 class=\"card-title\">Datatables</h5>
-                        <p>Add lightweight datatables to your project with using the <a href=\"https://github.com/fiduswriter/Simple-DataTables\" target=\"_blank\">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+                        <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
+                            <div class=\"bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3\">
+                                <h4 class=\"text-white text-capitalize ps-31\">Users</h4>
+                            </div>
+                        </div>
+
+                        <div class=\"ligne\">
+                            <div class=\"col-6\">
+                                <a href=\"{{ path('app_allusers_index') }}\">
+                                    <i class=\"fas fa-plus\"></i>
+                                    Ajouter une offre
+                                </a>
+                            </div>
+                            <div class=\"col-6\">
+                                <a href=\"{{ path('app_allusers_index') }}\">
+                                    <i class=\"fas fa-archive\"></i>
+                                    Mon archive
+                                </a>
+                            </div>
+                        </div>
+
 
                         <!-- Table with stripped rows -->
                         <table class=\"table datatable\">
                             <thead>
                             <tr>
-                                <th scope=\"col\">#</th>
                                 <th scope=\"col\">Name</th>
                                 <th scope=\"col\">Last Name</th>
                                 <th scope=\"col\">Nickname</th>
@@ -1340,28 +1073,45 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                             </tr>
                             </thead>
                             <tbody>
+
                             {% for alluser in allusers %}
-                            <tr>
-                                <th scope=\"row\">1</th>
+
+                                <tr>
+
                                 <td>{{ alluser.name }}</td>
-                                <td>{{ alluser.LastName }}</td>
-                                <td>{{ alluser.nickname }}</td>
-                                <td>{{ alluser.type }}</td>
-                                <td>{{ alluser.Email }}</td>
-                                <td>{{ alluser.nationality }}</td>
-                                <td>{{ alluser.description }}</td>
-                                <td>{{ alluser.bio }}</td>
+
+
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.LastName }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.nickname }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.type }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.Email }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.nationality }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.description }}
+                                </td>
+                                <td class=\"align-middle text-center text-sm\">
+                                    {{ alluser.bio }}
+                                </td>
                                 <td>
-                                    <a href=\"{{ path('app_allusers_show', {'id_user': alluser.id_user}) }}\">show</a>
                                     <a href=\"{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}\">edit</a>
                                     <a href=\"{{ path('app_allusers_delete', {'id_user': alluser.id_user}) }}\">delete</a>
                                 </td>
-                            </tr>
                             {% else %}
                                 <tr>
                                     <td colspan=\"15\">no records found</td>
                                 </tr>
 
+                                </tr>
                             {% endfor %}
 
                             </tbody>
@@ -1375,23 +1125,11 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
         </div>
     </section>
 
-</main><!-- End #main -->
+</main>
+<!-- End Footer -->
 
-<!-- ======= Footer ======= -->
-<footer id=\"footer\" class=\"footer\">
-    <div class=\"copyright\">
-        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class=\"credits\">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-        Designed by <a href=\"{{ asset('https://bootstrapmade.com/') }}\">BootstrapMade</a>
-    </div>
-</footer><!-- End Footer -->
-
-<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
 
 <!-- Vendor JS Files -->
 <script src=\"{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}\"></script>
@@ -1402,9 +1140,10 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 <script src=\"{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}\"></script>
 <script src=\"{{ asset('assets/vendor/tinymce/tinymce.min.js') }}\"></script>
 <script src=\"{{ asset('assets/vendor/php-email-form/validate.js') }}\"></script>
-
+<script src=\"https://kit.fontawesome.com/a076d05399.js\" crossorigin=\"anonymous\"></script>
 <!-- Template Main JS File -->
 <script src=\"{{ asset('assets/js/main.js') }}\"></script>
+
 
 </body>
 

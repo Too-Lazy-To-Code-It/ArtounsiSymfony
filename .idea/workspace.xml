@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81ac9291-4f87-4837-b810-611ea7d36569" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/img/ARTounsi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Artounsi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Artounsi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AllusersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AllusersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/allusers/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allusers/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/allusers/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allusers/users.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/allusers/usershow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allusers/usershow.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/I/O/I4PrsRySYM8xZJPrnnYQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/I/O/I4PrsRySYM8xZJPrnnYQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/M/N/kDzfyETWZjMpuv75+wyQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/M/N/kDzfyETWZjMpuv75+wyQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/P/K/5LOaL3Voq+Qdt-diIFjQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/system/flgHh1UkOe/P/K/5LOaL3Voq+Qdt-diIFjQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/7f/7fb1d9ebb0c931f36fa7946c5c5c0ac9.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/7f/7fb1d9ebb0c931f36fa7946c5c5c0ac9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/9e/9edc27b51ba60ae84d39015da638dbcb.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/9e/9edc27b51ba60ae84d39015da638dbcb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +186,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/templates/allusers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/public/assets/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -194,6 +198,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\public\assets\img" />
       <recent name="C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\templates\allusers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -233,7 +238,8 @@
       <workItem from="1680831868263" duration="16011000" />
       <workItem from="1680861903193" duration="869000" />
       <workItem from="1681423774067" duration="3582000" />
-      <workItem from="1681433046115" duration="3745000" />
+      <workItem from="1681433046115" duration="7290000" />
+      <workItem from="1681445019218" duration="3836000" />
     </task>
     <servers />
   </component>
