@@ -234,7 +234,10 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                         <a href=\"#\">
                             <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>Maria Hudson</h4>
+                                <h4>";
+        // line 165
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 165, $this->source); })()), "name", [], "any", false, false, false, 165), "html", null, true);
+        echo "</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
@@ -284,7 +287,10 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
                     <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">";
+        // line 215
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logged"]) || array_key_exists("logged", $context) ? $context["logged"] : (function () { throw new RuntimeError('Variable "logged" does not exist.', 215, $this->source); })()), "name", [], "any", false, false, false, 215), "html", null, true);
+        echo "</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
@@ -783,7 +789,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
     public function getDebugInfo()
     {
-        return array (  760 => 611,  754 => 608,  750 => 607,  746 => 606,  742 => 605,  738 => 604,  734 => 603,  730 => 602,  726 => 601,  716 => 594,  690 => 570,  680 => 565,  671 => 561,  667 => 560,  663 => 559,  658 => 557,  654 => 556,  650 => 555,  646 => 554,  642 => 553,  638 => 552,  634 => 551,  630 => 550,  626 => 548,  621 => 547,  101 => 30,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  79 => 23,  75 => 22,  71 => 21,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  766 => 611,  760 => 608,  756 => 607,  752 => 606,  748 => 605,  744 => 604,  740 => 603,  736 => 602,  732 => 601,  722 => 594,  696 => 570,  686 => 565,  677 => 561,  673 => 560,  669 => 559,  664 => 557,  660 => 556,  656 => 555,  652 => 554,  648 => 553,  644 => 552,  640 => 551,  636 => 550,  632 => 548,  627 => 547,  292 => 215,  239 => 165,  101 => 30,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  79 => 23,  75 => 22,  71 => 21,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -952,7 +958,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
                         <a href=\"#\">
                             <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>Maria Hudson</h4>
+                                <h4>{{ logged.name }}</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
@@ -1002,7 +1008,7 @@ class __TwigTemplate_f93bdc3a90ea00b65df72a63ceac7450 extends Template
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
                     <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ logged.name }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
