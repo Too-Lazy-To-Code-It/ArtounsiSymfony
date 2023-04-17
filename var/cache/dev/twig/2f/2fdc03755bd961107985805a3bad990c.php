@@ -82,7 +82,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                     <h3 class=\"mb-4 text-center\">Have an account?</h3>
                     ";
         // line 29
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), 'form_start', ["attr" => ["class" => "signin-form"]]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), 'form_start', ["attr" => ["class" => "signin-form", "novalidate" => "novalidate"]]);
         echo "
                         <div class=\"form-group\">
                             ";
@@ -120,7 +120,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                         </div>
                     ";
         // line 52
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), 'form_end');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
                 </div>
             </div>
@@ -202,7 +202,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
             <div class=\"col-md-6 col-lg-4\">
                 <div class=\"login-wrap p-0\">
                     <h3 class=\"mb-4 text-center\">Have an account?</h3>
-                    {{ form_start(form,{'attr':{'class':'signin-form'}}) }}
+                    {{ form_start(form,{'attr':{'class':'signin-form','novalidate': 'novalidate'}}) }}
                         <div class=\"form-group\">
                             {{ form_row(form.Email,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
 
@@ -225,7 +225,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                                 <a href=\"{{ path('app_allusers_new') }}\" style=\"color: #fff\">Register</a>
                             </div>
                         </div>
-                    {{ form_end(form) }}
+                    {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
                 </div>
             </div>
         </div>

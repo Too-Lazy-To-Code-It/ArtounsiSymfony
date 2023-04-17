@@ -537,7 +537,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                                 <!-- Profile Edit Form -->
                                 ";
         // line 416
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 416, $this->source); })()), 'form_start');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 416, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
                                 <div class=\"row mb-3\">
                                     <label for=\"profileImage\" class=\"col-md-4 col-lg-3 col-form-label\">Profile
@@ -695,7 +695,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                                 </div>
                                 ";
         // line 523
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 523, $this->source); })()), 'form_end');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 523, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
 
                             </div>
@@ -1298,7 +1298,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                             <div class=\"tab-pane fade profile-edit pt-3\" id=\"profile-edit\">
 
                                 <!-- Profile Edit Form -->
-                                {{ form_start(form) }}
+                                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                                 <div class=\"row mb-3\">
                                     <label for=\"profileImage\" class=\"col-md-4 col-lg-3 col-form-label\">Profile
                                         Image</label>
@@ -1405,7 +1405,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                                     <button type=\"submit\" class=\"btn btn-primary\">{{ button_label|default('Safe changes') }}</button>
                                 </div>
                                 </div>
-                                {{ form_end(form) }}
+                                {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
                             </div>
 

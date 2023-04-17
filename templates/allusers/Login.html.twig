@@ -26,7 +26,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="login-wrap p-0">
                     <h3 class="mb-4 text-center">Have an account?</h3>
-                    {{ form_start(form,{'attr':{'class':'signin-form'}}) }}
+                    {{ form_start(form,{'attr':{'class':'signin-form','novalidate': 'novalidate'}}) }}
                         <div class="form-group">
                             {{ form_row(form.Email,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
 
@@ -49,7 +49,7 @@
                                 <a href="{{ path('app_allusers_new') }}" style="color: #fff">Register</a>
                             </div>
                         </div>
-                    {{ form_end(form) }}
+                    {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 #[ORM\Entity(repositoryClass: AllusersRepository::class)]
@@ -22,6 +23,7 @@ class Allusers implements UserInterface
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Assert\Length(min:4, minMessage:"entrer un titre valide avec minimum 3 caracteres")]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Ban::class, orphanRemoval: true)]

@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerPeeERyC\App_KernelDevDebugContainer([
     'container.build_hash' => 'PeeERyC',
-    'container.build_id' => '68733749',
-    'container.build_time' => 1681460440,
+    'container.build_id' => '76719358',
+    'container.build_time' => 1681464975,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerPeeERyC');

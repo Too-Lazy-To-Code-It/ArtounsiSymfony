@@ -21,51 +21,64 @@
                 <h2 class="heading-section">Login #10</h2>
             </div>
         </div>
+<style>.color{color:red;}</style>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="login-wrap p-0">
                     <h3 class="mb-4 text-center">Have an account?</h3>
-                    {{ form_start(form,{'attr':{'class':'signin-form'}}) }}
+                    {{ form_start(form,{'attr':{'class':'signin-form','novalidate': 'novalidate'}}) }}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                {{ form_row(form.password,{'attr':{'class':'form-control','placeholder':'Password'}}) }}
+                                {{ form_widget(form.password,{'attr':{'class':'form-control','placeholder':'Password'}}) }}
+                                <div class="color"> {{ form_errors(form.password) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.name,{'attr':{'class':'form-control','placeholder':'Name'}}) }}
+                                {{ form_widget(form.name,{'attr':{'class':'form-control','placeholder':'Name'}}) }}
+                                <div class="color"> {{ form_errors(form.name) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.Email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+                                {{ form_widget(form.Email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+                                <div class="color">  {{ form_errors(form.Email) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.Last_Name,{'attr':{'class':'form-control','placeholder':'Last Name'}}) }}
+                                {{ form_widget(form.Last_Name,{'attr':{'class':'form-control','placeholder':'Last Name'}}) }}
+                                <div class="color">  {{ form_errors(form.Last_Name) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.description,{'attr':{'class':'form-control','placeholder':'Description'}}) }}
+                                {{ form_widget(form.description,{'attr':{'class':'form-control','placeholder':'Description'}}) }}
+                                <div class="color">  {{ form_errors(form.description) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.bio,{'attr':{'class':'form-control','placeholder':'BIO'}}) }}
+                                {{ form_widget(form.bio,{'attr':{'class':'form-control','placeholder':'BIO'}}) }}
+                                <div class="color">  {{ form_errors(form.bio) }}</div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {{ form_row(form.Birthday,{'attr':{'class':'form-control'}}) }}
+                                {{ form_widget(form.Birthday,{'attr':{'class':'form-control'}}) }}
+                                <div class="color">  {{ form_errors(form.Birthday) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.nationality,{'attr':{'class':'form-control','placeholder':'Nationality'}}) }}
+                                {{ form_widget(form.nationality,{'attr':{'class':'form-control','placeholder':'Nationality'}}) }}
+                                <div class="color">  {{ form_errors(form.nationality) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.type,{'attr':{'class':'form-control'}}) }}
+                                {{ form_widget(form.type,{'attr':{'class':'form-control'}}) }}
+                                <div class="color">  {{ form_errors(form.type) }}</div>
 
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.nickname,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
+                                {{ form_widget(form.nickname,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
+                                <div class="color">  {{ form_errors(form.nickname) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.avatar,{'attr':{'class':'form-control'}}) }}
+                                {{ form_widget(form.avatar,{'attr':{'class':'form-control'}}) }}
+                                <div class="color">  {{ form_errors(form.avatar) }}</div>
                             </div>
                             <div class="form-group">
-                                {{ form_row(form.background,{'attr':{'class':'form-control'}}) }}
+                                {{ form_widget(form.background,{'attr':{'class':'form-control'}}) }}
+                                <div class="color">{{ form_errors(form.background) }}</div>
                             </div>
 
                         </div>
@@ -88,7 +101,7 @@
                             <a href="{{ path('app_allusers_new') }}" style="color: #fff">Register</a>
                         </div>
                     </div>
-                    {{ form_end(form) }}
+                    {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
                     <!-- <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
                      <div class="social d-flex text-center">
                          <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>

@@ -203,13 +203,18 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
             // line 54
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 54)]), "html", null, true);
             echo "\">edit</a>
+                    <a href=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, $context["alluser"], "id_user", [], "any", false, false, false, 55)]), "html", null, true);
+            echo "\">edit</a>
+
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 58
+            // line 60
             echo "            <tr>
                 <td colspan=\"15\">no records found</td>
             </tr>
@@ -218,12 +223,12 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['alluser'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 64
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 65
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_new");
         echo "\">Create new</a>
 ";
@@ -242,7 +247,7 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
 
     public function getDebugInfo()
     {
-        return array (  227 => 65,  222 => 62,  213 => 58,  204 => 54,  200 => 53,  195 => 51,  191 => 50,  187 => 49,  183 => 48,  179 => 47,  175 => 46,  171 => 45,  167 => 44,  163 => 43,  159 => 42,  155 => 41,  151 => 40,  147 => 39,  143 => 38,  140 => 37,  135 => 36,  109 => 12,  104 => 9,  98 => 8,  96 => 7,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
+        return array (  232 => 67,  227 => 64,  218 => 60,  208 => 55,  204 => 54,  200 => 53,  195 => 51,  191 => 50,  187 => 49,  183 => 48,  179 => 47,  175 => 46,  171 => 45,  167 => 44,  163 => 43,  159 => 42,  155 => 41,  151 => 40,  147 => 39,  143 => 38,  140 => 37,  135 => 36,  109 => 12,  104 => 9,  98 => 8,  96 => 7,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -301,6 +306,8 @@ class __TwigTemplate_96f48d31ac1a2c6e9ba19566a1eb8e37 extends Template
                 <td>
                     <a href=\"{{ path('app_allusers_show', {'id_user': alluser.id_user}) }}\">show</a>
                     <a href=\"{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}\">edit</a>
+                    <a href=\"{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}\">edit</a>
+
                 </td>
             </tr>
         {% else %}
