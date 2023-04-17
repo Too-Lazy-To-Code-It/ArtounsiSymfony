@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offretravail index{% endblock %}
+
+{% block body %}
+    <h1>Offretravail index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idoffre</th>
+                <th>Titreoffre</th>
+                <th>Descriptionoffre</th>
+                <th>Categorieoffre</th>
+                <th>Nickname</th>
+                <th>Dateajoutoofre</th>
+                <th>Typeoffre</th>
+                <th>Localisationoffre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offretravail in offretravails %}
+            <tr>
+                <td>{{ offretravail.idoffre }}</td>
+                <td>{{ offretravail.titreoffre }}</td>
+                <td>{{ offretravail.descriptionoffre }}</td>
+                <td>{{ offretravail.categorieoffre }}</td>
+                <td>{{ offretravail.nickname }}</td>
+                <td>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ offretravail.typeoffre }}</td>
+                <td>{{ offretravail.localisationoffre }}</td>
+                <td>
+                    <a href="{{ path('app_offretravail_show', {'idoffre': offretravail.idoffre}) }}">show</a>
+                    <a href="{{ path('app_offretravail_edit', {'idoffre': offretravail.idoffre}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_offretravail_new') }}">Create new</a>
+{% endblock %}

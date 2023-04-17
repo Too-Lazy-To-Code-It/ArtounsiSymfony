@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View index{% endblock %}
+
+{% block body %}
+    <h1>View index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_view</th>
+                <th>Date_v</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for view in views %}
+            <tr>
+                <td>{{ view.idView }}</td>
+                <td>{{ view.dateV ? view.dateV|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_view_show', {'id_view': view.id_view}) }}">show</a>
+                    <a href="{{ path('app_view_edit', {'id_view': view.id_view}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_view_new') }}">Create new</a>
+{% endblock %}

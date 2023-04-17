@@ -1,0 +1,11 @@
+
+
+{% block title %}New Ban{% endblock %}
+
+{% block body %}
+    <h1>Create new Ban</h1>
+
+    {{ include('ban/_form.html.twig') }}
+
+    <a href="{{ path('app_ban_index') }}">back to list</a>
+{% endblock %}

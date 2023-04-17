@@ -1,0 +1,84 @@
+<style>
+ .color {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #369;
+  padding: 10px;
+ 
+}
+
+.error-message {
+    color: red;
+}
+</style>
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="card color">
+                        <div class="card-body">
+                            <h5 class="card-title"> Video</h5>
+
+                            <!-- General Form Elements -->
+                           {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': 'contact', 'class': 'my-class'}}) }}
+                                <div class="row mb-3">
+                                 {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                   
+                                    <div class="col-sm-10">
+                                       {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                          <div class="error-message"> {{ form_errors(form.title) }}</div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                  {{ form_label(form.description, 'Description', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    <div class="col-sm-10">
+                                      {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                                    <div class="error-message">  {{ form_errors(form.description, {'attr': {'class': 'error'}}) }}
+                                    </div></div>
+                                </div>
+                          
+
+                                <div class="row mb-3">
+                                 {{ form_label(form.Image, 'Image', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                      {{ form_widget(form.Image, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                 {{ form_label(form.Video, 'Video', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                      {{ form_widget(form.Video, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                   
+                                    <div class="col-sm-10">
+                                    <button type="submit" id="form-submit" class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    </div>
+                                </div>
+
+                            {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                            <!-- End General Form Elements -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <img src="{{asset('assets/tutoriel.jpg') }}" alt=""  width="95%" >
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>

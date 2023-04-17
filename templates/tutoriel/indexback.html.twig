@@ -1,0 +1,128 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Tutoriel index{% endblock %}
+
+{% block body %}
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Mes Tutoriels</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                  
+                    <li class="breadcrumb-item active">Mes Tutoriels</li>
+                </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+<style>
+.ligne{ display: flex;
+ justify-content: space-between;
+ margin:20px;
+  
+}
+
+.bg-gradient-primary {
+  background-color: #007bff;
+  border-radius: 10px;
+  color: #fff;
+  padding:20px;
+}.table td {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+}
+
+.table th {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+  font-weight: bold;
+  color: #555555;
+} button {
+  color: white;
+  border: none;
+  background-color: white;
+}
+
+
+</style>
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                                <h4 class="text-white text-capitalize ps-31">Mes Tutoriels</h4>
+                            </div>
+                        </div>
+                          
+ <div class="ligne">
+  <div class="col-6">
+    <a href="{{ path('app_tutoriel_new') }}">
+      <i class="fas fa-plus"></i>
+      Ajouter un tutoriel
+    </a>
+  </div>
+</div>
+
+  
+ 
+
+                            <!-- Table with stripped rows -->
+                            <table class="table datatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Niveau</th>
+                                        <th scope="col">Videos</th>
+                                        <th scope="col">Modifier</th>
+                                        <th scope="col">Supprimer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                  {% for tutoriel in tutoriels %}
+             
+                                    <tr>
+                                       
+                                        
+                                       
+                                        
+                                            <td class="align-middle text-center text-sm">
+                                               {{tutoriel.getId()}}
+                                            </td>
+                                            
+                                            <td class="align-middle text-center text-sm">
+                                               <img src="{{ asset('http://localhost/img/'~tutoriel.pathimg) }}" alt="" style="border-radius: 20px; width: 70px; height: 70px; ">
+                                            </td>
+                                            <td class="align-middle text-center text-sm">{{ tutoriel.title }}</td>
+                                             <td class="align-middle text-center text-sm">
+                                               {{ tutoriel.description }}
+                                            </td>
+                                             <td class="align-middle text-center text-sm">
+                                                {{ tutoriel.niveau }}
+                                            </td>
+                                           
+                                                                                        <td class="align-middle text-center text-sm"> <a class="btn btn-primary" href="{{ path('app_tutoriel_show', {'id_tutoriel': tutoriel.getId()}) }}">show ({{tutoriel.getVideos()|length}})</a></td>
+                                                                                        <td class="align-middle text-center text-sm"><a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}" class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
+                                                                                        <td class="align-middle text-center text-sm"><a href="{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}" class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
+                                    </tr>
+                                    	 {% endfor %}
+                                   
+                                </tbody>
+                            </table>
+                            <!-- End Table with stripped rows -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+{% endblock %}

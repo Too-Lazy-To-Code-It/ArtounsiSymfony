@@ -1,0 +1,117 @@
+<?php
+
+namespace App\Entity;
+
+use App\Repository\VideoRepository;
+use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity(repositoryClass: VideoRepository::class)]
+class Video
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id_video = null;
+
+    #[ORM\ManyToOne( targetEntity: Tutoriel::class )]
+    #[ORM\JoinColumn(name:'id_tutoriel',referencedColumnName:'id_tutoriel' ,nullable: false)]
+    private ?Tutoriel $id_tutoriel = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $date_p = null;
+
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Your Description must be at least {{ limit }} characters long',
+    )]
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $pathvideo = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $pathimage = null;
+
+    public function getId(): ?int
+    {
+        return $this->id_video;
+    }
+
+    public function getIdTutoriel(): ?Tutoriel
+    {
+        return $this->id_tutoriel;
+    }
+
+    public function setIdTutoriel(?Tutoriel $id_tutoriel): self
+    {
+        $this->id_tutoriel = $id_tutoriel;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getDateP(): ?\DateTimeInterface
+    {
+        return $this->date_p;
+    }
+
+    public function setDateP(\DateTimeInterface $date_p): self
+    {
+        $this->date_p = $date_p;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPathvideo(): ?string
+    {
+        return $this->pathvideo;
+    }
+
+    public function setPathvideo(string $pathvideo): self
+    {
+        $this->pathvideo = $pathvideo;
+
+        return $this;
+    }
+
+    public function getPathimage(): ?string
+    {
+        return $this->pathimage;
+    }
+
+    public function setPathimage(string $pathimage): self
+    {
+        $this->pathimage = $pathimage;
+
+        return $this;
+    }
+}
