@@ -18,8 +18,10 @@ class OffretravailarchiveController extends AbstractController
     #[Route('/', name: 'app_offretravailarchive_index', methods: ['GET'])]
     public function index(OffretravailarchiveRepository $offretravailarchiveRepository): Response
     { $offretravails = $offretravailarchiveRepository->findAll();
-       
-        $offretravailbyid =  $offretravailarchiveRepository->findBy(['id_user' => 1]);
+        $id=1;
+        if($id==3){  $offretravailbyid =  $offretravailarchiveRepository->findAll();}
+        else
+        {$offretravailbyid =  $offretravailarchiveRepository->findBy(['id_user' => 1]);}
         return $this->render('offretravailarchive/index.html.twig', [
             'offretravails' => $offretravails,
             'offretravailbyid' => $offretravailbyid,
@@ -87,7 +89,7 @@ class OffretravailarchiveController extends AbstractController
             $offretravailarchiveRepository->remove($offretravailarchive, true);
         }
 
-        return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_offretravailarchive_index');
     }
 
     

@@ -27,10 +27,10 @@ class dashboardstudioController extends AbstractController
     #[Route('/mesoffres', name: 'app_dashboard_offres', methods: ['GET'])]
     public function offres(OffretravailRepository $offretravailRepository, Request $request): Response
     {
-      
+      $id=1;
             $offretravails = $offretravailRepository->findAll();
-           
-            $offretravailbyid = $offretravailRepository->findBy(['id_user' => 1]);
+           if($id==3){ $offretravailbyid = $offretravailRepository->findAll();}
+           else{ $offretravailbyid = $offretravailRepository->findBy(['id_user' => 1]);}
        
         
         return $this->render('dashboard/tables-data.html.twig', [
@@ -40,11 +40,11 @@ class dashboardstudioController extends AbstractController
     }
     #[Route('/mesdemandess', name: 'app_dashboard_demandes', methods: ['GET'])]
     public function demandes(DemandetravailRepository $demandetravailRepository, Request $request): Response
-    {
+    { $id=1;
       
             $offretravails = $demandetravailRepository->findAll();
-           
-            $offretravailbyid = $demandetravailRepository->findBy(['id_user' => 1]);
+            if($id==3){    $offretravailbyid = $demandetravailRepository->findAll();}
+            else{$offretravailbyid = $demandetravailRepository->findBy(['id_user' => 1]);}
        
         
         return $this->render('dashboard/tables-datademandes.html.twig', [

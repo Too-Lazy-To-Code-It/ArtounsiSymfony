@@ -78,6 +78,7 @@ public function chercherOffres(string $mots)
     ;
     return $query->getResult();
 }
+
 public function findBydemandessimilaires(int $id)
 {
     $entityManager=$this->getEntityManager();

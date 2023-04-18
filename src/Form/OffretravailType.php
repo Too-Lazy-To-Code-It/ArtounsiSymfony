@@ -27,13 +27,13 @@ class OffretravailType extends AbstractType
                 'choices' => [
                     'Contrat' => 'Contrat',
                     'Freelance' => 'Freelance',
-                    'Option 3' => 'Permanante',
+                    'Permanante' => 'Permanante',
                 ],
             ])
             ->add('localisationoffre', ChoiceType::class, [
                 'choices' => [
                     'Tunis' => 'Tunis',
-                    'Alger' => 'Alger',
+                    'Algerie' => 'Algerie',
                    'France' => 'France',
                 ],
             ])
