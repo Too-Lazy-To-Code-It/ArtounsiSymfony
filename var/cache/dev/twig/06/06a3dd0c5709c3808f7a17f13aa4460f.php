@@ -109,8 +109,12 @@ https://templatemo.com/tm-577-liberty-market
         echo "\">Shop</a></li>
                       <li><a href=\"";
         // line 68
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
         echo "\">Panier</a></li>
+                      <li><a href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_Dashboard_index");
+        echo "\">Dashboard</a></li>
                       <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
@@ -135,6 +139,16 @@ https://templatemo.com/tm-577-liberty-market
     </div>
   </div>
 
+<style>
+.error-message {
+    color: red;
+    
+}
+
+</style>
+
+
+
   <div class=\"item-details-page\">
     <div class=\"container\">
       <div class=\"row\">
@@ -145,73 +159,73 @@ https://templatemo.com/tm-577-liberty-market
           </div>
         </div>
         ";
-        // line 102
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 102, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact"]]);
+        // line 113
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 113, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact"]]);
         echo "
         <div class=\"col-lg-12\">
             <div class=\"row\">
               <div class=\"col-lg-4\">
                 <fieldset>
                   ";
-        // line 107
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 107, $this->source); })()), "nom", [], "any", false, false, false, 107), 'label', ["label" => "Nom du produit"]);
+        // line 118
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 118, $this->source); })()), "nom", [], "any", false, false, false, 118), 'label', ["label" => "Nom du produit"]);
         echo "
                   ";
-        // line 108
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 108, $this->source); })()), "nom", [], "any", false, false, false, 108), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
-        echo "
-                  ";
-        // line 109
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 109, $this->source); })()), "nom", [], "any", false, false, false, 109), 'errors');
-        echo "
+        // line 119
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 119, $this->source); })()), "nom", [], "any", false, false, false, 119), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        echo "</div>
+                  <div  class=\"error-message\">   ";
+        // line 120
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 120, $this->source); })()), "nom", [], "any", false, false, false, 120), 'errors');
+        echo "</div>
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                   ";
-        // line 114
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 114, $this->source); })()), "description", [], "any", false, false, false, 114), 'label', ["label" => "Description du produit"]);
+        // line 125
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "description", [], "any", false, false, false, 125), 'label', ["label" => "Description du produit"]);
         echo "
                   ";
-        // line 115
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 115, $this->source); })()), "description", [], "any", false, false, false, 115), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        // line 126
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 126, $this->source); })()), "description", [], "any", false, false, false, 126), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
         echo "
-                  ";
-        // line 116
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 116, $this->source); })()), "description", [], "any", false, false, false, 116), 'errors');
-        echo "
+                  <div  class=\"error-message\">";
+        // line 127
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 127, $this->source); })()), "description", [], "any", false, false, false, 127), 'errors');
+        echo "</div> 
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                    ";
-        // line 121
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 121, $this->source); })()), "prix", [], "any", false, false, false, 121), 'label', ["label" => "Prix du produit"]);
+        // line 132
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 132, $this->source); })()), "prix", [], "any", false, false, false, 132), 'label', ["label" => "Prix du produit"]);
         echo "
-                   ";
-        // line 122
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 122, $this->source); })()), "prix", [], "any", false, false, false, 122), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
-        echo "
-                   ";
-        // line 123
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 123, $this->source); })()), "prix", [], "any", false, false, false, 123), 'errors');
-        echo "
+                  ";
+        // line 133
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 133, $this->source); })()), "prix", [], "any", false, false, false, 133), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        echo "</div>
+                 <div  class=\"error-message\"> ";
+        // line 134
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 134, $this->source); })()), "prix", [], "any", false, false, false, 134), 'errors');
+        echo "</div>
                 </fieldset>
               </div>
               <div class=\"col-lg-6\">
                 <fieldset>
                   <div class=\"main-button\">
                     ";
-        // line 129
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 129, $this->source); })()), "idcategorie", [], "any", false, false, false, 129), 'label', ["label" => "Catégorie du produit"]);
+        // line 140
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 140, $this->source); })()), "idcategorie", [], "any", false, false, false, 140), 'label', ["label" => "Catégorie du produit"]);
         echo "
                     ";
-        // line 130
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 130, $this->source); })()), "idcategorie", [], "any", false, false, false, 130), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
+        // line 141
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 141, $this->source); })()), "idcategorie", [], "any", false, false, false, 141), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
         echo "
                     ";
-        // line 131
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 131, $this->source); })()), "idcategorie", [], "any", false, false, false, 131), 'errors');
+        // line 142
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 142, $this->source); })()), "idcategorie", [], "any", false, false, false, 142), 'errors');
         echo "
                   </div>
                     
@@ -230,12 +244,12 @@ https://templatemo.com/tm-577-liberty-market
                   <fieldset>
                     <label class=\"form-label\" >Image</label>
                     ";
-        // line 148
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 148, $this->source); })()), "image", [], "any", false, false, false, 148), 'widget');
+        // line 159
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 159, $this->source); })()), "image", [], "any", false, false, false, 159), 'widget');
         echo "
                     ";
-        // line 149
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 149, $this->source); })()), "image", [], "any", false, false, false, 149), 'errors');
+        // line 160
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 160, $this->source); })()), "image", [], "any", false, false, false, 160), 'errors');
         echo "
                   </fieldset>
           
@@ -244,16 +258,16 @@ https://templatemo.com/tm-577-liberty-market
                 <fieldset>
                   <button class=\"main-button\" type=\"submit\" class=\"orange-button\" onClick=\"validateSubmit()\">Ajouter article</button>
                   ";
-        // line 156
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 156, $this->source); })()), 'widget');
+        // line 167
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 167, $this->source); })()), 'widget');
         echo "
                 </fieldset>
               </div>
             </div>
         </div>
         ";
-        // line 161
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 161, $this->source); })()), 'form_end');
+        // line 172
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 172, $this->source); })()), 'form_end');
         echo "
 
 
@@ -287,34 +301,34 @@ https://templatemo.com/tm-577-liberty-market
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src=\"";
-        // line 193
+        // line 204
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 194
+        // line 205
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 196
+        // line 207
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 197
+        // line 208
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
 
 <script src=\"";
-        // line 200
+        // line 211
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 201
+        // line 212
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 202
+        // line 213
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -384,7 +398,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  363 => 27,  359 => 26,  355 => 25,  351 => 24,  347 => 23,  342 => 20,  332 => 19,  318 => 202,  314 => 201,  310 => 200,  304 => 197,  300 => 196,  295 => 194,  291 => 193,  256 => 161,  248 => 156,  238 => 149,  234 => 148,  214 => 131,  210 => 130,  206 => 129,  197 => 123,  193 => 122,  189 => 121,  181 => 116,  177 => 115,  173 => 114,  165 => 109,  161 => 108,  157 => 107,  149 => 102,  112 => 68,  108 => 67,  69 => 30,  67 => 19,  61 => 16,  44 => 1,);
+        return array (  377 => 27,  373 => 26,  369 => 25,  365 => 24,  361 => 23,  356 => 20,  346 => 19,  332 => 213,  328 => 212,  324 => 211,  318 => 208,  314 => 207,  309 => 205,  305 => 204,  270 => 172,  262 => 167,  252 => 160,  248 => 159,  228 => 142,  224 => 141,  220 => 140,  211 => 134,  207 => 133,  203 => 132,  195 => 127,  191 => 126,  187 => 125,  179 => 120,  175 => 119,  171 => 118,  163 => 113,  116 => 69,  112 => 68,  108 => 67,  69 => 30,  67 => 19,  61 => 16,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -456,7 +470,8 @@ https://templatemo.com/tm-577-liberty-market
                     <ul class=\"nav\">
                       <li><a href=\"index.html\">Home</a></li>
                       <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
-                      <li><a href=\"{{ path('app_panier_index') }}\">Panier</a></li>
+                      <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                      <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
                       <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
@@ -481,6 +496,16 @@ https://templatemo.com/tm-577-liberty-market
     </div>
   </div>
 
+<style>
+.error-message {
+    color: red;
+    
+}
+
+</style>
+
+
+
   <div class=\"item-details-page\">
     <div class=\"container\">
       <div class=\"row\">
@@ -496,22 +521,22 @@ https://templatemo.com/tm-577-liberty-market
               <div class=\"col-lg-4\">
                 <fieldset>
                   {{ form_label(form.nom, 'Nom du produit') }}
-                  {{ form_widget(form.nom, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
-                  {{ form_errors(form.nom) }}
+                  {{ form_widget(form.nom, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}</div>
+                  <div  class=\"error-message\">   {{ form_errors(form.nom) }}</div>
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                   {{ form_label(form.description, 'Description du produit') }}
                   {{ form_widget(form.description, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
-                  {{ form_errors(form.description) }}
+                  <div  class=\"error-message\">{{ form_errors(form.description) }}</div> 
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                    {{ form_label(form.prix, 'Prix du produit') }}
-                   {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
-                   {{ form_errors(form.prix) }}
+                  {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}</div>
+                 <div  class=\"error-message\"> {{ form_errors(form.prix) }}</div>
                 </fieldset>
               </div>
               <div class=\"col-lg-6\">

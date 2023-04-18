@@ -659,7 +659,7 @@ class __TwigTemplate_476bf642561faefb91ca399bd869af15 extends Template
                     <th scope=\"col\"  style=\"width: 150px;\" >Image</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Prix</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Date d'ajout</th>
-                    <th scope=\"col\"  style=\"width: 150px;\" >Supprimer</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -702,10 +702,7 @@ class __TwigTemplate_476bf642561faefb91ca399bd869af15 extends Template
             // line 594
             ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 594)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 594), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
-                    <td><a href=\"";
-            // line 595
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_delete1", ["idproduit" => twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 595)]), "html", null, true);
-            echo "\"   classe=\"active\" >Supprimer</a></td>
+                   
                    
                     
                   </tr>
@@ -811,7 +808,7 @@ class __TwigTemplate_476bf642561faefb91ca399bd869af15 extends Template
 
     public function getDebugInfo()
     {
-        return array (  785 => 641,  778 => 637,  774 => 636,  770 => 635,  766 => 634,  762 => 633,  758 => 632,  754 => 631,  750 => 630,  718 => 600,  707 => 595,  703 => 594,  699 => 593,  695 => 592,  691 => 591,  687 => 590,  683 => 589,  679 => 588,  675 => 587,  672 => 586,  668 => 585,  488 => 408,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  782 => 641,  775 => 637,  771 => 636,  767 => 635,  763 => 634,  759 => 633,  755 => 632,  751 => 631,  747 => 630,  715 => 600,  703 => 594,  699 => 593,  695 => 592,  691 => 591,  687 => 590,  683 => 589,  679 => 588,  675 => 587,  672 => 586,  668 => 585,  488 => 408,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -1396,7 +1393,7 @@ class __TwigTemplate_476bf642561faefb91ca399bd869af15 extends Template
                     <th scope=\"col\"  style=\"width: 150px;\" >Image</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Prix</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Date d'ajout</th>
-                    <th scope=\"col\"  style=\"width: 150px;\" >Supprimer</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -1410,7 +1407,7 @@ class __TwigTemplate_476bf642561faefb91ca399bd869af15 extends Template
                     <td>{{ produit.image }}</td>
                     <td>{{ produit.prix }}</td>
                     <td>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</td>
-                    <td><a href=\"{{ path('app_produits_delete1', {'idproduit': produit.idproduit}) }}\"   classe=\"active\" >Supprimer</a></td>
+                   
                    
                     
                   </tr>

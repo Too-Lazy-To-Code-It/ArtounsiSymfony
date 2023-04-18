@@ -578,7 +578,7 @@
                     <th scope="col"  style="width: 150px;" >Image</th>
                     <th scope="col"  style="width: 150px;" >Prix</th>
                     <th scope="col"  style="width: 150px;" >Date d'ajout</th>
-                    <th scope="col"  style="width: 150px;" >Supprimer</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -592,7 +592,7 @@
                     <td>{{ produit.image }}</td>
                     <td>{{ produit.prix }}</td>
                     <td>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</td>
-                    <td><a href="{{ path('app_produits_delete1', {'idproduit': produit.idproduit}) }}"   classe="active" >Supprimer</a></td>
+                   
                    
                     
                   </tr>

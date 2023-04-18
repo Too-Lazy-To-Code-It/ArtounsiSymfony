@@ -35,18 +35,18 @@ class ProduitsBackController extends AbstractController
     }
 
    
-    #[Route('/{idproduit}', name: 'app_produits_delete1', methods: ['POST'])]
-    public function delete(Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
-    {
-        if ($this->isCsrfTokenValid('deleteproduitAdmin'.$produit->getIdproduit(), $request->request->get('_token'))) {
-            $produitsRepository->remove($produit, true);
-        }
 
+
+    #[Route('/delete1/{idproduit}', name: 'app_produits_delete1', methods: ['GET', 'POST'])]
+    public function delete(Request $request, TutorielRepository $tutorielRepository, ManagerRegistry $mr, $idproduit): Response
+    {
+        dd("aa");
+        $em = $mr->getManager();
+        $produit = $tutorielRepository->find($idproduit);
+        $em->remove($produit);
+        $em->flush();
         return $this->redirectToRoute('app_produitsBack_index', [], Response::HTTP_SEE_OTHER);
     }
-
-
-
    
 
 

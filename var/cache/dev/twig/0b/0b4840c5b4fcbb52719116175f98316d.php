@@ -99,9 +99,12 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         echo "\">Shop</a></li>
                         <li><a href=\"";
         // line 65
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
         echo "\">Panier</a></li>
-
+                        <li><a href=\"";
+        // line 66
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_Dashboard_index");
+        echo "\">Dashboard</a></li>
                         <li><a href=\"explore.html\">Explore</a></li>
                         <li><a href=\"details.html\">Item Details</a></li>
                         <li><a href=\"author.html\">Author</a></li>
@@ -457,7 +460,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  426 => 18,  416 => 17,  102 => 65,  98 => 64,  64 => 32,  62 => 17,  44 => 1,);
+        return array (  429 => 18,  419 => 17,  106 => 66,  102 => 65,  98 => 64,  64 => 32,  62 => 17,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -526,8 +529,8 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                         <li><a href=\"index.html\" class=\"active\">Home</a></li>
                        
                         <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
-                        <li><a href=\"{{ path('app_panier_index') }}\">Panier</a></li>
-
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
                         <li><a href=\"explore.html\">Explore</a></li>
                         <li><a href=\"details.html\">Item Details</a></li>
                         <li><a href=\"author.html\">Author</a></li>

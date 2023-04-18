@@ -13,6 +13,7 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Doctrine\Persistence\ManagerRegistry;
 
 
 
@@ -48,7 +49,7 @@ class LignepanierController extends AbstractController
         ]);
     }
 
-    #[Route('/{idlignepanier}', name: 'app_lignepanier_show', methods: ['GET'])]
+    #[Route('/showlignepanier/{idlignepanier}', name: 'app_lignepanier_show', methods: ['GET'])]
     public function show(Lignepanier $lignepanier): Response
     {
         return $this->render('lignepanier/show.html.twig', [
@@ -74,25 +75,43 @@ class LignepanierController extends AbstractController
         ]);
     }
 
-    #[Route('suppProd/{idlignepanier}', name: 'app_lignepanier_delete')]
-    public function delete(Request $request, Lignepanier $lignepanier, LignepanierRepository $lignepanierRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$lignepanier->getIdlignepanier(), $request->request->get('_token'))) {
-            $lignepanierRepository->remove($lignepanier, true);
-        }
+    #[Route('/deleteligne/{idlignepanier}', name: 'app_lignepanier_delete', methods: ['GET', 'POST'])]
+    public function delete(int $idlignepanier,ManagerRegistry $doctrine,LignepanierRepository $rep): Response
+    {   $entityManager = $doctrine->getManager();
+        $lignePanier = $rep->find($idlignepanier);
+        $idpanier = $lignePanier->getIdpanier();
+        $entityManager->remove($lignePanier);
+        $entityManager->flush();
 
-        return $this->redirectToRoute('app_lignepanier_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_panier_show', ['idpanier'=>1],);
     }
-    
 
 
+### méthode de suppression d'un produit du panier avec ajax  
 
+    #[Route('/deleteAjaxligne/{idlignepanier}', name: 'app_lignepanier_delete_with_ajax', methods: ['POST'])]
+public function deleteWithAjax(int $idlignepanier, Request $request, ManagerRegistry $doctrine, LignepanierRepository $rep): JsonResponse
+{
+  $entityManager = $doctrine->getManager();
+  $lignePanier = $rep->find($idlignepanier);
+  $idpanier = $lignePanier->getIdpanier();
+  if ($this->isCsrfTokenValid('deleteproduit', $request->request->get('_token'))) {
+    $entityManager->remove($lignePanier);
+    $entityManager->flush();
+    return new JsonResponse(['success' => true]);
+  }
+
+  return new JsonResponse(['success' => false]);
 }
-
    
 
 
 
+
+
+
+
+}
 
 
 

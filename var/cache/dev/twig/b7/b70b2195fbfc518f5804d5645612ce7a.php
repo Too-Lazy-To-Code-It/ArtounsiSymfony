@@ -41,15 +41,14 @@ class __TwigTemplate_dff960038847f7bd8f08ddb81612f0e2 extends Template
 
         // line 1
         echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_lignepanier_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ligne"]) || array_key_exists("ligne", $context) ? $context["ligne"] : (function () { throw new RuntimeError('Variable "ligne" does not exist.', 1, $this->source); })()), "idlignepanier", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, (isset($context["ligne"]) || array_key_exists("ligne", $context) ? $context["ligne"] : (function () { throw new RuntimeError('Variable "ligne" does not exist.', 1, $this->source); })()), "idlignepanier", [], "any", false, false, false, 1)]), "html", null, true);
+        echo "\" >
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["ligne"]) || array_key_exists("ligne", $context) ? $context["ligne"] : (function () { throw new RuntimeError('Variable "ligne" does not exist.', 2, $this->source); })()), "idlignepanier", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("deleteproduit" . twig_get_attribute($this->env, $this->source, (isset($context["ligne"]) || array_key_exists("ligne", $context) ? $context["ligne"] : (function () { throw new RuntimeError('Variable "ligne" does not exist.', 2, $this->source); })()), "idlignepanier", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
     <button class=\"btn\">Delete</button>
-</form>
-";
+</form>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -75,10 +74,9 @@ class __TwigTemplate_dff960038847f7bd8f08ddb81612f0e2 extends Template
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ url('app_lignepanier_delete', {'id': ligne.idlignepanier}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ ligne.idlignepanier) }}\">
+        return new Source("<form method=\"post\" action=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\" >
+    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('deleteproduit' ~ ligne.idlignepanier) }}\">
     <button class=\"btn\">Delete</button>
-</form>
-", "lignepanier/_delete_form.html.twig", "C:\\Users\\aouad\\Desktop\\Pidev web\\ArtounsiSymfony-master\\templates\\lignepanier\\_delete_form.html.twig");
+</form>", "lignepanier/_delete_form.html.twig", "C:\\Users\\aouad\\Desktop\\Pidev web\\ArtounsiSymfony-master\\templates\\lignepanier\\_delete_form.html.twig");
     }
 }

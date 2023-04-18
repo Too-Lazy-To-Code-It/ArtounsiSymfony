@@ -121,7 +121,6 @@ https://templatemo.com/tm-577-liberty-market
                       <li><a href="index.html">Home</a></li>
                       <li><a href="{{ path('app_produits_index')}}">Shop</a></li>
                       <li><a href="{{ path('app_panier_index') }}">Panier</a></li>
-                      <li><a href="{{ path('app_Dashboard_index') }}">Dashboard</a></li>
                       <li><a href="create.html" class="active">Create Yours</a></li>
                     </ul>
                     <a class="menu-trigger">
@@ -136,8 +135,24 @@ https://templatemo.com/tm-577-liberty-market
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Main Banner Area Start ***** -->
-<div class="main-banner">
-   
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading normal-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+     
+        <h2>Votre Panier</h2>
+        
+        <div class="buttons">
+          <div class="main-button">
+            <a href="#">Historique de vos paiements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
@@ -145,15 +160,8 @@ https://templatemo.com/tm-577-liberty-market
 <div class="currently-market">
   <div class="container">
   <div class="row">
-            <div class="col-lg-6">
-                <div class="section-heading">
-                    <h2><em> Mon </em> Panier </h2>
-                </div>
-            </div>
           
-
-
-
+        
 
             <div class="col-lg-12">
                 <div class="row grid">
@@ -161,63 +169,111 @@ https://templatemo.com/tm-577-liberty-market
                    
                         <div>
                           <div class="line-dec"></div>
-                            <table class="carte-table" border="0,5"  class="currently-market"  class="item">
-                              <thead  class="carte-table">
-                                
-                                <tr>
-                                  <th class="text-center"><h6>Photo</h6></th>
-                                  <th class="text-center"><h6>Nom de la photo</h6></th>
-                                  <th class="text-center"><h6>Prix</h6></th>
-                                  <th class="text-center"><h6>Date d'ajout</h6></th>
-                                  <th class="text-center"><h6>Action</h6></th>
-                                </tr>
-                                
-                              </thead>
+                          {% if lignesPanier is not empty %}
+                          <table class="carte-table" border="0,5"  class="currently-market"  class="item">
+                            <thead  class="carte-table">
+                              <tr>
+                                <th class="text-center"><h6>Photo</h6></th>
+                                <th class="text-center"><h6>Nom de la photo</h6></th>
+                                <th class="text-center"><h6>Prix hors TVA</h6></th>
+                                <th class="text-center"><h6>Taux TVA (%)</h6></th>
+                                <th class="text-center"><h6>Prix avec TVA</h6></th>
+                                <th class="text-center"><h6>Date d'ajout</h6></th>
+                                <th class="text-center"><h6>Action</h6></th>
+                              </tr>
+                            </thead>
                         
-                              <tbody   class="carte-table">
-                                {% for ligne in lignesPanier %}
-                                
+                            <tbody   class="carte-table">
+                              {% for ligne in lignesPanier %}
                                 <tr>
                                   <td>
                                     <div class="left-image">
                                       <img src="{{ asset('http://localhost/img/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
                                     </div>
                                   </td>
+                                  
                                   <td>
                                     <div class="right-content">
                                       <h6>{{ ligne.idproduit.nom }}</h6>
-                                     
                                     </div> 
                                   </td>
+                                
                                   <td>
                                     <span class="bid">
                                       <h6><strong> {{ ligne.idproduit.prix }}</strong></h6>
                                     </span>
                                   </td>
+
+
                                   <td>
-                                    
-                                      <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
-                                   
+                                    <div class="right-content">
+                                      <h6>{{ tauxTVA }}</h6>
+                                    </div> 
                                   </td>
+
                                   <td>
+                                    <div class="right-content">
+                                      <h6>{{ montantTotal }}</h6>
+                                    </div> 
+                                  </td>
+
+
+                                  <td>
+                                    <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
+                                  </td>
+                                  <td>                                    
+                                    <div class="main-button delete-product-button" data-idlignepanier="{{ ligne.idlignepanier }}">
+                                      <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}">Supprimer</a>                                     
+                                    </div> 
+                                  </td>
+                                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                  <script>
+                                   $(document).ready(function() {
+                                     $('.delete-product-button').click(function(e) {
+                                     e.preventDefault(); 
+                                     var idlignepanier = $(this).data('idlignepanier');
+                                     $.ajax({
+                                    method: 'POST',
+                                    url: "{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': 'idlignepanier'}) }}".replace('idlignepanier', idlignepanier),
+                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
+                                    success: function(response) {
+                              if (response.success) {
+                                    $('tr[data-idlignepanier=' + idlignepanier + ']').remove();
+                                 
+                                      $(this).remove();
+                                      var total = 0;
+                                      $('.total').each(function() { 
+                                      total += parseFloat($(this).text()); 
+                                      });
+                                      $('#total').text(total.toFixed(2) + ' Tnd'); 
+                                      var count = $('.count').length;
+                                      $('#count').text(count);
+
+                                    alert('Le produit a été supprimé avec succès');
+                                    location.reload()
+                                   } else {
+                                  alert('Erreur lors de la suppression du produit');
+                                 }
+                               },
+                              error: function() {
+                                alert('Erreur lors de la communication avec le serveur');
+                             }
+                          });
+                       });
+                     });
+</script>
                                     
-                                    <div class="main-button">
-                                      <a href="{{ path('app_lignepanier_delete', {'idlignepanier': ligne.idlignepanier}) }}"   classe="active" >Supprimer</a>
-                                     </div>
-                                  </td>
                                 </tr>
-                                {% else %} 
-                                <tr>
-                                  <td colspan="4">
-                                    <div class="section-heading">
-                                      <div class="line-dec"></div>
-                                      <h2><em>Votre panier est</em> vide</h2>
-                                    </div>
-                                  </td>
-                                </tr>
-                                {% endfor %}
-                              </tbody>
-                            </table>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        {% else %}
+                          <div class="section-heading">
+                           
+                            <h2   class="text-center"> Votre panier est <em>vide</em> </h2>
+                          </div>
+                        {% endif %}
+                        
                             <div class="line-dec"></div>
                         </div>
                    </div>
@@ -228,11 +284,11 @@ https://templatemo.com/tm-577-liberty-market
             <table class="carte-table">
               <thead>
                 <tr>
-                  <th><h5>Nombre de produits: {{ count }}</h5></th>
-                  <th><h5>Montant total: {{ total }}</h5></th>
+                  <th  class="total"><h5>Nombre de produits: {{ count }}</h5></th>
+                  <th  class="count"><h5>Montant total: {{ total }}</h5></th>
                   <th>
                     <div class="main-button">
-                      <a href="#" class="active">Payer</a>
+                      <a href="{{ path('checkout',{'idpanier': 'idpanier'})}}">Payer</a>
                     </div>
                   </th>
                 </tr>
@@ -241,7 +297,7 @@ https://templatemo.com/tm-577-liberty-market
             
           
            <div class="line-dec"></div>
-          
+
 
 
    </div>
@@ -251,10 +307,6 @@ https://templatemo.com/tm-577-liberty-market
 
 
 </div>
-
-
-
-
 
 
 
@@ -287,6 +339,7 @@ https://templatemo.com/tm-577-liberty-market
 <script src="assets/js/popup.js"></script>
 <script src="assets/js/custom.js"></script>
 
+<script src="{{ asset('bundles/jquery/jquery.min.js') }}"></script>
 
 </body>
 

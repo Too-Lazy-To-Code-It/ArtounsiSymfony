@@ -99,7 +99,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
         echo "\">Shop</a></li>
                         <li><a href=\"";
         // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
         echo "\">Panier</a></li>
                         <li><a href=\"";
         // line 59
@@ -197,10 +197,10 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
             <br></br>
             <div class=\"main-button\">
               
-               <a href=\"";
+              <a href=\"";
         // line 134
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_product", ["idproduit" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 134, $this->source); })()), "idproduit", [], "any", false, false, false, 134)]), "html", null, true);
-        echo "\" ><h6>Ajouter au panier</h6></a><br></br>
+        echo "\" onclick=\"successAdd()\"><h6>Ajouter au panier</h6></a><br></br>
 
                ";
         // line 136
@@ -324,6 +324,46 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
       </div>
     </div>
   
+    <script>\t\t\t\t\t\t\t\t\t
+      function successAdd() {
+     result = confirm(\"Voulez-vous vraiment ajouter ce produit ?\");
+     if (result) {
+        \$('#form').submit();
+        alert(\"Le produit a été ajouté avec succès !\");
+    }
+   }
+// Controle d'ajout d'un produit existant dans le panier 
+\$.ajax({
+    method: 'POST',
+    url: \"";
+        // line 238
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_product", ["idproduit" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 238, $this->source); })()), "idproduit", [], "any", false, false, false, 238)]), "html", null, true);
+        echo "\",
+    data: {'_token': '";
+        // line 239
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("add_product"), "html", null, true);
+        echo "'},
+}).done(function(response) {
+    if (response.error) {
+        // Afficher un message d'erreur
+        alert(response.error);
+    } else {
+        // Le produit a été ajouté avec succès, mettre à jour la page
+        location.reload();
+    }
+}).fail(function(xhr, status, error) {
+    // Afficher un message d'erreur
+    var response = xhr.responseJSON;
+    alert(response.error);
+});
+
+
+
+    </script>
+
+
+
+
     <footer>
       <div class=\"container\">
         <div class=\"row\">
@@ -339,34 +379,34 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 241
+        // line 275
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 242
+        // line 276
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"";
-        // line 244
+        // line 278
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 245
+        // line 279
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
     
     
     <script src=\"";
-        // line 248
+        // line 282
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 249
+        // line 283
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 250
+        // line 284
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     
@@ -443,7 +483,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
 
     public function getDebugInfo()
     {
-        return array (  422 => 24,  418 => 23,  414 => 22,  410 => 21,  406 => 20,  401 => 17,  391 => 16,  370 => 250,  366 => 249,  362 => 248,  356 => 245,  352 => 244,  347 => 242,  343 => 241,  267 => 167,  256 => 162,  252 => 161,  247 => 159,  243 => 158,  237 => 155,  232 => 152,  228 => 151,  211 => 137,  207 => 136,  202 => 134,  192 => 127,  184 => 122,  176 => 117,  169 => 113,  161 => 108,  154 => 104,  106 => 59,  102 => 58,  98 => 57,  66 => 27,  64 => 16,  59 => 14,  44 => 1,);
+        return array (  462 => 24,  458 => 23,  454 => 22,  450 => 21,  446 => 20,  441 => 17,  431 => 16,  410 => 284,  406 => 283,  402 => 282,  396 => 279,  392 => 278,  387 => 276,  383 => 275,  344 => 239,  340 => 238,  267 => 167,  256 => 162,  252 => 161,  247 => 159,  243 => 158,  237 => 155,  232 => 152,  228 => 151,  211 => 137,  207 => 136,  202 => 134,  192 => 127,  184 => 122,  176 => 117,  169 => 113,  161 => 108,  154 => 104,  106 => 59,  102 => 58,  98 => 57,  66 => 27,  64 => 16,  59 => 14,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -505,7 +545,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
                       <ul class=\"nav\">
                         <li><a href=\"index.html\">Home</a></li>
                         <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
-                        <li><a href=\"{{ path('app_panier_index') }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
                         <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
                         <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                       </ul>   
@@ -581,7 +621,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
             <br></br>
             <div class=\"main-button\">
               
-               <a href=\"{{ path('add_product', {'idproduit': produit.idproduit}) }}\" ><h6>Ajouter au panier</h6></a><br></br>
+              <a href=\"{{ path('add_product', {'idproduit': produit.idproduit}) }}\" onclick=\"successAdd()\"><h6>Ajouter au panier</h6></a><br></br>
 
                {{ include('produits/_delete_form.html.twig') }}
                <a href=\"{{ path('app_produits_edit', {'idproduit': produit.idproduit}) }}\"  class=\"main-button\"><i class=\"fas fa-pencil-alt\"></i></a>
@@ -674,6 +714,40 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
       </div>
     </div>
   
+    <script>\t\t\t\t\t\t\t\t\t
+      function successAdd() {
+     result = confirm(\"Voulez-vous vraiment ajouter ce produit ?\");
+     if (result) {
+        \$('#form').submit();
+        alert(\"Le produit a été ajouté avec succès !\");
+    }
+   }
+// Controle d'ajout d'un produit existant dans le panier 
+\$.ajax({
+    method: 'POST',
+    url: \"{{ path('add_product', {'idproduit': produit.idproduit}) }}\",
+    data: {'_token': '{{ csrf_token('add_product') }}'},
+}).done(function(response) {
+    if (response.error) {
+        // Afficher un message d'erreur
+        alert(response.error);
+    } else {
+        // Le produit a été ajouté avec succès, mettre à jour la page
+        location.reload();
+    }
+}).fail(function(xhr, status, error) {
+    // Afficher un message d'erreur
+    var response = xhr.responseJSON;
+    alert(response.error);
+});
+
+
+
+    </script>
+
+
+
+
     <footer>
       <div class=\"container\">
         <div class=\"row\">

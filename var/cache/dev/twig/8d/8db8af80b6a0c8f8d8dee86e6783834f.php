@@ -167,10 +167,6 @@ https://templatemo.com/tm-577-liberty-market
         // line 123
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_index");
         echo "\">Panier</a></li>
-                      <li><a href=\"";
-        // line 124
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_Dashboard_index");
-        echo "\">Dashboard</a></li>
                       <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                     </ul>
                     <a class=\"menu-trigger\">
@@ -185,8 +181,24 @@ https://templatemo.com/tm-577-liberty-market
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Main Banner Area Start ***** -->
-<div class=\"main-banner\">
-   
+<!-- ***** Main Banner Area Start ***** -->
+<div class=\"page-heading normal-space\">
+  <div class=\"container\">
+    <div class=\"row\">
+      <div class=\"col-lg-12\">
+     
+        <h2>Votre Panier</h2>
+        
+        <div class=\"buttons\">
+          <div class=\"main-button\">
+            <a href=\"#\">Historique de vos paiements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
@@ -194,15 +206,8 @@ https://templatemo.com/tm-577-liberty-market
 <div class=\"currently-market\">
   <div class=\"container\">
   <div class=\"row\">
-            <div class=\"col-lg-6\">
-                <div class=\"section-heading\">
-                    <h2><em> Mon </em> Panier </h2>
-                </div>
-            </div>
           
-
-
-
+        
 
             <div class=\"col-lg-12\">
                 <div class=\"row grid\">
@@ -210,94 +215,158 @@ https://templatemo.com/tm-577-liberty-market
                    
                         <div>
                           <div class=\"line-dec\"></div>
-                            <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
-                              <thead  class=\"carte-table\">
-                                
-                                <tr>
-                                  <th class=\"text-center\"><h6>Photo</h6></th>
-                                  <th class=\"text-center\"><h6>Nom de la photo</h6></th>
-                                  <th class=\"text-center\"><h6>Prix</h6></th>
-                                  <th class=\"text-center\"><h6>Date d'ajout</h6></th>
-                                  <th class=\"text-center\"><h6>Action</h6></th>
-                                </tr>
-                                
-                              </thead>
+                          ";
+        // line 172
+        if ( !twig_test_empty((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 172, $this->source); })()))) {
+            // line 173
+            echo "                          <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
+                            <thead  class=\"carte-table\">
+                              <tr>
+                                <th class=\"text-center\"><h6>Photo</h6></th>
+                                <th class=\"text-center\"><h6>Nom de la photo</h6></th>
+                                <th class=\"text-center\"><h6>Prix hors TVA</h6></th>
+                                <th class=\"text-center\"><h6>Taux TVA (%)</h6></th>
+                                <th class=\"text-center\"><h6>Prix avec TVA</h6></th>
+                                <th class=\"text-center\"><h6>Date d'ajout</h6></th>
+                                <th class=\"text-center\"><h6>Action</h6></th>
+                              </tr>
+                            </thead>
                         
-                              <tbody   class=\"carte-table\">
-                                ";
-        // line 178
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 178, $this->source); })()));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
-            // line 179
-            echo "                                
-                                <tr>
+                            <tbody   class=\"carte-table\">
+                              ";
+            // line 187
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 187, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
+                // line 188
+                echo "                                <tr>
                                   <td>
                                     <div class=\"left-image\">
                                       <img src=\"";
-            // line 183
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 183), "image", [], "any", false, false, false, 183))), "html", null, true);
-            echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
+                // line 191
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 191), "image", [], "any", false, false, false, 191))), "html", null, true);
+                echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                     </div>
                                   </td>
+                                  
                                   <td>
                                     <div class=\"right-content\">
                                       <h6>";
-            // line 188
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 188), "nom", [], "any", false, false, false, 188), "html", null, true);
-            echo "</h6>
-                                     
+                // line 197
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 197), "nom", [], "any", false, false, false, 197), "html", null, true);
+                echo "</h6>
                                     </div> 
                                   </td>
+                                
                                   <td>
                                     <span class=\"bid\">
                                       <h6><strong> ";
-            // line 194
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 194), "prix", [], "any", false, false, false, 194), "html", null, true);
-            echo "</strong></h6>
+                // line 203
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 203), "prix", [], "any", false, false, false, 203), "html", null, true);
+                echo "</strong></h6>
                                     </span>
                                   </td>
+
+
                                   <td>
-                                    
+                                    <div class=\"right-content\">
                                       <h6>";
-            // line 199
-            ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 199)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 199), "F jS, Y H:i"), "html", null, true))) : (print ("")));
-            echo "</h6>
-                                   
+                // line 210
+                echo twig_escape_filter($this->env, (isset($context["tauxTVA"]) || array_key_exists("tauxTVA", $context) ? $context["tauxTVA"] : (function () { throw new RuntimeError('Variable "tauxTVA" does not exist.', 210, $this->source); })()), "html", null, true);
+                echo "</h6>
+                                    </div> 
                                   </td>
+
                                   <td>
-                                    
-                                    <div class=\"main-button\">
+                                    <div class=\"right-content\">
+                                      <h6>";
+                // line 216
+                echo twig_escape_filter($this->env, (isset($context["montantTotal"]) || array_key_exists("montantTotal", $context) ? $context["montantTotal"] : (function () { throw new RuntimeError('Variable "montantTotal" does not exist.', 216, $this->source); })()), "html", null, true);
+                echo "</h6>
+                                    </div> 
+                                  </td>
+
+
+                                  <td>
+                                    <h6>";
+                // line 222
+                ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 222)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 222), "F jS, Y H:i"), "html", null, true))) : (print ("")));
+                echo "</h6>
+                                  </td>
+                                  <td>                                    
+                                    <div class=\"main-button delete-product-button\" data-idlignepanier=\"";
+                // line 225
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 225), "html", null, true);
+                echo "\">
                                       <a href=\"";
-            // line 205
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 205)]), "html", null, true);
-            echo "\"   classe=\"active\" >Supprimer</a>
-                                     </div>
+                // line 226
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 226)]), "html", null, true);
+                echo "\">Supprimer</a>                                     
+                                    </div> 
                                   </td>
+                                  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+                                  <script>
+                                   \$(document).ready(function() {
+                                     \$('.delete-product-button').click(function(e) {
+                                     e.preventDefault(); 
+                                     var idlignepanier = \$(this).data('idlignepanier');
+                                     \$.ajax({
+                                    method: 'POST',
+                                    url: \"";
+                // line 237
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => "idlignepanier"]);
+                echo "\".replace('idlignepanier', idlignepanier),
+                                    data: {'_token': '";
+                // line 238
+                echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("deleteproduit"), "html", null, true);
+                echo "'},
+                                    success: function(response) {
+                              if (response.success) {
+                                    \$('tr[data-idlignepanier=' + idlignepanier + ']').remove();
+                                 
+                                      \$(this).remove();
+                                      var total = 0;
+                                      \$('.total').each(function() { 
+                                      total += parseFloat(\$(this).text()); 
+                                      });
+                                      \$('#total').text(total.toFixed(2) + ' Tnd'); 
+                                      var count = \$('.count').length;
+                                      \$('#count').text(count);
+
+                                    alert('Le produit a été supprimé avec succès');
+                                    location.reload()
+                                   } else {
+                                  alert('Erreur lors de la suppression du produit');
+                                 }
+                               },
+                              error: function() {
+                                alert('Erreur lors de la communication avec le serveur');
+                             }
+                          });
+                       });
+                     });
+</script>
+                                    
                                 </tr>
-                                ";
-            $context['_iterated'] = true;
+                              ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 268
+            echo "                            </tbody>
+                          </table>
+                        ";
+        } else {
+            // line 271
+            echo "                          <div class=\"section-heading\">
+                           
+                            <h2   class=\"text-center\"> Votre panier est <em>vide</em> </h2>
+                          </div>
+                        ";
         }
-        if (!$context['_iterated']) {
-            // line 209
-            echo " 
-                                <tr>
-                                  <td colspan=\"4\">
-                                    <div class=\"section-heading\">
-                                      <div class=\"line-dec\"></div>
-                                      <h2><em>Votre panier est</em> vide</h2>
-                                    </div>
-                                  </td>
-                                </tr>
-                                ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 219
-        echo "                              </tbody>
-                            </table>
+        // line 276
+        echo "                        
                             <div class=\"line-dec\"></div>
                         </div>
                    </div>
@@ -308,17 +377,20 @@ https://templatemo.com/tm-577-liberty-market
             <table class=\"carte-table\">
               <thead>
                 <tr>
-                  <th><h5>Nombre de produits: ";
-        // line 231
-        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 231, $this->source); })()), "html", null, true);
+                  <th  class=\"total\"><h5>Nombre de produits: ";
+        // line 287
+        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 287, $this->source); })()), "html", null, true);
         echo "</h5></th>
-                  <th><h5>Montant total: ";
-        // line 232
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 232, $this->source); })()), "html", null, true);
+                  <th  class=\"count\"><h5>Montant total: ";
+        // line 288
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 288, $this->source); })()), "html", null, true);
         echo "</h5></th>
                   <th>
                     <div class=\"main-button\">
-                      <a href=\"#\" class=\"active\">Payer</a>
+                      <a href=\"";
+        // line 291
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout", ["idpanier" => "idpanier"]);
+        echo "\">Payer</a>
                     </div>
                   </th>
                 </tr>
@@ -327,7 +399,7 @@ https://templatemo.com/tm-577-liberty-market
             
           
            <div class=\"line-dec\"></div>
-          
+
 
 
    </div>
@@ -337,10 +409,6 @@ https://templatemo.com/tm-577-liberty-market
 
 
 </div>
-
-
-
-
 
 
 
@@ -373,6 +441,10 @@ https://templatemo.com/tm-577-liberty-market
 <script src=\"assets/js/popup.js\"></script>
 <script src=\"assets/js/custom.js\"></script>
 
+<script src=\"";
+        // line 342
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
 
 </body>
 
@@ -459,7 +531,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  439 => 23,  435 => 22,  431 => 21,  427 => 20,  423 => 19,  418 => 16,  408 => 15,  317 => 232,  313 => 231,  299 => 219,  284 => 209,  274 => 205,  265 => 199,  257 => 194,  248 => 188,  240 => 183,  234 => 179,  229 => 178,  172 => 124,  168 => 123,  164 => 122,  65 => 25,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  511 => 23,  507 => 22,  503 => 21,  499 => 20,  495 => 19,  490 => 16,  480 => 15,  446 => 342,  392 => 291,  386 => 288,  382 => 287,  369 => 276,  362 => 271,  357 => 268,  321 => 238,  317 => 237,  303 => 226,  299 => 225,  293 => 222,  284 => 216,  275 => 210,  265 => 203,  256 => 197,  247 => 191,  242 => 188,  238 => 187,  222 => 173,  220 => 172,  168 => 123,  164 => 122,  65 => 25,  63 => 15,  58 => 13,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -587,7 +659,6 @@ https://templatemo.com/tm-577-liberty-market
                       <li><a href=\"index.html\">Home</a></li>
                       <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
                       <li><a href=\"{{ path('app_panier_index') }}\">Panier</a></li>
-                      <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
                       <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                     </ul>
                     <a class=\"menu-trigger\">
@@ -602,8 +673,24 @@ https://templatemo.com/tm-577-liberty-market
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Main Banner Area Start ***** -->
-<div class=\"main-banner\">
-   
+<!-- ***** Main Banner Area Start ***** -->
+<div class=\"page-heading normal-space\">
+  <div class=\"container\">
+    <div class=\"row\">
+      <div class=\"col-lg-12\">
+     
+        <h2>Votre Panier</h2>
+        
+        <div class=\"buttons\">
+          <div class=\"main-button\">
+            <a href=\"#\">Historique de vos paiements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
@@ -611,15 +698,8 @@ https://templatemo.com/tm-577-liberty-market
 <div class=\"currently-market\">
   <div class=\"container\">
   <div class=\"row\">
-            <div class=\"col-lg-6\">
-                <div class=\"section-heading\">
-                    <h2><em> Mon </em> Panier </h2>
-                </div>
-            </div>
           
-
-
-
+        
 
             <div class=\"col-lg-12\">
                 <div class=\"row grid\">
@@ -627,63 +707,111 @@ https://templatemo.com/tm-577-liberty-market
                    
                         <div>
                           <div class=\"line-dec\"></div>
-                            <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
-                              <thead  class=\"carte-table\">
-                                
-                                <tr>
-                                  <th class=\"text-center\"><h6>Photo</h6></th>
-                                  <th class=\"text-center\"><h6>Nom de la photo</h6></th>
-                                  <th class=\"text-center\"><h6>Prix</h6></th>
-                                  <th class=\"text-center\"><h6>Date d'ajout</h6></th>
-                                  <th class=\"text-center\"><h6>Action</h6></th>
-                                </tr>
-                                
-                              </thead>
+                          {% if lignesPanier is not empty %}
+                          <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
+                            <thead  class=\"carte-table\">
+                              <tr>
+                                <th class=\"text-center\"><h6>Photo</h6></th>
+                                <th class=\"text-center\"><h6>Nom de la photo</h6></th>
+                                <th class=\"text-center\"><h6>Prix hors TVA</h6></th>
+                                <th class=\"text-center\"><h6>Taux TVA (%)</h6></th>
+                                <th class=\"text-center\"><h6>Prix avec TVA</h6></th>
+                                <th class=\"text-center\"><h6>Date d'ajout</h6></th>
+                                <th class=\"text-center\"><h6>Action</h6></th>
+                              </tr>
+                            </thead>
                         
-                              <tbody   class=\"carte-table\">
-                                {% for ligne in lignesPanier %}
-                                
+                            <tbody   class=\"carte-table\">
+                              {% for ligne in lignesPanier %}
                                 <tr>
                                   <td>
                                     <div class=\"left-image\">
                                       <img src=\"{{ asset('http://localhost/img/' ~ ligne.idproduit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                     </div>
                                   </td>
+                                  
                                   <td>
                                     <div class=\"right-content\">
                                       <h6>{{ ligne.idproduit.nom }}</h6>
-                                     
                                     </div> 
                                   </td>
+                                
                                   <td>
                                     <span class=\"bid\">
                                       <h6><strong> {{ ligne.idproduit.prix }}</strong></h6>
                                     </span>
                                   </td>
+
+
                                   <td>
-                                    
-                                      <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
-                                   
+                                    <div class=\"right-content\">
+                                      <h6>{{ tauxTVA }}</h6>
+                                    </div> 
                                   </td>
+
                                   <td>
+                                    <div class=\"right-content\">
+                                      <h6>{{ montantTotal }}</h6>
+                                    </div> 
+                                  </td>
+
+
+                                  <td>
+                                    <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
+                                  </td>
+                                  <td>                                    
+                                    <div class=\"main-button delete-product-button\" data-idlignepanier=\"{{ ligne.idlignepanier }}\">
+                                      <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\">Supprimer</a>                                     
+                                    </div> 
+                                  </td>
+                                  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+                                  <script>
+                                   \$(document).ready(function() {
+                                     \$('.delete-product-button').click(function(e) {
+                                     e.preventDefault(); 
+                                     var idlignepanier = \$(this).data('idlignepanier');
+                                     \$.ajax({
+                                    method: 'POST',
+                                    url: \"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': 'idlignepanier'}) }}\".replace('idlignepanier', idlignepanier),
+                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
+                                    success: function(response) {
+                              if (response.success) {
+                                    \$('tr[data-idlignepanier=' + idlignepanier + ']').remove();
+                                 
+                                      \$(this).remove();
+                                      var total = 0;
+                                      \$('.total').each(function() { 
+                                      total += parseFloat(\$(this).text()); 
+                                      });
+                                      \$('#total').text(total.toFixed(2) + ' Tnd'); 
+                                      var count = \$('.count').length;
+                                      \$('#count').text(count);
+
+                                    alert('Le produit a été supprimé avec succès');
+                                    location.reload()
+                                   } else {
+                                  alert('Erreur lors de la suppression du produit');
+                                 }
+                               },
+                              error: function() {
+                                alert('Erreur lors de la communication avec le serveur');
+                             }
+                          });
+                       });
+                     });
+</script>
                                     
-                                    <div class=\"main-button\">
-                                      <a href=\"{{ path('app_lignepanier_delete', {'idlignepanier': ligne.idlignepanier}) }}\"   classe=\"active\" >Supprimer</a>
-                                     </div>
-                                  </td>
                                 </tr>
-                                {% else %} 
-                                <tr>
-                                  <td colspan=\"4\">
-                                    <div class=\"section-heading\">
-                                      <div class=\"line-dec\"></div>
-                                      <h2><em>Votre panier est</em> vide</h2>
-                                    </div>
-                                  </td>
-                                </tr>
-                                {% endfor %}
-                              </tbody>
-                            </table>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        {% else %}
+                          <div class=\"section-heading\">
+                           
+                            <h2   class=\"text-center\"> Votre panier est <em>vide</em> </h2>
+                          </div>
+                        {% endif %}
+                        
                             <div class=\"line-dec\"></div>
                         </div>
                    </div>
@@ -694,11 +822,11 @@ https://templatemo.com/tm-577-liberty-market
             <table class=\"carte-table\">
               <thead>
                 <tr>
-                  <th><h5>Nombre de produits: {{ count }}</h5></th>
-                  <th><h5>Montant total: {{ total }}</h5></th>
+                  <th  class=\"total\"><h5>Nombre de produits: {{ count }}</h5></th>
+                  <th  class=\"count\"><h5>Montant total: {{ total }}</h5></th>
                   <th>
                     <div class=\"main-button\">
-                      <a href=\"#\" class=\"active\">Payer</a>
+                      <a href=\"{{ path('checkout',{'idpanier': 'idpanier'})}}\">Payer</a>
                     </div>
                   </th>
                 </tr>
@@ -707,7 +835,7 @@ https://templatemo.com/tm-577-liberty-market
             
           
            <div class=\"line-dec\"></div>
-          
+
 
 
    </div>
@@ -717,10 +845,6 @@ https://templatemo.com/tm-577-liberty-market
 
 
 </div>
-
-
-
-
 
 
 
@@ -753,6 +877,7 @@ https://templatemo.com/tm-577-liberty-market
 <script src=\"assets/js/popup.js\"></script>
 <script src=\"assets/js/custom.js\"></script>
 
+<script src=\"{{ asset('bundles/jquery/jquery.min.js') }}\"></script>
 
 </body>
 

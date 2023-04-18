@@ -65,7 +65,7 @@ https://templatemo.com/tm-577-liberty-market
                     <ul class="nav">
                       <li><a href="index.html">Home</a></li>
                       <li><a href="{{ path('app_produits_index')}}">Shop</a></li>
-                      <li><a href="{{ path('app_panier_index') }}">Panier</a></li>
+                      <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
                       <li><a href="{{ path('app_Dashboard_index') }}">Dashboard</a></li>
                       <li><a href="create.html" class="active">Create Yours</a></li>
                     </ul>   
@@ -91,6 +91,16 @@ https://templatemo.com/tm-577-liberty-market
     </div>
   </div>
 
+<style>
+.error-message {
+    color: red;
+    
+}
+
+</style>
+
+
+
   <div class="item-details-page">
     <div class="container">
       <div class="row">
@@ -106,22 +116,22 @@ https://templatemo.com/tm-577-liberty-market
               <div class="col-lg-4">
                 <fieldset>
                   {{ form_label(form.nom, 'Nom du produit') }}
-                  {{ form_widget(form.nom, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
-                  {{ form_errors(form.nom) }}
+                  {{ form_widget(form.nom, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}</div>
+                  <div  class="error-message">   {{ form_errors(form.nom) }}</div>
                 </fieldset>
               </div>
               <div class="col-lg-4">
                 <fieldset>
                   {{ form_label(form.description, 'Description du produit') }}
                   {{ form_widget(form.description, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
-                  {{ form_errors(form.description) }}
+                  <div  class="error-message">{{ form_errors(form.description) }}</div> 
                 </fieldset>
               </div>
               <div class="col-lg-4">
                 <fieldset>
                    {{ form_label(form.prix, 'Prix du produit') }}
-                   {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
-                   {{ form_errors(form.prix) }}
+                  {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}</div>
+                 <div  class="error-message"> {{ form_errors(form.prix) }}</div>
                 </fieldset>
               </div>
               <div class="col-lg-6">
