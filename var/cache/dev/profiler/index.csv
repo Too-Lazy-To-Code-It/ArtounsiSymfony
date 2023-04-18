@@ -22070,3 +22070,9 @@ a7cccf,127.0.0.1,GET,http://127.0.0.1:8000/panier/showpanier/assets/js/popup.js,
 eaa5e3,127.0.0.1,GET,http://127.0.0.1:8000/panier/showpanier/assets/js/custom.js,1681696676,,404
 ec775d,127.0.0.1,GET,http://127.0.0.1:8000/bundles/jquery/jquery.min.js,1681696676,53528f,404
 53528f,127.0.0.1,GET,http://127.0.0.1:8000/bundles/jquery/jquery.min.js,1681696676,,404
+79de71,127.0.0.1,GET,http://127.0.0.1:8000/produits/,1681806616,,200
+f73b82,127.0.0.1,GET,http://127.0.0.1:8000/produits/,1681806620,,200
+070319,127.0.0.1,GET,http://127.0.0.1:8000/produits/assets/images/author.jpg,1681806625,901384,404
+901384,127.0.0.1,GET,http://127.0.0.1:8000/produits/assets/images/author.jpg,1681806625,,404
+d60414,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1681806629,abecd6,404
+abecd6,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1681806629,,404

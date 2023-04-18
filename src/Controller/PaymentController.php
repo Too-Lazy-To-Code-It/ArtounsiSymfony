@@ -28,7 +28,7 @@ class PaymentController extends AbstractController
     public function checkout(UrlGeneratorInterface $urlGenerator,SessionInterface $session,LignepanierRepository $lignepanierRepository): Response
     {
      
-        Stripe::setApiKey('sk_test_51MiOyPHjp8SAtqB82djmo7hRd9lvbM7i9MEBNsA9gJVxFhhEDLoL5pyTANP176euOnp6Zrk1ooSGVo3rJY8Qwo2a00gYTeyxb1');
+        Stripe::setApiKey('secret key here ');
         $lignesPanier = $lignepanierRepository->findBy(['idpanier' => $session->get('panier_id')]);
         $total = $session->get('total');
         $lineItems = [];
