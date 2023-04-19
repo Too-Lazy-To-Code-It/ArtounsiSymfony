@@ -47,16 +47,10 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
     <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap\" rel=\"stylesheet\">
 
     <link rel=\"stylesheet\"
-          href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"), "html", null, true);
-        echo "\">
+          href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 
     <link rel=\"stylesheet\" href=\"";
         // line 13
@@ -169,7 +163,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
     public function getDebugInfo()
     {
-        return array (  145 => 62,  141 => 61,  137 => 60,  133 => 59,  123 => 52,  117 => 49,  104 => 39,  97 => 35,  90 => 31,  85 => 29,  70 => 17,  63 => 13,  58 => 11,  52 => 8,  43 => 1,);
+        return array (  139 => 62,  135 => 61,  131 => 60,  127 => 59,  117 => 52,  111 => 49,  98 => 39,  91 => 35,  84 => 31,  79 => 29,  64 => 17,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -181,10 +175,10 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
     <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"{{ asset('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap') }}\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap\" rel=\"stylesheet\">
 
     <link rel=\"stylesheet\"
-          href=\"{{ asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}\">
+          href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 
     <link rel=\"stylesheet\" href=\"{{ asset('assets/css/styleL.css') }}\">
 

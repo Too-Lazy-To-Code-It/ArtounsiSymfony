@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Allusers;
 use App\Form\AllusersType;
 use App\Form\LoginType;
+use App\Form\VerificationCodeType;
 use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -13,10 +14,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Twilio\Rest\Client;
 
 #[Route('/allusers')]
 class AllusersController extends AbstractController
@@ -105,12 +109,16 @@ class AllusersController extends AbstractController
         ]);
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     #[Route('/new', name: 'app_allusers_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, AllusersRepository $allusersRepository): Response
+    public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer): Response
     {
         if ($this->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_index');
         }
+
         $alluser = new Allusers();
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
@@ -152,13 +160,57 @@ class AllusersController extends AbstractController
                 $alluser->setBackground($backgroundFileName);
             }
 
+            // Generate verification code and save to user entity
+            $verificationCode = $allusersRepository->generateVerificationCode();
+            $alluser->setVerificationCode($verificationCode);
+
             $allusersRepository->save($alluser, true);
 
-            return $this->redirectToRoute('app_allusers_login', [], Response::HTTP_SEE_OTHER);
+            // Send verification email
+            $recipient = $form->get('Email')->getData();
+            $allusersRepository->sendVerificationEmail( $recipient,$mailer, $verificationCode);
+
+            if ($alluser->getid_user()) {
+                // User has been saved to the database, redirect to verification page
+                return $this->redirectToRoute('app_allusers_verify', ['id_user' => $alluser->getid_user()]);
+            } else {
+                // User could not be saved to the database, display error message
+                $this->addFlash('error', 'An error occurred while creating your account. Please try again later.');
+            }
+
         }
 
         return $this->renderForm('allusers/new.html.twig', [
             'alluser' => $alluser,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id_user}/verify', name: 'app_allusers_verify', methods: ['GET', 'POST'])]
+    public function verify(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
+    {
+        if ($alluser->getVerified()) {
+            // user is already verified, redirect to login page
+            return $this->redirectToRoute('app_allusers_login');
+        }
+
+        $form = $this->createForm(VerificationCodeType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $verificationCode = $form->get('verificationCode')->getData();
+
+            if ($verificationCode == $alluser->getVerificationCode()) {
+                $alluser->setVerified(true);
+                $allusersRepository->save($alluser, true);
+                $this->addFlash('success', 'Your email address has been verified. You can now log in.');
+                return $this->redirectToRoute('app_allusers_login');
+            } else {
+                $this->addFlash('error', 'Invalid verification code. Please try again.');
+            }
+        }
+
+        return $this->renderForm('allusers/verify.html.twig', [
             'form' => $form,
         ]);
     }
@@ -220,6 +272,8 @@ class AllusersController extends AbstractController
 
         return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 
 
 }

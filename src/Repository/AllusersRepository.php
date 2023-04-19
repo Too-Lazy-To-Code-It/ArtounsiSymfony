@@ -9,6 +9,15 @@ use Exception;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\String\ByteString;
+use Symfony\Component\String\UnicodeString;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
+use Twilio\Rest\Client;
 
 /**
  * @extends ServiceEntityRepository<Allusers>
@@ -20,6 +29,51 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class AllusersRepository extends ServiceEntityRepository
 {
+    public function sendSmsMessage(Client $twilioClient,string $to,string $text):Response
+    {
+        $twilioClient->messages->create($to, [
+            "body" => $text,
+            "from" => $this->getParameter('twilio_number')
+        ]);
+        return new Response();
+    }
+
+
+    /**
+     * @throws TransportExceptionInterface
+     */
+    public function sendVerificationEmail(string $email,MailerInterface $mailer, $verificationCode)
+    {
+
+        // Create the email message
+        $message = (new Email())
+            ->from('adam.rafraf@esprit.tn')
+            ->to($email)
+            ->subject('Verification Code')
+            ->text('Your verification code is: ' . $verificationCode);
+
+        // Send the email using the mailer
+        $mailer->send($message);
+    }
+
+
+    /**
+     * @throws Exception
+     */
+    public function generateVerificationCode(): string
+    {
+        $length = 6;
+        $charset = new UnicodeString('0123456789');
+        $sb = new ByteString('');
+
+        for ($i = 0; $i < $length; $i++) {
+            $randomIndex = random_int(0, $charset->length() - 1);
+            $sb = $sb->append($charset->slice($randomIndex, 1));
+        }
+
+        return $sb->toString();
+    }
+
     function generateSalt(): string
     {
         $salt = random_bytes(16);
@@ -35,6 +89,7 @@ class AllusersRepository extends ServiceEntityRepository
             throw new RuntimeException("Error hashing password: " . $e->getMessage());
         }
     }
+
     function decryptPassword($encryptedPassword, $salt, $inputPassword): bool
     {
         try {

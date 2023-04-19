@@ -63,11 +63,11 @@ class Allusers implements UserInterface
     private ?string $nickname = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "can't be empty")]
+
     private ?string $avatar = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "can't be empty")]
+
     private ?string $background = null;
 
     #[ORM\Column(length: 255)]
@@ -78,7 +78,41 @@ class Allusers implements UserInterface
     #[Assert\NotBlank(message: "can't be empty")]
     private ?string $bio = null;
 
-    private ?string $token = null;
+    private ?string $VerificationCode = null;
+
+    private?bool $Verified=false;
+
+    /**
+     * @return bool|null
+     */
+    public function getVerified(): ?bool
+    {
+        return $this->Verified;
+    }
+
+    /**
+     * @param bool|null $Verified
+     */
+    public function setVerified(?bool $Verified): void
+    {
+        $this->Verified = $Verified;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getVerificationCode(): ?string
+    {
+        return $this->VerificationCode;
+    }
+
+    /**
+     * @param string|null $VerificationCode
+     */
+    public function setVerificationCode(?string $VerificationCode): void
+    {
+        $this->VerificationCode = $VerificationCode;
+    }
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Demandetravail::class)]
     private Collection $demandetravails;
