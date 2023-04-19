@@ -79,6 +79,6 @@ class __TwigTemplate_a27cfee23c269c151beecdeb18c0f3aa extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ favoris_turoial.id_favoris) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "favoris_turoial/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\favoris_turoial\\_delete_form.html.twig");
+", "favoris_turoial/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\favoris_turoial\\_delete_form.html.twig");
     }
 }

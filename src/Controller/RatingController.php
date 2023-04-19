@@ -1,14 +1,19 @@
 <?php
 
 namespace App\Controller;
+use Symfony\Component\Serializer\SerializerInterface;
 
 use App\Entity\Rating;
 use App\Form\RatingType;
+use App\Repository\TutorielRepository;
 use App\Repository\RatingRepository;
+use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ManagerRegistry;
 
 #[Route('/rating')]
 class RatingController extends AbstractController
@@ -22,22 +27,22 @@ class RatingController extends AbstractController
     }
 
     #[Route('/new', name: 'app_rating_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, RatingRepository $ratingRepository): Response
+    public function new(Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, ManagerRegistry $mr, RatingRepository $ratingRepository): Response
     {
+        dd($request->getContent());
+        $requestData = json_decode($request->getContent(), true);
         $rating = new Rating();
-        $form = $this->createForm(RatingType::class, $rating);
-        $form->handleRequest($request);
+        $entityManager = $doctrine->getManager();
+        
+        $rating->setRating(trim($requestData['rating']));
+        $rating->setChallengeId($tutorielRepository->findOneBy(array('id_tutoriel'=>trim($requestData['idTutoriel']))));  
+        $rating->setParticipatorId($AllusersRepository->findOneBy(array( 'id_user'=>1)));
+        $rating->getRaterId($AllusersRepository->findOneBy(array( 'id_user'=>2)));
+        
+        $entityManager->persist($rating);
+        $entityManager->flush();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $ratingRepository->save($rating, true);
-
-            return $this->redirectToRoute('app_rating_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('rating/new.html.twig', [
-            'rating' => $rating,
-            'form' => $form,
-        ]);
+        return new JsonResponse( ['success' => true ]);
     }
 
     #[Route('/{id_rating}', name: 'app_rating_show', methods: ['GET'])]

@@ -79,6 +79,6 @@ class __TwigTemplate_2b0815d3f87ac737a62555a8e12c2884 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ grosmot.idMot) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "grosmots/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\grosmots\\_delete_form.html.twig");
+", "grosmots/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\grosmots\\_delete_form.html.twig");
     }
 }

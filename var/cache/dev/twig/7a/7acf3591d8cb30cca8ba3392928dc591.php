@@ -212,6 +212,6 @@ class __TwigTemplate_b0410eca922a964ddc386824c7dcc242 extends Template
 
     <a href=\"{{ path('app_ban_new') }}\">Create new</a>
 {% endblock %}
-", "ban/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\ban\\index.html.twig");
+", "ban/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\ban\\index.html.twig");
     }
 }

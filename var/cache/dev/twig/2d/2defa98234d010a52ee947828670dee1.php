@@ -79,6 +79,6 @@ class __TwigTemplate_3f0b4cd8f5d8b471056eb045d040d748 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ ban.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "ban/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\ban\\_delete_form.html.twig");
+", "ban/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\ban\\_delete_form.html.twig");
     }
 }

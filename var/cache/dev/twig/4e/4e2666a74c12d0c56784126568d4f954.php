@@ -172,6 +172,6 @@ class __TwigTemplate_ed6b08003b670c77e736d5dcf24661c7 extends Template
 
     {{ include('category/_delete_form.html.twig') }}
 {% endblock %}
-", "category/show.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\category\\show.html.twig");
+", "category/show.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\category\\show.html.twig");
     }
 }

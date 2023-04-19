@@ -205,6 +205,6 @@ class __TwigTemplate_ef9162deb695235fa0ce869933224c5c extends Template
 
     <a href=\"{{ path('app_view_new') }}\">Create new</a>
 {% endblock %}
-", "view/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\view\\index.html.twig");
+", "view/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\view\\index.html.twig");
     }
 }

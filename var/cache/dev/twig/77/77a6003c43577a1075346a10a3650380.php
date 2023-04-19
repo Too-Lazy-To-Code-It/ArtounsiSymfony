@@ -233,6 +233,6 @@ class __TwigTemplate_4c6ce9a66c3e2630b6cd7893a903cb38 extends Template
 
     <a href=\"{{ path('app_produits_new') }}\">Create new</a>
 {% endblock %}
-", "produits/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\produits\\index.html.twig");
+", "produits/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\produits\\index.html.twig");
     }
 }

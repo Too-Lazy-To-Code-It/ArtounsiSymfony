@@ -349,6 +349,6 @@ class __TwigTemplate_1195b81769d5183e0ab70e873704bfb0 extends Template
         </tbody>
     </table>#}
     {% endblock %}
-", "tutoriel/favoris.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\tutoriel\\favoris.html.twig");
+", "tutoriel/favoris.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\tutoriel\\favoris.html.twig");
     }
 }

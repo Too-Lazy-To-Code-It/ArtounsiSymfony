@@ -205,6 +205,6 @@ class __TwigTemplate_3291938277615635778b686018631372 extends Template
 
     <a href=\"{{ path('app_grosmots_new') }}\">Create new</a>
 {% endblock %}
-", "grosmots/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\grosmots\\index.html.twig");
+", "grosmots/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\grosmots\\index.html.twig");
     }
 }

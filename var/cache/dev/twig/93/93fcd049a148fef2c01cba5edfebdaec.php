@@ -133,6 +133,6 @@ class __TwigTemplate_b2b64c16b359995c06ec384f21741871 extends Template
 
     <a href=\"{{ path('app_offretravail_index') }}\">back to list</a>
 {% endblock %}
-", "offretravail/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\offretravail\\new.html.twig");
+", "offretravail/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\offretravail\\new.html.twig");
     }
 }

@@ -205,6 +205,6 @@ class __TwigTemplate_50ec05c3962b4a52b664069ed36509e9 extends Template
 
     <a href=\"{{ path('app_category_new') }}\">Create new</a>
 {% endblock %}
-", "category/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\category\\index.html.twig");
+", "category/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\category\\index.html.twig");
     }
 }

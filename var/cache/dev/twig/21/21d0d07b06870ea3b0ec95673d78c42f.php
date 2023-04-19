@@ -212,6 +212,6 @@ class __TwigTemplate_125bf9863f171b2b5eb024c6fac64c7e extends Template
 
     <a href=\"{{ path('app_participation_new') }}\">Create new</a>
 {% endblock %}
-", "participation/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\participation\\index.html.twig");
+", "participation/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\participation\\index.html.twig");
     }
 }

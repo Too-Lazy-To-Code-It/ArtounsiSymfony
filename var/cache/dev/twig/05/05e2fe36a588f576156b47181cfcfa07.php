@@ -241,35 +241,55 @@ class __TwigTemplate_80985f4c469a53cfa400962be1653ec2 extends Template
                 <span class=\"bid\">
                   
                 ";
-            // line 105
-            echo "              </div>
+            // line 97
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formrating"]) || array_key_exists("formrating", $context) ? $context["formrating"] : (function () { throw new RuntimeError('Variable "formrating" does not exist.', 97, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
+            echo "
+                    <div class=\"rating\" role=\"optgroup\">
+                        <!-- in Rails just use 1.upto(5) -->
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-1\" data-rating=\"1\" tabindex=\"0\"
+                          aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-2\" data-rating=\"2\" tabindex=\"0\"
+                          aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-3\" data-rating=\"3\" tabindex=\"0\"
+                          aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-4\" data-rating=\"4\" tabindex=\"0\"
+                          aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-5\" data-rating=\"5\" tabindex=\"0\"
+                          aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
+                    </div>
+                    <button type=\"submit\" class=\"btn btn-md btn-brand\">Rate</button>
+                ";
+            // line 112
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formrating"]) || array_key_exists("formrating", $context) ? $context["formrating"] : (function () { throw new RuntimeError('Variable "formrating" does not exist.', 112, $this->source); })()), 'form_end', ["render_rest" => false]);
+            echo "
+              </div>
             </div>
           </div>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 109
+            // line 117
             echo "          <p> no Participation Yet </p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 111
+        // line 119
         echo "
       </div>
     </div>
   </div>
 
     <a href=\"";
-        // line 116
+        // line 124
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 118
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 118, $this->source); })()), "id", [], "any", false, false, false, 118)]), "html", null, true);
+        // line 126
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 126, $this->source); })()), "id", [], "any", false, false, false, 126)]), "html", null, true);
         echo "\">edit</a>
 
 ";
@@ -293,7 +313,7 @@ class __TwigTemplate_80985f4c469a53cfa400962be1653ec2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  272 => 118,  267 => 116,  260 => 111,  253 => 109,  245 => 105,  232 => 87,  223 => 85,  214 => 79,  210 => 77,  205 => 76,  193 => 67,  178 => 54,  176 => 53,  170 => 52,  166 => 51,  159 => 46,  157 => 45,  149 => 44,  145 => 43,  127 => 28,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  292 => 126,  287 => 124,  280 => 119,  273 => 117,  263 => 112,  245 => 97,  232 => 87,  223 => 85,  214 => 79,  210 => 77,  205 => 76,  193 => 67,  178 => 54,  176 => 53,  170 => 52,  166 => 51,  159 => 46,  157 => 45,  149 => 44,  145 => 43,  127 => 28,  110 => 14,  106 => 13,  102 => 12,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -394,14 +414,22 @@ class __TwigTemplate_80985f4c469a53cfa400962be1653ec2 extends Template
               <div class=\"col-8\">
                 <span class=\"bid\">
                   
-                {#
-                  {form_start(formrating,{ 'attr' : {'novalidate': 'novalidate'}} ) }}
-                    <td style=\"padding-left:10px;\"> <label style=\"color:white\">Rate</label> </td>
-                    <td style=\"padding-left:10px;\"> {{ form_widget(formrating.rating, { attr:{'class':'margin-left:10px'}}) }} </td>
-                    <td style=\"padding-left:10px;\"> {{ form_errors(formrating.rating) }} </td>
-                    <button>rate</button>
-                {{form_end(formrating)}
-                #}
+                {{ form_start(formrating,{ 'attr' : {'novalidate': 'novalidate'}} ) }}
+                    <div class=\"rating\" role=\"optgroup\">
+                        <!-- in Rails just use 1.upto(5) -->
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-1\" data-rating=\"1\" tabindex=\"0\"
+                          aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-2\" data-rating=\"2\" tabindex=\"0\"
+                          aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-3\" data-rating=\"3\" tabindex=\"0\"
+                          aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-4\" data-rating=\"4\" tabindex=\"0\"
+                          aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
+                        <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-5\" data-rating=\"5\" tabindex=\"0\"
+                          aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
+                    </div>
+                    <button type=\"submit\" class=\"btn btn-md btn-brand\">Rate</button>
+                {{ form_end(formrating, {'render_rest' : false}) }}
               </div>
             </div>
           </div>
@@ -418,6 +446,6 @@ class __TwigTemplate_80985f4c469a53cfa400962be1653ec2 extends Template
     <a href=\"{{ path('app_challenge_edit', {'id': challenge.id}) }}\">edit</a>
 
 {% endblock %}
-", "challenge/show.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\challenge\\show.html.twig");
+", "challenge/show.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\challenge\\show.html.twig");
     }
 }

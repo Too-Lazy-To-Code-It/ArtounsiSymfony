@@ -79,6 +79,6 @@ class __TwigTemplate_49fa0dda748ec481a39d3b164cff2286 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ offretravail.idoffre) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "offretravail/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\offretravail\\_delete_form.html.twig");
+", "offretravail/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\offretravail\\_delete_form.html.twig");
     }
 }

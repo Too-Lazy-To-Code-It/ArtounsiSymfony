@@ -27,6 +27,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
         $this->parent = false;
 
         $this->blocks = [
+            'css' => [$this, 'block_css'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -51,67 +52,43 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <title>Tables / Data - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
+
+    
     <link href=\"";
-        // line 11
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"";
-        // line 12
+        // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"), "html", null, true);
         echo "\">
     <!-- Favicons -->
     <link href=\"";
-        // line 14
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
     <link href=\"";
-        // line 15
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/apple-touch-icon.png"), "html", null, true);
         echo "\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
     <link href=\"";
-        // line 18
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.gstatic.com"), "html", null, true);
         echo "\" rel=\"preconnect\">
     <link href=\"";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
-    <!-- Vendor CSS Files -->
-    <link href=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
+    ";
         // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        $this->displayBlock('css', $context, $blocks);
+        // line 33
+        echo "    <!-- Template Main CSS File -->
     <link href=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/boxicons/css/boxicons.min.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.snow.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 26
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.bubble.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/remixicon/remixicon.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 28
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/style.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-
-    <!-- Template Main CSS File -->
-    <link href=\"";
-        // line 31
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
@@ -132,7 +109,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <div class=\"d-flex align-items-center justify-content-between\">
        <a href=\"index.html\" class=\"logo d-flex align-items-center\">
                 <img src=\"";
-        // line 49
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/icon.png"), "html", null, true);
         echo "\"  width=\"50\" height=\"300\" alt=\"\">
                  <span class=\"d-none d-lg-block\">ArTounsi</span>
@@ -302,7 +279,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
           <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
             <img src=\"";
-        // line 216
+        // line 219
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/profile-img.jpg"), "html", null, true);
         echo "\" alt=\"Profile\" class=\"rounded-circle\">
             <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
@@ -368,7 +345,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link \" href=\"";
-        // line 279
+        // line 282
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
         echo "\">
                     <i class=\"bi bi-grid\"></i>
@@ -380,7 +357,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"";
-        // line 288
+        // line 291
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
         echo "\">
                     <i class=\"fas fa-check-circle\"></i>
@@ -395,9 +372,9 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <!-- End Sidebar-->
 
 ";
-        // line 300
+        // line 303
         $this->displayBlock('body', $context, $blocks);
-        // line 948
+        // line 951
         echo "  
     </footer>
     <!-- End Footer -->
@@ -406,44 +383,44 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
     <!-- Vendor JS Files -->
     <script src=\"";
-        // line 955
+        // line 958
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 956
+        // line 959
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 957
+        // line 960
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 958
+        // line 961
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 959
+        // line 962
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 960
+        // line 963
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 961
+        // line 964
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 962
+        // line 965
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 963
+        // line 966
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://kit.fontawesome.com/a076d05399.js"), "html", null, true);
         echo "\" crossorigin=\"anonymous\"></script>
     <!-- Template Main JS File -->
     <script src=\"";
-        // line 965
+        // line 968
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -461,7 +438,56 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
     }
 
-    // line 300
+    // line 23
+    public function block_css($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
+
+        // line 24
+        echo "    <!-- Vendor CSS Files -->
+    <link href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/boxicons/css/boxicons.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.snow.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.bubble.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/remixicon/remixicon.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/style.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 303
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -471,7 +497,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 301
+        // line 304
         echo "  <main id=\"main\" class=\"main\">
     <div class=\"pagetitle\">
       <h1>Dashboard</h1>
@@ -1079,7 +1105,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
               <div class=\"news\">
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 907
+        // line 910
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-1.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Nihil blanditiis at in nihil autem</a></h4>
@@ -1088,7 +1114,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 913
+        // line 916
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-2.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Quidem autem et impedit</a></h4>
@@ -1097,7 +1123,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 919
+        // line 922
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-3.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Id quia et et ut maxime similique occaecati ut</a></h4>
@@ -1106,7 +1132,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 925
+        // line 928
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-4.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Laborum corporis quo dara net para</a></h4>
@@ -1115,7 +1141,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 931
+        // line 934
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-5.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Et dolores corrupti quae illo quod dolor</a></h4>
@@ -1154,7 +1180,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
     public function getDebugInfo()
     {
-        return array (  1119 => 931,  1110 => 925,  1101 => 919,  1092 => 913,  1083 => 907,  475 => 301,  465 => 300,  447 => 965,  442 => 963,  438 => 962,  434 => 961,  430 => 960,  426 => 959,  422 => 958,  418 => 957,  414 => 956,  410 => 955,  401 => 948,  399 => 300,  384 => 288,  372 => 279,  306 => 216,  136 => 49,  115 => 31,  109 => 28,  105 => 27,  101 => 26,  97 => 25,  93 => 24,  89 => 23,  85 => 22,  79 => 19,  75 => 18,  69 => 15,  65 => 14,  60 => 12,  56 => 11,  44 => 1,);
+        return array (  1145 => 934,  1136 => 928,  1127 => 922,  1118 => 916,  1109 => 910,  501 => 304,  491 => 303,  479 => 31,  475 => 30,  471 => 29,  467 => 28,  463 => 27,  459 => 26,  455 => 25,  452 => 24,  442 => 23,  424 => 968,  419 => 966,  415 => 965,  411 => 964,  407 => 963,  403 => 962,  399 => 961,  395 => 960,  391 => 959,  387 => 958,  378 => 951,  376 => 303,  361 => 291,  349 => 282,  283 => 219,  113 => 52,  92 => 34,  89 => 33,  87 => 23,  82 => 21,  78 => 20,  72 => 17,  68 => 16,  63 => 14,  59 => 13,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -1169,6 +1195,8 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <title>Tables / Data - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
+
+    
     <link href=\"{{asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css') }}\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css') }}\">
     <!-- Favicons -->
@@ -1179,6 +1207,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <link href=\"{{asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
     <link href=\"{{asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\" rel=\"stylesheet\">
 
+    {% block css %}
     <!-- Vendor CSS Files -->
     <link href=\"{{asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
     <link href=\"{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
@@ -1187,7 +1216,7 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
     <link href=\"{{asset('assets/vendor/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
     <link href=\"{{asset('assets/vendor/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
     <link href=\"{{asset('assets/vendor/simple-datatables/style.css') }}\" rel=\"stylesheet\">
-
+    {% endblock %}
     <!-- Template Main CSS File -->
     <link href=\"{{asset('assets/css/style.css') }}\" rel=\"stylesheet\">
 
@@ -2130,6 +2159,6 @@ class __TwigTemplate_de3eafd2decfa1deb8f55936f62c7cfd extends Template
 
 </body>
 
-</html>", "baseback.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\baseback.html.twig");
+</html>", "baseback.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\baseback.html.twig");
     }
 }

@@ -198,6 +198,6 @@ class __TwigTemplate_df1bde5a840e654d44a4db81212c1a1e extends Template
 
     <a href=\"{{ path('app_favoris_turoial_new') }}\">Create new</a>
 {% endblock %}
-", "favoris_turoial/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\favoris_turoial\\index.html.twig");
+", "favoris_turoial/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\favoris_turoial\\index.html.twig");
     }
 }

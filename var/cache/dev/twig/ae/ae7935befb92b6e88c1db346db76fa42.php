@@ -133,6 +133,6 @@ class __TwigTemplate_1f666b414412a3b80a2c728ae70f830c extends Template
 
     <a href=\"{{ path('app_comment_index') }}\">back to list</a>
 {% endblock %}
-", "comment/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\comment\\new.html.twig");
+", "comment/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\comment\\new.html.twig");
     }
 }

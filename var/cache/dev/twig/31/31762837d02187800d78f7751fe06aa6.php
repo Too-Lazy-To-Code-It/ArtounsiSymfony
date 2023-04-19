@@ -212,6 +212,6 @@ class __TwigTemplate_a1655b68a78f193f36c6182823b8a56d extends Template
 
     <a href=\"{{ path('app_comment_new') }}\">Create new</a>
 {% endblock %}
-", "comment/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\comment\\index.html.twig");
+", "comment/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\comment\\index.html.twig");
     }
 }

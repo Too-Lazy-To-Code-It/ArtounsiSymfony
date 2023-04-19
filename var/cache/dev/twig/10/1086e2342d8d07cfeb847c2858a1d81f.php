@@ -140,6 +140,6 @@ class __TwigTemplate_74f619df393bfa8550d9a997c64f904d extends Template
 
     {{ include('panier/_delete_form.html.twig') }}
 {% endblock %}
-", "panier/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\panier\\edit.html.twig");
+", "panier/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\panier\\edit.html.twig");
     }
 }

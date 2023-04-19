@@ -133,6 +133,6 @@ class __TwigTemplate_4158078be1819311d8239992f59d9510 extends Template
 
     <a href=\"{{ path('app_panier_index') }}\">back to list</a>
 {% endblock %}
-", "panier/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\panier\\new.html.twig");
+", "panier/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\panier\\new.html.twig");
     }
 }

@@ -159,6 +159,6 @@ class __TwigTemplate_90631c5ef028c90e81e5e659eb44ebda extends Template
 
     <a href=\"{{ path('app_video_index') }}\">back to list</a>
 {% endblock %}
-", "video/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\video\\new.html.twig");
+", "video/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\video\\new.html.twig");
     }
 }

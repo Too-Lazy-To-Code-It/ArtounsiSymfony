@@ -1,3 +1,6 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+ajax_route:
+    path: /ajax
+    controller: App\Controller\AjaxController::ajaxAction

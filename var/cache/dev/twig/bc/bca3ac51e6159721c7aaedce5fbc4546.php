@@ -212,6 +212,6 @@ class __TwigTemplate_a82fa38322388469b62e5b68fc1b49ce extends Template
 
     <a href=\"{{ path('app_panier_new') }}\">Create new</a>
 {% endblock %}
-", "panier/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\panier\\index.html.twig");
+", "panier/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\panier\\index.html.twig");
     }
 }

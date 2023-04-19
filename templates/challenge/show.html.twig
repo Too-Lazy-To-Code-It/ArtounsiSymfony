@@ -94,14 +94,22 @@
               <div class="col-8">
                 <span class="bid">
                   
-                {#
-                  {form_start(formrating,{ 'attr' : {'novalidate': 'novalidate'}} ) }}
-                    <td style="padding-left:10px;"> <label style="color:white">Rate</label> </td>
-                    <td style="padding-left:10px;"> {{ form_widget(formrating.rating, { attr:{'class':'margin-left:10px'}}) }} </td>
-                    <td style="padding-left:10px;"> {{ form_errors(formrating.rating) }} </td>
-                    <button>rate</button>
-                {{form_end(formrating)}
-                #}
+                {{ form_start(formrating,{ 'attr' : {'novalidate': 'novalidate'}} ) }}
+                    <div class="rating" role="optgroup">
+                        <!-- in Rails just use 1.upto(5) -->
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
+                          aria-label="Rate as one out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0"
+                          aria-label="Rate as two out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0"
+                          aria-label="Rate as three out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0"
+                          aria-label="Rate as four out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
+                          aria-label="Rate as five out of 5 stars" role="radio"></i>
+                    </div>
+                    <button type="submit" class="btn btn-md btn-brand">Rate</button>
+                {{ form_end(formrating, {'render_rest' : false}) }}
               </div>
             </div>
           </div>

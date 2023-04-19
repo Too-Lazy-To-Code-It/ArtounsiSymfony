@@ -128,6 +128,6 @@ class __TwigTemplate_b930a83d9bfc7c42c83ea23f7183c3a9 extends Template
     {{ include('challenge/_form.html.twig', {'button_label': 'Update'}) }}
 
 {% endblock %}
-", "challenge/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\challenge\\edit.html.twig");
+", "challenge/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\challenge\\edit.html.twig");
     }
 }

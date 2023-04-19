@@ -43,7 +43,7 @@ class ChallengeController extends AbstractController
             else
                 $challenges = $challengeRepository->findBy(array( 'title'=>$keyword, 'id_categorie'=>$category ));
         }
-        return $this->render('challenge/indexback.html.twig', [
+        return $this->render('challenge/index.html.twig', [
             'challenges' => $challenges,
             'categories' => $CategoryRepository->findAll(),
             'keyword' => $keyword,
@@ -101,6 +101,7 @@ class ChallengeController extends AbstractController
             $formrating = $this->createForm(RatingType::class, $rating);
         $formrating->handleRequest($request);
         $form->handleRequest($request);
+        
         if ($formrating->isSubmitted() && $formrating->isValid()) 
         {
            dd($formrating);
@@ -136,11 +137,10 @@ class ChallengeController extends AbstractController
         }
 
 
-        return $this->render('challenge/showback.html.twig', [
+        return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,
             'form' => $form->createView(),
             'formrating' => $formrating->createView(),
-            'oldparticipation' => $form->createView(),
         ]);
     }
 

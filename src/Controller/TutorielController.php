@@ -12,15 +12,31 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Form\RatingType;
+use App\Entity\Rating;
+use Knp\Component\Pager\PaginatorInterface;
+
+
 
 #[Route('/tutoriel')]
 class TutorielController extends AbstractController
 {
-    #[Route('/', name: 'app_tutoriel_index', methods: ['GET'])]
-    public function index(TutorielRepository $tutorielRepository): Response
+    #[Route('/', name: 'app_tutoriel_index', methods: ['GET','POST'])]
+    public function index(Request $request,PaginatorInterface $paginator,TutorielRepository $tutorielRepository): Response
     {
+        $allTutorielsQuery=$tutorielRepository->createQueryBuilder('p');
+        
+        $tutoriels = $paginator->paginate(
+            //Doctrine query
+            $allTutorielsQuery,
+            //Define the page parameter
+            $request->query->getInt('page', 1),
+            //Items per page
+            4
+        );
+        
         return $this->render('tutoriel/index.html.twig', [
-            'tutoriels' => $tutorielRepository->findAll(),
+            'tutoriels' => $tutoriels,
             'toptutoriels' => $tutorielRepository->findBy([],[],4),
         ]);
     }
@@ -64,10 +80,18 @@ class TutorielController extends AbstractController
         ]);
     }
 
-    #[Route('/{id_tutoriel}', name: 'app_tutoriel_show', methods: ['GET'])]
-    public function show(Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, $id_tutoriel): Response
-    {
+    #[Route('/{id_tutoriel}', name: 'app_tutoriel_show', methods: ['GET', 'POST'])]
+    public function show(Request $request, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, $id_tutoriel): Response
+    {   
+        $rating = new Rating();
+        $form = $this->createForm(RatingType::class, $rating);
+        $form->handleRequest($request);
+        if($request->isMethod("POST"))
+        {
+            dd($request);
+        }
         return $this->render('tutoriel/show.html.twig', [
+            'form' => $form->createView(),
             'tutoriel' => $tutoriel,
             'favori' => $favorisTuroialRepository->findOneBy(array('id_user'=>$allusersRepository->find(1),'id_tutoriel'=>$id_tutoriel)),
         ]);

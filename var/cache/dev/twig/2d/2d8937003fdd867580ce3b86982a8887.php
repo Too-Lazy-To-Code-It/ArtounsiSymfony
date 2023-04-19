@@ -48,7 +48,7 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
 <html lang=\"en\">
 
   <head>
-
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
@@ -189,31 +189,28 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
         echo "\" rel=\"stylesheet\">
 
     <!-- Additional CSS Files -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 19
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/starrating/css/rating.css"), "html", null, true);
-        echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 20
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/templatemo-liberty-market.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 24
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper@7/swiper-bundle.min.css"), "html", null, true);
         echo "\"/>
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css\">
+    
 
     ";
         
@@ -767,7 +764,7 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
 
     public function getDebugInfo()
     {
-        return array (  747 => 560,  743 => 559,  739 => 558,  734 => 556,  730 => 555,  725 => 553,  721 => 552,  717 => 550,  707 => 549,  238 => 76,  228 => 75,  214 => 24,  210 => 23,  206 => 22,  202 => 21,  198 => 20,  194 => 19,  188 => 16,  185 => 15,  175 => 14,  156 => 12,  144 => 562,  142 => 549,  127 => 536,  125 => 75,  109 => 62,  103 => 59,  95 => 54,  67 => 28,  65 => 14,  60 => 12,  47 => 1,);
+        return array (  744 => 560,  740 => 559,  736 => 558,  731 => 556,  727 => 555,  722 => 553,  718 => 552,  714 => 550,  704 => 549,  235 => 76,  225 => 75,  210 => 23,  206 => 22,  202 => 21,  198 => 20,  194 => 19,  188 => 16,  185 => 15,  175 => 14,  156 => 12,  144 => 562,  142 => 549,  127 => 536,  125 => 75,  109 => 62,  103 => 59,  95 => 54,  67 => 28,  65 => 14,  60 => 12,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -776,7 +773,7 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
 <html lang=\"en\">
 
   <head>
-
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
@@ -790,13 +787,13 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
     <link href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
 
     <!-- Additional CSS Files -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('bundles/starrating/css/rating.css') }}\" />
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/fontawesome.css') }}\">
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/templatemo-liberty-market.css') }}\">
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/owl.css') }}\">
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/animate.css') }}\">
     <link rel=\"stylesheet\" href=\"{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}\"/>
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css\">
+    
 
     {% endblock %}
     
@@ -1335,6 +1332,6 @@ class __TwigTemplate_937ae17118193e7165942e38d50b6bfe extends Template
 {% endblock %}
 
   </body>
-</html>", "base.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\base.html.twig");
     }
 }

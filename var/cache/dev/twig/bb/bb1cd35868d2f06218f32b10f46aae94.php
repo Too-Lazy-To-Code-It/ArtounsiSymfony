@@ -140,6 +140,6 @@ class __TwigTemplate_781447c035513c4ff646bb6e15ffbb6b extends Template
 
     {{ include('ban/_delete_form.html.twig') }}
 {% endblock %}
-", "ban/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\ban\\edit.html.twig");
+", "ban/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\ban\\edit.html.twig");
     }
 }

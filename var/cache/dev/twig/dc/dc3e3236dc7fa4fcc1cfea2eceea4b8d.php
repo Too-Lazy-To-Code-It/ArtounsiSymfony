@@ -133,6 +133,6 @@ class __TwigTemplate_a1e28c75fc077a083c4b1b40b8ac0b89 extends Template
 
     <a href=\"{{ path('app_ban_index') }}\">back to list</a>
 {% endblock %}
-", "ban/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\ban\\new.html.twig");
+", "ban/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\ban\\new.html.twig");
     }
 }

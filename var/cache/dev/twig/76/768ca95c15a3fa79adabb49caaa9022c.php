@@ -133,6 +133,6 @@ class __TwigTemplate_0b9d7204c3171026010734a37d2599ca extends Template
 
     <a href=\"{{ path('app_favoris_turoial_index') }}\">back to list</a>
 {% endblock %}
-", "favoris_turoial/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\favoris_turoial\\new.html.twig");
+", "favoris_turoial/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\favoris_turoial\\new.html.twig");
     }
 }

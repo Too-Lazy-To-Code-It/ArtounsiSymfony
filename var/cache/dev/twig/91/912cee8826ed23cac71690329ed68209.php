@@ -233,6 +233,6 @@ class __TwigTemplate_a287bc3621f60255cb4f88221bb3ee67 extends Template
 
     <a href=\"{{ path('app_video_new') }}\">Create new</a>
 {% endblock %}
-", "video/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\video\\index.html.twig");
+", "video/index.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\video\\index.html.twig");
     }
 }

@@ -133,6 +133,6 @@ class __TwigTemplate_bd278e30470023c3b01fdcb639577fbb extends Template
 
     <a href=\"{{ path('app_view_index') }}\">back to list</a>
 {% endblock %}
-", "view/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\view\\new.html.twig");
+", "view/new.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\view\\new.html.twig");
     }
 }

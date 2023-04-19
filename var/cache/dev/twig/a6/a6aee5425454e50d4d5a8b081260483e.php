@@ -164,6 +164,6 @@ class __TwigTemplate_ff6bddf8130ae7b02cbca4b776c0851e extends Template
 
     {{ include('video/_delete_form.html.twig') }}
 {% endblock %}
-", "video/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Adam\\templates\\video\\edit.html.twig");
+", "video/edit.html.twig", "C:\\Users\\achref\\Documents\\ArtounsiSymfony-Achref\\templates\\video\\edit.html.twig");
     }
 }
