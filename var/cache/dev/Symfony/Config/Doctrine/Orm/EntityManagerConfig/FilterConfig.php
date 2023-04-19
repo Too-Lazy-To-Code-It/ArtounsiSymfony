@@ -14,7 +14,7 @@ class FilterConfig
     private $enabled;
     private $parameters;
     private $_usedProperties = [];
-
+    
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
@@ -24,10 +24,10 @@ class FilterConfig
     {
         $this->_usedProperties['class'] = true;
         $this->class = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @default false
      * @param ParamConfigurator|bool $value
@@ -37,10 +37,10 @@ class FilterConfig
     {
         $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @param ParamConfigurator|mixed $value
      * @return $this
@@ -49,10 +49,10 @@ class FilterConfig
     {
         $this->_usedProperties['parameters'] = true;
         $this->parameters[$name] = $value;
-
+    
         return $this;
     }
-
+    
     public function __construct(array $value = [])
     {
         if (array_key_exists('class', $value)) {
@@ -60,24 +60,24 @@ class FilterConfig
             $this->class = $value['class'];
             unset($value['class']);
         }
-
+    
         if (array_key_exists('enabled', $value)) {
             $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
-
+    
         if (array_key_exists('parameters', $value)) {
             $this->_usedProperties['parameters'] = true;
             $this->parameters = $value['parameters'];
             unset($value['parameters']);
         }
-
+    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-
+    
     public function toArray(): array
     {
         $output = [];
@@ -90,7 +90,7 @@ class FilterConfig
         if (isset($this->_usedProperties['parameters'])) {
             $output['parameters'] = $this->parameters;
         }
-
+    
         return $output;
     }
 

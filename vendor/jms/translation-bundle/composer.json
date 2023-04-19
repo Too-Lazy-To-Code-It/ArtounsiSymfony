@@ -1,0 +1,81 @@
+{
+    "name": "jms/translation-bundle",
+    "type": "symfony-bundle",
+    "description": "Puts the Symfony Translation Component on steroids",
+    "keywords": [
+        "translation",
+        "multilanguage",
+        "extract",
+        "webinterface",
+        "ui",
+        "i18n",
+        "extraction",
+        "interface"
+    ],
+    "homepage": "http://jmsyst.com/bundles/JMSTranslationBundle",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Johannes M. Schmitt",
+            "email": "schmittjoh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "nikic/php-parser": "^4.9",
+        "symfony/console": "^4.3 || ^5.4",
+        "symfony/expression-language": "^4.3 || ^5.4",
+        "symfony/framework-bundle": "^4.3 || ^5.4",
+        "symfony/translation": "^4.3 || ^5.4",
+        "symfony/translation-contracts": "^1.1 || ^2.0",
+        "symfony/validator": "^4.3 || ^5.4",
+        "twig/twig": "^1.42.4 || ^2.12.5 || ^3.0"
+    },
+    "require-dev": {
+        "doctrine/annotations": "^1.11",
+        "doctrine/coding-standard": "^8.2.1",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+        "nyholm/nsa": "^1.0.1",
+        "symfony/phpunit-bridge": ">=5.4",
+        "psr/log": "^1.0",
+        "sensio/framework-extra-bundle": "^5.5.4",
+        "symfony/asset": "^4.3 || ^5.4",
+        "symfony/browser-kit": "^4.3 || ^5.4",
+        "symfony/css-selector": "^4.3 || ^5.4",
+        "symfony/filesystem": "^4.3 || ^5.4",
+        "symfony/form": "^4.3 || ^5.4",
+        "symfony/security-csrf": "^4.3 || ^5.4",
+        "symfony/templating": "^4.3 || ^5.4",
+        "symfony/property-access": "^4.3 || ^5.4",
+        "symfony/routing": "^4.4.15 || ^5.4",
+        "symfony/twig-bundle": "^4.3.11 || ^5.4",
+        "symfony/flex": "^1.19 || ^2.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.7-dev"
+        },
+        "symfony": {
+            "allow-contrib": true,
+            "require": "^5.4"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "JMS\\TranslationBundle\\": ""
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
+    }
+}

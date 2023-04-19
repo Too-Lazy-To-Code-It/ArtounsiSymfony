@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 #[Route('/post/like')]
 class PostLikeController extends AbstractController
 {
@@ -69,10 +71,28 @@ class PostLikeController extends AbstractController
     #[Route('/{id_like}', name: 'app_post_like_delete', methods: ['POST'])]
     public function delete(Request $request, PostLike $postLike, PostLikeRepository $postLikeRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$postLike->getId_like(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$postLike->getId(), $request->request->get('_token'))) {
             $postLikeRepository->remove($postLike, true);
         }
 
         return $this->redirectToRoute('app_post_like_index', [], Response::HTTP_SEE_OTHER);
     }
+    
+    
+    
+    // public function like(Request $request, PostLikeRepository $postLikeRepository): JsonResponse
+    // {
+    //     $postId = $request->request->get('postId');
+    //     //$userId = $this->getUser()->getId(); // get the ID of the logged-in user
+
+    //     $postLike = new PostLike();
+    //     $postLike->setIdPost($postId);
+    //     //$postLike->setIdUser($userId);
+
+    //     $postLikeRepository->save($postLike, true);
+
+    //     $likesCount = $postLikeRepository->count(['idPost' => $postId]);
+
+    //     return new JsonResponse(['likesCount' => $likesCount]);
+    // }
 }

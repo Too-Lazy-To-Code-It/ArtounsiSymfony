@@ -1,0 +1,7 @@
+parameters:
+    hcaptcha_site_key: '%env(resolve:HCAPTCHA_SITE_KEY)%'
+    hcaptcha_secret: '%env(resolve:HCAPTCHA_SECRET)%'
+meteo_concept_h_captcha:
+    hcaptcha:
+        site_key: 10000000-ffff-ffff-ffff-000000000001
+        secret: '%env(resolve:HCAPTCHA_SECRET)%'

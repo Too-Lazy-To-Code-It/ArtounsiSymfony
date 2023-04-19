@@ -769,4 +769,10 @@ class Allusers
         return $this;
     }
 
+    //I add it this function to avoid the this error : Object of class App\Entity\Allusers could not be converted to string in the post form
+    public function __toString()
+        {
+            return (string) $this->id_user;
+        }
+
 }

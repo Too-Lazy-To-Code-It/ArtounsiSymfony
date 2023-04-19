@@ -16,7 +16,7 @@ class TransitionConfig
     private $to;
     private $metadata;
     private $_usedProperties = [];
-
+    
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
@@ -26,10 +26,10 @@ class TransitionConfig
     {
         $this->_usedProperties['name'] = true;
         $this->name = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * An expression to block the transition
      * @example is_fully_authenticated() and is_granted('ROLE_JOURNALIST') and subject.getTitle() == 'My first article'
@@ -41,10 +41,10 @@ class TransitionConfig
     {
         $this->_usedProperties['guard'] = true;
         $this->guard = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
@@ -53,10 +53,10 @@ class TransitionConfig
     {
         $this->_usedProperties['from'] = true;
         $this->from = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
@@ -65,10 +65,10 @@ class TransitionConfig
     {
         $this->_usedProperties['to'] = true;
         $this->to = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
@@ -77,10 +77,10 @@ class TransitionConfig
     {
         $this->_usedProperties['metadata'] = true;
         $this->metadata = $value;
-
+    
         return $this;
     }
-
+    
     public function __construct(array $value = [])
     {
         if (array_key_exists('name', $value)) {
@@ -88,36 +88,36 @@ class TransitionConfig
             $this->name = $value['name'];
             unset($value['name']);
         }
-
+    
         if (array_key_exists('guard', $value)) {
             $this->_usedProperties['guard'] = true;
             $this->guard = $value['guard'];
             unset($value['guard']);
         }
-
+    
         if (array_key_exists('from', $value)) {
             $this->_usedProperties['from'] = true;
             $this->from = $value['from'];
             unset($value['from']);
         }
-
+    
         if (array_key_exists('to', $value)) {
             $this->_usedProperties['to'] = true;
             $this->to = $value['to'];
             unset($value['to']);
         }
-
+    
         if (array_key_exists('metadata', $value)) {
             $this->_usedProperties['metadata'] = true;
             $this->metadata = $value['metadata'];
             unset($value['metadata']);
         }
-
+    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-
+    
     public function toArray(): array
     {
         $output = [];
@@ -136,7 +136,7 @@ class TransitionConfig
         if (isset($this->_usedProperties['metadata'])) {
             $output['metadata'] = $this->metadata;
         }
-
+    
         return $output;
     }
 

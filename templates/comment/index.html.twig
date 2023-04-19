@@ -1,28 +1,88 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Comment index{% endblock %}
+
+{% block head %}
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    {% block stylesheet %}
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+    <link rel="stylesheet"href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css')}}"/>
+    {% endblock %}
+{% endblock %}
+
 
 {% block body %}
-    <h1>Comment index</h1>
+
+{% block header %}
+
+
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="index.html" class="logo">
+                                <img src="{{asset('assets/images/logo.png')}}" alt="">
+                            </a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="explore.html">Explore</a></li>
+                                <li><a href="details.html">Item Details</a></li>
+                                <li><a href="author.html">Author</a></li>
+                                <li><a href="create.html">Create Yours</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ***** Header Area End ***** -->
+
+    {% endblock %}
+
+    <div class="item-details-page">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="section-heading">
+                <div class="line-dec"></div>
+                <h2>View <em>Your</em> Comments</h2>
+            </div>
+            </div>
+            <div class="col-lg-12">
+            <form id="contact" action="" method="post">
+                <div class="row">
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id_comment</th>
-                <th>Date_comment</th>
-                <th>Comment</th>
-                <th>actions</th>
+                <th  style="color: white;">Id_comment</th>
+                <th  style="color: white;">Date_comment</th>
+                <th  style="color: white;">Comment</th>
+                <th  style="color: white;">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for comment in comments %}
             <tr>
-                <td>{{ comment.idComment }}</td>
-                <td>{{ comment.dateComment ? comment.dateComment|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ comment.comment }}</td>
+                <td  style="color: white;">{{ comment.getId }}</td>
+                <td  style="color: white;">{{ comment.dateComment ? comment.dateComment|date('Y-m-d H:i:s') : '' }}</td>
+                <td  style="color: white;">{{ comment.comment }}</td>
                 <td>
-                    <a href="{{ path('app_comment_show', {'id_comment': comment.id_comment}) }}">show</a>
-                    <a href="{{ path('app_comment_edit', {'id_comment': comment.id_comment}) }}">edit</a>
+                    <a href="{{ path('app_comment_edit', {'id_comment': comment.getId}) }}">edit</a>
+                    {{ include('comment/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -33,5 +93,30 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_comment_new') }}">Create new</a>
+    {# {% for post in posts %}
+    <a href="{{ path('app_comment_new', { 'id_post': post.getIdPost }) }}">Create new comment for post {{ post.getIdPost }}</a>
+{% endfor %} #}
+
+    {% for post in posts|slice(0, 1) %}
+<a href="{{ path('app_explore', { 'id_post': post.getIdPost }) }}">Return to explore page</a>
+    {% endfor %}
+ </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                    &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+    
 {% endblock %}

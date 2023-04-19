@@ -12,7 +12,7 @@ class RoutingConfig
 {
     private $senders;
     private $_usedProperties = [];
-
+    
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
@@ -21,10 +21,10 @@ class RoutingConfig
     {
         $this->_usedProperties['senders'] = true;
         $this->senders = $value;
-
+    
         return $this;
     }
-
+    
     public function __construct(array $value = [])
     {
         if (array_key_exists('senders', $value)) {
@@ -32,19 +32,19 @@ class RoutingConfig
             $this->senders = $value['senders'];
             unset($value['senders']);
         }
-
+    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-
+    
     public function toArray(): array
     {
         $output = [];
         if (isset($this->_usedProperties['senders'])) {
             $output['senders'] = $this->senders;
         }
-
+    
         return $output;
     }
 
