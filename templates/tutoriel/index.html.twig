@@ -54,21 +54,33 @@
           </div>
         </div>
         <div class="col-lg-7">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
+
+          <form id="search-form" name="gs" method="post" role="search" action="#">
             <div class="row">
               <div class="col-lg-5">
                 <fieldset>
-                    <input type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on" required>
+                {% if(keyword=="")%}
+                    <input id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
+                {% else %}
+                    <input value={{keyword}} id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
+                {% endif %}
                 </fieldset>
               </div>
               <div class="col-lg-5">
                 <fieldset>
-                    <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                        <option selected>All Categories</option>
-                        <option type="checkbox" name="option1" value="Music">Music</option>
-                        <option value="Digital">Digital</option>
-                        <option value="Blockchain">Blockchain</option>
-                        <option value="Virtual">Virtual</option>
+                    <select default=$category name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                        {% if(Categorie==null)%}
+                        <option value=null selected>All Categories</option>
+                        {% else %}
+                        <option value=null>All Categories</option>
+                        {% endif %}
+                        {% for category in categories %}
+                            {% if(category.getId_category()==Categorie)%}
+                            <option selected value="{{category.getId_category()}}">{{category.getNameCategory()}}</option>
+                            {% else %}
+                            <option value="{{category.getId_category()}}">{{category.getNameCategory()}}</option>
+                            {% endif %}
+                        {% endfor %}
                     </select>
                 </fieldset>
               </div>

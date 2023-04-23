@@ -39,14 +39,27 @@ class TutorielRepository extends ServiceEntityRepository
         }
     }
 
-    public function findTop(): ?Tutoriel
+    public function findTop()
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $this->getEntityManager()
+                              ->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\FavorisTuroial f WHERE t.id_tutoriel=f.id_tutoriel GROUP BY t.title ORDER BY count(f) DESC');
+        return $query->getResult();
+    }
+
+    public function tutorielsPerCategory(){
+        $number = $this->getEntityManager()
+        ->createQuery('SELECT count(t) FROM APP\Entity\Tutoriel t')
+        ->getResult();
+        $query = $this->getEntityManager()
+                              ->createQuery('SELECT c.name_category, count(c) as aaa FROM APP\Entity\Tutoriel t, APP\Entity\Category c WHERE t.id_categorie=c.id_category GROUP BY c.name_category');
+
+        return $query->getResult();
+    }
+
+    public function tutorielsPerView(){
+        $query = $this->getEntityManager()
+                              ->createQuery('SELECT t.title, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video GROUP BY t.title ORDER BY views DESC');
+        return $query->getResult();
     }
 
 //    /**

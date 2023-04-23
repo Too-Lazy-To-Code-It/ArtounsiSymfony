@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "build": "encore production --progress",
+    "watch": "encore dev --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/ux-autocomplete": "file:vendor/symfony/ux-autocomplete/assets",
+    "@symfony/webpack-encore": "^4.2.0",
+    "postcss-loader": "^7.0.0",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.0.0",
+    "tom-select": "^2.2.2",
+    "webpack-notifier": "^1.15.0"
+  },
+  "name": "artounsisymfony-achref",
+  "version": "1.0.0",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Too-Lazy-To-Code-ItV3/ArtounsiSymfony.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Too-Lazy-To-Code-ItV3/ArtounsiSymfony/issues"
+  },
+  "homepage": "https://github.com/Too-Lazy-To-Code-ItV3/ArtounsiSymfony#readme",
+  "description": ""
+}

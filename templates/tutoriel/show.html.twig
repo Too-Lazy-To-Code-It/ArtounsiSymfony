@@ -139,31 +139,13 @@
         #}
 
     {{ encore_entry_script_tags('app') }}
-    {{ encore_entry_script_tags('jquery') }}
+
 
     <script>
         $(document).ready(function () {
-            function submitRating(rating){
-              var $rating = rating;
-              var $idTutoriel = parseInt(document.querySelector('input').value);
-              var formData = {
-                        rating:$rating,
-                        idTutoriel:$idTutoriel
-                    };
-                    console.log(formData);
-              $.ajax({
-                        type: 'POST',
-                        url: '{{ path('app_rating_new') }}',
-                        data: JSON.stringify( formData),
-                        contentType: 'application/json',
-                        success: function (response) {
-
-                            // Handle the response from the controller
-                            if (response.success) {
-                                alert(" Thanks for your rating ");
-                            }
-                        }
-                    });
+            if({{oldrating.getRating()}})
+            {
+              setRating({{oldrating.getRating()}});
             }
             function setRating(rating) {
                 // fill all the stars assigning the '.selected' class
@@ -182,13 +164,25 @@
                 })
                 .on('mouseleave', function (e) {
                     // empty all the stars except those with class .selected
-                    $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+                    $('.rating-star#rating-' + {{oldrating.getRating()}} + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+
+                    //$('.rating-star').removeClass('fa-star').addClass('fa-star-o');
                 })
                 .on('click', function (e) {
                     var rating = $(e.target).data('rating');
-                    console.log(this);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://127.0.0.1:8000/rating/tutoriel/new/'+$(e.target).data('rating')+'/'+parseInt(document.querySelector('input').value),
+                        dataType: "json",
+                        contentType: 'application/json',
+                        success: function (response) {
+
+                            // Handle the response from the controller
+                                                            alert(" thanks for your rating ! ");
+
+                        }
+                    });
                     setRating(rating);
-                    submitRating(rating);
                 })
                 .on('keyup', function (e) {
                     // if spacebar is pressed while selecting a star
@@ -202,6 +196,7 @@
     </script>
 {% endblock %}
 {% block body %}
+{% set show=false %}
 <div class="item-details-page">
     <div class="container">
       <div class="row">
@@ -229,7 +224,6 @@
               <a href={{path('app_favoris_tutoriel_new',{'id_tutoriel':tutoriel.getId()})}}><i class="bi bi-heart">add to favoris</i></a>
             {% endif %}
             <input type="number" style="visibility: hidden;" value={{tutoriel.getId()}}>
-                {{ form_start(form,{ 'attr' : {'novalidate': 'novalidate'}} ) }}
                     <div class="rating" role="optgroup">
                         <!-- in Rails just use 1.upto(5) -->
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
@@ -243,8 +237,11 @@
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
                           aria-label="Rate as five out of 5 stars" role="radio"></i>
                     </div>
-                    {{ form_widget(form.rating,{'attr':{'id':'rating-input','name':'rating'}}) }}
-                {{ form_end(form) }}
+                    {% if(show==true) %}
+                      <div class="alert alert-success">
+                        Thanks for your rating <i class="bi bi-check" style="width: 0;height: 100;color: #00ff00;"></i>
+                      </div>
+                    {% endif %}
         </div>
 
         <div class="col-lg-12">
@@ -322,10 +319,4 @@
         </tbody>
     </table>
     #}
-
-    <a href="{{ path('app_tutoriel_index') }}">back to list</a>
-
-    <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}">edit</a>
-
-    {{ include('tutoriel/_delete_form.html.twig') }}
 {% endblock %}

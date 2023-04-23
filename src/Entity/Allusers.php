@@ -105,6 +105,9 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Produits::class)]
     private Collection $produits;
 
+    #[ORM\OneToMany(mappedBy: 'idRater', targetEntity: RatingTutoriel::class)]
+    private Collection $ratingTutoriels;
+
 
 
 
@@ -126,6 +129,7 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
         $this->offretravailarchives = new ArrayCollection();
         $this->paniers = new ArrayCollection();
         $this->produits = new ArrayCollection();
+        $this->ratingTutoriels = new ArrayCollection();
 
 
     }
@@ -799,6 +803,36 @@ class Allusers implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTutoriel(?Tutoriel $tutoriel): self
     {
         $this->tutoriel = $tutoriel;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RatingTutoriel>
+     */
+    public function getRatingTutoriels(): Collection
+    {
+        return $this->ratingTutoriels;
+    }
+
+    public function addRatingTutoriel(RatingTutoriel $ratingTutoriel): self
+    {
+        if (!$this->ratingTutoriels->contains($ratingTutoriel)) {
+            $this->ratingTutoriels->add($ratingTutoriel);
+            $ratingTutoriel->setIdRater($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRatingTutoriel(RatingTutoriel $ratingTutoriel): self
+    {
+        if ($this->ratingTutoriels->removeElement($ratingTutoriel)) {
+            // set the owning side to null (unless already changed)
+            if ($ratingTutoriel->getIdRater() === $this) {
+                $ratingTutoriel->setIdRater(null);
+            }
+        }
 
         return $this;
     }

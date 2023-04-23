@@ -4,8 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Tutoriel;
 use App\Form\TutorielType;
+use App\Entity\RatingTutoriel;
+
 use App\Repository\TutorielRepository;
+use App\Repository\RatingTutorielRepository;
 use App\Repository\AllusersRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\FavorisTuroialRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Form\RatingType;
+use App\Form\TutorielSearchType;
 use App\Entity\Rating;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -22,9 +27,34 @@ use Knp\Component\Pager\PaginatorInterface;
 class TutorielController extends AbstractController
 {
     #[Route('/', name: 'app_tutoriel_index', methods: ['GET','POST'])]
-    public function index(Request $request,PaginatorInterface $paginator,TutorielRepository $tutorielRepository): Response
+    public function index(Request $request,PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository,CategoryRepository $CategoryRepository): Response
     {
+        $em = $mr->getManager();
         $allTutorielsQuery=$tutorielRepository->createQueryBuilder('p');
+
+        $keyword = null;
+        $category = null;
+        if($request->isMethod("POST"))
+        {
+            $keyword = $request->get('keyword');
+            $category = $request->get('Category');
+
+            if($keyword=="" && $category=="null")
+                $allTutorielsQuery=$tutorielRepository->createQueryBuilder('p');
+            else if(($keyword==""||$keyword==null) && $category!="null")
+                $allTutorielsQuery=$tutorielRepository->createQueryBuilder('p')
+                                                  ->where("p.id_categorie like :category")
+                                                  ->setParameter('category', "%".$category."%");
+
+            else if(($keyword!=""||$keyword!=null) && $category=="null")
+                $allTutorielsQuery = $em->createQuery("SELECT t FROM APP\Entity\Tutoriel t WHERE t.title like '%:title%'")
+                                                              ->setParameter('title', $keyword);
+               
+            else
+                $tutoriels = $tutorielRepository->findBy(array( 'title'=>$keyword, 'id_categorie'=>$category ));
+        }
+
+        
         
         $tutoriels = $paginator->paginate(
             //Doctrine query
@@ -36,8 +66,28 @@ class TutorielController extends AbstractController
         );
         
         return $this->render('tutoriel/index.html.twig', [
+            'keyword' => $keyword,
+            'Categorie' => $category,
             'tutoriels' => $tutoriels,
+            'toptutoriels' => $tutorielRepository->findTop(),
+            'categories' => $CategoryRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/back', name: 'app_tutoriel_index_back', methods: ['GET','POST'])]
+    public function indexback(Request $request,PaginatorInterface $paginator,TutorielRepository $tutorielRepository): Response
+    {
+
+        $form = $this->createForm(TutorielSearchType::class);
+        $form->handleRequest($request);
+        $tutorielsPerCategory=$tutorielRepository->tutorielsPerCategory();                                
+        
+        return $this->render('tutoriel/indexback.html.twig', [
+            'tutorielsPerView' => $tutorielRepository->tutorielsPerView(),
+            'tutorielsPerCategory' => $tutorielsPerCategory,
+            'tutoriels' => $tutorielRepository->findAll(),
             'toptutoriels' => $tutorielRepository->findBy([],[],4),
+            'form' => $form->createView()
         ]);
     }
 
@@ -71,7 +121,9 @@ class TutorielController extends AbstractController
 
             $tutorielRepository->save($tutoriel, true);
 
-            return $this->redirectToRoute('app_tutoriel_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('success','Tutoriel Added successfuly');
+
+            return $this->redirectToRoute('app_tutoriel_index_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('tutoriel/new.html.twig', [
@@ -81,17 +133,20 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/{id_tutoriel}', name: 'app_tutoriel_show', methods: ['GET', 'POST'])]
-    public function show(Request $request, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, $id_tutoriel): Response
-    {   
-        $rating = new Rating();
-        $form = $this->createForm(RatingType::class, $rating);
-        $form->handleRequest($request);
-        if($request->isMethod("POST"))
+    public function show(Request $request, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
+    {          
+        
+        if($ratingTutorielRepositoty->findOneBy(array('tutorielId'=>$tutorielRepository->find($id_tutoriel),'idRater'=>$allusersRepository->find(1))))
+            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId'=>$tutorielRepository->find($id_tutoriel),'idRater'=>$allusersRepository->find(1)));
+        else
         {
-            dd($request);
+            $oldrating = new RatingTutoriel();
+            $oldrating->setRating(0);
         }
+
+        
         return $this->render('tutoriel/show.html.twig', [
-            'form' => $form->createView(),
+            'oldrating' => $oldrating,
             'tutoriel' => $tutoriel,
             'favori' => $favorisTuroialRepository->findOneBy(array('id_user'=>$allusersRepository->find(1),'id_tutoriel'=>$id_tutoriel)),
         ]);
@@ -114,8 +169,9 @@ class TutorielController extends AbstractController
             $tutoriel->setPathimg($fichier);}
 
             $tutorielRepository->save($tutoriel, true);
+            $this->addFlash('success','Tutoriel Modified successfuly');
 
-            return $this->redirectToRoute('app_tutoriel_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_tutoriel_index_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('tutoriel/edit.html.twig', [
@@ -124,6 +180,8 @@ class TutorielController extends AbstractController
         ]);
     }
 
+    
+
     #[Route('/delete/{id_tutoriel}', name: 'app_tutoriel_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, TutorielRepository $tutorielRepository, ManagerRegistry $mr, $id_tutoriel): Response
     {
@@ -131,6 +189,7 @@ class TutorielController extends AbstractController
         $tutoriel = $tutorielRepository->find($id_tutoriel);
         $em->remove($tutoriel);
         $em->flush();
+        $this->addFlash('success','Tutoriel Deleted successfuly');
         return $this->redirectToRoute('app_tutoriel_index', [], Response::HTTP_SEE_OTHER);
     }
 }

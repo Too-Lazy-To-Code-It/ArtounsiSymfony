@@ -87,6 +87,8 @@ class ChallengeController extends AbstractController
         $oldparticipation = $participationRepository->findOneBy(array( 'id_challenge'=>$challenge, 'id_user'=>$AllusersRepository->findBy(array( 'id_user'=>2))[0] ));
 
         $oldrating = $ratingRepository->findOneBy(array( 'challenge_id'=>$challenge, 'rater_id'=>$AllusersRepository->findBy(array( 'id_user'=>1))[0] ));
+        
+        
         $participation = new Participation();
         $rating = new Rating();
 
@@ -94,18 +96,8 @@ class ChallengeController extends AbstractController
             $form = $this->createForm(ParticipationType::class, $oldparticipation);
         else
             $form = $this->createForm(ParticipationType::class, $participation);
-        
-        if($oldrating)
-            $formrating = $this->createForm(RatingType::class, $oldrating);
-        else
-            $formrating = $this->createForm(RatingType::class, $rating);
-        $formrating->handleRequest($request);
+
         $form->handleRequest($request);
-        
-        if ($formrating->isSubmitted() && $formrating->isValid()) 
-        {
-           dd($formrating);
-        }
 
         if ($form->isSubmitted() && $form->isValid()) 
         {
@@ -140,7 +132,6 @@ class ChallengeController extends AbstractController
         return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,
             'form' => $form->createView(),
-            'formrating' => $formrating->createView(),
         ]);
     }
 

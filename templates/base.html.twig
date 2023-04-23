@@ -2,7 +2,8 @@
 <html lang="en">
 
   <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     
-
+{{ encore_entry_link_tags('app') }}
     {% endblock %}
     
   </head>
@@ -549,6 +550,7 @@
 {% block js %}
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
+  {{ encore_entry_script_tags('app') }}
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 

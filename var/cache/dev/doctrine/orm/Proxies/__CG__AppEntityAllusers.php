@@ -67,10 +67,10 @@ class Allusers extends \App\Entity\Allusers implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'test', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Last_Name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Email', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Birthday', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'salt', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nationality', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nickname', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'background', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'demandetravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'artistepostulers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'challenges', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'posts', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'postLikes', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'views', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratings', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'participations', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'favorisTuroials', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravailarchives', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'paniers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'produits'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'test', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Last_Name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Email', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Birthday', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'salt', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nationality', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nickname', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'background', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'demandetravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'artistepostulers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'challenges', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'posts', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'postLikes', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'views', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratings', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'participations', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'favorisTuroials', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravailarchives', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'paniers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'produits', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratingTutoriels'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'test', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Last_Name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Email', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Birthday', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'salt', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nationality', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nickname', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'background', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'demandetravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'artistepostulers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'challenges', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'posts', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'postLikes', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'views', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratings', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'participations', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'favorisTuroials', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravailarchives', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'paniers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'produits'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'id_user', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'test', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Last_Name', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Email', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'Birthday', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'salt', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nationality', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'nickname', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'background', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'demandetravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'artistepostulers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravails', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'challenges', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'posts', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'comments', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'postLikes', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'views', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratings', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'participations', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'favorisTuroials', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'offretravailarchives', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'paniers', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'produits', '' . "\0" . 'App\\Entity\\Allusers' . "\0" . 'ratingTutoriels'];
     }
 
     /**
@@ -1059,6 +1059,39 @@ class Allusers extends \App\Entity\Allusers implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTutoriel', [$tutoriel]);
 
         return parent::setTutoriel($tutoriel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRatingTutoriels(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRatingTutoriels', []);
+
+        return parent::getRatingTutoriels();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addRatingTutoriel(\App\Entity\RatingTutoriel $ratingTutoriel): \App\Entity\Allusers
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addRatingTutoriel', [$ratingTutoriel]);
+
+        return parent::addRatingTutoriel($ratingTutoriel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeRatingTutoriel(\App\Entity\RatingTutoriel $ratingTutoriel): \App\Entity\Allusers
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeRatingTutoriel', [$ratingTutoriel]);
+
+        return parent::removeRatingTutoriel($ratingTutoriel);
     }
 
 }

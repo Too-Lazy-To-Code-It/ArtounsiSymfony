@@ -80,4 +80,5 @@
   79 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableArgumentResolver',
   80 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
   81 => 'Symfony\\Component\\Security\\Http\\Controller\\UserValueResolver',
+  82 => 'Symfony\\UX\\Autocomplete\\Controller\\EntityAutocompleteController',
 );

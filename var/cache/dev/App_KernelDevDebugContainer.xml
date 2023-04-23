@@ -23,6 +23,9 @@
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="EndroidQrCodeBundle">Endroid\QrCodeBundle\EndroidQrCodeBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
+      <parameter key="AutocompleteBundle">Symfony\UX\Autocomplete\AutocompleteBundle</parameter>
+      <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -80,6 +83,18 @@
       <parameter key="KnpPaginatorBundle" type="collection">
         <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
+      </parameter>
+      <parameter key="AutocompleteBundle" type="collection">
+        <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete</parameter>
+        <parameter key="namespace">Symfony\UX\Autocomplete</parameter>
+      </parameter>
+      <parameter key="WebpackEncoreBundle" type="collection">
+        <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src</parameter>
+        <parameter key="namespace">Symfony\WebpackEncoreBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -220,6 +235,7 @@
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>@Autocomplete/autocomplete_form_theme.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\achref\Documents\ArtounsiSymfony-Achref/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -477,6 +493,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\RatingController"/>
       </call>
     </service>
+    <service id="App\Controller\RatingTutorielController" class="App\Controller\RatingTutorielController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\RatingTutorielController"/>
+      </call>
+    </service>
     <service id="App\Controller\TutorielController" class="App\Controller\TutorielController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -546,7 +569,13 @@
     <service id="App\Form\ProduitsType" class="App\Form\ProduitsType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\RatingTutorielType" class="App\Form\RatingTutorielType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RatingType" class="App\Form\RatingType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TutorielSearchType" class="App\Form\TutorielSearchType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\TutorielType" class="App\Form\TutorielType" autowire="true" autoconfigure="true">
@@ -627,6 +656,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\RatingRepository" class="App\Repository\RatingRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RatingTutorielRepository" class="App\Repository\RatingTutorielRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -772,6 +805,9 @@
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.main" type="service" id="monolog.handler.main" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.console" type="service" id="monolog.handler.console" on-invalid="ignore_uninitialized"/>
+        <argument key="webpack_encore.tag_renderer" type="service" id="webpack_encore.tag_renderer" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
+        <argument key="webpack_encore.entrypoint_lookup[_default]" type="service" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key=".debug.http_client" type="service" id=".debug.http_client" on-invalid="ignore_uninitialized"/>
       </argument>
       <argument type="collection">
@@ -846,6 +882,15 @@
           <argument>reset</argument>
         </argument>
         <argument key="monolog.handler.console" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="webpack_encore.tag_renderer" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.webpack_encore" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="webpack_encore.entrypoint_lookup[_default]" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key=".debug.http_client" type="collection">
@@ -990,6 +1035,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.webpack_encore</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:clear</argument>
@@ -1025,6 +1071,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.webpack_encore</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:delete</argument>
@@ -1048,6 +1095,7 @@
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
+        <argument>cache.webpack_encore</argument>
       </argument>
       <call method="setName">
         <argument>cache:pool:list</argument>
@@ -1417,6 +1465,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument>Symfony\UX\Autocomplete\Form</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\AllusersType</argument>
@@ -1435,7 +1484,9 @@
         <argument>App\Form\PostLikeType</argument>
         <argument>App\Form\PostType</argument>
         <argument>App\Form\ProduitsType</argument>
+        <argument>App\Form\RatingTutorielType</argument>
         <argument>App\Form\RatingType</argument>
+        <argument>App\Form\TutorielSearchType</argument>
         <argument>App\Form\TutorielType</argument>
         <argument>App\Form\VideoType</argument>
         <argument>App\Form\ViewType</argument>
@@ -1444,6 +1495,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>Symfony\UX\Autocomplete\Form\ParentEntityAutocompleteType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1454,6 +1506,7 @@
         <argument>Symfony\Component\Form\Extension\Validator\Type\UploadValidatorExtension</argument>
         <argument>Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension</argument>
         <argument>Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension</argument>
+        <argument>Symfony\UX\Autocomplete\Form\AutocompleteChoiceTypeExtension</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Validator\ValidatorTypeGuesser</argument>
@@ -1712,6 +1765,7 @@
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="cache.validator_expression_language" type="service" id="cache.validator_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id="cache.global_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="true">
@@ -1728,6 +1782,7 @@
         <argument key="cache.doctrine.orm.default.result" type="service" id="cache.doctrine.orm.default.result" on-invalid="ignore_uninitialized"/>
         <argument key="cache.doctrine.orm.default.query" type="service" id="cache.doctrine.orm.default.query" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
     <service id="identity_translator" class="Symfony\Component\Translation\IdentityTranslator"/>
@@ -1776,9 +1831,14 @@
       <argument type="service" id=".debug.http_client"/>
       <deprecated package="symfony/framework-bundle" version="5.3">The "%service_id%" service is deprecated, use "assets.json_manifest_version_strategy" instead.</deprecated>
     </service>
+    <service id="assets._version__default" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy">
+      <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/public/build/manifest.json</argument>
+      <argument type="service" id=".debug.http_client" on-invalid="null"/>
+      <argument>false</argument>
+    </service>
     <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage">
       <argument></argument>
-      <argument type="service" id="assets.empty_version_strategy"/>
+      <argument type="service" id="assets._version__default"/>
       <argument type="service" id="assets.context"/>
     </service>
     <service id="http_client.abstract_retry_strategy" class="Symfony\Component\HttpClient\Retry\GenericRetryStrategy" abstract="true">
@@ -1906,6 +1966,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.ar.php</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1922,6 +1983,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.bg.php</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1934,6 +1996,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.ca.php</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
@@ -1941,6 +2004,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.cs.php</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1950,6 +2014,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.da.php</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
@@ -1957,11 +2022,13 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.de.php</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.el.php</argument>
           </argument>
           <argument key="en" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
@@ -1969,6 +2036,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.en.php</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
@@ -1976,6 +2044,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.es.php</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1987,12 +2056,14 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.eu.php</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.fa.php</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
@@ -2000,6 +2071,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.fi.php</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
@@ -2007,11 +2079,13 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.fr.php</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.gl.php</argument>
           </argument>
           <argument key="he" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
@@ -2023,6 +2097,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.hr.php</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
@@ -2030,6 +2105,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.hu.php</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -2042,6 +2118,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.id.php</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
@@ -2049,6 +2126,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.it.php</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
@@ -2061,12 +2139,14 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.lb.php</argument>
           </argument>
           <argument key="lt" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.lt.php</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -2094,6 +2174,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.nl.php</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -2112,18 +2193,21 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.pl.php</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.pt.php</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.pt_BR.php</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
@@ -2131,6 +2215,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.ro.php</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
@@ -2138,6 +2223,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.ru.php</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -2149,6 +2235,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.sl.php</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
@@ -2170,6 +2257,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.sv.php</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -2187,6 +2275,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.tr.php</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
@@ -2194,6 +2283,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.uk.php</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
@@ -2214,6 +2304,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.zh_CN.php</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
@@ -2229,6 +2320,9 @@
           <argument key="sw" type="collection">
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
+          <argument key="sr_RS" type="collection">
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations\AutocompleteBundle.sr_RS.php</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\validator/Resources/translations</argument>
@@ -2236,6 +2330,7 @@
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2249,6 +2344,8 @@
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\maker-bundle\src/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\endroid\qr-code-bundle\src/translations</argument>
+          <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
+          <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2257,6 +2354,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/translations</argument>
             <argument>translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-bundle/translations</argument>
@@ -2270,6 +2368,8 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\endroid\qr-code-bundle\src/translations</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2547,6 +2647,14 @@
         <argument type="collection">
           <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
           <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="webpack_encore.exception_listener"/>
+          <argument>onKernelException</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -3101,6 +3209,14 @@
           <argument>pagination</argument>
         </argument>
         <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.finish_request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener"/>
+          <argument>resetAssets</argument>
+        </argument>
+        <argument>0</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -3688,7 +3804,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.O3NFs6."/>
+      <argument type="service" id=".service_locator.TUTDz6t"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3703,6 +3819,12 @@
         </argument>
         <argument key="Symfony\Component\Form\Extension\Core\Type\SubmitType" type="iterator">
           <argument type="service" id="form.type_extension.submit.validator"/>
+        </argument>
+        <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="iterator">
+          <argument type="service" id="ux.autocomplete.choice_type_extension"/>
+        </argument>
+        <argument key="Symfony\Component\Form\Extension\Core\Type\TextType" type="iterator">
+          <argument type="service" id="ux.autocomplete.choice_type_extension"/>
         </argument>
       </argument>
       <argument type="iterator">
@@ -4319,6 +4441,10 @@
         <argument>cache.security_expression_language</argument>
         <argument type="service" id="cache.security_expression_language"/>
       </call>
+      <call method="addInstance">
+        <argument>cache.webpack_encore</argument>
+        <argument type="service" id="cache.webpack_encore"/>
+      </call>
     </service>
     <service id="cache_pool_clearer.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\CachePoolClearerCacheWarmer">
       <tag name="kernel.cache_warmer" priority="64"/>
@@ -4570,7 +4696,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.zPeQE10"/>
+      <argument type="service" id=".service_locator.7.a0roH"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5194,6 +5320,12 @@
       <call method="addExtension">
         <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="webpack_encore.twig_entry_files_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="webpack_encore.twig_stimulus_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5300,6 +5432,14 @@
       <call method="addPath">
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/templates</argument>
+        <argument>Autocomplete</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/templates</argument>
+        <argument>!Autocomplete</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/templates</argument>
@@ -6738,6 +6878,142 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="doctrine.fixtures.loader"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="collection">
+        <argument key="default" type="service" id="doctrine.fixtures.purger.orm_purger_factory"/>
+      </argument>
+      <call method="setName">
+        <argument>doctrine:fixtures:load</argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader">
+      <argument type="service" id="service_container"/>
+      <call method="addFixtures">
+        <argument type="collection"/>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
+      <tag name="doctrine.fixtures.purger_factory" alias="default"/>
+    </service>
+    <service id="ux.autocomplete.autocompleter_registry" class="Symfony\UX\Autocomplete\AutocompleterRegistry">
+      <argument type="service" id=".service_locator.Xbsa8iG"/>
+    </service>
+    <service id="ux.autocomplete.doctrine_registry_wrapper" class="Symfony\UX\Autocomplete\Doctrine\DoctrineRegistryWrapper">
+      <argument type="service" id="doctrine" on-invalid="ignore"/>
+    </service>
+    <service id="ux.autocomplete.results_executor" class="Symfony\UX\Autocomplete\AutocompleteResultsExecutor">
+      <argument type="service" id="ux.autocomplete.doctrine_registry_wrapper"/>
+      <argument type="service" id="security.helper" on-invalid="null"/>
+    </service>
+    <service id="ux.autocomplete.entity_search_util" class="Symfony\UX\Autocomplete\Doctrine\EntitySearchUtil">
+      <argument type="service" id="ux.autocomplete.entity_metadata_factory"/>
+    </service>
+    <service id="ux.autocomplete.entity_metadata_factory" class="Symfony\UX\Autocomplete\Doctrine\EntityMetadataFactory">
+      <argument type="service" id="ux.autocomplete.doctrine_registry_wrapper"/>
+    </service>
+    <service id="ux.autocomplete.entity_autocomplete_controller" class="Symfony\UX\Autocomplete\Controller\EntityAutocompleteController" public="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="ux.autocomplete.autocompleter_registry"/>
+      <argument type="service" id="ux.autocomplete.results_executor"/>
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="ux.autocomplete.make_autocomplete_field" class="Symfony\UX\Autocomplete\Maker\MakeAutocompleteField">
+      <tag name="maker.command"/>
+      <argument type="service" id="maker.doctrine_helper" on-invalid="ignore"/>
+    </service>
+    <service id="ux.autocomplete.entity_type" class="Symfony\UX\Autocomplete\Form\ParentEntityAutocompleteType">
+      <tag name="form.type"/>
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="ux.autocomplete.choice_type_extension" class="Symfony\UX\Autocomplete\Form\AutocompleteChoiceTypeExtension">
+      <tag name="form.type_extension"/>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
+    </service>
+    <service id="ux.autocomplete.wrapped_entity_type_autocompleter" class="Symfony\UX\Autocomplete\Form\WrappedEntityTypeAutocompleter" abstract="true">
+      <argument type="abstract">form type string</argument>
+      <argument type="service" id="form.factory"/>
+      <argument type="service" id="ux.autocomplete.entity_metadata_factory"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="ux.autocomplete.entity_search_util"/>
+    </service>
+    <service id=".1_ServiceLocator~hhZQcfV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="webpack_encore.entrypoint_lookup_collection" type="service_closure" id="webpack_encore.entrypoint_lookup_collection"/>
+        <argument key="webpack_encore.tag_renderer" type="service_closure" id="webpack_encore.tag_renderer"/>
+      </argument>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup_collection" class="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollection">
+      <argument type="service" id=".service_locator.Yi4Ff.p"/>
+      <argument>_default</argument>
+    </service>
+    <service id="webpack_encore.tag_renderer" class="Symfony\WebpackEncoreBundle\Asset\TagRenderer">
+      <tag name="kernel.reset" method="reset"/>
+      <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+      <argument type="service" id="assets.packages"/>
+      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="defer">true</argument>
+      </argument>
+      <argument type="collection"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="webpack_encore.twig_entry_files_extension" class="Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id=".1_ServiceLocator~hhZQcfV"/>
+    </service>
+    <service id="webpack_encore.twig_stimulus_extension" class="Symfony\WebpackEncoreBundle\Twig\StimulusTwigExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup.cache_warmer" class="Symfony\WebpackEncoreBundle\CacheWarmer\EntrypointCacheWarmer">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="collection">
+        <argument key="_default">C:\Users\achref\Documents\ArtounsiSymfony-Achref/public/build/entrypoints.json</argument>
+      </argument>
+      <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\var\cache\dev/webpack_encore.cache.php</argument>
+    </service>
+    <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
+      <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\var\cache\dev/webpack_encore.cache.php</argument>
+      <argument type="service" id="cache.webpack_encore"/>
+      <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
+    </service>
+    <service id="cache.webpack_encore" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument type="service" id="cache.webpack_encore.recorder_inner"/>
+    </service>
+    <service id="webpack_encore.exception_listener" class="Symfony\WebpackEncoreBundle\EventListener\ExceptionListener">
+      <tag name="kernel.event_listener" event="kernel.exception"/>
+      <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+      <argument type="collection">
+        <argument>_default</argument>
+      </argument>
+    </service>
+    <service id="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener" class="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+      <argument type="collection">
+        <argument>_default</argument>
+      </argument>
+    </service>
+    <service id="webpack_encore.entrypoint_lookup[_default]" class="Symfony\WebpackEncoreBundle\Asset\EntrypointLookup">
+      <tag name="kernel.reset" method="reset"/>
+      <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/public/build/entrypoints.json</argument>
+      <argument>null</argument>
+      <argument>_default</argument>
+      <argument>true</argument>
+    </service>
+    <service id=".service_locator.Yi4Ff.p" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
+      </argument>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6792,6 +7068,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RatingTutorielController" class="App\Controller\RatingTutorielController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RatingTutorielController" class="App\Controller\RatingTutorielController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RatingTutorielController" class="App\Controller\RatingTutorielController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TutorielController" class="App\Controller\TutorielController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TutorielController" class="App\Controller\TutorielController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TutorielController" class="App\Controller\TutorielController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6833,8 +7112,12 @@
     <service id=".abstract.instanceof.App\Form\PostType" class="App\Form\PostType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProduitsType" class="App\Form\ProduitsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProduitsType" class="App\Form\ProduitsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RatingTutorielType" class="App\Form\RatingTutorielType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RatingTutorielType" class="App\Form\RatingTutorielType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RatingType" class="App\Form\RatingType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RatingType" class="App\Form\RatingType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TutorielSearchType" class="App\Form\TutorielSearchType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TutorielSearchType" class="App\Form\TutorielSearchType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TutorielType" class="App\Form\TutorielType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\TutorielType" class="App\Form\TutorielType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VideoType" class="App\Form\VideoType" autowire="true" abstract="true"/>
@@ -6877,6 +7160,8 @@
     <service id=".abstract.instanceof.App\Repository\ProduitsRepository" class="App\Repository\ProduitsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RatingRepository" class="App\Repository\RatingRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\RatingRepository" class="App\Repository\RatingRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RatingTutorielRepository" class="App\Repository\RatingTutorielRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RatingTutorielRepository" class="App\Repository\RatingTutorielRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TutorielRepository" class="App\Repository\TutorielRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TutorielRepository" class="App\Repository\TutorielRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VideoRepository" class="App\Repository\VideoRepository" autowire="true" abstract="true"/>
@@ -7216,6 +7501,19 @@
         <argument>Creates a new Stimulus controller</argument>
       </call>
     </service>
+    <service id="maker.auto_command.make_autocomplete_field" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
+      <tag name="console.command" command="make:autocomplete-field" description="Generates an Ajax-autocomplete form field class for symfony/ux-autocomplete."/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="ux.autocomplete.make_autocomplete_field"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:autocomplete-field</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Generates an Ajax-autocomplete form field class for symfony/ux-autocomplete.</argument>
+      </call>
+    </service>
     <service id=".service_locator.xUrKPVU" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7547,14 +7845,13 @@
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
       </argument>
     </service>
-    <service id=".service_locator._DY_H0Y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.IkPfdHs" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="challengeRepository" type="service_closure" id="App\Repository\ChallengeRepository"/>
         <argument key="doctrine" type="service_closure" id="doctrine"/>
         <argument key="mr" type="service_closure" id="doctrine"/>
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
-        <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
     <service id=".service_locator.4C83FMe" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7568,6 +7865,24 @@
       <argument type="collection">
         <argument key="rating" type="service_closure" id=".errored..service_locator.RA9EiuF.App\Entity\Rating"/>
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZShBbfO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="mr" type="service_closure" id="doctrine"/>
+        <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingTutorielRepository"/>
+        <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.TqZMbsS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="mr" type="service_closure" id="doctrine"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
     <service id=".service_locator.ixsaekR" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7591,12 +7906,13 @@
         <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0Z.rFm1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.z535sfI" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="favorisTuroialRepository" type="service_closure" id="App\Repository\FavorisTuroialRepository"/>
-        <argument key="tutoriel" type="service_closure" id=".errored..service_locator.0Z.rFm1.App\Entity\Tutoriel"/>
+        <argument key="ratingTutorielRepositoty" type="service_closure" id="App\Repository\RatingTutorielRepository"/>
+        <argument key="tutoriel" type="service_closure" id=".errored..service_locator.z535sfI.App\Entity\Tutoriel"/>
         <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
@@ -7627,10 +7943,13 @@
         <argument key="videoRepository" type="service_closure" id="App\Repository\VideoRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.QGG8A4p" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.HK7FhIP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="video" type="service_closure" id=".errored..service_locator.QGG8A4p.App\Entity\Video"/>
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="video" type="service_closure" id=".errored..service_locator.HK7FhIP.App\Entity\Video"/>
+        <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
     <service id=".service_locator.ROlNY4_" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7667,7 +7986,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.l9.Bo4Y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bxtJ2oF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7750,19 +8069,21 @@
         <argument key="App\Controller\RatingController::delete" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController::edit" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController::index" type="service_closure" id=".service_locator.hn0UC2A"/>
-        <argument key="App\Controller\RatingController::new" type="service_closure" id=".service_locator._DY_H0Y"/>
+        <argument key="App\Controller\RatingController::new" type="service_closure" id=".service_locator.IkPfdHs"/>
         <argument key="App\Controller\RatingController::show" type="service_closure" id=".service_locator.4C83FMe"/>
+        <argument key="App\Controller\RatingTutorielController::new" type="service_closure" id=".service_locator.ZShBbfO"/>
         <argument key="App\Controller\TutorielController::delete" type="service_closure" id=".service_locator.V_bG4Ss"/>
         <argument key="App\Controller\TutorielController::edit" type="service_closure" id=".service_locator.DiYfVrs"/>
-        <argument key="App\Controller\TutorielController::index" type="service_closure" id=".service_locator.ixsaekR"/>
+        <argument key="App\Controller\TutorielController::index" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController::indexback" type="service_closure" id=".service_locator.ixsaekR"/>
         <argument key="App\Controller\TutorielController::new" type="service_closure" id=".service_locator.XbtDh1i"/>
-        <argument key="App\Controller\TutorielController::show" type="service_closure" id=".service_locator.0Z.rFm1"/>
+        <argument key="App\Controller\TutorielController::show" type="service_closure" id=".service_locator.z535sfI"/>
         <argument key="App\Controller\TutorielController::showfavoris" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\VideoController::delete" type="service_closure" id=".service_locator._EeCc6U"/>
         <argument key="App\Controller\VideoController::edit" type="service_closure" id=".service_locator.ROlNY4_"/>
         <argument key="App\Controller\VideoController::index" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController::new" type="service_closure" id=".service_locator.2Ximz65"/>
-        <argument key="App\Controller\VideoController::show" type="service_closure" id=".service_locator.QGG8A4p"/>
+        <argument key="App\Controller\VideoController::show" type="service_closure" id=".service_locator.HK7FhIP"/>
         <argument key="App\Controller\ViewController::delete" type="service_closure" id=".service_locator.CNncWvf"/>
         <argument key="App\Controller\ViewController::edit" type="service_closure" id=".service_locator.CNncWvf"/>
         <argument key="App\Controller\ViewController::index" type="service_closure" id=".service_locator.QK8j6lT"/>
@@ -7852,19 +8173,21 @@
         <argument key="App\Controller\RatingController:delete" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController:edit" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController:index" type="service_closure" id=".service_locator.hn0UC2A"/>
-        <argument key="App\Controller\RatingController:new" type="service_closure" id=".service_locator._DY_H0Y"/>
+        <argument key="App\Controller\RatingController:new" type="service_closure" id=".service_locator.IkPfdHs"/>
         <argument key="App\Controller\RatingController:show" type="service_closure" id=".service_locator.4C83FMe"/>
+        <argument key="App\Controller\RatingTutorielController:new" type="service_closure" id=".service_locator.ZShBbfO"/>
         <argument key="App\Controller\TutorielController:delete" type="service_closure" id=".service_locator.V_bG4Ss"/>
         <argument key="App\Controller\TutorielController:edit" type="service_closure" id=".service_locator.DiYfVrs"/>
-        <argument key="App\Controller\TutorielController:index" type="service_closure" id=".service_locator.ixsaekR"/>
+        <argument key="App\Controller\TutorielController:index" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController:indexback" type="service_closure" id=".service_locator.ixsaekR"/>
         <argument key="App\Controller\TutorielController:new" type="service_closure" id=".service_locator.XbtDh1i"/>
-        <argument key="App\Controller\TutorielController:show" type="service_closure" id=".service_locator.0Z.rFm1"/>
+        <argument key="App\Controller\TutorielController:show" type="service_closure" id=".service_locator.z535sfI"/>
         <argument key="App\Controller\TutorielController:showfavoris" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\VideoController:delete" type="service_closure" id=".service_locator._EeCc6U"/>
         <argument key="App\Controller\VideoController:edit" type="service_closure" id=".service_locator.ROlNY4_"/>
         <argument key="App\Controller\VideoController:index" type="service_closure" id=".service_locator.ErqXzhI"/>
         <argument key="App\Controller\VideoController:new" type="service_closure" id=".service_locator.2Ximz65"/>
-        <argument key="App\Controller\VideoController:show" type="service_closure" id=".service_locator.QGG8A4p"/>
+        <argument key="App\Controller\VideoController:show" type="service_closure" id=".service_locator.HK7FhIP"/>
         <argument key="App\Controller\ViewController:delete" type="service_closure" id=".service_locator.CNncWvf"/>
         <argument key="App\Controller\ViewController:edit" type="service_closure" id=".service_locator.CNncWvf"/>
         <argument key="App\Controller\ViewController:index" type="service_closure" id=".service_locator.QK8j6lT"/>
@@ -7933,7 +8256,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.O3NFs6." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.TUTDz6t" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
@@ -7952,7 +8275,9 @@
         <argument key="App\Form\PostLikeType" type="service_closure" id="App\Form\PostLikeType"/>
         <argument key="App\Form\PostType" type="service_closure" id="App\Form\PostType"/>
         <argument key="App\Form\ProduitsType" type="service_closure" id="App\Form\ProduitsType"/>
+        <argument key="App\Form\RatingTutorielType" type="service_closure" id="App\Form\RatingTutorielType"/>
         <argument key="App\Form\RatingType" type="service_closure" id="App\Form\RatingType"/>
+        <argument key="App\Form\TutorielSearchType" type="service_closure" id="App\Form\TutorielSearchType"/>
         <argument key="App\Form\TutorielType" type="service_closure" id="App\Form\TutorielType"/>
         <argument key="App\Form\VideoType" type="service_closure" id="App\Form\VideoType"/>
         <argument key="App\Form\ViewType" type="service_closure" id="App\Form\ViewType"/>
@@ -7961,6 +8286,7 @@
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
+        <argument key="Symfony\UX\Autocomplete\Form\ParentEntityAutocompleteType" type="service_closure" id="ux.autocomplete.entity_type"/>
       </argument>
     </service>
     <service id="messenger.bus.default.middleware.traceable" class="Symfony\Component\Messenger\Middleware\TraceableMiddleware">
@@ -8041,7 +8367,7 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.zPeQE10" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7.a0roH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AllusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
@@ -8062,6 +8388,7 @@
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\ProduitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
         <argument key="App\Repository\RatingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
+        <argument key="App\Repository\RatingTutorielRepository" type="service_closure" id="App\Repository\RatingTutorielRepository"/>
         <argument key="App\Repository\TutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
         <argument key="App\Repository\VideoRepository" type="service_closure" id="App\Repository\VideoRepository"/>
         <argument key="App\Repository\ViewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
@@ -8298,6 +8625,10 @@
       <configurator class="Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\AddDebugLogProcessorPass" method="configureLogger"/>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id=".service_locator.Xbsa8iG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
     <service id=".service_locator.yY.p4P7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8438,6 +8769,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\RatingController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\RatingController"/>
       <argument>App\Controller\RatingController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\RatingTutorielController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\RatingTutorielController"/>
+      <argument>App\Controller\RatingTutorielController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -8641,12 +8978,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.l9.Bo4Y"/>
+      <argument type="service" id=".service_locator.bxtJ2oF"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.l9.Bo4Y"/>
+      <argument type="service" id=".service_locator.bxtJ2oF"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8700,9 +9037,9 @@
     <service id=".errored..service_locator.XcJaAy8.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.4C83FMe.App\Entity\Rating" class="App\Entity\Rating"/>
     <service id=".errored..service_locator.RA9EiuF.App\Entity\Rating" class="App\Entity\Rating"/>
-    <service id=".errored..service_locator.0Z.rFm1.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
+    <service id=".errored..service_locator.z535sfI.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.DiYfVrs.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
-    <service id=".errored..service_locator.QGG8A4p.App\Entity\Video" class="App\Entity\Video"/>
+    <service id=".errored..service_locator.HK7FhIP.App\Entity\Video" class="App\Entity\Video"/>
     <service id=".errored..service_locator.ROlNY4_.App\Entity\Video" class="App\Entity\Video"/>
     <service id=".errored..service_locator._EeCc6U.App\Entity\Video" class="App\Entity\Video"/>
     <service id=".errored..service_locator.1dRS022.App\Entity\View" class="App\Entity\View"/>
@@ -9188,9 +9525,16 @@
       <argument>false</argument>
       <argument type="service_closure" id="maker.auto_command.make_stimulus_controller"/>
     </service>
+    <service id=".maker.auto_command.make_autocomplete_field.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>make:autocomplete-field</argument>
+      <argument type="collection"/>
+      <argument>Generates an Ajax-autocomplete form field class for symfony/ux-autocomplete.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="maker.auto_command.make_autocomplete_field"/>
+    </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.ttQ2U29"/>
+      <argument type="service" id=".service_locator.Q0221ly"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -9270,6 +9614,7 @@
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -9295,9 +9640,10 @@
         <argument key="make:user">maker.auto_command.make_user</argument>
         <argument key="make:migration">maker.auto_command.make_migration</argument>
         <argument key="make:stimulus-controller">maker.auto_command.make_stimulus_controller</argument>
+        <argument key="make:autocomplete-field">maker.auto_command.make_autocomplete_field</argument>
       </argument>
     </service>
-    <service id=".service_locator.ttQ2U29" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Q0221ly" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -9377,6 +9723,7 @@
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_encoder" type="service_closure" id=".security.command.user_password_encoder.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+        <argument key="doctrine.fixtures_load_command" type="service_closure" id="doctrine.fixtures_load_command"/>
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
@@ -9400,6 +9747,7 @@
         <argument key="maker.auto_command.make_user" type="service_closure" id=".maker.auto_command.make_user.lazy"/>
         <argument key="maker.auto_command.make_migration" type="service_closure" id=".maker.auto_command.make_migration.lazy"/>
         <argument key="maker.auto_command.make_stimulus_controller" type="service_closure" id=".maker.auto_command.make_stimulus_controller.lazy"/>
+        <argument key="maker.auto_command.make_autocomplete_field" type="service_closure" id=".maker.auto_command.make_autocomplete_field.lazy"/>
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
@@ -9472,6 +9820,14 @@
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <argument>lrYKuB6McH</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\var\cache\dev/pools/system</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.webpack_encore.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+      <argument>VK+1-nmTU0</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\var\cache\dev/pools/system</argument>
@@ -9654,9 +10010,11 @@
     <service id="Endroid\QrCode\Builder\BuilderRegistryInterface" alias="Endroid\QrCode\Builder\BuilderRegistry"/>
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection"/>
+    <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.l9.Bo4Y"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.bxtJ2oF"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9679,20 +10037,24 @@
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
+    <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~hhZQcfV"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.c4JN7E2" alias=".service_locator.MgjTE_4"/>
     <service id=".service_locator.w1CLOvo" alias=".service_locator.Yz.riJM"/>
     <service id=".service_locator.ROIeenz" alias=".service_locator.ShBJIr0"/>
-    <service id=".service_locator.rUwhL9I" alias=".service_locator._DY_H0Y"/>
+    <service id=".service_locator.ZjYTwRg" alias=".service_locator.IkPfdHs"/>
+    <service id=".service_locator.PWB6kIq" alias=".service_locator.ZShBbfO"/>
+    <service id=".service_locator.Q.QhxBp" alias=".service_locator.TqZMbsS"/>
     <service id=".service_locator.PYM77qn" alias=".service_locator.nHnvE5y"/>
-    <service id=".service_locator.hqPfzM2" alias=".service_locator.0Z.rFm1"/>
+    <service id=".service_locator.qXkCK0z" alias=".service_locator.z535sfI"/>
     <service id=".service_locator.OB6iWB." alias=".service_locator.V_bG4Ss"/>
     <service id=".service_locator.f4w2iYp" alias=".service_locator.2Ximz65"/>
+    <service id=".service_locator.fM6cq6M" alias=".service_locator.HK7FhIP"/>
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
-    <service id=".service_locator.NXZTv30" alias=".service_locator.l9.Bo4Y"/>
+    <service id=".service_locator.u4clsDT" alias=".service_locator.bxtJ2oF"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.cxRDELV" alias=".service_locator.O3NFs6."/>
+    <service id=".service_locator.KfsvaKZ" alias=".service_locator.TUTDz6t"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9768,18 +10130,20 @@
     <service id=".service_locator.c35YWSS" alias=".service_locator.arvAwdT"/>
     <service id=".service_locator.85_AghP" alias=".service_locator.XcJaAy8"/>
     <service id=".service_locator._XLYFNn" alias=".service_locator.hn0UC2A"/>
-    <service id=".service_locator.lMbgFPn" alias=".service_locator._DY_H0Y"/>
+    <service id=".service_locator.tVmxaUw" alias=".service_locator.IkPfdHs"/>
     <service id=".service_locator.SEIRRMh" alias=".service_locator.4C83FMe"/>
     <service id=".service_locator.eqiRiQV" alias=".service_locator.RA9EiuF"/>
+    <service id=".service_locator.k2yo0Ab" alias=".service_locator.ZShBbfO"/>
+    <service id=".service_locator.vim.8jM" alias=".service_locator.TqZMbsS"/>
     <service id=".service_locator..7IShOT" alias=".service_locator.ixsaekR"/>
     <service id=".service_locator.PZwL4o7" alias=".service_locator.nHnvE5y"/>
     <service id=".service_locator.s31TVUu" alias=".service_locator.XbtDh1i"/>
-    <service id=".service_locator.2ZHvL1." alias=".service_locator.0Z.rFm1"/>
+    <service id=".service_locator.IJYzM.L" alias=".service_locator.z535sfI"/>
     <service id=".service_locator.k21TRVt" alias=".service_locator.DiYfVrs"/>
     <service id=".service_locator.mzOtO_q" alias=".service_locator.V_bG4Ss"/>
     <service id=".service_locator.HNj7LcS" alias=".service_locator.ErqXzhI"/>
     <service id=".service_locator.FhZfIp1" alias=".service_locator.2Ximz65"/>
-    <service id=".service_locator.Cbgj.SB" alias=".service_locator.QGG8A4p"/>
+    <service id=".service_locator.IpQ.tkC" alias=".service_locator.HK7FhIP"/>
     <service id=".service_locator.lajITN0" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.TnhmKBC" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.eZcXz8l" alias=".service_locator.QK8j6lT"/>

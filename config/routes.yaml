@@ -4,3 +4,9 @@
 ajax_route:
     path: /ajax
     controller: App\Controller\AjaxController::ajaxAction
+app_rating_new:
+    path: rating/new/{rating}/{idChallenge}
+    controller: App\Controller\RatingController::new
+app_rating_tutoriel_new:
+    path: rating/tutoriel/new/{rating}/{idTutoriel}
+    controller: App\Controller\RatingTutorielController::new

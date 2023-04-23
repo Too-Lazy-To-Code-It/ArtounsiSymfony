@@ -5,7 +5,110 @@
 {% block body %}
 
     <main id="main" class="main">
+      {%for message in app.flashes('success')%}
+      <div class="alert alert-success">
+        {{ message }} <i class="bi bi-check" style="width: 50;height: 50;color: #00ff00;"></i>
+      </div>
+    {% endfor %}
+      <section class="section">
+        <div class="row">
 
+        <!-- Tpc -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body pb-0">
+              <h5 class="card-title">Tutoriels <span>| Per Category</span></h5>
+                    <!-- Pie Chart -->
+                    <div id="pieChart" style="min-height: 400px;" class="echart"></div>
+      
+                    <script>
+                      document.addEventListener("DOMContentLoaded", () => {
+                        echarts.init(document.querySelector("#pieChart")).setOption({
+                          title: {
+                            text: 'Tutoriels',
+                            subtext: 'Per Category',
+                            left: 'center'
+                          },
+                          tooltip: {
+                            trigger: 'item'
+                          },
+                          legend: {
+                            orient: 'vertical',
+                            left: 'left'
+                          },
+                          series: [{
+                            name: 'Access From',
+                            type: 'pie',
+                            radius: '50%',
+                            data: [
+                            {
+                        value: {{tutorielsPerCategory[0].aaa}},
+                          name: '{{tutorielsPerCategory[0].name_category}}'
+                        },
+
+                            ],
+                            emphasis: {
+                              itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                              }
+                            }
+                          }]
+                        });
+                      });
+                    </script>
+                    <!-- End Pie Chart -->
+      
+                  </div>
+                </div>
+              </div>
+              
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Most viewed tutoriels</h5>
+  
+                <!-- Bar Chart -->
+                <div id="barChart"></div>
+  
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#barChart"), {
+                      series: [{
+                        data: [{{tutorielsPerView[1].views}}, {{tutorielsPerView[0].views}}]
+                      }],
+                      chart: {
+                        type: 'bar',
+                        height: 350
+                      },
+                      plotOptions: {
+                        bar: {
+                          borderRadius: 4,
+                          horizontal: true,
+                        }
+                      },
+                      dataLabels: {
+                        enabled: false
+                      },
+                      xaxis: {
+                        categories: ['{{tutorielsPerView[1].title}}', '{{tutorielsPerView[0].title}}'
+                        ],
+                      }
+                    }).render();
+                  });
+                </script>
+                <!-- End Bar Chart -->
+  
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+
+          
         <div class="pagetitle">
             <h1>Mes Tutoriels</h1>
             <nav>

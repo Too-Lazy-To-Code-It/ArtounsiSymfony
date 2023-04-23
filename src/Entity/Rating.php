@@ -17,7 +17,7 @@ class Rating
     private ?int $rating = null;
 
     #[ORM\ManyToOne( targetEntity: Challenge::class )]
-    #[ORM\JoinColumn(name:'challenge_id',referencedColumnName:'id_challenge',nullable: false)]
+    #[ORM\JoinColumn(name:'challenge_id',referencedColumnName:'id_challenge')]
     private ?challenge $challenge_id = null;
 
     #[ORM\ManyToOne( targetEntity: Allusers::class )]

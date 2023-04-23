@@ -55,6 +55,14 @@ class Tutoriel
     #[ORM\OneToMany(mappedBy: 'id_tutoriel', targetEntity: Video::class)]
     private Collection $videos;
 
+    #[ORM\OneToMany(mappedBy: 'tutorielId', targetEntity: RatingTutoriel::class)]
+    private Collection $ratingTutoriels;
+
+    public function __construct()
+    {
+        $this->ratingTutoriels = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id_tutoriel;
@@ -208,6 +216,36 @@ class Tutoriel
             // set the owning side to null (unless already changed)
             if ($idArtist->getTutoriel() === $this) {
                 $idArtist->setTutoriel(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RatingTutoriel>
+     */
+    public function getRatingTutoriels(): Collection
+    {
+        return $this->ratingTutoriels;
+    }
+
+    public function addRatingTutoriel(RatingTutoriel $ratingTutoriel): self
+    {
+        if (!$this->ratingTutoriels->contains($ratingTutoriel)) {
+            $this->ratingTutoriels->add($ratingTutoriel);
+            $ratingTutoriel->setTutorielId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRatingTutoriel(RatingTutoriel $ratingTutoriel): self
+    {
+        if ($this->ratingTutoriels->removeElement($ratingTutoriel)) {
+            // set the owning side to null (unless already changed)
+            if ($ratingTutoriel->getTutorielId() === $this) {
+                $ratingTutoriel->setTutorielId(null);
             }
         }
 

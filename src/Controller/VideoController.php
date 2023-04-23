@@ -4,8 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Video;
 use App\Form\VideoType;
+use App\Entity\View;
+use App\Repository\AllusersRepository;
+use App\Repository\ViewRepository;
 use App\Repository\VideoRepository;
 use App\Repository\TutorielRepository;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -67,8 +71,24 @@ class VideoController extends AbstractController
     }
 
     #[Route('/{id_video}', name: 'app_video_show', methods: ['GET'])]
-    public function show(Video $video): Response
+    public function show(ManagerRegistry $doctrine,AllusersRepository $allusersRepository, Video $video, ViewRepository $viewRepository,): Response
     {
+        //check if video is viewed before
+        $oldview = $viewRepository->findOneBy(array('id_video'=>$video,'id_user'=>$allusersRepository->find(2)));
+        //add view if doesn't exist or modify it
+        $view = new View();
+        $entityManager = $doctrine->getManager();
+        if($oldview){
+            $oldview->setDateV(new \DateTime());
+        }
+        else {
+            $view->setIdVideo($video);
+            $view->setIdUser($allusersRepository->find(2));
+            $view->setDateV(new \DateTime());
+            $entityManager->persist($view);
+        }
+        $entityManager->flush(); 
+
         return $this->render('video/show.html.twig', [
             'video' => $video,
         ]);

@@ -5,7 +5,8 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 use App\Entity\Rating;
 use App\Form\RatingType;
-use App\Repository\TutorielRepository;
+use App\Entity\Allusers;
+use App\Repository\ChallengeRepository;
 use App\Repository\RatingRepository;
 use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,22 +27,21 @@ class RatingController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_rating_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, ManagerRegistry $mr, RatingRepository $ratingRepository): Response
+    #[Route('/new/{rating}/{idChallenge}', name: 'app_rating_new', methods: ['GET', 'POST'])]
+    public function new($rating,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository): Response
     {
-        dd($request->getContent());
-        $requestData = json_decode($request->getContent(), true);
-        $rating = new Rating();
+        $allusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
+        $requestData = $request;
+        
+        $ratingentity = new Rating();
         $entityManager = $doctrine->getManager();
-        
-        $rating->setRating(trim($requestData['rating']));
-        $rating->setChallengeId($tutorielRepository->findOneBy(array('id_tutoriel'=>trim($requestData['idTutoriel']))));  
-        $rating->setParticipatorId($AllusersRepository->findOneBy(array( 'id_user'=>1)));
-        $rating->getRaterId($AllusersRepository->findOneBy(array( 'id_user'=>2)));
-        
-        $entityManager->persist($rating);
-        $entityManager->flush();
 
+        $ratingentity->setRating((int)$rating);
+        $ratingentity->setChallengeId($challengeRepository->findOneBy(array('id_challenge'=>(int)$idChallenge)));  
+        $ratingentity->setParticipatorId($allusersRepository->find(2));
+        $ratingentity->setRaterId($allusersRepository->find(1));
+        $entityManager->persist($ratingentity);
+        $entityManager->flush();
         return new JsonResponse( ['success' => true ]);
     }
 
