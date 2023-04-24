@@ -21,6 +21,4 @@ return [
     Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
     MeteoConcept\HCaptchaBundle\MeteoConceptHCaptchaBundle::class => ['all' => true],
     Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle::class => ['all' => true],
-
-    
 ];

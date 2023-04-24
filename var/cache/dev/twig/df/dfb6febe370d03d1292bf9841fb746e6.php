@@ -100,13 +100,16 @@ class __TwigTemplate_3ffa2501fc2c10234ec1b1b7a1437a54 extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "id_category", [], "any", false, false, false, 22), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
     </div>
-    <button class=\"btn btn-primary\">";
-        // line 24
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 24, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+    
+    ";
+        // line 26
+        echo "    <button class=\"btn btn-primary\" id=\"save-btn\">";
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 26, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
+
 ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -129,7 +132,7 @@ class __TwigTemplate_3ffa2501fc2c10234ec1b1b7a1437a54 extends Template
 
     public function getDebugInfo()
     {
-        return array (  109 => 25,  105 => 24,  100 => 22,  96 => 21,  90 => 18,  86 => 17,  80 => 14,  76 => 13,  70 => 10,  66 => 9,  62 => 8,  56 => 5,  52 => 4,  48 => 3,  43 => 1,);
+        return array (  112 => 28,  106 => 26,  100 => 22,  96 => 21,  90 => 18,  86 => 17,  80 => 14,  76 => 13,  70 => 10,  66 => 9,  62 => 8,  56 => 5,  52 => 4,  48 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -157,7 +160,10 @@ class __TwigTemplate_3ffa2501fc2c10234ec1b1b7a1437a54 extends Template
         {{ form_label(form.id_category) }}
         {{ form_widget(form.id_category, {'attr': {'class': 'form-control'}}) }}
     </div>
-    <button class=\"btn btn-primary\">{{ button_label|default('Save') }}</button>
+    
+    {# <button class=\"btn btn-primary\">{{ button_label|default('Save') }}</button> #}
+    <button class=\"btn btn-primary\" id=\"save-btn\">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}
 ", "post/_form.html.twig", "C:\\Users\\amine\\ArtounsiSymfonyy\\templates\\post\\_form.html.twig");
     }

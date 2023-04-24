@@ -156,7 +156,8 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
         // line 26
         $this->displayBlock('header', $context, $blocks);
         // line 60
-        echo "
+        echo "    
+
     <div class=\"item-details-page\">
         <div class=\"container\">
         <div class=\"row\">
@@ -173,14 +174,42 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 
 
         <h1>Create new Post</h1>
-
+        <!-- Header Section End -->
+";
+        // line 79
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "flashes", [0 => "succes"], "method", false, false, false, 79));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 80
+            echo "<div class=\"alert alert-success\" id=\"flash-message-succes\">
+     ";
+            // line 81
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+</div>
+    <script>
+        setTimeout(function() {
+            \$('#flash-message-succes').fadeOut(\"slow\", function() {
+            });
+        }, 1000);
+    </script>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 90
+        echo "
         ";
-        // line 78
+        // line 91
         echo twig_include($this->env, $context, "post/_form.html.twig");
         echo "
+        <div class=\"g-recaptcha\" data-sitekey=\"6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk\" data-callback=\"submitForm\"></div>
+
+
 
         <a href=\"";
-        // line 80
+        // line 96
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
         echo "\">back to list</a>
     </div>
@@ -191,9 +220,9 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
         
     </div>
 ";
-        // line 88
+        // line 104
         $this->displayBlock('footer', $context, $blocks);
-        // line 101
+        // line 117
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
         
@@ -271,7 +300,7 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 
     }
 
-    // line 88
+    // line 104
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -281,7 +310,7 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 89
+        // line 105
         echo "<footer>
     <div class=\"container\">
         <div class=\"row\">
@@ -302,7 +331,7 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 
     }
 
-    // line 101
+    // line 117
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -312,8 +341,25 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 102
-        echo "    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+        // line 118
+        echo "    
+
+    <script src=\"https://www.google.com/recaptcha/api.js\"></script>
+    <script>
+    grecaptcha.ready(function() {
+        document.getElementById('save-btn').disabled = true;
+    
+    });
+
+    function submitForm() {
+    document.getElementById('save-btn').disabled = false;
+    
+    }
+
+
+</script>
+
+
     ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -330,7 +376,7 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 
     public function getDebugInfo()
     {
-        return array (  316 => 102,  306 => 101,  285 => 89,  275 => 88,  251 => 46,  245 => 43,  241 => 42,  237 => 41,  229 => 36,  218 => 27,  208 => 26,  197 => 101,  195 => 88,  184 => 80,  179 => 78,  159 => 60,  157 => 26,  153 => 24,  143 => 23,  131 => 16,  127 => 15,  123 => 14,  119 => 13,  115 => 12,  107 => 8,  88 => 7,  83 => 6,  73 => 5,  63 => 23,  57 => 19,  55 => 5,  49 => 1,);
+        return array (  345 => 118,  335 => 117,  314 => 105,  304 => 104,  280 => 46,  274 => 43,  270 => 42,  266 => 41,  258 => 36,  247 => 27,  237 => 26,  226 => 117,  224 => 104,  213 => 96,  205 => 91,  202 => 90,  187 => 81,  184 => 80,  180 => 79,  159 => 60,  157 => 26,  153 => 24,  143 => 23,  131 => 16,  127 => 15,  123 => 14,  119 => 13,  115 => 12,  107 => 8,  88 => 7,  83 => 6,  73 => 5,  63 => 23,  57 => 19,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -394,6 +440,7 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
         <!-- ***** Header Area End ***** -->
 
     {% endblock %}
+    
 
     <div class=\"item-details-page\">
         <div class=\"container\">
@@ -411,8 +458,23 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 
 
         <h1>Create new Post</h1>
+        <!-- Header Section End -->
+{% for message in app.flashes('succes') %}
+<div class=\"alert alert-success\" id=\"flash-message-succes\">
+     {{ message }}
+</div>
+    <script>
+        setTimeout(function() {
+            \$('#flash-message-succes').fadeOut(\"slow\", function() {
+            });
+        }, 1000);
+    </script>
+{% endfor %}
 
         {{ include('post/_form.html.twig') }}
+        <div class=\"g-recaptcha\" data-sitekey=\"6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk\" data-callback=\"submitForm\"></div>
+
+
 
         <a href=\"{{ path('app_post_index') }}\">back to list</a>
     </div>
@@ -436,7 +498,24 @@ class __TwigTemplate_298178e6d34ee63840a441594c031900 extends Template
 </footer>
 {% endblock %}
     {% block javascripts %}
-    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+    
+
+    <script src=\"https://www.google.com/recaptcha/api.js\"></script>
+    <script>
+    grecaptcha.ready(function() {
+        document.getElementById('save-btn').disabled = true;
+    
+    });
+
+    function submitForm() {
+    document.getElementById('save-btn').disabled = false;
+    
+    }
+
+
+</script>
+
+
     {% endblock %}
 {% endblock %}
 ", "post/new.html.twig", "C:\\Users\\amine\\ArtounsiSymfonyy\\templates\\post\\new.html.twig");

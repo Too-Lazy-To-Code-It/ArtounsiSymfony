@@ -57,6 +57,7 @@
         <!-- ***** Header Area End ***** -->
 
     {% endblock %}
+    
 
     <div class="item-details-page">
         <div class="container">
@@ -74,8 +75,23 @@
 
 
         <h1>Create new Post</h1>
+        <!-- Header Section End -->
+{% for message in app.flashes('succes') %}
+<div class="alert alert-success" id="flash-message-succes">
+     {{ message }}
+</div>
+    <script>
+        setTimeout(function() {
+            $('#flash-message-succes').fadeOut("slow", function() {
+            });
+        }, 1000);
+    </script>
+{% endfor %}
 
         {{ include('post/_form.html.twig') }}
+        <div class="g-recaptcha" data-sitekey="6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk" data-callback="submitForm"></div>
+
+
 
         <a href="{{ path('app_post_index') }}">back to list</a>
     </div>
@@ -99,6 +115,23 @@
 </footer>
 {% endblock %}
     {% block javascripts %}
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    grecaptcha.ready(function() {
+        document.getElementById('save-btn').disabled = true;
+    
+    });
+
+    function submitForm() {
+    document.getElementById('save-btn').disabled = false;
+    
+    }
+
+
+</script>
+
+
     {% endblock %}
 {% endblock %}

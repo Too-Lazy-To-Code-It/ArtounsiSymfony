@@ -17,6 +17,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\Allusers;
 
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator;
 
 
 #[Route('/post')]
@@ -49,6 +50,7 @@ public function base(PostRepository $postRepository): Response
 
         if ($form->isSubmitted() && $form->isValid()) {
             $postRepository->save($post, true);
+            $this->addFlash('succes', 'post est ajoutée avec succes.');
 
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }

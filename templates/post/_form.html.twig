@@ -21,5 +21,8 @@
         {{ form_label(form.id_category) }}
         {{ form_widget(form.id_category, {'attr': {'class': 'form-control'}}) }}
     </div>
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    
+    {# <button class="btn btn-primary">{{ button_label|default('Save') }}</button> #}
+    <button class="btn btn-primary" id="save-btn">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}
