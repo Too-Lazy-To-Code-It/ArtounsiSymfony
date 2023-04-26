@@ -98,137 +98,9 @@ public function show(int $idpanier, LignepanierRepository $lignepanierRepository
 
 
  
-/*
 
-####Méthode d' ajout d'un produit au panier 
-
-    #[Route('/panier/add/{idproduit}', name: 'add_product')]
-    public function addProduct(Produits $product, EntityManagerInterface $entityManager, SessionInterface $session)
-    {
-        // On récupère le panier actuel
-        $panier = $session->get('panier', []);
-        $date = new \DateTime();
-
-      
-
-    
-        // Le produit n'est pas encore dans le panier, on l'ajoute
-        $lignePanier = new LignePanier();
-        $lignePanier->setDateajout($date);
-        $lignePanier->setIdpanier($entityManager->getReference(Panier::class, 1));     ###id statique jusqu'à intégration 
-        $lignePanier->setIdproduit($product);
-    
-        $entityManager->persist($lignePanier);
-      
-        $entityManager->flush();
-    
-        
-    
-        // On sauvegarde dans la session
-        $session->set('panier', $panier);
-    
-        return $this->redirectToRoute('app_produits_index');
-    }
-  */
-
-
-    public function addProduct(int $idproduit ,Produits $product, EntityManagerInterface $entityManager,LignepanierRepository $lignepanierRepository, SessionInterface $session, ProduitsRepository $produitRep)
-    {  
-        // On récupère le panier actuel
-        $panier = $session->get('panier', []);
-        $date = new \DateTime();
-
-       
-        $produit = $produitRep->find($idproduit);
-       
-        $produitsDansPanier = $lignepanierRepository->findBy(['idpanier' => $panier]);
-        $panier = $entityManager->getRepository(Panier::class)->find($idpanier);
-        $verifier  = true;
-
-        // On cherche si le produit existe déjà dans le panier
-        foreach ($produitsDansPanier as  $item) {
-            if ($item->getIdproduit() === $product->getIdproduit()) {
-                // Le produit existe déjà
-              
-                return $this->redirectToRoute('app_produits_index');
-            }
-        }
-        
-        // Le produit n'est pas encore dans le panier, on l'ajoute
-        $lignePanier = new LignePanier();
-        $lignePanier->setDateajout($date);
-        $lignePanier->setIdpanier($entityManager->getReference(Panier::class, 1));     ###id statique jusqu'à intégration 
-        $lignePanier->setIdproduit($product);
-        $entityManager->persist($lignePanier);
-        $entityManager->flush();
-    
-        // On sauvegarde dans la session
-        $panier[] = [
-            'idproduit' => $product->getIdproduit(),
-     
-        ];
-        $session->set('panier', $panier);
-    
-        return $this->redirectToRoute('app_produits_index');
-    }
-    
-
-/*
-//Méthode qui ajoute un produit au panier 
-#[Route('/ajouter-produit-au-panier/{idproduit}', name:'ajouter_produit_panier')]
-public function ajouterProduitDansPanier(int $idproduit, LignepanierRepository $lr, PanierRepository $pr, UserRepository $ur, ProduitRepository $repproduit): Response
-{
-$user = $ur->find(22);
-$panier = $pr->findOneBy(['user' => $user]);
-$produit = $repproduit->find($idproduit);
-$entityManager = $this->getDoctrine()->getManager();
-//recupérer tous les produits du panier
-$produits_par_panier=$lr->findBy(['panier' => $panier]);
-$id =$panier->getId();
-$verif = true;
-
-//parcourir les produits du panier
-foreach ($produits_par_panier as $p) {
-    
-    if ($p->getProduit() == $produit) {
-        //le produit existe dans le panier --> mettre à jours sa quantité 
-
-        //Wali enty houni fi outh ma taaml l ostra hethy kol abaathlou notification bel addfluh bundle 
-        //kolou raw l produit mawjoud fel panier
-        $p->setQuantite($p->getQuantite() + 1);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($p);
-        $entityManager->flush();
-        return $this->redirectToRoute("app_marketplace", ['id' => $id]);
-    } 
-    else {
-       $verif=false;
- }
-}
-
-       if ($verif==false){
-        // Le produit n'est pas encore dans le panier, on crée une nouvelle ligne panier
-        $lignePanier = new Lignepanier();
-        $lignePanier->setProduit($produit);
-        $lignePanier->setPanier($panier);
-        $lignePanier->setQuantite(1);
-        $lignePanier->setPrix($produit->getPrixProd());
-        $lignePanier->setNomProduit($produit->getNomProd());
-        $lignePanier->setDescriptionProd($produit->getDescriptionProd());
-        $lignePanier->setImage($produit->getImage());
-        $entityManager->persist($lignePanier);
-        $entityManager->flush();
-   }
-
- // Rediriger vers la page d'affichage des produits en passant l'ID du panier
-return $this->redirectToRoute("app_marketplace", ['id' => $id]);
-
-}
-
-
-*/
 #[Route('/panier/add/{idproduit}', name: 'add_product')]
-public function ajouterProduitAuPanier(Request $request, Produits $produit, ProduitsRepository $produitRepository, EntityManagerInterface $entityManager, SessionInterface $session,FlashyNotifier $flashy): Response
+public function ajouterProduitAuPanier(Request $request, Produits $produit, ProduitsRepository $produitRepository, EntityManagerInterface $entityManager, SessionInterface $session): Response
 { $date = new \DateTime();
      // On récupère le panier actuel
      $panier = $session->get('panier', []);
@@ -237,8 +109,9 @@ public function ajouterProduitAuPanier(Request $request, Produits $produit, Prod
 
     if ($lpexist  !== null) {
         // Le produit existe déjà dans le panier, on ne fait rien
-        $this->addFlash('warning', 'Le produit a déjà été ajouté au panier.');
-        $flashy->success('Event created!', 'http://your-awesome-link.com');
+        $this->addFlash('warning', 'Le produit existe déjà dans  panier.');
+        return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
+
     }
    else {
     // Le produit n'existe pas dans le panier, on l'ajoute
@@ -248,10 +121,13 @@ public function ajouterProduitAuPanier(Request $request, Produits $produit, Prod
     $lignePanier->setIdproduit($produit);
     $entityManager->persist($lignePanier);
     $entityManager->flush();
+
+
     $session->set('panier', $panier);
-    $this->addFlash('success', 'Le produit a été ajouté au panier.');
+
+    $this->addFlash('success', 'Le produit a été ajouté au panier avec succès.');
     }
-    return $this->redirectToRoute('app_produits_index');
+    return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
 }
 
 
@@ -306,38 +182,7 @@ public function ajouterProduitAuPanier(Request $request, Produits $produit, Prod
 
 
 
- /* 
-#[Route('/viderpanier/{idpanier}', name: 'viderpanier')]
-public function ViderPanier(string $idpanier, ManagerRegistry $doctrine, SessionInterface $session, LignepanierRepository $rep, ProduitsRepository $produitRep): Response
-{
-    $idpanier = intval($idpanier); // convert the string to an integer
-    $entityManager = $doctrine->getManager();
-    $panier = $entityManager->getRepository(Panier::class)->find($idpanier);
-    $lignesPanier = $rep->findBy(['idpanier' => $idpanier]);
-
-    foreach ($lignesPanier as $lignePanier) {
-        $produit = $lignePanier->getIdProduit();
-        $entityManager->remove($lignePanier);
-        $entityManager->persist($produit);
-    }
-
-    $entityManager->flush();
-
-    // Vider le panier dans la session
-    $session->set('panier', []);
-
-    // Rediriger vers la page d'affichage du panier en passant l'ID du panier
-    return $this->redirectToRoute('app_panier_show', [
-        'idpanier' => $idpanier,
-        'lignesPanier' => $lignesPanier,
-        'tauxTVA' => 0.19,
-        'total' => 0,
-        'count' => 0,
-    ]);
-}
-
-*/
-
+ 
     
 
 
