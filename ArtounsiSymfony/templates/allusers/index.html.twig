@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Allusers index{% endblock %}
+
+{% block body %}
+    <h1>Allusers index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_user</th>
+                <th>Name</th>
+                <th>Last_Name</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Password</th>
+                <th>Salt</th>
+                <th>Nationality</th>
+                <th>Type</th>
+                <th>Nickname</th>
+                <th>Avatar</th>
+                <th>Background</th>
+                <th>Description</th>
+                <th>Bio</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alluser in allusers %}
+            <tr>
+                <td>{{ alluser.idUser }}</td>
+                <td>{{ alluser.name }}</td>
+                <td>{{ alluser.LastName }}</td>
+                <td>{{ alluser.Email }}</td>
+                <td>{{ alluser.Birthday ? alluser.Birthday|date('Y-m-d') : '' }}</td>
+                <td>{{ alluser.password }}</td>
+                <td>{{ alluser.salt }}</td>
+                <td>{{ alluser.nationality }}</td>
+                <td>{{ alluser.type }}</td>
+                <td>{{ alluser.nickname }}</td>
+                <td>{{ alluser.avatar }}</td>
+                <td>{{ alluser.background }}</td>
+                <td>{{ alluser.description }}</td>
+                <td>{{ alluser.bio }}</td>
+                <td>
+                    <a href="{{ path('app_allusers_show', {'id_user': alluser.id_user}) }}">show</a>
+                    <a href="{{ path('app_allusers_edit', {'id_user': alluser.id_user}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_allusers_new') }}">Create new</a>
+{% endblock %}

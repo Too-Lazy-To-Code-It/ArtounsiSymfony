@@ -1,0 +1,45 @@
+
+{% block title %}Demandetravail{% endblock %}
+
+{% block body %}
+    <h1>Demandetravail</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdDemande</th>
+                <td>{{ demandetravail.idDemande }}</td>
+            </tr>
+            <tr>
+                <th>Nickname</th>
+                <td>{{ demandetravail.nickname }}</td>
+            </tr>
+            <tr>
+                <th>TitreDemande</th>
+                <td>{{ demandetravail.titreDemande }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionDemande</th>
+                <td>{{ demandetravail.descriptionDemande }}</td>
+            </tr>
+            <tr>
+                <th>Pdf</th>
+                <td>{{ demandetravail.pdf }}</td>
+            </tr>
+            <tr>
+                <th>Dateajoutdemande</th>
+                <td>{{ demandetravail.dateajoutdemande ? demandetravail.dateajoutdemande|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Categoriedemande</th>
+                <td>{{ demandetravail.categoriedemande }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demandetravail_index') }}">back to list</a>
+
+    <a href="{{ path('app_demandetravail_edit', {'idDemande': demandetravail.idDemande}) }}">edit</a>
+
+    {{ include('demandetravail/_delete_form.html.twig') }}
+{% endblock %}

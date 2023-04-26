@@ -3,26 +3,26 @@
 namespace App\Controller;
 
 use App\Entity\Offretravail;
-use App\Entity\Allusers;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 use App\Form\OffretravailType;
 use App\Repository\OffretravailRepository;use App\Repository\DemandetravailRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\GrosmotsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\AllusersRepository;
 use Symfony\Component\Form\FormError;
 use DateTime;
 use App\Repository\ArtistepostulerRepository;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+
 
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 
-use App\Form\OffretravailarchiveType;
 use App\Repository\OffretravailarchiveRepository;
 use App\Entity\Offretravailarchive;
 
@@ -33,12 +33,16 @@ class OffretravailController extends AbstractController
 {
    
     #[Route('/', name: 'app_offretravail_index', methods: ['GET'])]
-public function index(OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
+public function index(Request $request,PaginatorInterface $paginator,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
 {
   
         $offretravails = $offretravailRepository->findAll();
-       
-       
+        $offretravails=$paginator->paginate(
+            $offretravails, //on passe les données 
+            $request->query->getInt('page', 1), //num de la page en cours, 1 par défaut
+            2//nbre d'articles par page  
+        );
+       $count=0;
         $offretravailbyid = $offretravailRepository->findBy(['id_user' => 1]);
         $offres=$offretravailRepository->findBy(['id_user' => 1]);
         $listartistespostuler=[];
@@ -47,16 +51,36 @@ public function index(OffretravailRepository $offretravailRepository, Artistepos
              $idOffre = $f->getIdoffre();
              $offreuser=$artiste->notif( $idOffre);
              $listartistespostuler=array_merge($listartistespostuler, $offreuser);
+          $count+= $artiste->countFalseNotif( $idOffre);
          }
     
     return $this->render('offretravail/index.html.twig', [
         'offretravails' => $offretravails,
         'offretravailbyid' => $offretravailbyid,
         'offre'=> $listartistespostuler,
+        'count'=>$count,
     ]);
 }
- 
 
+#[Route('/true', name: 'app_offretravail_notiftrue', methods: ['POST'])]
+public function notiftrue(Request $request,PaginatorInterface $paginator,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
+{
+  
+       $count=0;
+    
+        $offres=$offretravailRepository->findBy(['id_user' => 1]);
+        $listartistespostuler=[];
+        
+         foreach ( $offres as $f) {
+             $idOffre = $f->getIdoffre();
+             $artiste->notiftrue( $idOffre);
+           
+         
+         }
+         return $this->redirectToRoute('app_offretravail_index', [], Response::HTTP_SEE_OTHER);
+    
+}
+ 
 #[Route('/{idDemande}/mail', name: 'app_offretravail_mail', methods: ['GET'])]
 public function sendEmail(DemandetravailRepository $demandetravailRepository,Request $request,$idDemande,MailerInterface $mailer,AllusersRepository $allusersRepository): Response
 { $demande = $demandetravailRepository->find($idDemande);
@@ -76,7 +100,69 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
         //->priority(Email::PRIORITY_HIGH)
         ->subject('Nouvelle Studio est  interessé par votre demande : '.$demandetitre)
         ->text('Sending emails is fun again!')
-        ->html("<h1> Bonjour ". $nickname."</h1> <p>Le studio'. $nameofconnnectedstudio.'decriver par : '.$descriptionstudioconnecter.'avec le mail'.$mailstudioconnected.'est interessé par votre demande'. $demandetitre'</p>");
+        ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
+        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"550\" bgcolor=\"white\" style=\"border:2px solid black\">
+            <tbody>
+                <tr>
+                    <td align=\"center\">
+                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"col-550\" width=\"550\">
+                            <tbody>
+                                <tr>
+                                    <td align=\"center\" style=\"background-color: #C10C99;
+                                        height: 50px;\">
+    
+                                        <a href=\"#\" style=\"text-decoration: none;\">
+                                            <p style=\"color:white;
+                                                font-weight:bold;\">
+                                                arTounsi
+                                            </p>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr style=\"height: 300px;\">
+                <td align=\"center\" style=\"border: none;
+                        border-bottom: 2px solid #1C233D;
+                        padding-right: 20px;padding-left:20px;background-color: #1C233D\">
+                        <p style=\" font-weight: bolder;font-size: 42px; letter-spacing: 0.025em; color:white;\">
+                        Bonjour  ". $nickname."!
+                     </p>
+                 </td>
+             </tr>
+             <tr style=\"display: inline-block;\">
+             <td style=\"height: 150px;
+                     padding: 20px;
+                     border: none;
+                     border-bottom: 2px solid #361B0E;
+                     background-color: #1C233D; \">
+
+                 <h2 style=\"text-align: left;
+                         align-items: center; color:white\">
+                Le studio $nameofconnnectedstudio decrivé  par : $descriptionstudioconnecter avec le mail $mailstudioconnected est interessé par votre demande  $demandetitre </h2>
+                </td>
+                </tr>
+                <tr style=\"border: none;
+                background-color: #C10C99;
+                height: 40px;
+                color:white;
+                padding-bottom: 20px;
+                text-align: center;\">
+    
+                    <td height=\"40px\" align=\"center\">
+                        <p style=\"color:white;
+                line-height: 1.5em;\">
+                            arTounsi
+                        </p>
+    
+    
+                </tbody>
+               </table>
+               </tr>
+               </body> 
+                 ");
     $mailer->send($email);
 
     return $this->redirectToRoute('app_offretravail_chercherdemande', [], Response::HTTP_SEE_OTHER);
@@ -249,25 +335,6 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
     }
 
  
-  /*  #[Route('/chercher', name: 'app_offretravail_chercheroffre', methods: ['GET', 'POST'])]
-    public function chercheroffre(OffretravailRepository $offretravailRepository, Request $request,Offretravail $offretravail): Response
-    {
-        $form = $this->createForm(ChercherOffreType::class, $offretravail);
-        $form->handleRequest($request);
-        $resultOfSearch =[];
-        if ($form->isSubmitted()) {
-            $mots=$form['q']->getData();
-            $resultOfSearch =  $offretravailRepository->chercherOffres($mots);
-          
-        }
-      
-           
-       
-        
-        return $this->render('offretravail/chercheroffre.html.twig', [
-            'offretravails' => $form,
-            'offretravailbyid' =>  $resultOfSearch,
-        ]);
-    }*/
+ 
    
 }

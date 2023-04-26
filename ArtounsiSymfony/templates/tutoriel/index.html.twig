@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tutoriel index{% endblock %}
+
+{% block body %}
+    <h1>Tutoriel index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_tutoriel</th>
+                <th>Pathimg</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Niveau</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tutoriel in tutoriels %}
+            <tr>
+                <td>{{ tutoriel.idTutoriel }}</td>
+                <td>{{ tutoriel.pathimg }}</td>
+                <td>{{ tutoriel.title }}</td>
+                <td>{{ tutoriel.description }}</td>
+                <td>{{ tutoriel.niveau }}</td>
+                <td>
+                    <a href="{{ path('app_tutoriel_show', {'id_tutoriel': tutoriel.id_tutoriel}) }}">show</a>
+                    <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.id_tutoriel}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tutoriel_new') }}">Create new</a>
+{% endblock %}

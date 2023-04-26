@@ -31,6 +31,9 @@ class Artistepostuler
     #[ORM\JoinColumn(name:'idoffre',referencedColumnName:'idoffre',nullable: false)]
     private ?offretravail $idoffre = null;
 
+    #[ORM\Column]
+    private ?bool $notif = null;
+
     public function getId(): ?int
     {
         return $this->id_artpostuler;
@@ -92,6 +95,18 @@ class Artistepostuler
     public function setIdoffre(?offretravail $idoffre): self
     {
         $this->idoffre = $idoffre;
+
+        return $this;
+    }
+
+    public function isNotif(): ?bool
+    {
+        return $this->notif;
+    }
+
+    public function setNotif(bool $notif): self
+    {
+        $this->notif = $notif;
 
         return $this;
     }

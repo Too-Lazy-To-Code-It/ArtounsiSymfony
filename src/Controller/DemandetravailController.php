@@ -16,7 +16,7 @@ use App\Repository\CategoryRepository;
 use Symfony\Component\Form\FormError;
 use App\Repository\AllusersRepository;
 use App\Repository\ArtistepostulerRepository;
-use DateTime;
+use DateTime;use Knp\Component\Pager\PaginatorInterface;
 use App\Repository\OffretravailRepository;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\HttpFoundation\File\File;
@@ -24,11 +24,15 @@ use Symfony\Component\HttpFoundation\File\File;
 class DemandetravailController extends AbstractController
 {
     #[Route('/', name: 'app_demandetravail_index', methods: ['GET'])]
-    public function index(DemandetravailRepository $demandetravailRepository): Response
+    public function index(Request $request,PaginatorInterface $paginator,DemandetravailRepository $demandetravailRepository): Response
     {
         
         $demandetravails = $demandetravailRepository->findAll();
-       
+        $demandetravails=$paginator->paginate(
+            $demandetravails, //on passe les données 
+            $request->query->getInt('page', 1), //num de la page en cours, 1 par défaut
+            2//nbre d'articles par page  
+        );
         $demandetravailbyid = $demandetravailRepository->findBy(['id_user' => 1]);
         return $this->render('demandetravail/index.html.twig', [
             'demandetravails' => $demandetravails,
@@ -61,13 +65,78 @@ class DemandetravailController extends AbstractController
         //->priority(Email::PRIORITY_HIGH)
         ->subject('Nouveau Candidature pour le poste de " '.$offretitre)
         ->text('Sending emails is fun again!')
-        ->html("<h1> Bonjour ". $nickname."</h1> <p> Le candidature'. $nameofconnnectedstudio.'decriver par : '.$descriptionstudioconnecter.'avec le mail'.$mailstudioconnected.'est interessé par votre demande'.$offretitre'</p>");
+        ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
+        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"550\" bgcolor=\"white\" style=\"border:2px solid black\">
+            <tbody>
+                <tr>
+                    <td align=\"center\">
+                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"col-550\" width=\"550\">
+                            <tbody>
+                                <tr>
+                                    <td align=\"center\" style=\"background-color: #C10C99;
+                                        height: 50px;\">
+    
+                                        <a href=\"#\" style=\"text-decoration: none;\">
+                                            <p style=\"color:white;
+                                                font-weight:bold;\">
+                                                arTounsi
+                                            </p>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr style=\"height: 300px;\">
+                <td align=\"center\" style=\"border: none;
+                        border-bottom: 2px solid #1C233D;
+                        padding-right: 20px;padding-left:20px;background-color: #1C233D\">
+                        <p style=\" font-weight: bolder;font-size: 42px; letter-spacing: 0.025em; color:white;\">
+                        Bonjour  ". $nickname."!
+                     </p>
+                 </td>
+             </tr>
+             <tr style=\"display: inline-block;\">
+             <td style=\"height: 150px;
+                     padding: 20px;
+                     border: none;
+                     border-bottom: 2px solid #361B0E;
+                     background-color: #1C233D; \">
+
+                 <h2 style=\"text-align: left;
+                         align-items: center; color:white\">
+
+                         Le candidature $nameofconnnectedstudio decrivé par : $descriptionstudioconnecter avec le mail $mailstudioconnected est interessé par votre offre $offretitre</h2>
+                         </td>
+                         </tr>
+                         <tr style=\"border: none;
+                         background-color: #C10C99;
+                         height: 40px;
+                         color:white;
+                         padding-bottom: 20px;
+                         text-align: center;\">
+             
+                             <td height=\"40px\" align=\"center\">
+                                 <p style=\"color:white;
+                         line-height: 1.5em;\">
+                                     arTounsi
+                                 </p>
+             
+             
+                         </tbody>
+                        </table>
+                        </tr>
+                        </body> 
+                          " );
+          
      $mailer->send($email);
      $artistepostuler=new Artistepostuler();
      $artistepostuler->setIdoffre($demande);
      $artistepostuler->setIdUser( $user);
      $artistepostuler->setNomartiste( $nickname);
      $artistepostuler->setTitreoffre($offretitre);
+     $artistepostuler->setNotif(false);
      $now = new DateTime();
      $artistepostuler->setDatepostuler($now);
      $artistrepo->save($artistepostuler, true);

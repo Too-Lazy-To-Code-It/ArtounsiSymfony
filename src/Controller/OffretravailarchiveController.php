@@ -27,15 +27,45 @@ class OffretravailarchiveController extends AbstractController
             'offretravailbyid' => $offretravailbyid,
         ]);
     }
-    #[Route('/{idoffre}', name: 'app_offretravailarchive_delete', methods: ['POST'])]
-    public function delete(Request $request, Offretravailarchive $offretravailarchive, OffretravailarchiveRepository $offretravailarchiveRepository): Response
+   
+    
+    #[Route('/{idoffre}', name: 'app_offretravailarchive_recuperer', methods: ['POST'])]
+    public function recuperer($idoffre,Request $request, Offretravailarchive $offretravailarchive, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
     {
+
         if ($this->isCsrfTokenValid('delete'.$offretravailarchive->getIdoffre(), $request->request->get('_token'))) {
 
-
-            
+            $offre=$offretravailarchiveRepository->find($idoffre);
+            $offretravail = new Offretravail();
+            $offretravail->setDescriptionoffre(  $offre->getDescriptionoffre());
+            $offretravail->setTitreoffre($offre->getTitreoffre());
+            $offretravail->setIdcategorie($offre->getIdcategorie());
+            $offretravail->setCategorieoffre($offre->getCategorieoffre());
+            $offretravail->setIdUser($offre->getIdUser());
+            $offretravail->setTypeoffre($offre->getTypeoffre());
+            $offretravail->setLocalisationoffre($offre->getLocalisationoffre());
+            $now = new DateTime();
+            $offretravail->setDateajoutoofre($now);
+            $offretravail->setNickname($offre->getNickname());
+           
+          
+            $offretravailRepository->save( $offretravail);
             $offretravailarchiveRepository->remove($offretravailarchive, true);
         }
+
+
+        return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
+    }
+    #[Route('delete/{idoffre}', name: 'app_offretravailarchive_delete', methods: ['POST'])]
+    public function delete($idoffre,Request $request, Offretravailarchive $offretravailarchive, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
+    {
+
+        if ($this->isCsrfTokenValid('deleteoffre'.$offretravailarchive->getIdoffre(), $request->request->get('_tokendelete'))) {
+
+          
+            $offretravailarchiveRepository->remove($offretravailarchive, true);
+        }
+
 
         return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
     }
@@ -67,30 +97,5 @@ class OffretravailarchiveController extends AbstractController
     }
 
 
-    #[Route('/{idoffre}', name: 'app_offretravail_deletefromarchive', methods: ['POST'])]
-    public function deletefromarchive($idoffre,Request $request, Offretravailarchive $offretravailarchive, Offretravail $offretravail, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$offretravailarchive->getIdoffre(), $request->request->get('_token'))) {        
-            $offre=$offretravailarchiveRepository->find($idoffre);
-            $offretravail = new offretravail();
-            $offretravail->setDescriptionoffre(  $offre->getDescriptionoffre());
-            $offretravail->setTitreoffre($offre->getTitreoffre());
-            $offretravail->setIdcategorie($offre->getIdcategorie());
-            $offretravail->setCategorieoffre($offre->getCategorieoffre());
-            $offretravail->setIdUser($offre->getIdUser());
-            $offretravail->setTypeoffre($offre->getTypeoffre());
-            $offretravail->setLocalisationoffre($offre->getLocalisationoffre());
-            $now = new DateTime();
-            $offretravail->setDateajoutoofre($now);
-            $offretravail->setNickname($offre->getNickname());
-           
-          
-            $offretravailRepository->save( $offretravail);
-            $offretravailarchiveRepository->remove($offretravailarchive, true);
-        }
-
-        return $this->redirectToRoute('app_offretravailarchive_index');
-    }
-
-    
+   
 }
