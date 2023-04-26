@@ -26,6 +26,7 @@
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="AutocompleteBundle">Symfony\UX\Autocomplete\AutocompleteBundle</parameter>
       <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
+      <parameter key="StarRatingBundle">Sbyaute\StarRatingBundle\StarRatingBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -95,6 +96,10 @@
       <parameter key="WebpackEncoreBundle" type="collection">
         <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src</parameter>
         <parameter key="namespace">Symfony\WebpackEncoreBundle</parameter>
+      </parameter>
+      <parameter key="StarRatingBundle" type="collection">
+        <parameter key="path">C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sbyaute\star-rating-bundle</parameter>
+        <parameter key="namespace">Sbyaute\StarRatingBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -234,6 +239,7 @@
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@SbyauteStarRatingBundle/rating.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@Autocomplete/autocomplete_form_theme.html.twig</parameter>
     </parameter>
@@ -273,6 +279,7 @@
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="knp_paginator.page_limit">null</parameter>
+    <parameter key="star_rating.config" type="collection"/>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -674,6 +681,9 @@
     <service id="App\Repository\ViewRepository" class="App\Repository\ViewRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Services\QrcodeService" class="App\Services\QrcodeService" autowire="true" autoconfigure="true">
+      <argument type="service" id="Endroid\QrCode\Builder\Builder"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -1354,6 +1364,7 @@
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/vendor/sbyaute/star-rating-bundle/Resources/views</argument>
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
@@ -1380,6 +1391,7 @@
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/vendor/sbyaute/star-rating-bundle/Resources/views</argument>
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
@@ -1466,6 +1478,7 @@
         <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
         <argument>Symfony\UX\Autocomplete\Form</argument>
+        <argument>Sbyaute\StarRatingBundle\Form</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\AllusersType</argument>
@@ -1496,6 +1509,7 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
         <argument>Symfony\UX\Autocomplete\Form\ParentEntityAutocompleteType</argument>
+        <argument>Sbyaute\StarRatingBundle\Form\RatingType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -2346,6 +2360,7 @@
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\endroid\qr-code-bundle\src/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src/translations</argument>
+          <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sbyaute\star-rating-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2370,6 +2385,7 @@
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\endroid\qr-code-bundle\src/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
             <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\webpack-encore-bundle\src/translations</argument>
+            <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sbyaute\star-rating-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3804,7 +3820,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.TUTDz6t"/>
+      <argument type="service" id=".service_locator.H_hzHBs"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4918,6 +4934,14 @@
       <call method="setRepositoryFactory">
         <argument type="service" id="doctrine.orm.container_repository_factory"/>
       </call>
+      <call method="addCustomStringFunction">
+        <argument>MONTH</argument>
+        <argument>DoctrineExtensions\Query\Mysql\Month</argument>
+      </call>
+      <call method="addCustomStringFunction">
+        <argument>YEAR</argument>
+        <argument>DoctrineExtensions\Query\Mysql\Year</argument>
+      </call>
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
@@ -5326,6 +5350,9 @@
       <call method="addExtension">
         <argument type="service" id="webpack_encore.twig_stimulus_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="star_rating.twig"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5370,6 +5397,7 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
+        <argument key="C:\Users\achref\Documents\ArtounsiSymfony-Achref/vendor/sbyaute/star-rating-bundle/Resources/views">SbyauteStarRatingBundle</argument>
         <argument key="C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
         <argument key="C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
@@ -5385,6 +5413,10 @@
       <tag name="twig.loader"/>
       <argument type="collection"/>
       <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref</argument>
+      <call method="addPath">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/vendor/sbyaute/star-rating-bundle/Resources/views</argument>
+        <argument>SbyauteStarRatingBundle</argument>
+      </call>
       <call method="addPath">
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
@@ -5440,6 +5472,14 @@
       <call method="addPath">
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\symfony\ux-autocomplete/templates</argument>
         <argument>!Autocomplete</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sbyaute\star-rating-bundle/Resources/views</argument>
+        <argument>StarRating</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref\vendor\sbyaute\star-rating-bundle/Resources/views</argument>
+        <argument>!StarRating</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\achref\Documents\ArtounsiSymfony-Achref/templates</argument>
@@ -7014,6 +7054,13 @@
         <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
+    <service id="star_rating.type" class="Sbyaute\StarRatingBundle\Form\RatingType">
+      <tag name="form.type" alias="rating"/>
+    </service>
+    <service id="star_rating.twig" class="Sbyaute\StarRatingBundle\Extensions\StarRatingExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7876,6 +7923,16 @@
         <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.lrPeSHZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="mr" type="service_closure" id="doctrine"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="qrcodeService" type="service_closure" id="App\Services\QrcodeService"/>
+        <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.TqZMbsS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7906,13 +7963,14 @@
         <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.z535sfI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.SkPZ0M4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="favorisTuroialRepository" type="service_closure" id="App\Repository\FavorisTuroialRepository"/>
+        <argument key="mr" type="service_closure" id="doctrine"/>
         <argument key="ratingTutorielRepositoty" type="service_closure" id="App\Repository\RatingTutorielRepository"/>
-        <argument key="tutoriel" type="service_closure" id=".errored..service_locator.z535sfI.App\Entity\Tutoriel"/>
+        <argument key="tutoriel" type="service_closure" id=".errored..service_locator.SkPZ0M4.App\Entity\Tutoriel"/>
         <argument key="tutorielRepository" type="service_closure" id="App\Repository\TutorielRepository"/>
       </argument>
     </service>
@@ -7986,7 +8044,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.bxtJ2oF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XMSspcS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -8004,6 +8062,7 @@
         <argument key="App\Controller\CategoryController::index" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\CategoryController::new" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\CategoryController::show" type="service_closure" id=".service_locator.7P87fGM"/>
+        <argument key="App\Controller\ChallengeController::calendar" type="service_closure" id=".service_locator.EbvCHH_"/>
         <argument key="App\Controller\ChallengeController::delete" type="service_closure" id=".service_locator.ccE8lf6"/>
         <argument key="App\Controller\ChallengeController::edit" type="service_closure" id=".service_locator.LQ6gFI6"/>
         <argument key="App\Controller\ChallengeController::index" type="service_closure" id=".service_locator.MgjTE_4"/>
@@ -8074,10 +8133,12 @@
         <argument key="App\Controller\RatingTutorielController::new" type="service_closure" id=".service_locator.ZShBbfO"/>
         <argument key="App\Controller\TutorielController::delete" type="service_closure" id=".service_locator.V_bG4Ss"/>
         <argument key="App\Controller\TutorielController::edit" type="service_closure" id=".service_locator.DiYfVrs"/>
-        <argument key="App\Controller\TutorielController::index" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController::index" type="service_closure" id=".service_locator.lrPeSHZ"/>
         <argument key="App\Controller\TutorielController::indexback" type="service_closure" id=".service_locator.ixsaekR"/>
+        <argument key="App\Controller\TutorielController::names" type="service_closure" id=".service_locator.TqZMbsS"/>
         <argument key="App\Controller\TutorielController::new" type="service_closure" id=".service_locator.XbtDh1i"/>
-        <argument key="App\Controller\TutorielController::show" type="service_closure" id=".service_locator.z535sfI"/>
+        <argument key="App\Controller\TutorielController::search" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController::show" type="service_closure" id=".service_locator.SkPZ0M4"/>
         <argument key="App\Controller\TutorielController::showfavoris" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\VideoController::delete" type="service_closure" id=".service_locator._EeCc6U"/>
         <argument key="App\Controller\VideoController::edit" type="service_closure" id=".service_locator.ROlNY4_"/>
@@ -8108,6 +8169,7 @@
         <argument key="App\Controller\CategoryController:index" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\CategoryController:new" type="service_closure" id=".service_locator.RdVbGrJ"/>
         <argument key="App\Controller\CategoryController:show" type="service_closure" id=".service_locator.7P87fGM"/>
+        <argument key="App\Controller\ChallengeController:calendar" type="service_closure" id=".service_locator.EbvCHH_"/>
         <argument key="App\Controller\ChallengeController:delete" type="service_closure" id=".service_locator.ccE8lf6"/>
         <argument key="App\Controller\ChallengeController:edit" type="service_closure" id=".service_locator.LQ6gFI6"/>
         <argument key="App\Controller\ChallengeController:index" type="service_closure" id=".service_locator.MgjTE_4"/>
@@ -8178,10 +8240,12 @@
         <argument key="App\Controller\RatingTutorielController:new" type="service_closure" id=".service_locator.ZShBbfO"/>
         <argument key="App\Controller\TutorielController:delete" type="service_closure" id=".service_locator.V_bG4Ss"/>
         <argument key="App\Controller\TutorielController:edit" type="service_closure" id=".service_locator.DiYfVrs"/>
-        <argument key="App\Controller\TutorielController:index" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController:index" type="service_closure" id=".service_locator.lrPeSHZ"/>
         <argument key="App\Controller\TutorielController:indexback" type="service_closure" id=".service_locator.ixsaekR"/>
+        <argument key="App\Controller\TutorielController:names" type="service_closure" id=".service_locator.TqZMbsS"/>
         <argument key="App\Controller\TutorielController:new" type="service_closure" id=".service_locator.XbtDh1i"/>
-        <argument key="App\Controller\TutorielController:show" type="service_closure" id=".service_locator.z535sfI"/>
+        <argument key="App\Controller\TutorielController:search" type="service_closure" id=".service_locator.TqZMbsS"/>
+        <argument key="App\Controller\TutorielController:show" type="service_closure" id=".service_locator.SkPZ0M4"/>
         <argument key="App\Controller\TutorielController:showfavoris" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\VideoController:delete" type="service_closure" id=".service_locator._EeCc6U"/>
         <argument key="App\Controller\VideoController:edit" type="service_closure" id=".service_locator.ROlNY4_"/>
@@ -8256,7 +8320,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.TUTDz6t" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.H_hzHBs" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
@@ -8281,6 +8345,7 @@
         <argument key="App\Form\TutorielType" type="service_closure" id="App\Form\TutorielType"/>
         <argument key="App\Form\VideoType" type="service_closure" id="App\Form\VideoType"/>
         <argument key="App\Form\ViewType" type="service_closure" id="App\Form\ViewType"/>
+        <argument key="Sbyaute\StarRatingBundle\Form\RatingType" type="service_closure" id="star_rating.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -8978,12 +9043,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.bxtJ2oF"/>
+      <argument type="service" id=".service_locator.XMSspcS"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.bxtJ2oF"/>
+      <argument type="service" id=".service_locator.XMSspcS"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9037,7 +9102,7 @@
     <service id=".errored..service_locator.XcJaAy8.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.4C83FMe.App\Entity\Rating" class="App\Entity\Rating"/>
     <service id=".errored..service_locator.RA9EiuF.App\Entity\Rating" class="App\Entity\Rating"/>
-    <service id=".errored..service_locator.z535sfI.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
+    <service id=".errored..service_locator.SkPZ0M4.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.DiYfVrs.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.HK7FhIP.App\Entity\Video" class="App\Entity\Video"/>
     <service id=".errored..service_locator.ROlNY4_.App\Entity\Video" class="App\Entity\Video"/>
@@ -10014,7 +10079,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.bxtJ2oF"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XMSspcS"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10044,17 +10109,18 @@
     <service id=".service_locator.ROIeenz" alias=".service_locator.ShBJIr0"/>
     <service id=".service_locator.ZjYTwRg" alias=".service_locator.IkPfdHs"/>
     <service id=".service_locator.PWB6kIq" alias=".service_locator.ZShBbfO"/>
+    <service id=".service_locator.PwnvaY6" alias=".service_locator.lrPeSHZ"/>
     <service id=".service_locator.Q.QhxBp" alias=".service_locator.TqZMbsS"/>
     <service id=".service_locator.PYM77qn" alias=".service_locator.nHnvE5y"/>
-    <service id=".service_locator.qXkCK0z" alias=".service_locator.z535sfI"/>
+    <service id=".service_locator.aRIlK8o" alias=".service_locator.SkPZ0M4"/>
     <service id=".service_locator.OB6iWB." alias=".service_locator.V_bG4Ss"/>
     <service id=".service_locator.f4w2iYp" alias=".service_locator.2Ximz65"/>
     <service id=".service_locator.fM6cq6M" alias=".service_locator.HK7FhIP"/>
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
-    <service id=".service_locator.u4clsDT" alias=".service_locator.bxtJ2oF"/>
+    <service id=".service_locator.C89tsZv" alias=".service_locator.XMSspcS"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.KfsvaKZ" alias=".service_locator.TUTDz6t"/>
+    <service id=".service_locator.e3eZrXG" alias=".service_locator.H_hzHBs"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -10134,11 +10200,12 @@
     <service id=".service_locator.SEIRRMh" alias=".service_locator.4C83FMe"/>
     <service id=".service_locator.eqiRiQV" alias=".service_locator.RA9EiuF"/>
     <service id=".service_locator.k2yo0Ab" alias=".service_locator.ZShBbfO"/>
+    <service id=".service_locator.zrc7Unb" alias=".service_locator.lrPeSHZ"/>
     <service id=".service_locator.vim.8jM" alias=".service_locator.TqZMbsS"/>
     <service id=".service_locator..7IShOT" alias=".service_locator.ixsaekR"/>
     <service id=".service_locator.PZwL4o7" alias=".service_locator.nHnvE5y"/>
     <service id=".service_locator.s31TVUu" alias=".service_locator.XbtDh1i"/>
-    <service id=".service_locator.IJYzM.L" alias=".service_locator.z535sfI"/>
+    <service id=".service_locator.350B_ae" alias=".service_locator.SkPZ0M4"/>
     <service id=".service_locator.k21TRVt" alias=".service_locator.DiYfVrs"/>
     <service id=".service_locator.mzOtO_q" alias=".service_locator.V_bG4Ss"/>
     <service id=".service_locator.HNj7LcS" alias=".service_locator.ErqXzhI"/>

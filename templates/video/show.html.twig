@@ -164,48 +164,26 @@
   <script src="{{asset('assets/js/popup.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
 
+  	<script>
+		var maVideo = document.getElementById("ma-video");
+		var duree = document.getElementById("duree");
+
+		maVideo.addEventListener("timeupdate", function() {
+      console.log(maVideo.duration);
+		});
+
+		function convertTime(seconds) {
+			var minutes = Math.floor(seconds / 60);
+			var remainingSeconds = Math.floor(seconds % 60);
+
+			if (remainingSeconds < 10) {
+				remainingSeconds = "0" + remainingSeconds;
+			}
+
+			return minutes + ":" + remainingSeconds;
+		}
+	</script>
+
   </body>
 </html>
 
-    {#<h1>Video</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id_video</th>
-                <td>{{ video.getId() }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ video.title }}</td>
-            </tr>
-            <tr>
-                <th>Date_p</th>
-                <td>{{ video.dateP ? video.dateP|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ video.description }}</td>
-            </tr>
-            <tr>
-                <th>Pathvideo</th>
-                <td>{{ video.pathvideo }}</td>
-            </tr>
-            <tr>
-            <video width="320" height="240" controls>
-                <source src="{{ asset('http://localhost/videos/'~video.pathvideo) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-                <th>Pathimage</th>
-                <td>{{ video.pathimage }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_video_index') }}">back to list</a>
-
-    <a href="{{ path('app_video_edit', {'id_video': video.getId()}) }}">edit</a>
-
-    {{ include('video/_delete_form.html.twig') }}
-{% endblock %}
-#}

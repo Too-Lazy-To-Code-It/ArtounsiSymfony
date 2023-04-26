@@ -65,4 +65,16 @@ class View
 
         return $this;
     }
+
+    public function getVideo(): ?Video
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?Video $video): self
+    {
+        $this->video = $video;
+
+        return $this;
+    }
 }

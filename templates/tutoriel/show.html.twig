@@ -21,6 +21,10 @@
         .rating .selected:before {
             content: '\f005';
         }
+
+        .avg_flash {
+          visibility: hidden;
+        }
     </style>
 {#
     <script>
@@ -147,7 +151,10 @@
             {
               setRating({{oldrating.getRating()}});
             }
+
             function setRating(rating) {
+                
+                $('#form_rating').val(rating);
                 // fill all the stars assigning the '.selected' class
                 $('.rating-star').removeClass('fa-star-o').addClass('selected');
                 // empty all the stars to the right of the mouse
@@ -160,26 +167,25 @@
                     // fill all the stars
                     $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
                     // empty all the stars to the right of the mouse
-                    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+                    $('.rating-star#rating-' + rating+ ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
                 })
                 .on('mouseleave', function (e) {
                     // empty all the stars except those with class .selected
-                    $('.rating-star#rating-' + {{oldrating.getRating()}} + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
-
-                    //$('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+                    $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
                 })
                 .on('click', function (e) {
                     var rating = $(e.target).data('rating');
                     $.ajax({
                         type: 'POST',
                         url: 'http://127.0.0.1:8000/rating/tutoriel/new/'+$(e.target).data('rating')+'/'+parseInt(document.querySelector('input').value),
-                        dataType: "json",
-                        contentType: 'application/json',
                         success: function (response) {
-
                             // Handle the response from the controller
-                                                            alert(" thanks for your rating ! ");
-
+                          document.getElementById("avg_rating").innerHTML = Math.round(response.avg.avg)+" Stars";
+                          document.getElementById("avg_flash").style.visibility = 'visible';
+                          setTimeout(myGreeting, 3000);
+                          function myGreeting() {
+                                                  document.getElementById("avg_flash").style.visibility = 'hidden'
+                                                }
                         }
                     });
                     setRating(rating);
@@ -192,6 +198,8 @@
                         setRating(rating);
                     }
                 });
+
+        
         });
     </script>
 {% endblock %}
@@ -208,13 +216,13 @@
         </div>
         <div class="col-lg-7">
           <div class="left-image">
-            <img src="{{ asset('http://localhost/img/'~tutoriel.pathimg) }}" alt="" style="border-radius: 20px;">
+            <img src="{{ asset('http://localhost/img/'~tutoriel.pathimg) }}" alt="" style="max-height: 500px; border-radius: 20px;">
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
           <h4>{{ tutoriel.title }}</h4>
           <span class="author">
-            <img src="assets/images/author-02.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
+            <img src="{{ asset('/assets/images/author-02.jpg') }}"" alt="" style="max-width: 50px; border-radius: 50%;">
             <h6>{{ tutoriel.getIdArtist().getName() }}<br><a href="#">{{ tutoriel.getIdArtist().getEmail() }}</a></h6>
           </span>
           <p>{{ tutoriel.getDescription() }}</p>
@@ -223,7 +231,19 @@
             {% else %}
               <a href={{path('app_favoris_tutoriel_new',{'id_tutoriel':tutoriel.getId()})}}><i class="bi bi-heart">add to favoris</i></a>
             {% endif %}
-            <input type="number" style="visibility: hidden;" value={{tutoriel.getId()}}>
+
+
+          <div class="row">
+              <div class="col-4">
+                <span class="bid">
+                  Current Rate<br><strong id="avg_rating">{{avg.avg|round(1)}} Stars</strong><br>
+                </span>
+              </div>
+
+              <div class="col-8">
+                <span class="bid">
+                  Rate us!
+                  <br>
                     <div class="rating" role="optgroup">
                         <!-- in Rails just use 1.upto(5) -->
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
@@ -237,11 +257,18 @@
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
                           aria-label="Rate as five out of 5 stars" role="radio"></i>
                     </div>
-                    {% if(show==true) %}
-                      <div class="alert alert-success">
-                        Thanks for your rating <i class="bi bi-check" style="width: 0;height: 100;color: #00ff00;"></i>
+
+                      <div id="avg_flash" class="avg_flash">
+                        Thanks for your rating <i class="bi bi-check" style="width: 0;height: 100;color: #7453FC;"></i>
                       </div>
-                    {% endif %}
+
+                    <br>
+                </span>
+            </div>
+
+
+
+          </div>
         </div>
 
         <div class="col-lg-12">
@@ -269,10 +296,10 @@
                     <img src={{ asset('http://localhost/img/'~v.getPathimage()) }} alt="">
                   </div>
                   <div class="right-content">
-                    <h4>{{v.title}}</h4>
+                    <h4 id="avg-h4">{{v.title|slice(0, 20)}}...</h4>
                     <a href={{path("app_video_show",{"id_video":v.getId()})}}>Show Video</a>
                     <div class="line-dec"></div>
-                    <h6>Views: <em>20</em></h6>
+                    <h6>Views: <em>{{v.Views|length}}</em></h6>
                     <span class="date">{{v.getDateP()|date('m:h d:m:Y')}}</span>
                   </div>
                 </div>
@@ -288,6 +315,8 @@
       </div>
     </div>
   </div>
+  <input type="number" style="visibility: hidden;" value={{tutoriel.getId()}}>
+
 {% block js %}
         {{ parent() }}
         <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

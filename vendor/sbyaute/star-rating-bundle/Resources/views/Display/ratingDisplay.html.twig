@@ -1,0 +1,5 @@
+<{{ tag }} class="rating">
+  {% for i in 1..max %}
+    <{{ tag }} class="{% if i <= stars %}star-full{% else %}star-empty{% endif %} {{ starSize }}"></{{ tag }}>
+  {% endfor %}
+</{{ tag }}>

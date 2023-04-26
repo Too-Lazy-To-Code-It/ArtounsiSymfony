@@ -62,6 +62,16 @@ class TutorielRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function ViewsPerMonth(int $id, int $m){
+        $d = new \DateTime();
+        $query = $this->getEntityManager()
+                              ->createQuery('SELECT MONTH(w.date_v) as month, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video AND MONTH(w.date_v)=:month AND YEAR(w.date_v)=Year(:d) AND t.id_artist = :id ORDER BY views DESC')
+                                            ->setParameter('month',$m)
+                                            ->setParameter('d',$d)
+                                            ->setParameter('id',$id);
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Tutoriel[] Returns an array of Tutoriel objects
 //     */

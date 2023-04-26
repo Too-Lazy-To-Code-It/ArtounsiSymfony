@@ -70,6 +70,9 @@
             "./tests/bootstrap.php"
         ]
     },
+    "sbyaute/star-rating-bundle": {
+        "version": "v1.3"
+    },
     "sensio/framework-extra-bundle": {
         "version": "6.2",
         "recipe": {

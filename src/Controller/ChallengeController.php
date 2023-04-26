@@ -43,11 +43,34 @@ class ChallengeController extends AbstractController
             else
                 $challenges = $challengeRepository->findBy(array( 'title'=>$keyword, 'id_categorie'=>$category ));
         }
+
         return $this->render('challenge/index.html.twig', [
             'challenges' => $challenges,
             'categories' => $CategoryRepository->findAll(),
             'keyword' => $keyword,
             'Categorie' => $category,
+        ]);
+    }
+
+    #[Route('/calendar', name: 'app_challenge_calendar')]
+    public function calendar(ChallengeRepository $challengeRepository): Response
+    {
+        $challengessdata = $challengeRepository->findAll();
+        foreach ($challengessdata as $c) {
+            $challengesdata[] = [
+                'title' => $c->getTitle(),
+                'description' => $c->getDescription(),
+                'dateChallenge' =>$c->getDateC(),
+                'id' => $c->getId(),
+
+//                'startHour' => $evemt->getStartHour(),
+                'color' => '#257e4a',
+            ];
+        }
+
+
+        return $this->render('challenge/calendar.html.twig', [
+            'challengesdata' => $challengesdata
         ]);
     }
     
@@ -127,7 +150,6 @@ class ChallengeController extends AbstractController
                 $participationRepository->save($participation, true);
             }
         }
-
 
         return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,

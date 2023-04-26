@@ -1,7 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Tutoriel index{% endblock %}
+{% block css %}
+  {{ parent() }}
+  <style>
 
+    ul{
+      list-style: none;
+      color: #684CDB;
+      
+    }
+    .list{
+      width: 100%;
+      background-color: #25252F;
+      border-radius: 5px 5px 5px 5px;
+      margin-top: 5px;
+      padding-bottom: 5px;
+      margin-left: 10px;
+      position: absolute;
+      z-index: 2;
+      width: 200px;
+    }
+    .list-items{
+      padding: 15px 5px;
+    }
+    .list-items:hover{
+      background-color: #494242;
+    }
+  </style>
+{% endblock %}
 {% block body %}
     <div class="page-heading">
     <div class="container">
@@ -55,14 +82,21 @@
         </div>
         <div class="col-lg-7">
 
-          <form id="search-form" name="gs" method="post" role="search" action="#">
+          <form id="search-form" autocomplete="off" name="gs" method="post" role="search" action="#">
             <div class="row">
               <div class="col-lg-5">
                 <fieldset>
                 {% if(keyword=="")%}
-                    <input id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
+                  <div>
+                    <input id="searchtxt" autocomplete="off" type="text" name="keyword" class="searchText" placeholder="Type Something...">
+                  </div>
+                  <ul class="list"></ul>
+
                 {% else %}
-                    <input value={{keyword}} id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
+                  <div>
+                    <input value={{keyword}} id="searchtxt" autocomplete="off" type="text" name="keyword" class="searchText" placeholder="Type Something...">
+                  </div>
+                  <ul class="list"></ul>
                 {% endif %}
                 </fieldset>
               </div>
@@ -99,14 +133,14 @@
             <div class="row">
               <div class="col-lg-12">
                 <span class="author">
-                  {% if(t.getIdCategorie().getNameCategory()=="2d") %}
+                {% if(t.getIdCategorie().getNameCategory()=="2d") %}
                   <img src="{{ asset('assets/images/2d.png') }}" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 {% endif %}
                 {% if(t.getIdCategorie().getNameCategory()=="3d") %}
                   <img src="{{ asset('assets/images/3d.png') }}" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
                 {% endif %}
                 </span>
-                <img src="{{ asset('http://localhost/img/'~t.pathimg) }}" alt="" style="border-radius: 20px; max-width: 500px; height: 350px; ">
+                <img src="{{ asset('http://localhost/img/'~t.pathimg) }}" alt="" style="border-radius: 20px; max-width: 500px; height: 250px; ">
                 <h4>{{t.title}}</h4>
               </div>
               <div class="col-lg-12">
@@ -116,7 +150,16 @@
                     <span>Level: <br> <strong>{{t.niveau}}</strong></span>
                   </div>
                   <div class="col-6">
-                    <span>Last Update: <br> <strong>26th Nov</strong></span>
+                  {% set lastupdate = date('01-01-1999') %}
+                  {% for v in t.videos %}
+                      {%if(v.getDateP()>lastupdate)%}
+                          {% set lastupdate = v.getDateP() %}
+                      {%endif%}
+                  {% endfor %}
+                  {%if(lastupdate==date('01-01-1999'))%}
+                          {% set lastupdate = date('01-01-2023') %}
+                  {%endif%}
+                    <span>Last Update: <br> <strong>{{lastupdate|date('d M Y')}} </strong></span>
                   </div>
                 </div>
               </div>
@@ -145,39 +188,106 @@
       </div>
     </div>
   </div>
+  {% set tab = [] %}
+  {% for t in tutoriels %}
+      {% set tab = tab|merge([t.title]) %}
+  {% endfor %}
 
+  {% endblock %}
+  {% block js %}
+  {{ parent() }}
+  <script>
+      $.ajax({
+                        type: 'GET',
+                        url: 'http://127.0.0.1:8000/tutoriel/show/names',
+                        success: function (response) {
+                            // Handle the response from the controller
+                          let names = response.names;
 
-    {#<h1>Tutoriel index</h1>
+                          let sortedNames = names.sort();
+      let input = document.getElementById("searchtxt");
+      tab = [];
+      input.addEventListener("keyup", (e) => {
+        //loop through above array
+        removeElements();
+        sortedNames.forEach(i => {
+          //initially remove all elements (so if user erases a letter or adds new letter then clean previous out)
+          if(
+            i.toLowerCase().startsWith(input.value.toLowerCase()) &&
+            input.value != ""
+          ){
+            let listItem = document.createElement("li");
+            // One common class name
+            listItem.classList.add("list-items");
+            listItem.style.cursor = "pointer";
+            listItem.setAttribute("onclick", "displayNames('"+i+"')");
+            //Display match part in bold
+            let word = "<b>" + i.substr(0,input.value.length) + "</b>";
+            word+= i.substr( input.value.length );
+            console.log(word);
+            //display the value in array
+            listItem.innerHTML = word;
+            document.querySelector(".list").appendChild(listItem);
+          }
+        });
+      });
+      function displayNames(value){
+          input.value = value;
+          removeElements();
+      }
+      function removeElements(){
+        //clear all the item
+        let items = document.querySelectorAll(".list-items");
+        items.forEach((item)=>{
+          console.log("1");
+          item.remove();
+        });
+      }
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id_tutoriel</th>
-                <th>Pathimg</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Niveau</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tutoriel in tutoriels %}
-            <tr>
-                <td>{{ tutoriel.idTutoriel }}</td>
-                <td>{{ tutoriel.pathimg }}</td>
-                <td>{{ tutoriel.title }}</td>
-                <td>{{ tutoriel.description }}</td>
-                <td>{{ tutoriel.niveau }}</td>
-                <td>
-                    <a href="{{ path('app_tutoriel_show', {'id_tutoriel': tutoriel.id_tutoriel}) }}">show</a>
-                    <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.id_tutoriel}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>#}
-    {% endblock %}
+                        }
+                        
+              });
+      
+      let names = ['swipi','monalisa','bb','kkd'];
+
+      let sortedNames = names.sort();
+      let input = document.getElementById("searchtxt");
+      tab = [];
+      input.addEventListener("keyup", (e) => {
+        //loop through above array
+        removeElements();
+        sortedNames.forEach(i => {
+          //initially remove all elements (so if user erases a letter or adds new letter then clean previous out)
+          if(
+            i.toLowerCase().startsWith(input.value.toLowerCase()) &&
+            input.value != ""
+          ){
+            let listItem = document.createElement("li");
+            // One common class name
+            listItem.classList.add("list-items");
+            listItem.style.cursor = "pointer";
+            listItem.setAttribute("onclick", "displayNames('"+i+"')");
+            //Display match part in bold
+            let word = "<b>" + i.substr(0,input.value.length) + "</b>";
+            word+= i.substr( input.value.length );
+            console.log(word);
+            //display the value in array
+            listItem.innerHTML = word;
+            document.querySelector(".list").appendChild(listItem);
+          }
+        });
+      });
+      function displayNames(value){
+          input.value = value;
+          removeElements();
+      }
+      function removeElements(){
+        //clear all the item
+        let items = document.querySelectorAll(".list-items");
+        items.forEach((item)=>{
+          console.log("1");
+          item.remove();
+        });
+      }
+  </script>
+  {% endblock %}

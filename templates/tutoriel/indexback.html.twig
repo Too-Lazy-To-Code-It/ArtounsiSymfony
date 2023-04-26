@@ -17,7 +17,7 @@
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body pb-0">
-              <h5 class="card-title">Tutoriels <span>| Per Category</span></h5>
+              <h6 class="card-title">Tutoriels <span>| Per Category</span></h6>
                     <!-- Pie Chart -->
                     <div id="pieChart" style="min-height: 400px;" class="echart"></div>
       
@@ -45,6 +45,10 @@
                         value: {{tutorielsPerCategory[0].aaa}},
                           name: '{{tutorielsPerCategory[0].name_category}}'
                         },
+                        {
+                        value: {{tutorielsPerCategory[1].aaa}},
+                          name: '{{tutorielsPerCategory[1].name_category}}'
+                        }
 
                             ],
                             emphasis: {
@@ -68,8 +72,7 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Most viewed tutoriels</h5>
-  
+                <h5 style="margin-bottom: 22px;" class="card-title">Most viewed tutoriels</h5>
                 <!-- Bar Chart -->
                 <div id="barChart"></div>
   
@@ -105,6 +108,51 @@
             </div>
           </div>
 
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Views per month</h5>
+
+            <!-- Line Chart -->
+            <div id="lineChart"></div>
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                new ApexCharts(document.querySelector("#lineChart"), {
+                  series: [{
+                    name: "Views",
+                    data: [{{vpm[1]}}, {{vpm[2]}}, {{vpm[3]}}, {{vpm[4]}}, {{vpm[5]}}, {{vpm[6]}}, {{vpm[7]}}, {{vpm[8]}}, {{vpm[9]}}, {{vpm[10]}}, {{vpm[11]}}, {{vpm[12]}}]
+                  }],
+                  chart: {
+                    height: 350,
+                    type: 'line',
+                    zoom: {
+                      enabled: false
+                    }
+                  },
+                  dataLabels: {
+                    enabled: false
+                  },
+                  stroke: {
+                    curve: 'straight'
+                  },
+                  grid: {
+                    row: {
+                      colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                      opacity: 0.5
+                    },
+                  },
+                  xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                  }
+                }).render();
+              });
+            </script>
+            <!-- End Line Chart -->
+
+          </div>
+        </div>
       </div>
     </section>
 

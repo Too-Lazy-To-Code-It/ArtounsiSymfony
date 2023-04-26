@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Sbyaute\StarRatingBundle\Form\StarRatingType;
 use App\Entity\Category;
 use App\Entity\Allusers;
 
@@ -22,7 +23,10 @@ class TutorielType extends AbstractType
             
             ->add('title')
             ->add('description',TextareaType::class)
-            ->add('niveau')
+            ->add('niveau',StarRatingType::class,[
+                'label' => 'Rating',
+                'stars' => 5,
+            ])
             ->add('id_categorie',EntityType::class,
             ['class'=>Category::class,
             'choice_label'=>'name_category'])

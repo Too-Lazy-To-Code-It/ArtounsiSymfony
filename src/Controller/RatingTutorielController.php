@@ -41,7 +41,11 @@ class RatingTutorielController extends AbstractController
             $entityManager->persist($ratingentity);
         }
         $entityManager->flush();
+
+        $em = $mr->getManager();
+        $avgrating = $em->createQuery("SELECT avg(r.rating) as avg FROM APP\Entity\RatingTutoriel r WHERE r.tutorielId = :tutorielId")
+                            ->setParameter('tutorielId', $idTutoriel)->getResult();
         
-        return new JsonResponse( ['success' => true ]);
+        return new JsonResponse( ['success' => true,'avg' => $avgrating[0] ]);
     }
 }

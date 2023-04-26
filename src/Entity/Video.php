@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\VideoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
@@ -37,6 +39,14 @@ class Video
 
     #[ORM\Column(length: 255)]
     private ?string $pathimage = null;
+
+    #[ORM\OneToMany(mappedBy: 'id_video', targetEntity: View::class)]
+    private Collection $Views;
+
+    public function __construct()
+    {
+        $this->Views = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -111,6 +121,36 @@ class Video
     public function setPathimage(string $pathimage): self
     {
         $this->pathimage = $pathimage;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, View>
+     */
+    public function getViews(): Collection
+    {
+        return $this->Views;
+    }
+
+    public function addView(View $view): self
+    {
+        if (!$this->Views->contains($view)) {
+            $this->Views->add($view);
+            $view->setVideo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeView(View $view): self
+    {
+        if ($this->Views->removeElement($view)) {
+            // set the owning side to null (unless already changed)
+            if ($view->getVideo() === $this) {
+                $view->setVideo(null);
+            }
+        }
 
         return $this;
     }

@@ -7,7 +7,7 @@
       <div class="row">
       <div class="buttons">
             <div class="border-button">
-              <a href={{ path('app_challenge_new') }}>Create Your Challenge</a>
+              <a href={{ path('app_challenge_calendar')}} >Show Calendar</a>
             </div>
           </div>
         <div class="col-lg-5">
@@ -55,15 +55,10 @@
             </div>
           </form>
         </div>
-        {#
-        <form id="filters">
-        {{dump(Categorie)}}
-          {% for c in categories %}
-            <p><input type="checkbox" name="Categorie[]" id="cat{{c.id}}" value="{{c.id}}" >
-               <label for="cat{{c.id}}">{{c.getNameCategory()}}</label></p>
-          {% endfor %}
-        </form>
-        #}
+
+</body>
+</html>
+
         {% include "challenge/_content.html.twig" %}
 
     

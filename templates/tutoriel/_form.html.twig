@@ -33,7 +33,7 @@
                             <h5 class="card-title"> tutoriel</h5>
 
                             <!-- General Form Elements -->
-                           {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': 'contact', 'class': 'my-class'}}) }}
+                           {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class':'theme-form theme-form-2 mega-form'}}) }}
                                 <div class="row mb-3">
                                  {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
                                    
@@ -57,7 +57,7 @@
                                  {{ form_label(form.niveau, 'Niveau', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
                                     
                                     <div class="col-sm-10">
-                                        {{ form_widget(form.niveau, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_widget(form.niveau) }}
                                     </div>
                                 </div>
 
