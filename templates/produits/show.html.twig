@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
   
 {% endblock %}
 
@@ -224,7 +226,7 @@
       </div>
     </div>
   
-    <script>									
+<script>									
       function successAdd() {
      result = confirm("Voulez-vous vraiment ajouter ce produit ?");
      if (result) {
@@ -283,7 +285,13 @@ $.ajax({
     <script src="{{ asset('assets/js/popup.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     
-    
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+<!-- Include Flashy default partial -->
+{{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+
+
   </body>
 
 

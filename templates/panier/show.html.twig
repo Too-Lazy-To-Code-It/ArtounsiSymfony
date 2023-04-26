@@ -177,7 +177,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <th class="text-center"><h6>Nom de la photo</h6></th>
                                 <th class="text-center"><h6>Prix hors TVA</h6></th>
                                 <th class="text-center"><h6>Taux TVA (%)</h6></th>
-                                <th class="text-center"><h6>Prix avec TVA</h6></th>
+                               
                                 <th class="text-center"><h6>Date d'ajout</h6></th>
                                 <th class="text-center"><h6>Action</h6></th>
                               </tr>
@@ -211,11 +211,6 @@ https://templatemo.com/tm-577-liberty-market
                                     </div> 
                                   </td>
 
-                                  <td>
-                                    <div class="right-content">
-                                      <h6>{{ montantTotal }}</h6>
-                                    </div> 
-                                  </td>
 
 
                                   <td>
@@ -223,7 +218,7 @@ https://templatemo.com/tm-577-liberty-market
                                   </td>
                                   <td>                                    
                                     <div class="main-button delete-product-button" data-idlignepanier="{{ ligne.idlignepanier }}">
-                                      <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}">Supprimer</a>                                     
+                                      <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}"><i class="fas fa-trash-alt"></i></a>                                     
                                     </div> 
                                   </td>
                                   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -284,11 +279,16 @@ https://templatemo.com/tm-577-liberty-market
             <table class="carte-table">
               <thead>
                 <tr>
-                  <th  class="total"><h5>Nombre de produits: {{ count }}</h5></th>
+                  <th  class="count"><h5>Nombre de produits: {{ count  }}</h5></th>
                   <th  class="count"><h5>Montant total: {{ total }}</h5></th>
                   <th>
                     <div class="main-button">
                       <a href="{{ path('checkout',{'idpanier': 'idpanier'})}}">Payer</a>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="main-button">
+                      <a href="{{ path('viderpanier',{'idpanier': idpanier})}}">Vider Panier</a>
                     </div>
                   </th>
                 </tr>

@@ -50,12 +50,12 @@ class Panier
         return $this;
     }
 
-    public function getNbrProduits(): ?string
+    public function getNbrProduits(): ?int
     {
         return $this->nbr_produits;
     }
 
-    public function setNbrProduits(string $nbr_produits): self
+    public function setNbrProduits(int $nbr_produits): self
     {
         $this->nbr_produits = $nbr_produits;
 

@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -20,6 +20,7 @@
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="MercurySeriesFlashyBundle">MercurySeries\FlashyBundle\MercurySeriesFlashyBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -66,6 +67,10 @@
         <parameter key="path">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
+      <parameter key="MercurySeriesFlashyBundle" type="collection">
+        <parameter key="path">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\mercuryseries\flashy-bundle\src</parameter>
+        <parameter key="namespace">MercurySeries\FlashyBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
@@ -107,14 +112,14 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -124,15 +129,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -197,7 +202,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -711,7 +716,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/http_cache</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -721,7 +726,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1583,7 +1588,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1613,7 +1618,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1892,7 +1897,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2190,6 +2195,7 @@
           <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\symfony\monolog-bundle/translations</argument>
           <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\symfony\maker-bundle\src/translations</argument>
           <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\sensio\framework-extra-bundle\src/translations</argument>
+          <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\mercuryseries\flashy-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2208,6 +2214,7 @@
             <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\symfony\monolog-bundle/translations</argument>
             <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\sensio\framework-extra-bundle\src/translations</argument>
+            <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\mercuryseries\flashy-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3093,7 +3100,7 @@
       <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev</argument>
+        <argument key="cache_dir">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3206,13 +3213,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3351,10 +3358,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3493,7 +3500,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/sessions</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3525,7 +3532,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/sessions</argument>
+          <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -3712,10 +3719,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4100,7 +4107,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/profiler</argument>
+      <argument>file:C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4147,7 +4154,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4650,7 +4657,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5016,7 +5023,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/twig</argument>
+        <argument key="cache">C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -5176,6 +5183,14 @@
       <call method="addPath">
         <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>MercurySeriesFlashy</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>!MercurySeriesFlashy</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master/templates</argument>
@@ -6414,6 +6429,13 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
+    <service id="mercuryseries_flashy.flashy_notifier" class="MercurySeries\FlashyBundle\FlashyNotifier" public="true">
+      <argument type="service" id="mercuryseries_flashy.symfony_session_store"/>
+      <argument>mercuryseries_flashy_notification</argument>
+    </service>
+    <service id="mercuryseries_flashy.symfony_session_store" class="MercurySeries\FlashyBundle\SymfonySessionStore">
+      <argument type="service" id="request_stack"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7125,18 +7147,30 @@
         <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.GMDLTwG" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine" type="service_closure" id="doctrine"/>
-        <argument key="lignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.HiLaAwr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..ICFIua" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="product" type="service_closure" id=".errored..service_locator.HiLaAwr.App\Entity\Produits"/>
+        <argument key="lignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kVmSvxy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="lignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
+        <argument key="product" type="service_closure" id=".errored..service_locator.kVmSvxy.App\Entity\Produits"/>
+        <argument key="produitRep" type="service_closure" id="App\Repository\ProduitsRepository"/>
+      </argument>
+    </service>
+    <service id=".errored.8ZU1Sv7" class="App\Controller\FlashyNotifier"/>
+    <service id=".service_locator.flLaoOK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="flashy" type="service_closure" id=".errored.8ZU1Sv7"/>
+        <argument key="produit" type="service_closure" id=".errored..service_locator.flLaoOK.App\Entity\Produits"/>
+        <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
     <service id=".service_locator.GyXjEZA" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7158,12 +7192,17 @@
         <argument key="participationRepository" type="service_closure" id="App\Repository\ParticipationRepository"/>
       </argument>
     </service>
-    <service id=".errored.XmyMmMB" class="App\Controller\LignepanierRepository"/>
-    <service id=".service_locator.Vla7wjB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ZxXXR_6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="lignepanierRepository" type="service_closure" id=".errored.XmyMmMB"/>
         <argument key="urlGenerator" type="service_closure" id="router.default"/>
+      </argument>
+    </service>
+    <service id=".service_locator.GMDLTwG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="lignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Xf_chUG" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7214,15 +7253,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="produit" type="service_closure" id=".errored..service_locator.arvAwdT.App\Entity\Produits"/>
-      </argument>
-    </service>
-    <service id=".errored.Q6veYQc" class="App\Controller\TutorielRepository"/>
-    <service id=".errored.hlufCP2" class="App\Controller\ManagerRegistry"/>
-    <service id=".service_locator.6ZN5QsW" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="mr" type="service_closure" id=".errored.hlufCP2"/>
-        <argument key="tutorielRepository" type="service_closure" id=".errored.Q6veYQc"/>
       </argument>
     </service>
     <service id=".service_locator.XcJaAy8" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7308,7 +7338,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.lZBJT1m" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gbV9FTG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7367,15 +7397,19 @@
         <argument key="App\Controller\OffretravailarchiveController::index" type="service_closure" id=".service_locator.VousgdX"/>
         <argument key="App\Controller\OffretravailarchiveController::new" type="service_closure" id=".service_locator.VousgdX"/>
         <argument key="App\Controller\OffretravailarchiveController::show" type="service_closure" id=".service_locator.4NXkpsl"/>
-        <argument key="App\Controller\PanierController::addProduct" type="service_closure" id=".service_locator.HiLaAwr"/>
+        <argument key="App\Controller\PanierController::ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
+        <argument key="App\Controller\PanierController::addProduct" type="service_closure" id=".service_locator.kVmSvxy"/>
+        <argument key="App\Controller\PanierController::ajouterProduitAuPanier" type="service_closure" id=".service_locator.flLaoOK"/>
         <argument key="App\Controller\PanierController::index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator.GMDLTwG"/>
+        <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator..ICFIua"/>
         <argument key="App\Controller\ParticipationController::delete" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController::edit" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController::index" type="service_closure" id=".service_locator.GyXjEZA"/>
         <argument key="App\Controller\ParticipationController::new" type="service_closure" id=".service_locator.GyXjEZA"/>
         <argument key="App\Controller\ParticipationController::show" type="service_closure" id=".service_locator.gTO9GIY"/>
-        <argument key="App\Controller\PaymentController::checkout" type="service_closure" id=".service_locator.Vla7wjB"/>
+        <argument key="App\Controller\PaymentController::checkout" type="service_closure" id=".service_locator.ZxXXR_6"/>
+        <argument key="App\Controller\PaymentController::pdf" type="service_closure" id=".service_locator.GMDLTwG"/>
+        <argument key="App\Controller\PaymentController::successUrl" type="service_closure" id=".service_locator.koNxlQa"/>
         <argument key="App\Controller\PostController::delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::index" type="service_closure" id=".service_locator.Xf_chUG"/>
@@ -7386,8 +7420,10 @@
         <argument key="App\Controller\PostLikeController::index" type="service_closure" id=".service_locator.qvHyl36"/>
         <argument key="App\Controller\PostLikeController::new" type="service_closure" id=".service_locator.qvHyl36"/>
         <argument key="App\Controller\PostLikeController::show" type="service_closure" id=".service_locator.rXk8ooy"/>
-        <argument key="App\Controller\ProduitsBackController::delete" type="service_closure" id=".service_locator.6ZN5QsW"/>
+        <argument key="App\Controller\ProduitsBackController::delete" type="service_closure" id=".service_locator.XcJaAy8"/>
+        <argument key="App\Controller\ProduitsBackController::edit" type="service_closure" id=".service_locator.XcJaAy8"/>
         <argument key="App\Controller\ProduitsBackController::index" type="service_closure" id=".service_locator.ALjzYuI"/>
+        <argument key="App\Controller\ProduitsBackController::new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController::show" type="service_closure" id=".service_locator.arvAwdT"/>
         <argument key="App\Controller\ProduitsController::delete" type="service_closure" id=".service_locator.XcJaAy8"/>
         <argument key="App\Controller\ProduitsController::edit" type="service_closure" id=".service_locator.XcJaAy8"/>
@@ -7474,15 +7510,19 @@
         <argument key="App\Controller\OffretravailarchiveController:index" type="service_closure" id=".service_locator.VousgdX"/>
         <argument key="App\Controller\OffretravailarchiveController:new" type="service_closure" id=".service_locator.VousgdX"/>
         <argument key="App\Controller\OffretravailarchiveController:show" type="service_closure" id=".service_locator.4NXkpsl"/>
-        <argument key="App\Controller\PanierController:addProduct" type="service_closure" id=".service_locator.HiLaAwr"/>
+        <argument key="App\Controller\PanierController:ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
+        <argument key="App\Controller\PanierController:addProduct" type="service_closure" id=".service_locator.kVmSvxy"/>
+        <argument key="App\Controller\PanierController:ajouterProduitAuPanier" type="service_closure" id=".service_locator.flLaoOK"/>
         <argument key="App\Controller\PanierController:index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator.GMDLTwG"/>
+        <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator..ICFIua"/>
         <argument key="App\Controller\ParticipationController:delete" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController:edit" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController:index" type="service_closure" id=".service_locator.GyXjEZA"/>
         <argument key="App\Controller\ParticipationController:new" type="service_closure" id=".service_locator.GyXjEZA"/>
         <argument key="App\Controller\ParticipationController:show" type="service_closure" id=".service_locator.gTO9GIY"/>
-        <argument key="App\Controller\PaymentController:checkout" type="service_closure" id=".service_locator.Vla7wjB"/>
+        <argument key="App\Controller\PaymentController:checkout" type="service_closure" id=".service_locator.ZxXXR_6"/>
+        <argument key="App\Controller\PaymentController:pdf" type="service_closure" id=".service_locator.GMDLTwG"/>
+        <argument key="App\Controller\PaymentController:successUrl" type="service_closure" id=".service_locator.koNxlQa"/>
         <argument key="App\Controller\PostController:delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:index" type="service_closure" id=".service_locator.Xf_chUG"/>
@@ -7493,8 +7533,10 @@
         <argument key="App\Controller\PostLikeController:index" type="service_closure" id=".service_locator.qvHyl36"/>
         <argument key="App\Controller\PostLikeController:new" type="service_closure" id=".service_locator.qvHyl36"/>
         <argument key="App\Controller\PostLikeController:show" type="service_closure" id=".service_locator.rXk8ooy"/>
-        <argument key="App\Controller\ProduitsBackController:delete" type="service_closure" id=".service_locator.6ZN5QsW"/>
+        <argument key="App\Controller\ProduitsBackController:delete" type="service_closure" id=".service_locator.XcJaAy8"/>
+        <argument key="App\Controller\ProduitsBackController:edit" type="service_closure" id=".service_locator.XcJaAy8"/>
         <argument key="App\Controller\ProduitsBackController:index" type="service_closure" id=".service_locator.ALjzYuI"/>
+        <argument key="App\Controller\ProduitsBackController:new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController:show" type="service_closure" id=".service_locator.arvAwdT"/>
         <argument key="App\Controller\ProduitsController:delete" type="service_closure" id=".service_locator.XcJaAy8"/>
         <argument key="App\Controller\ProduitsController:edit" type="service_closure" id=".service_locator.XcJaAy8"/>
@@ -8310,12 +8352,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.lZBJT1m"/>
+      <argument type="service" id=".service_locator.gbV9FTG"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.lZBJT1m"/>
+      <argument type="service" id=".service_locator.gbV9FTG"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8357,7 +8399,8 @@
     <service id=".errored..service_locator.qWtjbJS.App\Entity\Offretravail" class="App\Entity\Offretravail"/>
     <service id=".errored..service_locator.4NXkpsl.App\Entity\Offretravailarchive" class="App\Entity\Offretravailarchive"/>
     <service id=".errored..service_locator.UtbtSkp.App\Entity\Offretravailarchive" class="App\Entity\Offretravailarchive"/>
-    <service id=".errored..service_locator.HiLaAwr.App\Entity\Produits" class="App\Entity\Produits"/>
+    <service id=".errored..service_locator.kVmSvxy.App\Entity\Produits" class="App\Entity\Produits"/>
+    <service id=".errored..service_locator.flLaoOK.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.gTO9GIY.App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.r.sZWL..App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.4WI1Dtz.App\Entity\Post" class="App\Entity\Post"/>
@@ -9072,7 +9115,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>zk4YwKLdTs</argument>
       <argument>0</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -9082,7 +9125,7 @@
       <argument>mez81MIbap</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9090,7 +9133,7 @@
       <argument>cMmASHycN6</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9098,7 +9141,7 @@
       <argument>S-+D7KFx5Z</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9106,7 +9149,7 @@
       <argument>RPaVntOXKx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9114,14 +9157,14 @@
       <argument>bIjfvp8hMj</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>AdOhaH1qQw</argument>
       <argument>0</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -9131,7 +9174,7 @@
       <argument>caov0P5K4J</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9141,7 +9184,7 @@
       <argument>p8ZD8gR4M0</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\aouad\Desktop\Pidev web\ArtounsiSymfony-master\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9317,9 +9360,11 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="sensio_framework_extra.converter.doctrine.orm.expression_language" alias="sensio_framework_extra.converter.doctrine.orm.expression_language.default"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
+    <service id="mercuryseries_flashy.session_store" alias="mercuryseries_flashy.symfony_session_store"/>
+    <service id="MercurySeries\FlashyBundle\FlashyNotifier" alias="mercuryseries_flashy.flashy_notifier"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.lZBJT1m"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gbV9FTG"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9343,11 +9388,11 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
+    <service id=".service_locator.RsB4Wuo" alias=".service_locator..ICFIua"/>
+    <service id=".service_locator.TmlHGIF" alias=".service_locator.kVmSvxy"/>
+    <service id=".service_locator.6Vla_kd" alias=".service_locator.flLaoOK"/>
     <service id=".service_locator.ojPhsAD" alias=".service_locator.GMDLTwG"/>
-    <service id=".service_locator.7EzS3Z9" alias=".service_locator.HiLaAwr"/>
-    <service id=".service_locator.ShD0R.f" alias=".service_locator.Vla7wjB"/>
-    <service id=".service_locator.JT7Q0mE" alias=".service_locator.6ZN5QsW"/>
-    <service id=".service_locator.r9mHVaM" alias=".service_locator.lZBJT1m"/>
+    <service id=".service_locator.EpP.GJA" alias=".service_locator.gbV9FTG"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.cxRDELV" alias=".service_locator.O3NFs6."/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9410,12 +9455,14 @@
     <service id=".service_locator.KJMAoM2" alias=".service_locator.4NXkpsl"/>
     <service id=".service_locator.oSzLUeJ" alias=".service_locator.UtbtSkp"/>
     <service id=".service_locator.PROaXcF" alias=".service_locator.tsnEguG"/>
-    <service id=".service_locator.nfa1e0i" alias=".service_locator.GMDLTwG"/>
-    <service id=".service_locator.Dx0Gmx." alias=".service_locator.HiLaAwr"/>
+    <service id=".service_locator.V3i9AUI" alias=".service_locator..ICFIua"/>
+    <service id=".service_locator.Gq.Zrml" alias=".service_locator.kVmSvxy"/>
+    <service id=".service_locator.ETPViGI" alias=".service_locator.flLaoOK"/>
     <service id=".service_locator.P_46lET" alias=".service_locator.GyXjEZA"/>
     <service id=".service_locator._Sig4Np" alias=".service_locator.gTO9GIY"/>
     <service id=".service_locator.AAkRBCf" alias=".service_locator.r.sZWL."/>
-    <service id=".service_locator.ecz5.Rj" alias=".service_locator.Vla7wjB"/>
+    <service id=".service_locator.xGDzhl4" alias=".service_locator.ZxXXR_6"/>
+    <service id=".service_locator.nfa1e0i" alias=".service_locator.GMDLTwG"/>
     <service id=".service_locator.AtDfmcq" alias=".service_locator.Xf_chUG"/>
     <service id=".service_locator.ciPaLol" alias=".service_locator.4WI1Dtz"/>
     <service id=".service_locator.m6FqfrM" alias=".service_locator.JQ.Ubn6"/>

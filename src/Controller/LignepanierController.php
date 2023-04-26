@@ -89,7 +89,7 @@ class LignepanierController extends AbstractController
 
 ### méthode de suppression d'un produit du panier avec ajax  
 
-    #[Route('/deleteAjaxligne/{idlignepanier}', name: 'app_lignepanier_delete_with_ajax', methods: ['POST'])]
+    #[Route('/deleteAjaxligne/{idlignepanier}', name: 'app_lignepanier_delete_with_ajax', methods: ['GET','POST'])]
 public function deleteWithAjax(int $idlignepanier, Request $request, ManagerRegistry $doctrine, LignepanierRepository $rep): JsonResponse
 {
   $entityManager = $doctrine->getManager();

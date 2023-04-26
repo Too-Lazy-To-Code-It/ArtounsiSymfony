@@ -226,7 +226,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <th class=\"text-center\"><h6>Nom de la photo</h6></th>
                                 <th class=\"text-center\"><h6>Prix hors TVA</h6></th>
                                 <th class=\"text-center\"><h6>Taux TVA (%)</h6></th>
-                                <th class=\"text-center\"><h6>Prix avec TVA</h6></th>
+                               
                                 <th class=\"text-center\"><h6>Date d'ajout</h6></th>
                                 <th class=\"text-center\"><h6>Action</h6></th>
                               </tr>
@@ -277,31 +277,23 @@ https://templatemo.com/tm-577-liberty-market
                                     </div> 
                                   </td>
 
-                                  <td>
-                                    <div class=\"right-content\">
-                                      <h6>";
-                // line 216
-                echo twig_escape_filter($this->env, (isset($context["montantTotal"]) || array_key_exists("montantTotal", $context) ? $context["montantTotal"] : (function () { throw new RuntimeError('Variable "montantTotal" does not exist.', 216, $this->source); })()), "html", null, true);
-                echo "</h6>
-                                    </div> 
-                                  </td>
 
 
                                   <td>
                                     <h6>";
-                // line 222
-                ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 222)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 222), "F jS, Y H:i"), "html", null, true))) : (print ("")));
+                // line 217
+                ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 217)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 217), "F jS, Y H:i"), "html", null, true))) : (print ("")));
                 echo "</h6>
                                   </td>
                                   <td>                                    
                                     <div class=\"main-button delete-product-button\" data-idlignepanier=\"";
-                // line 225
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 225), "html", null, true);
+                // line 220
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 220), "html", null, true);
                 echo "\">
                                       <a href=\"";
-                // line 226
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 226)]), "html", null, true);
-                echo "\">Supprimer</a>                                     
+                // line 221
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 221)]), "html", null, true);
+                echo "\"><i class=\"fas fa-trash-alt\"></i></a>                                     
                                     </div> 
                                   </td>
                                   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -313,11 +305,11 @@ https://templatemo.com/tm-577-liberty-market
                                      \$.ajax({
                                     method: 'POST',
                                     url: \"";
-                // line 237
+                // line 232
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => "idlignepanier"]);
                 echo "\".replace('idlignepanier', idlignepanier),
                                     data: {'_token': '";
-                // line 238
+                // line 233
                 echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("deleteproduit"), "html", null, true);
                 echo "'},
                                     success: function(response) {
@@ -353,19 +345,19 @@ https://templatemo.com/tm-577-liberty-market
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 268
+            // line 263
             echo "                            </tbody>
                           </table>
                         ";
         } else {
-            // line 271
+            // line 266
             echo "                          <div class=\"section-heading\">
                            
                             <h2   class=\"text-center\"> Votre panier est <em>vide</em> </h2>
                           </div>
                         ";
         }
-        // line 276
+        // line 271
         echo "                        
                             <div class=\"line-dec\"></div>
                         </div>
@@ -377,20 +369,28 @@ https://templatemo.com/tm-577-liberty-market
             <table class=\"carte-table\">
               <thead>
                 <tr>
-                  <th  class=\"total\"><h5>Nombre de produits: ";
-        // line 287
-        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 287, $this->source); })()), "html", null, true);
+                  <th  class=\"count\"><h5>Nombre de produits: ";
+        // line 282
+        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 282, $this->source); })()), "html", null, true);
         echo "</h5></th>
                   <th  class=\"count\"><h5>Montant total: ";
-        // line 288
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 288, $this->source); })()), "html", null, true);
+        // line 283
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 283, $this->source); })()), "html", null, true);
         echo "</h5></th>
                   <th>
                     <div class=\"main-button\">
                       <a href=\"";
-        // line 291
+        // line 286
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout", ["idpanier" => "idpanier"]);
         echo "\">Payer</a>
+                    </div>
+                  </th>
+                  <th>
+                    <div class=\"main-button\">
+                      <a href=\"";
+        // line 291
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("viderpanier", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 291, $this->source); })())]), "html", null, true);
+        echo "\">Vider Panier</a>
                     </div>
                   </th>
                 </tr>
@@ -531,7 +531,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  511 => 23,  507 => 22,  503 => 21,  499 => 20,  495 => 19,  490 => 16,  480 => 15,  446 => 342,  392 => 291,  386 => 288,  382 => 287,  369 => 276,  362 => 271,  357 => 268,  321 => 238,  317 => 237,  303 => 226,  299 => 225,  293 => 222,  284 => 216,  275 => 210,  265 => 203,  256 => 197,  247 => 191,  242 => 188,  238 => 187,  222 => 173,  220 => 172,  168 => 123,  164 => 122,  65 => 25,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  511 => 23,  507 => 22,  503 => 21,  499 => 20,  495 => 19,  490 => 16,  480 => 15,  446 => 342,  392 => 291,  384 => 286,  378 => 283,  374 => 282,  361 => 271,  354 => 266,  349 => 263,  313 => 233,  309 => 232,  295 => 221,  291 => 220,  285 => 217,  275 => 210,  265 => 203,  256 => 197,  247 => 191,  242 => 188,  238 => 187,  222 => 173,  220 => 172,  168 => 123,  164 => 122,  65 => 25,  63 => 15,  58 => 13,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -715,7 +715,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <th class=\"text-center\"><h6>Nom de la photo</h6></th>
                                 <th class=\"text-center\"><h6>Prix hors TVA</h6></th>
                                 <th class=\"text-center\"><h6>Taux TVA (%)</h6></th>
-                                <th class=\"text-center\"><h6>Prix avec TVA</h6></th>
+                               
                                 <th class=\"text-center\"><h6>Date d'ajout</h6></th>
                                 <th class=\"text-center\"><h6>Action</h6></th>
                               </tr>
@@ -749,11 +749,6 @@ https://templatemo.com/tm-577-liberty-market
                                     </div> 
                                   </td>
 
-                                  <td>
-                                    <div class=\"right-content\">
-                                      <h6>{{ montantTotal }}</h6>
-                                    </div> 
-                                  </td>
 
 
                                   <td>
@@ -761,7 +756,7 @@ https://templatemo.com/tm-577-liberty-market
                                   </td>
                                   <td>                                    
                                     <div class=\"main-button delete-product-button\" data-idlignepanier=\"{{ ligne.idlignepanier }}\">
-                                      <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\">Supprimer</a>                                     
+                                      <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\"><i class=\"fas fa-trash-alt\"></i></a>                                     
                                     </div> 
                                   </td>
                                   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -822,11 +817,16 @@ https://templatemo.com/tm-577-liberty-market
             <table class=\"carte-table\">
               <thead>
                 <tr>
-                  <th  class=\"total\"><h5>Nombre de produits: {{ count }}</h5></th>
+                  <th  class=\"count\"><h5>Nombre de produits: {{ count  }}</h5></th>
                   <th  class=\"count\"><h5>Montant total: {{ total }}</h5></th>
                   <th>
                     <div class=\"main-button\">
                       <a href=\"{{ path('checkout',{'idpanier': 'idpanier'})}}\">Payer</a>
+                    </div>
+                  </th>
+                  <th>
+                    <div class=\"main-button\">
+                      <a href=\"{{ path('viderpanier',{'idpanier': idpanier})}}\">Vider Panier</a>
                     </div>
                   </th>
                 </tr>

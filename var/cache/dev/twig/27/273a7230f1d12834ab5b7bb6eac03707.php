@@ -105,23 +105,12 @@ class __TwigTemplate_72e43ec4c4c9a4cab2b1b95f6aee655c extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
+<div >
+  <a href=\"";
         // line 22
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 22, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pdf", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 22, $this->source); })())]), "html", null, true);
+        echo "\">Facture</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 26
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/src/Controller/PaymentController.php", 0), "html", null, true);
-        echo "\">src/Controller/PaymentController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/templates/payment/index.html.twig", 0), "html", null, true);
-        echo "\">templates/payment/index.html.twig</a></code></li>
-    </ul>
 </div>
 ";
         
@@ -139,7 +128,7 @@ class __TwigTemplate_72e43ec4c4c9a4cab2b1b95f6aee655c extends Template
 
     public function getDebugInfo()
     {
-        return array (  122 => 27,  118 => 26,  111 => 22,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
+        return array (  111 => 22,  93 => 6,  83 => 5,  64 => 3,  54 => 5,  51 => 4,  49 => 3,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -164,14 +153,9 @@ class __TwigTemplate_72e43ec4c4c9a4cab2b1b95f6aee655c extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div >
+  <a href=\"{{ path('pdf',{'idpanier': idpanier}) }}\">Facture</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/src/Controller/PaymentController.php'|file_link(0) }}\">src/Controller/PaymentController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/Users/aouad/Desktop/Pidev web/ArtounsiSymfony-master/templates/payment/index.html.twig'|file_link(0) }}\">templates/payment/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}
 ", "payment/success.html.twig", "C:\\Users\\aouad\\Desktop\\Pidev web\\ArtounsiSymfony-master\\templates\\payment\\success.html.twig");

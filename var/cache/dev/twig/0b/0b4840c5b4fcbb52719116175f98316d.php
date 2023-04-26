@@ -60,7 +60,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 ";
         // line 17
         $this->displayBlock('css', $context, $blocks);
-        // line 32
+        // line 33
         echo "</head>
 
 <body>
@@ -94,15 +94,15 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
                         <li><a href=\"index.html\" class=\"active\">Home</a></li>
                        
                         <li><a href=\"";
-        // line 64
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
         echo "\">Shop</a></li>
                         <li><a href=\"";
-        // line 65
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
         echo "\">Panier</a></li>
                         <li><a href=\"";
-        // line 66
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_Dashboard_index");
         echo "\">Dashboard</a></li>
                         <li><a href=\"explore.html\">Explore</a></li>
@@ -405,6 +405,16 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 <script src=\"assets/js/popup.js\"></script>
 <script src=\"assets/js/custom.js\"></script>
 
+<script src=\"//code.jquery.com/jquery.js\"></script>
+<script src=\"";
+        // line 369
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/js/flashy.js"), "html", null, true);
+        echo "\"></script>
+<!-- Include Flashy default partial -->
+";
+        // line 371
+        echo twig_include($this->env, $context, "@MercurySeriesFlashy/flashy.html.twig");
+        echo "
 </body>
 </html>";
         
@@ -432,6 +442,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     <link rel=\"stylesheet\" href=\"assets/css/owl.css\">
     <link rel=\"stylesheet\" href=\"assets/css/animate.css\">
     <link rel=\"stylesheet\"href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\"/>
+    <link rel=\"stylesheet\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/css/flashy.css"), "html", null, true);
+        echo "\">
     <!--
 
     TemplateMo 577 Liberty Market
@@ -460,7 +474,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     public function getDebugInfo()
     {
-        return array (  429 => 18,  419 => 17,  106 => 66,  102 => 65,  98 => 64,  64 => 32,  62 => 17,  44 => 1,);
+        return array (  447 => 24,  439 => 18,  429 => 17,  416 => 371,  411 => 369,  106 => 67,  102 => 66,  98 => 65,  64 => 33,  62 => 17,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -488,6 +502,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
     <link rel=\"stylesheet\" href=\"assets/css/owl.css\">
     <link rel=\"stylesheet\" href=\"assets/css/animate.css\">
     <link rel=\"stylesheet\"href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\"/>
+    <link rel=\"stylesheet\" href=\"{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}\">
     <!--
 
     TemplateMo 577 Liberty Market
@@ -831,6 +846,10 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 <script src=\"assets/js/popup.js\"></script>
 <script src=\"assets/js/custom.js\"></script>
 
+<script src=\"//code.jquery.com/jquery.js\"></script>
+<script src=\"{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}\"></script>
+<!-- Include Flashy default partial -->
+{{ include('@MercurySeriesFlashy/flashy.html.twig') }}
 </body>
 </html>", "base.html.twig", "C:\\Users\\aouad\\Desktop\\Pidev web\\ArtounsiSymfony-master\\templates\\base.html.twig");
     }

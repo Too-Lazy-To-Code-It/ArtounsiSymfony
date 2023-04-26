@@ -1121,7 +1121,7 @@ class __TwigTemplate_9df832dd6a344af2ca6452c1fe93f190 extends Template
             <li>
               <a href=\"";
         // line 1044
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produitsBack_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
         echo "\">
                 <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
@@ -3009,7 +3009,7 @@ class __TwigTemplate_9df832dd6a344af2ca6452c1fe93f190 extends Template
               </a>
             </li>
             <li>
-              <a href=\"{{ path('app_produitsBack_index')}}\">
+              <a href=\"{{ path('app_produits_back')}}\">
                 <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
             </li>

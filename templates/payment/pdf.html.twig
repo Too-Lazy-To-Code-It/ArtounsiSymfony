@@ -1,0 +1,29 @@
+<div class="table-responsive">
+    <table class="table mb-0">
+        <thead>
+        <tr>
+            <th>ID Facture</th>
+        
+         
+            <th>Nom de la photo</th>
+            <th>Photo</th>
+            <th>Montant à payer</th>
+           
+           
+        </tr>
+        </thead>
+        <tbody>
+        {% for ligne in lignesPanier %}
+        <tr>
+            <td>{{ ligne.idlignepanier }}</td>   
+            <td>{{ ligne.idproduit.nom }}</td>
+            <td>{{ ligne.idproduit.image }}</td>
+            <td>{{ total }}</td>
+           
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+</table>
+</div>
