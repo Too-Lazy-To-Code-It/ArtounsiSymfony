@@ -54,6 +54,7 @@
                         <li><a href="{{ path('app_home') }}">Home</a></li>
                         <li><a href="{{ path('app_explore') }}">Explore</a></li>
                         <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                        <li><a href="{{ path('app_map') }}">Famous Studios</a></li>
                         <li><a href="details.html.twig">Item Details</a></li>
                         <li><a href="author.html">Author</a></li>
                         <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
@@ -131,15 +132,28 @@
                     </fieldset>
                 </div>
                 <div class="col-lg-3">
+    <fieldset>
+    <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory">
+      <option selected>All Categories</option>
+      {% for category in categories %}
+      <option value="{{ category.getId_category }}">{{ category.nameCategory }}</option>
+      {% endfor %}
+    </select>
+  </fieldset>
+</div>
+                <div class="col-lg-3">
                     <fieldset>
-                        <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                            <option selected>All Categories</option>
-                            {% for category in categories %}
-                                <option value="{{ category.getId_category }}">{{ category.nameCategory }}</option>
-                            {% endfor %}
+                        <select name="filter" class="form-select" aria-label="Default select example" id="choosefilter">
+                            <option selected>Filter</option>
+                            <option  data-value="today">Today</option>
+                            <option  data-value="this-month">This Month</option>
+                            <option  data-value="this-year">This Year</option>
                         </select>
                     </fieldset>
+                    
                 </div>
+                
+            
             
             </div>
         </form>
@@ -157,51 +171,58 @@
         </div>
             
         
-<div class="row">
+            <div class="row" id="post-row">
 {% for post in posts %}
-{% if post.postType == 'portfolio' %}
-    <div class="col-lg-3">
-        <div class="item">
-            <div class="row">
-                <div class="col-lg-12">
-                    <span class="author">
-                        <img src="assets/images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
-                    </span>
-                    <img src="{{ post.media }}" width="244px" height="199px" alt="" style="border-radius: 20px;" >
-                    <h4>{{ post.titleP }}</h4>
-                </div>
-                <div class="col-lg-12">
-                    <div class="line-dec"></div>
-                    <div class="row">
-                        <div class="col-6">
-                            <span>Artist: <br> <strong>{{ post.getUserName }}</strong></span>
-                        </div>
-                        <div class="col-6">
-                            <span>Likes: <br> <strong>{{ post.postLikes.count }}</strong></span>
+        {% if post.postType == 'portfolio' %}
+            <div class="col-lg-3 post-item" >
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <span class="author">
+                                        <img src="assets/images/author.jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+                                    </span>
+                                    <img src="{{ post.media }}" width="244px" height="199px" alt="" style="border-radius: 20px;" >
+                                    <h4>{{ post.titleP }}</h4>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="line-dec"></div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span>Artist: <br> <strong>{{ post.getUserName }}</strong></span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span>Likes: <br> <strong>{{ post.postLikes.count }}</strong></span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span>Category: <br><strong>{{ post.getIdCategoryName }}</strong></span>
+                                            <span>Created At: <br> <strong>{{ post.getDateP|date('Y-m-d H:i:s') }}</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="main-button">
+                                        {# <a href="details.html.twig">View Details</a> #}
+                                        <a href="{{ path('app_post_details', {'id_post': post.getId}) }}">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="main-button">
-                        {# <a href="details.html.twig">View Details</a> #}
-                        <a href="{{ path('app_post_details', {'id_post': post.getId}) }}">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {# {% if loop.index is divisible by 4 %}
-        </div><div class="row">
-    {% endif %} #}
-    {% endif %}
+            {% if loop.index is divisible by 4 %}
+                </div><div class="row">
+            {% endif %}
+            {% endif %}
 {% endfor %}
-    {{ knp_pagination_render(posts) }}
-
+   
 </div>
 
                 
         </div>
+        
     </div>
+        <div style="display: flex; justify-content: center;">
+                {{ knp_pagination_render(posts) }}
+            </div>
     
     <div class="top-seller">
         <div class="container">
@@ -336,6 +357,44 @@
     <script src="{{ asset('assets/js/tabs.js') }}"></script>
     <script src="{{ asset('assets/js/popup.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+   <script>
+  $(document).ready(function() {
+    // Get the filter select element
+    const filterSelect = $('#choosefilter');
+
+    // Add a change event listener to the filter select
+    filterSelect.on('change', function() {
+      // Get the selected filter value
+      const filterValue = $(this).find(':selected').data('value');
+
+      // Filter the posts based on the selected filter value
+      $('#post-row .post-item').each(function() {
+        const postDate = $(this).find('.col-lg-12 span:contains("Created At") strong').text();
+        const filterDate = new Date();
+        if (filterValue === 'today') {
+          filterDate.setDate(filterDate.getDate() - 1);
+        } else if (filterValue === 'this-month') {
+          filterDate.setMonth(filterDate.getMonth() - 1);
+        } else if (filterValue === 'this-year') {
+          filterDate.setFullYear(filterDate.getFullYear() - 1);
+        }
+        const postDateObj = new Date(postDate);
+        if (postDateObj >= filterDate) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
+</script>
+<script>
+
+
+</script>
+
+    
 {% endblock %}
 
 

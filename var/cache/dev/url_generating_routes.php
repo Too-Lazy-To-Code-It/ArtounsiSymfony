@@ -56,6 +56,7 @@ return [
     'app_lignepanier_show' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::show'], [], [['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier']], [], [], []],
     'app_lignepanier_edit' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier']], [], [], []],
     'app_lignepanier_delete' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::delete'], [], [['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier']], [], [], []],
+    'app_map' => [[], ['_controller' => 'App\\Controller\\MapController::index'], [], [['text', '/map']], [], [], []],
     'app_offretravail_index' => [[], ['_controller' => 'App\\Controller\\OffretravailController::index'], [], [['text', '/offretravail/']], [], [], []],
     'app_offretravail_new' => [[], ['_controller' => 'App\\Controller\\OffretravailController::new'], [], [['text', '/offretravail/new']], [], [], []],
     'app_offretravail_show' => [['idoffre'], ['_controller' => 'App\\Controller\\OffretravailController::show'], [], [['variable', '/', '[^/]++', 'idoffre', true], ['text', '/offretravail']], [], [], []],

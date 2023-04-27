@@ -51,6 +51,7 @@ class PostType extends AbstractType
                     'style' => 'width: 100%;'
                 ]
             ])
+            
         //     ->add('captcha', Recaptcha3Type::class, [
         // 'constraints' => new Recaptcha3(),
         // 'action_name' => 'submit',

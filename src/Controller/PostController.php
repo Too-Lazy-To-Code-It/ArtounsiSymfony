@@ -52,7 +52,7 @@ public function base(PostRepository $postRepository): Response
             $postRepository->save($post, true);
             $this->addFlash('succes', 'post est ajoutée avec succes.');
 
-            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_post_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('post/new.html.twig', [

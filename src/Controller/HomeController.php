@@ -25,6 +25,7 @@ class HomeController extends AbstractController
         'categories' => $categories,
         'posts' => $posts,
         'controller_name' => 'HomeController',
+        
     ]);
 }
 }

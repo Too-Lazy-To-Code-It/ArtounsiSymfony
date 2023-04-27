@@ -29,6 +29,7 @@
       <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
       <parameter key="MeteoConceptHCaptchaBundle">MeteoConcept\HCaptchaBundle\MeteoConceptHCaptchaBundle</parameter>
       <parameter key="KarserRecaptcha3Bundle">Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle</parameter>
+      <parameter key="ChartjsBundle">Symfony\UX\Chartjs\ChartjsBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -110,6 +111,10 @@
       <parameter key="KarserRecaptcha3Bundle" type="collection">
         <parameter key="path">C:\Users\amine\ArtounsiSymfonyy\vendor\karser\karser-recaptcha3-bundle</parameter>
         <parameter key="namespace">Karser\Recaptcha3Bundle</parameter>
+      </parameter>
+      <parameter key="ChartjsBundle" type="collection">
+        <parameter key="path">C:\Users\amine\ArtounsiSymfonyy\vendor\symfony\ux-chartjs</parameter>
+        <parameter key="namespace">Symfony\UX\Chartjs</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -730,6 +735,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\LignepanierController"/>
+      </call>
+    </service>
+    <service id="App\Controller\MapController" class="App\Controller\MapController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\MapController"/>
       </call>
     </service>
     <service id="App\Controller\OffretravailController" class="App\Controller\OffretravailController" public="true" autowire="true" autoconfigure="true">
@@ -2621,6 +2633,7 @@
           <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\symfony\ux-dropzone/translations</argument>
           <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\liip\imagine-bundle/translations</argument>
           <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\karser\karser-recaptcha3-bundle/translations</argument>
+          <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\symfony\ux-chartjs/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2648,6 +2661,7 @@
             <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\symfony\ux-dropzone/translations</argument>
             <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\liip\imagine-bundle/translations</argument>
             <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\karser\karser-recaptcha3-bundle/translations</argument>
+            <argument>C:\Users\amine\ArtounsiSymfonyy\vendor\symfony\ux-chartjs/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -8987,6 +9001,7 @@
       <argument type="expression">service('karser_recaptcha3.host_provider').getVerifyUrl()</argument>
     </service>
     <service id="karser_recaptcha3.google.request_method.curl" class="ReCaptcha\RequestMethod\Curl"/>
+    <service id="chartjs.builder" class="Symfony\UX\Chartjs\Builder\ChartBuilder"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AllusersController" class="App\Controller\AllusersController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -9026,6 +9041,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MapController" class="App\Controller\MapController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MapController" class="App\Controller\MapController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MapController" class="App\Controller\MapController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\OffretravailController" class="App\Controller\OffretravailController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -10811,6 +10829,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\MapController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\MapController"/>
+      <argument>App\Controller\MapController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\OffretravailController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\OffretravailController"/>
       <argument>App\Controller\OffretravailController</argument>
@@ -12397,6 +12421,7 @@
     <service id="MeteoConcept\HCaptchaBundle\Form\DataTransformer\HCaptchaValueFetcher" alias="meteo_concept_h_captcha.hcaptcha_value_fetcher"/>
     <service id="Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator" alias="karser_recaptcha3.validator"/>
     <service id="karser_recaptcha3.google.request_method" alias="karser_recaptcha3.google.request_method.curl_post"/>
+    <service id="Symfony\UX\Chartjs\Builder\ChartBuilderInterface" alias="chartjs.builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.9at1Unn"/>
