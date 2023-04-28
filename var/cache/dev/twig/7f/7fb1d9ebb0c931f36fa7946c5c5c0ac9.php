@@ -678,7 +678,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
                                 <div class=\"row mb-3\">
                                     <label for=\"Facebook\" class=\"col-md-4 col-lg-3 col-form-label\">Password
-                                        </label>
+                                    </label>
                                     <div class=\"col-md-8 col-lg-9\">
                                         ";
         // line 516
@@ -687,109 +687,102 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                                     </div>
                                 </div>
                                 <div class=\"text-center\">
-                                    <button type=\"submit\" class=\"btn btn-primary\">";
-        // line 520
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 520, $this->source); })()), "Safe changes")) : ("Safe changes")), "html", null, true);
+                                    <button type=\"submit\"
+                                            class=\"btn btn-primary\">";
+        // line 521
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 521, $this->source); })()), "Safe changes")) : ("Safe changes")), "html", null, true);
         echo "</button>
                                 </div>
-                                </div>
-                                ";
-        // line 523
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 523, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
+                            </div>
+                            ";
+        // line 524
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 524, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
 
+                        </div>
+
+                        <div class=\"tab-pane fade pt-3\" id=\"profile-settings\">
+
+                            <!-- Settings Form -->
+                            <form>
+
+                                <div class=\"row mb-3\">
+                                    <label for=\"fullName\" class=\"col-md-4 col-lg-3 col-form-label\">Email
+                                        Notifications</label>
+                                    <div class=\"col-md-8 col-lg-9\">
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"changesMade\"
+                                                   checked>
+                                            <label class=\"form-check-label\" for=\"changesMade\">
+                                                Changes made to your account
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"newProducts\"
+                                                   checked>
+                                            <label class=\"form-check-label\" for=\"newProducts\">
+                                                Information on new products and services
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"proOffers\">
+                                            <label class=\"form-check-label\" for=\"proOffers\">
+                                                Marketing and promo offers
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"securityNotify\"
+                                                   checked disabled>
+                                            <label class=\"form-check-label\" for=\"securityNotify\">
+                                                Security alerts
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=\"text-center\">
+                                    <button type=\"submit\" class=\"btn btn-primary\">Save Changes</button>
+                                </div>
+                            </form><!-- End settings Form -->
+
+                        </div>
+
+                        <div class=\"tab-pane fade pt-3\" id=\"profile-change-password\">
+                            <!-- Change Password Form -->
+                            ";
+        // line 576
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["forme"]) || array_key_exists("forme", $context) ? $context["forme"] : (function () { throw new RuntimeError('Variable "forme" does not exist.', 576, $this->source); })()), 'form_start', ["attr" => ["class" => "signin-form", "novalidate" => "novalidate"]]);
+        echo "
+
+
+                            <div class=\"row mb-3\">
+                                <label for=\"currentPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Phone
+                                    Number</label>
+                                <div class=\"col-md-8 col-lg-9\">
+                                    ";
+        // line 583
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["forme"]) || array_key_exists("forme", $context) ? $context["forme"] : (function () { throw new RuntimeError('Variable "forme" does not exist.', 583, $this->source); })()), "number", [], "any", false, false, false, 583), 'row');
+        echo "
+                                </div>
                             </div>
 
-                            <div class=\"tab-pane fade pt-3\" id=\"profile-settings\">
-
-                                <!-- Settings Form -->
-                                <form>
-
-                                    <div class=\"row mb-3\">
-                                        <label for=\"fullName\" class=\"col-md-4 col-lg-3 col-form-label\">Email
-                                            Notifications</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"changesMade\"
-                                                       checked>
-                                                <label class=\"form-check-label\" for=\"changesMade\">
-                                                    Changes made to your account
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"newProducts\"
-                                                       checked>
-                                                <label class=\"form-check-label\" for=\"newProducts\">
-                                                    Information on new products and services
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"proOffers\">
-                                                <label class=\"form-check-label\" for=\"proOffers\">
-                                                    Marketing and promo offers
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"securityNotify\"
-                                                       checked disabled>
-                                                <label class=\"form-check-label\" for=\"securityNotify\">
-                                                    Security alerts
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class=\"text-center\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">Save Changes</button>
-                                    </div>
-                                </form><!-- End settings Form -->
-
+                            <div class=\"text-center\">
+                                <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
                             </div>
+                            ";
+        // line 590
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["forme"]) || array_key_exists("forme", $context) ? $context["forme"] : (function () { throw new RuntimeError('Variable "forme" does not exist.', 590, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
+        echo "
+                            <!-- End Change Password Form -->
 
-                            <div class=\"tab-pane fade pt-3\" id=\"profile-change-password\">
-                                <!-- Change Password Form -->
-                                <form>
+                        </div>
 
-                                    <div class=\"row mb-3\">
-                                        <label for=\"currentPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Current
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"password\" type=\"password\" class=\"form-control\"
-                                                   id=\"currentPassword\">
-                                        </div>
-                                    </div>
+                    </div><!-- End Bordered Tabs -->
 
-                                    <div class=\"row mb-3\">
-                                        <label for=\"newPassword\" class=\"col-md-4 col-lg-3 col-form-label\">New
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"newpassword\" type=\"password\" class=\"form-control\"
-                                                   id=\"newPassword\">
-                                        </div>
-                                    </div>
-
-                                    <div class=\"row mb-3\">
-                                        <label for=\"renewPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Re-enter New
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"renewpassword\" type=\"password\" class=\"form-control\"
-                                                   id=\"renewPassword\">
-                                        </div>
-                                    </div>
-
-                                    <div class=\"text-center\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
-                                    </div>
-                                </form><!-- End Change Password Form -->
-
-                            </div>
-
-                        </div><!-- End Bordered Tabs -->
-
-                    </div>
                 </div>
-
             </div>
+
+        </div>
         </div>
     </section>
 
@@ -806,7 +799,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
         Designed by <a href=\"";
-        // line 632
+        // line 616
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://bootstrapmade.com/"), "html", null, true);
         echo "\">BootstrapMade</a>
     </div>
@@ -817,41 +810,41 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
 <!-- Vendor JS Files -->
 <script src=\"";
-        // line 640
+        // line 624
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 641
+        // line 625
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 642
+        // line 626
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 643
+        // line 627
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 644
+        // line 628
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 645
+        // line 629
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 646
+        // line 630
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 647
+        // line 631
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Template Main JS File -->
 <script src=\"";
-        // line 650
+        // line 634
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -878,7 +871,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
     public function getDebugInfo()
     {
-        return array (  855 => 650,  849 => 647,  845 => 646,  841 => 645,  837 => 644,  833 => 643,  829 => 642,  825 => 641,  821 => 640,  810 => 632,  698 => 523,  692 => 520,  685 => 516,  674 => 508,  662 => 499,  652 => 492,  642 => 485,  633 => 479,  622 => 471,  611 => 463,  607 => 462,  597 => 455,  586 => 447,  573 => 437,  567 => 434,  553 => 423,  548 => 421,  540 => 416,  529 => 408,  521 => 403,  514 => 399,  506 => 394,  498 => 389,  490 => 384,  482 => 379,  422 => 322,  416 => 321,  412 => 320,  379 => 290,  370 => 284,  361 => 278,  129 => 49,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  848 => 634,  842 => 631,  838 => 630,  834 => 629,  830 => 628,  826 => 627,  822 => 626,  818 => 625,  814 => 624,  803 => 616,  774 => 590,  764 => 583,  754 => 576,  699 => 524,  693 => 521,  685 => 516,  674 => 508,  662 => 499,  652 => 492,  642 => 485,  633 => 479,  622 => 471,  611 => 463,  607 => 462,  597 => 455,  586 => 447,  573 => 437,  567 => 434,  553 => 423,  548 => 421,  540 => 416,  529 => 408,  521 => 403,  514 => 399,  506 => 394,  498 => 389,  490 => 384,  482 => 379,  422 => 322,  416 => 321,  412 => 320,  379 => 290,  370 => 284,  361 => 278,  129 => 49,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -1396,109 +1389,93 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
                                 <div class=\"row mb-3\">
                                     <label for=\"Facebook\" class=\"col-md-4 col-lg-3 col-form-label\">Password
-                                        </label>
+                                    </label>
                                     <div class=\"col-md-8 col-lg-9\">
                                         {{ form_row(form.password,{'attr':{'class':'form-control'}}) }}
                                     </div>
                                 </div>
                                 <div class=\"text-center\">
-                                    <button type=\"submit\" class=\"btn btn-primary\">{{ button_label|default('Safe changes') }}</button>
+                                    <button type=\"submit\"
+                                            class=\"btn btn-primary\">{{ button_label|default('Safe changes') }}</button>
                                 </div>
+                            </div>
+                            {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+                        </div>
+
+                        <div class=\"tab-pane fade pt-3\" id=\"profile-settings\">
+
+                            <!-- Settings Form -->
+                            <form>
+
+                                <div class=\"row mb-3\">
+                                    <label for=\"fullName\" class=\"col-md-4 col-lg-3 col-form-label\">Email
+                                        Notifications</label>
+                                    <div class=\"col-md-8 col-lg-9\">
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"changesMade\"
+                                                   checked>
+                                            <label class=\"form-check-label\" for=\"changesMade\">
+                                                Changes made to your account
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"newProducts\"
+                                                   checked>
+                                            <label class=\"form-check-label\" for=\"newProducts\">
+                                                Information on new products and services
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"proOffers\">
+                                            <label class=\"form-check-label\" for=\"proOffers\">
+                                                Marketing and promo offers
+                                            </label>
+                                        </div>
+                                        <div class=\"form-check\">
+                                            <input class=\"form-check-input\" type=\"checkbox\" id=\"securityNotify\"
+                                                   checked disabled>
+                                            <label class=\"form-check-label\" for=\"securityNotify\">
+                                                Security alerts
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
-                                {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
+                                <div class=\"text-center\">
+                                    <button type=\"submit\" class=\"btn btn-primary\">Save Changes</button>
+                                </div>
+                            </form><!-- End settings Form -->
+
+                        </div>
+
+                        <div class=\"tab-pane fade pt-3\" id=\"profile-change-password\">
+                            <!-- Change Password Form -->
+                            {{ form_start(forme,{'attr':{'class':'signin-form','novalidate': 'novalidate'}}) }}
+
+
+                            <div class=\"row mb-3\">
+                                <label for=\"currentPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Phone
+                                    Number</label>
+                                <div class=\"col-md-8 col-lg-9\">
+                                    {{ form_row(forme.number) }}
+                                </div>
                             </div>
 
-                            <div class=\"tab-pane fade pt-3\" id=\"profile-settings\">
-
-                                <!-- Settings Form -->
-                                <form>
-
-                                    <div class=\"row mb-3\">
-                                        <label for=\"fullName\" class=\"col-md-4 col-lg-3 col-form-label\">Email
-                                            Notifications</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"changesMade\"
-                                                       checked>
-                                                <label class=\"form-check-label\" for=\"changesMade\">
-                                                    Changes made to your account
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"newProducts\"
-                                                       checked>
-                                                <label class=\"form-check-label\" for=\"newProducts\">
-                                                    Information on new products and services
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"proOffers\">
-                                                <label class=\"form-check-label\" for=\"proOffers\">
-                                                    Marketing and promo offers
-                                                </label>
-                                            </div>
-                                            <div class=\"form-check\">
-                                                <input class=\"form-check-input\" type=\"checkbox\" id=\"securityNotify\"
-                                                       checked disabled>
-                                                <label class=\"form-check-label\" for=\"securityNotify\">
-                                                    Security alerts
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class=\"text-center\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">Save Changes</button>
-                                    </div>
-                                </form><!-- End settings Form -->
-
+                            <div class=\"text-center\">
+                                <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
                             </div>
+                            {{ form_end(forme, {'attr': {'novalidate': 'novalidate'}}) }}
+                            <!-- End Change Password Form -->
 
-                            <div class=\"tab-pane fade pt-3\" id=\"profile-change-password\">
-                                <!-- Change Password Form -->
-                                <form>
+                        </div>
 
-                                    <div class=\"row mb-3\">
-                                        <label for=\"currentPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Current
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"password\" type=\"password\" class=\"form-control\"
-                                                   id=\"currentPassword\">
-                                        </div>
-                                    </div>
+                    </div><!-- End Bordered Tabs -->
 
-                                    <div class=\"row mb-3\">
-                                        <label for=\"newPassword\" class=\"col-md-4 col-lg-3 col-form-label\">New
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"newpassword\" type=\"password\" class=\"form-control\"
-                                                   id=\"newPassword\">
-                                        </div>
-                                    </div>
-
-                                    <div class=\"row mb-3\">
-                                        <label for=\"renewPassword\" class=\"col-md-4 col-lg-3 col-form-label\">Re-enter New
-                                            Password</label>
-                                        <div class=\"col-md-8 col-lg-9\">
-                                            <input name=\"renewpassword\" type=\"password\" class=\"form-control\"
-                                                   id=\"renewPassword\">
-                                        </div>
-                                    </div>
-
-                                    <div class=\"text-center\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
-                                    </div>
-                                </form><!-- End Change Password Form -->
-
-                            </div>
-
-                        </div><!-- End Bordered Tabs -->
-
-                    </div>
                 </div>
-
             </div>
+
+        </div>
         </div>
     </section>
 

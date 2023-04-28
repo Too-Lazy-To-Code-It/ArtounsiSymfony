@@ -498,6 +498,9 @@
     <service id="App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\AuthType" class="App\Form\AuthType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\BanType" class="App\Form\BanType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1423,6 +1426,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AllusersType</argument>
+        <argument>App\Form\AuthType</argument>
         <argument>App\Form\BanType</argument>
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\ChallengeType</argument>
@@ -3614,7 +3618,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.urzgVwO"/>
+      <argument type="service" id=".service_locator.Mq7T98i"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6582,6 +6586,8 @@
     <service id=".abstract.instanceof.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AuthType" class="App\Form\AuthType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AuthType" class="App\Form\AuthType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BanType" class="App\Form\BanType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BanType" class="App\Form\BanType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
@@ -7028,6 +7034,12 @@
         <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.OIshshk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="twilioClient" type="service_closure" id="twilio.client"/>
+      </argument>
+    </service>
     <service id=".service_locator.bCnny4Z" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7343,12 +7355,6 @@
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.OIshshk" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="twilioClient" type="service_closure" id="twilio.client"/>
-      </argument>
-    </service>
     <service id=".service_locator.XbtDh1i" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7406,7 +7412,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0aD9hG7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yS8c.MZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7414,8 +7420,10 @@
         <argument key="App\Controller\AllusersController::index" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\AllusersController::login" type="service_closure" id=".service_locator.4YltF_L"/>
         <argument key="App\Controller\AllusersController::new" type="service_closure" id=".service_locator.dI4bPk2"/>
+        <argument key="App\Controller\AllusersController::sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\AllusersController::show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="App\Controller\AllusersController::verify" type="service_closure" id=".service_locator._KOe8P1"/>
+        <argument key="App\Controller\AllusersController::verif" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="App\Controller\AllusersController::verify" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\BanController::delete" type="service_closure" id=".service_locator.4WM7mxr"/>
         <argument key="App\Controller\BanController::edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController::index" type="service_closure" id=".service_locator.bCnny4Z"/>
@@ -7521,8 +7529,10 @@
         <argument key="App\Controller\AllusersController:index" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\AllusersController:login" type="service_closure" id=".service_locator.4YltF_L"/>
         <argument key="App\Controller\AllusersController:new" type="service_closure" id=".service_locator.dI4bPk2"/>
+        <argument key="App\Controller\AllusersController:sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\AllusersController:show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="App\Controller\AllusersController:verify" type="service_closure" id=".service_locator._KOe8P1"/>
+        <argument key="App\Controller\AllusersController:verif" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="App\Controller\AllusersController:verify" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\BanController:delete" type="service_closure" id=".service_locator.4WM7mxr"/>
         <argument key="App\Controller\BanController:edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController:index" type="service_closure" id=".service_locator.bCnny4Z"/>
@@ -7682,10 +7692,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.urzgVwO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Mq7T98i" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
+        <argument key="App\Form\AuthType" type="service_closure" id="App\Form\AuthType"/>
         <argument key="App\Form\BanType" type="service_closure" id="App\Form\BanType"/>
         <argument key="App\Form\CategoryType" type="service_closure" id="App\Form\CategoryType"/>
         <argument key="App\Form\ChallengeType" type="service_closure" id="App\Form\ChallengeType"/>
@@ -8398,12 +8409,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.0aD9hG7"/>
+      <argument type="service" id=".service_locator.yS8c.MZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.0aD9hG7"/>
+      <argument type="service" id=".service_locator.yS8c.MZ"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9408,7 +9419,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.0aD9hG7"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.yS8c.MZ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9435,9 +9446,9 @@
     <service id=".service_locator.hKIBk2X" alias=".service_locator.4YltF_L"/>
     <service id=".service_locator.LKpZXph" alias=".service_locator.bCnny4Z"/>
     <service id=".service_locator.APd5.7A" alias=".service_locator.dcAGksr"/>
-    <service id=".service_locator.QjOvKLU" alias=".service_locator.0aD9hG7"/>
+    <service id=".service_locator.gcOI6nt" alias=".service_locator.yS8c.MZ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.pPn16ob" alias=".service_locator.urzgVwO"/>
+    <service id=".service_locator.CPLZ1Yk" alias=".service_locator.Mq7T98i"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9467,6 +9478,7 @@
     <service id=".service_locator.FGoTFtB" alias=".service_locator.h8IUTxs"/>
     <service id=".service_locator.nPlzfLb" alias=".service_locator.dI4bPk2"/>
     <service id=".service_locator.Iz9j3xk" alias=".service_locator._KOe8P1"/>
+    <service id=".service_locator.OuRdjDB" alias=".service_locator.OIshshk"/>
     <service id=".service_locator.zljsNK3" alias=".service_locator.bCnny4Z"/>
     <service id=".service_locator.x.gYJj4" alias=".service_locator.1V0mQ8V"/>
     <service id=".service_locator.LFN1Mh." alias=".service_locator.dcAGksr"/>
@@ -9516,7 +9528,6 @@
     <service id=".service_locator._XLYFNn" alias=".service_locator.hn0UC2A"/>
     <service id=".service_locator.SEIRRMh" alias=".service_locator.4C83FMe"/>
     <service id=".service_locator.eqiRiQV" alias=".service_locator.RA9EiuF"/>
-    <service id=".service_locator.OuRdjDB" alias=".service_locator.OIshshk"/>
     <service id=".service_locator.s31TVUu" alias=".service_locator.XbtDh1i"/>
     <service id=".service_locator.HFJh6q." alias=".service_locator.uLIJg6d"/>
     <service id=".service_locator.k21TRVt" alias=".service_locator.DiYfVrs"/>

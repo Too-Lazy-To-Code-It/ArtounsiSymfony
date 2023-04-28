@@ -78,9 +78,7 @@ class Allusers implements UserInterface
     #[Assert\NotBlank(message: "can't be empty")]
     private ?string $bio = null;
 
-    private ?string $VerificationCode = null;
 
-    private?bool $Verified=false;
 
     /**
      * @return bool|null
@@ -158,6 +156,12 @@ class Allusers implements UserInterface
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Produits::class)]
     private Collection $produits;
+
+    #[ORM\Column(length: 255)]
+    private ?string $number = null;
+
+    #[ORM\Column]
+    private ?bool $_2fa = null;
 
     public function __toString(): string
     {
@@ -873,6 +877,30 @@ class Allusers implements UserInterface
                 $produit->setIdUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNumber(): ?string
+    {
+        return $this->number;
+    }
+
+    public function setNumber(string $number): self
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    public function is2fa(): ?bool
+    {
+        return $this->_2fa;
+    }
+
+    public function set2fa(bool $_2fa): self
+    {
+        $this->_2fa = $_2fa;
 
         return $this;
     }

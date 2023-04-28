@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Allusers;
 use App\Form\AllusersType;
+use App\Form\AuthType;
 use App\Form\LoginType;
 use App\Form\VerificationCodeType;
 use App\Repository\AllusersRepository;
@@ -54,14 +55,13 @@ class AllusersController extends AbstractController
             return $this->redirectToRoute('app_allusers_index');
         }
         $error = $authenticationUtils->getLastAuthenticationError();
-        $allusers = new Allusers();
-        $form = $this->createForm(LoginType::class, $allusers);
+        $form = $this->createForm(LoginType::class);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = $allusers->getEmail();
-            $password = $allusers->getPassword();
+            $email = $form->get('Email')->getData();
+            $password = $form->get('Password')->getData();
 
             // Find user by email
             $user = $this->getDoctrine()->getRepository(Allusers::class)->findOneBy(['Email' => $email]);
@@ -69,7 +69,7 @@ class AllusersController extends AbstractController
             // Check if user exists
             if (!$user) {
                 $this->addFlash('error', 'Invalid credentials.');
-                return $this->redirectToRoute('app_allusers_new');
+                return $this->redirectToRoute('app_allusers_Login');
             }
 
             // Verify password
@@ -78,12 +78,23 @@ class AllusersController extends AbstractController
 
             if (!$allusersRepository->decryptPassword($encryptedPassword, $salt, $password)) {
                 $this->addFlash('error', 'Invalid credentials.');
-                return $this->redirectToRoute('app_allusers_new');
+
+               return $this->redirectToRoute('app_allusers_new');
             }
 
             // Create session and redirect to home page
             $session = $request->getSession();
             $session->set('user_id', $user->getid_user());
+            if($user->is2fa()==1)
+            {
+
+                $twilioClient=new client('AC4730297eb72be182dde74c2a2143deb8','fba49a82e157a83953c49896694c44ec');
+                $verification = $allusersRepository->generateVerificationCode();
+                $session->set('verification_code', $verification);
+                $this->sendSmsMessage($twilioClient,$user->getNumber(),$verification);
+                return $this->redirectToRoute('app_allusers_verif');
+            }
+            else
             return $this->redirectToRoute('app_allusers_index');
         }
 
@@ -106,6 +117,7 @@ class AllusersController extends AbstractController
         return $this->render('allusers/users.html.twig', [
             'logged' => $user,
             'allusers' => $allusersRepository->findAll(),
+
         ]);
     }
 
@@ -113,18 +125,16 @@ class AllusersController extends AbstractController
      * @throws TransportExceptionInterface
      */
     #[Route('/new', name: 'app_allusers_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer): Response
+    public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer, SessionInterface $session): Response
     {
         if ($this->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_index');
         }
-
         $alluser = new Allusers();
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // handle avatar file upload
             $avatarFile = $form->get('avatar')->getData();
             if ($avatarFile) {
                 $avatarFileName = uniqid() . '.' . $avatarFile->guessExtension();
@@ -135,8 +145,6 @@ class AllusersController extends AbstractController
                         $avatarFileName
                     );
                 } catch (FileException $e) {
-                    // handle exception if something goes wrong during file upload
-                    // e.g. display a message to the user
                 }
 
                 $alluser->setAvatar($avatarFileName);
@@ -153,31 +161,18 @@ class AllusersController extends AbstractController
                         $backgroundFileName
                     );
                 } catch (FileException $e) {
-                    // handle exception if something goes wrong during file upload
-                    // e.g. display a message to the user
                 }
 
                 $alluser->setBackground($backgroundFileName);
             }
-
-            // Generate verification code and save to user entity
-            $verificationCode = $allusersRepository->generateVerificationCode();
-            $alluser->setVerificationCode($verificationCode);
-
-            $allusersRepository->save($alluser, true);
-
-            // Send verification email
+            $verification = $allusersRepository->generateVerificationCode();
             $recipient = $form->get('Email')->getData();
-            $allusersRepository->sendVerificationEmail( $recipient,$mailer, $verificationCode);
+            $allusersRepository->sendVerificationEmail($recipient, $mailer, $verification);
+            $session->set('alluser', $alluser);
+            $session->set('verification_code', $verification);
 
-            if ($alluser->getid_user()) {
-                // User has been saved to the database, redirect to verification page
-                return $this->redirectToRoute('app_allusers_verify', ['id_user' => $alluser->getid_user()]);
-            } else {
-                // User could not be saved to the database, display error message
-                $this->addFlash('error', 'An error occurred while creating your account. Please try again later.');
-            }
-
+            // Redirect to the verification page
+            return $this->redirectToRoute('app_allusers_verify');
         }
 
         return $this->renderForm('allusers/new.html.twig', [
@@ -186,13 +181,11 @@ class AllusersController extends AbstractController
         ]);
     }
 
-    #[Route('/{id_user}/verify', name: 'app_allusers_verify', methods: ['GET', 'POST'])]
-    public function verify(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
+
+    #[Route('/verify', name: 'app_allusers_verify', methods: ['GET', 'POST'])]
+    public function verify(Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
     {
-        if ($alluser->getVerified()) {
-            // user is already verified, redirect to login page
-            return $this->redirectToRoute('app_allusers_login');
-        }
+        $alluser = $session->get('alluser');
 
         $form = $this->createForm(VerificationCodeType::class);
         $form->handleRequest($request);
@@ -200,13 +193,41 @@ class AllusersController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $verificationCode = $form->get('verificationCode')->getData();
 
-            if ($verificationCode == $alluser->getVerificationCode()) {
-                $alluser->setVerified(true);
+            if ($verificationCode == $session->get('verification_code')) {
                 $allusersRepository->save($alluser, true);
+                $session->clear();
                 $this->addFlash('success', 'Your email address has been verified. You can now log in.');
                 return $this->redirectToRoute('app_allusers_login');
             } else {
+                $session->clear();
                 $this->addFlash('error', 'Invalid verification code. Please try again.');
+                return $this->redirectToRoute('app_allusers_new');
+            }
+        }
+
+        return $this->renderForm('allusers/verify.html.twig', [
+            'form' => $form,
+        ]);
+    }
+    #[Route('/verif', name: 'app_allusers_verif', methods: ['GET', 'POST'])]
+    public function verif(Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
+    {
+        $alluser = $session->get('alluser');
+
+        $form = $this->createForm(VerificationCodeType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $verificationCode = $form->get('verificationCode')->getData();
+
+            if ($verificationCode == $session->get('verification_code')) {
+                $session->remove('verification_code');
+                $this->addFlash('success', 'Your email address has been verified. You can now log in.');
+                return $this->redirectToRoute('app_allusers_index');
+            } else {
+                $session->clear();
+                $this->addFlash('error', 'Invalid verification code. Please try again.');
+                return $this->redirectToRoute('app_allusers_login');
             }
         }
 
@@ -241,26 +262,37 @@ class AllusersController extends AbstractController
         if (!$this->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
+        $forme = $this->createForm(AuthType::class);
+        $forme->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $allusersRepository->save($alluser, true);
 
             return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
         }
+        if ($forme->isSubmitted() && $forme->isValid()) {
+            $user->setNumber($forme->get('number')->getData());
+            $user->set2fa(true);
+            $allusersRepository->saven($user, true);
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+            return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
+        }
+
 
         return $this->renderForm('allusers/usershow.html.twig', [
             'alluser' => $alluser,
             'form' => $form,
             'logged' => $user,
+            'forme'=>$forme
         ]);
     }
 
-    #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['GET','POST'])]
+    #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
         if (!$this->isLoggedIn($request)) {
@@ -273,7 +305,13 @@ class AllusersController extends AbstractController
         return $this->redirectToRoute('app_allusers_index', [], Response::HTTP_SEE_OTHER);
     }
 
-
-
+    public function sendSmsMessage(Client $twilioClient,string $number,string $code):Response
+    {
+        $twilioClient->messages->create("+216" . $number, [
+            "body" => $code,
+            "from" => $this->getParameter('twilio_number')
+        ]);
+        return new Response();
+    }
 
 }

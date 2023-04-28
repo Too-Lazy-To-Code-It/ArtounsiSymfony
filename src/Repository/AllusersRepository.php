@@ -121,6 +121,13 @@ class AllusersRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function saven(Allusers $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
 
     public function remove(Allusers $entity, bool $flush = false): void
     {

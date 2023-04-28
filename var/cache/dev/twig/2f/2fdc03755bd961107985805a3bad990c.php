@@ -88,7 +88,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                         <div class=\"form-group\">
                             ";
         // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), "password", [], "any", false, false, false, 35), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Password"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), "Password", [], "any", false, false, false, 35), 'row', ["attr" => ["class" => "form-control", "placeholder" => "Password"]]);
         echo "
 
                         </div>
@@ -202,7 +202,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
                         </div>
                         <div class=\"form-group\">
-                            {{ form_row(form.password,{'attr':{'class':'form-control','placeholder':'Password'}}) }}
+                            {{ form_row(form.Password,{'attr':{'class':'form-control','placeholder':'Password'}}) }}
 
                         </div>
                         <div class=\"form-group\">

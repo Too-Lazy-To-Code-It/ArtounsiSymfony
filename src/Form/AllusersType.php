@@ -68,6 +68,7 @@ class AllusersType extends AbstractType
             ])
             ->add('description')
             ->add('bio');
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void
