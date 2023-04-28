@@ -48,7 +48,10 @@ class __TwigTemplate_d26dc7b28222c8813176a3849c7022c4 extends Template
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -70,6 +73,12 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
+
+
+
+
+
+
   </head>
   <style>
     .line-dec {
@@ -160,11 +169,11 @@ https://templatemo.com/tm-577-liberty-market
                     <ul class=\"nav\">
                       <li><a href=\"index.html\">Home</a></li>
                       <li><a href=\"";
-        // line 122
+        // line 128
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
         echo "\">Shop</a></li>
                       <li><a href=\"";
-        // line 123
+        // line 129
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_index");
         echo "\">Panier</a></li>
                       <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
@@ -216,9 +225,9 @@ https://templatemo.com/tm-577-liberty-market
                         <div>
                           <div class=\"line-dec\"></div>
                           ";
-        // line 172
-        if ( !twig_test_empty((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 172, $this->source); })()))) {
-            // line 173
+        // line 178
+        if ( !twig_test_empty((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 178, $this->source); })()))) {
+            // line 179
             echo "                          <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
                             <thead  class=\"carte-table\">
                               <tr>
@@ -234,17 +243,17 @@ https://templatemo.com/tm-577-liberty-market
                         
                             <tbody   class=\"carte-table\">
                               ";
-            // line 187
+            // line 193
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 187, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 193, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
-                // line 188
+                // line 194
                 echo "                                <tr>
                                   <td>
                                     <div class=\"left-image\">
                                       <img src=\"";
-                // line 191
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 191), "image", [], "any", false, false, false, 191))), "html", null, true);
+                // line 197
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 197), "image", [], "any", false, false, false, 197))), "html", null, true);
                 echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                     </div>
                                   </td>
@@ -252,8 +261,8 @@ https://templatemo.com/tm-577-liberty-market
                                   <td>
                                     <div class=\"right-content\">
                                       <h6>";
-                // line 197
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 197), "nom", [], "any", false, false, false, 197), "html", null, true);
+                // line 203
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 203), "nom", [], "any", false, false, false, 203), "html", null, true);
                 echo "</h6>
                                     </div> 
                                   </td>
@@ -261,8 +270,8 @@ https://templatemo.com/tm-577-liberty-market
                                   <td>
                                     <span class=\"bid\">
                                       <h6><strong> ";
-                // line 203
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 203), "prix", [], "any", false, false, false, 203), "html", null, true);
+                // line 209
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 209), "prix", [], "any", false, false, false, 209), "html", null, true);
                 echo "</strong></h6>
                                     </span>
                                   </td>
@@ -271,8 +280,8 @@ https://templatemo.com/tm-577-liberty-market
                                   <td>
                                     <div class=\"right-content\">
                                       <h6>";
-                // line 210
-                echo twig_escape_filter($this->env, (isset($context["tauxTVA"]) || array_key_exists("tauxTVA", $context) ? $context["tauxTVA"] : (function () { throw new RuntimeError('Variable "tauxTVA" does not exist.', 210, $this->source); })()), "html", null, true);
+                // line 216
+                echo twig_escape_filter($this->env, (isset($context["tauxTVA"]) || array_key_exists("tauxTVA", $context) ? $context["tauxTVA"] : (function () { throw new RuntimeError('Variable "tauxTVA" does not exist.', 216, $this->source); })()), "html", null, true);
                 echo "</h6>
                                     </div> 
                                   </td>
@@ -281,23 +290,109 @@ https://templatemo.com/tm-577-liberty-market
 
                                   <td>
                                     <h6>";
-                // line 217
-                ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 217)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 217), "F jS, Y H:i"), "html", null, true))) : (print ("")));
+                // line 223
+                ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 223)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 223), "F jS, Y H:i"), "html", null, true))) : (print ("")));
                 echo "</h6>
                                   </td>
                                   <td>                                    
                                     <div class=\"main-button delete-product-button\" data-idlignepanier=\"";
-                // line 220
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 220), "html", null, true);
+                // line 226
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 226), "html", null, true);
                 echo "\">
                                       <a href=\"";
-                // line 221
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 221)]), "html", null, true);
+                // line 227
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 227)]), "html", null, true);
                 echo "\"><i class=\"fas fa-trash-alt\"></i></a>                                     
                                     </div> 
                                   </td>
-                                  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
-                                  <script>
+                                  
+                                    
+                                </tr>
+                              ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 234
+            echo "                            </tbody>
+                          </table>
+                        ";
+        } else {
+            // line 237
+            echo "                          <div class=\"section-heading\">
+                           
+                            <h2   class=\"text-center\"> Votre panier est <em>vide</em> </h2>
+                          </div>
+                        ";
+        }
+        // line 242
+        echo "                        
+                            <div class=\"line-dec\"></div>
+                        </div>
+                   </div>
+               </div>
+            </div>
+           
+            
+            <table class=\"carte-table\">
+              <thead>
+                <tr>
+                  <th  class=\"count\"><h5>Nombre de produits: ";
+        // line 253
+        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 253, $this->source); })()), "html", null, true);
+        echo "</h5></th>
+                  <th  class=\"count\"><h5>Montant total: ";
+        // line 254
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 254, $this->source); })()), "html", null, true);
+        echo "</h5></th>
+                  <th>
+                    <div class=\"main-button\">
+                      <a href=\"";
+        // line 257
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout", ["idpanier" => "idpanier"]);
+        echo "\">Payer</a>
+                    </div>
+                  </th>
+                  <th>
+                    <div class=\"main-button\">
+                      <a href=\"";
+        // line 262
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("viderpanier", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 262, $this->source); })())]), "html", null, true);
+        echo "\">Vider Panier</a>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            
+          
+           <div class=\"line-dec\"></div>
+
+
+
+   </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<script src=\"";
+        // line 284
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://code.jquery.com/jquery-3.6.0.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 285
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"), "html", null, true);
+        echo "\"></script>
+
+<script>
+  
+
+
                                    \$(document).ready(function() {
                                      \$('.delete-product-button').click(function(e) {
                                      e.preventDefault(); 
@@ -305,13 +400,13 @@ https://templatemo.com/tm-577-liberty-market
                                      \$.ajax({
                                     method: 'POST',
                                     url: \"";
-                // line 232
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => "idlignepanier"]);
-                echo "\".replace('idlignepanier', idlignepanier),
+        // line 297
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => "__idlignepanier__"]);
+        echo "\".replace('__idlignepanier__', idlignepanier),
                                     data: {'_token': '";
-                // line 233
-                echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("deleteproduit"), "html", null, true);
-                echo "'},
+        // line 298
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("deleteproduit"), "html", null, true);
+        echo "'},
                                     success: function(response) {
                               if (response.success) {
                                     \$('tr[data-idlignepanier=' + idlignepanier + ']').remove();
@@ -337,80 +432,10 @@ https://templatemo.com/tm-577-liberty-market
                           });
                        });
                      });
+
+
+
 </script>
-                                    
-                                </tr>
-                              ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 263
-            echo "                            </tbody>
-                          </table>
-                        ";
-        } else {
-            // line 266
-            echo "                          <div class=\"section-heading\">
-                           
-                            <h2   class=\"text-center\"> Votre panier est <em>vide</em> </h2>
-                          </div>
-                        ";
-        }
-        // line 271
-        echo "                        
-                            <div class=\"line-dec\"></div>
-                        </div>
-                   </div>
-               </div>
-            </div>
-           
-            
-            <table class=\"carte-table\">
-              <thead>
-                <tr>
-                  <th  class=\"count\"><h5>Nombre de produits: ";
-        // line 282
-        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 282, $this->source); })()), "html", null, true);
-        echo "</h5></th>
-                  <th  class=\"count\"><h5>Montant total: ";
-        // line 283
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 283, $this->source); })()), "html", null, true);
-        echo "</h5></th>
-                  <th>
-                    <div class=\"main-button\">
-                      <a href=\"";
-        // line 286
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout", ["idpanier" => "idpanier"]);
-        echo "\">Payer</a>
-                    </div>
-                  </th>
-                  <th>
-                    <div class=\"main-button\">
-                      <a href=\"";
-        // line 291
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("viderpanier", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 291, $this->source); })())]), "html", null, true);
-        echo "\">Vider Panier</a>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-            </table>
-            
-          
-           <div class=\"line-dec\"></div>
-
-
-
-   </div>
-
-
-  </div>
-
-
-</div>
-
-
 
 
 
@@ -429,22 +454,50 @@ https://templatemo.com/tm-577-liberty-market
 </footer>
 
 
-<!-- Scripts -->
-<!-- Bootstrap core JavaScript -->
-<script src=\"vendor/jquery/jquery.min.js\"></script>
-<script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script>
-
-<script src=\"assets/js/isotope.min.js\"></script>
-<script src=\"assets/js/owl-carousel.js\"></script>
-
-<script src=\"assets/js/tabs.js\"></script>
-<script src=\"assets/js/popup.js\"></script>
-<script src=\"assets/js/custom.js\"></script>
-
-<script src=\"";
-        // line 342
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/jquery/jquery.min.js"), "html", null, true);
+ <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    
+    <script src=\"";
+        // line 349
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("//code.jquery.com/jquery.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 350
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 351
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+
+    <script src=\"";
+        // line 353
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 354
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 355
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
+        echo "\"></script>
+    
+    <script src=\"";
+        // line 357
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
+        echo "\"></script>
+    
+    <script src=\"";
+        // line 359
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
+        echo "\"></script>
+    
+  
+
+<!-- Include Flashy default partial -->
+
+
 
 </body>
 
@@ -531,7 +584,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  511 => 23,  507 => 22,  503 => 21,  499 => 20,  495 => 19,  490 => 16,  480 => 15,  446 => 342,  392 => 291,  384 => 286,  378 => 283,  374 => 282,  361 => 271,  354 => 266,  349 => 263,  313 => 233,  309 => 232,  295 => 221,  291 => 220,  285 => 217,  275 => 210,  265 => 203,  256 => 197,  247 => 191,  242 => 188,  238 => 187,  222 => 173,  220 => 172,  168 => 123,  164 => 122,  65 => 25,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  564 => 23,  560 => 22,  556 => 21,  552 => 20,  548 => 19,  543 => 16,  533 => 15,  493 => 359,  488 => 357,  483 => 355,  479 => 354,  475 => 353,  470 => 351,  466 => 350,  462 => 349,  408 => 298,  404 => 297,  389 => 285,  385 => 284,  360 => 262,  352 => 257,  346 => 254,  342 => 253,  329 => 242,  322 => 237,  317 => 234,  304 => 227,  300 => 226,  294 => 223,  284 => 216,  274 => 209,  265 => 203,  256 => 197,  251 => 194,  247 => 193,  231 => 179,  229 => 178,  177 => 129,  173 => 128,  68 => 25,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -543,7 +596,7 @@ https://templatemo.com/tm-577-liberty-market
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -568,6 +621,12 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
+
+
+
+
+
+
   </head>
   <style>
     .line-dec {
@@ -726,7 +785,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <tr>
                                   <td>
                                     <div class=\"left-image\">
-                                      <img src=\"{{ asset('http://localhost/img/' ~ ligne.idproduit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
+                                      <img src=\"{{ asset('uploads/images/' ~ ligne.idproduit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                     </div>
                                   </td>
                                   
@@ -759,42 +818,7 @@ https://templatemo.com/tm-577-liberty-market
                                       <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\"><i class=\"fas fa-trash-alt\"></i></a>                                     
                                     </div> 
                                   </td>
-                                  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
-                                  <script>
-                                   \$(document).ready(function() {
-                                     \$('.delete-product-button').click(function(e) {
-                                     e.preventDefault(); 
-                                     var idlignepanier = \$(this).data('idlignepanier');
-                                     \$.ajax({
-                                    method: 'POST',
-                                    url: \"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': 'idlignepanier'}) }}\".replace('idlignepanier', idlignepanier),
-                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
-                                    success: function(response) {
-                              if (response.success) {
-                                    \$('tr[data-idlignepanier=' + idlignepanier + ']').remove();
-                                 
-                                      \$(this).remove();
-                                      var total = 0;
-                                      \$('.total').each(function() { 
-                                      total += parseFloat(\$(this).text()); 
-                                      });
-                                      \$('#total').text(total.toFixed(2) + ' Tnd'); 
-                                      var count = \$('.count').length;
-                                      \$('#count').text(count);
-
-                                    alert('Le produit a été supprimé avec succès');
-                                    location.reload()
-                                   } else {
-                                  alert('Erreur lors de la suppression du produit');
-                                 }
-                               },
-                              error: function() {
-                                alert('Erreur lors de la communication avec le serveur');
-                             }
-                          });
-                       });
-                     });
-</script>
+                                  
                                     
                                 </tr>
                               {% endfor %}
@@ -848,6 +872,51 @@ https://templatemo.com/tm-577-liberty-market
 
 
 
+<script src=\"{{asset('https://code.jquery.com/jquery-3.6.0.min.js')}}\"></script>
+<script src=\"{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js')}}\"></script>
+
+<script>
+  
+
+
+                                   \$(document).ready(function() {
+                                     \$('.delete-product-button').click(function(e) {
+                                     e.preventDefault(); 
+                                     var idlignepanier = \$(this).data('idlignepanier');
+                                     \$.ajax({
+                                    method: 'POST',
+                                    url: \"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': '__idlignepanier__'}) }}\".replace('__idlignepanier__', idlignepanier),
+                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
+                                    success: function(response) {
+                              if (response.success) {
+                                    \$('tr[data-idlignepanier=' + idlignepanier + ']').remove();
+                                 
+                                      \$(this).remove();
+                                      var total = 0;
+                                      \$('.total').each(function() { 
+                                      total += parseFloat(\$(this).text()); 
+                                      });
+                                      \$('#total').text(total.toFixed(2) + ' Tnd'); 
+                                      var count = \$('.count').length;
+                                      \$('#count').text(count);
+
+                                    alert('Le produit a été supprimé avec succès');
+                                    location.reload()
+                                   } else {
+                                  alert('Erreur lors de la suppression du produit');
+                                 }
+                               },
+                              error: function() {
+                                alert('Erreur lors de la communication avec le serveur');
+                             }
+                          });
+                       });
+                     });
+
+
+
+</script>
+
 
 
 
@@ -865,19 +934,26 @@ https://templatemo.com/tm-577-liberty-market
 </footer>
 
 
-<!-- Scripts -->
-<!-- Bootstrap core JavaScript -->
-<script src=\"vendor/jquery/jquery.min.js\"></script>
-<script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script>
+ <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    
+    <script src=\"{{ asset('//code.jquery.com/jquery.js') }}\"></script>
+    <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
+    <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
 
-<script src=\"assets/js/isotope.min.js\"></script>
-<script src=\"assets/js/owl-carousel.js\"></script>
+    <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+    
+    <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+    
+    <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
+    
+  
 
-<script src=\"assets/js/tabs.js\"></script>
-<script src=\"assets/js/popup.js\"></script>
-<script src=\"assets/js/custom.js\"></script>
+<!-- Include Flashy default partial -->
 
-<script src=\"{{ asset('bundles/jquery/jquery.min.js') }}\"></script>
+
 
 </body>
 

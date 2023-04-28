@@ -75,7 +75,7 @@ class LignepanierController extends AbstractController
         ]);
     }
 
-    #[Route('/deleteligne/{idlignepanier}', name: 'app_lignepanier_delete', methods: ['GET', 'POST'])]
+  /*  #[Route('/deleteligne/{idlignepanier}', name: 'app_lignepanier_delete', methods: ['GET', 'POST'])]
     public function delete(int $idlignepanier,ManagerRegistry $doctrine,LignepanierRepository $rep): Response
     {   $entityManager = $doctrine->getManager();
         $lignePanier = $rep->find($idlignepanier);
@@ -85,7 +85,7 @@ class LignepanierController extends AbstractController
 
         return $this->redirectToRoute('app_panier_show', ['idpanier'=>1],);
     }
-
+*/
 
 ### méthode de suppression d'un produit du panier avec ajax  
 

@@ -51,7 +51,10 @@ class __TwigTemplate_2f45e3ff62ec9638490e3bdde64fea02 extends Template
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -255,7 +258,7 @@ https://templatemo.com/tm-577-liberty-market
         if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 156, $this->source); })()), "image", [], "any", false, false, false, 156))) {
             // line 157
             echo "                  <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "image", [], "any", false, false, false, 157))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "image", [], "any", false, false, false, 157))), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "nom", [], "any", false, false, false, 157), "html", null, true);
             echo "\" style=\"border-radius: 20px; min-width: 195px;\">
@@ -424,7 +427,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  403 => 27,  399 => 26,  395 => 25,  391 => 24,  387 => 23,  382 => 20,  372 => 19,  358 => 217,  354 => 216,  350 => 215,  344 => 212,  340 => 211,  335 => 209,  331 => 208,  296 => 176,  287 => 170,  277 => 163,  273 => 162,  270 => 161,  265 => 159,  257 => 157,  255 => 156,  235 => 139,  231 => 138,  227 => 137,  218 => 131,  214 => 130,  210 => 129,  202 => 124,  198 => 123,  194 => 122,  186 => 117,  182 => 116,  178 => 115,  168 => 109,  165 => 108,  162 => 107,  159 => 106,  156 => 105,  154 => 104,  116 => 69,  112 => 68,  108 => 67,  69 => 30,  67 => 19,  61 => 16,  44 => 1,);
+        return array (  406 => 27,  402 => 26,  398 => 25,  394 => 24,  390 => 23,  385 => 20,  375 => 19,  361 => 217,  357 => 216,  353 => 215,  347 => 212,  343 => 211,  338 => 209,  334 => 208,  299 => 176,  290 => 170,  280 => 163,  276 => 162,  273 => 161,  268 => 159,  260 => 157,  258 => 156,  238 => 139,  234 => 138,  230 => 137,  221 => 131,  217 => 130,  213 => 129,  205 => 124,  201 => 123,  197 => 122,  189 => 117,  185 => 116,  181 => 115,  171 => 109,  168 => 108,  165 => 107,  162 => 106,  159 => 105,  157 => 104,  119 => 69,  115 => 68,  111 => 67,  72 => 30,  70 => 19,  64 => 16,  56 => 11,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -439,7 +442,7 @@ https://templatemo.com/tm-577-liberty-market
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -585,7 +588,7 @@ https://templatemo.com/tm-577-liberty-market
                   <label class=\"form-label\" >Image</label>
               
                {% if produit.image is not null %}
-                  <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
+                  <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
                   <br><br>
                   <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"{{ produit.image }}\">
                {% endif %}

@@ -74,7 +74,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="app.upload_dir">C:\xampp\htdocs\img</parameter>
+    <parameter key="app.upload_dir">uploads/images/</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -443,6 +443,7 @@
     <service id="App\Controller\PaymentController" class="App\Controller\PaymentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Controller\PanierController"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PaymentController"/>
       </call>
@@ -7327,7 +7328,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Psvskba" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bs4Hycb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7370,7 +7371,6 @@
         <argument key="App\Controller\GrosmotsController::index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::show" type="service_closure" id=".service_locator.YkIsf6u"/>
-        <argument key="App\Controller\LignepanierController::delete" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController::deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController::edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController::index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -7482,7 +7482,6 @@
         <argument key="App\Controller\GrosmotsController:index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:show" type="service_closure" id=".service_locator.YkIsf6u"/>
-        <argument key="App\Controller\LignepanierController:delete" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController:deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController:edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController:index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -8339,12 +8338,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Psvskba"/>
+      <argument type="service" id=".service_locator.bs4Hycb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Psvskba"/>
+      <argument type="service" id=".service_locator.bs4Hycb"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9350,7 +9349,7 @@
     <service id="MercurySeries\FlashyBundle\FlashyNotifier" alias="mercuryseries_flashy.flashy_notifier"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Psvskba"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.bs4Hycb"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9377,7 +9376,7 @@
     <service id=".service_locator.RsB4Wuo" alias=".service_locator..ICFIua"/>
     <service id=".service_locator..mx8GyK" alias=".service_locator.8rT5SOI"/>
     <service id=".service_locator.ojPhsAD" alias=".service_locator.GMDLTwG"/>
-    <service id=".service_locator.2TKIayE" alias=".service_locator.Psvskba"/>
+    <service id=".service_locator.lFhY.7t" alias=".service_locator.bs4Hycb"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.cxRDELV" alias=".service_locator.O3NFs6."/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

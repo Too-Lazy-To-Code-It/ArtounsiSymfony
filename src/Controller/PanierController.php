@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Controller\FlashyNotifier;
+use DateTime;
 
 
 
@@ -129,7 +130,6 @@ public function ajouterProduitAuPanier(Request $request, Produits $produit, Prod
     }
     return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
 }
-
 
 
 

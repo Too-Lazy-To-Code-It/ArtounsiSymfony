@@ -48,7 +48,10 @@ class __TwigTemplate_fc4cb44fbacc2fc9eee1ae6a08caaabe extends Template
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -187,7 +190,7 @@ https://templatemo.com/tm-577-liberty-market
                             <div class=\"left-image\">
                                 <img src=\"";
             // line 132
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 132))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 132))), "html", null, true);
             echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                             </div>
                             <div class=\"right-content\">
@@ -367,7 +370,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  346 => 23,  342 => 22,  338 => 21,  334 => 20,  330 => 19,  325 => 16,  315 => 15,  296 => 197,  292 => 196,  288 => 195,  282 => 192,  278 => 191,  273 => 189,  269 => 188,  235 => 156,  223 => 150,  217 => 147,  211 => 144,  207 => 143,  196 => 135,  190 => 132,  186 => 130,  182 => 129,  144 => 94,  117 => 70,  113 => 69,  109 => 68,  65 => 26,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  349 => 23,  345 => 22,  341 => 21,  337 => 20,  333 => 19,  328 => 16,  318 => 15,  299 => 197,  295 => 196,  291 => 195,  285 => 192,  281 => 191,  276 => 189,  272 => 188,  238 => 156,  226 => 150,  220 => 147,  214 => 144,  210 => 143,  199 => 135,  193 => 132,  189 => 130,  185 => 129,  147 => 94,  120 => 70,  116 => 69,  112 => 68,  68 => 26,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -379,7 +382,7 @@ https://templatemo.com/tm-577-liberty-market
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}\" rel=\"stylesheet\">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -503,7 +506,7 @@ https://templatemo.com/tm-577-liberty-market
                         {% for produit in produits %}
                         <div class=\"item\">
                             <div class=\"left-image\">
-                                <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
+                                <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                             </div>
                             <div class=\"right-content\">
                                 <h4>{{ produit.nom }}</h4>

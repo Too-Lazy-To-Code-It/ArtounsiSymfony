@@ -50,7 +50,6 @@ return [
     'app_lignepanier_new' => [[], ['_controller' => 'App\\Controller\\LignepanierController::new'], [], [['text', '/lignepanier/new']], [], [], []],
     'app_lignepanier_show' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::show'], [], [['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier/showlignepanier']], [], [], []],
     'app_lignepanier_edit' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier']], [], [], []],
-    'app_lignepanier_delete' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::delete'], [], [['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier/deleteligne']], [], [], []],
     'app_lignepanier_delete_with_ajax' => [['idlignepanier'], ['_controller' => 'App\\Controller\\LignepanierController::deleteWithAjax'], [], [['variable', '/', '[^/]++', 'idlignepanier', true], ['text', '/lignepanier/deleteAjaxligne']], [], [], []],
     'app_offretravail_index' => [[], ['_controller' => 'App\\Controller\\OffretravailController::index'], [], [['text', '/offretravail/']], [], [], []],
     'app_offretravail_new' => [[], ['_controller' => 'App\\Controller\\OffretravailController::new'], [], [['text', '/offretravail/new']], [], [], []],

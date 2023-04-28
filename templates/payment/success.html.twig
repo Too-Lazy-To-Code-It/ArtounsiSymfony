@@ -1,25 +1,229 @@
 
+<html lang="en"><head>
 
-{% block title %}Payment success !{% endblock %}
+  <meta charset="utf-8">
+  <meta name="author" content="templatemo">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block body %}
+  <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+  <title>Liberty NFT Marketplace - Explore Listing Page</title>
 
+   <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
-<h1>Thanks for your order!</h1>
-    <p>
-      We appreciate your business!
-      If you have any questions, please email
-      <a href="mailto:orders@example.com">orders@example.com</a>.
-    </p>
+   {% block stylesheets %}
+    
+       <!-- Additional CSS Files -->
+     
+       <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+       <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+       <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+       <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+       <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
+   
+       <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+     
+   {% endblock %}
+   
+<!--
 
+TemplateMo 577 Liberty Market
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+https://templatemo.com/tm-577-liberty-market
 
-<div >
-  <a href="{{ path('pdf',{'idpanier': idpanier}) }}">Facture</a>
+-->
+</head>
 
-</div>
-{% endblock %}
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader loaded">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky background-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                      <img src="{{ asset('assets/images/LOGO2.png') }}" alt="" style=" width: 110px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html" class="active">Explore</a></li>
+                        <li><a href="details.html">Item Details</a></li>
+                        <li><a href="Ajouter Produit .html" class="active">Add product</a></li>
+                        <li><a href="author.html">Author</a></li>
+                        <li><a href="create.html">Create Yours</a></li>
+                    </ul>   
+                    <a class="menu-trigger">
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader loaded">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+  
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky background-header">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                        <img src="{{ asset('assets/images/LOGO2.png') }}" alt="" style=" width: 110px;">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="explore.html" class="active">Explore</a></li>
+                          <li><a href="details.html">Item Details</a></li>
+                          <li><a href="Ajouter Produit .html" class="active">Add product</a></li>
+                          <li><a href="author.html">Author</a></li>
+                          <li><a href="create.html">Create Yours</a></li>
+                      </ul>   
+                      <a class="menu-trigger">
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+  
+    <div class="page-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+          
+            <img src="{{ asset('uploads/images/succes.png') }}" alt="" style="border-radius: 50px; width: 50px;">
+    
+            <h6>Votre paiement a été effectuer avec succès</h6>
+            <h2>Merci pour votre ordre!</h2>
+          <p>
+            Nous apprécions votre confiance!
+            Si vous avez des questions, veuillez envoyer un e-mail
+            <a href="mailto:orders@example.com">orders@example.com</a>.
+          </p>
+          <div class="main-button">
+            <a href="{{ path('pdf',{'idpanier': idpanier}) }}">Télécharger Facture</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-explore">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="owl-features owl-carousel owl-loaded owl-drag">
+                
+                
+                
+                
+              <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3370px, 0px, 0px); transition: all 0.25s ease 0s; width: 5392px;">
+                
+                {% for ligne in panier.getLignepaniers() %}
+                    <div class="owl-item">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}" alt="{{ ligne.idproduit.nom }}" style="border-radius: 20px;">
+                          <div class="hover-effect">
+                            <div class="content">
+                              <h4>{{ ligne.idproduit.nom }}</h4>
+                              <div class="main-button">
+                                 <a href="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}" download="{{ ligne.idproduit.nom }}.png">Download</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                
+                
+                <div class="owl-item cloned" style="width: 644px; margin-right: 30px;"><div class="item">
+                
+                  <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
+                    <button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+                  </div>
+                  <div class="owl-dots disabled"></div>
+                
+                </div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    
+    
+  
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+            &nbsp;&nbsp;
+            Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+   <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    
+    
+    <script src="{{ asset('assets/js/tabs.js') }}"></script>
+    <script src="{{ asset('assets/js/popup.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+  
+    
+  </body>
+
+</html>

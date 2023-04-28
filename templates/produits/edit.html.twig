@@ -8,7 +8,7 @@
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -154,7 +154,7 @@ https://templatemo.com/tm-577-liberty-market
                   <label class="form-label" >Image</label>
               
                {% if produit.image is not null %}
-                  <img src="{{ asset('http://localhost/img/' ~ produit.image) }}" alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
+                  <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
                   <br><br>
                   <input type="hidden" id="imageField" name="imageField" value="{{ produit.image }}">
                {% endif %}

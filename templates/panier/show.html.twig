@@ -5,7 +5,7 @@
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
 
     <title>Liberty Template - Create NFT Page</title>
 
@@ -30,6 +30,12 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
+
+
+
+
+
+
   </head>
   <style>
     .line-dec {
@@ -188,7 +194,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <tr>
                                   <td>
                                     <div class="left-image">
-                                      <img src="{{ asset('http://localhost/img/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
+                                      <img src="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
                                     </div>
                                   </td>
                                   
@@ -221,42 +227,7 @@ https://templatemo.com/tm-577-liberty-market
                                       <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}"><i class="fas fa-trash-alt"></i></a>                                     
                                     </div> 
                                   </td>
-                                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                                  <script>
-                                   $(document).ready(function() {
-                                     $('.delete-product-button').click(function(e) {
-                                     e.preventDefault(); 
-                                     var idlignepanier = $(this).data('idlignepanier');
-                                     $.ajax({
-                                    method: 'POST',
-                                    url: "{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': 'idlignepanier'}) }}".replace('idlignepanier', idlignepanier),
-                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
-                                    success: function(response) {
-                              if (response.success) {
-                                    $('tr[data-idlignepanier=' + idlignepanier + ']').remove();
-                                 
-                                      $(this).remove();
-                                      var total = 0;
-                                      $('.total').each(function() { 
-                                      total += parseFloat($(this).text()); 
-                                      });
-                                      $('#total').text(total.toFixed(2) + ' Tnd'); 
-                                      var count = $('.count').length;
-                                      $('#count').text(count);
-
-                                    alert('Le produit a été supprimé avec succès');
-                                    location.reload()
-                                   } else {
-                                  alert('Erreur lors de la suppression du produit');
-                                 }
-                               },
-                              error: function() {
-                                alert('Erreur lors de la communication avec le serveur');
-                             }
-                          });
-                       });
-                     });
-</script>
+                                  
                                     
                                 </tr>
                               {% endfor %}
@@ -310,6 +281,51 @@ https://templatemo.com/tm-577-liberty-market
 
 
 
+<script src="{{asset('https://code.jquery.com/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js')}}"></script>
+
+<script>
+  
+
+
+                                   $(document).ready(function() {
+                                     $('.delete-product-button').click(function(e) {
+                                     e.preventDefault(); 
+                                     var idlignepanier = $(this).data('idlignepanier');
+                                     $.ajax({
+                                    method: 'POST',
+                                    url: "{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': '__idlignepanier__'}) }}".replace('__idlignepanier__', idlignepanier),
+                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
+                                    success: function(response) {
+                              if (response.success) {
+                                    $('tr[data-idlignepanier=' + idlignepanier + ']').remove();
+                                 
+                                      $(this).remove();
+                                      var total = 0;
+                                      $('.total').each(function() { 
+                                      total += parseFloat($(this).text()); 
+                                      });
+                                      $('#total').text(total.toFixed(2) + ' Tnd'); 
+                                      var count = $('.count').length;
+                                      $('#count').text(count);
+
+                                    alert('Le produit a été supprimé avec succès');
+                                    location.reload()
+                                   } else {
+                                  alert('Erreur lors de la suppression du produit');
+                                 }
+                               },
+                              error: function() {
+                                alert('Erreur lors de la communication avec le serveur');
+                             }
+                          });
+                       });
+                     });
+
+
+
+</script>
+
 
 
 
@@ -327,19 +343,26 @@ https://templatemo.com/tm-577-liberty-market
 </footer>
 
 
-<!-- Scripts -->
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+ <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    
+    <script src="{{ asset('//code.jquery.com/jquery.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
-<script src="assets/js/isotope.min.js"></script>
-<script src="assets/js/owl-carousel.js"></script>
+    <script src="{{ asset('assets/js/tabs.js') }}"></script>
+    <script src="{{ asset('assets/js/popup.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+    
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    
+  
 
-<script src="assets/js/tabs.js"></script>
-<script src="assets/js/popup.js"></script>
-<script src="assets/js/custom.js"></script>
+<!-- Include Flashy default partial -->
 
-<script src="{{ asset('bundles/jquery/jquery.min.js') }}"></script>
+
 
 </body>
 

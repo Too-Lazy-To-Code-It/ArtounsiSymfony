@@ -18,6 +18,7 @@ use App\Controller\PdfController;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PanierRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use DateTime;
 
 
 
@@ -74,8 +75,10 @@ class PaymentController extends AbstractController
     #[Route('/success-url/{idpanier}', name: 'success-url')]
     public function successUrl(int $idpanier,LignepanierRepository $lignepanierRepository): Response
     {   $idpanier = intval($idpanier); // convert the string to an integer
+        // Récupérer le panier correspondant à l'idpanier
+        $panier = $this->getDoctrine()->getRepository(Panier::class)->find($idpanier);
         $lignesPanier = $lignepanierRepository->findBy(['idpanier' => $idpanier]);
-        return $this->render('payment/success.html.twig', ['lignesPanier' => $lignesPanier, 'idpanier' => $idpanier]);
+        return $this->render('payment/success.html.twig', ['lignesPanier' => $lignesPanier, 'idpanier' => $idpanier,'panier' => $panier]);
     }
 
 
@@ -91,11 +94,21 @@ class PaymentController extends AbstractController
 
 
 
+######
+private $panierController;
+
+    public function __construct(PanierController $panierController)
+    {
+        $this->panierController = $panierController;
+    }
+
+
+
 
  
       #[Route('/pdf22/{idpanier}', name: 'pdf')]
    public function pdf(string $idpanier, LignepanierRepository $lignepanierRepository, SessionInterface $session, ManagerRegistry $doctrine): Response
-  {
+  { 
     $panier = $session->get('panier');
     
     // Copier les données du panier dans une variable temporaire
@@ -109,11 +122,12 @@ class PaymentController extends AbstractController
 
     // Instantiate Dompdf with our options
     $dompdf = new Dompdf($pdfOptions);
-
+    $date_facture = date('Y-m-d H:i:s');
     // Retrieve the HTML generated in our twig file
     $html = $this->renderView('payment/pdf.html.twig', [
         'lignesPanier' => $lignepanierRepository->findBy(['idpanier' => $idpanier]),
-        'total' => $total
+        'total' => $total,
+        'date_facture' => $date_facture,
     ]);
 
     // Load HTML to Dompdf
@@ -131,11 +145,9 @@ class PaymentController extends AbstractController
         'Content-Disposition' => 'attachment; filename="example.pdf"'
     ]);
    
-    // Call the ViderPanier method to clear the panier
-    $this->ViderPanier($idpanier, $doctrine, $session, $lignepanierRepository);
-    
     return $response;
-
+   // Call the ViderPanier method to clear the panier
+    $this->panierController->ViderPanier($idpanier, $doctrine, $session, $lignepanierRepository);
     
   }
 
