@@ -9,6 +9,8 @@ return [
     'app_allusers_new' => [[], ['_controller' => 'App\\Controller\\AllusersController::new'], [], [['text', '/allusers/new']], [], [], []],
     'app_allusers_verify' => [[], ['_controller' => 'App\\Controller\\AllusersController::verify'], [], [['text', '/allusers/verify']], [], [], []],
     'app_allusers_verif' => [[], ['_controller' => 'App\\Controller\\AllusersController::verif'], [], [['text', '/allusers/verif']], [], [], []],
+    'app_allusers_ve' => [[], ['_controller' => 'App\\Controller\\AllusersController::VE'], [], [['text', '/allusers/ve']], [], [], []],
+    'app_allusers_vs' => [[], ['_controller' => 'App\\Controller\\AllusersController::VS'], [], [['text', '/allusers/vs']], [], [], []],
     'app_allusers_show' => [['id_user'], ['_controller' => 'App\\Controller\\AllusersController::show'], [], [['variable', '/', '[^/]++', 'id_user', true], ['text', '/allusers']], [], [], []],
     'app_allusers_edit' => [['id_user'], ['_controller' => 'App\\Controller\\AllusersController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id_user', true], ['text', '/allusers']], [], [], []],
     'app_allusers_delete' => [['id_user'], ['_controller' => 'App\\Controller\\AllusersController::delete'], [], [['variable', '/', '[^/]++', 'id_user', true], ['text', '/allusers']], [], [], []],

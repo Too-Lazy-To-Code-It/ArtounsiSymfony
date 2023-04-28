@@ -100,21 +100,22 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                         </div>
                         <div class=\"form-group d-md-flex\">
                             <div class=\"w-50\">
-                                <label class=\"checkbox-wrap checkbox-primary\">Remember Me
-                                    <input type=\"checkbox\" checked>
-                                    <span class=\"checkmark\"></span>
+                                <label  class=\"checkbox-wrap checkbox-primary\"><a href=\"";
+        // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_ve");
+        echo "\">Forget Passowrd?</a>
                                 </label>
                             </div>
                             <div class=\"w-50 text-md-right\">
                                 <a href=\"";
-        // line 49
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_new");
         echo "\" style=\"color: #fff\">Register</a>
                             </div>
                         </div>
                     ";
-        // line 52
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
+        // line 50
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
                 </div>
             </div>
@@ -123,19 +124,19 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 </section>
 
 <script src=\"";
-        // line 59
+        // line 57
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 60
+        // line 58
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popper.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 61
+        // line 59
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 62
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/mainL.js"), "html", null, true);
         echo "\"></script>
 
@@ -163,7 +164,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
 
     public function getDebugInfo()
     {
-        return array (  139 => 62,  135 => 61,  131 => 60,  127 => 59,  117 => 52,  111 => 49,  98 => 39,  91 => 35,  84 => 31,  79 => 29,  64 => 17,  57 => 13,  43 => 1,);
+        return array (  140 => 60,  136 => 59,  132 => 58,  128 => 57,  118 => 50,  112 => 47,  105 => 43,  98 => 39,  91 => 35,  84 => 31,  79 => 29,  64 => 17,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -210,9 +211,7 @@ class __TwigTemplate_e5ed90ebcb276dae08ecf85187085d43 extends Template
                         </div>
                         <div class=\"form-group d-md-flex\">
                             <div class=\"w-50\">
-                                <label class=\"checkbox-wrap checkbox-primary\">Remember Me
-                                    <input type=\"checkbox\" checked>
-                                    <span class=\"checkmark\"></span>
+                                <label  class=\"checkbox-wrap checkbox-primary\"><a href=\"{{ path('app_allusers_ve') }}\">Forget Passowrd?</a>
                                 </label>
                             </div>
                             <div class=\"w-50 text-md-right\">
