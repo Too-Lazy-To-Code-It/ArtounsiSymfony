@@ -459,7 +459,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
                             <li class=\"nav-item\">
                                 <button class=\"nav-link\" data-bs-toggle=\"tab\" data-bs-target=\"#profile-change-password\">
-                                    Change Password
+                                    2FA
                                 </button>
                             </li>
 
@@ -767,7 +767,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                             </div>
 
                             <div class=\"text-center\">
-                                <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
+                                <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
                             </div>
                             ";
         // line 590
@@ -1236,7 +1236,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
 
                             <li class=\"nav-item\">
                                 <button class=\"nav-link\" data-bs-toggle=\"tab\" data-bs-target=\"#profile-change-password\">
-                                    Change Password
+                                    2FA
                                 </button>
                             </li>
 
@@ -1463,7 +1463,7 @@ class __TwigTemplate_1e22f0ffcb48ad758f567938a25988dc extends Template
                             </div>
 
                             <div class=\"text-center\">
-                                <button type=\"submit\" class=\"btn btn-primary\">Change Password</button>
+                                <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
                             </div>
                             {{ form_end(forme, {'attr': {'novalidate': 'novalidate'}}) }}
                             <!-- End Change Password Form -->

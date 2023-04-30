@@ -9,7 +9,9 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 
 #[ORM\Entity(repositoryClass: AllusersRepository::class)]
@@ -19,11 +21,13 @@ class Allusers implements UserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("allusers")]
     private ?int $id_user = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
     #[Assert\Length(min:4, minMessage:"entrer un titre valide avec minimum 3 caracteres")]
+    #[Groups("allusers")]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Ban::class, orphanRemoval: true)]
@@ -31,51 +35,61 @@ class Allusers implements UserInterface
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $Last_Name = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
     #[Assert\Email(message: "not valid email type")]
+    #[Groups("allusers")]
     private ?string $Email = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?\DateTimeInterface $Birthday = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
     #[Assert\UserPassword(message: "not valid password type")]
+    #[Groups("allusers")]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("allusers")]
     private ?string $salt = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $nationality = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $type = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $nickname = null;
 
     #[ORM\Column(length: 255)]
-
+    #[Groups("allusers")]
     private ?string $avatar = null;
 
     #[ORM\Column(length: 255)]
-
+    #[Groups("allusers")]
     private ?string $background = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
+    #[Groups("allusers")]
     private ?string $bio = null;
 
 
@@ -192,6 +206,11 @@ class Allusers implements UserInterface
     }
 
     public function getid_user(): ?int
+    {
+        return $this->id_user;
+    }
+
+    public function getIdUser(): ?int
     {
         return $this->id_user;
     }

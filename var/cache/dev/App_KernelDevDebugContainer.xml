@@ -404,6 +404,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
       </call>
     </service>
+    <service id="App\Controller\JsonController" class="App\Controller\JsonController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\JsonController"/>
+      </call>
+    </service>
     <service id="App\Controller\LignepanierController" class="App\Controller\LignepanierController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -494,6 +501,9 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ViewController"/>
       </call>
+    </service>
+    <service id="App\Form\Allusers1Type" class="App\Form\Allusers1Type" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -1425,6 +1435,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\Allusers1Type</argument>
         <argument>App\Form\AllusersType</argument>
         <argument>App\Form\AuthType</argument>
         <argument>App\Form\BanType</argument>
@@ -3618,7 +3629,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Mq7T98i"/>
+      <argument type="service" id=".service_locator.zhj_Mse"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6545,6 +6556,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\JsonController" class="App\Controller\JsonController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\JsonController" class="App\Controller\JsonController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\JsonController" class="App\Controller\JsonController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LignepanierController" class="App\Controller\LignepanierController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6584,6 +6598,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Allusers1Type" class="App\Form\Allusers1Type" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Allusers1Type" class="App\Form\Allusers1Type" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AllusersType" class="App\Form\AllusersType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AuthType" class="App\Form\AuthType" autowire="true" abstract="true"/>
@@ -7184,6 +7200,45 @@
         <argument key="grosmotsRepository" type="service_closure" id="App\Repository\GrosmotsRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.Bj9p3mR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="BanRepository" type="service_closure" id="App\Repository\BanRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.hR8zYrr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.QvTsKGT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="alluser" type="service_closure" id=".errored..service_locator.QvTsKGT.App\Entity\Allusers"/>
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.5mTQzHl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="ban" type="service_closure" id=".errored..service_locator.5mTQzHl.App\Entity\Ban"/>
+        <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3atRQwA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ban" type="service_closure" id=".errored..service_locator.3atRQwA.App\Entity\Ban"/>
+        <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
     <service id=".service_locator.koNxlQa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7412,7 +7467,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Z6F8o.o" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.xr0xHa2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -7459,6 +7514,15 @@
         <argument key="App\Controller\GrosmotsController::index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::show" type="service_closure" id=".service_locator.YkIsf6u"/>
+        <argument key="App\Controller\JsonController::delete" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController::edit" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController::editb" type="service_closure" id=".service_locator.5mTQzHl"/>
+        <argument key="App\Controller\JsonController::index" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController::indexb" type="service_closure" id=".service_locator.Bj9p3mR"/>
+        <argument key="App\Controller\JsonController::new" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController::newb" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController::show" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController::showb" type="service_closure" id=".service_locator.3atRQwA"/>
         <argument key="App\Controller\LignepanierController::delete" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController::edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController::index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -7568,6 +7632,15 @@
         <argument key="App\Controller\GrosmotsController:index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:show" type="service_closure" id=".service_locator.YkIsf6u"/>
+        <argument key="App\Controller\JsonController:delete" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController:edit" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController:editb" type="service_closure" id=".service_locator.5mTQzHl"/>
+        <argument key="App\Controller\JsonController:index" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController:indexb" type="service_closure" id=".service_locator.Bj9p3mR"/>
+        <argument key="App\Controller\JsonController:new" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController:newb" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController:show" type="service_closure" id=".service_locator.QvTsKGT"/>
+        <argument key="App\Controller\JsonController:showb" type="service_closure" id=".service_locator.3atRQwA"/>
         <argument key="App\Controller\LignepanierController:delete" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController:edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController:index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -7692,9 +7765,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Mq7T98i" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zhj_Mse" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\Allusers1Type" type="service_closure" id="App\Form\Allusers1Type"/>
         <argument key="App\Form\AllusersType" type="service_closure" id="App\Form\AllusersType"/>
         <argument key="App\Form\AuthType" type="service_closure" id="App\Form\AuthType"/>
         <argument key="App\Form\BanType" type="service_closure" id="App\Form\BanType"/>
@@ -8149,6 +8223,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\JsonController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\JsonController"/>
+      <argument>App\Controller\JsonController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\LignepanierController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LignepanierController"/>
       <argument>App\Controller\LignepanierController</argument>
@@ -8409,12 +8489,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Z6F8o.o"/>
+      <argument type="service" id=".service_locator.xr0xHa2"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Z6F8o.o"/>
+      <argument type="service" id=".service_locator.xr0xHa2"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8450,6 +8530,9 @@
     <service id=".errored..service_locator.zBuIoHb.App\Entity\FavorisTuroial" class="App\Entity\FavorisTuroial"/>
     <service id=".errored..service_locator.YkIsf6u.App\Entity\Grosmots" class="App\Entity\Grosmots"/>
     <service id=".errored..service_locator.jrXlUaF.App\Entity\Grosmots" class="App\Entity\Grosmots"/>
+    <service id=".errored..service_locator.QvTsKGT.App\Entity\Allusers" class="App\Entity\Allusers"/>
+    <service id=".errored..service_locator.5mTQzHl.App\Entity\Ban" class="App\Entity\Ban"/>
+    <service id=".errored..service_locator.3atRQwA.App\Entity\Ban" class="App\Entity\Ban"/>
     <service id=".errored..service_locator.TGOvGF5.App\Entity\Lignepanier" class="App\Entity\Lignepanier"/>
     <service id=".errored..service_locator.guFmUBj.App\Entity\Lignepanier" class="App\Entity\Lignepanier"/>
     <service id=".errored..service_locator.XU2nysu.App\Entity\Offretravail" class="App\Entity\Offretravail"/>
@@ -9419,7 +9502,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Z6F8o.o"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.xr0xHa2"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9446,9 +9529,12 @@
     <service id=".service_locator.hKIBk2X" alias=".service_locator.4YltF_L"/>
     <service id=".service_locator.LKpZXph" alias=".service_locator.bCnny4Z"/>
     <service id=".service_locator.APd5.7A" alias=".service_locator.dcAGksr"/>
-    <service id=".service_locator.A1tWmLn" alias=".service_locator.Z6F8o.o"/>
+    <service id=".service_locator.dGUdAyI" alias=".service_locator.hR8zYrr"/>
+    <service id=".service_locator.Dwg5hc8" alias=".service_locator.5mTQzHl"/>
+    <service id=".service_locator.JQTWST2" alias=".service_locator.3atRQwA"/>
+    <service id=".service_locator.iOqLxeS" alias=".service_locator.xr0xHa2"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.CPLZ1Yk" alias=".service_locator.Mq7T98i"/>
+    <service id=".service_locator.SKxDtXf" alias=".service_locator.zhj_Mse"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9501,6 +9587,11 @@
     <service id=".service_locator.r679aUT" alias=".service_locator.PSUZNGe"/>
     <service id=".service_locator.Xq6MMpm" alias=".service_locator.YkIsf6u"/>
     <service id=".service_locator.cw1VrzW" alias=".service_locator.jrXlUaF"/>
+    <service id=".service_locator.T1VvfMN" alias=".service_locator.Bj9p3mR"/>
+    <service id=".service_locator.Mxdmxan" alias=".service_locator.hR8zYrr"/>
+    <service id=".service_locator.o0_WV8Y" alias=".service_locator.QvTsKGT"/>
+    <service id=".service_locator.W0ZCV_5" alias=".service_locator.5mTQzHl"/>
+    <service id=".service_locator.3DAXeZ." alias=".service_locator.3atRQwA"/>
     <service id=".service_locator.Z11eeIV" alias=".service_locator.koNxlQa"/>
     <service id=".service_locator.D8C1oba" alias=".service_locator.TGOvGF5"/>
     <service id=".service_locator.MGs0Osc" alias=".service_locator.guFmUBj"/>

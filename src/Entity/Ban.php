@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\BanRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: BanRepository::class)]
 class Ban
@@ -12,16 +13,20 @@ class Ban
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("bans")]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'test')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
+    #[Groups("bans")]
     private ?Allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("bans")]
     private ?string $Reason = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups("bans")]
     private ?\DateTimeInterface $DateB = null;
 
 

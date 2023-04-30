@@ -22,6 +22,8 @@ use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Twilio\Rest\Client;
+use symfony\Component\Serializer\Normalizer\NormalizerInterface;
+
 
 #[Route('/allusers')]
 class AllusersController extends AbstractController
@@ -273,7 +275,6 @@ class AllusersController extends AbstractController
     }
 
 
-
     #[Route('/{id_user}', name: 'app_allusers_show', methods: ['GET'])]
     public function show(Allusers $alluser, Request $request, AllusersRepository $allusersRepository, $id_user): Response
     {
@@ -350,6 +351,7 @@ class AllusersController extends AbstractController
         ]);
         return new Response();
     }
+
 
 
 }
