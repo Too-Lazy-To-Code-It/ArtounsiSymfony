@@ -126,21 +126,28 @@ class JsonController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         $user = $allusersRepository->find($id_user);
-        $user->setPassword($request->get('password'));
-        $user->setBio($request->get('Bio'));
-        $user->setEmail($request->get('Email'));
-        $b = $request->get('Birthday');
+        if($b = $request->get('Birthday')!=null)
+        {
         $birthdayDate = DateTimeImmutable::createFromFormat('Y-m-d', $b);
-        $user->setBirthday($birthdayDate);
-        $user->setLastName($request->get('LastName'));
-        $user->setName($request->get('Name'));
-        $user->setNationality($request->get('Nationality'));
-        $user->setNickname($request->get('Nickname'));
-        $user->setSalt($request->get('salt'));
-        $user->setType($request->get('Type'));
-        $user->setAvatar($request->get('Type'));
-        $user->setBackground($request->get('Type'));
-        $user->setDescription($request->get('Type'));
+        $user->setBirthday($birthdayDate) ;
+        }
+        else
+        {
+            $user->getBirthday();
+        }
+        $user->setPassword($request->get('password') ?? $user->getPassword());
+        $user->setBio($request->get('Bio') ?? $user->getBio());
+        $user->setEmail($request->get('Email') ?? $user->getEmail());
+        $user->setLastName($request->get('LastName') ?? $user->getLastName());
+        $user->setName($request->get('Name') ?? $user->getName());
+        $user->setNationality($request->get('Nationality') ?? $user->getNationality());
+        $user->setNickname($request->get('Nickname') ?? $user->getNickname());
+        $user->setSalt($request->get('salt') ?? $user->getSalt());
+        $user->setType($request->get('Type') ?? $user->getType());
+        $user->setAvatar($request->get('Type') ?? $user->getAvatar());
+        $user->setBackground($request->get('Type') ?? $user->getBackground());
+        $user->setDescription($request->get('Type') ?? $user->getDescription());
+
         $em->persist($user);
         $em->flush();
         $AN = $serializer->serialize($user, 'json', ['groups' => 'alluserss']);
