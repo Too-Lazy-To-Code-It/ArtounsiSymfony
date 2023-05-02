@@ -1,15 +1,333 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Tutoriel{% endblock %}
+{% block css %}
+    {{ parent() }}
+    <link data-require="fontawesome@*" data-semver="4.5.0" rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css"/>
+    <style>
+        .rating {
+            cursor: pointer;
+        }
 
+        .rating .rating-star {
+            display: inline-block;
+            position: relative;
+            padding-right: 5px;
+            margin-left: -5px;
+            color: #7453FC;
+        }
+
+        .rating .selected:before {
+            content: '\f005';
+        }
+
+        .avg_flash {
+          visibility: hidden;
+        }
+    </style>
+{#
+    <script>
+    {{ parent() }}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('jquery') }}
+    <script src="{{ asset('js/ajax.js') }}"></script>
+
+            $('#order-form').submit(function(event) {
+                // Prevent the form from submitting normally
+                event.preventDefault();
+
+                var $firstNameState =0;
+                var $lastNameState = 0;
+                var $numberState = 0;
+                var $addressState = 0;
+                var $codePostalState = 0;
+                var $emailState = 0;
+
+
+                //extraction des texts fields
+                var $firstName = $('#first-name').val();
+                var $lastName = $('#last-name').val();
+                var $number = $('#number').val();
+                var $address = $('#address').val();
+                var $codePostal = $('#code-postal').val();
+                var $email = $('#email').val();
+
+                //controle de saisie pour les string
+                //firstname----------------------------------
+                if(!/^[a-zA-Z]+$/.test($firstName)){
+                    $('#first-name-error').text('Please enter a valid first name').show();
+                }
+                if(/^[a-zA-Z]+$/.test($firstName)){
+                    $('#first-name-error').hide();
+                    $firstNameState =1;
+                }
+
+                //lastname------------------------------------
+                if(!/^[a-zA-Z]+$/.test($lastName)){
+                    $('#last-name-error').text('Please enter a valid last name').show();
+                }
+                if(/^[a-zA-Z]+$/.test($lastName)){
+                    $('#last-name-error').hide();
+                    $lastNameState=1;
+                }
+                //address------------------------------------
+                if(!/^[^!*@%]+$/.test($address)){
+                    $('#address-error').text('Please enter a valid address').show();
+                }
+                if(/^[^!*@%]+$/.test($address)){
+                    $('#address-error').hide();
+                    $addressState=1;
+                }
+
+                //number---------------------------------------
+                if (!/^[0-9]+$/.test($number) ){
+                    $('#number-error').text('Please enter a valid Phone number').show();
+                }
+                if (/^[0-9]+$/.test($number) ){
+                    $('#number-error').hide();
+                    $numberState=1;
+                }
+
+
+                //codepostal------------------------------------
+                if ( !/^[0-9]+$/.test($codePostal) ){
+                    $('#codepostal-error').text('Please enter a valid code postal').show();
+                }
+                if ( /^[0-9]+$/.test($codePostal) ){
+                    $('#codepostal-error').hide();
+                    $codePostalState=1;
+                }
+
+                //email------------------------------------------
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($email)) {
+                    $('#email-error').text('Please enter a valid email').show();
+                }
+
+                if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($email)) {
+                    $('#email-error').hide();
+                    $emailState=1;
+
+                    //ken les fields kold format te3hom s7i7
+                } if ($addressState===1 && $emailState===1 && $firstNameState===1 && $lastNameState===1 && $codePostalState===1 && $emailState===1 && $numberState===1) {
+                    // Get the form data
+                    var formData = {
+                        firstname: $firstName,
+                        lastname: $lastName,
+                        number: $number,
+                        address: $address,
+                        codePostal: $codePostal,
+                        email: $email
+                    };
+                    // Send the form data to the controller
+                    $.ajax({
+                        type: 'POST',
+                        url: '{{ path('app_commande_new') }}',
+                        data: formData,
+                        contentType: 'application/json',
+                        success: function (response) {
+
+                            // Handle the response from the controller
+                            if (response.success) {
+
+                                alert(" you're order Has been Established successfully ! ");
+                                window.location.href = '/payment';
+                            } else {
+                                alert(" Don't Leave Empty Fields ");
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
+        #}
+
+    {{ encore_entry_script_tags('app') }}
+
+
+    <script>
+        $(document).ready(function () {
+            if({{oldrating.getRating()}})
+            {
+              setRating({{oldrating.getRating()}});
+            }
+
+            function setRating(rating) {
+                
+                $('#form_rating').val(rating);
+                // fill all the stars assigning the '.selected' class
+                $('.rating-star').removeClass('fa-star-o').addClass('selected');
+                // empty all the stars to the right of the mouse
+                $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('fa-star-o');
+            }
+
+            $('.rating-star')
+                .on('mouseover', function (e) {
+                    var rating = $(e.target).data('rating');
+                    // fill all the stars
+                    $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
+                    // empty all the stars to the right of the mouse
+                    $('.rating-star#rating-' + rating+ ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+                })
+                .on('mouseleave', function (e) {
+                    // empty all the stars except those with class .selected
+                    $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+                })
+                .on('click', function (e) {
+                    var rating = $(e.target).data('rating');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://127.0.0.1:8000/rating/tutoriel/new/'+$(e.target).data('rating')+'/'+parseInt(document.querySelector('input').value),
+                        success: function (response) {
+                            // Handle the response from the controller
+                          document.getElementById("avg_rating").innerHTML = Math.round(response.avg.avg)+" Stars";
+                          document.getElementById("avg_flash").style.visibility = 'visible';
+                          setTimeout(myGreeting, 3000);
+                          function myGreeting() {
+                                                  document.getElementById("avg_flash").style.visibility = 'hidden'
+                                                }
+                        }
+                    });
+                    setRating(rating);
+                })
+                .on('keyup', function (e) {
+                    // if spacebar is pressed while selecting a star
+                    if (e.keyCode === 32) {
+                        // set rating (same as clicking on the star)
+                        var rating = $(e.target).data('rating');
+                        setRating(rating);
+                    }
+                });
+
+        
+        });
+    </script>
+{% endblock %}
 {% block body %}
-    <h1>Tutoriel</h1>
+{% set show=false %}
+<div class="item-details-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>Welcome To Our <em>Tutoriel</em></h2>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="{{ asset('http://localhost/img/'~tutoriel.pathimg) }}" alt="" style="max-height: 500px; border-radius: 20px;">
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <h4>{{ tutoriel.title }}</h4>
+          <span class="author">
+            <img src="{{ asset('/assets/images/author-02.jpg') }}"" alt="" style="max-width: 50px; border-radius: 50%;">
+            <h6>{{ tutoriel.getIdArtist().getName() }}<br><a href="#">{{ tutoriel.getIdArtist().getEmail() }}</a></h6>
+          </span>
+          <p>{{ tutoriel.getDescription() }}</p>
+            {% if(favori) %}
+              <a href={{path('app_favoris_turoial_delete',{'id_tutoriel':tutoriel.getId()})}}><i class="bi bi-heart-fill"> remove from favoris</i></a>
+            {% else %}
+              <a href={{path('app_favoris_tutoriel_new',{'id_tutoriel':tutoriel.getId()})}}><i class="bi bi-heart">add to favoris</i></a>
+            {% endif %}
 
+
+          <div class="row">
+              <div class="col-4">
+                <span class="bid">
+                  Current Rate<br><strong id="avg_rating">{{avg.avg|round(1)}} Stars</strong><br>
+                </span>
+              </div>
+
+              <div class="col-8">
+                <span class="bid">
+                  Rate us!
+                  <br>
+                    <div class="rating" role="optgroup">
+                        <!-- in Rails just use 1.upto(5) -->
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
+                          aria-label="Rate as one out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0"
+                          aria-label="Rate as two out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0"
+                          aria-label="Rate as three out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0"
+                          aria-label="Rate as four out of 5 stars" role="radio"></i>
+                        <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
+                          aria-label="Rate as five out of 5 stars" role="radio"></i>
+                    </div>
+
+                      <div id="avg_flash" class="avg_flash">
+                        Thanks for your rating <i class="bi bi-check" style="width: 0;height: 100;color: #7453FC;"></i>
+                      </div>
+
+                    <br>
+                </span>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="current-bid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mini-heading"><h4>Videos</h4></div>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                      <option selected>Sort By: Latest</option>
+                      <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
+                      <option value="low">Sort By: Lowest</option>
+                      <option value="high">Sort By: Highest</option>
+                  </select>
+              </fieldset>
+              </div>
+
+            {% for v in tutoriel.videos %}
+
+              <div class="col-lg-4 col-md-6">
+                <div class="item" style="height:220px;">
+                  <div class="left-img">
+                    <img src={{ asset('http://localhost/img/'~v.getPathimage()) }} alt="">
+                  </div>
+                  <div class="right-content">
+                    <h4 id="avg-h4">{{v.title|slice(0, 20)}}...</h4>
+                    <a href={{path("app_video_show",{"id_video":v.getId()})}}>Show Video</a>
+                    <div class="line-dec"></div>
+                    <h6>Views: <em>{{v.Views|length}}</em></h6>
+                    <span class="date">{{v.getDateP()|date('m:h d:m:Y')}}</span>
+                  </div>
+                </div>
+              </div>
+              
+            {% endfor %}
+            
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="number" style="visibility: hidden;" value={{tutoriel.getId()}}>
+
+{% block js %}
+        {{ parent() }}
+        <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        {% endblock %}
+
+    {#
     <table class="table">
         <tbody>
             <tr>
                 <th>Id_tutoriel</th>
-                <td>{{ tutoriel.idTutoriel }}</td>
+                <td>{{ tutoriel.getId() }}</td>
             </tr>
             <tr>
                 <th>Pathimg</th>
@@ -29,10 +347,5 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_tutoriel_index') }}">back to list</a>
-
-    <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.id_tutoriel}) }}">edit</a>
-
-    {{ include('tutoriel/_delete_form.html.twig') }}
+    #}
 {% endblock %}

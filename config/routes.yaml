@@ -1,3 +1,18 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+ajax_route:
+    path: /ajax
+    controller: App\Controller\AjaxController::ajaxAction
+app_rating_new:
+    path: '/rating/new/{rating}/{idChallenge}/{idparticipator}'
+    controller: App\Controller\RatingController::new
+app_challenge_show:
+    path: challenge/{id}/show
+    controller: App\Controller\ChallengeController::show
+app_rating_tutoriel_new:
+    path: rating/tutoriel/new/{rating}/{idTutoriel}
+    controller: App\Controller\RatingTutorielController::new
+app_tutoriel_names:
+    path: tutoriel/show/names
+    controller: App\Controller\TutorielController::names

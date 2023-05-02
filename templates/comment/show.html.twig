@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+
 
 {% block title %}Comment{% endblock %}
 
@@ -9,7 +9,7 @@
         <tbody>
             <tr>
                 <th>Id_comment</th>
-                <td>{{ comment.idComment }}</td>
+                <td>{{ comment.getId }}</td>
             </tr>
             <tr>
                 <th>Date_comment</th>
@@ -24,7 +24,7 @@
 
     <a href="{{ path('app_comment_index') }}">back to list</a>
 
-    <a href="{{ path('app_comment_edit', {'id_comment': comment.id_comment}) }}">edit</a>
+    <a href="{{ path('app_comment_edit', {'id_comment': comment.getId}) }}">edit</a>
 
     {{ include('comment/_delete_form.html.twig') }}
 {% endblock %}

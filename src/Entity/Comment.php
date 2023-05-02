@@ -6,6 +6,8 @@ use App\Repository\CommentRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+date_default_timezone_set('Africa/Tunis');
+
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 class Comment
 {
@@ -16,17 +18,23 @@ class Comment
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     #[ORM\JoinColumn(name:'id_post',referencedColumnName:'id_post',nullable: false)]
-    private ?post $id_post = null;
+    private ?Post $id_post = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
-    private ?allusers $id_user = null;
+    private ?Allusers $id_user = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_comment = null;
 
     #[ORM\Column(length: 255)]
     private ?string $comment = null;
+
+
+    public function __construct()
+    {
+        $this->date_comment = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -80,4 +88,6 @@ class Comment
 
         return $this;
     }
+
+    
 }

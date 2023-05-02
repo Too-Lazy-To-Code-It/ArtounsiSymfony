@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Dashboard/index.html.twig */
+/* dashboard/index.html.twig */
 class __TwigTemplate_12e13eba08211f640e062b0067ab485c extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_12e13eba08211f640e062b0067ab485c extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Dashboard/index.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "dashboard/index.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Dashboard/index.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "dashboard/index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -1951,7 +1951,7 @@ class __TwigTemplate_12e13eba08211f640e062b0067ab485c extends Template
 
     public function getTemplateName()
     {
-        return "Dashboard/index.html.twig";
+        return "dashboard/index.html.twig";
     }
 
     public function isTraitable()
@@ -3800,6 +3800,6 @@ class __TwigTemplate_12e13eba08211f640e062b0067ab485c extends Template
   
   <svg id=\"SvgjsSvg1152\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\"><defs id=\"SvgjsDefs1153\"></defs><polyline id=\"SvgjsPolyline1154\" points=\"0,0\"></polyline><path id=\"SvgjsPath1155\" d=\"M-1 270.2L-1 270.2C-1 270.2 138.84014423076923 270.2 138.84014423076923 270.2C138.84014423076923 270.2 231.40024038461536 270.2 231.40024038461536 270.2C231.40024038461536 270.2 323.96033653846155 270.2 323.96033653846155 270.2C323.96033653846155 270.2 416.5204326923077 270.2 416.5204326923077 270.2C416.5204326923077 270.2 509.0805288461538 270.2 509.0805288461538 270.2C509.0805288461538 270.2 601.640625 270.2 601.640625 270.2C601.640625 270.2 601.640625 270.2 601.640625 270.2 \"></path></svg>
 </body>
-</html>", "Dashboard/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard\\index.html.twig");
+</html>", "dashboard/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard\\index.html.twig");
     }
 }

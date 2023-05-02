@@ -40,16 +40,16 @@ class __TwigTemplate_78860c04ef2c0ce59707c79320c19757 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "post_like/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_delete", ["id_like" => twig_get_attribute($this->env, $this->source, (isset($context["post_like"]) || array_key_exists("post_like", $context) ? $context["post_like"] : (function () { throw new RuntimeError('Variable "post_like" does not exist.', 1, $this->source); })()), "id_like", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"";
-        // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["post_like"]) || array_key_exists("post_like", $context) ? $context["post_like"] : (function () { throw new RuntimeError('Variable "post_like" does not exist.', 2, $this->source); })()), "id_like", [], "any", false, false, false, 2))), "html", null, true);
-        echo "\">
-    <button class=\"btn\">Delete</button>
-</form>
-";
+        echo "<form method=\"POST\" action=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_delete", ["id_like" => twig_get_attribute($this->env, $this->source, (isset($context["postLike"]) || array_key_exists("postLike", $context) ? $context["postLike"] : (function () { throw new RuntimeError('Variable "postLike" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
+        echo "\" onsubmit=\"return confirm('Are you sure you want to unlike this post?');\">
+    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+    ";
+        // line 3
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new RuntimeError('Variable "delete_form" does not exist.', 3, $this->source); })()), "_token", [], "any", false, false, false, 3), 'widget');
+        echo "
+    <button type=\"submit\" class=\"btn btn-danger\">Confirm Unlike</button>
+</form>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -70,15 +70,15 @@ class __TwigTemplate_78860c04ef2c0ce59707c79320c19757 extends Template
 
     public function getDebugInfo()
     {
-        return array (  48 => 2,  43 => 1,);
+        return array (  49 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('app_post_like_delete', {'id_like': post_like.id_like}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ post_like.id_like) }}\">
-    <button class=\"btn\">Delete</button>
-</form>
-", "post_like/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post_like\\_delete_form.html.twig");
+        return new Source("<form method=\"POST\" action=\"{{ path('app_post_like_delete', {'id_like': postLike.id}) }}\" onsubmit=\"return confirm('Are you sure you want to unlike this post?');\">
+    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+    {{ form_widget(delete_form._token) }}
+    <button type=\"submit\" class=\"btn btn-danger\">Confirm Unlike</button>
+</form>", "post_like/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post_like\\_delete_form.html.twig");
     }
 }

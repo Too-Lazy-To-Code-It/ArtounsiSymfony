@@ -6,6 +6,10 @@ use App\Entity\PostLike;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+
 /**
  * @extends ServiceEntityRepository<PostLike>
  *
@@ -38,6 +42,25 @@ class PostLikeRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    
+
+
+    
+//     public function like(Request $request, PostLikeRepository $postLikeRepository): JsonResponse
+// {
+//     $postId = $request->request->get('postId');
+//     $userId = $this->getUser()->getId(); // get the ID of the logged-in user
+
+//     $postLike = new PostLike();
+//     $postLike->setIdPost($postId);
+//     $postLike->setIdUser($userId);
+
+//     $postLikeRepository->save($postLike, true);
+
+//     $likesCount = $postLikeRepository->count(['idPost' => $postId]);
+
+//     return new JsonResponse(['likesCount' => $likesCount]);
+// }
 
 //    /**
 //     * @return PostLike[] Returns an array of PostLike objects

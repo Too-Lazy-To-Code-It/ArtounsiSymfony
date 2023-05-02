@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Challenge{% endblock %}
+{% block css %}
+    {{ parent() }}
+    <link data-require="fontawesome@*" data-semver="4.5.0" rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css"/>
+    <style>
+        .rating {
+            cursor: pointer;
+        }
+
+        .rating .rating-star {
+            display: inline-block;
+            position: relative;
+            padding-right: 5px;
+            margin-left: -5px;
+            color: #7453FC;
+        }
+
+        .rating .selected:before {
+            content: '\f005';
+        }
+    </style>
+            <script>
+        $(document).ready(function () {
+            function setRating(rating) {
+                // fill all the stars assigning the '.selected' class
+                $('.rating-star').removeClass('fa-star-o').addClass('selected');
+                // empty all the stars to the right of the mouse
+                $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('fa-star-o');
+            }
+
+            $('.rating-star')
+                .on('mouseover', function (e) {
+                    var rating = $(e.target).data('rating');
+                    // fill all the stars
+                    $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
+                    // empty all the stars to the right of the mouse
+                    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+                })
+                .on('mouseleave', function (e) {
+                    // empty all the stars except those with class .selected
+                    $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+                })
+                .on('click', function (e) {
+                    var rating = $(e.target).data('rating');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://127.0.0.1:8000/rating/new/'+$(e.target).data('rating')+'/'+parseInt(document.getElementById("challengeid").value),
+                        dataType: "json",
+                        contentType: 'application/json',
+                        success: function (response) {
+
+                            // Handle the response from the controller
+                            if (response.success) {
+                                alert(" Thanks for your rating ");
+                            }
+                        }
+                    });
+                    setRating(rating);
+                    submitRating(rating);
+                })
+                .on('keyup', function (e) {
+                    // if spacebar is pressed while selecting a star
+                    if (e.keyCode === 32) {
+                        // set rating (same as clicking on the star)
+                        var rating = $(e.target).data('rating');
+                        setRating(rating);
+                    }
+                });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="col-lg-7">
+                <div class="left-image">
+                <img src={{ asset('http://localhost/img/'~p.getIMGParticipation()) }} alt="" style="border-radius: 20px; max-height:60%; padding-top:20px;">
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            </div>          
+            <div class="col-lg-5 align-self-center">
+                <span class="author">
+                <img src="assets/images/author-02.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
+                <h6> {{ p.getIdUser().getName() }} {{ p.getIdUser().getLastName() }} <br><a href="/"> @{{ p.getIdUser().getNickname()}}</a></h6>
+                </span>
+                <p>{{ p.getDescription() }}</p>
+                <div class="row">
+                <div class="col-4">
+                    <span class="bid">
+                    Current Rate<br><strong>4 Stars</strong><br>
+                    </span>
+                </div>
+                <div class="col-8">
+                    <span class="bid">
+                    <input id="challengeid" type="number" style="visibility: hidden;" value={{challenge.getId()}}>
+                    <input id="participationid" type="number" style="visibility: hidden;" value={{challenge.getId()}}>
+                        {% for r in challenge.ratings %}
+                        {% if r.getParticipatorId().getid_user() == p.getIdUser().getid_user() and r.getRaterId().getid_user() == 1 %}
+                            {{dump(r.getRating())}}
+                        {% endif %}
+                        {% endfor %}
+
+                        <div class="rating{{}}" role="optgroup">
+                            <!-- in Rails just use 1.upto(5) -->
+                            <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
+                            aria-label="Rate as one out of 5 stars" role="radio"></i>
+                            <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0"
+                            aria-label="Rate as two out of 5 stars" role="radio"></i>
+                            <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0"
+                            aria-label="Rate as three out of 5 stars" role="radio"></i>
+                            <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0"
+                            aria-label="Rate as four out of 5 stars" role="radio"></i>
+                            <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
+                            aria-label="Rate as five out of 5 stars" role="radio"></i>
+                        </div>
+                </div>
+                </div>
+            </div>
+{% endblock %}

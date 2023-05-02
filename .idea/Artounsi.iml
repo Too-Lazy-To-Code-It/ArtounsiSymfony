@@ -162,5 +162,6 @@
     <orderEntry type="library" name="a076d05399" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
     <orderEntry type="library" name="swiper" level="application" />
+    <orderEntry type="library" name="api" level="application" />
   </component>
 </module>

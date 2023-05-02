@@ -39,6 +39,17 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
+    public function searchByKeyword($keyword)
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->where('p.title LIKE :keyword')
+            ->orWhere('p.content LIKE :keyword')
+            ->setParameter('keyword', '%' . $keyword . '%')
+            ->getQuery();
+
+        return $qb->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return Post[] Returns an array of Post objects
 //     */

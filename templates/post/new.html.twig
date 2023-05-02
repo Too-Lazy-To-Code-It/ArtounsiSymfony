@@ -1,11 +1,138 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}New Post{% endblock %}
+
+
+
+{% block head %}
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    {% block stylesheet %}
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+    <link rel="stylesheet"href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css')}}"/>
+    {% endblock %}
+{% endblock %}
+
+
+
 
 {% block body %}
-    <h1>Create new Post</h1>
 
-    {{ include('post/_form.html.twig') }}
+    
+    {% block header %}
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="index.html" class="logo">
+                                <img src="{{asset('assets/images/logo.png')}}" alt="">
+                            </a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li><a href="{{ path('app_home') }}">Home</a></li>
+                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                <li><a href="{{ path('app_map') }}">Famous Studios</a></li>
+                                <li><a href="details.html">Item Details</a></li>
+                                <li><a href="author.html">Author</a></li>
+                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ***** Header Area End ***** -->
+
+    {% endblock %}
+    
+
+    <div class="item-details-page">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="section-heading">
+                <div class="line-dec"></div>
+                <h2>Create <em>new</em> Post</h2>
+            </div>
+            </div>
+            <div class="col-lg-12">
+            
+                <div class="row">
+                
+
+
+        <h1>Create new Post</h1>
+        <!-- Header Section End -->
+{% for message in app.flashes('succes') %}
+<div class="alert alert-success" id="flash-message-succes">
+    {{ message }}
+</div>
+    <script>
+        setTimeout(function() {
+            $('#flash-message-succes').fadeOut("slow", function() {
+            });
+        }, 1000);
+    </script>
+{% endfor %}
+
+        {{ include('post/_form.html.twig') }}
+       <!-- <div class="g-recaptcha" data-sitekey="6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk" data-callback="submitForm"></div>-->
+
+
+
+        <a href="{{ path('app_post_index') }}">back to list</a>
+    </div>
+            </div>  
+            </div>
+        </div>
+        </div>
+        
+    </div>
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                    &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+    {% block javascripts %}
+    
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+  //  grecaptcha.ready(function() {
+    //    document.getElementById('save-btn').disabled = true;
+    
+    //});
+
+   // function submitForm() {
+   // document.getElementById('save-btn').disabled = false;
+    
+    //}
+
+
+</script>
+
+
+    {% endblock %}
 {% endblock %}

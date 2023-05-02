@@ -24,16 +24,12 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,8 +41,16 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "post_like/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "post_like/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+";
+        // line 2
+        $this->displayBlock('title', $context, $blocks);
+        // line 3
+        echo "
+";
+        // line 4
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -55,7 +59,7 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
 
     }
 
-    // line 3
+    // line 2
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +78,7 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
 
     }
 
-    // line 5
+    // line 4
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +88,7 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 5
         echo "    <h1>PostLike index</h1>
 
     <table class=\"table\">
@@ -96,25 +100,25 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
         </thead>
         <tbody>
         ";
-        // line 16
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["post_likes"]) || array_key_exists("post_likes", $context) ? $context["post_likes"] : (function () { throw new RuntimeError('Variable "post_likes" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["post_likes"]) || array_key_exists("post_likes", $context) ? $context["post_likes"] : (function () { throw new RuntimeError('Variable "post_likes" does not exist.', 15, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["post_like"]) {
-            // line 17
+            // line 16
             echo "            <tr>
                 <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post_like"], "idLike", [], "any", false, false, false, 18), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post_like"], "idLike", [], "any", false, false, false, 17), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 20
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_show", ["id_like" => twig_get_attribute($this->env, $this->source, $context["post_like"], "id_like", [], "any", false, false, false, 20)]), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_show", ["id_like" => twig_get_attribute($this->env, $this->source, $context["post_like"], "id_like", [], "any", false, false, false, 19)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 21
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_edit", ["id_like" => twig_get_attribute($this->env, $this->source, $context["post_like"], "id_like", [], "any", false, false, false, 21)]), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_edit", ["id_like" => twig_get_attribute($this->env, $this->source, $context["post_like"], "id_like", [], "any", false, false, false, 20)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -122,7 +126,7 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 25
+            // line 24
             echo "            <tr>
                 <td colspan=\"2\">no records found</td>
             </tr>
@@ -131,12 +135,12 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post_like'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 28
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 32
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_like_new");
         echo "\">Create new</a>
 ";
@@ -153,20 +157,14 @@ class __TwigTemplate_4ce9e5e49452b1b0d965cbb78a13f63c extends Template
         return "post_like/index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  140 => 32,  135 => 29,  126 => 25,  117 => 21,  113 => 20,  108 => 18,  105 => 17,  100 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  144 => 31,  139 => 28,  130 => 24,  121 => 20,  117 => 19,  112 => 17,  109 => 16,  104 => 15,  92 => 5,  82 => 4,  63 => 2,  53 => 4,  50 => 3,  48 => 2,  45 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
-
+        return new Source("
 {% block title %}PostLike index{% endblock %}
 
 {% block body %}

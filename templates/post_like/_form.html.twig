@@ -1,4 +1,10 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-primary btn-like">
+        {% if post_like %}
+            <i class="fa fa-thumbs-down"></i> Unlike
+        {% else %}
+            <i class="fa fa-thumbs-up"></i> Like
+        {% endif %}
+    </button>
 {{ form_end(form) }}

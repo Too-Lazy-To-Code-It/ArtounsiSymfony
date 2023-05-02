@@ -16,19 +16,16 @@ class Rating
     #[ORM\Column]
     private ?int $rating = null;
 
-    #[ORM\ManyToOne(inversedBy: 'ratings')]
-    #[ORM\JoinColumn(name:'challenge_id',referencedColumnName:'id_challenge',nullable: false)]
-
+    #[ORM\ManyToOne( targetEntity: Challenge::class )]
+    #[ORM\JoinColumn(name:'challenge_id',referencedColumnName:'id_challenge')]
     private ?challenge $challenge_id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'ratings')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'participator_id',referencedColumnName:'id_user',nullable: false)]
-
     private ?allusers $participator_id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'ratings')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'rater_id',referencedColumnName:'id_user',nullable: false)]
-
     private ?allusers $rater_id = null;
 
     public function getId(): ?int

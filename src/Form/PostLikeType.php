@@ -12,7 +12,7 @@ class PostLikeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id_post')
+            // ->add('id_post')
             ->add('id_user')
         ;
     }

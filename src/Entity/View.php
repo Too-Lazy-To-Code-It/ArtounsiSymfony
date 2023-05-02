@@ -14,13 +14,12 @@ class View
     #[ORM\Column]
     private ?int $id_view = null;
 
-    #[ORM\ManyToOne(inversedBy: 'views')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
     private ?allusers $id_user = null;
 
-    #[ORM\ManyToOne(inversedBy: 'views')]
+    #[ORM\ManyToOne( targetEntity: Video::class )]
     #[ORM\JoinColumn(name:'id_video',referencedColumnName:'id_video',nullable: false)]
-
     private ?video $id_video = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -63,6 +62,18 @@ class View
     public function setDateV(\DateTimeInterface $date_v): self
     {
         $this->date_v = $date_v;
+
+        return $this;
+    }
+
+    public function getVideo(): ?Video
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?Video $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }

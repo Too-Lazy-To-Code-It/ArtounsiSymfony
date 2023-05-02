@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PostLikeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: PostLikeRepository::class)]
 class PostLike
 {
@@ -15,11 +16,11 @@ class PostLike
 
     #[ORM\ManyToOne(inversedBy: 'postLikes')]
     #[ORM\JoinColumn(name:'id_post',referencedColumnName:'id_post',nullable: false)]
-    private ?post $id_post = null;
+    private ?Post $id_post = null;
 
     #[ORM\ManyToOne(inversedBy: 'postLikes')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
-    private ?allusers $id_user = null;
+    private ?Allusers $id_user = null;
 
     public function getId(): ?int
     {
@@ -49,4 +50,5 @@ class PostLike
 
         return $this;
     }
+    
 }

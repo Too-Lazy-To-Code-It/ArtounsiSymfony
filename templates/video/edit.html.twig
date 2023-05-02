@@ -1,10 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseback.html.twig' %}
 
 {% block title %}Edit Video{% endblock %}
 
 {% block body %}
     <h1>Edit Video</h1>
+    <main id="main" class="main">
 
+        <div class="pagetitle">
+            <h1>Modifier un video</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Tutoriels</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Videos</a></li>
+                <li class="breadcrumb-item active">Modifier Video</li>
+              </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
     {{ include('video/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_video_index') }}">back to list</a>

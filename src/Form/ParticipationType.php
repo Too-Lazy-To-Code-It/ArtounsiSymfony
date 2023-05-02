@@ -6,16 +6,19 @@ use App\Entity\Participation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ParticipationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('img_participation')
-            ->add('description')
-            ->add('id_challenge')
-            ->add('id_user')
+            ->add('Description')
+            ->add('Image', FileType::class,
+                    ['label' => 'image',
+                    'multiple' => false,
+                    'mapped' => false,
+                    'required' => false])
         ;
     }
 

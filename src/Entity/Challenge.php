@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ChallengeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -16,9 +17,19 @@ class Challenge
     #[ORM\Column]
     private ?int $id_challenge = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 40,
+        minMessage: 'Your Title must be at least {{ limit }} characters long',
+        maxMessage: 'Your Title cannot be longer than {{ limit }} characters',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Your Description must be at least {{ limit }} characters long',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
@@ -27,15 +38,21 @@ class Challenge
 
     #[ORM\Column(length: 255)]
     private ?string $pathimg = null;
-
+    
+    #[Assert\NotNull]
+    #[Assert\NotBlank]
     #[ORM\Column]
     private ?int $niveau = null;
 
-    #[ORM\ManyToOne(inversedBy: 'challenges')]
+/*    [ORM\ManyToOne(targetEntity: Artiste::class )]
+    #[ORM\JoinColumn(name: 'idArtiste', referencedColumnName: 'username')]
+    private ?Artiste $idArtiste;*/
+    
+    #[ORM\ManyToOne( targetEntity: Category::class )]
     #[ORM\JoinColumn(name:'id_category',referencedColumnName:'id_category' ,nullable: false)]
     private ?Category $id_categorie = null;
 
-    #[ORM\ManyToOne(inversedBy: 'challenges')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
     private ?Allusers $id_artist = null;
 

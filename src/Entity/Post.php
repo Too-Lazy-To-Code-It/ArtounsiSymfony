@@ -8,6 +8,17 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\Category;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+
+date_default_timezone_set('Africa/Tunis');
+
+
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
@@ -16,14 +27,19 @@ class Post
     #[ORM\Column]
     private ?int $id_post = null;
 
+    
+
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
     private ?Allusers $id_user = null;
+
+    
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(name:'id_category',referencedColumnName:'id_category' ,nullable: false)]
     private ?category $id_category = null;
 
+    #[Assert\Length(min:2,minMessage:"Le titre doit dépasser 2 caractéres")]
     #[ORM\Column(length: 255)]
     private ?string $description_p = null;
 
@@ -49,6 +65,8 @@ class Post
     {
         $this->comments = new ArrayCollection();
         $this->postLikes = new ArrayCollection();
+
+        $this->date_p = new \DateTime();
     }
 
 
@@ -61,6 +79,10 @@ class Post
     {
         return $this->id_user;
     }
+    public function getUserName(): ?string
+{
+    return $this->id_user ? $this->id_user->getName() : null;
+}
 
     public function setIdUser(?Allusers $id_user): self
     {
@@ -69,6 +91,10 @@ class Post
         return $this;
     }
 
+    public function getIdCategoryName(): ?string
+    {
+        return $this->id_category ? $this->id_category->getNameCategory() : null;
+    }
     public function getIdCategory(): ?category
     {
         return $this->id_category;
@@ -93,14 +119,24 @@ class Post
         return $this;
     }
 
+
     public function getMedia(): ?string
     {
-        return $this->media;
+        $media = $this->media;
+        if (!$media) {
+            return null;
+        }
+        return 'http://localhost/img/' . $media;
     }
 
-    public function setMedia(string $media): self
+    
+   // TO put the media in this path "C:\xampp\htdocs\img"
+    public function setMedia(UploadedFile $media): self
     {
-        $this->media = $media;
+        $extension = $media->getClientOriginalExtension();
+        $newFileName = uniqid().'.'.$extension;
+        $media->move('C:\xampp\htdocs\img', $newFileName);
+        $this->media = $newFileName;
 
         return $this;
     }
@@ -122,12 +158,22 @@ class Post
         return $this->date_p;
     }
 
-    public function setDateP(\DateTimeInterface $date_p): self
-    {
-        $this->date_p = $date_p;
+    // public function setDateP(\DateTimeInterface $date_p): self
+    // {
+    //     $this->date_p = $date_p;
 
-        return $this;
+    //     return $this;
+    // }
+    public function setDateP(\DateTimeInterface $date_p = null): self
+{
+    
+    if (!$date_p) {
+        $date_p = new \DateTime('now', new \DateTimeZone('Africa/Tunis'));
     }
+    $this->date_p = $date_p;
+    return $this;
+}
+
 
     public function getPostType(): ?string
     {
@@ -199,6 +245,17 @@ class Post
         }
 
         return $this;
+    }
+
+
+
+    public function getIdPost(): ?int
+{
+    return $this->id_post;
+}
+public function __toString(): string
+    {
+        return $this->getIdPost();
     }
 
 }

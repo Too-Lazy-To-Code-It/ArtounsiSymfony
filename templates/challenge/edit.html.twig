@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseback.html.twig' %}
 
 {% block title %}Edit Challenge{% endblock %}
 
@@ -7,7 +7,4 @@
 
     {{ include('challenge/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_challenge_index') }}">back to list</a>
-
-    {{ include('challenge/_delete_form.html.twig') }}
 {% endblock %}

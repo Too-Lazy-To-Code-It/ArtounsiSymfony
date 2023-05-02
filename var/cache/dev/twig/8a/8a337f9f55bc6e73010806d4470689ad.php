@@ -47,7 +47,7 @@ class __TwigTemplate_2ebc7c16ff93f30992da63f2f1111f2f extends Template
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 2, $this->source); })()), "id_category", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-primary\">Delete</button>
 </form>
 ";
         
@@ -77,7 +77,7 @@ class __TwigTemplate_2ebc7c16ff93f30992da63f2f1111f2f extends Template
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_category_delete', {'id_category': category.id_category}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ category.id_category) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-primary\">Delete</button>
 </form>
 ", "category/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\category\\_delete_form.html.twig");
     }

@@ -46,13 +46,23 @@ class __TwigTemplate_17ad707abf98c5be001bc4a447690d9d extends Template
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
-        // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
-";
+    <button class=\"btn btn-primary btn-like\">
+        ";
         // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
+        if ((isset($context["post_like"]) || array_key_exists("post_like", $context) ? $context["post_like"] : (function () { throw new RuntimeError('Variable "post_like" does not exist.', 4, $this->source); })())) {
+            // line 5
+            echo "            <i class=\"fa fa-thumbs-down\"></i> Unlike
+        ";
+        } else {
+            // line 7
+            echo "            <i class=\"fa fa-thumbs-up\"></i> Like
+        ";
+        }
+        // line 9
+        echo "    </button>
+";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -75,14 +85,20 @@ class __TwigTemplate_17ad707abf98c5be001bc4a447690d9d extends Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  65 => 10,  62 => 9,  58 => 7,  54 => 5,  52 => 4,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn btn-primary btn-like\">
+        {% if post_like %}
+            <i class=\"fa fa-thumbs-down\"></i> Unlike
+        {% else %}
+            <i class=\"fa fa-thumbs-up\"></i> Like
+        {% endif %}
+    </button>
 {{ form_end(form) }}
 ", "post_like/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post_like\\_form.html.twig");
     }

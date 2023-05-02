@@ -1,42 +1,189 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Video{% endblock %}
+  <head>
 
-{% block body %}
-    <h1>Video</h1>
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id_video</th>
-                <td>{{ video.idVideo }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ video.title }}</td>
-            </tr>
-            <tr>
-                <th>Date_p</th>
-                <td>{{ video.dateP ? video.dateP|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ video.description }}</td>
-            </tr>
-            <tr>
-                <th>Pathvideo</th>
-                <td>{{ video.pathvideo }}</td>
-            </tr>
-            <tr>
-                <th>Pathimage</th>
-                <td>{{ video.pathimage }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}" rel="stylesheet">
 
-    <a href="{{ path('app_video_index') }}">back to list</a>
+    <title>Liberty NFT Marketplace - Explore Listing Page</title>
 
-    <a href="{{ path('app_video_edit', {'id_video': video.id_video}) }}">edit</a>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    {{ include('video/_delete_form.html.twig') }}
-{% endblock %}
+    <!-- Additional CSS Files -->
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}"/>
+    
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="{{asset('assets/images/logo.png')}}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{{ path('app_challenge_index') }}" >Challenge</a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+    <div class="item-details-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>Where Glad <em>You're</em> Here</h2>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="left-image">
+            <video width="600" height="500" style="padding-bottom:50px" controls>
+                <source src="{{ asset('http://localhost/videos/'~video.pathvideo) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {#<img src="{{ asset('http://localhost/img/'~tutoriel.pathimg) }}" alt="" style="border-radius: 20px;">#}
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <h4>{{ video.title }}</h4>
+          <span class="author">
+            <img src="{{ asset('http://localhost/img/'~video.getIdTutoriel().pathimg) }}" alt="" style="max-width: 50px; border-radius: 50%;">
+            <h6>{{ video.getIdTutoriel().getTitle() }}<br><a href="{{ path('app_tutoriel_show', {'id_tutoriel': video.getIdTutoriel().getId()}) }}">return</a></h6>
+          </span>
+          <p>{{ video.getDescription() }}</p>
+        </div>
+
+
+        <div class="col-lg-12">
+          <div class="current-bid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mini-heading"><h4>Other Videos</h4></div>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                      <option selected>Sort By: Latest</option>
+                      <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
+                      <option value="low">Sort By: Lowest</option>
+                      <option value="high">Sort By: Highest</option>
+                  </select>
+              </fieldset>
+              </div>
+
+            {% set find = false %}
+            {% for v in video.getIdTutoriel().videos %}
+              {% if v.getId() != video.getId() %}
+              {% set find = true %}
+              <div class="col-lg-4 col-md-6">
+                <div class="item">
+                  <div class="left-img">
+                    <img src="{{ asset('http://localhost/img/'~v.getPathimage()) }}" alt="">
+                  </div>
+                  <div class="right-content">
+                    <h4>{{v.title}}</h4>
+                    <a href={{path("app_video_show",{"id_video":v.getId()})}}>Show Video</a>
+                    <div class="line-dec"></div>
+                    <h6>Vues: <em>20</em></h6>
+                    <span class="date">{{v.getDateP()|date('m:h d:m:Y')}}</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+            {% endfor %}
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+          &nbsp;&nbsp;
+          Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+
+  <script src="{{asset('assets/js/isotope.min.js')}}"></script>
+  <script src="{{asset('assets/js/owl-carousel.js')}}"></script>
+
+  <script src="{{asset('assets/js/tabs.js')}}"></script>
+  <script src="{{asset('assets/js/popup.js')}}"></script>
+  <script src="{{asset('assets/js/custom.js')}}"></script>
+
+  	<script>
+		var maVideo = document.getElementById("ma-video");
+		var duree = document.getElementById("duree");
+
+		maVideo.addEventListener("timeupdate", function() {
+      console.log(maVideo.duration);
+		});
+
+		function convertTime(seconds) {
+			var minutes = Math.floor(seconds / 60);
+			var remainingSeconds = Math.floor(seconds % 60);
+
+			if (remainingSeconds < 10) {
+				remainingSeconds = "0" + remainingSeconds;
+			}
+
+			return minutes + ":" + remainingSeconds;
+		}
+	</script>
+
+  </body>
+</html>
+

@@ -1,4 +1,7 @@
 {{ form_start(form) }}
+<div class="form-group">
     {{ form_widget(form) }}
+    <div style="color:white;"> {{ form_errors(form.comment) }}</div>
+</div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

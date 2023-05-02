@@ -1,13 +1,120 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseback.html.twig' %}
 
 {% block title %}Edit Tutoriel{% endblock %}
 
 {% block body %}
-    <h1>Edit Tutoriel</h1>
+<main id="main" class="main">
 
-    {{ include('tutoriel/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="pagetitle">
+            <h1>Modifier un tutoriel</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item">Tutoriels</li>
+                    <li class="breadcrumb-item active">Modifier un tutoriel</li>
+                </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+<style>
+ .color {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #369;
+  padding: 10px;
+ 
+}
 
-    <a href="{{ path('app_tutoriel_index') }}">back to list</a>
+.error-message {
+    color: red;
+}
+</style>
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-6">
 
-    {{ include('tutoriel/_delete_form.html.twig') }}
+                    <div class="card color">
+                        <div class="card-body">
+                            <h5 class="card-title"> tutoriel </h5>
+
+                            <!-- General Form Elements -->
+                           {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': 'contact', 'class': 'my-class'}}) }}
+                                <div class="row mb-3">
+                                 {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                   
+                                    <div class="col-sm-10">
+                                       {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                          <div class="error-message"> {{ form_errors(form.title) }}</div>
+</li>
+                               
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                  {{ form_label(form.description, 'Description', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    <div class="col-sm-10">
+                                      {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                                    <div class="error-message">  {{ form_errors(form.description, {'attr': {'class': 'error'}}) }}
+                                    </div></div>
+                                </div>
+                           
+                                <div class="row mb-3">
+                                 {{ form_label(form.niveau, 'Niveau', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                        {{ form_widget(form.niveau) }}
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                 {{ form_label(form.id_categorie, 'Categorie', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                        {{ form_widget(form.id_categorie, {'attr': {'class': 'form-select'}}) }}
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                 {{ form_label(form.id_artist, 'Artist', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                        {{ form_widget(form.id_artist, {'attr': {'class': 'form-select'}}) }}
+                                    </div>
+                                </div>
+
+                                  <div class="row mb-3">
+                                 {{ form_label(form.Image, 'Image', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                                    
+                                    <div class="col-sm-10">
+                                      {{ form_widget(form.Image, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                   
+                                    <div class="col-sm-10">
+                                    <button type="submit" id="form-submit" class="btn btn-primary">{{ button_label|default('Modifier') }}</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    </div>
+                                </div>
+
+                            {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                            <!-- End General Form Elements -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <img src="{{asset('assets/tutoriel.jpg') }}" alt=""  width="95%" >
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 {% endblock %}

@@ -8,6 +8,8 @@
 
 
 parameters:
+  images_directory: 'C:\xampp\htdocs\img'
+  videos_directory: 'C:\xampp\htdocs\videos'
   app.upload_dir: 'uploads/images/'
   upload_directory: '%kernel.project_dir%/public/uploads'
   avatars_directory: '%kernel.project_dir%/public/uploads/avatars'

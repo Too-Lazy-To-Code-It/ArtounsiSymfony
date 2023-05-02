@@ -6,7 +6,9 @@ use App\Repository\VideoRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
 class Video
@@ -14,39 +16,72 @@ class Video
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("videos")]
     private ?int $id_video = null;
 
+    #[ORM\ManyToOne( targetEntity: Tutoriel::class )]
+    #[ORM\JoinColumn(name:'id_tutoriel',referencedColumnName:'id_tutoriel' ,nullable: false)]
+    private ?Tutoriel $id_tutoriel = null;
+
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("videos")]
     private ?\DateTimeInterface $date_p = null;
 
-    #[ORM\ManyToOne(inversedBy: 'videos')]
-    #[ORM\JoinColumn(name:'id_tutoriel',referencedColumnName:'id_tutoriel',nullable: false)]
-
-    private ?tutoriel $id_tutoriel = null;
-
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Your Description must be at least {{ limit }} characters long',
+    )]
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $pathvideo = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $pathimage = null;
 
     #[ORM\OneToMany(mappedBy: 'id_video', targetEntity: View::class)]
-    private Collection $views;
+    private Collection $Views;
 
     public function __construct()
     {
-        $this->views = new ArrayCollection();
+        $this->Views = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id_video;
+    }
+
+    public function getIdVideo(): ?int
+    {
+        return $this->id_video;
+    }
+
+    public function setIdVideo(int $id_video): self
+    {
+        $this->id_video = $id_video;
+
+        return $this;
+    }
+
+    public function getIdTutoriel(): ?Tutoriel
+    {
+        return $this->id_tutoriel;
+    }
+
+    public function setIdTutoriel(?Tutoriel $id_tutoriel): self
+    {
+        $this->id_tutoriel = $id_tutoriel;
+
+        return $this;
     }
 
     public function getTitle(): ?string
@@ -69,18 +104,6 @@ class Video
     public function setDateP(\DateTimeInterface $date_p): self
     {
         $this->date_p = $date_p;
-
-        return $this;
-    }
-
-    public function getIdTutoriel(): ?tutoriel
-    {
-        return $this->id_tutoriel;
-    }
-
-    public function setIdTutoriel(?tutoriel $id_tutoriel): self
-    {
-        $this->id_tutoriel = $id_tutoriel;
 
         return $this;
     }
@@ -126,14 +149,14 @@ class Video
      */
     public function getViews(): Collection
     {
-        return $this->views;
+        return $this->Views;
     }
 
     public function addView(View $view): self
     {
-        if (!$this->views->contains($view)) {
-            $this->views->add($view);
-            $view->setIdVideo($this);
+        if (!$this->Views->contains($view)) {
+            $this->Views->add($view);
+            $view->setVideo($this);
         }
 
         return $this;
@@ -141,10 +164,10 @@ class Video
 
     public function removeView(View $view): self
     {
-        if ($this->views->removeElement($view)) {
+        if ($this->Views->removeElement($view)) {
             // set the owning side to null (unless already changed)
-            if ($view->getIdVideo() === $this) {
-                $view->setIdVideo(null);
+            if ($view->getVideo() === $this) {
+                $view->setVideo(null);
             }
         }
 

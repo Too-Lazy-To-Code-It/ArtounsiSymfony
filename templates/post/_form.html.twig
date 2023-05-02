@@ -1,4 +1,28 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="form-group">
+        {{ form_label(form.title_p) }}
+        {{ form_widget(form.title_p, {'attr': {'class': 'form-control'}}) }}
+    <div style="color:white;"> {{ form_errors(form.title_p) }}</div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.description_p) }}
+        {{ form_widget(form.description_p, {'attr': {'class': 'form-control'}}) }}
+    <div style="color:white;"> {{ form_errors(form.description_p) }}</div>
+    </div>  
+    <div class="form-group">
+        {{ form_label(form.media) }}
+        {{ form_widget(form.media, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.post_type) }}
+        {{ form_widget(form.post_type, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.id_category) }}
+        {{ form_widget(form.id_category, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    
+    {# <button class="btn btn-primary">{{ button_label|default('Save') }}</button> #}
+    <button class="btn btn-primary" id="save-btn">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}

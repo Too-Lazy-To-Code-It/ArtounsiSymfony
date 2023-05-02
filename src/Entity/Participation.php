@@ -13,14 +13,12 @@ class Participation
     #[ORM\Column]
     private ?int $id_participation = null;
 
-    #[ORM\ManyToOne(inversedBy: 'participations')]
+    #[ORM\ManyToOne( targetEntity: Challenge::class )]
     #[ORM\JoinColumn(name:'id_challenge',referencedColumnName:'id_challenge',nullable: false)]
-
     private ?challenge $id_challenge = null;
 
-    #[ORM\ManyToOne(inversedBy: 'participations')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
-
     private ?allusers $id_user = null;
 
     #[ORM\Column(length: 255)]

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseback.html.twig' %}
 
 {% block title %}New Challenge{% endblock %}
 
@@ -6,6 +6,14 @@
     <h1>Create new Challenge</h1>
 
     {{ include('challenge/_form.html.twig') }}
-
-    <a href="{{ path('app_challenge_index') }}">back to list</a>
+    
+<script src="sweetalert2.min.js">
+ function alertt(){
+    Swal.alret(
+            'The Internet?',
+            'That thing is still around?',
+            'question'
+        )
+ }
+</script>
 {% endblock %}

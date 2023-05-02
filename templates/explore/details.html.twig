@@ -1,0 +1,270 @@
+
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}" rel="stylesheet">
+
+    <title>Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}"/>
+    {% endblock %}
+
+
+
+
+{% endblock %}
+
+
+    {% block body %}
+
+    <!-- ***** Preloader Start ***** -->
+    {# <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </div>
+    </div> #}
+
+    <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="" >
+                        {# <img src="assets/images/logo.png" alt="" href="{{ asset('assets/images/logo.png') }}"> #}
+                        {# href="{{ asset('assets/css/templatemo-liberty-market.css') }}"> #}
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                        <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                        <li><a href="{{ path('app_map') }}">Famous Studios</a></li>
+                        <li><a href="details.html.twig">Item Details</a></li>
+                        <li><a href="author.html">Author</a></li>
+                        <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+    </header>
+    <div class="page-heading normal-space">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <h6>Liberty NFT Market</h6>
+            <h2>View Item Details</h2>
+            <span>Home > <a href="#">Item Details</a></span>
+            <div class="buttons">
+                <div class="main-button">
+                <a href="explore.html">Explore Our Items</a>
+                </div>
+                <div class="border-button">
+                <a href="create.html">Create Your NFT</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="item-details-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h2>View Details <em>For Item</em> Here.</h2>
+                    </div>
+                    </div>
+                    <div class="col-lg-7">
+                    <div class="left-image">
+                        <img src="{{ post.media }}" alt="" style="border-radius: 20px;">
+                    </div>
+                    </div>
+                    <div class="col-lg-5 align-self-center">
+                    <h4>{{ post.titleP }}</h4>
+                    {# <h4>{{ post.getIdPost }} YESSSSSSSSSSSSSSSSSSS</h4> #}
+                    <span class="author">
+                        <img src="{{ asset('assets/images/author-02.jpg') }}" alt="" style="max-width: 50px; border-radius: 50%;">
+                        <h6>Artist<br><a href="#">{{ post.getUserName }}</a></h6>
+                    </span>
+                    <p>{{ post.getDescriptionP }}</p>
+                    <div class="row">
+                        <div class="col-3">
+                        <span class="bid">
+                            Current Likes<br><strong>{{ post.postLikes.count }}</strong><br>
+                        </span>
+                        <span class="bid">
+                            <br><strong><a href="{{ path('app_post_edit', {'id_post': post.getId}) }}">Edit Post</a></strong><br>
+                            {{ include('post/_delete_form.html.twig') }}
+                            
+                        </span>
+                </div>
+                        <div class="fb-like" id="like-btn">
+                            {{ include('post_like/_form.html.twig') }}             
+                            <h1></h1>
+                        </div> 
+                    
+            </div>
+
+            </div>
+            <div class="col-lg-12">
+            <div class="current-bid">
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="mini-heading"><h4>Current Comments</h4></div>
+                </div>
+                <div class="col-lg-6">
+                    <fieldset>
+                        <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                            <option selected>Sort By: Latest</option>
+                            <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
+                            <option value="low">Sort By: Lowest</option>
+                            <option value="high">Sort By: Highest</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="row">
+                
+                    {% set commentGroups = comments|batch(3) %}
+                    {% for group in commentGroups %}
+                        <div class="row">
+                            {% for comment in group %}
+                            {% set postId = post.getIdPost %}
+                            {% set commentId = comment.getIdPost %}
+                            {% if comment.getIdPost().getIdPost() == post.getIdPost() %}
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="item">
+                                        <div class="right-content">
+                                            <h4>Name : </h4>
+                                            <a href="#">{{ comment.getIdUser().getName() }}</a>
+                                            <div class="line-dec"></div>
+                                            <h6>Comment: <em>{{ comment.getComment }}</em></h6>
+                                            <span class="date">{{ comment.getDateComment()|date('Y-m-d H:i:s') }}</span>
+                                            <h6><a href="{{ path('app_comment_edit', {'id_comment': comment.getId}) }}">edit</a></h6>
+                                            <h6>{{ include('comment/_delete_form.html.twig') }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+                </div>
+            </div
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="{{ path('app_comment_new', { 'id_post': post.getIdPost }) }}" method="post">
+                        <input type="submit" value="Add Comment" style="font-size: 20px; padding: 10px;width: 100%;" >
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="create-nft">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+            <div class="section-heading">
+                <div class="line-dec"></div>
+                <h2>Create Your NFT & Put It On The Market.</h2>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="main-button">
+                <a href="create.html">Create Your NFT Now</a>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="item first-item">
+                <div class="number">
+                <h6>1</h6>
+                </div>
+                <div class="icon">
+                <img src="{{ asset('assets/images/icon-02.png') }}" alt="">
+                </div>
+                <h4>Set Up Your Wallet</h4>
+                <p>There are 5 different HTML pages included in this NFT <a href="https://templatemo.com/page/1" target="_blank" rel="nofollow">website template</a>. You can edit or modify any section on any page as you required.</p>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="item second-item">
+                <div class="number">
+                <h6>2</h6>
+                </div>
+                <div class="icon">
+                    <img src="{{ asset('assets/images/icon-04.png') }}" alt="">
+                </div>
+                <h4>Add Your Digital NFT</h4>
+                <p>If you would like to support our TemplateMo website, please visit <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">our contact page</a> to make a PayPal contribution. Thank you.</p>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="item">
+                <div class="icon">
+                <img src="{{ asset('assets/images/icon-06.png') }}" alt="">
+                </div>
+                <h4>Sell Your NFT &amp; Make Profit</h4>
+                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There are many different kinds of NFTs in the industry.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                    &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+    {% block javascripts %}
+        <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+        <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('assets/js/tabs.js') }}"></script>
+        <script src="{{ asset('assets/js/popup.js') }}"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+    {% endblock %}
+
+
+    {% endblock %}

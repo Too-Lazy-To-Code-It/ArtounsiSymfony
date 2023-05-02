@@ -13,14 +13,13 @@ class FavorisTuroial
     #[ORM\Column]
     private ?int $id_favoris = null;
 
-    #[ORM\ManyToOne(inversedBy: 'favorisTuroials')]
+    #[ORM\ManyToOne( targetEntity: Allusers::class )]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
+    private ?Allusers $id_user = null;
 
-    private ?allusers $id_user = null;
-
-    #[ORM\ManyToOne(inversedBy: 'favorisTuroials')]
+    #[ORM\ManyToOne( targetEntity: Tutoriel::class )]
     #[ORM\JoinColumn(name:'id_tutoriel',referencedColumnName:'id_tutoriel',nullable: false)]
-    private ?tutoriel $id_tutoriel = null;
+    private ?Tutoriel $id_tutoriel = null;
 
     public function getId(): ?int
     {
