@@ -17,7 +17,7 @@ class Panier
 
     #[ORM\ManyToOne(inversedBy: 'paniers')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
-    private ?allusers $id_user = null;
+    private ?Allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
     private ?int $nbr_produits = null;
@@ -33,29 +33,29 @@ class Panier
         $this->lignepaniers = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getidpanier(): ?int
     {
         return $this->idpanier;
     }
 
-    public function getIdUser(): ?allusers
+    public function getIdUser(): ?Allusers
     {
         return $this->id_user;
     }
 
-    public function setIdUser(?allusers $id_user): self
+    public function setIdUser(?Allusers $id_user): self
     {
         $this->id_user = $id_user;
 
         return $this;
     }
 
-    public function getNbrProduits(): ?string
+    public function getNbrProduits(): ?int
     {
         return $this->nbr_produits;
     }
 
-    public function setNbrProduits(string $nbr_produits): self
+    public function setNbrProduits(int $nbr_produits): self
     {
         $this->nbr_produits = $nbr_produits;
 

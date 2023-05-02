@@ -45,9 +45,9 @@ class __TwigTemplate_519df7e3c505483d4a75e6d4110e5187 extends Template
         echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 2, $this->source); })()), "idproduit", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("deleteproduitFront" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 2, $this->source); })()), "idproduit", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn\" class=\"main-button\" ><i class=\"fas fa-trash-alt\"></i></button>
 </form>
 ";
         
@@ -76,8 +76,8 @@ class __TwigTemplate_519df7e3c505483d4a75e6d4110e5187 extends Template
     public function getSourceContext()
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_produits_delete', {'idproduit': produit.idproduit}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ produit.idproduit) }}\">
-    <button class=\"btn\">Delete</button>
+    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('deleteproduitFront' ~ produit.idproduit) }}\">
+    <button class=\"btn\" class=\"main-button\" ><i class=\"fas fa-trash-alt\"></i></button>
 </form>
 ", "produits/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits\\_delete_form.html.twig");
     }

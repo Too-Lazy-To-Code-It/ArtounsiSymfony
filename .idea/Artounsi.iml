@@ -141,10 +141,26 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/twilio/sdk" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mercuryseries/flashy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/conditionable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-svg-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dompdf/dompdf" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="a076d05399" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="swiper" level="application" />
   </component>
 </module>

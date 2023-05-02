@@ -12,7 +12,6 @@ class LignepanierType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('dateajout')
             ->add('idpanier')
             ->add('idproduit')
         ;

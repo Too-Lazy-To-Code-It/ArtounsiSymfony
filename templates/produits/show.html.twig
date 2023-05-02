@@ -1,42 +1,276 @@
-{% extends 'base.html.twig' %}
+<html lang="en"><head>
 
-{% block title %}Produits{% endblock %}
+  <head>
 
-{% block body %}
-    <h1>Produits</h1>
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Idproduit</th>
-                <td>{{ produit.idproduit }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ produit.nom }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ produit.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ produit.image }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ produit.prix }}</td>
-            </tr>
-            <tr>
-                <th>Dateajout</th>
-                <td>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
 
-    <a href="{{ path('app_produits_index') }}">back to list</a>
+    <title>Liberty Template - NFT Item Detail Page</title>
 
-    <a href="{{ path('app_produits_edit', {'idproduit': produit.idproduit}) }}">edit</a>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
-    {{ include('produits/_delete_form.html.twig') }}
+{% block stylesheets %}
+ 
+    <!-- Additional CSS Files -->
+  
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+  
 {% endblock %}
+
+
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader loaded">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+  
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky background-header">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                     
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ path('app_produits_index')}}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                        <li><a href="{{ path('app_Dashboard_index') }}">Dashboard</a></li>
+                        <li><a href="create.html" class="active">Create Yours</a></li>
+                      </ul>   
+                      <a class="menu-trigger">
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+  
+    <div class="page-heading normal-space">
+      <div class="container">
+        {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning">{{ message }}</div>
+      {% endfor %}
+
+      {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+      {% endfor %}
+
+        <div class="row">
+          <div class="col-lg-12">
+         
+            <h2>Vue des détails sur un produit</h2>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="item-details-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <div class="line-dec"></div>
+              <h2>Le Produit <em>En Détails</em> Ici.</h2>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="left-image">
+              <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="" style="border-radius: 20px;">
+            </div>
+          </div>
+          <div class="col-lg-5 align-self-center">
+            <h4>{{ produit.nom}}</h4>
+            <span class="author">
+              <img src="assets/images/author-02.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
+              <h6>Nom user<br><a href="#">@libertyart</a></h6>
+            </span>
+            <p>{{ produit.description }}</p>
+            <div class="row">
+              <div class="col-3">
+                <span class="bid">
+                  Prix<br><strong>{{ produit.prix}}</strong><br><em>(DT)</em>
+                </span>
+              </div>
+              <div class="col-4">
+                <span class="owner">
+                  Catégorie<br><strong>{{ produit.idcategorie }}</strong><br>
+                </span>
+              </div>
+              <div class="col-5">
+                <span class="ends">
+                  Date d'ajout<br><strong>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</strong><br>
+                </span>
+              </div>
+            </div>
+            <br></br>
+            <div class="main-button">
+              
+              <a href="{{ path('add_product', {'idproduit': produit.idproduit}) }}" ><h6>Ajouter au panier</h6></a><br></br>
+         
+               {{ include('produits/_delete_form.html.twig') }}
+               <a href="{{ path('app_produits_edit', {'idproduit': produit.idproduit}) }}"  class="main-button"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+           
+      
+           
+           
+          </div>
+          <div class="col-lg-12">
+            <div class="current-bid">
+              <div class="col-lg-6">
+                <div class="mini-heading"><h4>Autres produits</h4></div>
+              </div>
+              <div class="row">
+                
+              {% for produit in produits %}
+                <div class="col-lg-4 col-md-6">
+                  <div class="item">
+                    <div class="left-img">
+                      <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="">
+                    </div>
+                    <div class="right-content">
+                      <h4>{{ produit.nom }}</h4>
+                      <span class="date">{{ produit.idcategorie }}</span>
+                      <div class="line-dec"></div>
+                      <h6>Prix <em>{{ produit.prix }}</em></h6>
+                      <span class="date">{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</span>
+                   
+                        <div class="main-button"><a href="{{ path('app_produits_show', {'idproduit': produit.idproduit}) }}"   classe="active" ><h6>View Item Details</h6></a></div>
+                    
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+                
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="create-nft">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="section-heading">
+              <div class="line-dec"></div>
+              <h2>Create Your NFT &amp; Put It On The Market.</h2>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="main-button">
+              <a href="create.html">Create Your NFT Now</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item first-item">
+              <div class="number">
+                <h6>1</h6>
+              </div>
+              <div class="icon">
+                <img src="assets/images/icon-02.png" alt="">
+              </div>
+              <h4>Set Up Your Wallet</h4>
+              <p>There are 5 different HTML pages included in this NFT <a href="https://templatemo.com/page/1" target="_blank" rel="nofollow">website template</a>. You can edit or modify any section on any page as you required.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item second-item">
+              <div class="number">
+                <h6>2</h6>
+              </div>
+              <div class="icon">
+                <img src="assets/images/icon-04.png" alt="">
+              </div>
+              <h4>Add Your Digital NFT</h4>
+              <p>If you would like to support our TemplateMo website, please visit <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">our contact page</a> to make a PayPal contribution. Thank you.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/icon-06.png" alt="">
+              </div>
+              <h4>Sell Your NFT &amp; Make Profit</h4>
+              <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There are many different kinds of NFTs in the industry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+            &nbsp;&nbsp;
+            Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    
+    
+    <script src="{{ asset('assets/js/tabs.js') }}"></script>
+    <script src="{{ asset('assets/js/popup.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+<!-- Include Flashy default partial -->
+{# {{ include('@MercurySeriesFlashy/flashy.html.twig') }} #}
+
+
+  </body>
+
+
+
+
+
+
+</html>

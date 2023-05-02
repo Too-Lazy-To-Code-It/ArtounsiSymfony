@@ -7,36 +7,47 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Entity(repositoryClass: ProduitsRepository::class)]
 class Produits
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("produits")]
     private ?int $idproduit = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user',nullable: false)]
-    private ?allusers $id_user = null;
+    private ?Allusers $id_user = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(name:'id_category',referencedColumnName:'id_category',nullable: false)]
-    private ?category $idcategorie = null;
+    #[Assert\NotBlank(message:"Category is required")]
+    private ?Category $idcategorie = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Name of product is required")]
+    #[Groups("produits")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Description is required")]
+    #[Groups("produits")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("produits")]
     private ?string $image = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message:"Price is required")]
+    #[Groups("produits")]
     private ?float $prix = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("produits")]
     private ?\DateTimeInterface $dateajout = null;
 
     #[ORM\OneToMany(mappedBy: 'idproduit', targetEntity: Lignepanier::class)]
@@ -47,17 +58,17 @@ class Produits
         $this->lignepaniers = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getidproduit(): ?int
     {
         return $this->idproduit;
     }
 
-    public function getIdUser(): ?allusers
+    public function getIdUser(): ?Allusers
     {
         return $this->id_user;
     }
 
-    public function setIdUser(?allusers $id_user): self
+    public function setIdUser(?Allusers $id_user): self
     {
         $this->id_user = $id_user;
 

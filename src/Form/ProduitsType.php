@@ -1,24 +1,28 @@
 <?php
 
 namespace App\Form;
-
+use App\Form\FileType;
 use App\Entity\Produits;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType as SymfonyFileType;
 
 class ProduitsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('description')
-            ->add('image')
-            ->add('prix')
-            ->add('dateajout')
-            ->add('id_user')
-            ->add('idcategorie')
+        ->add('nom')
+        ->add('description')
+        ->add('image',  SymfonyFileType::class, [
+            'label' => 'Image ',
+            'mapped' => false,
+            'required' => false,
+        ])
+        ->add('prix')
+        ->add('idcategorie')
+        ->add('id_user')
         ;
     }
 

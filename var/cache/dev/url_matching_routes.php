@@ -24,6 +24,8 @@ return [
         '/challenge/new' => [[['_route' => 'app_challenge_new', '_controller' => 'App\\Controller\\ChallengeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/comment' => [[['_route' => 'app_comment_index', '_controller' => 'App\\Controller\\CommentController::index'], null, ['GET' => 0], null, true, false, null]],
         '/comment/new' => [[['_route' => 'app_comment_new', '_controller' => 'App\\Controller\\CommentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/Dashboard' => [[['_route' => 'app_Dashboard_index', '_controller' => 'App\\Controller\\DashboardController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/Dashboard/Dashboard' => [[['_route' => 'app_Dashboard_show', '_controller' => 'App\\Controller\\DashboardController::show'], null, ['GET' => 0], null, false, false, null]],
         '/demandetravail' => [[['_route' => 'app_demandetravail_index', '_controller' => 'App\\Controller\\DemandetravailController::index'], null, ['GET' => 0], null, true, false, null]],
         '/demandetravail/chercher' => [[['_route' => 'app_demande_travail_chercheroffre', '_controller' => 'App\\Controller\\DemandetravailController::chercheroffre'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/demandetravail/offressimilaires' => [[['_route' => 'app_demandetravail_offressimilaires', '_controller' => 'App\\Controller\\DemandetravailController::offressimilaires'], null, ['GET' => 0], null, false, false, null]],
@@ -46,11 +48,15 @@ return [
         '/offretravail/new' => [[['_route' => 'app_offretravail_new', '_controller' => 'App\\Controller\\OffretravailController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/offretravailarchive' => [[['_route' => 'app_offretravailarchive_index', '_controller' => 'App\\Controller\\OffretravailarchiveController::index'], null, ['GET' => 0], null, true, false, null]],
         '/new' => [[['_route' => 'newjson', '_controller' => 'App\\Controller\\OffretravailmobileController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/panier/new' => [[['_route' => 'app_panier_new', '_controller' => 'App\\Controller\\PanierController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/panier/panier' => [[['_route' => 'app_panier_index', '_controller' => 'App\\Controller\\PanierController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/panier/NouveauPanier/new' => [[['_route' => 'app_panier_new', '_controller' => 'App\\Controller\\PanierController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/participation/new' => [[['_route' => 'app_participation_new', '_controller' => 'App\\Controller\\ParticipationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/post/new' => [[['_route' => 'app_post_new', '_controller' => 'App\\Controller\\PostController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/post/like/new' => [[['_route' => 'app_post_like_new', '_controller' => 'App\\Controller\\PostLikeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/produits/back' => [[['_route' => 'app_produits_back', '_controller' => 'App\\Controller\\ProduitsBackController::index'], null, null, null, false, false, null]],
         '/produits/new' => [[['_route' => 'app_produits_new', '_controller' => 'App\\Controller\\ProduitsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/TousLesproduits/mobile' => [[['_route' => 'ListeProduits', '_controller' => 'App\\Controller\\ProduitsMobileController::getProduits'], null, null, null, false, false, null]],
+        '/ajouterProduitJSON/new' => [[['_route' => 'ajouterProduitJSON', '_controller' => 'App\\Controller\\ProduitsMobileController::ajouterProduitJSON'], null, null, null, false, false, null]],
         '/rating/new' => [[['_route' => 'app_rating_new', '_controller' => 'App\\Controller\\RatingController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/dashboard/mesoffres' => [[['_route' => 'app_dashboard_offres', '_controller' => 'App\\Controller\\StudiodashboardController::offres'], null, ['GET' => 0], null, false, false, null]],
         '/dashboard/mesdemandess' => [[['_route' => 'app_dashboard_demandes', '_controller' => 'App\\Controller\\StudiodashboardController::demandes'], null, ['GET' => 0], null, false, false, null]],
@@ -118,132 +124,149 @@ return [
                     .'|alloffres(*:538)'
                     .'|mesoffres(*:555)'
                 .')'
-                .'|/lignepanier/([^/]++)(?'
-                    .'|(*:588)'
-                    .'|/edit(*:601)'
-                    .'|(*:609)'
+                .'|/lignepanier/(?'
+                    .'|showlignepanier/([^/]++)(*:604)'
+                    .'|([^/]++)/edit(*:625)'
+                    .'|deleteAjaxligne/([^/]++)(*:657)'
                 .')'
                 .'|/offretravail(?'
                     .'|/([^/]++)(?'
                         .'|/(?'
-                            .'|mail(*:654)'
-                            .'|edit(*:666)'
+                            .'|mail(*:702)'
+                            .'|edit(*:714)'
                         .')'
-                        .'|(*:675)'
+                        .'|(*:723)'
                     .')'
                     .'|archive(?'
                         .'|/(?'
-                            .'|([^/]++)(*:706)'
-                            .'|new(*:717)'
-                            .'|([^/]++)(*:733)'
+                            .'|([^/]++)(*:754)'
+                            .'|new(*:765)'
+                            .'|([^/]++)(*:781)'
                         .')'
-                        .'|delete/([^/]++)(*:757)'
+                        .'|delete/([^/]++)(*:805)'
                     .')'
                 .')'
                 .'|/([^/]++)(?'
-                    .'|/editjson(*:788)'
-                    .'|(*:796)'
+                    .'|/editjson(*:836)'
+                    .'|(*:844)'
                 .')'
                 .'|/p(?'
                     .'|a(?'
-                        .'|nier(?'
-                            .'|(*:821)'
-                            .'|/([^/]++)(?'
-                                .'|(*:841)'
-                                .'|/edit(*:854)'
-                                .'|(*:862)'
-                            .')'
+                        .'|nier/(?'
+                            .'|showpanier/([^/]++)(*:889)'
+                            .'|panier/add/([^/]++)(*:916)'
+                            .'|viderpanier/([^/]++)(*:944)'
                         .')'
                         .'|rticipation(?'
-                            .'|(*:886)'
+                            .'|(*:967)'
                             .'|/([^/]++)(?'
-                                .'|(*:906)'
-                                .'|/edit(*:919)'
-                                .'|(*:927)'
+                                .'|(*:987)'
+                                .'|/edit(*:1000)'
+                                .'|(*:1009)'
                             .')'
                         .')'
+                        .'|yment(*:1025)'
                     .')'
+                    .'|df22/([^/]++)(*:1048)'
                     .'|ost(?'
-                        .'|(*:944)'
+                        .'|(*:1063)'
                         .'|/(?'
                             .'|([^/]++)(?'
-                                .'|(*:967)'
-                                .'|/edit(*:980)'
-                                .'|(*:988)'
+                                .'|(*:1087)'
+                                .'|/edit(*:1101)'
+                                .'|(*:1110)'
                             .')'
                             .'|like(?'
-                                .'|(*:1004)'
+                                .'|(*:1127)'
                                 .'|/([^/]++)(?'
-                                    .'|(*:1025)'
-                                    .'|/edit(*:1039)'
-                                    .'|(*:1048)'
+                                    .'|(*:1148)'
+                                    .'|/edit(*:1162)'
+                                    .'|(*:1171)'
                                 .')'
                             .')'
                         .')'
                     .')'
-                    .'|roduits(?'
-                        .'|(*:1071)'
-                        .'|/([^/]++)(?'
-                            .'|(*:1092)'
-                            .'|/edit(*:1106)'
-                            .'|(*:1115)'
-                        .')'
+                .')'
+                .'|/c(?'
+                    .'|heckout(*:1197)'
+                    .'|ancel_url(*:1215)'
+                .')'
+                .'|/s(?'
+                    .'|uccess\\-url/([^/]++)(*:1250)'
+                    .'|howBack/([^/]++)(*:1275)'
+                .')'
+                .'|/newBack(*:1293)'
+                .'|/([^/]++)/editBack(*:1320)'
+                .'|/d(?'
+                    .'|eleteBack/([^/]++)(*:1352)'
+                    .'|ashboard(*:1369)'
+                .')'
+                .'|/produits(?'
+                    .'|(*:1391)'
+                    .'|/([^/]++)(?'
+                        .'|(*:1412)'
+                        .'|/edit(*:1426)'
+                        .'|(*:1435)'
+                    .')'
+                .')'
+                .'|/ProduitMobile/([^/]++)(*:1469)'
+                .'|/modifierProduitJSON/([^/]++)(*:1507)'
+                .'|/s(?'
+                    .'|upprimerProduitJSON/([^/]++)(*:1549)'
+                    .'|ms(?'
+                        .'|(*:1563)'
+                        .'|1(*:1573)'
                     .')'
                 .')'
                 .'|/rating(?'
-                    .'|(*:1137)'
+                    .'|(*:1594)'
                     .'|/([^/]++)(?'
-                        .'|(*:1158)'
-                        .'|/edit(*:1172)'
-                        .'|(*:1181)'
+                        .'|(*:1615)'
+                        .'|/edit(*:1629)'
+                        .'|(*:1638)'
                     .')'
                 .')'
-                .'|/sms(?'
-                    .'|(*:1199)'
-                    .'|1(*:1209)'
-                .')'
-                .'|/dashboard(*:1229)'
                 .'|/tutoriel(?'
-                    .'|(*:1250)'
+                    .'|(*:1661)'
                     .'|/([^/]++)(?'
-                        .'|(*:1271)'
-                        .'|/edit(*:1285)'
-                        .'|(*:1294)'
+                        .'|(*:1682)'
+                        .'|/edit(*:1696)'
+                        .'|(*:1705)'
                     .')'
                 .')'
                 .'|/vi(?'
                     .'|deo(?'
-                        .'|(*:1317)'
+                        .'|(*:1728)'
                         .'|/([^/]++)(?'
-                            .'|(*:1338)'
-                            .'|/edit(*:1352)'
-                            .'|(*:1361)'
+                            .'|(*:1749)'
+                            .'|/edit(*:1763)'
+                            .'|(*:1772)'
                         .')'
                     .')'
                     .'|ew(?'
-                        .'|(*:1377)'
+                        .'|(*:1788)'
                         .'|/([^/]++)(?'
-                            .'|(*:1398)'
-                            .'|/edit(*:1412)'
-                            .'|(*:1421)'
+                            .'|(*:1809)'
+                            .'|/edit(*:1823)'
+                            .'|(*:1832)'
                         .')'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1464)'
-                    .'|wdt/([^/]++)(*:1485)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1875)'
+                    .'|wdt/([^/]++)(*:1896)'
                     .'|profiler(?'
-                        .'|(*:1505)'
+                        .'|(*:1916)'
                         .'|/([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:1544)'
-                                .'|router(*:1559)'
+                                .'|search/results(*:1955)'
+                                .'|router(*:1970)'
                                 .'|exception(?'
-                                    .'|(*:1580)'
-                                    .'|\\.css(*:1594)'
+                                    .'|(*:1991)'
+                                    .'|\\.css(*:2005)'
                                 .')'
                             .')'
-                            .'|(*:1605)'
+                            .'|(*:2016)'
                         .')'
                     .')'
                 .')'
@@ -283,68 +306,79 @@ return [
         521 => [[['_route' => 'app_json_delete', '_controller' => 'App\\Controller\\JsonController::delete'], ['id_user'], null, null, false, true, null]],
         538 => [[['_route' => 'alloffresjson', '_controller' => 'App\\Controller\\OffretravailmobileController::index'], [], ['GET' => 0], null, false, false, null]],
         555 => [[['_route' => 'mesoffresjson', '_controller' => 'App\\Controller\\OffretravailmobileController::mesoffres'], [], ['GET' => 0], null, false, false, null]],
-        588 => [[['_route' => 'app_lignepanier_show', '_controller' => 'App\\Controller\\LignepanierController::show'], ['idlignepanier'], ['GET' => 0], null, false, true, null]],
-        601 => [[['_route' => 'app_lignepanier_edit', '_controller' => 'App\\Controller\\LignepanierController::edit'], ['idlignepanier'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        609 => [[['_route' => 'app_lignepanier_delete', '_controller' => 'App\\Controller\\LignepanierController::delete'], ['idlignepanier'], ['POST' => 0], null, false, true, null]],
-        654 => [[['_route' => 'app_offretravail_mail', '_controller' => 'App\\Controller\\OffretravailController::sendEmail'], ['idDemande'], ['GET' => 0], null, false, false, null]],
-        666 => [[['_route' => 'app_offretravail_edit', '_controller' => 'App\\Controller\\OffretravailController::edit'], ['idoffre'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        675 => [
+        604 => [[['_route' => 'app_lignepanier_show', '_controller' => 'App\\Controller\\LignepanierController::show'], ['idlignepanier'], ['GET' => 0], null, false, true, null]],
+        625 => [[['_route' => 'app_lignepanier_edit', '_controller' => 'App\\Controller\\LignepanierController::edit'], ['idlignepanier'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        657 => [[['_route' => 'app_lignepanier_delete_with_ajax', '_controller' => 'App\\Controller\\LignepanierController::deleteWithAjax'], ['idlignepanier'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        702 => [[['_route' => 'app_offretravail_mail', '_controller' => 'App\\Controller\\OffretravailController::sendEmail'], ['idDemande'], ['GET' => 0], null, false, false, null]],
+        714 => [[['_route' => 'app_offretravail_edit', '_controller' => 'App\\Controller\\OffretravailController::edit'], ['idoffre'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        723 => [
             [['_route' => 'app_offretravail_show', '_controller' => 'App\\Controller\\OffretravailController::show'], ['idoffre'], ['GET' => 0], null, false, true, null],
             [['_route' => 'app_offretravail_delete', '_controller' => 'App\\Controller\\OffretravailController::delete'], ['idoffre'], ['POST' => 0], null, false, true, null],
         ],
-        706 => [[['_route' => 'app_offretravailarchive_recuperer', '_controller' => 'App\\Controller\\OffretravailarchiveController::recuperer'], ['idoffre'], ['POST' => 0], null, false, true, null]],
-        717 => [[['_route' => 'app_offretravailarchive_new', '_controller' => 'App\\Controller\\OffretravailarchiveController::new'], [], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        733 => [[['_route' => 'app_offretravailarchive_show', '_controller' => 'App\\Controller\\OffretravailarchiveController::show'], ['idoffre'], ['GET' => 0], null, false, true, null]],
-        757 => [[['_route' => 'app_offretravailarchive_delete', '_controller' => 'App\\Controller\\OffretravailarchiveController::delete'], ['idoffre'], ['POST' => 0], null, false, true, null]],
-        788 => [[['_route' => 'editjson', '_controller' => 'App\\Controller\\OffretravailmobileController::edit'], ['idoffre'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        796 => [[['_route' => 'deletejson', '_controller' => 'App\\Controller\\OffretravailmobileController::delete'], ['idoffre'], ['POST' => 0], null, false, true, null]],
-        821 => [[['_route' => 'app_panier_index', '_controller' => 'App\\Controller\\PanierController::index'], [], ['GET' => 0], null, true, false, null]],
-        841 => [[['_route' => 'app_panier_show', '_controller' => 'App\\Controller\\PanierController::show'], ['idpanier'], ['GET' => 0], null, false, true, null]],
-        854 => [[['_route' => 'app_panier_edit', '_controller' => 'App\\Controller\\PanierController::edit'], ['idpanier'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        862 => [[['_route' => 'app_panier_delete', '_controller' => 'App\\Controller\\PanierController::delete'], ['idpanier'], ['POST' => 0], null, false, true, null]],
-        886 => [[['_route' => 'app_participation_index', '_controller' => 'App\\Controller\\ParticipationController::index'], [], ['GET' => 0], null, true, false, null]],
-        906 => [[['_route' => 'app_participation_show', '_controller' => 'App\\Controller\\ParticipationController::show'], ['id_participation'], ['GET' => 0], null, false, true, null]],
-        919 => [[['_route' => 'app_participation_edit', '_controller' => 'App\\Controller\\ParticipationController::edit'], ['id_participation'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        927 => [[['_route' => 'app_participation_delete', '_controller' => 'App\\Controller\\ParticipationController::delete'], ['id_participation'], ['POST' => 0], null, false, true, null]],
-        944 => [[['_route' => 'app_post_index', '_controller' => 'App\\Controller\\PostController::index'], [], ['GET' => 0], null, true, false, null]],
-        967 => [[['_route' => 'app_post_show', '_controller' => 'App\\Controller\\PostController::show'], ['id_post'], ['GET' => 0], null, false, true, null]],
-        980 => [[['_route' => 'app_post_edit', '_controller' => 'App\\Controller\\PostController::edit'], ['id_post'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        988 => [[['_route' => 'app_post_delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id_post'], ['POST' => 0], null, false, true, null]],
-        1004 => [[['_route' => 'app_post_like_index', '_controller' => 'App\\Controller\\PostLikeController::index'], [], ['GET' => 0], null, true, false, null]],
-        1025 => [[['_route' => 'app_post_like_show', '_controller' => 'App\\Controller\\PostLikeController::show'], ['id_like'], ['GET' => 0], null, false, true, null]],
-        1039 => [[['_route' => 'app_post_like_edit', '_controller' => 'App\\Controller\\PostLikeController::edit'], ['id_like'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1048 => [[['_route' => 'app_post_like_delete', '_controller' => 'App\\Controller\\PostLikeController::delete'], ['id_like'], ['POST' => 0], null, false, true, null]],
-        1071 => [[['_route' => 'app_produits_index', '_controller' => 'App\\Controller\\ProduitsController::index'], [], ['GET' => 0], null, true, false, null]],
-        1092 => [[['_route' => 'app_produits_show', '_controller' => 'App\\Controller\\ProduitsController::show'], ['idproduit'], ['GET' => 0], null, false, true, null]],
-        1106 => [[['_route' => 'app_produits_edit', '_controller' => 'App\\Controller\\ProduitsController::edit'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1115 => [[['_route' => 'app_produits_delete', '_controller' => 'App\\Controller\\ProduitsController::delete'], ['idproduit'], ['POST' => 0], null, false, true, null]],
-        1137 => [[['_route' => 'app_rating_index', '_controller' => 'App\\Controller\\RatingController::index'], [], ['GET' => 0], null, true, false, null]],
-        1158 => [[['_route' => 'app_rating_show', '_controller' => 'App\\Controller\\RatingController::show'], ['id_rating'], ['GET' => 0], null, false, true, null]],
-        1172 => [[['_route' => 'app_rating_edit', '_controller' => 'App\\Controller\\RatingController::edit'], ['id_rating'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1181 => [[['_route' => 'app_rating_delete', '_controller' => 'App\\Controller\\RatingController::delete'], ['id_rating'], ['POST' => 0], null, false, true, null]],
-        1199 => [[['_route' => 'app_sms', '_controller' => 'App\\Controller\\SmsController::index'], [], null, null, false, false, null]],
-        1209 => [[['_route' => 'app_sms1', '_controller' => 'App\\Controller\\SmsController::sendSmsMessage'], [], null, null, false, false, null]],
-        1229 => [[['_route' => 'app_dashboard_studiodashboard', '_controller' => 'App\\Controller\\StudiodashboardController::index'], [], ['GET' => 0], null, true, false, null]],
-        1250 => [[['_route' => 'app_tutoriel_index', '_controller' => 'App\\Controller\\TutorielController::index'], [], ['GET' => 0], null, true, false, null]],
-        1271 => [[['_route' => 'app_tutoriel_show', '_controller' => 'App\\Controller\\TutorielController::show'], ['id_tutoriel'], ['GET' => 0], null, false, true, null]],
-        1285 => [[['_route' => 'app_tutoriel_edit', '_controller' => 'App\\Controller\\TutorielController::edit'], ['id_tutoriel'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1294 => [[['_route' => 'app_tutoriel_delete', '_controller' => 'App\\Controller\\TutorielController::delete'], ['id_tutoriel'], ['POST' => 0], null, false, true, null]],
-        1317 => [[['_route' => 'app_video_index', '_controller' => 'App\\Controller\\VideoController::index'], [], ['GET' => 0], null, true, false, null]],
-        1338 => [[['_route' => 'app_video_show', '_controller' => 'App\\Controller\\VideoController::show'], ['id_video'], ['GET' => 0], null, false, true, null]],
-        1352 => [[['_route' => 'app_video_edit', '_controller' => 'App\\Controller\\VideoController::edit'], ['id_video'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1361 => [[['_route' => 'app_video_delete', '_controller' => 'App\\Controller\\VideoController::delete'], ['id_video'], ['POST' => 0], null, false, true, null]],
-        1377 => [[['_route' => 'app_view_index', '_controller' => 'App\\Controller\\ViewController::index'], [], ['GET' => 0], null, true, false, null]],
-        1398 => [[['_route' => 'app_view_show', '_controller' => 'App\\Controller\\ViewController::show'], ['id_view'], ['GET' => 0], null, false, true, null]],
-        1412 => [[['_route' => 'app_view_edit', '_controller' => 'App\\Controller\\ViewController::edit'], ['id_view'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1421 => [[['_route' => 'app_view_delete', '_controller' => 'App\\Controller\\ViewController::delete'], ['id_view'], ['POST' => 0], null, false, true, null]],
-        1464 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        1485 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        1505 => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], [], null, null, true, false, null]],
-        1544 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        1559 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        1580 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        1594 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        1605 => [
+        754 => [[['_route' => 'app_offretravailarchive_recuperer', '_controller' => 'App\\Controller\\OffretravailarchiveController::recuperer'], ['idoffre'], ['POST' => 0], null, false, true, null]],
+        765 => [[['_route' => 'app_offretravailarchive_new', '_controller' => 'App\\Controller\\OffretravailarchiveController::new'], [], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        781 => [[['_route' => 'app_offretravailarchive_show', '_controller' => 'App\\Controller\\OffretravailarchiveController::show'], ['idoffre'], ['GET' => 0], null, false, true, null]],
+        805 => [[['_route' => 'app_offretravailarchive_delete', '_controller' => 'App\\Controller\\OffretravailarchiveController::delete'], ['idoffre'], ['POST' => 0], null, false, true, null]],
+        836 => [[['_route' => 'editjson', '_controller' => 'App\\Controller\\OffretravailmobileController::edit'], ['idoffre'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        844 => [[['_route' => 'deletejson', '_controller' => 'App\\Controller\\OffretravailmobileController::delete'], ['idoffre'], ['POST' => 0], null, false, true, null]],
+        889 => [[['_route' => 'app_panier_show', '_controller' => 'App\\Controller\\PanierController::show'], ['idpanier'], ['GET' => 0], null, false, true, null]],
+        916 => [[['_route' => 'add_product', '_controller' => 'App\\Controller\\PanierController::ajouterProduitAuPanier'], ['idproduit'], null, null, false, true, null]],
+        944 => [[['_route' => 'viderpanier', '_controller' => 'App\\Controller\\PanierController::ViderPanier'], ['idpanier'], null, null, false, true, null]],
+        967 => [[['_route' => 'app_participation_index', '_controller' => 'App\\Controller\\ParticipationController::index'], [], ['GET' => 0], null, true, false, null]],
+        987 => [[['_route' => 'app_participation_show', '_controller' => 'App\\Controller\\ParticipationController::show'], ['id_participation'], ['GET' => 0], null, false, true, null]],
+        1000 => [[['_route' => 'app_participation_edit', '_controller' => 'App\\Controller\\ParticipationController::edit'], ['id_participation'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1009 => [[['_route' => 'app_participation_delete', '_controller' => 'App\\Controller\\ParticipationController::delete'], ['id_participation'], ['POST' => 0], null, false, true, null]],
+        1025 => [[['_route' => 'app_payment', '_controller' => 'App\\Controller\\PaymentController::index'], [], null, null, false, false, null]],
+        1048 => [[['_route' => 'pdf', '_controller' => 'App\\Controller\\PaymentController::pdf'], ['idpanier'], null, null, false, true, null]],
+        1063 => [[['_route' => 'app_post_index', '_controller' => 'App\\Controller\\PostController::index'], [], ['GET' => 0], null, true, false, null]],
+        1087 => [[['_route' => 'app_post_show', '_controller' => 'App\\Controller\\PostController::show'], ['id_post'], ['GET' => 0], null, false, true, null]],
+        1101 => [[['_route' => 'app_post_edit', '_controller' => 'App\\Controller\\PostController::edit'], ['id_post'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1110 => [[['_route' => 'app_post_delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id_post'], ['POST' => 0], null, false, true, null]],
+        1127 => [[['_route' => 'app_post_like_index', '_controller' => 'App\\Controller\\PostLikeController::index'], [], ['GET' => 0], null, true, false, null]],
+        1148 => [[['_route' => 'app_post_like_show', '_controller' => 'App\\Controller\\PostLikeController::show'], ['id_like'], ['GET' => 0], null, false, true, null]],
+        1162 => [[['_route' => 'app_post_like_edit', '_controller' => 'App\\Controller\\PostLikeController::edit'], ['id_like'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1171 => [[['_route' => 'app_post_like_delete', '_controller' => 'App\\Controller\\PostLikeController::delete'], ['id_like'], ['POST' => 0], null, false, true, null]],
+        1197 => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\PaymentController::checkout'], [], null, null, false, false, null]],
+        1215 => [[['_route' => 'cancel_url', '_controller' => 'App\\Controller\\PaymentController::cancelUrl'], [], null, null, false, false, null]],
+        1250 => [[['_route' => 'success-url', '_controller' => 'App\\Controller\\PaymentController::successUrl'], ['idpanier'], null, null, false, true, null]],
+        1275 => [[['_route' => 'app_produitsBack_show', '_controller' => 'App\\Controller\\ProduitsBackController::show'], ['idproduit'], ['GET' => 0], null, false, true, null]],
+        1293 => [[['_route' => 'app_produits_back_new', '_controller' => 'App\\Controller\\ProduitsBackController::new'], [], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1320 => [[['_route' => 'app_produits_back_edit', '_controller' => 'App\\Controller\\ProduitsBackController::edit'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1352 => [[['_route' => 'app_produits_delete_back', '_controller' => 'App\\Controller\\ProduitsBackController::delete'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1369 => [[['_route' => 'app_dashboard_studiodashboard', '_controller' => 'App\\Controller\\StudiodashboardController::index'], [], ['GET' => 0], null, true, false, null]],
+        1391 => [[['_route' => 'app_produits_index', '_controller' => 'App\\Controller\\ProduitsController::index'], [], ['GET' => 0], null, true, false, null]],
+        1412 => [[['_route' => 'app_produits_show', '_controller' => 'App\\Controller\\ProduitsController::show'], ['idproduit'], ['GET' => 0], null, false, true, null]],
+        1426 => [[['_route' => 'app_produits_edit', '_controller' => 'App\\Controller\\ProduitsController::edit'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1435 => [[['_route' => 'app_produits_delete', '_controller' => 'App\\Controller\\ProduitsController::delete'], ['idproduit'], ['POST' => 0], null, false, true, null]],
+        1469 => [[['_route' => 'produit_par_id', '_controller' => 'App\\Controller\\ProduitsMobileController::ProduitId'], ['idproduit'], null, null, false, true, null]],
+        1507 => [[['_route' => 'modifierProduitJSON', '_controller' => 'App\\Controller\\ProduitsMobileController::modifierProduitJSON'], ['idproduit'], null, null, false, true, null]],
+        1549 => [[['_route' => 'supprimerProduitJSON', '_controller' => 'App\\Controller\\ProduitsMobileController::supprimerProduitJSON'], ['idproduit'], null, null, false, true, null]],
+        1563 => [[['_route' => 'app_sms', '_controller' => 'App\\Controller\\SmsController::index'], [], null, null, false, false, null]],
+        1573 => [[['_route' => 'app_sms1', '_controller' => 'App\\Controller\\SmsController::sendSmsMessage'], [], null, null, false, false, null]],
+        1594 => [[['_route' => 'app_rating_index', '_controller' => 'App\\Controller\\RatingController::index'], [], ['GET' => 0], null, true, false, null]],
+        1615 => [[['_route' => 'app_rating_show', '_controller' => 'App\\Controller\\RatingController::show'], ['id_rating'], ['GET' => 0], null, false, true, null]],
+        1629 => [[['_route' => 'app_rating_edit', '_controller' => 'App\\Controller\\RatingController::edit'], ['id_rating'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1638 => [[['_route' => 'app_rating_delete', '_controller' => 'App\\Controller\\RatingController::delete'], ['id_rating'], ['POST' => 0], null, false, true, null]],
+        1661 => [[['_route' => 'app_tutoriel_index', '_controller' => 'App\\Controller\\TutorielController::index'], [], ['GET' => 0], null, true, false, null]],
+        1682 => [[['_route' => 'app_tutoriel_show', '_controller' => 'App\\Controller\\TutorielController::show'], ['id_tutoriel'], ['GET' => 0], null, false, true, null]],
+        1696 => [[['_route' => 'app_tutoriel_edit', '_controller' => 'App\\Controller\\TutorielController::edit'], ['id_tutoriel'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1705 => [[['_route' => 'app_tutoriel_delete', '_controller' => 'App\\Controller\\TutorielController::delete'], ['id_tutoriel'], ['POST' => 0], null, false, true, null]],
+        1728 => [[['_route' => 'app_video_index', '_controller' => 'App\\Controller\\VideoController::index'], [], ['GET' => 0], null, true, false, null]],
+        1749 => [[['_route' => 'app_video_show', '_controller' => 'App\\Controller\\VideoController::show'], ['id_video'], ['GET' => 0], null, false, true, null]],
+        1763 => [[['_route' => 'app_video_edit', '_controller' => 'App\\Controller\\VideoController::edit'], ['id_video'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1772 => [[['_route' => 'app_video_delete', '_controller' => 'App\\Controller\\VideoController::delete'], ['id_video'], ['POST' => 0], null, false, true, null]],
+        1788 => [[['_route' => 'app_view_index', '_controller' => 'App\\Controller\\ViewController::index'], [], ['GET' => 0], null, true, false, null]],
+        1809 => [[['_route' => 'app_view_show', '_controller' => 'App\\Controller\\ViewController::show'], ['id_view'], ['GET' => 0], null, false, true, null]],
+        1823 => [[['_route' => 'app_view_edit', '_controller' => 'App\\Controller\\ViewController::edit'], ['id_view'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1832 => [[['_route' => 'app_view_delete', '_controller' => 'App\\Controller\\ViewController::delete'], ['id_view'], ['POST' => 0], null, false, true, null]],
+        1875 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        1896 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        1916 => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], [], null, null, true, false, null]],
+        1955 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        1970 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        1991 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        2005 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        2016 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

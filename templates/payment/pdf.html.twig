@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styling for the header band */
+        .header-band {
+            background-color: #7453fc;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Styling for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 60px;
+        }
+        
+        table, th, td {
+            border: 1px solid #3B566E;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3B566E;
+            color: white;
+        }
+        
+        /* Rounded corners for table */
+        table {
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        /* Styling for the total amount */
+        .total-amount {
+            background-color: #7453fc;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: right;
+        }
+        
+        /* Styling for the product image */
+        .product-image {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+   
+ 
+    {% set date_facture = date_facture|date('d/m/Y H:i') %}
+
+    <div class="header-band">Facture</div><br></br>
+  
+    <div class="table-responsive">
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th>ID Facture</th>
+                    <th>Nom de la photo</th>
+                   
+                    <th>Prix unitaire</th>
+   
+                </tr>
+            </thead>
+            <tbody>
+                {% set id_facture = lignesPanier[0].idpanier.getIdUser() ~ date_facture|replace({'-': '', ' ': '', ':': ''})|replace({'/': ''}) %}
+
+                {% for ligne in lignesPanier %}
+                    <tr>
+                        <td>{{ id_facture }}</td>   
+                        <td>{{ ligne.idproduit.nom }}</td>
+                        <td>{{ ligne.idproduit.prix }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="total-amount">
+        Montant total à payer : {{ total}}
+    </div>
+    <div class="date-facture">
+        Date de génération de la facture : {{ date_facture }}
+    </div>
+</body>
+</html>

@@ -6,4 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'MercurySeries\\Flashy' => array($vendorDir . '/mercuryseries/flashy/src'),
 );

@@ -8,6 +8,7 @@
 
 
 parameters:
+  app.upload_dir: 'uploads/images/'
   upload_directory: '%kernel.project_dir%/public/uploads'
   avatars_directory: '%kernel.project_dir%/public/uploads/avatars'
   backgrounds_directory: '%kernel.project_dir%/public/uploads/backgrounds'
