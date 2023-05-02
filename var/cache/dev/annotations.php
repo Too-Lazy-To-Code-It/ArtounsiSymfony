@@ -178,8 +178,6 @@ return [[
 '[C]App%5CController%5CLignepanierController%23show' => 1,
 'App%5CController%5CLignepanierController%23edit' => 0,
 '[C]App%5CController%5CLignepanierController%23edit' => 1,
-'App%5CController%5CLignepanierController%23delete' => 0,
-'[C]App%5CController%5CLignepanierController%23delete' => 1,
 'App%5CController%5CLignepanierController%23deleteWithAjax' => 0,
 '[C]App%5CController%5CLignepanierController%23deleteWithAjax' => 1,
 'App%5CController%5COffretravailController' => 0,
@@ -214,8 +212,6 @@ return [[
 '[C]App%5CController%5CPanierController%23add' => 1,
 'App%5CController%5CPanierController%23show' => 0,
 '[C]App%5CController%5CPanierController%23show' => 1,
-'App%5CController%5CPanierController%23addProduct' => 0,
-'[C]App%5CController%5CPanierController%23addProduct' => 1,
 'App%5CController%5CPanierController%23ajouterProduitAuPanier' => 0,
 '[C]App%5CController%5CPanierController%23ajouterProduitAuPanier' => 1,
 'App%5CController%5CPanierController%23ViderPanier' => 0,
@@ -242,8 +238,12 @@ return [[
 '[C]App%5CController%5CPaymentController%23successUrl' => 1,
 'App%5CController%5CPaymentController%23cancelUrl' => 0,
 '[C]App%5CController%5CPaymentController%23cancelUrl' => 1,
+'App%5CController%5CPaymentController%23__construct' => 0,
+'[C]App%5CController%5CPaymentController%23__construct' => 1,
 'App%5CController%5CPaymentController%23pdf' => 0,
 '[C]App%5CController%5CPaymentController%23pdf' => 1,
+'App%5CController%5CPaymentController%24panierController' => 0,
+'[C]App%5CController%5CPaymentController%24panierController' => 1,
 'App%5CController%5CPostController' => 0,
 '[C]App%5CController%5CPostController' => 1,
 'App%5CController%5CPostController%23index' => 0,
@@ -1948,6 +1948,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1682516279,
+1 => 1682674668,
 
 ]];

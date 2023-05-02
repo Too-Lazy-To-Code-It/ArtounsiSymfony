@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Produits;
 use App\Entity\Panier;
 use App\Entity\Lignepanier;
+use App\Entity\Allusers;
 use App\Form\PanierType;
 use App\Repository\PanierRepository;
 use App\Repository\ProduitsRepository;
@@ -20,7 +21,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Controller\FlashyNotifier;
 use DateTime;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 #[Route('/panier')]
@@ -48,6 +49,25 @@ class PanierController extends AbstractController
     }
 
 
+    #[Route('/NouveauPanier/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, PanierRepository $panierRepository,UserInterface $user): Response
+    {
+        $panier = new Panier();
+        $panier->setUser($user);
+        $form = $this->createForm(PanierType::class, $panier);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $panierRepository->save($panier, true);
+
+            return $this->redirectToRoute('app_panier_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('panier/new.html.twig', [
+            'panier' => $panier,
+            'form' => $form,
+        ]);
+    }
 
  #### Méthode d'affichage d'un panier selon l'id panier , et aussi calcul du montant total 
 

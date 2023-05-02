@@ -165,81 +165,76 @@ https://templatemo.com/tm-577-liberty-market
                     <h2><em>Les produits</em> dans le Shop</h2>
                 </div>
             </div>
-            <div class=\"col-lg-6\">
+            <div class=\"col-lg-12\">
                 <div class=\"filters\">
                     
                     <ul>
-                        <li data-filter=\"*\"  class=\"active\">All Items</li>
-                        <li data-filter=\".msc\">Music Art</li>
-                        <li data-filter=\".dig\">Digital Art</li>
-                        <li data-filter=\".blc\">Blockchain</li>
-                        <li data-filter=\".vtr\">Virtual</li>
+                        <li data-filter=\"*\"  class=\"active\">Tous</li>
+                        <li data-filter=\".msc\">2D</li>
+                        <li data-filter=\".dig\">3D</li>
                     </ul>
-                </div>
+                </div><br></br>
             </div>
             <div class=\"col-lg-12\">
                 <div class=\"row grid\">
-                    <div class=\"col-lg-6 currently-market-item all msc\">
-                        ";
-        // line 129
+                    ";
+        // line 126
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 129, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 126, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 130
-            echo "                        <div class=\"item\">
+            // line 127
+            echo "                    <div class=\"col-lg-6 currently-market-item all msc\">
+                        <div class=\"item\">
                             <div class=\"left-image\">
                                 <img src=\"";
-            // line 132
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 132))), "html", null, true);
+            // line 130
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 130))), "html", null, true);
             echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                             </div>
                             <div class=\"right-content\">
                                 <h4>";
-            // line 135
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 135), "html", null, true);
+            // line 133
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 133), "html", null, true);
             echo "</h4>
                                 <span class=\"author\">
-                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
-                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
-                  </span>
+                                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
+                                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
+                                </span>
                                 <div class=\"line-dec\"></div>
-                                <span class=\"bid\">
-                                
-                    <br><strong> ";
-            // line 143
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 143), "html", null, true);
+                                <span class=\"bid\">                                
+                                    <br><strong> ";
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 140), "html", null, true);
             echo "</strong><br>
-                    <em> ";
-            // line 144
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 144), "html", null, true);
+                                    <em> ";
+            // line 141
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 141), "html", null, true);
             echo " </em>
-                  </span>
+                                </span>
                                 <span class=\"ends\">
-                    <em>";
-            // line 147
-            ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 147)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 147), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+                                    <em>";
+            // line 144
+            ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 144)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 144), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</em>
-                  </span>
+                                </span>
                                 <div class=\"main-button\">
                                     <a href=\"";
-            // line 150
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_show", ["idproduit" => twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 150)]), "html", null, true);
-            echo "\"   classe=\"active\" >View Item Details</a>
-                                    
+            // line 147
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_show", ["idproduit" => twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 147)]), "html", null, true);
+            echo "\" classe=\"active\" >View Item Details</a>                                    
                                 </div>
                             </div>
                         </div>
-                 ";
+                    </div>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 156
-        echo "
-                    </div>   
-                </div>
+        // line 153
+        echo "                </div>
             </div>
-
+            
        
 
         </div>
@@ -248,8 +243,15 @@ https://templatemo.com/tm-577-liberty-market
 
     </div>
 
-
 </div>
+
+
+
+
+
+
+
+
 
 <footer>
     <div class=\"container\">
@@ -268,34 +270,34 @@ https://templatemo.com/tm-577-liberty-market
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 188
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 189
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 191
+        // line 193
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 192
+        // line 194
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
 
 <script src=\"";
-        // line 195
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 196
+        // line 198
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 197
+        // line 199
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -370,7 +372,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  349 => 23,  345 => 22,  341 => 21,  337 => 20,  333 => 19,  328 => 16,  318 => 15,  299 => 197,  295 => 196,  291 => 195,  285 => 192,  281 => 191,  276 => 189,  272 => 188,  238 => 156,  226 => 150,  220 => 147,  214 => 144,  210 => 143,  199 => 135,  193 => 132,  189 => 130,  185 => 129,  147 => 94,  120 => 70,  116 => 69,  112 => 68,  68 => 26,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
+        return array (  351 => 23,  347 => 22,  343 => 21,  339 => 20,  335 => 19,  330 => 16,  320 => 15,  301 => 199,  297 => 198,  293 => 197,  287 => 194,  283 => 193,  278 => 191,  274 => 190,  235 => 153,  223 => 147,  217 => 144,  211 => 141,  207 => 140,  197 => 133,  191 => 130,  186 => 127,  182 => 126,  147 => 94,  120 => 70,  116 => 69,  112 => 68,  68 => 26,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -488,22 +490,20 @@ https://templatemo.com/tm-577-liberty-market
                     <h2><em>Les produits</em> dans le Shop</h2>
                 </div>
             </div>
-            <div class=\"col-lg-6\">
+            <div class=\"col-lg-12\">
                 <div class=\"filters\">
                     
                     <ul>
-                        <li data-filter=\"*\"  class=\"active\">All Items</li>
-                        <li data-filter=\".msc\">Music Art</li>
-                        <li data-filter=\".dig\">Digital Art</li>
-                        <li data-filter=\".blc\">Blockchain</li>
-                        <li data-filter=\".vtr\">Virtual</li>
+                        <li data-filter=\"*\"  class=\"active\">Tous</li>
+                        <li data-filter=\".msc\">2D</li>
+                        <li data-filter=\".dig\">3D</li>
                     </ul>
-                </div>
+                </div><br></br>
             </div>
             <div class=\"col-lg-12\">
                 <div class=\"row grid\">
+                    {% for produit in produits %}
                     <div class=\"col-lg-6 currently-market-item all msc\">
-                        {% for produit in produits %}
                         <div class=\"item\">
                             <div class=\"left-image\">
                                 <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
@@ -511,30 +511,27 @@ https://templatemo.com/tm-577-liberty-market
                             <div class=\"right-content\">
                                 <h4>{{ produit.nom }}</h4>
                                 <span class=\"author\">
-                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
-                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
-                  </span>
+                                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
+                                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
+                                </span>
                                 <div class=\"line-dec\"></div>
-                                <span class=\"bid\">
-                                
-                    <br><strong> {{ produit.prix }}</strong><br>
-                    <em> {{ produit.idcategorie}} </em>
-                  </span>
+                                <span class=\"bid\">                                
+                                    <br><strong> {{ produit.prix }}</strong><br>
+                                    <em> {{ produit.idcategorie}} </em>
+                                </span>
                                 <span class=\"ends\">
-                    <em>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</em>
-                  </span>
+                                    <em>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</em>
+                                </span>
                                 <div class=\"main-button\">
-                                    <a href=\"{{ path('app_produits_show', {'idproduit': produit.idproduit}) }}\"   classe=\"active\" >View Item Details</a>
-                                    
+                                    <a href=\"{{ path('app_produits_show', {'idproduit': produit.idproduit}) }}\" classe=\"active\" >View Item Details</a>                                    
                                 </div>
                             </div>
                         </div>
-                 {% endfor %}
-
-                    </div>   
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-
+            
        
 
         </div>
@@ -543,8 +540,15 @@ https://templatemo.com/tm-577-liberty-market
 
     </div>
 
-
 </div>
+
+
+
+
+
+
+
+
 
 <footer>
     <div class=\"container\">

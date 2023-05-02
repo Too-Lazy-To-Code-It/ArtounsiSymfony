@@ -282,6 +282,12 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
             // line 164
             ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 164)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 164), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</span>
+                   
+                        <div class=\"main-button\"><a href=\"";
+            // line 166
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_show", ["idproduit" => twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 166)]), "html", null, true);
+            echo "\"   classe=\"active\" ><h6>View Item Details</h6></a></div>
+                    
                     </div>
                   </div>
                 </div>
@@ -290,7 +296,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 169
+        // line 172
         echo "                
             
               </div>
@@ -371,46 +377,46 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 248
+        // line 251
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 249
+        // line 252
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"";
-        // line 251
+        // line 254
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 252
+        // line 255
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
     
     
     <script src=\"";
-        // line 255
+        // line 258
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 256
+        // line 259
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 257
+        // line 260
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"//code.jquery.com/jquery.js\"></script>
     <script src=\"";
-        // line 260
+        // line 263
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/js/flashy.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Include Flashy default partial -->
 ";
-        // line 263
+        // line 266
         echo twig_include($this->env, $context, "@MercurySeriesFlashy/flashy.html.twig");
         echo "
 
@@ -492,7 +498,7 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
 
     public function getDebugInfo()
     {
-        return array (  471 => 26,  466 => 24,  462 => 23,  458 => 22,  454 => 21,  450 => 20,  445 => 17,  435 => 16,  414 => 263,  408 => 260,  402 => 257,  398 => 256,  394 => 255,  388 => 252,  384 => 251,  379 => 249,  375 => 248,  294 => 169,  283 => 164,  279 => 163,  274 => 161,  270 => 160,  264 => 157,  259 => 154,  255 => 153,  238 => 139,  234 => 138,  229 => 136,  219 => 129,  211 => 124,  203 => 119,  196 => 115,  188 => 110,  181 => 106,  157 => 84,  148 => 82,  144 => 81,  141 => 80,  132 => 78,  128 => 77,  109 => 61,  105 => 60,  101 => 59,  69 => 29,  67 => 16,  62 => 14,  54 => 9,  44 => 1,);
+        return array (  477 => 26,  472 => 24,  468 => 23,  464 => 22,  460 => 21,  456 => 20,  451 => 17,  441 => 16,  420 => 266,  414 => 263,  408 => 260,  404 => 259,  400 => 258,  394 => 255,  390 => 254,  385 => 252,  381 => 251,  300 => 172,  288 => 166,  283 => 164,  279 => 163,  274 => 161,  270 => 160,  264 => 157,  259 => 154,  255 => 153,  238 => 139,  234 => 138,  229 => 136,  219 => 129,  211 => 124,  203 => 119,  196 => 115,  188 => 110,  181 => 106,  157 => 84,  148 => 82,  144 => 81,  141 => 80,  132 => 78,  128 => 77,  109 => 61,  105 => 60,  101 => 59,  69 => 29,  67 => 16,  62 => 14,  54 => 9,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -661,6 +667,9 @@ class __TwigTemplate_5c5ec6dc672d122550de96e52d10097c extends Template
                       <div class=\"line-dec\"></div>
                       <h6>Prix <em>{{ produit.prix }}</em></h6>
                       <span class=\"date\">{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</span>
+                   
+                        <div class=\"main-button\"><a href=\"{{ path('app_produits_show', {'idproduit': produit.idproduit}) }}\"   classe=\"active\" ><h6>View Item Details</h6></a></div>
+                    
                     </div>
                   </div>
                 </div>

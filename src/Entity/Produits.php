@@ -8,13 +8,14 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Entity(repositoryClass: ProduitsRepository::class)]
 class Produits
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("produits")]
     private ?int $idproduit = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
@@ -28,20 +29,25 @@ class Produits
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"Name of product is required")]
+    #[Groups("produits")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"Description is required")]
+    #[Groups("produits")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("produits")]
     private ?string $image = null;
 
     #[ORM\Column]
     #[Assert\NotBlank(message:"Price is required")]
+    #[Groups("produits")]
     private ?float $prix = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("produits")]
     private ?\DateTimeInterface $dateajout = null;
 
     #[ORM\OneToMany(mappedBy: 'idproduit', targetEntity: Lignepanier::class)]

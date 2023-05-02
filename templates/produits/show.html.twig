@@ -162,6 +162,9 @@
                       <div class="line-dec"></div>
                       <h6>Prix <em>{{ produit.prix }}</em></h6>
                       <span class="date">{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</span>
+                   
+                        <div class="main-button"><a href="{{ path('app_produits_show', {'idproduit': produit.idproduit}) }}"   classe="active" ><h6>View Item Details</h6></a></div>
+                    
                     </div>
                   </div>
                 </div>

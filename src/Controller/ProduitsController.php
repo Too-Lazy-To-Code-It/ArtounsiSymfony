@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 use DateTime;
 
 
@@ -17,12 +18,21 @@ use DateTime;
 class ProduitsController extends AbstractController
 {
     #[Route('/', name: 'app_produits_index', methods: ['GET'])]
-    public function index(ProduitsRepository $produitsRepository): Response
-    {
-        return $this->render('produits/index.html.twig', [
-            'produits' => $produitsRepository->findAll(),
-        ]);
-    }
+public function index(Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
+{
+    $produits = $produitsRepository->findAll();
+
+    $produits = $paginator->paginate(
+        $produits,
+        $request->query->getInt('page', 1),
+        2
+    );
+
+    return $this->render('produits/index.html.twig', [
+        'produits' => $produits,
+    ]);
+}
+
 
     #[Route('/new', name: 'app_produits_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ProduitsRepository $produitsRepository): Response
