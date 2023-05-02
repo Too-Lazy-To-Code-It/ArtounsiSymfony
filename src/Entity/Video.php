@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
 class Video
@@ -15,6 +16,7 @@ class Video
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("videos")]
     private ?int $id_video = null;
 
     #[ORM\ManyToOne( targetEntity: Tutoriel::class )]
@@ -22,9 +24,11 @@ class Video
     private ?Tutoriel $id_tutoriel = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("videos")]
     private ?\DateTimeInterface $date_p = null;
 
     #[Assert\Length(
@@ -32,12 +36,15 @@ class Video
         minMessage: 'Your Description must be at least {{ limit }} characters long',
     )]
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $pathvideo = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("videos")]
     private ?string $pathimage = null;
 
     #[ORM\OneToMany(mappedBy: 'id_video', targetEntity: View::class)]
@@ -51,6 +58,18 @@ class Video
     public function getId(): ?int
     {
         return $this->id_video;
+    }
+
+    public function getIdVideo(): ?int
+    {
+        return $this->id_video;
+    }
+
+    public function setIdVideo(int $id_video): self
+    {
+        $this->id_video = $id_video;
+
+        return $this;
     }
 
     public function getIdTutoriel(): ?Tutoriel

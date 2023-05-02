@@ -346,7 +346,7 @@ class __TwigTemplate_a1609e3de5fd6c05d4810d091a173a54 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link \" href=\"";
         // line 284
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
         echo "\">
                     <i class=\"bi bi-grid\"></i>
                     <span>Tutoriels</span>
@@ -358,7 +358,7 @@ class __TwigTemplate_a1609e3de5fd6c05d4810d091a173a54 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"";
         // line 293
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index_back");
         echo "\">
                     <i class=\"fas fa-check-circle\"></i>
                     <span>Challenges</span>
@@ -1480,7 +1480,7 @@ class __TwigTemplate_a1609e3de5fd6c05d4810d091a173a54 extends Template
         <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
 
             <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index') }}\">
+                <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
                     <i class=\"bi bi-grid\"></i>
                     <span>Tutoriels</span>
                 </a>
@@ -1489,7 +1489,7 @@ class __TwigTemplate_a1609e3de5fd6c05d4810d091a173a54 extends Template
          
 
             <li class=\"nav-item\">
-                <a class=\"nav-link collapsed\" href=\"{{ path('app_challenge_index') }}\">
+                <a class=\"nav-link collapsed\" href=\"{{ path('app_challenge_index_back') }}\">
                     <i class=\"fas fa-check-circle\"></i>
                     <span>Challenges</span>
                 </a>

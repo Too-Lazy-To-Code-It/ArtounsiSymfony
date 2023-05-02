@@ -102,6 +102,8 @@ return [[
 '[C]App%5CController%5CChallengeController' => 1,
 'App%5CController%5CChallengeController%23index' => 0,
 '[C]App%5CController%5CChallengeController%23index' => 1,
+'App%5CController%5CChallengeController%23calendar' => 0,
+'[C]App%5CController%5CChallengeController%23calendar' => 1,
 'App%5CController%5CChallengeController%23new' => 0,
 '[C]App%5CController%5CChallengeController%23new' => 1,
 'App%5CController%5CChallengeController%23show' => 0,
@@ -110,6 +112,18 @@ return [[
 '[C]App%5CController%5CChallengeController%23edit' => 1,
 'App%5CController%5CChallengeController%23delete' => 0,
 '[C]App%5CController%5CChallengeController%23delete' => 1,
+'App%5CController%5CChatBController' => 0,
+'[C]App%5CController%5CChatBController' => 1,
+'App%5CController%5CChatBController%23index' => 2,
+'[C]App%5CController%5CChatBController%23index' => 1,
+'App%5CController%5CChatBController%23message' => 3,
+'[C]App%5CController%5CChatBController%23message' => 1,
+'App%5CController%5CChatBController%23chatframe' => 4,
+'[C]App%5CController%5CChatBController%23chatframe' => 1,
+'App%5CController%5CChatBController%23fetchWeatherData' => 0,
+'[C]App%5CController%5CChatBController%23fetchWeatherData' => 1,
+'App%5CController%5CChatBController%23fetchGiphyGif' => 0,
+'[C]App%5CController%5CChatBController%23fetchGiphyGif' => 1,
 'App%5CController%5CCommentController' => 0,
 '[C]App%5CController%5CCommentController' => 1,
 'App%5CController%5CCommentController%23index' => 0,
@@ -1990,6 +2004,72 @@ return [[
 ], [
 
 0 => [],
-1 => 1682455519,
+1 => 1682530501,
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/chat',
+                ],
+                'name' => [
+                    'chat_index',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+3 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/chat/message',
+                ],
+                'name' => [
+                    'chat_message',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+4 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/chat/frame',
+                ],
+                'name' => [
+                    'chat_frame',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
 
 ]];

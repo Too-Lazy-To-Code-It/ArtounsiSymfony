@@ -191,6 +191,28 @@ class Tutoriel extends \App\Entity\Tutoriel implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getIdTutoriel(): ?int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdTutoriel', []);
+
+        return parent::getIdTutoriel();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdTutoriel(int $id_tutoriel): \App\Entity\Tutoriel
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdTutoriel', [$id_tutoriel]);
+
+        return parent::setIdTutoriel($id_tutoriel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getIdArtist(): ?\App\Entity\allusers
     {
 

@@ -61,7 +61,7 @@ class VideoController extends AbstractController
 
             $videoRepository->save($videoentity, true);
 
-            return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel'=>$videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel'=>$videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('video/new.html.twig', [
@@ -122,7 +122,7 @@ class VideoController extends AbstractController
 
             $videoRepository->save($videoentity, true);
 
-            return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel'=>$videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel'=>$videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('video/edit.html.twig', [
@@ -138,6 +138,6 @@ class VideoController extends AbstractController
         $video = $videoRepository->find($id_video);
         $em->remove($video);
         $em->flush();
-        return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel'=>$video->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel'=>$video->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

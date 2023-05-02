@@ -52,6 +52,35 @@ class ChallengeController extends AbstractController
         ]);
     }
 
+    #[Route('/back', name: 'app_challenge_index_back', methods: ['GET', 'POST'])]
+    public function indexback(Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
+    {
+        $challenges = $challengeRepository->findAll();
+        $keyword = null;
+        $category = null;
+        if($request->isMethod("POST"))
+        {
+            $keyword = $request->get('keyword');
+            $category = $request->get('Category');
+
+            if($keyword=="" && $category=="null")
+                $challenges = $challengeRepository->findAll();
+            else if(($keyword==""||$keyword==null) && $category!="null")
+                $challenges = $challengeRepository->findBy(array('id_categorie'=>$category ));
+            else if(($keyword!=""||$keyword!=null) && $category=="null")
+                $challenges = $challengeRepository->findBy(array( 'title'=>$keyword));
+            else
+                $challenges = $challengeRepository->findBy(array( 'title'=>$keyword, 'id_categorie'=>$category ));
+        }
+
+        return $this->render('challenge/indexback.html.twig', [
+            'challenges' => $challenges,
+            'categories' => $CategoryRepository->findAll(),
+            'keyword' => $keyword,
+            'Categorie' => $category,
+        ]);
+    }
+
     #[Route('/calendar', name: 'app_challenge_calendar')]
     public function calendar(ChallengeRepository $challengeRepository): Response
     {
@@ -94,7 +123,10 @@ class ChallengeController extends AbstractController
             $challenge->setPathIMG($fichier); 
 
             $challengeRepository->save($challenge, true);
-            return $this->redirectToRoute('app_challenge_index', [], Response::HTTP_SEE_OTHER);
+            
+            $this->addFlash('success','Challenge Added successfuly');
+            
+            return $this->redirectToRoute('app_challenge_index_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('challenge/new.html.twig', [
@@ -124,6 +156,14 @@ class ChallengeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) 
         {
+            if($challenge->getDateC() < new \DateTime())
+                {
+                    $this->addFlash('warning','Sorry you cant participate or change your participation, you have missed the date limit of challenge');
+                    return $this->render('challenge/show.html.twig', [
+                        'challenge' => $challenge,
+                        'form' => $form->createView(),
+                    ]);                    
+                }
             $image = $form->get('Image')->getData();
             if($image!=null){
                 $fichier = md5(uniqid()) . '.' . $image->guessExtension();
@@ -134,6 +174,7 @@ class ChallengeController extends AbstractController
             }
             else if($oldparticipation)
                 $fichier = $oldparticipation->getIMGParticipation();
+                
             if($oldparticipation)
                 {
                 $oldparticipation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>2))[0]);
@@ -141,6 +182,7 @@ class ChallengeController extends AbstractController
                 $oldparticipation->setIdChallenge($challenge);
                 $oldparticipation->setIMGParticipation($fichier);
                 $participationRepository->save($oldparticipation, true);
+                $this->addFlash('success',' Your participation is updated successfuly');
                 }
             else{
                 $participation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>2))[0]);
@@ -148,42 +190,16 @@ class ChallengeController extends AbstractController
                 $participation->setIdChallenge($challenge);
                 $participation->setIMGParticipation($fichier);
                 $participationRepository->save($participation, true);
+                $this->addFlash('success',' Your participation is added successfuly');
             }
         }
 
         return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,
             'form' => $form->createView(),
+            
         ]);
     }
-
-    /*#[Route('/{id}', name: 'app_challenge_show', methods: ['GET', 'POST'])]
-    public function show(Request $request,AllusersController $alluser,Challenge $challenge,ParticipationRepository $participationRepository): Response
-    {   
-        
-        $AllusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
-        $form->handleRequest($request);
-        if($request->isMethod("POST"))
-        {
-            $extension = substr($request->get('myfile'), strpos($request->get('myfile'),".", $offset = 0)+1, 10);
-            $fichier = md5(uniqid()) . '.' . $extension;
-            move_uploaded_file(
-                $this->getParameter('images_directory'),
-                $fichier
-            );
-
-            $participation = new  Participation();
-            $participation->setUser($AllusersRepository->findBy(array( 'id'=>1))[0]);
-            $participation->setChallenge($challenge);
-            $participation->setIMGParticipation($fichier);
-            
-            $participation->setDescription($request->get('description'));
-            $participationRepository->save($participation, true);  
-        }
-        return $this->render('challenge/show.html.twig', [
-            'challenge' => $challenge,
-        ]);
-    }*/
 
     #[Route('/edit/{id}', name: 'app_challenge_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Challenge $challenge, ChallengeRepository $challengeRepository): Response
@@ -205,8 +221,10 @@ class ChallengeController extends AbstractController
             $challenge->setPathIMG($fichier);}
 
             $challengeRepository->save($challenge, true);
+            $this->addFlash('success','Challenge Modified successfuly');
 
-            return $this->redirectToRoute('app_challenge_index', [], Response::HTTP_SEE_OTHER);
+
+            return $this->redirectToRoute('app_challenge_index_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('challenge/edit.html.twig', [
@@ -223,6 +241,7 @@ class ChallengeController extends AbstractController
         $em->remove($tutoriel);
         $em->flush();
 
-        return $this->redirectToRoute('app_challenge_index', [], Response::HTTP_SEE_OTHER);
+        $this->addFlash('success','Challenge Deleted successfuly');
+        return $this->redirectToRoute('app_challenge_index_back', [], Response::HTTP_SEE_OTHER);
     }
 }

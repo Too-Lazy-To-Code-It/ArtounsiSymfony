@@ -221,6 +221,29 @@ class TutorielController extends AbstractController
         ]);
     }
 
+    #[Route('/back/{id_tutoriel}', name: 'app_tutoriel_show_back', methods: ['GET', 'POST'])]
+    public function showback(Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
+    {          
+        $em = $mr->getManager();
+        if($ratingTutorielRepositoty->findOneBy(array('tutorielId'=>$tutorielRepository->find($id_tutoriel),'idRater'=>$allusersRepository->find(1))))
+            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId'=>$tutorielRepository->find($id_tutoriel),'idRater'=>$allusersRepository->find(1)));
+        else
+        {
+            $oldrating = new RatingTutoriel();
+            $oldrating->setRating(0);
+        }
+
+        $avgrating = $em->createQuery("SELECT avg(r.rating) as avg FROM APP\Entity\RatingTutoriel r WHERE r.tutorielId = :tutorielId")
+                            ->setParameter('tutorielId', $id_tutoriel)->getResult();
+
+        return $this->render('tutoriel/showback.html.twig', [
+            'oldrating' => $oldrating,
+            'tutoriel' => $tutoriel,
+            'favori' => $favorisTuroialRepository->findOneBy(array('id_user'=>$allusersRepository->find(1),'id_tutoriel'=>$id_tutoriel)),
+            'avg' => $avgrating[0]
+        ]);
+    }
+
     #[Route('/{id_tutoriel}/edit', name: 'app_tutoriel_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Tutoriel $tutoriel, TutorielRepository $tutorielRepository): Response
     {
@@ -259,7 +282,7 @@ class TutorielController extends AbstractController
         $em->remove($tutoriel);
         $em->flush();
         $this->addFlash('success','Tutoriel Deleted successfuly');
-        return $this->redirectToRoute('app_tutoriel_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_tutoriel_index_back', [], Response::HTTP_SEE_OTHER);
     }
     
 }

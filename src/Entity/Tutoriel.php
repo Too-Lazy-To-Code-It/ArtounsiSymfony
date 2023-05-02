@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[Assert\Cascade]
 #[ORM\Entity(repositoryClass: TutorielRepository::class)]
@@ -15,7 +16,8 @@ class Tutoriel
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id_tutoriel = null;
+    #[Groups("tutoriels")]
+    private ?int $id_tutoriel;
 
 
     #[ORM\ManyToOne( targetEntity: Category::class )]
@@ -27,6 +29,7 @@ class Tutoriel
     private ?Allusers $id_artist = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("tutoriels")]
     private ?string $pathimg = null;
 
     #[Assert\Length(
@@ -37,6 +40,7 @@ class Tutoriel
     )]
     #[Assert\NotNull]
     #[ORM\Column(length: 255)]
+    #[Groups("tutoriels")]
     private ?string $title = null;
 
     #[Assert\Length(
@@ -45,11 +49,13 @@ class Tutoriel
     )]
     #[Assert\NotNull]
     #[ORM\Column(length: 255)]
+    #[Groups("tutoriels")]
     private ?string $description = null;
 
     #[Assert\NotNull]
     #[Assert\NotBlank]
     #[ORM\Column]
+    #[Groups("tutoriels")]
     private ?int $niveau = null;
 
     #[ORM\OneToMany(mappedBy: 'id_tutoriel', targetEntity: Video::class)]
@@ -66,6 +72,18 @@ class Tutoriel
     public function getId(): ?int
     {
         return $this->id_tutoriel;
+    }
+
+    public function getIdTutoriel(): ?int
+    {
+        return $this->id_tutoriel;
+    }
+
+    public function setIdTutoriel(int $id_tutoriel): self
+    {
+        $this->id_tutoriel = $id_tutoriel;
+
+        return $this;
     }
 
     public function getIdArtist(): ?allusers

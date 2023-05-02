@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Participation;
+use App\Entity\Rating;
 use App\Form\ParticipationType;
 use App\Repository\ParticipationRepository;
+use App\Repository\RatingRepository;
+use App\Repository\AllusersRepository;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,10 +46,25 @@ class ParticipationController extends AbstractController
     }
 
     #[Route('/{id_participation}', name: 'app_participation_show', methods: ['GET'])]
-    public function show(Participation $participation): Response
+    public function show(ManagerRegistry $mr, AllusersRepository $allusersRepository,RatingRepository $ratingRepository, ParticipationRepository $participationRepository ,Participation $participation, $id_participation): Response
     {
-        return $this->render('participation/show.html.twig', [
-            'participation' => $participation,
+        $p = $participationRepository->find($id_participation);
+        $em = $mr->getManager();
+
+        $avgrating = $em->createQuery("SELECT avg(r.rating) as avg FROM APP\Entity\Rating r, APP\Entity\Participation p WHERE r.participator_id = p.id_user  AND r.participator_id = :idParticipator AND r.challenge_id = :challenge_id")
+                            ->setParameter('idParticipator', $p->getIdUser())->setParameter('challenge_id',$p->getIdChallenge()->getId())->getResult();
+        
+                            if($ratingRepository->findOneBy(array('challenge_id'=>$p->getIdChallenge()->getId(), 'participator_id'=>$allusersRepository->find($p->getIdUser()),'rater_id'=>$allusersRepository->find(1))))
+                                $oldrating = $ratingRepository->findOneBy(array('challenge_id'=>$p->getIdChallenge()->getId(), 'participator_id'=>$allusersRepository->find($p->getIdUser()),'rater_id'=>$allusersRepository->find(1)));
+                            else
+                            {
+                                $oldrating = new Rating();
+                                $oldrating->setRating(0);
+                            }
+        return $this->render('challenge/participation.html.twig', [
+            'p' => $p,
+            'avg'=> $avgrating[0],
+            'oldrating' => $oldrating,
         ]);
     }
 

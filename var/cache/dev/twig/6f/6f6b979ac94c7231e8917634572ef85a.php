@@ -169,11 +169,15 @@ class __TwigTemplate_42605e3126ec7cec63445670968c7a6e extends Template
         // line 62
         $this->loadTemplate("challenge/_content.html.twig", "challenge/index.html.twig", 62)->display($context);
         // line 63
+        echo "        ";
+        $this->loadTemplate("chat/index.html.twig", "challenge/index.html.twig", 63)->display($context);
+        // line 64
         echo "
+
     
     </div></div></div></div>
     <script src=\"";
-        // line 66
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/filters.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -197,7 +201,7 @@ class __TwigTemplate_42605e3126ec7cec63445670968c7a6e extends Template
 
     public function getDebugInfo()
     {
-        return array (  177 => 66,  172 => 63,  170 => 62,  153 => 47,  147 => 46,  139 => 44,  131 => 42,  128 => 41,  123 => 40,  119 => 38,  115 => 36,  113 => 35,  106 => 30,  100 => 28,  96 => 26,  94 => 25,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  181 => 68,  175 => 64,  172 => 63,  170 => 62,  153 => 47,  147 => 46,  139 => 44,  131 => 42,  128 => 41,  123 => 40,  119 => 38,  115 => 36,  113 => 35,  106 => 30,  100 => 28,  96 => 26,  94 => 25,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -264,6 +268,8 @@ class __TwigTemplate_42605e3126ec7cec63445670968c7a6e extends Template
 </html>
 
         {% include \"challenge/_content.html.twig\" %}
+        {% include \"chat/index.html.twig\" %}
+
 
     
     </div></div></div></div>

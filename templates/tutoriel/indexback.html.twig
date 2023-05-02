@@ -5,7 +5,7 @@
 {% block body %}
 
     <main id="main" class="main">
-      {%for message in app.flashes('success')%}
+    {%for message in app.flashes('success')%}
       <div class="alert alert-success">
         {{ message }} <i class="bi bi-check" style="width: 50;height: 50;color: #00ff00;"></i>
       </div>
@@ -260,7 +260,7 @@
                                                 {{ tutoriel.niveau }}
                                             </td>
                                            
-                                                                                        <td class="align-middle text-center text-sm"> <a class="btn btn-primary" href="{{ path('app_tutoriel_show', {'id_tutoriel': tutoriel.getId()}) }}">show ({{tutoriel.getVideos()|length}})</a></td>
+                                                                                        <td class="align-middle text-center text-sm"> <a class="btn btn-primary" href="{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}">show ({{tutoriel.getVideos()|length}})</a></td>
                                                                                         <td class="align-middle text-center text-sm"><a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}" class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
                                                                                         <td class="align-middle text-center text-sm"><a href="{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}" class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
                                     </tr>

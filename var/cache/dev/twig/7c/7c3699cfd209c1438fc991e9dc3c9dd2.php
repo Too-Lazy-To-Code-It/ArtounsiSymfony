@@ -87,7 +87,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
         // line 6
         echo "
     <main id=\"main\" class=\"main\">
-      ";
+    ";
         // line 8
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 8));
@@ -427,7 +427,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                                            
                                                                                         <td class=\"align-middle text-center text-sm\"> <a class=\"btn btn-primary\" href=\"";
             // line 263
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 263)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show_back", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 263)]), "html", null, true);
             echo "\">show (";
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getVideos", [], "method", false, false, false, 263)), "html", null, true);
             echo ")</a></td>
@@ -490,7 +490,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
 {% block body %}
 
     <main id=\"main\" class=\"main\">
-      {%for message in app.flashes('success')%}
+    {%for message in app.flashes('success')%}
       <div class=\"alert alert-success\">
         {{ message }} <i class=\"bi bi-check\" style=\"width: 50;height: 50;color: #00ff00;\"></i>
       </div>
@@ -745,7 +745,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                                                 {{ tutoriel.niveau }}
                                             </td>
                                            
-                                                                                        <td class=\"align-middle text-center text-sm\"> <a class=\"btn btn-primary\" href=\"{{ path('app_tutoriel_show', {'id_tutoriel': tutoriel.getId()}) }}\">show ({{tutoriel.getVideos()|length}})</a></td>
+                                                                                        <td class=\"align-middle text-center text-sm\"> <a class=\"btn btn-primary\" href=\"{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}\">show ({{tutoriel.getVideos()|length}})</a></td>
                                                                                         <td class=\"align-middle text-center text-sm\"><a href=\"{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}\" class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                                                                         <td class=\"align-middle text-center text-sm\"><a href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\" class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     </tr>

@@ -4,7 +4,12 @@
 
 {% block body %}
     <main id="main" class="main">
-
+    {%for message in app.flashes('success')%}
+      <div class="alert alert-success">
+        {{ message }} <i class="bi bi-check" style="width: 50;height: 50;color: #00ff00;"></i>
+      </div>
+    {% endfor %}
+    
         <div class="pagetitle">
             <h1>Mes Tutoriels</h1>
             <nav>

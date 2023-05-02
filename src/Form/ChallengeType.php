@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Sbyaute\StarRatingBundle\Form\StarRatingType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Category;
 use App\Entity\Allusers;
@@ -27,7 +28,10 @@ class ChallengeType extends AbstractType
                     'multiple' => false,
                     'mapped' => false,
                     'required' => false])
-            ->add('niveau')
+            ->add('niveau',StarRatingType::class,[
+                        'label' => 'Rating',
+                        'stars' => 5,
+                    ])
             ->add('id_categorie',EntityType::class,
             ['class'=>Category::class,
             'choice_label'=>'name_category'])
