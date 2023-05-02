@@ -63,4 +63,39 @@ class GrosmotsRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+public function listmot():array
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT s.mot FROM APP\Entity\Grosmots s" )
+      
+    
+    ->getScalarResult();
+
+    return array_column($query, 'mot');
+}
+
+ public function checkGrosMots(string $words): bool
+    { 
+  
+       
+        $listBadWords =$this->listmot();
+        $badWord = "";
+        $existe = false;
+        $allbadwords = "";
+        foreach ($listBadWords as $str) {
+            if (stripos($words, $str) !== false) {
+                $badWord .= "" . $str;
+                if (strlen($str) >= 1) {
+                    $badWordHiden = substr_replace($str, str_repeat('*', strlen($str) - 2), 1, -1);
+                    if (!empty($badWordHiden)) {
+                        $existe = true;
+                        $allbadwords .= $badWordHiden . "  ";
+                    }
+                }
+            }
+        }
+        
+        return $existe;
+    }
 }

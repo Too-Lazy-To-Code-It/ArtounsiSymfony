@@ -9,18 +9,66 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Repository\OffretravailRepository;
+use App\Entity\Offretravail;
+use DateTime;
 #[Route('/offretravailarchive')]
 class OffretravailarchiveController extends AbstractController
 {
     #[Route('/', name: 'app_offretravailarchive_index', methods: ['GET'])]
     public function index(OffretravailarchiveRepository $offretravailarchiveRepository): Response
-    {
+    { $offretravails = $offretravailarchiveRepository->findAll();
+        $id=1;
+        if($id==3){  $offretravailbyid =  $offretravailarchiveRepository->findAll();}
+        else
+        {$offretravailbyid =  $offretravailarchiveRepository->findBy(['id_user' => 1]);}
         return $this->render('offretravailarchive/index.html.twig', [
-            'offretravailarchives' => $offretravailarchiveRepository->findAll(),
+            'offretravails' => $offretravails,
+            'offretravailbyid' => $offretravailbyid,
         ]);
     }
+   
+    
+    #[Route('/{idoffre}', name: 'app_offretravailarchive_recuperer', methods: ['POST'])]
+    public function recuperer($idoffre,Request $request, Offretravailarchive $offretravailarchive, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
+    {
 
+        if ($this->isCsrfTokenValid('delete'.$offretravailarchive->getIdoffre(), $request->request->get('_token'))) {
+
+            $offre=$offretravailarchiveRepository->find($idoffre);
+            $offretravail = new Offretravail();
+            $offretravail->setDescriptionoffre(  $offre->getDescriptionoffre());
+            $offretravail->setTitreoffre($offre->getTitreoffre());
+            $offretravail->setIdcategorie($offre->getIdcategorie());
+            $offretravail->setCategorieoffre($offre->getCategorieoffre());
+            $offretravail->setIdUser($offre->getIdUser());
+            $offretravail->setTypeoffre($offre->getTypeoffre());
+            $offretravail->setLocalisationoffre($offre->getLocalisationoffre());
+            $now = new DateTime();
+            $offretravail->setDateajoutoofre($now);
+            $offretravail->setNickname($offre->getNickname());
+           
+          
+            $offretravailRepository->save( $offretravail);
+            $offretravailarchiveRepository->remove($offretravailarchive, true);
+        }
+
+
+        return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
+    }
+    #[Route('delete/{idoffre}', name: 'app_offretravailarchive_delete', methods: ['POST'])]
+    public function delete($idoffre,Request $request, Offretravailarchive $offretravailarchive, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
+    {
+
+        if ($this->isCsrfTokenValid('deleteoffre'.$offretravailarchive->getIdoffre(), $request->request->get('_tokendelete'))) {
+
+          
+            $offretravailarchiveRepository->remove($offretravailarchive, true);
+        }
+
+
+        return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
+    }
     #[Route('/new', name: 'app_offretravailarchive_new', methods: ['GET', 'POST'])]
     public function new(Request $request, OffretravailarchiveRepository $offretravailarchiveRepository): Response
     {
@@ -48,31 +96,6 @@ class OffretravailarchiveController extends AbstractController
         ]);
     }
 
-    #[Route('/{idoffre}/edit', name: 'app_offretravailarchive_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Offretravailarchive $offretravailarchive, OffretravailarchiveRepository $offretravailarchiveRepository): Response
-    {
-        $form = $this->createForm(OffretravailarchiveType::class, $offretravailarchive);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $offretravailarchiveRepository->save($offretravailarchive, true);
-
-            return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('offretravailarchive/edit.html.twig', [
-            'offretravailarchive' => $offretravailarchive,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{idoffre}', name: 'app_offretravailarchive_delete', methods: ['POST'])]
-    public function delete(Request $request, Offretravailarchive $offretravailarchive, OffretravailarchiveRepository $offretravailarchiveRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$offretravailarchive->getIdoffre(), $request->request->get('_token'))) {
-            $offretravailarchiveRepository->remove($offretravailarchive, true);
-        }
-
-        return $this->redirectToRoute('app_offretravailarchive_index', [], Response::HTTP_SEE_OTHER);
-    }
+   
 }

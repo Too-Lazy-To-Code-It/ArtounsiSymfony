@@ -16,7 +16,7 @@ class Grosmots
     #[ORM\Column(length: 255)]
     private ?string $mot = null;
 
-    public function getId(): ?int
+    public function getidMot(): ?int
     {
         return $this->idMot;
     }

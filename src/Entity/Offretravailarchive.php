@@ -16,7 +16,8 @@ class Offretravailarchive
 
     #[ORM\ManyToOne(inversedBy: 'offretravailarchives')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
-    private ?allusers $id_user = null;
+  
+    private ?Allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
     private ?string $titreoffre = null;
@@ -41,19 +42,19 @@ class Offretravailarchive
 
     #[ORM\ManyToOne(inversedBy: 'offretravailarchives')]
     #[ORM\JoinColumn(name:'id_category',referencedColumnName:'id_category' ,nullable: false)]
-    private ?category $idcategorie = null;
+    private ?Category $idcategorie = null;
 
-    public function getId(): ?int
+    public function getIdoffre(): ?int
     {
         return $this->idoffre;
     }
 
-    public function getIdUser(): ?allusers
+    public function getIdUser(): ?Allusers
     {
         return $this->id_user;
     }
 
-    public function setIdUser(?allusers $id_user): self
+    public function setIdUser(?Allusers $id_user): self
     {
         $this->id_user = $id_user;
 
@@ -144,12 +145,12 @@ class Offretravailarchive
         return $this;
     }
 
-    public function getIdcategorie(): ?category
+    public function getIdcategorie(): ?Category
     {
         return $this->idcategorie;
     }
 
-    public function setIdcategorie(?category $idcategorie): self
+    public function setIdcategorie(?Category $idcategorie): self
     {
         $this->idcategorie = $idcategorie;
 

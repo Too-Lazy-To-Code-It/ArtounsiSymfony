@@ -6,6 +6,10 @@ use App\Entity\Offretravail;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Category;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OffretravailType extends AbstractType
 {
@@ -14,13 +18,28 @@ class OffretravailType extends AbstractType
         $builder
             ->add('titreoffre')
             ->add('descriptionoffre')
-            ->add('categorieoffre')
-            ->add('nickname')
-            ->add('dateajoutoofre')
-            ->add('typeoffre')
-            ->add('localisationoffre')
-            ->add('id_user')
-            ->add('idcategorie')
+            ->add('idcategorie', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name_category',
+               
+            ])
+            ->add('typeoffre', ChoiceType::class, [
+                'choices' => [
+                    'Contrat' => 'Contrat',
+                    'Freelance' => 'Freelance',
+                    'Permanante' => 'Permanante',
+                ],
+            ])
+            ->add('localisationoffre', ChoiceType::class, [
+                'choices' => [
+                    'Tunis' => 'Tunis',
+                    'Algerie' => 'Algerie',
+                   'France' => 'France',
+                ],
+            ])
+         
+       
+        
         ;
     }
 

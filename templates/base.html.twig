@@ -6,7 +6,14 @@
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Vendor CSS Files -->
+    <link href="assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets2/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets2/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets2/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets2/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets2/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets2/vendor/simple-datatables/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <title>Liberty NFT Marketplace - HTML CSS Template</title>
@@ -28,6 +35,17 @@
     https://templatemo.com/tm-577-liberty-market
 
     -->
+       <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="assets/cardsjdid.scss" type="text/scss">
 </head>
 
 <body>
@@ -53,16 +71,21 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                       <img src="{{asset('assets2/img/logoart.png') }}"  height="50" width="30" alt="">
+              
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="explore.html">Explore</a></li>
-                        <li><a href="details.html">Item Details</a></li>
-                        <li><a href="author.html">Author</a></li>
-                        <li><a href="create.html">Create Yours</a></li>
+                        <li><a href="#" class="active">Acceuil</a></li>
+                       
+                        <li><a href="{{ path('app_offretravail_index') }}">Offres d'emplois</a></li>
+                        <li><a href="{{ path('app_demandetravail_index') }}">Demandes d'emplois</a></li>
+                                 
+                      <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+
+                       
+                         
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -107,7 +130,7 @@
         </div>
     </div>
 </div>
-<!-- ***** Main Banner Area End ***** -->
+
 
 <div class="categories-collections">
     <div class="container">
@@ -477,6 +500,104 @@
     </div>
 </div>
 
+
+<section class="dark">
+	<div class="container py-4">
+		<h1 class="h1 text-center" id="pageHeaderTitle">My Cards Dark</h1>
+
+		<article class="postcard dark blue">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title blue"><a href="#">Podcast Title</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+					<li class="tag__item play blue">
+						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article class="postcard dark red">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title red"><a href="#">Podcast Title</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+					<li class="tag__item play red">
+						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article class="postcard dark green">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title green"><a href="#">Podcast Title</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+					<li class="tag__item play green">
+						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article class="postcard dark yellow">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title yellow"><a href="#">Podcast Title</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+					<li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+					<li class="tag__item play yellow">
+						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+
 <footer>
     <div class="container">
         <div class="row">
@@ -501,6 +622,14 @@
 <script src="assets/js/tabs.js"></script>
 <script src="assets/js/popup.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

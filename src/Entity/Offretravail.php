@@ -1,44 +1,57 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\OffretravailRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: OffretravailRepository::class)]
 class Offretravail
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("offres")]
     private ?int $idoffre = null;
 
     #[ORM\ManyToOne(inversedBy: 'offretravails')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
     private ?Allusers $id_user = null;
-
+   
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
+    #[Assert\NotBlank(message:"veuiller saisir le titre de l'offre")]
+    #[Assert\Length(min:3, minMessage:"entrer un titre valide avec minimum 3 caracteres")]
     private ?string $titreoffre = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
+    #[Assert\Length(min:15, minMessage:"entrer une description valide avec minimum 15caracteres")]
+
+    #[Assert\NotBlank(message:"veuiller saisir la description de l'offre")]
     private ?string $descriptionoffre = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
     private ?string $categorieoffre = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
     private ?string $nickname = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("offres")]
     private ?\DateTimeInterface $dateajoutoofre = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
     private ?string $typeoffre = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("offres")]
     private ?string $localisationoffre = null;
 
     #[ORM\ManyToOne(inversedBy: 'offretravails')]
@@ -53,7 +66,7 @@ class Offretravail
         $this->artistepostulers = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getIdoffre(): ?int
     {
         return $this->idoffre;
     }
@@ -69,7 +82,6 @@ class Offretravail
 
         return $this;
     }
-
     public function getTitreoffre(): ?string
     {
         return $this->titreoffre;

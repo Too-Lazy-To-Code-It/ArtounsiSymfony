@@ -5,26 +5,30 @@ namespace App\Entity;
 use App\Repository\DemandetravailRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: DemandetravailRepository::class)]
 class Demandetravail
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $idDemande = null;
+  #[ORM\Id]
+#[ORM\GeneratedValue]
+#[ORM\Column]
+public ?int $idDemande = null;
 
-    #[ORM\ManyToOne(inversedBy: 'demandetravails')]
-    #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
-    private ?Allusers $id_user = null;
+#[ORM\ManyToOne(inversedBy: 'offretravails')]
+#[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
+private ?Allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
     private ?string $nickname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"veuiller saisir le titre de la demande")]
+    #[Assert\Length(min:4, minMessage:"entrer un titre valide avec minimum 3 caracteres")]
     private ?string $titreDemande = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min:15, minMessage:"entrer une description valide avec minimum 15caracteres")]
+    #[Assert\NotBlank(message:"veuiller saisir la description de  la demande")]
     private ?string $descriptionDemande = null;
 
     #[ORM\ManyToOne(inversedBy: 'demandetravails')]
@@ -32,6 +36,7 @@ class Demandetravail
     private ?Category $idcategorie = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"veuiller saisir votre cv avec format pdf")]
     private ?string $pdf = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]

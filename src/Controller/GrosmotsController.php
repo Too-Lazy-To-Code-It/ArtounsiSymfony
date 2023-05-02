@@ -29,6 +29,7 @@ class GrosmotsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+  
             $grosmotsRepository->save($grosmot, true);
 
             return $this->redirectToRoute('app_grosmots_index', [], Response::HTTP_SEE_OTHER);
@@ -69,7 +70,7 @@ class GrosmotsController extends AbstractController
     #[Route('/{idMot}', name: 'app_grosmots_delete', methods: ['POST'])]
     public function delete(Request $request, Grosmots $grosmot, GrosmotsRepository $grosmotsRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$grosmot->getIdMot(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$grosmot->getidMot(), $request->request->get('_token'))) {
             $grosmotsRepository->remove($grosmot, true);
         }
 

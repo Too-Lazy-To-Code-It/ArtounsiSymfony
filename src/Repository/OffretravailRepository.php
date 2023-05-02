@@ -3,6 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Offretravail;
+use App\Entity\Grosmots;
+use Doctrine\Bundle\DoctrineBundle\Repository\GrosmotsRepository;
+use Doctrine\ORM\EntityManagerInterface;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -63,4 +67,69 @@ class OffretravailRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+   
+public function chercherOffres(string $mots)
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT s FROM APP\Entity\Offretravail s WHERE LOWER(s.titreoffre)  LIKE :mot OR LOWER(s.descriptionoffre) LIKE :mot")
+        ->setParameter('mot', '%' . $mots . '%')
+    ;
+    return $query->getResult();
+}
+
+public function findBydemandessimilaires(int $id)
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT d FROM App\Entity\Demandetravail d INNER JOIN  App\Entity\Offretravail o WITH o.titreoffre = d.titreDemande WHERE d.id_user  = :id ")
+        ->setParameter('id', $id )
+    ;
+    return $query->getResult();
+}
+  /*  public function cherrdgtrcherfOffres(string $mots)
+    {
+        $offresTravailtrouver = [];
+
+        $words = explode(' ', $mots);
+
+        foreach ($words as $motss) {
+            $qb = $this->createQueryBuilder('o');
+
+            $qb->where($qb->expr()->like('o.titreOffre', ':motss'))
+               ->orWhere($qb->expr()->like('o.nickname', ':motss'))
+               ->orWhere($qb->expr()->like('o.descriptionoffre', ':motss'))
+               ->orWhere($qb->expr()->like('o.categorieoffre', ':motss'))
+               ->setParameter('motss', '%' . $motss . '%');
+
+            $results = $qb->getQuery()->getResult();
+
+            foreach ($results as $result) {
+                if (!$this->containsId($offresTravailtrouver, $result->getIdOffre())) {
+                    $offresTravailtrouver[] = $result;
+                }
+            }
+        }
+
+        return $offresTravailtrouver;
+    }
+*/
+    public function containsId(array $list, int $id): bool
+    {
+        foreach ($list as $offre) {
+            if ($offre->getIdOffre() === $id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+ 
+ 
+    public function findOneBySomeField($id)
+        {         return $this->getEntityManager()->getRepository( Offretravail::class)->findBy(['id' => $id]);
+       }
+    
 }

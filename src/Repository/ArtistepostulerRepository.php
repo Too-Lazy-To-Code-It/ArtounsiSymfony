@@ -38,6 +38,34 @@ class ArtistepostulerRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function notif(int $id)
+    {
+        $entityManager=$this->getEntityManager();
+        $query=$entityManager
+            ->createQuery("SELECT s FROM APP\Entity\Artistepostuler s WHERE s.idoffre =:id ")
+            ->setParameter('id', $id)
+        ;
+        return $query->getResult();
+    }
+    public function countFalseNotif(int $id)
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT COUNT(s) FROM APP\Entity\Artistepostuler s WHERE s.idoffre = :id AND s.notif =0")
+        ->setParameter('id', $id);
+    $count = $query->getSingleScalarResult();
+    return $count;
+}
+public function notiftrue(int $id)
+{
+    $entityManager = $this->getEntityManager();
+    
+    $query = $entityManager
+        ->createQuery("UPDATE APP\Entity\Artistepostuler s SET s.notif = 1 WHERE s.idoffre = :id")
+        ->setParameter('id', $id);
+    
+    return $query->execute();
+}
 
 //    /**
 //     * @return Artistepostuler[] Returns an array of Artistepostuler objects

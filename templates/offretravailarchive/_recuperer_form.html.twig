@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_offretravailarchive_recuperer', {'idoffre': offretravail.idoffre}) }}" onsubmit="return confirm('Vous etes sur de recuperer l'offre?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ offretravail.idoffre) }}">
+  
+     <button class="text-danger"><i class="bi bi-trash"></i> Récuperer</button>
+</form>

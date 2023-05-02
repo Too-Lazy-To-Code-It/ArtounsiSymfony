@@ -63,4 +63,27 @@ class DemandetravailRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+public function chercherdemandes(string $mots)
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT s FROM APP\Entity\Demandetravail s WHERE LOWER(s.titreDemande)  LIKE :mot OR LOWER(s.descriptionDemande) LIKE :mot")
+        ->setParameter('mot', '%' . $mots . '%')
+    ;
+    return $query->getResult();
+}
+public function findByoffressimilaires(int $id)
+{
+    $entityManager=$this->getEntityManager();
+    $query=$entityManager
+        ->createQuery("SELECT o FROM App\Entity\Offretravail o INNER JOIN App\Entity\Demandetravail d WITH o.titreoffre = d.titreDemande WHERE d.id_user  = :id ")
+        ->setParameter('id', $id )
+    ;
+    return $query->getResult();
+}
+public function findOneBySomeField($id)
+{       $file= $this->getEntityManager()->getRepository( Demandetravail::class)->findBy(['idDemande' => $id]);
+    return $this->file('/home/website/upload/'.$file);
+
+}
 }
