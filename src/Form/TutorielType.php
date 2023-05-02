@@ -20,26 +20,24 @@ class TutorielType extends AbstractType
     {
         $builder
             //->add('pathimg')
-            
+
             ->add('title')
-            ->add('description',TextareaType::class)
-            ->add('niveau',StarRatingType::class,[
+            ->add('description', TextareaType::class)
+            ->add('niveau', StarRatingType::class, [
                 'label' => 'Rating',
                 'stars' => 5,
             ])
-            ->add('id_categorie',EntityType::class,
-            ['class'=>Category::class,
-            'choice_label'=>'name_category'])
-            ->add('id_artist',EntityType::class,
-            ['class'=>Allusers::class,
-            'choice_label'=>'nickname'])
+            ->add('id_categorie', EntityType::class,
+                ['class' => Category::class,
+                    'choice_label' => 'name_category'])
+            ->add('id_artist', EntityType::class,
+                ['class' => Allusers::class,
+                    'choice_label' => 'nickname'])
             ->add('Image', FileType::class,
-                    ['label' => 'image',
+                ['label' => 'image',
                     'multiple' => false,
                     'mapped' => false,
-                    'required' => false])
-                    
-        ;
+                    'required' => false]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
