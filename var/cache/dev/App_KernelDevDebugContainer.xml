@@ -8219,10 +8219,26 @@
         <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.xBaJTPI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qMAEMD." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.miz85uS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.CKFBqu." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="produit" type="service_closure" id=".errored..service_locator.CKFBqu..App\Entity\Produits"/>
         <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
@@ -8431,7 +8447,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.DmK7vpv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7ppw6Rk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -8553,11 +8569,11 @@
         <argument key="App\Controller\ProduitsBackController::index" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController::new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController::show" type="service_closure" id=".service_locator.arvAwdT"/>
-        <argument key="App\Controller\ProduitsController::delete" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsController::edit" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsController::index" type="service_closure" id=".service_locator.xBaJTPI"/>
-        <argument key="App\Controller\ProduitsController::new" type="service_closure" id=".service_locator.ALjzYuI"/>
-        <argument key="App\Controller\ProduitsController::show" type="service_closure" id=".service_locator.XcJaAy8"/>
+        <argument key="App\Controller\ProduitsController::delete" type="service_closure" id=".service_locator.CKFBqu."/>
+        <argument key="App\Controller\ProduitsController::edit" type="service_closure" id=".service_locator.CKFBqu."/>
+        <argument key="App\Controller\ProduitsController::index" type="service_closure" id=".service_locator.qMAEMD."/>
+        <argument key="App\Controller\ProduitsController::new" type="service_closure" id=".service_locator.miz85uS"/>
+        <argument key="App\Controller\ProduitsController::show" type="service_closure" id=".service_locator.CKFBqu."/>
         <argument key="App\Controller\ProduitsMobileController::ProduitId" type="service_closure" id=".service_locator.4vB6tzF"/>
         <argument key="App\Controller\ProduitsMobileController::ajouterProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
         <argument key="App\Controller\ProduitsMobileController::getProduits" type="service_closure" id=".service_locator.pQtBqWs"/>
@@ -8733,11 +8749,11 @@
         <argument key="App\Controller\ProduitsBackController:index" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController:new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsBackController:show" type="service_closure" id=".service_locator.arvAwdT"/>
-        <argument key="App\Controller\ProduitsController:delete" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsController:edit" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsController:index" type="service_closure" id=".service_locator.xBaJTPI"/>
-        <argument key="App\Controller\ProduitsController:new" type="service_closure" id=".service_locator.ALjzYuI"/>
-        <argument key="App\Controller\ProduitsController:show" type="service_closure" id=".service_locator.XcJaAy8"/>
+        <argument key="App\Controller\ProduitsController:delete" type="service_closure" id=".service_locator.CKFBqu."/>
+        <argument key="App\Controller\ProduitsController:edit" type="service_closure" id=".service_locator.CKFBqu."/>
+        <argument key="App\Controller\ProduitsController:index" type="service_closure" id=".service_locator.qMAEMD."/>
+        <argument key="App\Controller\ProduitsController:new" type="service_closure" id=".service_locator.miz85uS"/>
+        <argument key="App\Controller\ProduitsController:show" type="service_closure" id=".service_locator.CKFBqu."/>
         <argument key="App\Controller\ProduitsMobileController:ProduitId" type="service_closure" id=".service_locator.4vB6tzF"/>
         <argument key="App\Controller\ProduitsMobileController:ajouterProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
         <argument key="App\Controller\ProduitsMobileController:getProduits" type="service_closure" id=".service_locator.pQtBqWs"/>
@@ -9683,12 +9699,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.DmK7vpv"/>
+      <argument type="service" id=".service_locator.7ppw6Rk"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.DmK7vpv"/>
+      <argument type="service" id=".service_locator.7ppw6Rk"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9749,6 +9765,7 @@
     <service id=".errored..service_locator.tghYLrc.App\Entity\PostLike" class="App\Entity\PostLike"/>
     <service id=".errored..service_locator.arvAwdT.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.XcJaAy8.App\Entity\Produits" class="App\Entity\Produits"/>
+    <service id=".errored..service_locator.CKFBqu..App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.SkPZ0M4.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.DiYfVrs.App\Entity\Tutoriel" class="App\Entity\Tutoriel"/>
     <service id=".errored..service_locator.HK7FhIP.App\Entity\Video" class="App\Entity\Video"/>
@@ -10715,7 +10732,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.DmK7vpv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.7ppw6Rk"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10783,7 +10800,7 @@
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.gU5UtXD" alias=".service_locator.cn5m30c"/>
-    <service id=".service_locator.96dlkw3" alias=".service_locator.DmK7vpv"/>
+    <service id=".service_locator.t_YUUVZ" alias=".service_locator.7ppw6Rk"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1s1r2Me" alias=".service_locator.HA0YbZU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -10892,7 +10909,9 @@
     <service id=".service_locator.dUObiyV" alias=".service_locator.ALjzYuI"/>
     <service id=".service_locator.c35YWSS" alias=".service_locator.arvAwdT"/>
     <service id=".service_locator.85_AghP" alias=".service_locator.XcJaAy8"/>
-    <service id=".service_locator.UYLcJ9p" alias=".service_locator.xBaJTPI"/>
+    <service id=".service_locator.Lnd089t" alias=".service_locator.qMAEMD."/>
+    <service id=".service_locator.q_Kc5tN" alias=".service_locator.miz85uS"/>
+    <service id=".service_locator.IuyLM75" alias=".service_locator.CKFBqu."/>
     <service id=".service_locator.qVOwlZv" alias=".service_locator.pQtBqWs"/>
     <service id=".service_locator.umS3Gmt" alias=".service_locator.4vB6tzF"/>
     <service id=".service_locator.ir1CX7r" alias=".service_locator.9HlPIf8"/>

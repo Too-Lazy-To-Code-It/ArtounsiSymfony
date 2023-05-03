@@ -102,7 +102,7 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
         echo "\">Shop</a></li>
                         <li><a href=\"";
         // line 60
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 60, $this->source); })())]), "html", null, true);
         echo "\">Panier</a></li>
                         <li><a href=\"";
         // line 61
@@ -560,7 +560,7 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
                       <ul class=\"nav\">
                         <li><a href=\"index.html\">Home</a></li>
                         <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
-                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': idpanier}) }}\">Panier</a></li>
                         <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
                         <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
                       </ul>   

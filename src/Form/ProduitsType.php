@@ -21,9 +21,8 @@ class ProduitsType extends AbstractType
             'required' => false,
         ])
         ->add('prix')
-        ->add('idcategorie')
-        ->add('id_user')
-        ;
+        ->add('idcategorie');
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void
