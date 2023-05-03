@@ -121,9 +121,11 @@
                         </span>
                         <span class="bid">
                             <br><strong><a href="{{ path('app_post_edit', {'id_post': post.getId}) }}">Edit Post</a></strong><br>
+                            {% if(user.id_user==post.idUser.getid_user()) %}
                             {{ include('post/_delete_form.html.twig') }}
                             
                         </span>
+                            {% endif %}
                 </div>
                         <div class="fb-like" id="like-btn">
                             {{ include('post_like/_form.html.twig') }}             
@@ -167,7 +169,9 @@
                                             <h6>Comment: <em>{{ comment.getComment }}</em></h6>
                                             <span class="date">{{ comment.getDateComment()|date('Y-m-d H:i:s') }}</span>
                                             <h6><a href="{{ path('app_comment_edit', {'id_comment': comment.getId}) }}">edit</a></h6>
+                                            {% if(user.idUser==comment.getIdUser().getid_user()) %}
                                             <h6>{{ include('comment/_delete_form.html.twig') }}</h6>
+                                                {% endif %}
                                         </div>
                                     </div>
                                 </div>

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Post;
 use App\Form\PostType;
+use App\Repository\AllusersRepository;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,13 +44,16 @@ class PostController extends AbstractController
     }
 
     #[Route('/new', name: 'app_post_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PostRepository $postRepository): Response
+    public function new(AllusersRepository $allusersRepository,Request $request, PostRepository $postRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $post->setIdUser($user);
             $postRepository->save($post, true);
             $this->addFlash('succes', 'post est ajoutée avec succes.');
 
@@ -99,20 +103,21 @@ class PostController extends AbstractController
     }
 
     #[Route('/post/{id_post}', name: 'app_post_details', methods: ['GET', 'POST'])]
-    public function showPostDetails(Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
+    public function showPostDetails(AllusersRepository $allusersRepository,Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
     {
-        $currentUserId = 1;
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
 
         $postLike = new PostLike();
         $postLike->setIdPost($entityManager->getReference(Post::class, $id_post));
-        $postLike->setIdUser($entityManager->getReference(Allusers::class, $currentUserId)); // set current user ID
+        $postLike->setIdUser($entityManager->getReference(Allusers::class, $userId)); // set current user ID
         $form = $this->createForm(PostLikeType::class, $postLike);
         $form->handleRequest($request);
         $comments = $commentRepository->findAll();
 
         // Get existing like if it exists
         $existingLike = $postLikeRepository->findOneBy([
-            'id_user' => $currentUserId,
+            'id_user' => $userId,
             'id_post' => $id_post,
         ]);
 
@@ -132,6 +137,7 @@ class PostController extends AbstractController
             'comments' => $comments,
             'form' => $form->createView(),
             'post_like' => $existingLike, // Pass existing like object to template
+            'user'=>$user,
         ]);
     }
 

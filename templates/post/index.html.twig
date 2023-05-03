@@ -102,6 +102,7 @@
                             
                             <td>
                                 {# <a href="{{ path('app_post_show', {'id_post': post.getId}) }}">show</a> #}
+
                                 {{ include('post/_delete_form.html.twig') }}
                                 <a href="{{ path('app_post_edit', {'id_post': post.getId}) }}">edit</a>
                             </td>

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Form\CommentType;
+use App\Repository\AllusersRepository;
 use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,14 +58,17 @@ class CommentController extends AbstractController
     //     ]);
     // }
     #[Route('/new/{id_post}', name: 'app_comment_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager, $id_post): Response
+    public function new(AllusersRepository $allusersRepository,Request $request, EntityManagerInterface $entityManager, $id_post): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $comment = new Comment();
         $comment->setIdPost($entityManager->getReference(Post::class, $id_post));
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setIdUser($user);
             $entityManager->persist($comment);
             $entityManager->flush();
 

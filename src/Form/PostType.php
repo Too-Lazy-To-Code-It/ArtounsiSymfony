@@ -71,11 +71,6 @@ class PostType extends AbstractType
                 new Choice(['choices' => ['blog', 'portfolio'], 'message' => 'Please select a valid post type.'])
             ]
         ])
-            ->add('id_user', null, [
-                'attr' => [
-                    'style' => 'width: 100%;'
-                ]
-            ])
             ->add('id_category', null, [
                 'label' => 'Category',
                 'attr' => [

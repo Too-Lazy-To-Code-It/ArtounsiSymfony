@@ -378,7 +378,10 @@ class __TwigTemplate_793509f1c2884605c4c5743750580bd5 extends Template
     </div>
     <div class=\"col-lg-12\">
         <div class=\"main-button\">
-            <a href=\"details.html.twig\">View Details</a>
+            <a href=\"";
+        // line 189
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_details", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 189, $this->source); })()), "getId", [], "any", false, false, false, 189)]), "html", null, true);
+        echo "\">View Details</a>
         </div>
     </div>
 </div>
@@ -580,7 +583,7 @@ class __TwigTemplate_793509f1c2884605c4c5743750580bd5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  565 => 330,  561 => 329,  557 => 328,  553 => 327,  549 => 326,  545 => 325,  540 => 324,  530 => 323,  519 => 332,  517 => 323,  374 => 183,  368 => 180,  359 => 174,  355 => 173,  314 => 134,  303 => 132,  299 => 131,  285 => 120,  264 => 101,  251 => 94,  245 => 91,  239 => 88,  235 => 86,  231 => 85,  202 => 59,  196 => 56,  192 => 55,  188 => 54,  184 => 53,  157 => 28,  147 => 27,  135 => 19,  131 => 18,  127 => 17,  123 => 16,  118 => 15,  108 => 14,  94 => 21,  92 => 14,  86 => 11,  78 => 6,  72 => 2,  62 => 1,  52 => 27,  49 => 26,  47 => 1,);
+        return array (  568 => 330,  564 => 329,  560 => 328,  556 => 327,  552 => 326,  548 => 325,  543 => 324,  533 => 323,  522 => 332,  520 => 323,  383 => 189,  374 => 183,  368 => 180,  359 => 174,  355 => 173,  314 => 134,  303 => 132,  299 => 131,  285 => 120,  264 => 101,  251 => 94,  245 => 91,  239 => 88,  235 => 86,  231 => 85,  202 => 59,  196 => 56,  192 => 55,  188 => 54,  184 => 53,  157 => 28,  147 => 27,  135 => 19,  131 => 18,  127 => 17,  123 => 16,  118 => 15,  108 => 14,  94 => 21,  92 => 14,  86 => 11,  78 => 6,  72 => 2,  62 => 1,  52 => 27,  49 => 26,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -773,7 +776,7 @@ class __TwigTemplate_793509f1c2884605c4c5743750580bd5 extends Template
     </div>
     <div class=\"col-lg-12\">
         <div class=\"main-button\">
-            <a href=\"details.html.twig\">View Details</a>
+            <a href=\"{{ path('app_post_details', {'id_post': post.getId}) }}\">View Details</a>
         </div>
     </div>
 </div>

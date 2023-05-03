@@ -32,11 +32,7 @@ class CommentType extends AbstractType
             // ->add('id_post', HiddenType::class, [
             //     'data' => $options['post_id'], // pass the id_post of the Post entity to the form
             // ])
-            ->add('id_user', null, [
-                'attr' => [
-                    'style' => 'width: 100%;'
-                ]
-            ])
+
         ;
     }
 

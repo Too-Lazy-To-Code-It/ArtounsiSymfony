@@ -289,14 +289,20 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         echo "\">Edit Post</a></strong><br>
                             ";
         // line 124
-        echo twig_include($this->env, $context, "post/_delete_form.html.twig");
-        echo "
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 124, $this->source); })()), "id_user", [], "any", false, false, false, 124) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 124, $this->source); })()), "idUser", [], "any", false, false, false, 124), "getid_user", [], "method", false, false, false, 124))) {
+            // line 125
+            echo "                            ";
+            echo twig_include($this->env, $context, "post/_delete_form.html.twig");
+            echo "
                             
                         </span>
-                </div>
+                            ";
+        }
+        // line 129
+        echo "                </div>
                         <div class=\"fb-like\" id=\"like-btn\">
                             ";
-        // line 129
+        // line 131
         echo twig_include($this->env, $context, "post_like/_form.html.twig");
         echo "             
                             <h1></h1>
@@ -324,12 +330,12 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 <div class=\"row\">
                 
                     ";
-        // line 154
-        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 154, $this->source); })()), 3);
-        // line 155
+        // line 156
+        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 156, $this->source); })()), 3);
+        // line 157
         echo "                    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 155, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 157, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -344,10 +350,10 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["group"]) {
-            // line 156
+            // line 158
             echo "                        <div class=\"row\">
                             ";
-            // line 157
+            // line 159
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["group"]);
             $context['loop'] = [
@@ -364,47 +370,53 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 158
-                echo "                            ";
-                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 158, $this->source); })()), "getIdPost", [], "any", false, false, false, 158);
-                // line 159
-                echo "                            ";
-                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 159);
                 // line 160
                 echo "                            ";
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 160), "getIdPost", [], "method", false, false, false, 160) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 160, $this->source); })()), "getIdPost", [], "method", false, false, false, 160))) {
-                    // line 161
+                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 160, $this->source); })()), "getIdPost", [], "any", false, false, false, 160);
+                // line 161
+                echo "                            ";
+                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 161);
+                // line 162
+                echo "                            ";
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 162), "getIdPost", [], "method", false, false, false, 162) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 162, $this->source); })()), "getIdPost", [], "method", false, false, false, 162))) {
+                    // line 163
                     echo "                                <div class=\"col-lg-4 col-md-6\">
                                     <div class=\"item\">
                                         <div class=\"right-content\">
                                             <h4>Name : </h4>
                                             <a href=\"#\">";
-                    // line 165
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 165), "getName", [], "method", false, false, false, 165), "html", null, true);
+                    // line 167
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 167), "getName", [], "method", false, false, false, 167), "html", null, true);
                     echo "</a>
                                             <div class=\"line-dec\"></div>
                                             <h6>Comment: <em>";
-                    // line 167
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 167), "html", null, true);
+                    // line 169
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 169), "html", null, true);
                     echo "</em></h6>
                                             <span class=\"date\">";
-                    // line 168
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 168), "Y-m-d H:i:s"), "html", null, true);
+                    // line 170
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 170), "Y-m-d H:i:s"), "html", null, true);
                     echo "</span>
                                             <h6><a href=\"";
-                    // line 169
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 169)]), "html", null, true);
+                    // line 171
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 171)]), "html", null, true);
                     echo "\">edit</a></h6>
-                                            <h6>";
-                    // line 170
-                    echo twig_include($this->env, $context, "comment/_delete_form.html.twig");
-                    echo "</h6>
-                                        </div>
+                                            ";
+                    // line 172
+                    if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 172, $this->source); })()), "idUser", [], "any", false, false, false, 172) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 172), "getid_user", [], "method", false, false, false, 172))) {
+                        // line 173
+                        echo "                                            <h6>";
+                        echo twig_include($this->env, $context, "comment/_delete_form.html.twig");
+                        echo "</h6>
+                                                ";
+                    }
+                    // line 175
+                    echo "                                        </div>
                                     </div>
                                 </div>
                                 ";
                 }
-                // line 175
+                // line 179
                 echo "                            ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -418,7 +430,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 176
+            // line 180
             echo "                        </div>
                     ";
             ++$context['loop']['index0'];
@@ -433,7 +445,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 178
+        // line 182
         echo "
 
                 </div>
@@ -442,8 +454,8 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             <div class=\"row\">
                 <div class=\"col-lg-12\">
                     <form action=\"";
-        // line 185
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 185, $this->source); })()), "getIdPost", [], "any", false, false, false, 185)]), "html", null, true);
+        // line 189
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 189, $this->source); })()), "getIdPost", [], "any", false, false, false, 189)]), "html", null, true);
         echo "\" method=\"post\">
                         <input type=\"submit\" value=\"Add Comment\" style=\"font-size: 20px; padding: 10px;width: 100%;\" >
                     </form>
@@ -474,7 +486,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 </div>
                 <div class=\"icon\">
                 <img src=\"";
-        // line 214
+        // line 218
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-02.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
@@ -489,7 +501,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 </div>
                 <div class=\"icon\">
                     <img src=\"";
-        // line 226
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-04.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
@@ -501,7 +513,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             <div class=\"item\">
                 <div class=\"icon\">
                 <img src=\"";
-        // line 235
+        // line 239
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-06.png"), "html", null, true);
         echo "\" alt=\"\">
                 </div>
@@ -514,14 +526,14 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
     </div>
     </div>
 ";
-        // line 245
+        // line 249
         $this->displayBlock('footer', $context, $blocks);
-        // line 258
+        // line 262
         echo "
     ";
-        // line 259
+        // line 263
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 268
+        // line 272
         echo "
 
     ";
@@ -533,7 +545,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 245
+    // line 249
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -543,7 +555,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 246
+        // line 250
         echo "<footer>
     <div class=\"container\">
         <div class=\"row\">
@@ -564,7 +576,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 259
+    // line 263
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -574,32 +586,32 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 260
+        // line 264
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 261
+        // line 265
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 262
+        // line 266
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 263
+        // line 267
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 264
+        // line 268
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 265
+        // line 269
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 266
+        // line 270
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -618,7 +630,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     public function getDebugInfo()
     {
-        return array (  603 => 266,  599 => 265,  595 => 264,  591 => 263,  587 => 262,  583 => 261,  578 => 260,  568 => 259,  547 => 246,  537 => 245,  525 => 268,  523 => 259,  520 => 258,  518 => 245,  505 => 235,  493 => 226,  478 => 214,  446 => 185,  437 => 178,  422 => 176,  408 => 175,  400 => 170,  396 => 169,  392 => 168,  388 => 167,  383 => 165,  377 => 161,  374 => 160,  371 => 159,  368 => 158,  351 => 157,  348 => 156,  330 => 155,  328 => 154,  300 => 129,  292 => 124,  288 => 123,  282 => 120,  275 => 116,  270 => 114,  266 => 113,  263 => 112,  259 => 110,  252 => 106,  207 => 64,  201 => 61,  197 => 60,  193 => 59,  189 => 58,  183 => 54,  181 => 53,  177 => 51,  167 => 43,  163 => 31,  153 => 30,  141 => 21,  137 => 20,  133 => 19,  129 => 18,  124 => 17,  114 => 16,  100 => 23,  98 => 16,  92 => 13,  84 => 8,  78 => 4,  68 => 3,  58 => 30,  54 => 28,  52 => 3,  48 => 1,);
+        return array (  615 => 270,  611 => 269,  607 => 268,  603 => 267,  599 => 266,  595 => 265,  590 => 264,  580 => 263,  559 => 250,  549 => 249,  537 => 272,  535 => 263,  532 => 262,  530 => 249,  517 => 239,  505 => 230,  490 => 218,  458 => 189,  449 => 182,  434 => 180,  420 => 179,  414 => 175,  408 => 173,  406 => 172,  402 => 171,  398 => 170,  394 => 169,  389 => 167,  383 => 163,  380 => 162,  377 => 161,  374 => 160,  357 => 159,  354 => 158,  336 => 157,  334 => 156,  306 => 131,  302 => 129,  294 => 125,  292 => 124,  288 => 123,  282 => 120,  275 => 116,  270 => 114,  266 => 113,  263 => 112,  259 => 110,  252 => 106,  207 => 64,  201 => 61,  197 => 60,  193 => 59,  189 => 58,  183 => 54,  181 => 53,  177 => 51,  167 => 43,  163 => 31,  153 => 30,  141 => 21,  137 => 20,  133 => 19,  129 => 18,  124 => 17,  114 => 16,  100 => 23,  98 => 16,  92 => 13,  84 => 8,  78 => 4,  68 => 3,  58 => 30,  54 => 28,  52 => 3,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -746,9 +758,11 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                         </span>
                         <span class=\"bid\">
                             <br><strong><a href=\"{{ path('app_post_edit', {'id_post': post.getId}) }}\">Edit Post</a></strong><br>
+                            {% if(user.id_user==post.idUser.getid_user()) %}
                             {{ include('post/_delete_form.html.twig') }}
                             
                         </span>
+                            {% endif %}
                 </div>
                         <div class=\"fb-like\" id=\"like-btn\">
                             {{ include('post_like/_form.html.twig') }}             
@@ -792,7 +806,9 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                             <h6>Comment: <em>{{ comment.getComment }}</em></h6>
                                             <span class=\"date\">{{ comment.getDateComment()|date('Y-m-d H:i:s') }}</span>
                                             <h6><a href=\"{{ path('app_comment_edit', {'id_comment': comment.getId}) }}\">edit</a></h6>
+                                            {% if(user.idUser==comment.getIdUser().getid_user()) %}
                                             <h6>{{ include('comment/_delete_form.html.twig') }}</h6>
+                                                {% endif %}
                                         </div>
                                     </div>
                                 </div>
