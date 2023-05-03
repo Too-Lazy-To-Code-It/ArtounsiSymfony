@@ -198,8 +198,16 @@ https://templatemo.com/tm-577-liberty-market
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 137), "html", null, true);
             echo "</h4>
                                 <span class=\"author\">
-                                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
-                                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
+                                    <img src=\"";
+            // line 139
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/Avatars/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 139, $this->source); })()), "avatar", [], "any", false, false, false, 139))), "html", null, true);
+            echo "\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\" width=\"50\" height=\"50\">
+                                    <h6>";
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 140, $this->source); })()), "name", [], "any", false, false, false, 140), "html", null, true);
+            echo "<br><a >";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 140, $this->source); })()), "nickname", [], "any", false, false, false, 140), "html", null, true);
+            echo "</a></h6>
                                 </span>
                                 <div class=\"line-dec\"></div>
                                 <span class=\"bid\">                                
@@ -375,7 +383,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  353 => 22,  349 => 21,  345 => 20,  341 => 19,  336 => 16,  326 => 15,  307 => 215,  303 => 214,  299 => 213,  293 => 210,  289 => 209,  284 => 207,  280 => 206,  251 => 179,  249 => 168,  248 => 167,  236 => 157,  224 => 151,  218 => 148,  212 => 145,  208 => 144,  198 => 137,  192 => 134,  187 => 131,  183 => 130,  146 => 96,  119 => 72,  115 => 71,  111 => 70,  65 => 26,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  361 => 22,  357 => 21,  353 => 20,  349 => 19,  344 => 16,  334 => 15,  315 => 215,  311 => 214,  307 => 213,  301 => 210,  297 => 209,  292 => 207,  288 => 206,  259 => 179,  257 => 168,  256 => 167,  244 => 157,  232 => 151,  226 => 148,  220 => 145,  216 => 144,  207 => 140,  203 => 139,  198 => 137,  192 => 134,  187 => 131,  183 => 130,  146 => 96,  119 => 72,  115 => 71,  111 => 70,  65 => 26,  63 => 15,  58 => 13,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -518,8 +526,8 @@ https://templatemo.com/tm-577-liberty-market
                             <div class=\"right-content\">
                                 <h4>{{ produit.nom }}</h4>
                                 <span class=\"author\">
-                                    <img src=\"assets/images/author.jpg\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
-                                    <h6>nom user<br><a href=\"#\">@libertyart</a></h6>
+                                    <img src=\"{{ asset('uploads/Avatars/' ~ user.avatar) }}\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\" width=\"50\" height=\"50\">
+                                    <h6>{{ user.name }}<br><a >{{ user.nickname }}</a></h6>
                                 </span>
                                 <div class=\"line-dec\"></div>
                                 <span class=\"bid\">                                

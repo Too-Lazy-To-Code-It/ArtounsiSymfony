@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Allusers;
+use App\Entity\Panier;
 use App\Form\AllusersType;
 use App\Form\AuthType;
 use App\Form\LoginType;
 use App\Form\VerificationCodeType;
 use App\Repository\AllusersRepository;
+use App\Repository\PanierRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -124,7 +126,7 @@ class AllusersController extends AbstractController
     /**
      * @throws TransportExceptionInterface
      */
-    #[Route('/new', name: 'app_allusers_new', methods: ['GET', 'POST'])]
+    #[Route('/register', name: 'app_allusers_new', methods: ['GET', 'POST'])]
     public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer, SessionInterface $session): Response
     {
         if ($this->isLoggedIn($request)) {
@@ -183,7 +185,7 @@ class AllusersController extends AbstractController
 
 
     #[Route('/verify', name: 'app_allusers_verify', methods: ['GET', 'POST'])]
-    public function verify(Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
+    public function verify(PanierRepository $panierRepository,Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
     {
         $alluser = $session->get('alluser');
 
@@ -195,6 +197,12 @@ class AllusersController extends AbstractController
 
             if ($verificationCode == $session->get('verification_code')) {
                 $allusersRepository->save($alluser, true);
+
+                $panier = new Panier();
+                $panier->setNbrProduits(0);
+                $panier->setMontantTotal(0);
+                $panier->setIdUser($allusersRepository->findOneBy(['name' => $alluser->getName()]));
+                $panierRepository->save($panier, true);
                 $session->clear();
                 $this->addFlash('success', 'Your email address has been verified. You can now log in.');
                 return $this->redirectToRoute('app_allusers_login');

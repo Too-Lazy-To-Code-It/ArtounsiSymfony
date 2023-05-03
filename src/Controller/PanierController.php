@@ -50,25 +50,6 @@ class PanierController extends AbstractController
     }
 
 
-    #[Route('/NouveauPanier/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PanierRepository $panierRepository, UserInterface $user): Response
-    {
-        $panier = new Panier();
-        $panier->setUser($user);
-        $form = $this->createForm(PanierType::class, $panier);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $panierRepository->save($panier, true);
-
-            return $this->redirectToRoute('app_panier_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('panier/new.html.twig', [
-            'panier' => $panier,
-            'form' => $form,
-        ]);
-    }
 
     #### Méthode d'affichage d'un panier selon l'id panier , et aussi calcul du montant total
 
@@ -140,7 +121,7 @@ class PanierController extends AbstractController
             // Le produit n'existe pas dans le panier, on l'ajoute
             $lignePanier = new LignePanier();
             $lignePanier->setDateajout($date);
-            $lignePanier->setIdpanier($entityManager->getReference(Panier::class, 1));     ###id statique jusqu'à intégration
+            $lignePanier->setIdpanier($panier);
             $lignePanier->setIdproduit($produit);
             $entityManager->persist($lignePanier);
             $entityManager->flush();

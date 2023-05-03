@@ -136,8 +136,8 @@ https://templatemo.com/tm-577-liberty-market
                             <div class="right-content">
                                 <h4>{{ produit.nom }}</h4>
                                 <span class="author">
-                                    <img src="assets/images/author.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-                                    <h6>nom user<br><a href="#">@libertyart</a></h6>
+                                    <img src="{{ asset('uploads/Avatars/' ~ user.avatar) }}" alt="" style="max-width: 50px; border-radius: 50%;" width="50" height="50">
+                                    <h6>{{ user.name }}<br><a >{{ user.nickname }}</a></h6>
                                 </span>
                                 <div class="line-dec"></div>
                                 <span class="bid">                                

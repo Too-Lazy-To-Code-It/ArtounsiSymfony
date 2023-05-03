@@ -7650,6 +7650,13 @@
         <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
+    <service id=".service_locator.27jEXYx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator._KOe8P1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8097,13 +8104,6 @@
         <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0sKbf5B" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
-        <argument key="user" type="service_closure" id=".errored..service_locator.0sKbf5B.Symfony\Component\Security\Core\User\UserInterface"/>
-      </argument>
-    </service>
     <service id=".service_locator..ICFIua" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8111,11 +8111,12 @@
         <argument key="lignepanierRepository" type="service_closure" id="App\Repository\LignepanierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.8rT5SOI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.PhsH5WM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="produit" type="service_closure" id=".errored..service_locator.8rT5SOI.App\Entity\Produits"/>
+        <argument key="produit" type="service_closure" id=".errored..service_locator.PhsH5WM.App\Entity\Produits"/>
         <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
@@ -8447,7 +8448,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.7ppw6Rk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Bb7Kwwh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -8458,7 +8459,7 @@
         <argument key="App\Controller\AllusersController::new" type="service_closure" id=".service_locator.dI4bPk2"/>
         <argument key="App\Controller\AllusersController::sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\AllusersController::show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="App\Controller\AllusersController::verify" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="App\Controller\AllusersController::verify" type="service_closure" id=".service_locator.27jEXYx"/>
         <argument key="App\Controller\BanController::delete" type="service_closure" id=".service_locator.4WM7mxr"/>
         <argument key="App\Controller\BanController::edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController::index" type="service_closure" id=".service_locator.bCnny4Z"/>
@@ -8539,9 +8540,8 @@
         <argument key="App\Controller\OffretravailmobileController::mesoffres" type="service_closure" id=".service_locator.gKruPTF"/>
         <argument key="App\Controller\OffretravailmobileController::new" type="service_closure" id=".service_locator.4GvVS_L"/>
         <argument key="App\Controller\PanierController::ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
-        <argument key="App\Controller\PanierController::ajouterProduitAuPanier" type="service_closure" id=".service_locator.8rT5SOI"/>
+        <argument key="App\Controller\PanierController::ajouterProduitAuPanier" type="service_closure" id=".service_locator.PhsH5WM"/>
         <argument key="App\Controller\PanierController::index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController::new" type="service_closure" id=".service_locator.0sKbf5B"/>
         <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator..ICFIua"/>
         <argument key="App\Controller\ParticipationController::delete" type="service_closure" id=".service_locator.ShBJIr0"/>
         <argument key="App\Controller\ParticipationController::edit" type="service_closure" id=".service_locator.r.sZWL."/>
@@ -8629,7 +8629,7 @@
         <argument key="user::new" type="service_closure" id=".service_locator.dI4bPk2"/>
         <argument key="user::sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="user::show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="user::verify" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="user::verify" type="service_closure" id=".service_locator.27jEXYx"/>
         <argument key="App\Controller\AllusersController:VS" type="service_closure" id=".service_locator.h8IUTxs"/>
         <argument key="App\Controller\AllusersController:delete" type="service_closure" id=".service_locator._KOe8P1"/>
         <argument key="App\Controller\AllusersController:edit" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -8638,7 +8638,7 @@
         <argument key="App\Controller\AllusersController:new" type="service_closure" id=".service_locator.dI4bPk2"/>
         <argument key="App\Controller\AllusersController:sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\AllusersController:show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="App\Controller\AllusersController:verify" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="App\Controller\AllusersController:verify" type="service_closure" id=".service_locator.27jEXYx"/>
         <argument key="App\Controller\BanController:delete" type="service_closure" id=".service_locator.4WM7mxr"/>
         <argument key="App\Controller\BanController:edit" type="service_closure" id=".service_locator.dcAGksr"/>
         <argument key="App\Controller\BanController:index" type="service_closure" id=".service_locator.bCnny4Z"/>
@@ -8719,9 +8719,8 @@
         <argument key="App\Controller\OffretravailmobileController:mesoffres" type="service_closure" id=".service_locator.gKruPTF"/>
         <argument key="App\Controller\OffretravailmobileController:new" type="service_closure" id=".service_locator.4GvVS_L"/>
         <argument key="App\Controller\PanierController:ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
-        <argument key="App\Controller\PanierController:ajouterProduitAuPanier" type="service_closure" id=".service_locator.8rT5SOI"/>
+        <argument key="App\Controller\PanierController:ajouterProduitAuPanier" type="service_closure" id=".service_locator.PhsH5WM"/>
         <argument key="App\Controller\PanierController:index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController:new" type="service_closure" id=".service_locator.0sKbf5B"/>
         <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator..ICFIua"/>
         <argument key="App\Controller\ParticipationController:delete" type="service_closure" id=".service_locator.ShBJIr0"/>
         <argument key="App\Controller\ParticipationController:edit" type="service_closure" id=".service_locator.r.sZWL."/>
@@ -8807,7 +8806,7 @@
         <argument key="user:new" type="service_closure" id=".service_locator.dI4bPk2"/>
         <argument key="user:sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="user:show" type="service_closure" id=".service_locator._KOe8P1"/>
-        <argument key="user:verify" type="service_closure" id=".service_locator.h8IUTxs"/>
+        <argument key="user:verify" type="service_closure" id=".service_locator.27jEXYx"/>
       </argument>
     </service>
     <service id=".service_locator.19_mNxd" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9699,12 +9698,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.7ppw6Rk"/>
+      <argument type="service" id=".service_locator.Bb7Kwwh"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.7ppw6Rk"/>
+      <argument type="service" id=".service_locator.Bb7Kwwh"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9755,8 +9754,7 @@
     <service id=".errored..service_locator.4NXkpsl.App\Entity\Offretravailarchive" class="App\Entity\Offretravailarchive"/>
     <service id=".errored..service_locator.hEZbta8.App\Entity\Offretravail" class="App\Entity\Offretravail"/>
     <service id=".errored..service_locator.RouOq05.App\Entity\Offretravail" class="App\Entity\Offretravail"/>
-    <service id=".errored..service_locator.0sKbf5B.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
-    <service id=".errored..service_locator.8rT5SOI.App\Entity\Produits" class="App\Entity\Produits"/>
+    <service id=".errored..service_locator.PhsH5WM.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.DFy823x.App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.r.sZWL..App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.4WI1Dtz.App\Entity\Post" class="App\Entity\Post"/>
@@ -10732,7 +10730,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.7ppw6Rk"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Bb7Kwwh"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10757,6 +10755,7 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.hKIBk2X" alias=".service_locator.4YltF_L"/>
+    <service id=".service_locator.7U8Zyca" alias=".service_locator.27jEXYx"/>
     <service id=".service_locator.LKpZXph" alias=".service_locator.bCnny4Z"/>
     <service id=".service_locator.APd5.7A" alias=".service_locator.dcAGksr"/>
     <service id=".service_locator.hFevF_f" alias=".service_locator.9tFCxGn"/>
@@ -10780,7 +10779,7 @@
     <service id=".service_locator.FLsHYNi" alias=".service_locator.4GvVS_L"/>
     <service id=".service_locator.XNPMAEk" alias=".service_locator.hEZbta8"/>
     <service id=".service_locator.RsB4Wuo" alias=".service_locator..ICFIua"/>
-    <service id=".service_locator..mx8GyK" alias=".service_locator.8rT5SOI"/>
+    <service id=".service_locator.Ah7tk6B" alias=".service_locator.PhsH5WM"/>
     <service id=".service_locator.lHF6yuw" alias=".service_locator.DFy823x"/>
     <service id=".service_locator.ROIeenz" alias=".service_locator.ShBJIr0"/>
     <service id=".service_locator.ojPhsAD" alias=".service_locator.GMDLTwG"/>
@@ -10800,7 +10799,7 @@
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.gU5UtXD" alias=".service_locator.cn5m30c"/>
-    <service id=".service_locator.t_YUUVZ" alias=".service_locator.7ppw6Rk"/>
+    <service id=".service_locator.5gC2V.E" alias=".service_locator.Bb7Kwwh"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1s1r2Me" alias=".service_locator.HA0YbZU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -10831,6 +10830,7 @@
     <service id=".service_locator.xunYPSq" alias=".service_locator.4YltF_L"/>
     <service id=".service_locator.FGoTFtB" alias=".service_locator.h8IUTxs"/>
     <service id=".service_locator.nPlzfLb" alias=".service_locator.dI4bPk2"/>
+    <service id=".service_locator.b7NkVAR" alias=".service_locator.27jEXYx"/>
     <service id=".service_locator.Iz9j3xk" alias=".service_locator._KOe8P1"/>
     <service id=".service_locator.OuRdjDB" alias=".service_locator.OIshshk"/>
     <service id=".service_locator.zljsNK3" alias=".service_locator.bCnny4Z"/>
@@ -10891,9 +10891,8 @@
     <service id=".service_locator.2iULiD6" alias=".service_locator.hEZbta8"/>
     <service id=".service_locator.ZCCya1n" alias=".service_locator.RouOq05"/>
     <service id=".service_locator.PROaXcF" alias=".service_locator.tsnEguG"/>
-    <service id=".service_locator.1l58Xup" alias=".service_locator.0sKbf5B"/>
     <service id=".service_locator.V3i9AUI" alias=".service_locator..ICFIua"/>
-    <service id=".service_locator.EnwMFzw" alias=".service_locator.8rT5SOI"/>
+    <service id=".service_locator.hjYEas5" alias=".service_locator.PhsH5WM"/>
     <service id=".service_locator.P_46lET" alias=".service_locator.GyXjEZA"/>
     <service id=".service_locator.gUuUcdv" alias=".service_locator.DFy823x"/>
     <service id=".service_locator.AAkRBCf" alias=".service_locator.r.sZWL."/>

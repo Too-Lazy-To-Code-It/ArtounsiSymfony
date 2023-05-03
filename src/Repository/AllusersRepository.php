@@ -3,7 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Allusers;
-use App\Entity\Panier;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Exception;
@@ -108,17 +108,19 @@ class AllusersRepository extends ServiceEntityRepository
         parent::__construct($registry, Allusers::class);
     }
 
-    public function save(Allusers $entity, bool $flush = false,Panier $panier,PanierRepository $panierRepository): void
+    public function save(Allusers $entity, bool $flush = false): void
     {
         $salt = $this->generateSalt();
         $hashedPassword = $this->hashPassword($entity->getPassword(), $salt);
+
         $entity->setSalt($salt);
         $entity->setPassword($hashedPassword);
+
         $this->getEntityManager()->persist($entity);
+
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-
     }
     public function saven(Allusers $entity, bool $flush = false): void
     {

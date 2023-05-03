@@ -9,6 +9,7 @@ use App\Repository\AllusersRepository;
 use App\Repository\ProduitsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,11 +23,11 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 class ProduitsController extends AbstractController
 {
     #[Route('/', name: 'app_produits_index', methods: ['GET'])]
-    public function index(AllusersRepository $allusersRepository,Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
+    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
-        $idpanier=$user->getPaniers()->first()->getidpanier();
+        $idpanier = $user->getPaniers()->first()->getidpanier();
         $produits = $produitsRepository->findAll();
 
         $produits = $paginator->paginate(
@@ -37,7 +38,8 @@ class ProduitsController extends AbstractController
 
         return $this->render('produits/index.html.twig', [
             'produits' => $produits,
-            'idpanier'=>$idpanier,
+            'idpanier' => $idpanier,
+            'user' => $user,
         ]);
     }
 
@@ -85,17 +87,18 @@ class ProduitsController extends AbstractController
     }
 
     #[Route('/{idproduit}', name: 'app_produits_show', methods: ['GET'])]
-    public function show(AllusersRepository $allusersRepository, Request $request,Produits $produit, ProduitsRepository $produitsRepository): Response
+    public function show(AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
 
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
-        $idpanier=$user->getPaniers()->first()->getidpanier();
+        $idpanier = $user->getPaniers()->first()->getidpanier();
 
         return $this->render('produits/show.html.twig', [
             'produits' => $produitsRepository->findAll(),
             'produit' => $produit,
-            'idpanier'=>$idpanier,
+            'idpanier' => $idpanier,
+            'user'=>$user,
 
         ]);
     }
@@ -105,13 +108,8 @@ class ProduitsController extends AbstractController
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
-
-
-
         // Définir l'utilisateur actuel comme propriétaire du produit
         $produit->setIdUser($user);
-
-
         $form = $this->createForm(ProduitsType::class, $produit);
         $form->handleRequest($request);
 
