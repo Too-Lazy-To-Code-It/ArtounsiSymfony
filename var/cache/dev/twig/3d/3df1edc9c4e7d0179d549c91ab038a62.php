@@ -62,14 +62,8 @@ class __TwigTemplate_809a251513fe158cb03cacbdb0f7a093 extends Template
         echo "\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
-    <link href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.gstatic.com"), "html", null, true);
-        echo "\" rel=\"preconnect\">
-    <link href=\"";
-        // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"), "html", null, true);
-        echo "\"
+    <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\">
+    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\"
           rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->
@@ -871,7 +865,7 @@ class __TwigTemplate_809a251513fe158cb03cacbdb0f7a093 extends Template
 
     public function getDebugInfo()
     {
-        return array (  848 => 634,  842 => 631,  838 => 630,  834 => 629,  830 => 628,  826 => 627,  822 => 626,  818 => 625,  814 => 624,  803 => 616,  774 => 590,  764 => 583,  754 => 576,  699 => 524,  693 => 521,  685 => 516,  674 => 508,  662 => 499,  652 => 492,  642 => 485,  633 => 479,  622 => 471,  611 => 463,  607 => 462,  597 => 455,  586 => 447,  573 => 437,  567 => 434,  553 => 423,  548 => 421,  540 => 416,  529 => 408,  521 => 403,  514 => 399,  506 => 394,  498 => 389,  490 => 384,  482 => 379,  422 => 322,  416 => 321,  412 => 320,  379 => 290,  370 => 284,  361 => 278,  129 => 49,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  842 => 634,  836 => 631,  832 => 630,  828 => 629,  824 => 628,  820 => 627,  816 => 626,  812 => 625,  808 => 624,  797 => 616,  768 => 590,  758 => 583,  748 => 576,  693 => 524,  687 => 521,  679 => 516,  668 => 508,  656 => 499,  646 => 492,  636 => 485,  627 => 479,  616 => 471,  605 => 463,  601 => 462,  591 => 455,  580 => 447,  567 => 437,  561 => 434,  547 => 423,  542 => 421,  534 => 416,  523 => 408,  515 => 403,  508 => 399,  500 => 394,  492 => 389,  484 => 384,  476 => 379,  416 => 322,  410 => 321,  406 => 320,  373 => 290,  364 => 284,  355 => 278,  123 => 49,  102 => 31,  96 => 28,  92 => 27,  88 => 26,  84 => 25,  80 => 24,  76 => 23,  72 => 22,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -892,8 +886,8 @@ class __TwigTemplate_809a251513fe158cb03cacbdb0f7a093 extends Template
     <link href=\"{{ asset('assets/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
-    <link href=\"{{ asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
-    <link href=\"{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\"
+    <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\">
+    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\"
           rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->

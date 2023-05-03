@@ -58,7 +58,7 @@
                                                 shadowColor: 'rgba(0, 0, 0, 0.5)'
                                             }
                                         }
-                                    #}]
+                        #}]
                                 });
                             });
                         </script>-->
@@ -76,12 +76,12 @@
                         <!-- Bar Chart -->
                         <div id="barChart"></div>
 
-                    <!--    <script>
+                        <!--    <script>
                             document.addEventListener("DOMContentLoaded", () => {
                                 new ApexCharts(document.querySelector("#barChart"), {
                                     series: [{
                                        {# data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
-                                    #}],
+                        #}],
                                     chart: {
                                         type: 'bar',
                                         height: 350
@@ -98,7 +98,7 @@
                                     xaxis: {
                                       {#  categories: ['{{ tutorielsPerView[1].title }}', '{{ tutorielsPerView[0].title }}'
                                         ],
-                                    #}
+                        #}
                                 }).render();
                             });
                         </script>-->
@@ -117,13 +117,13 @@
 
                     <!-- Line Chart -->
                     <div id="lineChart"></div>
-                  <!--  <script>
+                    <!--  <script>
                         document.addEventListener("DOMContentLoaded", () => {
                             new ApexCharts(document.querySelector("#lineChart"), {
                                 series: [{
                                     name: "Views",
                                 {#    data: [{{ vpm[1] }}, {{ vpm[2] }}, {{ vpm[3] }}, {{ vpm[4] }}, {{ vpm[5] }}, {{ vpm[6] }}, {{ vpm[7] }}, {{ vpm[8] }}, {{ vpm[9] }}, {{ vpm[10] }}, {{ vpm[11] }}, {{ vpm[12] }}]
-                                #}],
+                    #}],
                                 chart: {
                                     height: 350,
                                     type: 'line',
@@ -265,12 +265,14 @@
                                     <td class="align-middle text-center text-sm"><a class="btn btn-primary"
                                                                                     href="{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}">show
                                             ({{ tutoriel.getVideos()|length }})</a></td>
-                                    <td class="align-middle text-center text-sm"><a
+                                    <td class="align-middle text-center text-sm"><a>
+                                            {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
                                                 href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}"
                                                 class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
                                     <td class="align-middle text-center text-sm"><a
                                                 href="{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}"
                                                 class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
 

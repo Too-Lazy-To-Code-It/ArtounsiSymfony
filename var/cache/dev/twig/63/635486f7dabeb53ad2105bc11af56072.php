@@ -263,18 +263,20 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
                             <td>
                                 ";
                 // line 105
-                echo "                                ";
+                echo "
+                                ";
+                // line 106
                 echo twig_include($this->env, $context, "post/_delete_form.html.twig");
                 echo "
                                 <a href=\"";
-                // line 106
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 106)]), "html", null, true);
+                // line 107
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 107)]), "html", null, true);
                 echo "\">edit</a>
                             </td>
                         </tr>
                         ";
             }
-            // line 110
+            // line 111
             echo "                    ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
@@ -287,7 +289,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 111
+            // line 112
             echo "                        <tr>
                             <td colspan=\"7\">no records found</td>
                         </tr>
@@ -296,12 +298,12 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 115
+        // line 116
         echo "                    </tbody>
                 </table>
 
     <a href=\"";
-        // line 118
+        // line 119
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
         echo "\">Create new</a>
 
@@ -311,9 +313,9 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
     </div>
     </div>
 ";
-        // line 125
+        // line 126
         $this->displayBlock('footer', $context, $blocks);
-        // line 138
+        // line 139
         echo "    
 ";
         
@@ -395,7 +397,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
 
     }
 
-    // line 125
+    // line 126
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -405,7 +407,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 126
+        // line 127
         echo "<footer>
     <div class=\"container\">
         <div class=\"row\">
@@ -433,7 +435,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
 
     public function getDebugInfo()
     {
-        return array (  409 => 126,  399 => 125,  375 => 42,  369 => 39,  365 => 38,  361 => 37,  357 => 36,  349 => 31,  338 => 22,  328 => 21,  317 => 138,  315 => 125,  305 => 118,  300 => 115,  291 => 111,  278 => 110,  271 => 106,  266 => 105,  260 => 101,  255 => 99,  251 => 98,  246 => 95,  244 => 94,  240 => 92,  235 => 90,  231 => 89,  228 => 88,  225 => 87,  223 => 86,  205 => 85,  174 => 56,  172 => 21,  169 => 20,  159 => 19,  147 => 15,  143 => 14,  139 => 13,  135 => 12,  131 => 11,  123 => 7,  104 => 6,  99 => 5,  89 => 4,  70 => 3,  60 => 19,  57 => 18,  55 => 4,  53 => 3,  49 => 1,);
+        return array (  411 => 127,  401 => 126,  377 => 42,  371 => 39,  367 => 38,  363 => 37,  359 => 36,  351 => 31,  340 => 22,  330 => 21,  319 => 139,  317 => 126,  307 => 119,  302 => 116,  293 => 112,  280 => 111,  273 => 107,  269 => 106,  266 => 105,  260 => 101,  255 => 99,  251 => 98,  246 => 95,  244 => 94,  240 => 92,  235 => 90,  231 => 89,  228 => 88,  225 => 87,  223 => 86,  205 => 85,  174 => 56,  172 => 21,  169 => 20,  159 => 19,  147 => 15,  143 => 14,  139 => 13,  135 => 12,  131 => 11,  123 => 7,  104 => 6,  99 => 5,  89 => 4,  70 => 3,  60 => 19,  57 => 18,  55 => 4,  53 => 3,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -542,6 +544,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
                             
                             <td>
                                 {# <a href=\"{{ path('app_post_show', {'id_post': post.getId}) }}\">show</a> #}
+
                                 {{ include('post/_delete_form.html.twig') }}
                                 <a href=\"{{ path('app_post_edit', {'id_post': post.getId}) }}\">edit</a>
                             </td>

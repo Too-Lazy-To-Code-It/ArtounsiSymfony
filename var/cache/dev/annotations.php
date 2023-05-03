@@ -306,8 +306,6 @@ return [[
 '[C]App%5CController%5CPanierController%23index' => 1,
 'App%5CController%5CPanierController%23add' => 0,
 '[C]App%5CController%5CPanierController%23add' => 1,
-'App%5CController%5CPanierController%23new' => 0,
-'[C]App%5CController%5CPanierController%23new' => 1,
 'App%5CController%5CPanierController%23show' => 0,
 '[C]App%5CController%5CPanierController%23show' => 1,
 'App%5CController%5CPanierController%23ajouterProduitAuPanier' => 0,
@@ -2494,7 +2492,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683138069,
+1 => 1683147877,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

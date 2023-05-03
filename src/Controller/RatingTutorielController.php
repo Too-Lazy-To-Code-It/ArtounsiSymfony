@@ -19,33 +19,34 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 #[Route('/rating/tutoriel')]
 class RatingTutorielController extends AbstractController
 {
-    
+
     #[Route('/new/{rating}/{idTutoriel}', name: 'app_rating_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new($rating,$idTutoriel, Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, ManagerRegistry $mr, RatingTutorielRepository $ratingRepository): Response
+    public function new(AllusersRepository $allusersRepository, $rating, $idTutoriel, Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, ManagerRegistry $mr, RatingTutorielRepository $ratingRepository): Response
     {
-        $allusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
-        $ratingTutorielRepositoty =  $this->getDoctrine()->getRepository(RatingTutoriel::class);
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $ratingTutorielRepositoty = $this->getDoctrine()->getRepository(RatingTutoriel::class);
         $requestData = $request;
-        
+
         $ratingentity = new RatingTutoriel();
         $entityManager = $doctrine->getManager();
-        
-        $oldratingentity = $ratingTutorielRepositoty->findOneBy(array('tutorielId'=>$tutorielRepository->find($idTutoriel),'idRater'=>$allusersRepository->find(1)));
 
-        if($oldratingentity){
+        $oldratingentity = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($idTutoriel), 'idRater' => $allusersRepository->find($userId)));
+
+        if ($oldratingentity) {
             $oldratingentity->setRating((int)$rating);
-        }else{
+        } else {
             $ratingentity->setRating((int)$rating);
-            $ratingentity->setTutorielId($tutorielRepository->findOneBy(array('id_tutoriel'=>(int)$idTutoriel)));  
-            $ratingentity->setIdRater($allusersRepository->find(1));
+            $ratingentity->setTutorielId($tutorielRepository->findOneBy(array('id_tutoriel' => (int)$idTutoriel)));
+            $ratingentity->setIdRater($allusersRepository->find($userId));
             $entityManager->persist($ratingentity);
         }
         $entityManager->flush();
 
         $em = $mr->getManager();
         $avgrating = $em->createQuery("SELECT avg(r.rating) as avg FROM APP\Entity\RatingTutoriel r WHERE r.tutorielId = :tutorielId")
-                            ->setParameter('tutorielId', $idTutoriel)->getResult();
-        
-        return new JsonResponse( ['success' => true,'avg' => $avgrating[0] ]);
+            ->setParameter('tutorielId', $idTutoriel)->getResult();
+
+        return new JsonResponse(['success' => true, 'avg' => $avgrating[0]]);
     }
 }

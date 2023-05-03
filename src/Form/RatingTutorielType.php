@@ -14,7 +14,6 @@ class RatingTutorielType extends AbstractType
         $builder
             ->add('rating')
             ->add('tutorielId')
-            ->add('idRater')
         ;
     }
 

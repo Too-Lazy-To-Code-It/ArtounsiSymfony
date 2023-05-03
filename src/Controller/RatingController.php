@@ -23,15 +23,17 @@ class RatingController extends AbstractController
 {
 
     #[Route('/new/{rating}/{idChallenge}/{idparticipator}', name: 'app_rating_new', methods: ['GET', 'POST'])]
-    public function new($rating,$idparticipator,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository  ,AllusersRepository $allusersRepository, ParticipationRepository $participationRepository): Response
+    public function new(AllusersRepository $allusersRepository,$rating,$idparticipator,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository , ParticipationRepository $participationRepository): Response
     {
-        $allusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
         $requestData = $request;
         
         $ratingentity = new Rating();
         $entityManager = $doctrine->getManager();
 
-        $oldratingentity = $ratingRepository->findOneBy(array('challenge_id'=>$challengeRepository->find($idChallenge), 'participator_id'=>$allusersRepository->find($idparticipator),'rater_id'=>$allusersRepository->find(1)));
+        $oldratingentity = $ratingRepository->findOneBy(array('challenge_id'=>$challengeRepository->find($idChallenge), 'participator_id'=>$allusersRepository->find($idparticipator),'rater_id'=>$allusersRepository->find($userId)));
 
 
         if($oldratingentity){
@@ -40,7 +42,7 @@ class RatingController extends AbstractController
                     $ratingentity->setRating((int)$rating);
                     $ratingentity->setChallengeId($challengeRepository->findOneBy(array('id_challenge'=>(int)$idChallenge)));  
                     $ratingentity->setParticipatorId($allusersRepository->find($idparticipator));
-                    $ratingentity->setRaterId($allusersRepository->find(1));
+                    $ratingentity->setRaterId($allusersRepository->find($userId));
                     $entityManager->persist($ratingentity);
                     
                 }

@@ -78,9 +78,12 @@
                         <a class="btn btn-primary" href="{{ path('app_challenge_show', {'id': challenge.getId()}) }}">show ({{challenge.participations|length}})</a>
                         </td>
                         <td style="">
+                          {% if(user.id_user==challenge.getIdArtist().getid_user()) %}
                         <a href="{{ path('app_challenge_edit', {'id': challenge.id}) }}"><i class="bi bi-pencil-square"></i></a>
                         <a href="{{ path('app_challenge_delete', {'id_challenge': challenge.getId()}) }}"><i class="bi bi-dash-circle"></i></a>
+                          {% endif %}
                         </td>
+
                         
             </a>
                       </tr>

@@ -89,166 +89,175 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
 
     <main id=\"main\" class=\"main\">
 
-        <div class=\"pagetitle\">
-            <h1>Mes Videos</h1>
-            <nav>
-                <ol class=\"breadcrumb\">
-                    <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
-                    <li class=\"breadcrumb-item active\">Mes Tutoriels</li>
-                    <li class=\"breadcrumb-item active\">Mes Videos</li>
-                </ol>
-            </nav>
-        </div>
-        <!-- End Page Title -->
-<style>
-.ligne{ display: flex;
- justify-content: space-between;
- margin:20px;
-  
-}
+    <div class=\"pagetitle\">
+        <h1>Mes Videos</h1>
+        <nav>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+                <li class=\"breadcrumb-item active\">Mes Tutoriels</li>
+                <li class=\"breadcrumb-item active\">Mes Videos</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .ligne {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
 
-.bg-gradient-primary {
-  background-color: #007bff;
-  border-radius: 10px;
-  color: #fff;
-  padding:20px;
-}.table td {
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
-}
+        }
 
-.table th {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
-  font-weight: bold;
-  color: #555555;
-} button {
-  color: white;
-  border: none;
-  background-color: white;
-}
+        .bg-gradient-primary {
+            background-color: #007bff;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .table td {
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+        }
+
+        .table th {
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+            font-weight: bold;
+            color: #555555;
+        }
+
+        button {
+            color: white;
+            border: none;
+            background-color: white;
+        }
 
 
-</style>
-        <section class=\"section\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
+    </style>
+    <section class=\"section\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
 
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
                             <div class=\"bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3\">
                                 <h4 class=\"text-white text-capitalize ps-31\">Mes Videos</h4>
                             </div>
                         </div>
-                          
- <div class=\"ligne\">
-  <div class=\"col-6\">
-    <a href=\"";
-        // line 122
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_new", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 122, $this->source); })()), "getId", [], "method", false, false, false, 122)]), "html", null, true);
+
+                        <div class=\"ligne\">
+                            <div class=\"col-6\">
+                                <a href=\"";
+        // line 127
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_new", ["id_tutoriel" => (isset($context["id_tutoriel"]) || array_key_exists("id_tutoriel", $context) ? $context["id_tutoriel"] : (function () { throw new RuntimeError('Variable "id_tutoriel" does not exist.', 127, $this->source); })())]), "html", null, true);
         echo "\">
-      <i class=\"fas fa-plus\"></i>
-      Ajouter un video
-    </a>
-  </div>
-</div>
+                                    <i class=\"fas fa-plus\"></i>
+                                    Ajouter un video
+                                </a>
+                            </div>
+                        </div>
 
-  
- 
 
-                            <!-- Table with stripped rows -->
-                            <table class=\"table datatable\">
-                                <thead>
-                                    <tr>
-                                        <th scope=\"col\">#</th>
-                                        <th scope=\"col\">Image</th>
-                                        <th scope=\"col\">Video</th>
-                                        <th scope=\"col\">Titre</th>
-                                        <th scope=\"col\">Description</th>
-                                        <th scope=\"col\">Date d'ajout</th>
-                                        <th scope=\"col\">Modifier</th>
-                                        <th scope=\"col\">Supprimer</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                
-                  ";
-        // line 148
+                        <!-- Table with stripped rows -->
+                        <table class=\"table datatable\">
+                            <thead>
+                            <tr>
+                                <th scope=\"col\">#</th>
+                                <th scope=\"col\">Image</th>
+                                <th scope=\"col\">Video</th>
+                                <th scope=\"col\">Titre</th>
+                                <th scope=\"col\">Description</th>
+                                <th scope=\"col\">Date d'ajout</th>
+                                <th scope=\"col\">Modifier</th>
+                                <th scope=\"col\">Supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            ";
+        // line 151
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 148, $this->source); })()), "videos", [], "any", false, false, false, 148));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 151, $this->source); })()), "videos", [], "any", false, false, false, 151));
         foreach ($context['_seq'] as $context["_key"] => $context["v"]) {
-            // line 149
-            echo "             
-                                    <tr>
-                                       
-                                        
-                                       
-                                        
-                                            <td class=\"align-middle text-center text-sm\">
-                                               ";
-            // line 156
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 156), "html", null, true);
+            // line 152
             echo "
-                                            </td>
-                                            
-                                            <td class=\"align-middle text-center text-sm\">
-                                               <img src=\"";
-            // line 160
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathimage", [], "any", false, false, false, 160))), "html", null, true);
-            echo "\" alt=\"\" style=\"border-radius: 20px; width: 70px; height: 70px; \">
-                                            </td>
-                                            <td class=\"align-middle text-center text-sm\"><video width=\"70\" height=\"70\" controls>
-                                                <source src=\"";
-            // line 163
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/videos/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathvideo", [], "any", false, false, false, 163))), "html", null, true);
-            echo "\" type=\"video/mp4\">
-                                                Your browser does not support the video tag.
-                                                </video></td>
-                                             <td class=\"align-middle text-center text-sm\">
-                                               ";
-            // line 167
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "title", [], "any", false, false, false, 167), "html", null, true);
+                                <tr>
+
+
+                                    <td class=\"align-middle text-center text-sm\">
+                                        ";
+            // line 157
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 157), "html", null, true);
             echo "
-                                            </td>
-                                            <td class=\"align-middle text-center text-sm\">
-                                               ";
-            // line 170
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "description", [], "any", false, false, false, 170), "html", null, true);
+                                    </td>
+
+                                    <td class=\"align-middle text-center text-sm\">
+                                        <img src=\"";
+            // line 161
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathimage", [], "any", false, false, false, 161))), "html", null, true);
+            echo "\" alt=\"\"
+                                             style=\"border-radius: 20px; width: 70px; height: 70px; \">
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        <video width=\"70\" height=\"70\" controls>
+                                            <source src=\"";
+            // line 166
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/videos/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathvideo", [], "any", false, false, false, 166))), "html", null, true);
+            echo "\"
+                                                    type=\"video/mp4\">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        ";
+            // line 172
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "title", [], "any", false, false, false, 172), "html", null, true);
             echo "
-                                            </td>
-                                             <td class=\"align-middle text-center text-sm\">
-                                                ";
-            // line 173
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getDateP", [], "method", false, false, false, 173), "d:m:Y"), "html", null, true);
-            echo "
-                                            </td>
-                                                <td class=\"align-middle text-center text-sm\"><a href=\"";
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        ";
             // line 175
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_edit", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 175)]), "html", null, true);
-            echo "\" class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                                <td class=\"align-middle text-center text-sm\"><a href=\"";
-            // line 176
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_delete", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 176)]), "html", null, true);
-            echo "\" class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                                    </tr>
-                                    \t ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "description", [], "any", false, false, false, 175), "html", null, true);
+            echo "
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        ";
+            // line 178
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getDateP", [], "method", false, false, false, 178), "d:m:Y"), "html", null, true);
+            echo "
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"";
+            // line 181
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_edit", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 181)]), "html", null, true);
+            echo "\"
+                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"";
+            // line 184
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_delete", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 184)]), "html", null, true);
+            echo "\"
+                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                </tr>
+                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 179
-        echo "                                   
-                                </tbody>
-                            </table>
-                            <!-- End Table with stripped rows -->
+        // line 188
+        echo "
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
 
-                        </div>
                     </div>
-
                 </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -270,7 +279,7 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
 
     public function getDebugInfo()
     {
-        return array (  241 => 179,  232 => 176,  228 => 175,  223 => 173,  217 => 170,  211 => 167,  204 => 163,  198 => 160,  191 => 156,  182 => 149,  178 => 148,  149 => 122,  88 => 63,  78 => 62,  59 => 3,  36 => 1,);
+        return array (  250 => 188,  240 => 184,  234 => 181,  228 => 178,  222 => 175,  216 => 172,  207 => 166,  199 => 161,  192 => 157,  185 => 152,  181 => 151,  154 => 127,  88 => 63,  78 => 62,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -341,129 +350,138 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
 
     <main id=\"main\" class=\"main\">
 
-        <div class=\"pagetitle\">
-            <h1>Mes Videos</h1>
-            <nav>
-                <ol class=\"breadcrumb\">
-                    <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
-                    <li class=\"breadcrumb-item active\">Mes Tutoriels</li>
-                    <li class=\"breadcrumb-item active\">Mes Videos</li>
-                </ol>
-            </nav>
-        </div>
-        <!-- End Page Title -->
-<style>
-.ligne{ display: flex;
- justify-content: space-between;
- margin:20px;
-  
-}
+    <div class=\"pagetitle\">
+        <h1>Mes Videos</h1>
+        <nav>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+                <li class=\"breadcrumb-item active\">Mes Tutoriels</li>
+                <li class=\"breadcrumb-item active\">Mes Videos</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .ligne {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
 
-.bg-gradient-primary {
-  background-color: #007bff;
-  border-radius: 10px;
-  color: #fff;
-  padding:20px;
-}.table td {
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
-}
+        }
 
-.table th {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
-  font-weight: bold;
-  color: #555555;
-} button {
-  color: white;
-  border: none;
-  background-color: white;
-}
+        .bg-gradient-primary {
+            background-color: #007bff;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .table td {
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+        }
+
+        .table th {
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif; /* Change to your desired font family */
+            font-weight: bold;
+            color: #555555;
+        }
+
+        button {
+            color: white;
+            border: none;
+            background-color: white;
+        }
 
 
-</style>
-        <section class=\"section\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
+    </style>
+    <section class=\"section\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
 
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <div class=\"card-header p-0 position-relative mt-n4 mx-3 z-index-2\">
                             <div class=\"bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3\">
                                 <h4 class=\"text-white text-capitalize ps-31\">Mes Videos</h4>
                             </div>
                         </div>
-                          
- <div class=\"ligne\">
-  <div class=\"col-6\">
-    <a href=\"{{ path('app_video_new',{'id_tutoriel':tutoriel.getId()}) }}\">
-      <i class=\"fas fa-plus\"></i>
-      Ajouter un video
-    </a>
-  </div>
-</div>
 
-  
- 
-
-                            <!-- Table with stripped rows -->
-                            <table class=\"table datatable\">
-                                <thead>
-                                    <tr>
-                                        <th scope=\"col\">#</th>
-                                        <th scope=\"col\">Image</th>
-                                        <th scope=\"col\">Video</th>
-                                        <th scope=\"col\">Titre</th>
-                                        <th scope=\"col\">Description</th>
-                                        <th scope=\"col\">Date d'ajout</th>
-                                        <th scope=\"col\">Modifier</th>
-                                        <th scope=\"col\">Supprimer</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                
-                  {% for v in tutoriel.videos %}
-             
-                                    <tr>
-                                       
-                                        
-                                       
-                                        
-                                            <td class=\"align-middle text-center text-sm\">
-                                               {{v.getId()}}
-                                            </td>
-                                            
-                                            <td class=\"align-middle text-center text-sm\">
-                                               <img src=\"{{ asset('http://localhost/img/'~v.pathimage) }}\" alt=\"\" style=\"border-radius: 20px; width: 70px; height: 70px; \">
-                                            </td>
-                                            <td class=\"align-middle text-center text-sm\"><video width=\"70\" height=\"70\" controls>
-                                                <source src=\"{{ asset('http://localhost/videos/'~v.pathvideo) }}\" type=\"video/mp4\">
-                                                Your browser does not support the video tag.
-                                                </video></td>
-                                             <td class=\"align-middle text-center text-sm\">
-                                               {{v.title}}
-                                            </td>
-                                            <td class=\"align-middle text-center text-sm\">
-                                               {{ v.description }}
-                                            </td>
-                                             <td class=\"align-middle text-center text-sm\">
-                                                {{ v.getDateP()|date(\"d:m:Y\") }}
-                                            </td>
-                                                <td class=\"align-middle text-center text-sm\"><a href=\"{{ path('app_video_edit', {'id_video': v.getId()}) }}\" class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                                <td class=\"align-middle text-center text-sm\"><a href=\"{{ path('app_video_delete', {'id_video': v.getId()}) }}\" class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                                    </tr>
-                                    \t {% endfor %}
-                                   
-                                </tbody>
-                            </table>
-                            <!-- End Table with stripped rows -->
-
+                        <div class=\"ligne\">
+                            <div class=\"col-6\">
+                                <a href=\"{{ path('app_video_new',{'id_tutoriel':id_tutoriel}) }}\">
+                                    <i class=\"fas fa-plus\"></i>
+                                    Ajouter un video
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
+
+                        <!-- Table with stripped rows -->
+                        <table class=\"table datatable\">
+                            <thead>
+                            <tr>
+                                <th scope=\"col\">#</th>
+                                <th scope=\"col\">Image</th>
+                                <th scope=\"col\">Video</th>
+                                <th scope=\"col\">Titre</th>
+                                <th scope=\"col\">Description</th>
+                                <th scope=\"col\">Date d'ajout</th>
+                                <th scope=\"col\">Modifier</th>
+                                <th scope=\"col\">Supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for v in tutoriel.videos %}
+
+                                <tr>
+
+
+                                    <td class=\"align-middle text-center text-sm\">
+                                        {{ v.getId() }}
+                                    </td>
+
+                                    <td class=\"align-middle text-center text-sm\">
+                                        <img src=\"{{ asset('http://localhost/img/'~v.pathimage) }}\" alt=\"\"
+                                             style=\"border-radius: 20px; width: 70px; height: 70px; \">
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        <video width=\"70\" height=\"70\" controls>
+                                            <source src=\"{{ asset('http://localhost/videos/'~v.pathvideo) }}\"
+                                                    type=\"video/mp4\">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        {{ v.title }}
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        {{ v.description }}
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        {{ v.getDateP()|date(\"d:m:Y\") }}
+                                    </td>
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"{{ path('app_video_edit', {'id_video': v.getId()}) }}\"
+                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"{{ path('app_video_delete', {'id_video': v.getId()}) }}\"
+                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
                 </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 {% endblock %}", "tutoriel/showback.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\tutoriel\\showback.html.twig");
     }
 }

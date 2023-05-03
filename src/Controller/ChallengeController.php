@@ -53,8 +53,10 @@ class ChallengeController extends AbstractController
     }
 
     #[Route('/back', name: 'app_challenge_index_back', methods: ['GET', 'POST'])]
-    public function indexback(Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
+    public function indexback(AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $challenges = $challengeRepository->findAll();
         $keyword = null;
         $category = null;
@@ -78,6 +80,7 @@ class ChallengeController extends AbstractController
             'categories' => $CategoryRepository->findAll(),
             'keyword' => $keyword,
             'Categorie' => $category,
+            'user'=>$user,
         ]);
     }
 
@@ -104,14 +107,17 @@ class ChallengeController extends AbstractController
     }
     
     #[Route('/new', name: 'app_challenge_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ChallengeRepository $challengeRepository): Response
+    public function new(AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $challenge = new Challenge();
         $form = $this->createForm(ChallengeType::class, $challenge);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             //on récupère l'image transmise
+            $challenge->setIdArtist($user);
             $image = $form->get('Image')->getData();
 
             $fichier = md5(uniqid()) . '.' . $image->guessExtension();
@@ -136,12 +142,14 @@ class ChallengeController extends AbstractController
     }
 
     #[Route('/{id}/show', name: 'app_challenge_show', methods: ['GET', 'POST'])]
-    public function show(Request $request, AllusersController $alluser,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    public function show(AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $AllusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
-        $oldparticipation = $participationRepository->findOneBy(array( 'id_challenge'=>$challenge, 'id_user'=>$AllusersRepository->findBy(array( 'id_user'=>2))[0] ));
+        $oldparticipation = $participationRepository->findOneBy(array( 'id_challenge'=>$challenge, 'id_user'=>$AllusersRepository->findBy(array( 'id_user'=>$userId))[0] ));
 
-        $oldrating = $ratingRepository->findOneBy(array( 'challenge_id'=>$challenge, 'rater_id'=>$AllusersRepository->findBy(array( 'id_user'=>1))[0] ));
+        $oldrating = $ratingRepository->findOneBy(array( 'challenge_id'=>$challenge, 'rater_id'=>$AllusersRepository->findBy(array( 'id_user'=>$userId))[0] ));
         
         
         $participation = new Participation();
@@ -177,7 +185,7 @@ class ChallengeController extends AbstractController
                 
             if($oldparticipation)
                 {
-                $oldparticipation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>2))[0]);
+                $oldparticipation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>$userId))[0]);
                 $oldparticipation->setDescription($form->get('Description')->getData());
                 $oldparticipation->setIdChallenge($challenge);
                 $oldparticipation->setIMGParticipation($fichier);
@@ -185,7 +193,7 @@ class ChallengeController extends AbstractController
                 $this->addFlash('success',' Your participation is updated successfuly');
                 }
             else{
-                $participation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>2))[0]);
+                $participation->setIdUser($AllusersRepository->findBy(array( 'id_user'=>$userId))[0]);
                 $participation->setDescription($form->get('Description')->getData());
                 $participation->setIdChallenge($challenge);
                 $participation->setIMGParticipation($fichier);

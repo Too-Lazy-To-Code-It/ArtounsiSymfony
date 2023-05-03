@@ -13,7 +13,6 @@ class ViewType extends AbstractType
     {
         $builder
             ->add('date_v')
-            ->add('id_user')
             ->add('id_video')
         ;
     }

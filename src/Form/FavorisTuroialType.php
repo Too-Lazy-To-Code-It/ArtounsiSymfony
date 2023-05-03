@@ -12,7 +12,7 @@ class FavorisTuroialType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id_user')
+
             ->add('id_tutoriel')
         ;
     }

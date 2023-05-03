@@ -155,7 +155,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Bar Chart -->
                         <div id=\"barChart\"></div>
 
-                    <!--    <script>
+                        <!--    <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 new ApexCharts(document.querySelector(\"#barChart\"), {
                                     series: [{
@@ -196,7 +196,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
                     <!-- Line Chart -->
                     <div id=\"lineChart\"></div>
-                  <!--  <script>
+                    <!--  <script>
                         document.addEventListener(\"DOMContentLoaded\", () => {
                             new ApexCharts(document.querySelector(\"#lineChart\"), {
                                 series: [{
@@ -374,25 +374,31 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
             // line 267
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getVideos", [], "method", false, false, false, 267)), "html", null, true);
             echo ")</a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"";
+                                    <td class=\"align-middle text-center text-sm\"><a>
+                                            ";
             // line 269
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 269)]), "html", null, true);
-            echo "\"
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 269, $this->source); })()), "id_user", [], "any", false, false, false, 269) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getIdArtist", [], "method", false, false, false, 269), "getid_user", [], "method", false, false, false, 269))) {
+                // line 270
+                echo "                                                href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 270)]), "html", null, true);
+                echo "\"
                                                 class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                     <td class=\"align-middle text-center text-sm\"><a
                                                 href=\"";
-            // line 272
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 272)]), "html", null, true);
-            echo "\"
+                // line 273
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 273)]), "html", null, true);
+                echo "\"
                                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                                </tr>
+                                    ";
+            }
+            // line 276
+            echo "                                </tr>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tutoriel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 276
+        // line 278
         echo "
                             </tbody>
                         </table>
@@ -425,7 +431,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  396 => 276,  386 => 272,  380 => 269,  375 => 267,  371 => 266,  364 => 262,  358 => 259,  353 => 257,  347 => 254,  340 => 250,  333 => 245,  329 => 244,  302 => 220,  206 => 126,  181 => 102,  164 => 84,  140 => 61,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  402 => 278,  395 => 276,  389 => 273,  382 => 270,  380 => 269,  375 => 267,  371 => 266,  364 => 262,  358 => 259,  353 => 257,  347 => 254,  340 => 250,  333 => 245,  329 => 244,  302 => 220,  206 => 126,  181 => 102,  164 => 84,  140 => 61,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -490,7 +496,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                                 shadowColor: 'rgba(0, 0, 0, 0.5)'
                                             }
                                         }
-                                    #}]
+                        #}]
                                 });
                             });
                         </script>-->
@@ -508,12 +514,12 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Bar Chart -->
                         <div id=\"barChart\"></div>
 
-                    <!--    <script>
+                        <!--    <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 new ApexCharts(document.querySelector(\"#barChart\"), {
                                     series: [{
                                        {# data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
-                                    #}],
+                        #}],
                                     chart: {
                                         type: 'bar',
                                         height: 350
@@ -530,7 +536,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                     xaxis: {
                                       {#  categories: ['{{ tutorielsPerView[1].title }}', '{{ tutorielsPerView[0].title }}'
                                         ],
-                                    #}
+                        #}
                                 }).render();
                             });
                         </script>-->
@@ -549,13 +555,13 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
                     <!-- Line Chart -->
                     <div id=\"lineChart\"></div>
-                  <!--  <script>
+                    <!--  <script>
                         document.addEventListener(\"DOMContentLoaded\", () => {
                             new ApexCharts(document.querySelector(\"#lineChart\"), {
                                 series: [{
                                     name: \"Views\",
                                 {#    data: [{{ vpm[1] }}, {{ vpm[2] }}, {{ vpm[3] }}, {{ vpm[4] }}, {{ vpm[5] }}, {{ vpm[6] }}, {{ vpm[7] }}, {{ vpm[8] }}, {{ vpm[9] }}, {{ vpm[10] }}, {{ vpm[11] }}, {{ vpm[12] }}]
-                                #}],
+                    #}],
                                 chart: {
                                     height: 350,
                                     type: 'line',
@@ -697,12 +703,14 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                     <td class=\"align-middle text-center text-sm\"><a class=\"btn btn-primary\"
                                                                                     href=\"{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}\">show
                                             ({{ tutoriel.getVideos()|length }})</a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
+                                    <td class=\"align-middle text-center text-sm\"><a>
+                                            {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
                                                 href=\"{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}\"
                                                 class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                     <td class=\"align-middle text-center text-sm\"><a
                                                 href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\"
                                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
 

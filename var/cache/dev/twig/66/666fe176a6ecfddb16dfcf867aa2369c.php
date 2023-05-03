@@ -191,15 +191,22 @@ class __TwigTemplate_b18e1ac1472c45431b5fd214098809cc extends Template
             echo ")</a>
                         </td>
                         <td style=\"\">
-                        <a href=\"";
+                          ";
             // line 81
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["challenge"], "id", [], "any", false, false, false, 81)]), "html", null, true);
-            echo "\"><i class=\"bi bi-pencil-square\"></i></a>
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "id_user", [], "any", false, false, false, 81) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["challenge"], "getIdArtist", [], "method", false, false, false, 81), "getid_user", [], "method", false, false, false, 81))) {
+                // line 82
+                echo "                        <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["challenge"], "id", [], "any", false, false, false, 82)]), "html", null, true);
+                echo "\"><i class=\"bi bi-pencil-square\"></i></a>
                         <a href=\"";
-            // line 82
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_delete", ["id_challenge" => twig_get_attribute($this->env, $this->source, $context["challenge"], "getId", [], "method", false, false, false, 82)]), "html", null, true);
-            echo "\"><i class=\"bi bi-dash-circle\"></i></a>
-                        </td>
+                // line 83
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_delete", ["id_challenge" => twig_get_attribute($this->env, $this->source, $context["challenge"], "getId", [], "method", false, false, false, 83)]), "html", null, true);
+                echo "\"><i class=\"bi bi-dash-circle\"></i></a>
+                          ";
+            }
+            // line 85
+            echo "                        </td>
+
                         
             </a>
                       </tr>
@@ -208,7 +215,7 @@ class __TwigTemplate_b18e1ac1472c45431b5fd214098809cc extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['challenge'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 88
+        // line 91
         echo "                    </tbody>
                   </table>
 
@@ -238,7 +245,7 @@ class __TwigTemplate_b18e1ac1472c45431b5fd214098809cc extends Template
 
     public function getDebugInfo()
     {
-        return array (  212 => 88,  200 => 82,  196 => 81,  188 => 78,  183 => 76,  179 => 75,  175 => 74,  171 => 73,  167 => 72,  163 => 71,  160 => 70,  156 => 69,  132 => 48,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  219 => 91,  208 => 85,  203 => 83,  198 => 82,  196 => 81,  188 => 78,  183 => 76,  179 => 75,  175 => 74,  171 => 73,  167 => 72,  163 => 71,  160 => 70,  156 => 69,  132 => 48,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -323,9 +330,12 @@ class __TwigTemplate_b18e1ac1472c45431b5fd214098809cc extends Template
                         <a class=\"btn btn-primary\" href=\"{{ path('app_challenge_show', {'id': challenge.getId()}) }}\">show ({{challenge.participations|length}})</a>
                         </td>
                         <td style=\"\">
+                          {% if(user.id_user==challenge.getIdArtist().getid_user()) %}
                         <a href=\"{{ path('app_challenge_edit', {'id': challenge.id}) }}\"><i class=\"bi bi-pencil-square\"></i></a>
                         <a href=\"{{ path('app_challenge_delete', {'id_challenge': challenge.getId()}) }}\"><i class=\"bi bi-dash-circle\"></i></a>
+                          {% endif %}
                         </td>
+
                         
             </a>
                       </tr>

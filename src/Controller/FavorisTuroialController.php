@@ -17,23 +17,27 @@ use Symfony\Component\Routing\Annotation\Route;
 class FavorisTuroialController extends AbstractController
 {
     #[Route('/Tutoriel/addfavori/{id_tutoriel}', name: 'app_favoris_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, AllusersRepository $allusersRepository , FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository,$id_tutoriel): Response
+    public function new(Request $request, AllusersRepository $allusersRepository, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $favorisTuroial = new FavorisTuroial();
         $favorisTuroial->setIdTutoriel($tutorielRepository->find($id_tutoriel));
-        $favorisTuroial->setIdUser($allusersRepository->find(1));
+        $favorisTuroial->setIdUser($allusersRepository->find($userId));
 
-            $favorisTuroialRepository->save($favorisTuroial, true);
-            return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel'=>$id_tutoriel], Response::HTTP_SEE_OTHER);
+        $favorisTuroialRepository->save($favorisTuroial, true);
+        return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel' => $id_tutoriel], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/Tutoriel/removefavori/{id_tutoriel}', name: 'app_favoris_turoial_delete', methods: ['GET', 'POST'])]
-    public function delete(Request $request, FavorisTuroial $favorisTuroial, FavorisTuroialRepository $favorisTuroialRepository,AllusersRepository $allusersRepository, ManagerRegistry $mr, $id_tutoriel): Response
+    public function delete(Request $request, FavorisTuroial $favorisTuroial, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository, ManagerRegistry $mr, $id_tutoriel): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $em = $mr->getManager();
-        $favori = $favorisTuroialRepository->findOneBy(array('id_user'=>$allusersRepository->find(1),'id_tutoriel'=>$id_tutoriel));
+        $favori = $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel));
         $em->remove($favori);
         $em->flush();
-        return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel'=>$id_tutoriel], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_tutoriel_show', ['id_tutoriel' => $id_tutoriel], Response::HTTP_SEE_OTHER);
     }
 }

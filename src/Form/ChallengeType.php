@@ -35,9 +35,6 @@ class ChallengeType extends AbstractType
             ->add('id_categorie',EntityType::class,
             ['class'=>Category::class,
             'choice_label'=>'name_category'])
-            ->add('id_artist',EntityType::class,
-            ['class'=>Allusers::class,
-            'choice_label'=>'name'])
         ;
     }
 

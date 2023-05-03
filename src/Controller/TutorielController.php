@@ -132,9 +132,10 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/back', name: 'app_tutoriel_index_back', methods: ['GET', 'POST'])]
-    public function indexback(Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
+    public function indexback(AllusersRepository $allusersRepository,Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
     {
-
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $form = $this->createForm(TutorielSearchType::class);
         $form->handleRequest($request);
         $tutorielsPerCategory = $tutorielRepository->tutorielsPerCategory();
@@ -142,7 +143,7 @@ class TutorielController extends AbstractController
         $d = new \DateTime();
 
         for ($i = 1; $i <= 12; $i++) {
-            $vpm[$i] = $tutorielRepository->ViewsPerMonth(1, $i)[0]['views'];
+            $vpm[$i] = $tutorielRepository->ViewsPerMonth($userId, $i)[0]['views'];
         }
 
         return $this->render('tutoriel/indexback.html.twig', [
@@ -151,30 +152,35 @@ class TutorielController extends AbstractController
             'tutoriels' => $tutorielRepository->findAll(),
             'toptutoriels' => $tutorielRepository->findBy([], [], 4),
             'form' => $form->createView(),
-            'vpm' => $vpm
+            'vpm' => $vpm,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/showfavoris', name: 'app_tutoriel_favoris', methods: ['GET'])]
-    public function showfavoris(TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
+    public function showfavoris(Request $request,TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         return $this->render('tutoriel/favoris.html.twig', [
-            'tutoriels' => $favorisTuroialRepository->findBy(array('id_user' => $allusersRepository->find(1))),
+            'tutoriels' => $favorisTuroialRepository->findBy(array('id_user' => $allusersRepository->find($userId))),
             'toptutoriels' => $tutorielRepository->findBy([], [], 4),
         ]);
     }
 
 
     #[Route('/new', name: 'app_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, TutorielRepository $tutorielRepository): Response
+    public function new(AllusersRepository $allusersRepository,Request $request, TutorielRepository $tutorielRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $tutoriel = new Tutoriel();
         $form = $this->createForm(TutorielType::class, $tutoriel);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $tutoriel->setIdArtist($user);
             $image = $form->get('Image')->getData();
-
             $fichier = md5(uniqid()) . '.' . $image->guessExtension();
             $image->move(
                 $this->getParameter('images_directory'),
@@ -200,9 +206,11 @@ class TutorielController extends AbstractController
     #[Route('/{id_tutoriel}', name: 'app_tutoriel_show', methods: ['GET', 'POST'])]
     public function show(Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $em = $mr->getManager();
-        if ($ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find(1))))
-            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find(1)));
+        if ($ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId))))
+            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId)));
         else {
             $oldrating = new RatingTutoriel();
             $oldrating->setRating(0);
@@ -214,17 +222,19 @@ class TutorielController extends AbstractController
         return $this->render('tutoriel/show.html.twig', [
             'oldrating' => $oldrating,
             'tutoriel' => $tutoriel,
-            'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find(1), 'id_tutoriel' => $id_tutoriel)),
+            'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel)),
             'avg' => $avgrating[0]
         ]);
     }
 
     #[Route('/back/{id_tutoriel}', name: 'app_tutoriel_show_back', methods: ['GET', 'POST'])]
-    public function showback(Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
+    public function showback($id_tutoriel,Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $em = $mr->getManager();
-        if ($ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find(1))))
-            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find(1)));
+        if ($ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId))))
+            $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId)));
         else {
             $oldrating = new RatingTutoriel();
             $oldrating->setRating(0);
@@ -236,8 +246,9 @@ class TutorielController extends AbstractController
         return $this->render('tutoriel/showback.html.twig', [
             'oldrating' => $oldrating,
             'tutoriel' => $tutoriel,
-            'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find(1), 'id_tutoriel' => $id_tutoriel)),
-            'avg' => $avgrating[0]
+            'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel)),
+            'avg' => $avgrating[0],
+            'id_tutoriel'=>$id_tutoriel,
         ]);
     }
 
