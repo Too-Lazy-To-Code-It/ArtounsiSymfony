@@ -174,5 +174,6 @@
     <orderEntry type="library" name="bootstrap-icons" level="application" />
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="axios" level="application" />
   </component>
 </module>

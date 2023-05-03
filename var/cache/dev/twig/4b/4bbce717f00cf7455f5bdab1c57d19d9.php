@@ -58,27 +58,15 @@ class __TwigTemplate_13c3ac3017e49dfa31f3ba6df591f76b extends Template
     <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js\"></script>
 
- <link rel=\"stylesheet\" href=\"";
-        // line 30
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"), "html", null, true);
-        echo "\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
-    <link href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+ <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
 
-<link rel=\"stylesheet\" href=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper/swiper-bundle.min.css"), "html", null, true);
-        echo "\" />
+<link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css' />
    <link rel=\"stylesheet\" href=\"";
         // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/swiper-bundle.min.css"), "html", null, true);
         echo "\">
-     <link rel=\"stylesheet\" href=\"";
-        // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"), "html", null, true);
-        echo "\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
+     <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
 
      <link rel=\"stylesheet\" href=\"";
         // line 37
@@ -118,10 +106,7 @@ class __TwigTemplate_13c3ac3017e49dfa31f3ba6df591f76b extends Template
         // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/templatemo-cyborg-gaming.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 51
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper@7/swiper-bundle.min.css"), "html", null, true);
-        echo "\" />
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\" />
     <!--
 
 TemplateMo 577 Liberty Market
@@ -130,14 +115,8 @@ https://templatemo.com/tm-577-liberty-market
 
 -->
   <!-- Google Font -->
-    <link href=\"";
-        // line 60
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 61
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"), "html", null, true);
-        echo "\"rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \" rel=\"stylesheet\">
 
    
     <link rel=\"stylesheet\" href=\"";
@@ -862,10 +841,7 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
         // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
         echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper@7/swiper-bundle.min.css"), "html", null, true);
-        echo "\"/>
+        <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
     ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -946,7 +922,7 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
 
     public function getDebugInfo()
     {
-        return array (  925 => 541,  919 => 538,  913 => 535,  907 => 532,  901 => 529,  895 => 526,  889 => 523,  879 => 521,  867 => 24,  863 => 23,  859 => 22,  855 => 21,  851 => 20,  846 => 18,  842 => 17,  838 => 16,  834 => 15,  830 => 14,  826 => 13,  822 => 12,  818 => 11,  813 => 10,  803 => 9,  788 => 544,  785 => 543,  783 => 521,  779 => 520,  774 => 518,  770 => 517,  766 => 516,  762 => 515,  758 => 514,  754 => 513,  750 => 512,  746 => 511,  742 => 510,  738 => 509,  734 => 508,  730 => 507,  724 => 504,  719 => 502,  715 => 501,  711 => 500,  705 => 497,  700 => 495,  696 => 494,  682 => 483,  662 => 465,  660 => 455,  659 => 454,  654 => 451,  640 => 443,  636 => 442,  632 => 441,  627 => 439,  620 => 435,  614 => 432,  607 => 427,  603 => 426,  559 => 384,  540 => 371,  536 => 370,  531 => 368,  524 => 364,  518 => 361,  507 => 352,  503 => 351,  487 => 338,  422 => 276,  357 => 214,  309 => 169,  282 => 145,  275 => 140,  262 => 133,  258 => 132,  254 => 131,  242 => 121,  238 => 120,  228 => 112,  222 => 110,  220 => 109,  213 => 105,  209 => 104,  198 => 96,  169 => 70,  165 => 69,  161 => 68,  157 => 67,  153 => 66,  149 => 65,  145 => 64,  139 => 61,  135 => 60,  123 => 51,  119 => 50,  115 => 49,  111 => 48,  107 => 47,  103 => 46,  99 => 45,  93 => 42,  85 => 37,  80 => 35,  76 => 34,  72 => 33,  67 => 31,  63 => 30,  57 => 26,  55 => 9,  45 => 1,);
+        return array (  901 => 541,  895 => 538,  889 => 535,  883 => 532,  877 => 529,  871 => 526,  865 => 523,  855 => 521,  842 => 23,  838 => 22,  834 => 21,  830 => 20,  825 => 18,  821 => 17,  817 => 16,  813 => 15,  809 => 14,  805 => 13,  801 => 12,  797 => 11,  792 => 10,  782 => 9,  767 => 544,  764 => 543,  762 => 521,  758 => 520,  753 => 518,  749 => 517,  745 => 516,  741 => 515,  737 => 514,  733 => 513,  729 => 512,  725 => 511,  721 => 510,  717 => 509,  713 => 508,  709 => 507,  703 => 504,  698 => 502,  694 => 501,  690 => 500,  684 => 497,  679 => 495,  675 => 494,  661 => 483,  641 => 465,  639 => 455,  638 => 454,  633 => 451,  619 => 443,  615 => 442,  611 => 441,  606 => 439,  599 => 435,  593 => 432,  586 => 427,  582 => 426,  538 => 384,  519 => 371,  515 => 370,  510 => 368,  503 => 364,  497 => 361,  486 => 352,  482 => 351,  466 => 338,  401 => 276,  336 => 214,  288 => 169,  261 => 145,  254 => 140,  241 => 133,  237 => 132,  233 => 131,  221 => 121,  217 => 120,  207 => 112,  201 => 110,  199 => 109,  192 => 105,  188 => 104,  177 => 96,  148 => 70,  144 => 69,  140 => 68,  136 => 67,  132 => 66,  128 => 65,  124 => 64,  107 => 50,  103 => 49,  99 => 48,  95 => 47,  91 => 46,  87 => 45,  81 => 42,  73 => 37,  67 => 34,  57 => 26,  55 => 9,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -974,18 +950,18 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
         <link rel=\"stylesheet\" href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('assets/css/animate.css') }}\">
-        <link rel=\"stylesheet\" href=\"{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}\"/>
+        <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
     {% endblock %}
 
     <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js\"></script>
 
- <link rel=\"stylesheet\" href=\"{{asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')}}\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
-    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}\" rel=\"stylesheet\">
+ <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
 
-<link rel=\"stylesheet\" href=\"{{asset('https://unpkg.com/swiper/swiper-bundle.min.css')}}\" />
+<link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css' />
    <link rel=\"stylesheet\" href=\"{{asset('assets/swiper-bundle.min.css')}}\">
-     <link rel=\"stylesheet\" href=\"{{asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
+     <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
 
      <link rel=\"stylesheet\" href=\"{{asset('assets/css.css')}}\">
      
@@ -1001,7 +977,7 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/owl.css')}}\">
     <link rel=\"stylesheet\" href=\"{{asset('assets/css/animate.css')}}\">
         <link rel=\"stylesheet\" href=\"{{asset('/css/templatemo-cyborg-gaming.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css')}}\" />
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\" />
     <!--
 
 TemplateMo 577 Liberty Market
@@ -1010,8 +986,8 @@ https://templatemo.com/tm-577-liberty-market
 
 -->
   <!-- Google Font -->
-    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap')}}\" rel=\"stylesheet\">
-    <link href=\"{{asset('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap')}}\"rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \" rel=\"stylesheet\">
 
    
     <link rel=\"stylesheet\" href=\"{{asset('css/bootstrap.min.css\" type=\"text/css')}}\">

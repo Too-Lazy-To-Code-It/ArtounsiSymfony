@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Offretravail;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use App\Form\OffretravailType;
-use App\Repository\OffretravailRepository;use App\Repository\DemandetravailRepository;
+use App\Repository\OffretravailRepository;
+use App\Repository\DemandetravailRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\GrosmotsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,80 +28,91 @@ use App\Repository\OffretravailarchiveRepository;
 use App\Entity\Offretravailarchive;
 
 
-
 #[Route('/offretravail')]
 class OffretravailController extends AbstractController
 {
-   
     #[Route('/', name: 'app_offretravail_index', methods: ['GET'])]
-public function index(Request $request,PaginatorInterface $paginator,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
-{
-  
+    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste,): Response
+    {
+
+
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $offretravails = $offretravailRepository->findAll();
-        $offretravails=$paginator->paginate(
+        $offretravails = $paginator->paginate(
             $offretravails, //on passe les données 
             $request->query->getInt('page', 1), //num de la page en cours, 1 par défaut
             2//nbre d'articles par page  
         );
-       $count=0;
-        $offretravailbyid = $offretravailRepository->findBy(['id_user' => 1]);
-        $offres=$offretravailRepository->findBy(['id_user' => 1]);
-        $listartistespostuler=[];
-        
-         foreach ( $offres as $f) {
-             $idOffre = $f->getIdoffre();
-             $offreuser=$artiste->notif( $idOffre);
-             $listartistespostuler=array_merge($listartistespostuler, $offreuser);
-          $count+= $artiste->countFalseNotif( $idOffre);
-         }
-    
-    return $this->render('offretravail/index.html.twig', [
-        'offretravails' => $offretravails,
-        'offretravailbyid' => $offretravailbyid,
-        'offre'=> $listartistespostuler,
-        'count'=>$count,
-    ]);
-}
+        $count = 0;
+        $offretravailbyid = $offretravailRepository->findBy(['id_user' => $userId]);
+        $offres = $offretravailRepository->findBy(['id_user' => $userId]);
+        $listartistespostuler = [];
 
-#[Route('/true', name: 'app_offretravail_notiftrue', methods: ['POST'])]
-public function notiftrue(Request $request,PaginatorInterface $paginator,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
-{
-  
-       $count=0;
-    
-        $offres=$offretravailRepository->findBy(['id_user' => 1]);
-        $listartistespostuler=[];
-        
-         foreach ( $offres as $f) {
-             $idOffre = $f->getIdoffre();
-             $artiste->notiftrue( $idOffre);
-           
-         
-         }
-         return $this->redirectToRoute('app_offretravail_index', [], Response::HTTP_SEE_OTHER);
-    
-}
- 
-#[Route('/{idDemande}/mail', name: 'app_offretravail_mail', methods: ['GET'])]
-public function sendEmail(DemandetravailRepository $demandetravailRepository,Request $request,$idDemande,MailerInterface $mailer,AllusersRepository $allusersRepository): Response
-{ $demande = $demandetravailRepository->find($idDemande);
-    $demandetitre=$demande->getTitreDemande();
-    $nickname=$demande->getNickname();
-    $user=$allusersRepository->find($demande->getIdUser());
-    $nameofconnnectedstudio=$allusersRepository->find(1)->getNickname();
-    $descriptionstudioconnecter=$allusersRepository->find(1)->getDescription();
-    $mailstudioconnected=$allusersRepository->find(1)->getEmail();
-    $emailofuser = $user->getEmail();
-    $email = (new Email())
-        ->from('nourelhoudachawebi@gmail.com')
-        ->to( $emailofuser)
-        //->cc('cc@example.com')
-        //->bcc('bcc@example.com')
-        //->replyTo('fabien@example.com')
-        //->priority(Email::PRIORITY_HIGH)
-        ->subject('Nouvelle Studio est  interessé par votre demande : '.$demandetitre)
-        ->text('Sending emails is fun again!')
-        ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
+        foreach ($offres as $f) {
+            $idOffre = $f->getIdoffre();
+            $offreuser = $artiste->notif($idOffre);
+            $listartistespostuler = array_merge($listartistespostuler, $offreuser);
+            $count += $artiste->countFalseNotif($idOffre);
+        }
+
+        return $this->render('offretravail/index.html.twig', [
+            'offretravails' => $offretravails,
+            'offretravailbyid' => $offretravailbyid,
+            'offre' => $listartistespostuler,
+            'count' => $count,
+        ]);
+    }
+
+    #[Route('/true', name: 'app_offretravail_notiftrue', methods: ['POST'])]
+    public function notiftrue(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
+    {
+
+            $userId = $request->getSession()->get('user_id');
+            $user = $allusersRepository->find($userId);
+
+
+
+        $count = 0;
+
+        $offres = $offretravailRepository->findBy(['id_user' => $userId]);
+        $listartistespostuler = [];
+
+        foreach ($offres as $f) {
+            $idOffre = $f->getIdoffre();
+            $artiste->notiftrue($idOffre);
+
+
+        }
+        return $this->redirectToRoute('app_offretravail_index', [], Response::HTTP_SEE_OTHER);
+
+    }
+
+    #[Route('/{idDemande}/mail', name: 'app_offretravail_mail', methods: ['GET'])]
+    public function sendEmail(AllusersRepository $allusersRepository, DemandetravailRepository $demandetravailRepository, Request $request, $idDemande, MailerInterface $mailer): Response
+    {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $demande = $demandetravailRepository->find($idDemande);
+        $demandetitre = $demande->getTitreDemande();
+        $nickname = $demande->getNickname();
+        $user = $allusersRepository->find($demande->getIdUser());
+        $nameofconnnectedstudio = $allusersRepository->find($userId)->getNickname();
+        $descriptionstudioconnecter = $allusersRepository->find($userId)->getDescription();
+        $mailstudioconnected = $allusersRepository->find($userId)->getEmail();
+        $emailofuser = $user->getEmail();
+        $email = (new Email())
+            ->from('adam.rafraf@esprit.tn')
+            ->to($emailofuser)
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject('Nouvelle Studio est  interessé par votre demande : ' . $demandetitre)
+            ->text('Sending emails is fun again!')
+            ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
         <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"550\" bgcolor=\"white\" style=\"border:2px solid black\">
             <tbody>
                 <tr>
@@ -128,7 +140,7 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
                         border-bottom: 2px solid #1C233D;
                         padding-right: 20px;padding-left:20px;background-color: #1C233D\">
                         <p style=\" font-weight: bolder;font-size: 42px; letter-spacing: 0.025em; color:white;\">
-                        Bonjour  ". $nickname."!
+                        Bonjour  " . $nickname . "!
                      </p>
                  </td>
              </tr>
@@ -163,85 +175,93 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
                </tr>
                </body> 
                  ");
-    $mailer->send($email);
+        $mailer->send($email);
 
-    return $this->redirectToRoute('app_offretravail_chercherdemande', [], Response::HTTP_SEE_OTHER);
-}
+        return $this->redirectToRoute('app_offretravail_chercherdemande', [], Response::HTTP_SEE_OTHER);
+    }
 
- 
-  #[Route('/demandessimilaires', name: 'app_offretravail_demandessimilaires', methods: ['GET'])]
 
-  public function demandessimilaires(OffretravailRepository $offretravailRepository, Request $request,AllusersRepository $allusersRepository): Response
-  {
-  
-   $id=1;
-        $demandessimilaires=$offretravailRepository->findBydemandessimilaires($id);
-        return $this->render('offretravail/chercherdemande.html.twig',array (
+    #[Route('/demandessimilaires', name: 'app_offretravail_demandessimilaires', methods: ['GET'])]
+    public function demandessimilaires(OffretravailRepository $offretravailRepository, Request $request, AllusersRepository $allusersRepository): Response
+    {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $demandessimilaires = $offretravailRepository->findBydemandessimilaires($userId);
+        return $this->render('offretravail/chercherdemande.html.twig', array(
             'offretravails' => $offretravailRepository->findAll(),
-            'offretravailbyid' =>   $demandessimilaires,
+            'offretravailbyid' => $demandessimilaires,
         ));
-      
-  }
 
-  #[Route('/chercherdemande', name: 'app_offretravail_chercherdemande', methods: ['GET', 'POST'])]
+    }
 
-  public function chercherdemande(DemandetravailRepository $offretravailRepository, Request $request): Response
-  {
-      $resultOfSearch=$offretravailRepository->findAll();
-      if($request->isMethod("POST"))
-      {
-          $keyword = $request->get('niveau');
-          $resultOfSearch =  $offretravailRepository->chercherdemandes( $keyword);
-      }
-      return $this->render('offretravail/chercherdemande.html.twig',array (
-          'offretravails' => $offretravailRepository->findAll(),
-          'offretravailbyid' =>    $resultOfSearch ,
-          
-      ));
-  }
- 
+    #[Route('/chercherdemande', name: 'app_offretravail_chercherdemande', methods: ['GET', 'POST'])]
+    public function chercherdemande(DemandetravailRepository $offretravailRepository, Request $request): Response
+    {
+        $resultOfSearch = $offretravailRepository->findAll();
+        if ($request->isMethod("POST")) {
+            $keyword = $request->get('niveau');
+            $resultOfSearch = $offretravailRepository->chercherdemandes($keyword);
+        }
+        return $this->render('offretravail/chercherdemande.html.twig', array(
+            'offretravails' => $offretravailRepository->findAll(),
+            'offretravailbyid' => $resultOfSearch,
+
+        ));
+    }
+
 
     #[Route('/new', name: 'app_offretravail_new', methods: ['GET', 'POST'])]
-    public function new(Request $request,CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot,AllusersRepository $allusersRepository): Response
+    public function new(Request $request, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot, AllusersRepository $allusersRepository): Response
     {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $offretravail = new Offretravail();
-        $user =$allusersRepository->find(1);
-      
-         $now = new DateTime();
-        $offretravail->setDateajoutoofre( $now);
-       $verif=true;
+        $user = $allusersRepository->find($userId);
+
+        $now = new DateTime();
+        $offretravail->setDateajoutoofre($now);
+        $verif = true;
         $form = $this->createForm(OffretravailType::class, $offretravail);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) { $titre = $form->get('titreoffre')->getData();
-            $desc= $form->get('descriptionoffre')->getData();
-           
-            $mawjoud= $offretravailRepository->findBy(['id_user' => 1, 'titreoffre' => $titre]);
-            if( $mawjoud){$this->addFlash('error', 'Vous avez déjà publier cette offre'); $verif=false;}
-            if( $titre!="" )
-           { if($mot->checkGrosMots($titre))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('titreoffre')->addError($error);
-               
-                $verif=false;
-            }}
-            if( $desc!=""){
-            if($mot->checkGrosMots( $desc))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('descriptionoffre')->addError($error);
-                $verif=false;
-            }}
-        }
-        if ($form->isSubmitted() && $form->isValid()&&  $verif==true) {
-            $offretravail->setIdUser($user);
-            $nomcategorie=$categoryRepository->find( $form->get('idcategorie')->getData())->getNameCategory();
-          $nickname=$allusersRepository->find(1)->getNickname();
-            $offretravail-> setNickname( $nickname);
-            $offretravail-> setIdUser($user);
-        $offretravail-> setCategorieoffre( $nomcategorie);
-           $offretravailRepository->save($offretravail, true);
+        if ($form->isSubmitted()) {
+            $titre = $form->get('titreoffre')->getData();
+            $desc = $form->get('descriptionoffre')->getData();
 
-            return $this->redirectToRoute('app_dashboard_offres', [], Response::HTTP_SEE_OTHER);}
-        
+            $mawjoud = $offretravailRepository->findBy(['id_user' => $userId, 'titreoffre' => $titre]);
+            if ($mawjoud) {
+                $this->addFlash('error', 'Vous avez déjà publier cette offre');
+                $verif = false;
+            }
+            if ($titre != "") {
+                if ($mot->checkGrosMots($titre)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('titreoffre')->addError($error);
+
+                    $verif = false;
+                }
+            }
+            if ($desc != "") {
+                if ($mot->checkGrosMots($desc)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('descriptionoffre')->addError($error);
+                    $verif = false;
+                }
+            }
+        }
+        if ($form->isSubmitted() && $form->isValid() && $verif == true) {
+            $offretravail->setIdUser($user);
+            $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
+            $nickname = $allusersRepository->find(1)->getNickname();
+            $offretravail->setNickname($nickname);
+            $offretravail->setIdUser($user);
+            $offretravail->setCategorieoffre($nomcategorie);
+            $offretravailRepository->save($offretravail, true);
+
+            return $this->redirectToRoute('app_dashboard_offres', [], Response::HTTP_SEE_OTHER);
+        }
+
 
         return $this->renderForm('offretravail/new.html.twig', [
             'offretravail' => $offretravail,
@@ -258,46 +278,56 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
     }
 
     #[Route('/{idoffre}/edit', name: 'app_offretravail_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Offretravail $offretravail,CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository,GrosmotsRepository $mot): Response
+    public function edit(AllusersRepository $allusersRepository, Request $request, Offretravail $offretravail, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot): Response
     {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $form = $this->createForm(OffretravailType::class, $offretravail);
         $form->handleRequest($request);
-        $verif=true;
-        if ($form->isSubmitted()) { $titre = $form->get('titreoffre')->getData();
-            $desc= $form->get('descriptionoffre')->getData();
-            $mawjoud= $offretravailRepository->findBy(['id_user' => 1, 'titreoffre' => $titre]);
+        $verif = true;
+        if ($form->isSubmitted()) {
+            $titre = $form->get('titreoffre')->getData();
+            $desc = $form->get('descriptionoffre')->getData();
+            $mawjoud = $offretravailRepository->findBy(['id_user' => $userId, 'titreoffre' => $titre]);
 
-            if( $mawjoud){$this->addFlash('error', 'Vous avez déjà publier cette offre'); $verif=false;}
-            if( $titre!="" )
-           { if($mot->checkGrosMots($titre))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
+            if ($mawjoud) {
+                $this->addFlash('error', 'Vous avez déjà publier cette offre');
+                $verif = false;
+            }
+            if ($titre != "") {
+                if ($mot->checkGrosMots($titre)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('titreoffre')->addError($error);
+
+                    $verif = false;
+                }
+            }
+            if ($desc != "") {
+                if ($mot->checkGrosMots($desc)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('descriptionoffre')->addError($error);
+                    $verif = false;
+                }
+            }
+
+            if ($titre == null) {
+                $error = new FormError('veuiller saisir le titre de loffre');
                 $form->get('titreoffre')->addError($error);
-               
-                $verif=false;
-            }}
-            if( $desc!=""){
-            if($mot->checkGrosMots( $desc))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
+
+                $verif = false;
+            }
+            if ($desc == "") {
+                $error = new FormError('veuiller saisir la description de loffre');
                 $form->get('descriptionoffre')->addError($error);
-                $verif=false;
-            }}
-       
-        if( $titre==null )
-        {  $error = new FormError('veuiller saisir le titre de loffre');
-            $form->get('titreoffre')->addError($error);
-           
-            $verif=false;
+
+                $verif = false;
+            }
         }
-        if(  $desc=="" )
-        {  $error = new FormError('veuiller saisir la description de loffre');
-            $form->get('descriptionoffre')->addError($error);
-           
-            $verif=false;
-        } }
-        if ($form->isSubmitted() && $form->isValid()&&  $verif==true) {
-            $nomcategorie=$categoryRepository->find( $form->get('idcategorie')->getData())->getNameCategory();
-           
-          $offretravail-> setCategorieoffre( $nomcategorie);
+        if ($form->isSubmitted() && $form->isValid() && $verif == true) {
+            $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
+
+            $offretravail->setCategorieoffre($nomcategorie);
             $offretravailRepository->save($offretravail, true);
 
             return $this->redirectToRoute('app_dashboard_offres', [], Response::HTTP_SEE_OTHER);
@@ -310,12 +340,12 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
     }
 
     #[Route('/{idoffre}', name: 'app_offretravail_delete', methods: ['POST'])]
-    public function delete($idoffre,Request $request, Offretravail $offretravail, OffretravailRepository $offretravailRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
+    public function delete($idoffre, Request $request, Offretravail $offretravail, OffretravailRepository $offretravailRepository, OffretravailarchiveRepository $offretravailarchiveRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$offretravail->getIdoffre(), $request->request->get('_token'))) {        
-            $offre=$offretravailRepository->find($idoffre);
+        if ($this->isCsrfTokenValid('delete' . $offretravail->getIdoffre(), $request->request->get('_token'))) {
+            $offre = $offretravailRepository->find($idoffre);
             $offretravailarchive = new Offretravailarchive();
-            $offretravailarchive->setDescriptionoffre(  $offre->getDescriptionoffre());
+            $offretravailarchive->setDescriptionoffre($offre->getDescriptionoffre());
             $offretravailarchive->setTitreoffre($offre->getTitreoffre());
             $offretravailarchive->setIdcategorie($offre->getIdcategorie());
             $offretravailarchive->setCategorieoffre($offre->getCategorieoffre());
@@ -325,16 +355,14 @@ public function sendEmail(DemandetravailRepository $demandetravailRepository,Req
             $now = new DateTime();
             $offretravailarchive->setDateajoutoffre($now);
             $offretravailarchive->setNickname($offre->getNickname());
-           
-          
-            $offretravailarchiveRepository->save(  $offretravailarchive);
+
+
+            $offretravailarchiveRepository->save($offretravailarchive);
             $offretravailRepository->remove($offretravail, true);
         }
 
         return $this->redirectToRoute('app_dashboard_offres', [], Response::HTTP_SEE_OTHER);
     }
 
- 
- 
-   
+
 }

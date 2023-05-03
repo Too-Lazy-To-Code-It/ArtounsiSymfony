@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 use App\Entity\Demandetravail;
@@ -16,56 +17,64 @@ use App\Repository\CategoryRepository;
 use Symfony\Component\Form\FormError;
 use App\Repository\AllusersRepository;
 use App\Repository\ArtistepostulerRepository;
-use DateTime;use Knp\Component\Pager\PaginatorInterface;
+use DateTime;
+use Knp\Component\Pager\PaginatorInterface;
 use App\Repository\OffretravailRepository;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\HttpFoundation\File\File;
+
 #[Route('/demandetravail')]
 class DemandetravailController extends AbstractController
 {
     #[Route('/', name: 'app_demandetravail_index', methods: ['GET'])]
-    public function index(Request $request,PaginatorInterface $paginator,DemandetravailRepository $demandetravailRepository): Response
+    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, DemandetravailRepository $demandetravailRepository): Response
     {
-        
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $demandetravails = $demandetravailRepository->findAll();
-        $demandetravails=$paginator->paginate(
+        $demandetravails = $paginator->paginate(
             $demandetravails, //on passe les données 
             $request->query->getInt('page', 1), //num de la page en cours, 1 par défaut
             2//nbre d'articles par page  
         );
-        $demandetravailbyid = $demandetravailRepository->findBy(['id_user' => 1]);
+        $demandetravailbyid = $demandetravailRepository->findBy(['id_user' => $userId]);
         return $this->render('demandetravail/index.html.twig', [
             'demandetravails' => $demandetravails,
-            'demandetravailbyid' =>  $demandetravailbyid,
+            'demandetravailbyid' => $demandetravailbyid,
         ]);
     }
+
     #[Route('/{idOffre}/mail', name: 'app_demandetravail_mail', methods: ['GET'])]
-     public function sendEmail(ArtistepostulerRepository $artistrepo,OffretravailRepository $offretravailRepository,$idOffre,MailerInterface $mailer,AllusersRepository $allusersRepository): Response
-     { 
-     $verif=true;
-     $demande = $offretravailRepository->find($idOffre);
-     $offretitre=$demande->getTitreoffre();
-     $nickname=$demande->getNickname();
-     $user=$allusersRepository->find($demande->getIdUser());
-     $nameofconnnectedstudio=$allusersRepository->find(1)->getNickname();
-     $iduserconnected=$allusersRepository->find(1)->getid_user();
-     $descriptionstudioconnecter=$allusersRepository->find(1)->getDescription();
-     $mailstudioconnected=$allusersRepository->find(1)->getEmail();
-     $emailofuser = $user->getEmail();
-     $verifexsitance=$artistrepo->findBy(['idoffre' => $idOffre,'id_user'=>$iduserconnected]);
-    if(  $verifexsitance)
-      {$verif=false;}
-    else{
-     $email = (new Email())
-        ->from('nourelhoudachawebi@gmail.com')
-        ->to( $emailofuser)
-        //->cc('cc@example.com')
-        //->bcc('bcc@example.com')
-        //->replyTo('fabien@example.com')
-        //->priority(Email::PRIORITY_HIGH)
-        ->subject('Nouveau Candidature pour le poste de " '.$offretitre)
-        ->text('Sending emails is fun again!')
-        ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
+    public function sendEmail(Request $request, ArtistepostulerRepository $artistrepo, OffretravailRepository $offretravailRepository, $idOffre, MailerInterface $mailer, AllusersRepository $allusersRepository): Response
+    {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $verif = true;
+        $demande = $offretravailRepository->find($idOffre);
+        $offretitre = $demande->getTitreoffre();
+        $nickname = $demande->getNickname();
+        $user = $allusersRepository->find($demande->getIdUser());
+        $nameofconnnectedstudio = $allusersRepository->find($userId)->getNickname();
+        $iduserconnected = $allusersRepository->find(1)->getid_user();
+        $descriptionstudioconnecter = $allusersRepository->find($userId)->getDescription();
+        $mailstudioconnected = $allusersRepository->find($userId)->getEmail();
+        $emailofuser = $user->getEmail();
+        $verifexsitance = $artistrepo->findBy(['idoffre' => $idOffre, 'id_user' => $iduserconnected]);
+        if ($verifexsitance) {
+            $verif = false;
+        } else {
+            $email = (new Email())
+                ->from('adam.rafraf@esprit.tn')
+                ->to($emailofuser)
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('fabien@example.com')
+                //->priority(Email::PRIORITY_HIGH)
+                ->subject('Nouveau Candidature pour le poste de " ' . $offretitre)
+                ->text('Sending emails is fun again!')
+                ->html("<body style=\"background-color:url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')\">
         <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"550\" bgcolor=\"white\" style=\"border:2px solid black\">
             <tbody>
                 <tr>
@@ -93,7 +102,7 @@ class DemandetravailController extends AbstractController
                         border-bottom: 2px solid #1C233D;
                         padding-right: 20px;padding-left:20px;background-color: #1C233D\">
                         <p style=\" font-weight: bolder;font-size: 42px; letter-spacing: 0.025em; color:white;\">
-                        Bonjour  ". $nickname."!
+                        Bonjour  " . $nickname . "!
                      </p>
                  </td>
              </tr>
@@ -128,117 +137,132 @@ class DemandetravailController extends AbstractController
                         </table>
                         </tr>
                         </body> 
-                          " );
-          
-     $mailer->send($email);
-     $artistepostuler=new Artistepostuler();
-     $artistepostuler->setIdoffre($demande);
-     $artistepostuler->setIdUser( $user);
-     $artistepostuler->setNomartiste( $nickname);
-     $artistepostuler->setTitreoffre($offretitre);
-     $artistepostuler->setNotif(false);
-     $now = new DateTime();
-     $artistepostuler->setDatepostuler($now);
-     $artistrepo->save($artistepostuler, true);
-    
-     return $this->redirectToRoute('app_demande_travail_chercheroffre', [], Response::HTTP_SEE_OTHER);
-}  
-}
+                          ");
 
-   
-    #[Route('/chercher', name: 'app_demande_travail_chercheroffre', methods: ['GET', 'POST'])]
-public function chercheroffre(OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artistepostulerRepository, Request $request): Response
-{
-    $resultOfSearch=$offretravailRepository->findAll();
-    $postulerStatusArray = array_fill(0, count($resultOfSearch), true); // initialize all values to true
-    
-    foreach ($resultOfSearch as $key => $offer) {
-        $idOffre = $offer->getIdOffre();
-        $verifExsitance = $artistepostulerRepository->findBy(['idoffre' => $idOffre]);
-        if ($verifExsitance) {
-            $postulerStatusArray[$key] = false;
+            $mailer->send($email);
+            $artistepostuler = new Artistepostuler();
+            $artistepostuler->setIdoffre($demande);
+            $artistepostuler->setIdUser(  $user);
+            $artistepostuler->setNomartiste($nickname);
+            $artistepostuler->setTitreoffre($offretitre);
+            $artistepostuler->setNotif(false);
+            $now = new DateTime();
+            $artistepostuler->setDatepostuler($now);
+            $artistrepo->save($artistepostuler, true);
+
+            return $this->redirectToRoute('app_demande_travail_chercheroffre', [], Response::HTTP_SEE_OTHER);
         }
+
     }
 
-    if($request->isMethod("POST"))
+
+
+    #[Route('/chercher', name: 'app_demande_travail_chercheroffre', methods: ['GET', 'POST'])]
+    public function chercheroffre(OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artistepostulerRepository, Request $request): Response
     {
-        $keyword = $request->get('niveau');
-        $resultOfSearch =  $offretravailRepository->chercherOffres( $keyword);
+        $resultOfSearch = $offretravailRepository->findAll();
+        $postulerStatusArray = array_fill(0, count($resultOfSearch), true); // initialize all values to true
+
+        foreach ($resultOfSearch as $key => $offer) {
+            $idOffre = $offer->getIdOffre();
+            $verifExsitance = $artistepostulerRepository->findBy(['idoffre' => $idOffre]);
+            if ($verifExsitance) {
+                $postulerStatusArray[$key] = false;
+            }
+        }
+
+        if ($request->isMethod("POST")) {
+            $keyword = $request->get('niveau');
+            $resultOfSearch = $offretravailRepository->chercherOffres($keyword);
+        }
+        return $this->render('demandetravail/chercheroffre.html.twig', array(
+            'offretravailbyid' => $resultOfSearch,
+            'postulerStatusArray' => $postulerStatusArray,
+        ));
     }
-    return $this->render('demandetravail/chercheroffre.html.twig',array (
-        'offretravailbyid' =>  $resultOfSearch,
-        'postulerStatusArray' => $postulerStatusArray,
-    ));
-}
 
     #[Route('/offressimilaires', name: 'app_demandetravail_offressimilaires', methods: ['GET'])]
-
-    public function offressimilaires(ArtistepostulerRepository $artistepostulerRepository,DemandetravailRepository $demandetravailRepository, Request $request,AllusersRepository $allusersRepository): Response
+    public function offressimilaires(ArtistepostulerRepository $artistepostulerRepository, DemandetravailRepository $demandetravailRepository, Request $request, AllusersRepository $allusersRepository): Response
     {
-     
-     $id=1;
-          $demandessimilaires=$demandetravailRepository->findByoffressimilaires($id);
-          $postulerStatusArray = array_fill(0, count($demandessimilaires), true); 
-          foreach ( $demandessimilaires as $key => $offer) {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $demandessimilaires = $demandetravailRepository->findByoffressimilaires($userId);
+        $postulerStatusArray = array_fill(0, count($demandessimilaires), true);
+        foreach ($demandessimilaires as $key => $offer) {
             $idOffre = $offer->getIdOffre();
             $verifExsitance = $artistepostulerRepository->findBy(['idoffre' => $idOffre]);
             if ($verifExsitance) {
                 $postulerStatusArray[$key] = false;
             }
         }// initialize all values to true
-          return $this->render('demandetravail/chercheroffre.html.twig',array (
-            
-              'offretravailbyid' =>   $demandessimilaires,
-              'postulerStatusArray' => $postulerStatusArray,
-          ));
-        
-    }
-   #[Route('/{idDemande}/edit', name: 'app_demandetravail_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request,$idDemande, CategoryRepository $categoryRepository,Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository,GrosmotsRepository $mot): Response
-    { 
-      
-        $form = $this->createForm(DemandetravailType::class, $demandetravail);
-       
-        $form->handleRequest($request); 
-       // Set the PDF file in the form
-       $pd=$demandetravail->getPdf();
-       $newFilePath =$this->getParameter('upload_directory') . '/' .  $pd; 
-       $pdffile= new File ($newFilePath);
-       //$form->get('pdf')->setData( $pdffile);
+        return $this->render('demandetravail/chercheroffre.html.twig', array(
 
-        $verif=true;
-        if ($form->isSubmitted()) { $titre = $form->get('titreDemande')->getData();
-            $desc= $form->get('descriptionDemande')->getData();
-            $mawjoud=$demandetravailRepository->findBy(['id_user' => 1, 'titreDemande' => $titre]);
-            if( $mawjoud){$this->addFlash('error', 'Vous avez déjà publier cette demande'); $verif=false;}
-            if( $titre!="" ){
-            if($mot->checkGrosMots($titre))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('titreDemande')->addError($error); $verif=false;
-            }}
-            if($desc!="" ){
-            if($mot->checkGrosMots( $desc))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('descriptionDemande')->addError($error); $verif=false;
-            }}
-            if( $titre==null){  $error = new FormError('attention champs vide');
-                $form->get('titreDemande')->addError($error); $verif=false;
+            'offretravailbyid' => $demandessimilaires,
+            'postulerStatusArray' => $postulerStatusArray,
+        ));
+
+    }
+
+    #[Route('/{idDemande}/edit', name: 'app_demandetravail_edit', methods: ['GET', 'POST'])]
+    public function edit(AllusersRepository $allusersRepository, Request $request, $idDemande, CategoryRepository $categoryRepository, Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
+    {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        $form = $this->createForm(DemandetravailType::class, $demandetravail);
+
+        $form->handleRequest($request);
+        // Set the PDF file in the form
+        $pd = $demandetravail->getPdf();
+        $newFilePath = $this->getParameter('upload_directory') . '/' . $pd;
+        $pdffile = new File ($newFilePath);
+        //$form->get('pdf')->setData( $pdffile);
+
+        $verif = true;
+        if ($form->isSubmitted()) {
+            $titre = $form->get('titreDemande')->getData();
+            $desc = $form->get('descriptionDemande')->getData();
+            $mawjoud = $demandetravailRepository->findBy(['id_user' => $userId, 'titreDemande' => $titre]);
+            if ($mawjoud) {
+                $this->addFlash('error', 'Vous avez déjà publier cette demande');
+                $verif = false;
+            }
+            if ($titre != "") {
+                if ($mot->checkGrosMots($titre)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('titreDemande')->addError($error);
+                    $verif = false;
+                }
+            }
+            if ($desc != "") {
+                if ($mot->checkGrosMots($desc)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('descriptionDemande')->addError($error);
+                    $verif = false;
+                }
+            }
+            if ($titre == null) {
+                $error = new FormError('attention champs vide');
+                $form->get('titreDemande')->addError($error);
+                $verif = false;
             }
         }
-        if ($form->isSubmitted() && $form->isValid()&& $verif==true) {
-            $nomcategorie=$categoryRepository->find( $form->get('idcategorie')->getData())->getNameCategory();
-              
-            $demandetravail -> setCategoriedemande($nomcategorie);
-   $pdfFile = $form->get('pdf')->getData();
-   if(  $pdfFile!=null){
-    $fileName = md5(uniqid()) . '.' .   $pdfFile->guessExtension();
-   $pdfFile->move(
-    $this->getParameter('upload_directory'),
-    $fileName
-);
-   //on stocke l'image dans la bd
+        if ($form->isSubmitted() && $form->isValid() && $verif == true) {
+            $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
 
-   $demandetravail ->setPdf( $fileName);}
+            $demandetravail->setCategoriedemande($nomcategorie);
+            $pdfFile = $form->get('pdf')->getData();
+            if ($pdfFile != null) {
+                $fileName = md5(uniqid()) . '.' . $pdfFile->guessExtension();
+                $pdfFile->move(
+                    $this->getParameter('upload_directory'),
+                    $fileName
+                );
+                //on stocke l'image dans la bd
+
+                $demandetravail->setPdf($fileName);
+            }
             $demandetravailRepository->save($demandetravail, true);
 
             return $this->redirectToRoute('app_dashboard_demandes', [], Response::HTTP_SEE_OTHER);
@@ -247,62 +271,74 @@ public function chercheroffre(OffretravailRepository $offretravailRepository, Ar
         return $this->renderForm('demandetravail/edit.html.twig', [
             'demandetravail' => $demandetravail,
             'form' => $form,
-            'pdf'=> $pdffile,
+            'pdf' => $pdffile,
         ]);
     }
+
     #[Route('/new', name: 'app_demandetravail_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository,Request $request,CategoryRepository $categoryRepository, DemandetravailRepository $demandetravailRepository,GrosmotsRepository $mot): Response
+    public function new(AllusersRepository $allusersRepository, Request $request, CategoryRepository $categoryRepository, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $demandetravail = new Demandetravail();
-      
-         // Get the uploaded file
-     
-         $user =$allusersRepository->find(1);
-        
-    
-         $now = new DateTime();
-         $verif=true;
-         $demandetravail ->setDateajoutdemande($now);
+
+        // Get the uploaded file
+
+        $user = $allusersRepository->find(1);
+
+
+        $now = new DateTime();
+        $verif = true;
+        $demandetravail->setDateajoutdemande($now);
         $form = $this->createForm(DemandetravailType::class, $demandetravail);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) { $titre = $form->get('titreDemande')->getData();
-            $desc= $form->get('descriptionDemande')->getData();
-            $mawjoud=$demandetravailRepository->findBy(['id_user' => 1, 'titreDemande' => $titre]);
+        if ($form->isSubmitted()) {
+            $titre = $form->get('titreDemande')->getData();
+            $desc = $form->get('descriptionDemande')->getData();
+            $mawjoud = $demandetravailRepository->findBy(['id_user' => $userId, 'titreDemande' => $titre]);
 
-            if( $mawjoud){$this->addFlash('error', 'Vous avez déjà publier cette demande'); $verif=false;}
-            if( $titre!="" ){
-            if($mot->checkGrosMots($titre))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('titreDemande')->addError($error); $verif=false;
-            }}
-            if($desc!="" ){
-            if($mot->checkGrosMots( $desc))
-            {  $error = new FormError('attention vous avez ecrit un gros mot');
-                $form->get('descriptionDemande')->addError($error); $verif=false;
-            }}
+            if ($mawjoud) {
+                $this->addFlash('error', 'Vous avez déjà publier cette demande');
+                $verif = false;
+            }
+            if ($titre != "") {
+                if ($mot->checkGrosMots($titre)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('titreDemande')->addError($error);
+                    $verif = false;
+                }
+            }
+            if ($desc != "") {
+                if ($mot->checkGrosMots($desc)) {
+                    $error = new FormError('attention vous avez ecrit un gros mot');
+                    $form->get('descriptionDemande')->addError($error);
+                    $verif = false;
+                }
+            }
         }
-        if ($form->isSubmitted() && $form->isValid()&& $verif==true) {
-              // Get the uploaded file
+        if ($form->isSubmitted() && $form->isValid() && $verif == true) {
+            // Get the uploaded file
 
-              $nomcategorie=$categoryRepository->find( $form->get('idcategorie')->getData())->getNameCategory();
-              
-              $demandetravail -> setCategoriedemande($nomcategorie);
-              $nickname=$allusersRepository->find(1)->getNickname();
-              $demandetravail-> setNickname( $nickname);
-              $demandetravail->setIdUser($user);
-   $pdfFile = $form->get('pdf')->getData();
-   if(  $pdfFile!=null){
-    $fileName = md5(uniqid()) . '.' .   $pdfFile->guessExtension();
-   $pdfFile->move(
-    $this->getParameter('upload_directory'),
-    $fileName
-);
-   //on stocke l'image dans la bd
+            $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
 
-   $demandetravail ->setPdf( $fileName);}
+            $demandetravail->setCategoriedemande($nomcategorie);
+            $nickname = $allusersRepository->find(1)->getNickname();
+            $demandetravail->setNickname($nickname);
+            $demandetravail->setIdUser($user);
+            $pdfFile = $form->get('pdf')->getData();
+            if ($pdfFile != null) {
+                $fileName = md5(uniqid()) . '.' . $pdfFile->guessExtension();
+                $pdfFile->move(
+                    $this->getParameter('upload_directory'),
+                    $fileName
+                );
+                //on stocke l'image dans la bd
+
+                $demandetravail->setPdf($fileName);
+            }
             $demandetravailRepository->save($demandetravail, true);
-  // Get the uploaded file
-       
+            // Get the uploaded file
+
             return $this->redirectToRoute('app_dashboard_demandes', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -319,14 +355,12 @@ public function chercheroffre(OffretravailRepository $offretravailRepository, Ar
             'demandetravail' => $demandetravail,
         ]);
     }
-    
-   
-   
+
 
     #[Route('/{idDemande}', name: 'app_demandetravail_delete', methods: ['POST'])]
     public function delete(Request $request, Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$demandetravail-> getidemande(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $demandetravail->getidemande(), $request->request->get('_token'))) {
             $demandetravailRepository->remove($demandetravail, true);
         }
 

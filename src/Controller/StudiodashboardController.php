@@ -14,11 +14,13 @@ use App\Repository\AllusersRepository;
 class StudiodashboardController extends AbstractController
 {
     #[Route('/', name: 'app_dashboard_studiodashboard', methods: ['GET'])]
-    public function index(AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
+    public function index(Request $request,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
     {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
         $offretravails = $offretravailRepository->findAll();
 
-        $nickname=$allusersRepository->find(9)->getNickname();
+        $nickname=$allusersRepository->find( $userId)->getNickname();
 
         return $this->render('dashboard/studiodashboard.html.twig', [
             'offretravails' => "nour",
@@ -26,12 +28,15 @@ class StudiodashboardController extends AbstractController
         ]);
     }
     #[Route('/mesoffres', name: 'app_dashboard_offres', methods: ['GET'])]
-    public function offres(OffretravailRepository $offretravailRepository, Request $request): Response
+    public function offres(AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, Request $request): Response
     {
-        $id=1;
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
         $offretravails = $offretravailRepository->findAll();
-        if($id==3){ $offretravailbyid = $offretravailRepository->findAll();}
-        else{ $offretravailbyid = $offretravailRepository->findBy(['id_user' => 9]);}
+        if( $user->getType()=='Admin'){ $offretravailbyid = $offretravailRepository->findAll();}
+        else{ $offretravailbyid = $offretravailRepository->findBy(['id_user' =>  $userId]);}
 
 
         return $this->render('dashboard/tables-data.html.twig', [
@@ -40,12 +45,15 @@ class StudiodashboardController extends AbstractController
         ]);
     }
     #[Route('/mesdemandess', name: 'app_dashboard_demandes', methods: ['GET'])]
-    public function demandes(DemandetravailRepository $demandetravailRepository, Request $request): Response
-    { $id=9;
+    public function demandes(AllusersRepository $allusersRepository,DemandetravailRepository $demandetravailRepository, Request $request): Response
+    {
+
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
 
         $offretravails = $demandetravailRepository->findAll();
-        if($id==3){    $offretravailbyid = $demandetravailRepository->findAll();}
-        else{$offretravailbyid = $demandetravailRepository->findBy(['id_user' => 9]);}
+        if($user->getType()=='Admin'){    $offretravailbyid = $demandetravailRepository->findAll();}
+        else{$offretravailbyid = $demandetravailRepository->findBy(['id_user' => $userId]);}
 
 
         return $this->render('dashboard/tables-datademandes.html.twig', [

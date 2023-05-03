@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Offretravailarchive;
 use App\Form\OffretravailarchiveType;
+use App\Repository\AllusersRepository;
 use App\Repository\OffretravailarchiveRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,12 +17,17 @@ use DateTime;
 class OffretravailarchiveController extends AbstractController
 {
     #[Route('/', name: 'app_offretravailarchive_index', methods: ['GET'])]
-    public function index(OffretravailarchiveRepository $offretravailarchiveRepository): Response
-    { $offretravails = $offretravailarchiveRepository->findAll();
-        $id=1;
-        if($id==3){  $offretravailbyid =  $offretravailarchiveRepository->findAll();}
+    public function index(Request $request,AllusersRepository $allusersRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
+    {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+
+
+        $offretravails = $offretravailarchiveRepository->findAll();
+
+        if($user->getType()=='Admin'){  $offretravailbyid =  $offretravailarchiveRepository->findAll();}
         else
-        {$offretravailbyid =  $offretravailarchiveRepository->findBy(['id_user' => 1]);}
+        {$offretravailbyid =  $offretravailarchiveRepository->findBy(['id_user' =>  $userId ]);}
         return $this->render('offretravailarchive/index.html.twig', [
             'offretravails' => $offretravails,
             'offretravailbyid' => $offretravailbyid,

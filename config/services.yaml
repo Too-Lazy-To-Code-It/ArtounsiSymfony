@@ -17,6 +17,8 @@ parameters:
   twilio_number: '%env(TWILIO_NUMBER)%'
 
 services:
+  user:
+    class: App\Controller\AllusersController
   twilio.client:
     class: Twilio\Rest\Client
     arguments: [ '%env(TWILIO_ACCOUNT_SID)%', '%env(TWILIO_AUTH_TOKEN)%' ]
