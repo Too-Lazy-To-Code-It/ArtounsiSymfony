@@ -221,7 +221,19 @@
         
     </div>
         <div style="display: flex; justify-content: center;">
-                {{ knp_pagination_render(posts) }}
+            {{ knp_pagination_render(
+                posts,
+                '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
+                {
+                    'queryParam1': 'param1 value',
+                    'queryParam2': 'param2 value'
+                },
+                {
+                    'align': 'center',
+
+
+                },
+            ) }}
             </div>
     
     <div class="top-seller">

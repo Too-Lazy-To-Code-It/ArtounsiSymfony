@@ -289,19 +289,21 @@ https://templatemo.com/tm-577-liberty-market
                 if (( !twig_test_empty((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 215, $this->source); })())) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 215)))) {
                     // line 216
                     echo "                                                <td>
-                                                    <div class=\"main-button delete-product-button\" data-idlignepanier=\"";
-                    // line 217
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 217), "html", null, true);
+                                                    <div class=\"main-button delete-product-button\"
+                                                         data-idlignepanier=\"";
+                    // line 218
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 218), "html", null, true);
                     echo "\">
                                                         <a href=\"";
-                    // line 218
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 218)]), "html", null, true);
-                    echo "\"><i class=\"fas fa-trash-alt\"></i></a>
+                    // line 219
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 219)]), "html", null, true);
+                    echo "\"><i
+                                                                    class=\"fas fa-trash-alt\"></i></a>
                                                     </div>
                                                 </td>
                                             ";
                 }
-                // line 222
+                // line 224
                 echo "
 
                                         </tr>
@@ -310,19 +312,19 @@ https://templatemo.com/tm-577-liberty-market
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 226
+            // line 228
             echo "                                    </tbody>
                                 </table>
                             ";
         } else {
-            // line 229
+            // line 231
             echo "                                <div class=\"section-heading\">
 
                                     <h2 class=\"text-center\"> Votre panier est <em>vide</em></h2>
                                 </div>
                             ";
         }
-        // line 234
+        // line 236
         echo "
                             <div class=\"line-dec\"></div>
                         </div>
@@ -335,17 +337,17 @@ https://templatemo.com/tm-577-liberty-market
                 <thead>
                 <tr>
                     <th class=\"count\"><h5>Nombre de produits: ";
-        // line 245
-        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 245, $this->source); })()), "html", null, true);
+        // line 247
+        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 247, $this->source); })()), "html", null, true);
         echo "</h5></th>
                     <th class=\"count\"><h5>Montant total: ";
-        // line 246
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 246, $this->source); })()), "html", null, true);
+        // line 248
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 248, $this->source); })()), "html", null, true);
         echo "</h5></th>
                     <th>
                         <div class=\"main-button\">
                             <a href=\"";
-        // line 249
+        // line 251
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout", ["idpanier" => "idpanier"]);
         echo "\">Payer</a>
                         </div>
@@ -353,8 +355,8 @@ https://templatemo.com/tm-577-liberty-market
                     <th>
                         <div class=\"main-button\">
                             <a href=\"";
-        // line 254
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("viderpanier", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 254, $this->source); })())]), "html", null, true);
+        // line 256
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("viderpanier", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 256, $this->source); })())]), "html", null, true);
         echo "\">Vider Panier</a>
                         </div>
                     </th>
@@ -376,11 +378,11 @@ https://templatemo.com/tm-577-liberty-market
 
 
 <script src=\"";
-        // line 274
+        // line 276
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://code.jquery.com/jquery-3.6.0.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 275
+        // line 277
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -394,11 +396,11 @@ https://templatemo.com/tm-577-liberty-market
             \$.ajax({
                 method: 'POST',
                 url: \"";
-        // line 286
+        // line 288
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete_with_ajax", ["idlignepanier" => "__idlignepanier__"]);
         echo "\".replace('__idlignepanier__', idlignepanier),
                 data: {'_token': '";
-        // line 287
+        // line 289
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("deleteproduit"), "html", null, true);
         echo "'},
                 success: function (response) {
@@ -449,38 +451,38 @@ https://templatemo.com/tm-577-liberty-market
 <!-- Bootstrap core JavaScript -->
 
 <script src=\"";
-        // line 335
+        // line 337
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("//code.jquery.com/jquery.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 336
+        // line 338
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 337
+        // line 339
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 339
+        // line 341
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 340
+        // line 342
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 341
+        // line 343
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 343
+        // line 345
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 345
+        // line 347
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
@@ -573,7 +575,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  553 => 23,  549 => 22,  545 => 21,  541 => 20,  537 => 19,  532 => 16,  522 => 15,  484 => 345,  479 => 343,  474 => 341,  470 => 340,  466 => 339,  461 => 337,  457 => 336,  453 => 335,  402 => 287,  398 => 286,  384 => 275,  380 => 274,  357 => 254,  349 => 249,  343 => 246,  339 => 245,  326 => 234,  319 => 229,  314 => 226,  305 => 222,  298 => 218,  294 => 217,  291 => 216,  289 => 215,  284 => 213,  275 => 207,  265 => 200,  256 => 194,  246 => 187,  241 => 184,  237 => 183,  221 => 169,  219 => 168,  172 => 124,  168 => 123,  68 => 25,  66 => 15,  61 => 13,  52 => 7,  44 => 1,);
+        return array (  555 => 23,  551 => 22,  547 => 21,  543 => 20,  539 => 19,  534 => 16,  524 => 15,  486 => 347,  481 => 345,  476 => 343,  472 => 342,  468 => 341,  463 => 339,  459 => 338,  455 => 337,  404 => 289,  400 => 288,  386 => 277,  382 => 276,  359 => 256,  351 => 251,  345 => 248,  341 => 247,  328 => 236,  321 => 231,  316 => 228,  307 => 224,  299 => 219,  295 => 218,  291 => 216,  289 => 215,  284 => 213,  275 => 207,  265 => 200,  256 => 194,  246 => 187,  241 => 184,  237 => 183,  221 => 169,  219 => 168,  172 => 124,  168 => 123,  68 => 25,  66 => 15,  61 => 13,  52 => 7,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -794,8 +796,10 @@ https://templatemo.com/tm-577-liberty-market
                                             </td>
                                             {% if lignesPanier is not empty and ligne.idlignepanier is not empty %}
                                                 <td>
-                                                    <div class=\"main-button delete-product-button\" data-idlignepanier=\"{{ ligne.idlignepanier }}\">
-                                                        <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\"><i class=\"fas fa-trash-alt\"></i></a>
+                                                    <div class=\"main-button delete-product-button\"
+                                                         data-idlignepanier=\"{{ ligne.idlignepanier }}\">
+                                                        <a href=\"{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}\"><i
+                                                                    class=\"fas fa-trash-alt\"></i></a>
                                                     </div>
                                                 </td>
                                             {% endif %}

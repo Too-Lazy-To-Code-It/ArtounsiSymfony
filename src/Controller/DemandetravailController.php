@@ -281,12 +281,7 @@ class DemandetravailController extends AbstractController
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
         $demandetravail = new Demandetravail();
-
         // Get the uploaded file
-
-        $user = $allusersRepository->find(1);
-
-
         $now = new DateTime();
         $verif = true;
         $demandetravail->setDateajoutdemande($now);

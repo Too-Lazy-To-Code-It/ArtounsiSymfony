@@ -459,9 +459,11 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
         
     </div>
         <div style=\"display: flex; justify-content: center;\">
-                ";
+            ";
         // line 224
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 224, $this->source); })()));
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 225
+(isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 225, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
+        // line 236
         echo "
             </div>
     
@@ -591,9 +593,9 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
     </footer>
 
     ";
-        // line 352
+        // line 364
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 399
+        // line 411
         echo "
 
 ";
@@ -605,7 +607,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
 
     }
 
-    // line 352
+    // line 364
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -615,32 +617,32 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 353
+        // line 365
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 354
+        // line 366
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 355
+        // line 367
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 356
+        // line 368
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 357
+        // line 369
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 358
+        // line 370
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 359
+        // line 371
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -697,7 +699,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  644 => 359,  640 => 358,  636 => 357,  632 => 356,  628 => 355,  624 => 354,  619 => 353,  609 => 352,  597 => 399,  595 => 352,  464 => 224,  454 => 216,  439 => 214,  435 => 212,  433 => 211,  423 => 205,  414 => 198,  410 => 197,  404 => 194,  398 => 191,  389 => 185,  385 => 184,  376 => 177,  373 => 176,  356 => 175,  347 => 168,  323 => 141,  312 => 139,  308 => 138,  289 => 122,  269 => 104,  256 => 97,  250 => 94,  244 => 91,  240 => 89,  236 => 88,  205 => 60,  199 => 57,  195 => 56,  191 => 55,  187 => 54,  162 => 31,  152 => 30,  140 => 22,  136 => 21,  132 => 20,  128 => 19,  123 => 18,  113 => 17,  99 => 24,  97 => 17,  91 => 14,  83 => 9,  77 => 5,  67 => 4,  57 => 30,  54 => 29,  52 => 4,  47 => 1,);
+        return array (  646 => 371,  642 => 370,  638 => 369,  634 => 368,  630 => 367,  626 => 366,  621 => 365,  611 => 364,  599 => 411,  597 => 364,  467 => 236,  465 => 225,  464 => 224,  454 => 216,  439 => 214,  435 => 212,  433 => 211,  423 => 205,  414 => 198,  410 => 197,  404 => 194,  398 => 191,  389 => 185,  385 => 184,  376 => 177,  373 => 176,  356 => 175,  347 => 168,  323 => 141,  312 => 139,  308 => 138,  289 => 122,  269 => 104,  256 => 97,  250 => 94,  244 => 91,  240 => 89,  236 => 88,  205 => 60,  199 => 57,  195 => 56,  191 => 55,  187 => 54,  162 => 31,  152 => 30,  140 => 22,  136 => 21,  132 => 20,  128 => 19,  123 => 18,  113 => 17,  99 => 24,  97 => 17,  91 => 14,  83 => 9,  77 => 5,  67 => 4,  57 => 30,  54 => 29,  52 => 4,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -925,7 +927,19 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
         
     </div>
         <div style=\"display: flex; justify-content: center;\">
-                {{ knp_pagination_render(posts) }}
+            {{ knp_pagination_render(
+                posts,
+                '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
+                {
+                    'queryParam1': 'param1 value',
+                    'queryParam2': 'param2 value'
+                },
+                {
+                    'align': 'center',
+
+
+                },
+            ) }}
             </div>
     
     <div class=\"top-seller\">

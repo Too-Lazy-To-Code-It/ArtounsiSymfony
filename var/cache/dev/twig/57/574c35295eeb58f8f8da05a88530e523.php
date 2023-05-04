@@ -382,15 +382,15 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                 echo "                                        <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 270)]), "html", null, true);
                 echo "\"
-                                            class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                           class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
 
 
-                                        <td class=\"align-middle text-center text-sm\"><a
-                                                    href=\"";
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"";
                 // line 275
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 275)]), "html", null, true);
                 echo "\"
-                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     ";
             }
             // line 278
@@ -708,12 +708,12 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                     <td class=\"align-middle text-center text-sm\">
                                         {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
                                         <a href=\"{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}\"
-                                            class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                           class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
 
 
-                                        <td class=\"align-middle text-center text-sm\"><a
-                                                    href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\"
-                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\"
+                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}

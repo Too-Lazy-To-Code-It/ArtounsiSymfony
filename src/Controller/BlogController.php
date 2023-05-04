@@ -19,8 +19,8 @@ class BlogController extends AbstractController
         $posts = $postRepository->findAll();
         $poste = $paginator->paginate(
             $posts, // Requête contenant les données à paginer (ici nos articles)
-            $request->query->getInt('page',2 ), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
-            10 // Nombre de résultats par page
+            $request->query->getInt('page',1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            2// Nombre de résultats par page
         );
         return $this->render('blog/index.html.twig', [
             'categories' => $categories,
