@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\OffretravailRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,10 +15,14 @@ use App\Repository\AllusersRepository;
 class StudiodashboardController extends AbstractController
 {
     #[Route('/', name: 'app_dashboard_studiodashboard', methods: ['GET'])]
-    public function index(Request $request,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
+    public function index(SessionInterface $session,Request $request,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        if ($allusersRepository->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_index');
+        }
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $offretravails = $offretravailRepository->findAll();
 
         $nickname=$allusersRepository->find( $userId)->getNickname();
@@ -25,15 +30,19 @@ class StudiodashboardController extends AbstractController
         return $this->render('dashboard/studiodashboard.html.twig', [
             'offretravails' => "nour",
             'nickname' =>   $nickname,
+            'user'=>$user,
         ]);
     }
     #[Route('/mesoffres', name: 'app_dashboard_offres', methods: ['GET'])]
-    public function offres(AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, Request $request): Response
+    public function offres(SessionInterface $session,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, Request $request): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
-
+        if ($allusersRepository->isLoggedIn($request)) {
+            return $this->redirectToRoute('app_allusers_index');
+        }
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $offretravails = $offretravailRepository->findAll();
         if( $user->getType()=='Admin'){ $offretravailbyid = $offretravailRepository->findAll();}
         else{ $offretravailbyid = $offretravailRepository->findBy(['id_user' =>  $userId]);}
@@ -45,12 +54,12 @@ class StudiodashboardController extends AbstractController
         ]);
     }
     #[Route('/mesdemandess', name: 'app_dashboard_demandes', methods: ['GET'])]
-    public function demandes(AllusersRepository $allusersRepository,DemandetravailRepository $demandetravailRepository, Request $request): Response
+    public function demandes(SessionInterface $session,AllusersRepository $allusersRepository,DemandetravailRepository $demandetravailRepository, Request $request): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
-
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $offretravails = $demandetravailRepository->findAll();
         if($user->getType()=='Admin'){    $offretravailbyid = $demandetravailRepository->findAll();}
         else{$offretravailbyid = $demandetravailRepository->findBy(['id_user' => $userId]);}
@@ -59,6 +68,7 @@ class StudiodashboardController extends AbstractController
         return $this->render('dashboard/tables-datademandes.html.twig', [
             'offretravails' => $offretravails,
             'offretravailbyid' => $offretravailbyid,
+            'user'=>$user,
         ]);
     }
 

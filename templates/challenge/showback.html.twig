@@ -84,7 +84,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Description</th>
                 {% if (userid==challenge.getIdArtist().getid_user()) %}
-                <th scope="col">Supprimer</th>
+                    <th scope="col">Supprimer</th>
                 {% endif %}
             </tr>
             </thead>
@@ -97,10 +97,10 @@
                              style="border-radius: 20px; width: 70px; height: 70px; "></td>
                     <td>{{ p.description }}</td>
                     {% if (userid==challenge.getIdArtist().getid_user()) %}
-                    <td class="align-middle text-center text-sm"><a
-                                href="{{ path('app_participation_delete', {'id_participation': p.getId()}) }}"
-                                class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
-                    </td>
+                        <td class="align-middle text-center text-sm"><a
+                                    href="{{ path('app_participation_delete', {'id_participation': p.getId()}) }}"
+                                    class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
+                        </td>
                     {% endif %}
 
                 </tr>

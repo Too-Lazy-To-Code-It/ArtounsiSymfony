@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 use App\Entity\Rating;
@@ -23,10 +24,12 @@ class RatingController extends AbstractController
 {
 
     #[Route('/new/{rating}/{idChallenge}/{idparticipator}', name: 'app_rating_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository,$rating,$idparticipator,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository , ParticipationRepository $participationRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,$rating,$idparticipator,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository , ParticipationRepository $participationRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
+
 
         $requestData = $request;
         

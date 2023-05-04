@@ -30,21 +30,6 @@ use symfony\Component\Serializer\Normalizer\NormalizerInterface;
 #[Route('/allusers')]
 class AllusersController extends AbstractController
 {
-    public function isLoggedIn(Request $request)
-    {
-        $session = $request->getSession();
-        if (!$session->has('user_id')) {
-            return false;
-        }
-        $userId = $session->get('user_id');
-        $user = $this->getDoctrine()->getRepository(Allusers::class)->find($userId);
-        if (!$user) {
-            return false;
-        }
-        return true;
-    }
-
-
     #[Route('/Logout', name: 'app_allusers_logout', methods: ['GET'])]
     public function logout(SessionInterface $session): RedirectResponse
     {
@@ -55,7 +40,7 @@ class AllusersController extends AbstractController
     #[Route('/Login', name: 'app_allusers_login', methods: ['GET', 'POST'])]
     public function login(Request $request, AuthenticationUtils $authenticationUtils, AllusersRepository $allusersRepository): Response
     {
-        if ($this->isLoggedIn($request)) {
+        if ($allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_index');
         }
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -110,10 +95,9 @@ class AllusersController extends AbstractController
     #[Route('/', name: 'app_allusers_index', methods: ['GET'])]
     public function index(Request $request, AllusersRepository $allusersRepository): Response
     {
-        if (!$this->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
-
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
         return $this->render('allusers/users.html.twig', [
@@ -129,7 +113,7 @@ class AllusersController extends AbstractController
     #[Route('/register', name: 'app_allusers_new', methods: ['GET', 'POST'])]
     public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer, SessionInterface $session): Response
     {
-        if ($this->isLoggedIn($request)) {
+        if ($allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_index');
         }
         $alluser = new Allusers();
@@ -287,7 +271,7 @@ class AllusersController extends AbstractController
     public function show(Allusers $alluser, Request $request, AllusersRepository $allusersRepository, $id_user): Response
     {
 
-        if (!$this->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         $userId = $request->getSession()->get('user_id');
@@ -305,7 +289,7 @@ class AllusersController extends AbstractController
     #[Route('/{id_user}/edit', name: 'app_allusers_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
-        if (!$this->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         $userId = $request->getSession()->get('user_id');
@@ -341,7 +325,7 @@ class AllusersController extends AbstractController
     #[Route('/{id_user}', name: 'app_allusers_delete', methods: ['GET', 'POST'])]
     public function delete(Request $request, Allusers $alluser, AllusersRepository $allusersRepository): Response
     {
-        if (!$this->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         if ($this->isCsrfTokenValid('delete' . $alluser->getId_user(), $request->request->get('_token'))) {

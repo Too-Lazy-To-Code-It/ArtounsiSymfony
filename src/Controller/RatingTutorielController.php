@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use App\Entity\Allusers;
 use App\Entity\RatingTutoriel;
@@ -21,10 +22,12 @@ class RatingTutorielController extends AbstractController
 {
 
     #[Route('/new/{rating}/{idTutoriel}', name: 'app_rating_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository, $rating, $idTutoriel, Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, ManagerRegistry $mr, RatingTutorielRepository $ratingRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository, $rating, $idTutoriel, Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, ManagerRegistry $mr, RatingTutorielRepository $ratingRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
+
         $ratingTutorielRepositoty = $this->getDoctrine()->getRepository(RatingTutoriel::class);
         $requestData = $request;
 

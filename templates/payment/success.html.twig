@@ -62,13 +62,31 @@ https://templatemo.com/tm-577-liberty-market
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="explore.html" class="active">Explore</a></li>
-                        <li><a href="details.html">Item Details</a></li>
-                        <li><a href="Ajouter Produit .html" class="active">Add product</a></li>
-                        <li><a href="author.html">Author</a></li>
-                        <li><a href="create.html">Create Yours</a></li>
-                    </ul>   
+                        <div class="dropdown">
+                            <li><a>Art</a></li>
+                            <div class="dropdown-content">
+                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+
+                            </div>
+                        </div>
+                        <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                        <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                        <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                        <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                        <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                        {%if(user.type=='Admin') %}
+                            <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser==null) %}
+                            <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                        {% endif %}
+                    </ul>
                     <a class="menu-trigger">
                         <span>Menu</span>
                     </a>

@@ -67,120 +67,127 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
         // line 4
         echo "
     <div class=\"discover-items\">
-    <div class=\"container\">
-      <div class=\"row\">
-      <div class=\"buttons\">
-            <div class=\"border-button\">
-              <a href=";
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"buttons\">
+                    <div class=\"border-button\">
+                        <a href=";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_calendar");
-        echo " >Show Calendar</a>
-            </div>
-          </div>
-        <div class=\"col-lg-5\">
-          <div class=\"section-heading\">
-            <div class=\"line-dec\"></div>
-            <h2>Discover Some Of Our <em>Challenges</em>.</h2>
-          </div>
-        </div>
-        <div class=\"col-lg-7\">
-          
-          <form id=\"search-form\" name=\"gs\" method=\"post\" role=\"search\" action=\"#\">
-            <div class=\"row\">
-              <div class=\"col-lg-5\">
-                <fieldset>
-                ";
+        echo ">Show Calendar</a>
+                    </div>
+                </div>
+                <div class=\"col-lg-5\">
+                    <div class=\"section-heading\">
+                        <div class=\"line-dec\"></div>
+                        <h2>Discover Some Of Our <em>Challenges</em>.</h2>
+                    </div>
+                </div>
+                <div class=\"col-lg-7\">
+
+                    <form id=\"search-form\" name=\"gs\" method=\"post\" role=\"search\" action=\"#\">
+                        <div class=\"row\">
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    ";
         // line 25
         if (((isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 25, $this->source); })()) == "")) {
             // line 26
-            echo "                    <input id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
-                ";
+            echo "                                        <input id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\"
+                                               placeholder=\"Type Something...\" autocomplete=\"on\">
+                                    ";
         } else {
-            // line 28
-            echo "                    <input value=";
-            echo twig_escape_filter($this->env, (isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 28, $this->source); })()), "html", null, true);
-            echo " id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
-                ";
+            // line 29
+            echo "                                        <input value=";
+            echo twig_escape_filter($this->env, (isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 29, $this->source); })()), "html", null, true);
+            echo " id=\"searchTxt\" type=\"text\" name=\"keyword\"
+                                               class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
+                                    ";
         }
-        // line 30
-        echo "                </fieldset>
-              </div>
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <select default=\$category name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                        ";
-        // line 35
-        if (((isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 35, $this->source); })()) == null)) {
-            // line 36
-            echo "                        <option value=null selected>All Categories</option>
-                        ";
+        // line 32
+        echo "                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <select default=\$category name=\"Category\" class=\"form-select\"
+                                            aria-label=\"Default select example\" id=\"chooseCategory\"
+                                            onchange=\"this.form.click()\">
+                                        ";
+        // line 39
+        if (((isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 39, $this->source); })()) == null)) {
+            // line 40
+            echo "                                            <option value=null selected>All Categories</option>
+                                        ";
         } else {
-            // line 38
-            echo "                        <option value=null>All Categories</option>
-                        ";
+            // line 42
+            echo "                                            <option value=null>All Categories</option>
+                                        ";
         }
-        // line 40
-        echo "                        ";
+        // line 44
+        echo "                                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 40, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 44, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 41
-            echo "                            ";
-            if ((twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 41) == (isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 41, $this->source); })()))) {
-                // line 42
-                echo "                            <option selected value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 42), "html", null, true);
+            // line 45
+            echo "                                            ";
+            if ((twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 45) == (isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 45, $this->source); })()))) {
+                // line 46
+                echo "                                                <option selected
+                                                        value=\"";
+                // line 47
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 47), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 42), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 47), "html", null, true);
                 echo "</option>
-                            ";
+                                            ";
             } else {
-                // line 44
-                echo "                            <option value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 44), "html", null, true);
+                // line 49
+                echo "                                                <option value=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 49), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 44), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 49), "html", null, true);
                 echo "</option>
-                            ";
+                                            ";
             }
-            // line 46
-            echo "                        ";
+            // line 51
+            echo "                                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
-        echo "                    </select>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-2\">                        
-                <fieldset>
-                    <button class=\"main-button\">Search</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
+        // line 52
+        echo "                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-2\">
+                                <fieldset>
+                                    <button class=\"main-button\">Search</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-</body>
-</html>
+                </body>
+                </html>
 
-        ";
-        // line 62
-        $this->loadTemplate("challenge/_content.html.twig", "challenge/index.html.twig", 62)->display($context);
-        // line 63
-        echo "        ";
-        $this->loadTemplate("chat/index.html.twig", "challenge/index.html.twig", 63)->display($context);
-        // line 64
+                ";
+        // line 67
+        $this->loadTemplate("challenge/_content.html.twig", "challenge/index.html.twig", 67)->display($context);
+        // line 68
+        echo "                ";
+        $this->loadTemplate("chat/index.html.twig", "challenge/index.html.twig", 68)->display($context);
+        // line 69
         echo "
 
-    
-    </div></div></div></div>
+            </div>
+        </div>
+    </div></div>
     <script src=\"";
-        // line 68
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/filters.js"), "html", null, true);
         echo "\"></script>
-    ";
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -201,7 +208,7 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  181 => 68,  175 => 64,  172 => 63,  170 => 62,  153 => 47,  147 => 46,  139 => 44,  131 => 42,  128 => 41,  123 => 40,  119 => 38,  115 => 36,  113 => 35,  106 => 30,  100 => 28,  96 => 26,  94 => 25,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  188 => 74,  181 => 69,  178 => 68,  176 => 67,  159 => 52,  153 => 51,  145 => 49,  138 => 47,  135 => 46,  132 => 45,  127 => 44,  123 => 42,  119 => 40,  117 => 39,  108 => 32,  101 => 29,  96 => 26,  94 => 25,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -211,70 +218,76 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
 {% block body %}
 
     <div class=\"discover-items\">
-    <div class=\"container\">
-      <div class=\"row\">
-      <div class=\"buttons\">
-            <div class=\"border-button\">
-              <a href={{ path('app_challenge_calendar')}} >Show Calendar</a>
-            </div>
-          </div>
-        <div class=\"col-lg-5\">
-          <div class=\"section-heading\">
-            <div class=\"line-dec\"></div>
-            <h2>Discover Some Of Our <em>Challenges</em>.</h2>
-          </div>
-        </div>
-        <div class=\"col-lg-7\">
-          
-          <form id=\"search-form\" name=\"gs\" method=\"post\" role=\"search\" action=\"#\">
+        <div class=\"container\">
             <div class=\"row\">
-              <div class=\"col-lg-5\">
-                <fieldset>
-                {% if(keyword==\"\")%}
-                    <input id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
-                {% else %}
-                    <input value={{keyword}} id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
-                {% endif %}
-                </fieldset>
-              </div>
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <select default=\$category name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                        {% if(Categorie==null)%}
-                        <option value=null selected>All Categories</option>
-                        {% else %}
-                        <option value=null>All Categories</option>
-                        {% endif %}
-                        {% for category in categories %}
-                            {% if(category.getId_category()==Categorie)%}
-                            <option selected value=\"{{category.getId_category()}}\">{{category.getNameCategory()}}</option>
-                            {% else %}
-                            <option value=\"{{category.getId_category()}}\">{{category.getNameCategory()}}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-2\">                        
-                <fieldset>
-                    <button class=\"main-button\">Search</button>
-                </fieldset>
-              </div>
+                <div class=\"buttons\">
+                    <div class=\"border-button\">
+                        <a href={{ path('app_challenge_calendar') }}>Show Calendar</a>
+                    </div>
+                </div>
+                <div class=\"col-lg-5\">
+                    <div class=\"section-heading\">
+                        <div class=\"line-dec\"></div>
+                        <h2>Discover Some Of Our <em>Challenges</em>.</h2>
+                    </div>
+                </div>
+                <div class=\"col-lg-7\">
+
+                    <form id=\"search-form\" name=\"gs\" method=\"post\" role=\"search\" action=\"#\">
+                        <div class=\"row\">
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    {% if(keyword==\"\") %}
+                                        <input id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\"
+                                               placeholder=\"Type Something...\" autocomplete=\"on\">
+                                    {% else %}
+                                        <input value={{ keyword }} id=\"searchTxt\" type=\"text\" name=\"keyword\"
+                                               class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
+                                    {% endif %}
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <select default=\$category name=\"Category\" class=\"form-select\"
+                                            aria-label=\"Default select example\" id=\"chooseCategory\"
+                                            onchange=\"this.form.click()\">
+                                        {% if(Categorie==null) %}
+                                            <option value=null selected>All Categories</option>
+                                        {% else %}
+                                            <option value=null>All Categories</option>
+                                        {% endif %}
+                                        {% for category in categories %}
+                                            {% if(category.getId_category()==Categorie) %}
+                                                <option selected
+                                                        value=\"{{ category.getId_category() }}\">{{ category.getNameCategory() }}</option>
+                                            {% else %}
+                                                <option value=\"{{ category.getId_category() }}\">{{ category.getNameCategory() }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-2\">
+                                <fieldset>
+                                    <button class=\"main-button\">Search</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                </body>
+                </html>
+
+                {% include \"challenge/_content.html.twig\" %}
+                {% include \"chat/index.html.twig\" %}
+
+
             </div>
-          </form>
         </div>
-
-</body>
-</html>
-
-        {% include \"challenge/_content.html.twig\" %}
-        {% include \"chat/index.html.twig\" %}
-
-
-    
-    </div></div></div></div>
-    <script src=\"{{asset('assets/js/filters.js')}}\"></script>
-    {% endblock %}
+    </div></div>
+    <script src=\"{{ asset('assets/js/filters.js') }}\"></script>
+{% endblock %}
 
 
 ", "challenge/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\index.html.twig");

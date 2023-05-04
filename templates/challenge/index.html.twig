@@ -3,69 +3,75 @@
 {% block body %}
 
     <div class="discover-items">
-    <div class="container">
-      <div class="row">
-      <div class="buttons">
-            <div class="border-button">
-              <a href={{ path('app_challenge_calendar')}} >Show Calendar</a>
-            </div>
-          </div>
-        <div class="col-lg-5">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h2>Discover Some Of Our <em>Challenges</em>.</h2>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          
-          <form id="search-form" name="gs" method="post" role="search" action="#">
+        <div class="container">
             <div class="row">
-              <div class="col-lg-5">
-                <fieldset>
-                {% if(keyword=="")%}
-                    <input id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
-                {% else %}
-                    <input value={{keyword}} id="searchTxt" type="text" name="keyword" class="searchText" placeholder="Type Something..." autocomplete="on">
-                {% endif %}
-                </fieldset>
-              </div>
-              <div class="col-lg-5">
-                <fieldset>
-                    <select default=$category name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                        {% if(Categorie==null)%}
-                        <option value=null selected>All Categories</option>
-                        {% else %}
-                        <option value=null>All Categories</option>
-                        {% endif %}
-                        {% for category in categories %}
-                            {% if(category.getId_category()==Categorie)%}
-                            <option selected value="{{category.getId_category()}}">{{category.getNameCategory()}}</option>
-                            {% else %}
-                            <option value="{{category.getId_category()}}">{{category.getNameCategory()}}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                </fieldset>
-              </div>
-              <div class="col-lg-2">                        
-                <fieldset>
-                    <button class="main-button">Search</button>
-                </fieldset>
-              </div>
+                <div class="buttons">
+                    <div class="border-button">
+                        <a href={{ path('app_challenge_calendar') }}>Show Calendar</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h2>Discover Some Of Our <em>Challenges</em>.</h2>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+
+                    <form id="search-form" name="gs" method="post" role="search" action="#">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    {% if(keyword=="") %}
+                                        <input id="searchTxt" type="text" name="keyword" class="searchText"
+                                               placeholder="Type Something..." autocomplete="on">
+                                    {% else %}
+                                        <input value={{ keyword }} id="searchTxt" type="text" name="keyword"
+                                               class="searchText" placeholder="Type Something..." autocomplete="on">
+                                    {% endif %}
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <select default=$category name="Category" class="form-select"
+                                            aria-label="Default select example" id="chooseCategory"
+                                            onchange="this.form.click()">
+                                        {% if(Categorie==null) %}
+                                            <option value=null selected>All Categories</option>
+                                        {% else %}
+                                            <option value=null>All Categories</option>
+                                        {% endif %}
+                                        {% for category in categories %}
+                                            {% if(category.getId_category()==Categorie) %}
+                                                <option selected
+                                                        value="{{ category.getId_category() }}">{{ category.getNameCategory() }}</option>
+                                            {% else %}
+                                                <option value="{{ category.getId_category() }}">{{ category.getNameCategory() }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-2">
+                                <fieldset>
+                                    <button class="main-button">Search</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                </body>
+                </html>
+
+                {% include "challenge/_content.html.twig" %}
+                {% include "chat/index.html.twig" %}
+
+
             </div>
-          </form>
         </div>
-
-</body>
-</html>
-
-        {% include "challenge/_content.html.twig" %}
-        {% include "chat/index.html.twig" %}
-
-
-    
-    </div></div></div></div>
-    <script src="{{asset('assets/js/filters.js')}}"></script>
-    {% endblock %}
+    </div></div>
+    <script src="{{ asset('assets/js/filters.js') }}"></script>
+{% endblock %}
 
 

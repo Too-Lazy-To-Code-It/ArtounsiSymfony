@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
+use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Repository\CategoryRepository;
@@ -20,8 +23,12 @@ use Knp\Component\Pager\PaginatorInterface;
 class ExploreController extends AbstractController
 {
     #[Route('/explore', name: 'app_explore')]
-    public function index(CategoryRepository $categoryRepository,Request $request,PostRepository $postRepository,PaginatorInterface $paginator): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository,Request $request,PostRepository $postRepository,PaginatorInterface $paginator): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $categories = $categoryRepository->findAll();
         $posts = $postRepository->findAll();
         $poste = $paginator->paginate(
@@ -34,6 +41,7 @@ class ExploreController extends AbstractController
             'categories' => $categories,
             'posts' => $poste,
             'controller_name' => 'ExploreController',
+            'user'=>$user,
         ]);
         
     }

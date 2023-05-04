@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -138,14 +138,14 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -155,15 +155,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -228,7 +228,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -891,7 +891,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/http_cache</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -901,7 +901,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1777,7 +1777,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1807,7 +1807,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/app</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -2092,7 +2092,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -3441,7 +3441,7 @@
       <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev</argument>
+        <argument key="cache_dir">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3554,13 +3554,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/annotations.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/annotations.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3699,10 +3699,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/serialization.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/serialization.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3841,7 +3841,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/sessions</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3873,7 +3873,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/sessions</argument>
+          <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -4066,10 +4066,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/validation.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/validation.php</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4454,7 +4454,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/profiler</argument>
+      <argument>file:C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4501,7 +4501,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5004,7 +5004,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5378,7 +5378,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/twig</argument>
+        <argument key="cache">C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -7700,9 +7700,10 @@
         <argument key="banRepository" type="service_closure" id="App\Repository\BanRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.9tFCxGn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JavhPVU" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
         <argument key="paginator" type="service_closure" id="knp_paginator"/>
         <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
@@ -7711,6 +7712,13 @@
     <service id=".service_locator.RdVbGrJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1i103Vx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
         <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
       </argument>
     </service>
@@ -7911,6 +7919,16 @@
       <argument type="collection">
         <argument key="grosmot" type="service_closure" id=".errored..service_locator.jrXlUaF.App\Entity\Grosmots"/>
         <argument key="grosmotsRepository" type="service_closure" id="App\Repository\GrosmotsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ukcMnvy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="offretravailRepository" type="service_closure" id="App\Repository\OffretravailRepository"/>
+        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Bj9p3mR" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8491,7 +8509,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.bA9Ejaf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.eEV9WBR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -8508,11 +8526,11 @@
         <argument key="App\Controller\BanController::index" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController::new" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController::show" type="service_closure" id=".service_locator.1V0mQ8V"/>
-        <argument key="App\Controller\BlogController::index" type="service_closure" id=".service_locator.9tFCxGn"/>
+        <argument key="App\Controller\BlogController::index" type="service_closure" id=".service_locator.JavhPVU"/>
         <argument key="App\Controller\CategoryController::delete" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController::edit" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController::index" type="service_closure" id=".service_locator.RdVbGrJ"/>
-        <argument key="App\Controller\CategoryController::new" type="service_closure" id=".service_locator.RdVbGrJ"/>
+        <argument key="App\Controller\CategoryController::new" type="service_closure" id=".service_locator.1i103Vx"/>
         <argument key="App\Controller\CategoryController::show" type="service_closure" id=".service_locator.7P87fGM"/>
         <argument key="App\Controller\ChallengeController::calendar" type="service_closure" id=".service_locator.EbvCHH_"/>
         <argument key="App\Controller\ChallengeController::delete" type="service_closure" id=".service_locator.ccE8lf6"/>
@@ -8541,7 +8559,7 @@
         <argument key="App\Controller\DemandetravailController::offressimilaires" type="service_closure" id=".service_locator.o2Q4jAD"/>
         <argument key="App\Controller\DemandetravailController::sendEmail" type="service_closure" id=".service_locator.2qGZkqD"/>
         <argument key="App\Controller\DemandetravailController::show" type="service_closure" id=".service_locator.wqjROsU"/>
-        <argument key="App\Controller\ExploreController::index" type="service_closure" id=".service_locator.9tFCxGn"/>
+        <argument key="App\Controller\ExploreController::index" type="service_closure" id=".service_locator.JavhPVU"/>
         <argument key="App\Controller\FavorisTuroialController::delete" type="service_closure" id=".service_locator.Yz.riJM"/>
         <argument key="App\Controller\FavorisTuroialController::new" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\GrosmotsController::delete" type="service_closure" id=".service_locator.jrXlUaF"/>
@@ -8549,7 +8567,7 @@
         <argument key="App\Controller\GrosmotsController::index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::show" type="service_closure" id=".service_locator.YkIsf6u"/>
-        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.MbKnpGH"/>
+        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.ukcMnvy"/>
         <argument key="App\Controller\JsonController::delete" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController::edit" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController::editb" type="service_closure" id=".service_locator.5mTQzHl"/>
@@ -8688,11 +8706,11 @@
         <argument key="App\Controller\BanController:index" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController:new" type="service_closure" id=".service_locator.bCnny4Z"/>
         <argument key="App\Controller\BanController:show" type="service_closure" id=".service_locator.1V0mQ8V"/>
-        <argument key="App\Controller\BlogController:index" type="service_closure" id=".service_locator.9tFCxGn"/>
+        <argument key="App\Controller\BlogController:index" type="service_closure" id=".service_locator.JavhPVU"/>
         <argument key="App\Controller\CategoryController:delete" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController:edit" type="service_closure" id=".service_locator.bw8tvv2"/>
         <argument key="App\Controller\CategoryController:index" type="service_closure" id=".service_locator.RdVbGrJ"/>
-        <argument key="App\Controller\CategoryController:new" type="service_closure" id=".service_locator.RdVbGrJ"/>
+        <argument key="App\Controller\CategoryController:new" type="service_closure" id=".service_locator.1i103Vx"/>
         <argument key="App\Controller\CategoryController:show" type="service_closure" id=".service_locator.7P87fGM"/>
         <argument key="App\Controller\ChallengeController:calendar" type="service_closure" id=".service_locator.EbvCHH_"/>
         <argument key="App\Controller\ChallengeController:delete" type="service_closure" id=".service_locator.ccE8lf6"/>
@@ -8721,7 +8739,7 @@
         <argument key="App\Controller\DemandetravailController:offressimilaires" type="service_closure" id=".service_locator.o2Q4jAD"/>
         <argument key="App\Controller\DemandetravailController:sendEmail" type="service_closure" id=".service_locator.2qGZkqD"/>
         <argument key="App\Controller\DemandetravailController:show" type="service_closure" id=".service_locator.wqjROsU"/>
-        <argument key="App\Controller\ExploreController:index" type="service_closure" id=".service_locator.9tFCxGn"/>
+        <argument key="App\Controller\ExploreController:index" type="service_closure" id=".service_locator.JavhPVU"/>
         <argument key="App\Controller\FavorisTuroialController:delete" type="service_closure" id=".service_locator.Yz.riJM"/>
         <argument key="App\Controller\FavorisTuroialController:new" type="service_closure" id=".service_locator.nHnvE5y"/>
         <argument key="App\Controller\GrosmotsController:delete" type="service_closure" id=".service_locator.jrXlUaF"/>
@@ -8729,7 +8747,7 @@
         <argument key="App\Controller\GrosmotsController:index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:show" type="service_closure" id=".service_locator.YkIsf6u"/>
-        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.MbKnpGH"/>
+        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.ukcMnvy"/>
         <argument key="App\Controller\JsonController:delete" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController:edit" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController:editb" type="service_closure" id=".service_locator.5mTQzHl"/>
@@ -9743,12 +9761,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.bA9Ejaf"/>
+      <argument type="service" id=".service_locator.eEV9WBR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.bA9Ejaf"/>
+      <argument type="service" id=".service_locator.eEV9WBR"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -10524,7 +10542,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>eWRLN918To</argument>
       <argument>0</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/app</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10534,7 +10552,7 @@
       <argument>QXlTkAR+S3</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10542,7 +10560,7 @@
       <argument>GHFSHJl4Sy</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10550,7 +10568,7 @@
       <argument>YIlTMhJBKR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10558,7 +10576,7 @@
       <argument>flgHh1UkOe</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10566,14 +10584,14 @@
       <argument>3wyDzoCccv</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>1BA81mH5Zg</argument>
       <argument>0</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/app</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10583,7 +10601,7 @@
       <argument>djtdKlJ5lq</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10593,7 +10611,7 @@
       <argument>tnyynNjwzk</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Esprit/PIDEV/Codewiljaw/Symfony/Artounsi/var/cache/dev/pools/system</argument>
+      <argument>C:\Esprit\PIDEV\Codewiljaw\Symfony\Artounsi\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10776,7 +10794,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.bA9Ejaf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.eEV9WBR"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10804,7 +10822,7 @@
     <service id=".service_locator.7U8Zyca" alias=".service_locator.27jEXYx"/>
     <service id=".service_locator.LKpZXph" alias=".service_locator.bCnny4Z"/>
     <service id=".service_locator.APd5.7A" alias=".service_locator.dcAGksr"/>
-    <service id=".service_locator.hFevF_f" alias=".service_locator.9tFCxGn"/>
+    <service id=".service_locator.q0wGrrE" alias=".service_locator.JavhPVU"/>
     <service id=".service_locator.c4JN7E2" alias=".service_locator.MgjTE_4"/>
     <service id=".service_locator.BE2lfuJ" alias=".service_locator.zKlRLIS"/>
     <service id=".service_locator.JaImQF9" alias=".service_locator.i8SwBPX"/>
@@ -10813,6 +10831,7 @@
     <service id=".service_locator.hDXrujU" alias=".service_locator.n4QjW5F"/>
     <service id=".service_locator.6gRzooA" alias=".service_locator.o2Q4jAD"/>
     <service id=".service_locator.w1CLOvo" alias=".service_locator.Yz.riJM"/>
+    <service id=".service_locator.j6BXkjQ" alias=".service_locator.ukcMnvy"/>
     <service id=".service_locator.dGUdAyI" alias=".service_locator.hR8zYrr"/>
     <service id=".service_locator.Dwg5hc8" alias=".service_locator.5mTQzHl"/>
     <service id=".service_locator.JQTWST2" alias=".service_locator.3atRQwA"/>
@@ -10847,7 +10866,7 @@
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.gU5UtXD" alias=".service_locator.cn5m30c"/>
-    <service id=".service_locator.9q7Bpp_" alias=".service_locator.bA9Ejaf"/>
+    <service id=".service_locator.KESvEK9" alias=".service_locator.eEV9WBR"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1s1r2Me" alias=".service_locator.HA0YbZU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -10885,8 +10904,9 @@
     <service id=".service_locator.x.gYJj4" alias=".service_locator.1V0mQ8V"/>
     <service id=".service_locator.LFN1Mh." alias=".service_locator.dcAGksr"/>
     <service id=".service_locator.cBy1QjV" alias=".service_locator.4WM7mxr"/>
-    <service id=".service_locator.2F_RPDE" alias=".service_locator.9tFCxGn"/>
+    <service id=".service_locator.d5FkWar" alias=".service_locator.JavhPVU"/>
     <service id=".service_locator.7u3DfCJ" alias=".service_locator.RdVbGrJ"/>
+    <service id=".service_locator.EYx5Pg4" alias=".service_locator.1i103Vx"/>
     <service id=".service_locator.u.sw5uD" alias=".service_locator.7P87fGM"/>
     <service id=".service_locator.Pempidw" alias=".service_locator.bw8tvv2"/>
     <service id=".service_locator.m.Um8_T" alias=".service_locator.MgjTE_4"/>
@@ -10914,6 +10934,7 @@
     <service id=".service_locator.r679aUT" alias=".service_locator.PSUZNGe"/>
     <service id=".service_locator.Xq6MMpm" alias=".service_locator.YkIsf6u"/>
     <service id=".service_locator.cw1VrzW" alias=".service_locator.jrXlUaF"/>
+    <service id=".service_locator.b19a_Hy" alias=".service_locator.ukcMnvy"/>
     <service id=".service_locator.T1VvfMN" alias=".service_locator.Bj9p3mR"/>
     <service id=".service_locator.Mxdmxan" alias=".service_locator.hR8zYrr"/>
     <service id=".service_locator.o0_WV8Y" alias=".service_locator.QvTsKGT"/>

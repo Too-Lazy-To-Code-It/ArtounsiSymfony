@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- {% block stylesheet %}
- <link href="{{asset('assets2/img/favicon.png') }}" rel="icon">
-    <link href="{{asset('assets2/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-    <link href="{{asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{asset('assets2/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    {% block stylesheet %}
+        <link href="{{ asset('assets2/img/favicon.png') }}" rel="icon">
+        <link href="{{ asset('assets2/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+        <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets2/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
@@ -27,28 +27,32 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity="
+          sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5
+    " crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
 
-<link rel="stylesheet" href='https://unpkg.com/swiper/swiper-bundle.min.css' />
-   <link rel="stylesheet" href="{{asset('assets/swiper-bundle.min.css')}}">
-     <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0" crossorigin="anonymous">
+    <link rel="stylesheet" href='https://unpkg.com/swiper/swiper-bundle.min.css'/>
+    <link rel="stylesheet" href="{{ asset('assets/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0" crossorigin="anonymous">
 
-     <link rel="stylesheet" href="{{asset('assets/css.css')}}">
-     
+    <link rel="stylesheet" href="{{ asset('assets/css.css') }}">
+
     <title>Liberty Template - NFT Item Detail Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-        <link rel="stylesheet" href="{{asset('/css/templatemo-cyborg-gaming.css')}}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/templatemo-cyborg-gaming.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <!--
 
 TemplateMo 577 Liberty Market
@@ -56,492 +60,533 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
-  <!-- Google Font -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap " rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap "
+          rel="stylesheet">
 
-   
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/elegant-icons.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/slicknav.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css" type="text/css')}}">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css" type="text/css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css" type="text/css') }}">
 </head>
 
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
+<!-- ***** Preloader Start ***** -->
+<div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="{{ asset('assets2/img/logoart.png') }}" height="50" width="30" alt="">
+
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <div class="dropdown">
+                            <li><a>Art</a></li>
+                            <div class="dropdown-content">
+                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+
+                            </div>
+                        </div>
+                        <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                        <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                        <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                        <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                        <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                        {%if(user.type=='Admin') %}
+                            <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser==null) %}
+                            <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                        {% endif %}
+                        <li class="nav-item dropdown">
+                            <a id="notification-dropdown" class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-bell"></i>
+                                {% if count > 0 %}
+                                    <span id="count" class="badge bg-primary badge-number">{{ count }}</span>
+                                {% endif %}
+
+                            </a>
+
+                            <!-- End Notification Icon -->
+
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+
+                                {% for notif in offre %}
+
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li class="notification-item">
+
+                                        <i class="bi bi-info-circle text-primary"></i>
+                                        <div>
+                                            <h4 class="name"> {{ notif.nomartiste }}</h4>
+                                            <p class="post"> postuler a l'offre {{ notif.titreoffre }}</p>
+                                            <p class="post">{{ notif.datepostuler ? notif.datepostuler|date('Y-m-d H:i:s') : '' }}</p>
+
+                                        </div>
+                                    </li>
+
+
+                                {% endfor %}
+
+                            </ul>
+                            <!-- End Notification Dropdown Items -->
+
+                        </li>
+                        <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
             </div>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="{{asset('assets2/img/logoart.png') }}"  height="50" width="30" alt="">
-               
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                         <ul class="nav">
-                        <li><a href="#" class="active">Acceuil</a></li>
-                       
-                        <li><a href="{{ path('app_offretravail_index') }}">Offres d'emplois</a></li>
-                        <li><a href="{{ path('app_demandetravail_index') }}">Demandes d'emplois</a></li>
-                       <li class="nav-item dropdown">
- <a id="notification-dropdown" class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-          {% if count > 0 %}
-  <span id="count" class="badge bg-primary badge-number">{{ count }}</span>
-{% endif %}
+    <script>
 
-          </a>
-                         
-                    <!-- End Notification Icon -->
+        $(document).ready(function () {
+            // Select the notification dropdown
+            var dropdown = $('#notification-dropdown');
 
-                       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                       
+            // Add a click event listener to the notification dropdown
+            dropdown.on('click', function () {
+                // Send an AJAX request to the Symfony controller to update the entities
+                $.ajax({
+                    url: "{{ path('app_offretravail_notiftrue' ) }}",
+                    type: "POST",
+                    success: function (response) {
+                        // Update the notification count badge
+                        var badge = $('#count');
+                        badge.text("0");
+                        consol.log('tmchi');
 
-                       {% for notif in offre %}
-             
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                        
-                            <i class="bi bi-info-circle text-primary"></i>
-                            <div>
-                                <h4 class="name"> {{notif.nomartiste}}</h4>
-                                <p class="post"> postuler a l'offre {{notif.titreoffre}}</p>
-                                <p class="post">{{ notif.datepostuler ? notif.datepostuler|date('Y-m-d H:i:s') : '' }}</p>
-                               
-                            </div>
-                        </li>
-
-                       
-             	 {% endfor %}
-
-                    </ul>
-                    <!-- End Notification Dropdown Items -->
-
-                </li>
-                      <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
-
-                       
-                         
-                    </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-   
-     <script>
-    
-    $(document).ready(function() {
-        // Select the notification dropdown
-        var dropdown = $('#notification-dropdown');
-        
-        // Add a click event listener to the notification dropdown
-        dropdown.on('click', function() {
-            // Send an AJAX request to the Symfony controller to update the entities
-            $.ajax({
-          url: "{{ path('app_offretravail_notiftrue' )}}",
-                type: "POST",
-                success: function(response) {
-                    // Update the notification count badge
-                    var badge = $('#count');
-                    badge.text("0");
-                    consol.log('tmchi');
-                   
-                },
-                error: function() {
-                    // Handle errors
-                }
+                    },
+                    error: function () {
+                        // Handle errors
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-  <script>
-  function addHoverEffect() {
-    $.ajax({
-        url: 'your-server-url-here',
-        success: function(data) {
-            // Loop through the notification items and add the hover effect
-            $('.notification-item').each(function() {
-                $(this).hover(
-                    function() {
-                        $(this).addClass('hovered');
-                    },
-                    function() {
-                        $(this).removeClass('hovered');
-                    }
-                );
+    <script>
+        function addHoverEffect() {
+            $.ajax({
+                url: 'your-server-url-here',
+                success: function (data) {
+                    // Loop through the notification items and add the hover effect
+                    $('.notification-item').each(function () {
+                        $(this).hover(
+                            function () {
+                                $(this).addClass('hovered');
+                            },
+                            function () {
+                                $(this).removeClass('hovered');
+                            }
+                        );
+                    });
+                }
             });
         }
-    });
-}
-$(document).ready(function() {
-    addHoverEffect();
-});
 
-  </script>
+        $(document).ready(function () {
+            addHoverEffect();
+        });
 
-<script>
-function updateNotifications() {
-  $.ajax({
-    url: '{{ path('app_offretravail_index') }}',
-    type: 'GET',
-    success: function(html) {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const count = doc.querySelector('#count').textContent;
-      document.querySelector('#count').textContent = count;
+    </script>
 
-      const notifications = doc.querySelectorAll('.notification-item');
-      const notificationsContainer = document.querySelector('.notifications');
-      notificationsContainer.innerHTML = '';
+    <script>
+        function updateNotifications() {
+            $.ajax({
+                url: '{{ path('app_offretravail_index') }}',
+                type: 'GET',
+                success: function (html) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const count = doc.querySelector('#count').textContent;
+                    document.querySelector('#count').textContent = count;
 
-      notifications.forEach((notification) => {
-        notificationsContainer.appendChild(notification);
-      });
-    },
-    error: function(error) {
-      console.error(error);
-    }
-  });
-}
+                    const notifications = doc.querySelectorAll('.notification-item');
+                    const notificationsContainer = document.querySelector('.notifications');
+                    notificationsContainer.innerHTML = '';
 
-setInterval(updateNotifications, 2000); // Call every 2 seconds
-</script>
+                    notifications.forEach((notification) => {
+                        notificationsContainer.appendChild(notification);
+                    });
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        setInterval(updateNotifications, 2000); // Call every 2 seconds
+    </script>
 
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
-     <div class="page-heading normal-space">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h6>Les offres d'emplois</h6>
-                    <h2>Consulter tous les offres</h2>
-                    <span>Acceuil > <a href="#">Offre d'emplois</a></span>
-                    <div class="buttons">
-                        <div class="main-button">
-                            <a href="{{ path('app_offretravail_chercherdemande') }}">Cherchers demandes</a>
-                        </div>
-                     
+<div class="page-heading normal-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>Les offres d'emplois</h6>
+                <h2>Consulter tous les offres</h2>
+                <span>Acceuil > <a href="#">Offre d'emplois</a></span>
+                <div class="buttons">
+                    <div class="main-button">
+                        <a href="{{ path('app_offretravail_chercherdemande') }}">Cherchers demandes</a>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
- <style>
- .notification-item:hover {
-    background-color: #B0E0E6;
-    color: #000000;
-}
+</div>
+<style>
+    .notification-item:hover {
+        background-color: #B0E0E6;
+        color: #000000;
+    }
 
- .notification-item {
-  background-color: white; /* grey color */
-}
- 
- 
- .section-title {
-  border: 1px solid #7453fc; /* add border to the section */
-   border-radius: 20px; /* set the same radius for all corners */
-  padding: 10px; /* add padding to the section */
-  background-color:#7453fc;
-  display: inline-block; /* make the section inline-block so it wraps around its content */
-}
+    .notification-item {
+        background-color: white; /* grey color */
+    }
 
-.section-title {
-  margin: 0; /* remove margin from the title */
-}
 
-.link-style {
-  text-decoration: none; /* remove underline from the link */
-  color: white; /* set link color */
-  font-weight: bold; /* make the link bold */
-  margin-left: 10px; /* add margin to the left of the link */
-}
-.notifications {
-    max-height: 300px;
-    overflow-y: auto;
-}
-.name{color:black;
-*  font-size: 20px;}
-.post{color:grey;
-  font-size: 15px;}
-.dropdown-divider {
-  height: 1px;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  background-color: #e9ecef;
-}
+    .section-title {
+        border: 1px solid #7453fc; /* add border to the section */
+        border-radius: 20px; /* set the same radius for all corners */
+        padding: 10px; /* add padding to the section */
+        background-color: #7453fc;
+        display: inline-block; /* make the section inline-block so it wraps around its content */
+    }
+
+    .section-title {
+        margin: 0; /* remove margin from the title */
+    }
+
+    .link-style {
+        text-decoration: none; /* remove underline from the link */
+        color: white; /* set link color */
+        font-weight: bold; /* make the link bold */
+        margin-left: 10px; /* add margin to the left of the link */
+    }
+
+    .notifications {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .name {
+        color: black;
+        *font-size: 20px;
+    }
+
+    .post {
+        color: grey;
+        font-size: 15px;
+    }
+
+    .dropdown-divider {
+        height: 1px;
+        margin: 0.5rem 0;
+        overflow: hidden;
+        background-color: #e9ecef;
+    }
 
 </style>
 
- <div class="item-details-page">
-        <div class="container">
-            <div class="row">
-               
-              <div class="col-lg-6">
-                               <div class="mini-heading">
-  <h4 class="section-title">Mes offres</h4></div>
-  
-  <a class="link-style" href="{{ path('app_dashboard_offres') }}"><u>Gérer mes offres</u></a>
- 
-                            </div>
-                          
-    
-    <div class="featured-explore">
-      <div class="container-fluid">
+<div class="item-details-page">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="owl-features owl-carousel">
-           
-	
-        
-                  {% for offretravail in offretravailbyid %}
-             
-                    
-	
 
-		<article class="postcardcar dark blue">
-			<a class="postcardcar__img_link" href="#">
-				<img class="postcardcar__img" src="https://picsum.photos/1000/1000"  alt="Image Title" />
-			</a>
-			<div class="postcardcar__text">
-				<h1 class="postcardcar__title blue"><a>{{offretravail.titreoffre}}</a></h1>
-				<div class="postcardcar__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
-					</time>
-				</div>
-				<div class="postcardcar__bar"></div>
-				<div class="postcardcar__preview-txt">{{offretravail.descriptionoffre}}</div>
-				<ul class="postcardcar__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{ offretravail.categorieoffre }}</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{{ offretravail.typeoffre }}</li>
-                    	
+            <div class="col-lg-6">
+                <div class="mini-heading">
+                    <h4 class="section-title">Mes offres</h4></div>
 
-                                
-                        
-					</li>
-				</ul>
-			</div>
-		</article>
+                <a class="link-style" href="{{ path('app_dashboard_offres') }}"><u>Gérer mes offres</u></a>
 
-
-                
-             	 {% endfor %}
             </div>
-         
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-          
-    </div>
- </div>
-
-  <div class="item-details-page">
-        <div class="container">
-            <div class="row">
 
 
-                  
-                <div class="col-lg-12">
-                    <div class="current-bid">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mini-heading">
-                                    <h4>Tous les offres</h4>
-                                </div>
+            <div class="featured-explore">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="owl-features owl-carousel">
+
+
+                                {% for offretravail in offretravailbyid %}
+
+
+
+
+                                    <article class="postcardcar dark blue">
+                                        <a class="postcardcar__img_link" href="#">
+                                            <img class="postcardcar__img" src="https://picsum.photos/1000/1000"
+                                                 alt="Image Title"/>
+                                        </a>
+                                        <div class="postcardcar__text">
+                                            <h1 class="postcardcar__title blue"><a>{{ offretravail.titreoffre }}</a>
+                                            </h1>
+                                            <div class="postcardcar__subtitle small">
+                                                <time datetime="2020-05-25 12:00:00">
+                                                    <i class="fas fa-calendar-alt mr-2"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
+                                                </time>
+                                            </div>
+                                            <div class="postcardcar__bar"></div>
+                                            <div class="postcardcar__preview-txt">{{ offretravail.descriptionoffre }}</div>
+                                            <ul class="postcardcar__tagbox">
+                                                <li class="tag__item"><i
+                                                            class="fas fa-tag mr-2"></i>{{ offretravail.categorieoffre }}
+                                                </li>
+                                                <li class="tag__item"><i
+                                                            class="fas fa-clock mr-2"></i>{{ offretravail.typeoffre }}
+                                                </li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+
+
+                                {% endfor %}
                             </div>
-                            <div class="col-lg-6">
-                                <fieldset>
-                                    <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                      <option selected>Sort By: Latest</option>
-                      <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
-                      <option value="low">Sort By: Lowest</option>
-                      <option value="high">Sort By: Highest</option>
-                  </select>
-                                </fieldset>
-                            </div>
-                              
-                               
-<section class="dark">
 
-	<div class="containercard py-4">
-	
-{% for offretravail in offretravails %}
-		<article class="postcard dark blue">
-			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
-			</a>
-			<div class="postcard__text">
-				<h1 class="postcard__title blue"><a>{{offretravail.titreoffre}}</a></h1>
-				<div class="postcard__subtitle small">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">{{offretravail.descriptionoffre}}</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{ offretravail.categorieoffre }}</li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{{ offretravail.typeoffre }}</li>
-                    	<li class="tag__item"><i class="fas fa-clock mr-2"></i>{{ offretravail.localisationoffre }}</li>
-				
-                        
-					</li>
-				</ul>
-			</div>
-		</article>
-	 {% endfor %}
-	</div>
-    <div>
-
-{{ knp_pagination_render(
-           offretravails,
-            '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
-            {
-                'queryParam1': 'param1 value',
-                'queryParam2': 'param2 value'
-            },
-            {
-                'align': 'center',
-                 
-            },
-        ) }}
-</div>  
-</section>
-                           
-                    
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="item-details-page">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-12">
+                <div class="current-bid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mini-heading">
+                                <h4>Tous les offres</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <select name="Category" class="form-select" aria-label="Default select example"
+                                        id="chooseCategory" onchange="this.form.click()">
+                                    <option selected>Sort By: Latest</option>
+                                    <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
+                                    <option value="low">Sort By: Lowest</option>
+                                    <option value="high">Sort By: Highest</option>
+                                </select>
+                            </fieldset>
+                        </div>
+
+
+                        <section class="dark">
+
+                            <div class="containercard py-4">
+
+                                {% for offretravail in offretravails %}
+                                    <article class="postcard dark blue">
+                                        <a class="postcard__img_link" href="#">
+                                            <img class="postcard__img" src="https://picsum.photos/1000/1000"
+                                                 alt="Image Title"/>
+                                        </a>
+                                        <div class="postcard__text">
+                                            <h1 class="postcard__title blue"><a>{{ offretravail.titreoffre }}</a></h1>
+                                            <div class="postcard__subtitle small">
+                                                <time datetime="2020-05-25 12:00:00">
+                                                    <i class="fas fa-calendar-alt mr-2"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
+                                                </time>
+                                            </div>
+                                            <div class="postcard__bar"></div>
+                                            <div class="postcard__preview-txt">{{ offretravail.descriptionoffre }}</div>
+                                            <ul class="postcard__tagbox">
+                                                <li class="tag__item"><i
+                                                            class="fas fa-tag mr-2"></i>{{ offretravail.categorieoffre }}
+                                                </li>
+                                                <li class="tag__item"><i
+                                                            class="fas fa-clock mr-2"></i>{{ offretravail.typeoffre }}
+                                                </li>
+                                                <li class="tag__item"><i
+                                                            class="fas fa-clock mr-2"></i>{{ offretravail.localisationoffre }}
+                                                </li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+                            </div>
+                            <div>
+
+                                {{ knp_pagination_render(
+                                    offretravails,
+                                    '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
+                                    {
+                                        'queryParam1': 'param1 value',
+                                        'queryParam2': 'param2 value'
+                                    },
+                                    {
+                                        'align': 'center',
+
+                                    },
+                                ) }}
+                            </div>
+                        </section>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp; Designed by <a title="HTML CSS Templates" rel="sponsored" href="{{asset('https://templatemo.com')}}" target="_blank">TemplateMo</a></p>
-                </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored"
+                                   href="{{ asset('https://templatemo.com') }}" target="_blank">TemplateMo</a></p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-   
 
-    text-alig
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-      <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-
-    <script src="{{asset('assets/js/isotope.min.js')}}"></script>
-    <script src="assets/js/owl-carousel.js')}}"></script>
-
-    <script src="{{asset('assets/js/tabs.js')}}"></script>
-    <script src="{{asset('assets/js/popup.js')}}"></script>
-    <script src="{{asset('assets/js/custom.js')}}"></script>
-    
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js')}}" integrity="sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- JavaScript -->
-      <!--Uncomment this line-->
-       <script src="{{asset('assets/index.js')}}"></script> 
-       <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/mixitup.min.js')}}"></script>
-      <script src="{{asset('js/test.js')}}"></script>
-    <script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/jquery.slicknav.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
-     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-
-  <script src="{{asset('assets/js/isotope.min.js')}}"></script>
-  {% block javascripts %}
-{# <script src="vendor/jquery/jquery.min.js"></script> #}
- <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
- 
-{# <script src="vendor/bootstrap/js/bootstrap.min.js"></script> #}
+text-alig
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
-{# <script src="assets/js/isotope.min.js"></script> #}
 <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+<script src="assets/js/owl-carousel.js')}}"></script>
 
-{# <script src="assets/js/owl-carousel.js"></script> #}
-<script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
-
-{# <script src="assets/js/tabs.js"></script> #}
 <script src="{{ asset('assets/js/tabs.js') }}"></script>
-
-{# <script src="assets/js/popup.js"></script> #}
 <script src="{{ asset('assets/js/popup.js') }}"></script>
-
-{# <script src="assets/js/custom.js"></script>  #}
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js') }}"
+        integrity="sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- JavaScript -->
+<!--Uncomment this line-->
+<script src="{{ asset('assets/index.js') }}"></script>
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('js/mixitup.min.js') }}"></script>
+<script src="{{ asset('js/test.js') }}"></script>
+<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/jquery.slicknav.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+{% block javascripts %}
+    {# <script src="vendor/jquery/jquery.min.js"></script> #}
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+
+    {# <script src="vendor/bootstrap/js/bootstrap.min.js"></script> #}
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    {# <script src="assets/js/isotope.min.js"></script> #}
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+
+    {# <script src="assets/js/owl-carousel.js"></script> #}
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+
+    {# <script src="assets/js/tabs.js"></script> #}
+    <script src="{{ asset('assets/js/tabs.js') }}"></script>
+
+    {# <script src="assets/js/popup.js"></script> #}
+    <script src="{{ asset('assets/js/popup.js') }}"></script>
+
+    {# <script src="assets/js/custom.js"></script>  #}
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
 {% endblock %}
 
-    <script src="{{asset('https://unpkg.com/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js') }}"></script>
 
 </body>
 

@@ -198,7 +198,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
         // line 88
         echo twig_include($this->env, $context, "post/_form.html.twig");
         echo "
-                        <div class=\"g-recaptcha\" data-sitekey=\"6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk\" data-callback=\"submitForm\"></div>
+                        <div class=\"g-recaptcha\" data-sitekey=\"6Ld8YeAlAAAAAPc-kJ8ePKrv71eupZ3trCvsd8no\" data-callback=\"submitForm\"></div>
 
 
                         <a href=\"";
@@ -344,15 +344,15 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
         <script src=\"https://www.google.com/recaptcha/api.js\"></script>
         <script>
-            //  grecaptcha.ready(function() {
-            //    document.getElementById('save-btn').disabled = true;
+            grecaptcha.ready(function() {
+                document.getElementById('save-btn').disabled = true;
 
-            //});
+            });
 
-            // function submitForm() {
-            // document.getElementById('save-btn').disabled = false;
+            function submitForm() {
+            document.getElementById('save-btn').disabled = false;
 
-            //}
+            }
 
 
         </script>
@@ -467,7 +467,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
                         {% endfor %}
 
                         {{ include('post/_form.html.twig') }}
-                        <div class=\"g-recaptcha\" data-sitekey=\"6LcSNKQlAAAAAMoL5XsXaMespU071HJyf3DSnrQk\" data-callback=\"submitForm\"></div>
+                        <div class=\"g-recaptcha\" data-sitekey=\"6Ld8YeAlAAAAAPc-kJ8ePKrv71eupZ3trCvsd8no\" data-callback=\"submitForm\"></div>
 
 
                         <a href=\"{{ path('app_post_index') }}\">back to list</a>
@@ -497,15 +497,15 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
         <script src=\"https://www.google.com/recaptcha/api.js\"></script>
         <script>
-            //  grecaptcha.ready(function() {
-            //    document.getElementById('save-btn').disabled = true;
+            grecaptcha.ready(function() {
+                document.getElementById('save-btn').disabled = true;
 
-            //});
+            });
 
-            // function submitForm() {
-            // document.getElementById('save-btn').disabled = false;
+            function submitForm() {
+            document.getElementById('save-btn').disabled = false;
 
-            //}
+            }
 
 
         </script>

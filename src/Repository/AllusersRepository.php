@@ -30,6 +30,19 @@ use Twilio\Rest\Client;
  */
 class AllusersRepository extends ServiceEntityRepository
 {
+    public function isLoggedIn(Request $request)
+    {
+        $session = $request->getSession();
+        if (!$session->has('user_id')) {
+            return false;
+        }
+        $userId = $session->get('user_id');
+        $user = $this->find($userId);
+        if (!$user) {
+            return false;
+        }
+        return true;
+    }
     public function sendSmsMessage(Client $twilioClient,string $to,string $text):Response
     {
         $twilioClient->messages->create($to, [
