@@ -208,6 +208,16 @@ class ChallengeController extends AbstractController
             
         ]);
     }
+    #[Route('/{id}/showback', name: 'app_challenge_show_back', methods: ['GET', 'POST'])]
+    public function showback(AllusersRepository $allusersRepository,Request $request, $id,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    {
+        $userId = $request->getSession()->get('user_id');
+        $user = $allusersRepository->find($userId);
+        return $this->render('challenge/showback.html.twig', [
+            'challenge' => $challenge,
+            'userid'=>$userId,
+        ]);
+    }
 
     #[Route('/edit/{id}', name: 'app_challenge_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Challenge $challenge, ChallengeRepository $challengeRepository): Response

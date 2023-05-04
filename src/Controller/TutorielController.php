@@ -23,8 +23,6 @@ use App\Entity\Rating;
 use Knp\Component\Pager\PaginatorInterface;
 
 
-
-
 #[Route('/tutoriel')]
 class TutorielController extends AbstractController
 {
@@ -123,7 +121,7 @@ class TutorielController extends AbstractController
                 ->getResult();
 
 
-        $tutoriels =null;
+        $tutoriels = null;
         return new JsonResponse(['keyword' => $keyword,
             'Categorie' => $category,
             'tutoriels' => $tutoriels,
@@ -132,7 +130,7 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/back', name: 'app_tutoriel_index_back', methods: ['GET', 'POST'])]
-    public function indexback(AllusersRepository $allusersRepository,Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
+    public function indexback(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
@@ -153,12 +151,12 @@ class TutorielController extends AbstractController
             'toptutoriels' => $tutorielRepository->findBy([], [], 4),
             'form' => $form->createView(),
             'vpm' => $vpm,
-            'user'=>$user,
+            'user' => $user,
         ]);
     }
 
     #[Route('/showfavoris', name: 'app_tutoriel_favoris', methods: ['GET'])]
-    public function showfavoris(Request $request,TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
+    public function showfavoris(Request $request, TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
@@ -170,7 +168,7 @@ class TutorielController extends AbstractController
 
 
     #[Route('/new', name: 'app_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository,Request $request, TutorielRepository $tutorielRepository): Response
+    public function new(AllusersRepository $allusersRepository, Request $request, TutorielRepository $tutorielRepository): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
@@ -228,7 +226,7 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/back/{id_tutoriel}', name: 'app_tutoriel_show_back', methods: ['GET', 'POST'])]
-    public function showback($id_tutoriel,Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty): Response
+    public function showback($id_tutoriel, Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
@@ -248,7 +246,8 @@ class TutorielController extends AbstractController
             'tutoriel' => $tutoriel,
             'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel)),
             'avg' => $avgrating[0],
-            'id_tutoriel'=>$id_tutoriel,
+            'id_tutoriel' => $id_tutoriel,
+            'userid' => $userId,
         ]);
     }
 

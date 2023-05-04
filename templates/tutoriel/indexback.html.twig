@@ -265,10 +265,12 @@
                                     <td class="align-middle text-center text-sm"><a class="btn btn-primary"
                                                                                     href="{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}">show
                                             ({{ tutoriel.getVideos()|length }})</a></td>
-                                    <td class="align-middle text-center text-sm"><a>
-                                            {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
-                                                href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}"
-                                                class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
+                                    <td class="align-middle text-center text-sm">
+                                        {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
+                                        <a href="{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}"
+                                           class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
+
+
                                     <td class="align-middle text-center text-sm"><a
                                                 href="{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}"
                                                 class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>

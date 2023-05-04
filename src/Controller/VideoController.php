@@ -28,7 +28,7 @@ class VideoController extends AbstractController
         ]);
     }
 
-    #[Route('/new/{id_tutoriel}', name: 'app_video_new', methods: ['GET', 'POST'])]
+    #[Route('/new/{id_tutoriel}', name: 'app_videoo_new', methods: ['GET', 'POST'])]
     public function new(Request $request, VideoRepository $videoRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
     {
 

@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
 use DateTime;
@@ -108,6 +109,7 @@ class ProduitsController extends AbstractController
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
+        $idpanier = $user->getPaniers()->first()->getidpanier();
         // Définir l'utilisateur actuel comme propriétaire du produit
         $produit->setIdUser($user);
         $form = $this->createForm(ProduitsType::class, $produit);
@@ -139,6 +141,7 @@ class ProduitsController extends AbstractController
         return $this->renderForm('produits/edit.html.twig', [
             'produit' => $produit,
             'form' => $form,
+            'idpanier' => $idpanier,
         ]);
     }
 

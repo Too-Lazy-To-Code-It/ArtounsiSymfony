@@ -374,31 +374,33 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
             // line 267
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getVideos", [], "method", false, false, false, 267)), "html", null, true);
             echo ")</a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a>
-                                            ";
+                                    <td class=\"align-middle text-center text-sm\">
+                                        ";
             // line 269
             if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 269, $this->source); })()), "id_user", [], "any", false, false, false, 269) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getIdArtist", [], "method", false, false, false, 269), "getid_user", [], "method", false, false, false, 269))) {
                 // line 270
-                echo "                                                href=\"";
+                echo "                                        <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 270)]), "html", null, true);
                 echo "\"
-                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"";
-                // line 273
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 273)]), "html", null, true);
+                                            class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+
+
+                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"";
+                // line 275
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 275)]), "html", null, true);
                 echo "\"
-                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     ";
             }
-            // line 276
+            // line 278
             echo "                                </tr>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tutoriel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 278
+        // line 280
         echo "
                             </tbody>
                         </table>
@@ -431,7 +433,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  402 => 278,  395 => 276,  389 => 273,  382 => 270,  380 => 269,  375 => 267,  371 => 266,  364 => 262,  358 => 259,  353 => 257,  347 => 254,  340 => 250,  333 => 245,  329 => 244,  302 => 220,  206 => 126,  181 => 102,  164 => 84,  140 => 61,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  404 => 280,  397 => 278,  391 => 275,  382 => 270,  380 => 269,  375 => 267,  371 => 266,  364 => 262,  358 => 259,  353 => 257,  347 => 254,  340 => 250,  333 => 245,  329 => 244,  302 => 220,  206 => 126,  181 => 102,  164 => 84,  140 => 61,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -703,13 +705,15 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                     <td class=\"align-middle text-center text-sm\"><a class=\"btn btn-primary\"
                                                                                     href=\"{{ path('app_tutoriel_show_back', {'id_tutoriel': tutoriel.getId()}) }}\">show
                                             ({{ tutoriel.getVideos()|length }})</a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a>
-                                            {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
-                                                href=\"{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}\"
-                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\"
-                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                    <td class=\"align-middle text-center text-sm\">
+                                        {% if(user.id_user==tutoriel.getIdArtist().getid_user()) %}
+                                        <a href=\"{{ path('app_tutoriel_edit', {'id_tutoriel': tutoriel.getId()}) }}\"
+                                            class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+
+
+                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"{{ path('app_tutoriel_delete', {'id_tutoriel': tutoriel.getId()}) }}\"
+                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}

@@ -146,19 +146,25 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                                 <h4 class=\"text-white text-capitalize ps-31\">Mes Videos</h4>
                             </div>
                         </div>
-
-                        <div class=\"ligne\">
+                        ";
+        // line 124
+        if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 124, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 124, $this->source); })()), "getIdArtist", [], "method", false, false, false, 124), "getid_user", [], "method", false, false, false, 124))) {
+            // line 125
+            echo "                        <div class=\"ligne\">
                             <div class=\"col-6\">
                                 <a href=\"";
-        // line 127
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_new", ["id_tutoriel" => (isset($context["id_tutoriel"]) || array_key_exists("id_tutoriel", $context) ? $context["id_tutoriel"] : (function () { throw new RuntimeError('Variable "id_tutoriel" does not exist.', 127, $this->source); })())]), "html", null, true);
-        echo "\">
+            // line 127
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_videoo_new", ["id_tutoriel" => (isset($context["id_tutoriel"]) || array_key_exists("id_tutoriel", $context) ? $context["id_tutoriel"] : (function () { throw new RuntimeError('Variable "id_tutoriel" does not exist.', 127, $this->source); })())]), "html", null, true);
+            echo "\">
                                     <i class=\"fas fa-plus\"></i>
                                     Ajouter un video
                                 </a>
                             </div>
                         </div>
-
+                        ";
+        }
+        // line 134
+        echo "
 
                         <!-- Table with stripped rows -->
                         <table class=\"table datatable\">
@@ -177,34 +183,34 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                             <tbody>
 
                             ";
-        // line 151
+        // line 152
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 151, $this->source); })()), "videos", [], "any", false, false, false, 151));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 152, $this->source); })()), "videos", [], "any", false, false, false, 152));
         foreach ($context['_seq'] as $context["_key"] => $context["v"]) {
-            // line 152
+            // line 153
             echo "
                                 <tr>
 
 
                                     <td class=\"align-middle text-center text-sm\">
                                         ";
-            // line 157
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 157), "html", null, true);
+            // line 158
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 158), "html", null, true);
             echo "
                                     </td>
 
                                     <td class=\"align-middle text-center text-sm\">
                                         <img src=\"";
-            // line 161
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathimage", [], "any", false, false, false, 161))), "html", null, true);
+            // line 162
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathimage", [], "any", false, false, false, 162))), "html", null, true);
             echo "\" alt=\"\"
                                              style=\"border-radius: 20px; width: 70px; height: 70px; \">
                                     </td>
                                     <td class=\"align-middle text-center text-sm\">
                                         <video width=\"70\" height=\"70\" controls>
                                             <source src=\"";
-            // line 166
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/videos/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathvideo", [], "any", false, false, false, 166))), "html", null, true);
+            // line 167
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/videos/" . twig_get_attribute($this->env, $this->source, $context["v"], "pathvideo", [], "any", false, false, false, 167))), "html", null, true);
             echo "\"
                                                     type=\"video/mp4\">
                                             Your browser does not support the video tag.
@@ -212,41 +218,48 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                                     </td>
                                     <td class=\"align-middle text-center text-sm\">
                                         ";
-            // line 172
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "title", [], "any", false, false, false, 172), "html", null, true);
+            // line 173
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "title", [], "any", false, false, false, 173), "html", null, true);
             echo "
                                     </td>
                                     <td class=\"align-middle text-center text-sm\">
                                         ";
-            // line 175
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "description", [], "any", false, false, false, 175), "html", null, true);
+            // line 176
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "description", [], "any", false, false, false, 176), "html", null, true);
             echo "
                                     </td>
                                     <td class=\"align-middle text-center text-sm\">
                                         ";
-            // line 178
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getDateP", [], "method", false, false, false, 178), "d:m:Y"), "html", null, true);
+            // line 179
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["v"], "getDateP", [], "method", false, false, false, 179), "d:m:Y"), "html", null, true);
             echo "
                                     </td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"";
+                                    ";
             // line 181
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_edit", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 181)]), "html", null, true);
-            echo "\"
+            if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 181, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 181, $this->source); })()), "getIdArtist", [], "method", false, false, false, 181), "getid_user", [], "method", false, false, false, 181))) {
+                // line 182
+                echo "                                    <td class=\"align-middle text-center text-sm\"><a
+                                                href=\"";
+                // line 183
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_edit", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 183)]), "html", null, true);
+                echo "\"
                                                 class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                     <td class=\"align-middle text-center text-sm\"><a
                                                 href=\"";
-            // line 184
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_delete", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 184)]), "html", null, true);
-            echo "\"
+                // line 186
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_delete", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 186)]), "html", null, true);
+                echo "\"
                                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                                </tr>
+                                    ";
+            }
+            // line 189
+            echo "                                </tr>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 188
+        // line 191
         echo "
                             </tbody>
                         </table>
@@ -279,7 +292,7 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
 
     public function getDebugInfo()
     {
-        return array (  250 => 188,  240 => 184,  234 => 181,  228 => 178,  222 => 175,  216 => 172,  207 => 166,  199 => 161,  192 => 157,  185 => 152,  181 => 151,  154 => 127,  88 => 63,  78 => 62,  59 => 3,  36 => 1,);
+        return array (  263 => 191,  256 => 189,  250 => 186,  244 => 183,  241 => 182,  239 => 181,  234 => 179,  228 => 176,  222 => 173,  213 => 167,  205 => 162,  198 => 158,  191 => 153,  187 => 152,  167 => 134,  157 => 127,  153 => 125,  151 => 124,  88 => 63,  78 => 62,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -407,15 +420,16 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                                 <h4 class=\"text-white text-capitalize ps-31\">Mes Videos</h4>
                             </div>
                         </div>
-
+                        {% if(userid==tutoriel.getIdArtist().getid_user()) %}
                         <div class=\"ligne\">
                             <div class=\"col-6\">
-                                <a href=\"{{ path('app_video_new',{'id_tutoriel':id_tutoriel}) }}\">
+                                <a href=\"{{ path('app_videoo_new',{'id_tutoriel':id_tutoriel}) }}\">
                                     <i class=\"fas fa-plus\"></i>
                                     Ajouter un video
                                 </a>
                             </div>
                         </div>
+                        {% endif %}
 
 
                         <!-- Table with stripped rows -->
@@ -463,12 +477,14 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                                     <td class=\"align-middle text-center text-sm\">
                                         {{ v.getDateP()|date(\"d:m:Y\") }}
                                     </td>
+                                    {% if(userid==tutoriel.getIdArtist().getid_user()) %}
                                     <td class=\"align-middle text-center text-sm\"><a
                                                 href=\"{{ path('app_video_edit', {'id_video': v.getId()}) }}\"
                                                 class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                     <td class=\"align-middle text-center text-sm\"><a
                                                 href=\"{{ path('app_video_delete', {'id_video': v.getId()}) }}\"
                                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
 

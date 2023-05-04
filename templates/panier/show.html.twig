@@ -1,26 +1,26 @@
-
 <head>
 
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}"
+          rel="stylesheet">
 
     <title>Liberty Template - Create NFT Page</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
-{% block stylesheets %}
- 
-    <!-- Additional CSS Files -->
-  
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
+    {% block stylesheets %}
+
+        <!-- Additional CSS Files -->
+
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
     {% endblock %}
     <!--
 
@@ -32,77 +32,72 @@ https://templatemo.com/tm-577-liberty-market
 -->
 
 
-
-
-
-
-  </head>
-  <style>
+</head>
+<style>
     .line-dec {
-      border: 1px solid #7453fc;
-      border-collapse: collapse;
+        border: 1px solid #7453fc;
+        border-collapse: collapse;
     }
 
     .line-dec th, .line-dec td {
-      padding: 10px;
-      text-align: center;
+        padding: 10px;
+        text-align: center;
     }
+
     .carte-table td {
-    padding: 50px;
-    border: 0 px solid #ccc;
-  }
+        padding: 50px;
+        border: 0px solid #ccc;
+    }
 
-  .cart-table {
-  border-collapse: collapse;
-  border: 1px solid #d1d1d1;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  width: 100%;
-}
+    .cart-table {
+        border-collapse: collapse;
+        border: 1px solid #d1d1d1;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        width: 100%;
+    }
 
-.cart-table th,
-.cart-table td {
-  border: 1px solid #d1d1d1;
-  padding: 10px;
-  text-align: center;
-}
+    .cart-table th,
+    .cart-table td {
+        border: 1px solid #d1d1d1;
+        padding: 10px;
+        text-align: center;
+    }
 
-.cart-table th {
-  background-color: #f2f2f2;
-}
+    .cart-table th {
+        background-color: #f2f2f2;
+    }
 
-.cart-table tfoot td {
-  font-weight: bold;
-}
-
-
-
-.cart-table tr:first-child th {
-  background-color: #282b2f;
-  border: 1px solid #404245;
-  color: #fff;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.cart-table tbody tr:last-child td,
-.cart-table tfoot td {
-  border-top: 2px solid #d1d1d1;
-  font-size: 1.3rem;
-}
+    .cart-table tfoot td {
+        font-weight: bold;
+    }
 
 
+    .cart-table tr:first-child th {
+        background-color: #282b2f;
+        border: 1px solid #404245;
+        color: #fff;
+        border-radius: 20px;
+        padding: 10px;
+    }
 
-  </style>
-  
+    .cart-table tbody tr:last-child td,
+    .cart-table tfoot td {
+        border-top: 2px solid #d1d1d1;
+        font-size: 1.3rem;
+    }
+
+
+</style>
+
 <body>
 
 
-  <!-- ***** Preloader End ***** -->
+<!-- ***** Preloader End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
- 
- <body>
+<!-- ***** Header Area Start ***** -->
+
+<body>
 <!-- ***** Preloader Start ***** -->
 <div id="js-preloader" class="js-preloader loaded">
     <div class="preloader-inner">
@@ -124,10 +119,10 @@ https://templatemo.com/tm-577-liberty-market
                 <nav class="main-nav">
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="{{ path('app_produits_index')}}">Shop</a></li>
-                      <li><a href="{{ path('app_panier_index') }}">Panier</a></li>
-                      <li><a href="create.html" class="active">Create Yours</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_index') }}">Panier</a></li>
+                        <li><a href="create.html" class="active">Create Yours</a></li>
                     </ul>
                     <a class="menu-trigger">
                         <span>Menu</span>
@@ -143,187 +138,183 @@ https://templatemo.com/tm-577-liberty-market
 <!-- ***** Main Banner Area Start ***** -->
 <!-- ***** Main Banner Area Start ***** -->
 <div class="page-heading normal-space">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-     
-        <h2>Votre Panier</h2>
-        
-        
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h2>Votre Panier</h2>
+
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
- 
+
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
 
 <div class="currently-market">
-  <div class="container">
-  <div class="row">
-          
-        
+    <div class="container">
+        <div class="row">
+
 
             <div class="col-lg-12">
                 <div class="row grid">
                     <div>
-                   
+
                         <div>
-                          <div class="line-dec"></div>
-                          {% if lignesPanier is not empty %}
-                          <table class="carte-table" border="0,5"  class="currently-market"  class="item">
-                            <thead  class="carte-table">
-                              <tr>
-                                <th class="text-center"><h6>Photo</h6></th>
-                                <th class="text-center"><h6>Nom de la photo</h6></th>
-                                <th class="text-center"><h6>Prix hors TVA</h6></th>
-                                <th class="text-center"><h6>Taux TVA (%)</h6></th>
-                               
-                                <th class="text-center"><h6>Date d'ajout</h6></th>
-                                <th class="text-center"><h6>Action</h6></th>
-                              </tr>
-                            </thead>
-                        
-                            <tbody   class="carte-table">
-                              {% for ligne in lignesPanier %}
-                                <tr>
-                                  <td>
-                                    <div class="left-image">
-                                      <img src="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
-                                    </div>
-                                  </td>
-                                  
-                                  <td>
-                                    <div class="right-content">
-                                      <h6>{{ ligne.idproduit.nom }}</h6>
-                                    </div> 
-                                  </td>
-                                
-                                  <td>
+                            <div class="line-dec"></div>
+                            {% if lignesPanier is not empty %}
+                                <table class="carte-table" border="0,5" class="currently-market" class="item">
+                                    <thead class="carte-table">
+                                    <tr>
+                                        <th class="text-center"><h6>Photo</h6></th>
+                                        <th class="text-center"><h6>Nom de la photo</h6></th>
+                                        <th class="text-center"><h6>Prix hors TVA</h6></th>
+                                        <th class="text-center"><h6>Taux TVA (%)</h6></th>
+
+                                        <th class="text-center"><h6>Date d'ajout</h6></th>
+                                        <th class="text-center"><h6>Action</h6></th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody class="carte-table">
+                                    {% for ligne in lignesPanier %}
+                                        <tr>
+                                            <td>
+                                                <div class="left-image">
+                                                    <img src="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}"
+                                                         alt="" style="border-radius: 20px; min-width: 195px;">
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="right-content">
+                                                    <h6>{{ ligne.idproduit.nom }}</h6>
+                                                </div>
+                                            </td>
+
+                                            <td>
                                     <span class="bid">
                                       <h6><strong> {{ ligne.idproduit.prix }}</strong></h6>
                                     </span>
-                                  </td>
+                                            </td>
 
 
-                                  <td>
-                                    <div class="right-content">
-                                      <h6>{{ tauxTVA }}</h6>
-                                    </div> 
-                                  </td>
+                                            <td>
+                                                <div class="right-content">
+                                                    <h6>{{ tauxTVA }}</h6>
+                                                </div>
+                                            </td>
 
 
+                                            <td>
+                                                <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
+                                            </td>
+                                            {% if lignesPanier is not empty and ligne.idlignepanier is not empty %}
+                                                <td>
+                                                    <div class="main-button delete-product-button"
+                                                         data-idlignepanier="{{ ligne.idlignepanier }}">
+                                                        <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}"><i
+                                                                    class="fas fa-trash-alt"></i></a>
+                                                    </div>
+                                                </td>
+                                            {% endif %}
 
-                                  <td>
-                                    <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
-                                  </td>
-                                  <td>                                    
-                                    <div class="main-button delete-product-button" data-idlignepanier="{{ ligne.idlignepanier }}">
-                                      <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}"><i class="fas fa-trash-alt"></i></a>                                     
-                                    </div> 
-                                  </td>
-                                  
-                                    
-                                </tr>
-                              {% endfor %}
-                            </tbody>
-                          </table>
-                        {% else %}
-                          <div class="section-heading">
-                           
-                            <h2   class="text-center"> Votre panier est <em>vide</em> </h2>
-                          </div>
-                        {% endif %}
-                        
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <div class="section-heading">
+
+                                    <h2 class="text-center"> Votre panier est <em>vide</em></h2>
+                                </div>
+                            {% endif %}
+
                             <div class="line-dec"></div>
                         </div>
-                   </div>
-               </div>
+                    </div>
+                </div>
             </div>
-           
-            
+
+
             <table class="carte-table">
-              <thead>
+                <thead>
                 <tr>
-                  <th  class="count"><h5>Nombre de produits: {{ count  }}</h5></th>
-                  <th  class="count"><h5>Montant total: {{ total }}</h5></th>
-                  <th>
-                    <div class="main-button">
-                      <a href="{{ path('checkout',{'idpanier': 'idpanier'})}}">Payer</a>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="main-button">
-                      <a href="{{ path('viderpanier',{'idpanier': idpanier})}}">Vider Panier</a>
-                    </div>
-                  </th>
+                    <th class="count"><h5>Nombre de produits: {{ count }}</h5></th>
+                    <th class="count"><h5>Montant total: {{ total }}</h5></th>
+                    <th>
+                        <div class="main-button">
+                            <a href="{{ path('checkout',{'idpanier': 'idpanier'}) }}">Payer</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="main-button">
+                            <a href="{{ path('viderpanier',{'idpanier': idpanier}) }}">Vider Panier</a>
+                        </div>
+                    </th>
                 </tr>
-              </thead>
+                </thead>
             </table>
-            
-          
-           <div class="line-dec"></div>
 
 
+            <div class="line-dec"></div>
 
-   </div>
+
+        </div>
 
 
-  </div>
+    </div>
 
 
 </div>
 
 
-
-<script src="{{asset('https://code.jquery.com/jquery-3.6.0.min.js')}}"></script>
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js')}}"></script>
+<script src="{{ asset('https://code.jquery.com/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js') }}"></script>
 
 <script>
-  
 
 
-                                   $(document).ready(function() {
-                                     $('.delete-product-button').click(function(e) {
-                                     e.preventDefault(); 
-                                     var idlignepanier = $(this).data('idlignepanier');
-                                     $.ajax({
-                                    method: 'POST',
-                                    url: "{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': '__idlignepanier__'}) }}".replace('__idlignepanier__', idlignepanier),
-                                    data: {'_token': '{{ csrf_token('deleteproduit') }}'},
-                                    success: function(response) {
-                              if (response.success) {
-                                    $('tr[data-idlignepanier=' + idlignepanier + ']').remove();
-                                 
-                                      $(this).remove();
-                                      var total = 0;
-                                      $('.total').each(function() { 
-                                      total += parseFloat($(this).text()); 
-                                      });
-                                      $('#total').text(total.toFixed(2) + ' Tnd'); 
-                                      var count = $('.count').length;
-                                      $('#count').text(count);
+    $(document).ready(function () {
+        $('.delete-product-button').click(function (e) {
+            e.preventDefault();
+            var idlignepanier = $(this).data('idlignepanier');
+            $.ajax({
+                method: 'POST',
+                url: "{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': '__idlignepanier__'}) }}".replace('__idlignepanier__', idlignepanier),
+                data: {'_token': '{{ csrf_token('deleteproduit') }}'},
+                success: function (response) {
+                    if (response.success) {
+                        $('tr[data-idlignepanier=' + idlignepanier + ']').remove();
 
-                                    alert('Le produit a été supprimé avec succès');
-                                    location.reload()
-                                   } else {
-                                  alert('Erreur lors de la suppression du produit');
-                                 }
-                               },
-                              error: function() {
-                                alert('Erreur lors de la communication avec le serveur');
-                             }
-                          });
-                       });
-                     });
+                        $(this).remove();
+                        var total = 0;
+                        $('.total').each(function () {
+                            total += parseFloat($(this).text());
+                        });
+                        $('#total').text(total.toFixed(2) + ' Tnd');
+                        var count = $('.count').length;
+                        $('#count').text(count);
 
+                        alert('Le produit a été supprimé avec succès');
+                        location.reload()
+                    } else {
+                        alert('Erreur lors de la suppression du produit');
+                    }
+                },
+                error: function () {
+                    alert('Erreur lors de la communication avec le serveur');
+                }
+            });
+        });
+    });
 
 
 </script>
-
-
-
 
 
 <footer>
@@ -332,32 +323,31 @@ https://templatemo.com/tm-577-liberty-market
             <div class="col-lg-12">
                 <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
                     &nbsp;&nbsp;
-                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                   target="_blank">TemplateMo</a></p>
             </div>
         </div>
     </div>
 </footer>
 
 
- <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    
-    <script src="{{ asset('//code.jquery.com/jquery.js') }}"></script>
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
 
-    <script src="{{ asset('assets/js/tabs.js') }}"></script>
-    <script src="{{ asset('assets/js/popup.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    
-    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
-    
-    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
-    
-  
+<script src="{{ asset('//code.jquery.com/jquery.js') }}"></script>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/tabs.js') }}"></script>
+<script src="{{ asset('assets/js/popup.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+
 
 <!-- Include Flashy default partial -->
-
 
 
 </body>

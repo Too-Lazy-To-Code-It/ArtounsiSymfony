@@ -178,46 +178,60 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
                 <th scope=\"col\">#</th>
                 <th scope=\"col\">Image</th>
                 <th scope=\"col\">Description</th>
-                <th scope=\"col\">Supprimer</th>
-            </tr>
+                ";
+        // line 86
+        if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 86, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 86, $this->source); })()), "getIdArtist", [], "method", false, false, false, 86), "getid_user", [], "method", false, false, false, 86))) {
+            // line 87
+            echo "                <th scope=\"col\">Supprimer</th>
+                ";
+        }
+        // line 89
+        echo "            </tr>
             </thead>
             <tbody>
             ";
-        // line 90
+        // line 92
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 90, $this->source); })()), "participations", [], "any", false, false, false, 90));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 92, $this->source); })()), "participations", [], "any", false, false, false, 92));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 91
+            // line 93
             echo "                <tr>
+
                     <th scope=\"row\"><a href=\"#\">";
-            // line 92
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 92), "html", null, true);
+            // line 95
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 95), "html", null, true);
             echo "</a></th>
                     <td><img src=\"";
-            // line 93
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["p"], "getImgParticipation", [], "method", false, false, false, 93))), "html", null, true);
+            // line 96
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["p"], "getImgParticipation", [], "method", false, false, false, 96))), "html", null, true);
             echo "\" alt=\"\"
                              style=\"border-radius: 20px; width: 70px; height: 70px; \"></td>
                     <td>";
-            // line 95
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 95), "html", null, true);
-            echo "</td>
-
-                    <td class=\"align-middle text-center text-sm\"><a
-                                href=\"";
             // line 98
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_participation_delete", ["id_participation" => twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 98)]), "html", null, true);
-            echo "\"
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 98), "html", null, true);
+            echo "</td>
+                    ";
+            // line 99
+            if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 99, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 99, $this->source); })()), "getIdArtist", [], "method", false, false, false, 99), "getid_user", [], "method", false, false, false, 99))) {
+                // line 100
+                echo "                    <td class=\"align-middle text-center text-sm\"><a
+                                href=\"";
+                // line 101
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_participation_delete", ["id_participation" => twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 101)]), "html", null, true);
+                echo "\"
                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                     </td>
-
+                    ";
+            }
+            // line 105
+            echo "
                 </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 104
+        // line 108
         echo "            </tbody>
         </table>
 
@@ -243,7 +257,7 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
 
     public function getDebugInfo()
     {
-        return array (  221 => 104,  209 => 98,  203 => 95,  198 => 93,  194 => 92,  191 => 91,  187 => 90,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  235 => 108,  227 => 105,  220 => 101,  217 => 100,  215 => 99,  211 => 98,  206 => 96,  202 => 95,  198 => 93,  194 => 92,  189 => 89,  185 => 87,  183 => 86,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -333,21 +347,25 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
                 <th scope=\"col\">#</th>
                 <th scope=\"col\">Image</th>
                 <th scope=\"col\">Description</th>
+                {% if (userid==challenge.getIdArtist().getid_user()) %}
                 <th scope=\"col\">Supprimer</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
             {% for p in challenge.participations %}
                 <tr>
+
                     <th scope=\"row\"><a href=\"#\">{{ p.getId() }}</a></th>
                     <td><img src=\"{{ asset('http://localhost/img/'~p.getImgParticipation()) }}\" alt=\"\"
                              style=\"border-radius: 20px; width: 70px; height: 70px; \"></td>
                     <td>{{ p.description }}</td>
-
+                    {% if (userid==challenge.getIdArtist().getid_user()) %}
                     <td class=\"align-middle text-center text-sm\"><a
                                 href=\"{{ path('app_participation_delete', {'id_participation': p.getId()}) }}\"
                                 class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                     </td>
+                    {% endif %}
 
                 </tr>
             {% endfor %}
