@@ -273,33 +273,35 @@
 
 </header>
 
-
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_dashboard_offres') }}">
-                <i class="bi bi-briefcase"></i>
-                <span>mes offres</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin' or user.type=='Studio') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_dashboard_offres') }}">
+                    <i class="bi bi-briefcase"></i>
+                    <span>mes offres</span>
+                </a>
+            </li>
+        {% endif %}
         <!-- End Profile Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_grosmots_index') }}">
-                <i class="bi bi-person"></i>
-                <span>gros mots</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_grosmots_index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>gros mots</span>
+                </a>
+            </li>
+        {% endif %}
         <!-- End F.A.Q Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_dashboard_demandes') }}">
-                <i class="bi bi-briefcase"></i>
-                <span>Mes demandes</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin' or user.type=='Artist') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_dashboard_demandes') }}">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Mes demandes</span>
+                </a>
+            </li>
+        {% endif %}
 
         <li class="nav-item">
             <a class="nav-link " href="{{ path('app_produits_back_new') }}">
@@ -333,6 +335,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_allusers_index') }}">
+                <i class="bi bi-person"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed" href="{{ path('app_ban_index') }}">
                 <i class="bi bi-briefcase"></i>
                 <span>Bans</span>
@@ -344,10 +352,10 @@
                 <span>Profile</span>
             </a>
         </li>
-
     </ul>
-</aside>
 
+
+</aside>
 <main id="main" class="main">
 
     <div class="pagetitle">

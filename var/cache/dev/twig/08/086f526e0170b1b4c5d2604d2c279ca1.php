@@ -150,17 +150,17 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
         // line 124
         if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 124, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 124, $this->source); })()), "getIdArtist", [], "method", false, false, false, 124), "getid_user", [], "method", false, false, false, 124))) {
             // line 125
-            echo "                        <div class=\"ligne\">
-                            <div class=\"col-6\">
-                                <a href=\"";
+            echo "                            <div class=\"ligne\">
+                                <div class=\"col-6\">
+                                    <a href=\"";
             // line 127
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_videoo_new", ["id_tutoriel" => (isset($context["id_tutoriel"]) || array_key_exists("id_tutoriel", $context) ? $context["id_tutoriel"] : (function () { throw new RuntimeError('Variable "id_tutoriel" does not exist.', 127, $this->source); })())]), "html", null, true);
             echo "\">
-                                    <i class=\"fas fa-plus\"></i>
-                                    Ajouter un video
-                                </a>
+                                        <i class=\"fas fa-plus\"></i>
+                                        Ajouter un video
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                         ";
         }
         // line 134
@@ -238,18 +238,18 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
             // line 181
             if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 181, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 181, $this->source); })()), "getIdArtist", [], "method", false, false, false, 181), "getid_user", [], "method", false, false, false, 181))) {
                 // line 182
-                echo "                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"";
+                echo "                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"";
                 // line 183
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_edit", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 183)]), "html", null, true);
                 echo "\"
-                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"";
+                                                    class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"";
                 // line 186
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_delete", ["id_video" => twig_get_attribute($this->env, $this->source, $context["v"], "getId", [], "method", false, false, false, 186)]), "html", null, true);
                 echo "\"
-                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     ";
             }
             // line 189
@@ -421,14 +421,14 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                             </div>
                         </div>
                         {% if(userid==tutoriel.getIdArtist().getid_user()) %}
-                        <div class=\"ligne\">
-                            <div class=\"col-6\">
-                                <a href=\"{{ path('app_videoo_new',{'id_tutoriel':id_tutoriel}) }}\">
-                                    <i class=\"fas fa-plus\"></i>
-                                    Ajouter un video
-                                </a>
+                            <div class=\"ligne\">
+                                <div class=\"col-6\">
+                                    <a href=\"{{ path('app_videoo_new',{'id_tutoriel':id_tutoriel}) }}\">
+                                        <i class=\"fas fa-plus\"></i>
+                                        Ajouter un video
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                         {% endif %}
 
 
@@ -478,12 +478,12 @@ class __TwigTemplate_765771277bbf3dbc33b559f564ea4a28 extends Template
                                         {{ v.getDateP()|date(\"d:m:Y\") }}
                                     </td>
                                     {% if(userid==tutoriel.getIdArtist().getid_user()) %}
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"{{ path('app_video_edit', {'id_video': v.getId()}) }}\"
-                                                class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
-                                    <td class=\"align-middle text-center text-sm\"><a
-                                                href=\"{{ path('app_video_delete', {'id_video': v.getId()}) }}\"
-                                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"{{ path('app_video_edit', {'id_video': v.getId()}) }}\"
+                                                    class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
+                                        <td class=\"align-middle text-center text-sm\"><a
+                                                    href=\"{{ path('app_video_delete', {'id_video': v.getId()}) }}\"
+                                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}

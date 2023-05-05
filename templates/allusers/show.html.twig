@@ -45,8 +45,9 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{{ asset('assets/img/ARTounsi.png') }}" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+            <img src="{{ asset('assets/img/ARTounsi.png') }}" width="50" height="300" alt="">
+            <span class="d-none d-lg-block">ArTounsi</span>
+
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -211,14 +212,15 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    <img src="{{ asset('uploads/Avatars/' ~ user.avatar) }}" alt="Profile" class="rounded-circle">
+
+                    <span class="d-none d-md-block dropdown-toggle ps-2">{{ user.name }} {{ user.lastName }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>{{ }}</h6>
-                        <span>Web Designer</span>
+                        <h6>{{ user.name }}.{{ user.lastName }}</h6>
+                        <span>{{ user.type }}</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
@@ -255,7 +257,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ path('app_allusers_logout') }}">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
@@ -267,35 +269,37 @@
         </ul>
     </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header>
 
-<!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_dashboard_offres') }}">
-                <i class="bi bi-briefcase"></i>
-                <span>mes offres</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin' or user.type=='Studio') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_dashboard_offres') }}">
+                    <i class="bi bi-briefcase"></i>
+                    <span>mes offres</span>
+                </a>
+            </li>
+        {% endif %}
         <!-- End Profile Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_grosmots_index') }}">
-                <i class="bi bi-person"></i>
-                <span>gros mots</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_grosmots_index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>gros mots</span>
+                </a>
+            </li>
+        {% endif %}
         <!-- End F.A.Q Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_dashboard_demandes') }}">
-                <i class="bi bi-briefcase"></i>
-                <span>Mes demandes</span>
-            </a>
-        </li>
+        {% if(user.type=='Admin' or user.type=='Artist') %}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ path('app_dashboard_demandes') }}">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Mes demandes</span>
+                </a>
+            </li>
+        {% endif %}
 
         <li class="nav-item">
             <a class="nav-link " href="{{ path('app_produits_back_new') }}">
@@ -329,6 +333,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_allusers_index') }}">
+                <i class="bi bi-person"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed" href="{{ path('app_ban_index') }}">
                 <i class="bi bi-briefcase"></i>
                 <span>Bans</span>
@@ -340,10 +350,10 @@
                 <span>Profile</span>
             </a>
         </li>
-
     </ul>
 
-</aside><!-- End Sidebar-->
+
+</aside>
 
 <main id="main" class="main">
 

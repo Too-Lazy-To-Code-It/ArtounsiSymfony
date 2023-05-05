@@ -334,7 +334,7 @@ class DemandetravailController extends AbstractController
             // Get the uploaded file
             $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
             $demandetravail->setCategoriedemande($nomcategorie);
-            $nickname = $allusersRepository->find(1)->getNickname();
+            $nickname = $allusersRepository->find($userId)->getNickname();
             $demandetravail->setNickname($nickname);
             $demandetravail->setIdUser($user);
             $pdfFile = $form->get('pdf')->getData();

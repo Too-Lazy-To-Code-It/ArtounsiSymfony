@@ -371,114 +371,137 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
         </nav><!-- End Icons Navigation -->
 
     </header>
-    <!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-   
-                    
-                
-         <aside id=\"sidebar\" class=\"sidebar\">
+    <aside id=\"sidebar\" class=\"sidebar\">
 
-             <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
-
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"";
-        // line 285
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
-        echo "\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>mes offres</span>
-                     </a>
-                 </li>
-                 <!-- End Profile Page Nav -->
-
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"";
-        // line 293
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
-        echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>gros mots</span>
-                     </a>
-                 </li>
-                 <!-- End F.A.Q Page Nav -->
-
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"";
-        // line 301
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
-        echo "\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>Mes demandes</span>
-                     </a>
-                 </li>
-
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"";
-        // line 308
+        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+            ";
+        // line 278
+        if (((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 278, $this->source); })()), "type", [], "any", false, false, false, 278) == "Admin") || (twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 278, $this->source); })()), "type", [], "any", false, false, false, 278) == "Studio"))) {
+            // line 279
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"";
+            // line 280
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
+            echo "\">
+                        <i class=\"bi bi-briefcase\"></i>
+                        <span>mes offres</span>
+                    </a>
+                </li>
+            ";
+        }
+        // line 286
+        echo "            <!-- End Profile Page Nav -->
+            ";
+        // line 287
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 287, $this->source); })()), "type", [], "any", false, false, false, 287) == "Admin")) {
+            // line 288
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"";
+            // line 289
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
+            echo "\">
+                        <i class=\"bi bi-person\"></i>
+                        <span>gros mots</span>
+                    </a>
+                </li>
+            ";
+        }
+        // line 295
+        echo "            <!-- End F.A.Q Page Nav -->
+            ";
+        // line 296
+        if (((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 296, $this->source); })()), "type", [], "any", false, false, false, 296) == "Admin") || (twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 296, $this->source); })()), "type", [], "any", false, false, false, 296) == "Artist"))) {
+            // line 297
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"";
+            // line 298
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
+            echo "\">
+                        <i class=\"bi bi-briefcase\"></i>
+                        <span>Mes demandes</span>
+                    </a>
+                </li>
+            ";
+        }
+        // line 304
+        echo "
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"";
+        // line 306
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
         echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Nouveau Produit</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"";
-        // line 314
+                    <i class=\"bi bi-person\"></i>
+                    <span>Nouveau Produit</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"";
+        // line 312
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index_back");
         echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Challenge</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"";
-        // line 320
+                    <i class=\"bi bi-person\"></i>
+                    <span>Challenge</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"";
+        // line 318
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
         echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Tutoriel</span>
-                     </a>
-                 </li>
+                    <i class=\"bi bi-person\"></i>
+                    <span>Tutoriel</span>
+                </a>
+            </li>
 
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"";
-        // line 327
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"";
+        // line 325
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_home_page");
         echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Explore</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"";
-        // line 333
+                    <i class=\"bi bi-person\"></i>
+                    <span>Explore</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"";
+        // line 331
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
         echo "\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Shop</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"";
-        // line 339
+                    <i class=\"bi bi-person\"></i>
+                    <span>Shop</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"";
+        // line 337
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"";
+        // line 343
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ban_index");
         echo "\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>Bans</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"";
-        // line 345
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 345, $this->source); })()), "id_user", [], "any", false, false, false, 345)]), "html", null, true);
+                    <i class=\"bi bi-briefcase\"></i>
+                    <span>Bans</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"";
+        // line 349
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 349, $this->source); })()), "id_user", [], "any", false, false, false, 349)]), "html", null, true);
         echo "\">
-                         <i class=\"bi bi-person-badge\"></i>
-                         <span>Profile</span>
-                     </a>
-                 </li>
+                    <i class=\"bi bi-person-badge\"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
 
-             </ul>
+
     </aside>
     <!-- End Sidebar-->
 
@@ -541,7 +564,7 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
          <div class=\"ligne\">                 
   <div class=\"col-6\">
   <a href=\"";
-        // line 413
+        // line 418
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_new");
         echo "\">
       <i class=\"fas fa-plus\"></i>
@@ -573,9 +596,9 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
                                        
                                       
                                           ";
-        // line 442
+        // line 447
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["grosmots"]) || array_key_exists("grosmots", $context) ? $context["grosmots"] : (function () { throw new RuntimeError('Variable "grosmots" does not exist.', 442, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["grosmots"]) || array_key_exists("grosmots", $context) ? $context["grosmots"] : (function () { throw new RuntimeError('Variable "grosmots" does not exist.', 447, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -590,22 +613,22 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["grosmot"]) {
-            // line 443
+            // line 448
             echo "            <tr>
   <td>";
-            // line 444
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["grosmot"], "idMot", [], "any", false, false, false, 444), "html", null, true);
+            // line 449
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["grosmot"], "idMot", [], "any", false, false, false, 449), "html", null, true);
             echo "</td>
                 <td>";
-            // line 445
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["grosmot"], "mot", [], "any", false, false, false, 445), "html", null, true);
+            // line 450
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["grosmot"], "mot", [], "any", false, false, false, 450), "html", null, true);
             echo "</td>
                                    <td>\t <a href=\"";
-            // line 446
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_edit", ["idMot" => twig_get_attribute($this->env, $this->source, $context["grosmot"], "idMot", [], "any", false, false, false, 446)]), "html", null, true);
+            // line 451
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_edit", ["idMot" => twig_get_attribute($this->env, $this->source, $context["grosmot"], "idMot", [], "any", false, false, false, 451)]), "html", null, true);
             echo "\"><i class=\"bi bi-pencil\"></i> Modifier</a></td>
                                      <td> ";
-            // line 447
+            // line 452
             echo twig_include($this->env, $context, "grosmots/_delete_form.html.twig");
             echo "</td>
                                     
@@ -623,7 +646,7 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['grosmot'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 451
+        // line 456
         echo "                                   
                                 </tbody>
                             </table>
@@ -658,41 +681,41 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
 
     <!-- Vendor JS Files -->
     <script src=\"";
-        // line 484
+        // line 489
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 485
+        // line 490
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 486
+        // line 491
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 487
+        // line 492
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 488
+        // line 493
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 489
+        // line 494
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 490
+        // line 495
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 491
+        // line 496
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Template Main JS File -->
     <script src=\"";
-        // line 494
+        // line 499
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -719,7 +742,7 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
 
     public function getDebugInfo()
     {
-        return array (  696 => 494,  690 => 491,  686 => 490,  682 => 489,  678 => 488,  674 => 487,  670 => 486,  666 => 485,  662 => 484,  627 => 451,  609 => 447,  605 => 446,  601 => 445,  597 => 444,  594 => 443,  577 => 442,  545 => 413,  474 => 345,  465 => 339,  456 => 333,  447 => 327,  437 => 320,  428 => 314,  419 => 308,  409 => 301,  398 => 293,  387 => 285,  360 => 261,  320 => 224,  314 => 223,  304 => 218,  299 => 216,  129 => 49,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  72 => 19,  68 => 18,  62 => 15,  58 => 14,  43 => 1,);
+        return array (  719 => 499,  713 => 496,  709 => 495,  705 => 494,  701 => 493,  697 => 492,  693 => 491,  689 => 490,  685 => 489,  650 => 456,  632 => 452,  628 => 451,  624 => 450,  620 => 449,  617 => 448,  600 => 447,  568 => 418,  496 => 349,  487 => 343,  478 => 337,  469 => 331,  460 => 325,  450 => 318,  441 => 312,  432 => 306,  428 => 304,  419 => 298,  416 => 297,  414 => 296,  411 => 295,  402 => 289,  399 => 288,  397 => 287,  394 => 286,  385 => 280,  382 => 279,  380 => 278,  360 => 261,  320 => 224,  314 => 223,  304 => 218,  299 => 216,  129 => 49,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  72 => 19,  68 => 18,  62 => 15,  58 => 14,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -997,84 +1020,89 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
         </nav><!-- End Icons Navigation -->
 
     </header>
-    <!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-   
-                    
-                
-         <aside id=\"sidebar\" class=\"sidebar\">
+    <aside id=\"sidebar\" class=\"sidebar\">
 
-             <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+            {% if(user.type=='Admin' or user.type=='Studio') %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_offres') }}\">
+                        <i class=\"bi bi-briefcase\"></i>
+                        <span>mes offres</span>
+                    </a>
+                </li>
+            {% endif %}
+            <!-- End Profile Page Nav -->
+            {% if(user.type=='Admin') %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"{{ path('app_grosmots_index') }}\">
+                        <i class=\"bi bi-person\"></i>
+                        <span>gros mots</span>
+                    </a>
+                </li>
+            {% endif %}
+            <!-- End F.A.Q Page Nav -->
+            {% if(user.type=='Admin' or user.type=='Artist') %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_demandes') }}\">
+                        <i class=\"bi bi-briefcase\"></i>
+                        <span>Mes demandes</span>
+                    </a>
+                </li>
+            {% endif %}
 
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_offres') }}\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>mes offres</span>
-                     </a>
-                 </li>
-                 <!-- End Profile Page Nav -->
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"{{ path('app_produits_back_new') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Nouveau Produit</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"{{ path('app_challenge_index_back') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Challenge</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Tutoriel</span>
+                </a>
+            </li>
 
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"{{ path('app_grosmots_index') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>gros mots</span>
-                     </a>
-                 </li>
-                 <!-- End F.A.Q Page Nav -->
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"{{ path('app_dashboard_home_page') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Explore</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link \" href=\"{{ path('app_produits_back') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Shop</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_index') }}\">
+                    <i class=\"bi bi-person\"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"{{ path('app_ban_index') }}\">
+                    <i class=\"bi bi-briefcase\"></i>
+                    <span>Bans</span>
+                </a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_edit',{'id_user': user.id_user}) }}\">
+                    <i class=\"bi bi-person-badge\"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
 
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_demandes') }}\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>Mes demandes</span>
-                     </a>
-                 </li>
 
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"{{ path('app_produits_back_new') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Nouveau Produit</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"{{ path('app_challenge_index_back') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Challenge</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Tutoriel</span>
-                     </a>
-                 </li>
-
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"{{ path('app_dashboard_home_page') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Explore</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link \" href=\"{{ path('app_produits_back') }}\">
-                         <i class=\"bi bi-person\"></i>
-                         <span>Shop</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"{{ path('app_ban_index') }}\">
-                         <i class=\"bi bi-briefcase\"></i>
-                         <span>Bans</span>
-                     </a>
-                 </li>
-                 <li class=\"nav-item\">
-                     <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_edit',{'id_user': user.id_user}) }}\">
-                         <i class=\"bi bi-person-badge\"></i>
-                         <span>Profile</span>
-                     </a>
-                 </li>
-
-             </ul>
     </aside>
     <!-- End Sidebar-->
 

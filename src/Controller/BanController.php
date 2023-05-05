@@ -16,9 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class BanController extends AbstractController
 {
     #[Route('/', name: 'app_ban_index', methods: ['GET'])]
-    public function index(Request $request, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
+    public function index(Request $request, BanRepository $banRepository,allusersRepository $allusersRepository): Response
     {
-        if (!$ac->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         $userId = $request->getSession()->get('user_id');
@@ -26,14 +26,14 @@ class BanController extends AbstractController
 
         return $this->render('ban/index.html.twig', [
             'bans' => $banRepository->findAll(),
-            'logged' => $user,
+            'user' => $user,
         ]);
     }
 
     #[Route('/new', name: 'app_ban_new', methods: ['GET', 'POST'])]
     public function new(Request $request, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
     {
-        if (!$ac->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         $userId = $request->getSession()->get('user_id');
@@ -51,7 +51,7 @@ class BanController extends AbstractController
         return $this->renderForm('ban/new.html.twig', [
             'ban' => $ban,
             'form' => $form,
-            'logged' => $user,
+            'user' => $user,
         ]);
     }
 
@@ -66,7 +66,7 @@ class BanController extends AbstractController
     #[Route('/{id}/edit', name: 'app_ban_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Ban $ban, BanRepository $banRepository, AllusersController $ac, allusersRepository $allusersRepository): Response
     {
-        if (!$ac->isLoggedIn($request)) {
+        if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
         $userId = $request->getSession()->get('user_id');
@@ -84,7 +84,7 @@ class BanController extends AbstractController
         return $this->renderForm('ban/new.html.twig', [
             'ban' => $ban,
             'form' => $form,
-            'logged' => $user,
+            'user' => $user,
         ]);
     }
 

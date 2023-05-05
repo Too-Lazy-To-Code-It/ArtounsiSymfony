@@ -137,27 +137,27 @@ class __TwigTemplate_ebfbaa6332325f268ea49f470cfed4ca extends Template
 
     <table class=\"table\">
         <tbody>
-            <tr>
-                <th>Id_participation</th>
-                <td>";
+        <tr>
+            <th>Id_participation</th>
+            <td>";
         // line 22
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["participation"]) || array_key_exists("participation", $context) ? $context["participation"] : (function () { throw new RuntimeError('Variable "participation" does not exist.', 22, $this->source); })()), "idParticipation", [], "any", false, false, false, 22), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Img_participation</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Img_participation</th>
+            <td>";
         // line 26
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["participation"]) || array_key_exists("participation", $context) ? $context["participation"] : (function () { throw new RuntimeError('Variable "participation" does not exist.', 26, $this->source); })()), "imgParticipation", [], "any", false, false, false, 26), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>";
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>";
         // line 30
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["participation"]) || array_key_exists("participation", $context) ? $context["participation"] : (function () { throw new RuntimeError('Variable "participation" does not exist.', 30, $this->source); })()), "description", [], "any", false, false, false, 30), "html", null, true);
         echo "</td>
-            </tr>
+        </tr>
         </tbody>
     </table>
 
@@ -277,18 +277,18 @@ class __TwigTemplate_ebfbaa6332325f268ea49f470cfed4ca extends Template
 
     <table class=\"table\">
         <tbody>
-            <tr>
-                <th>Id_participation</th>
-                <td>{{ participation.idParticipation }}</td>
-            </tr>
-            <tr>
-                <th>Img_participation</th>
-                <td>{{ participation.imgParticipation }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ participation.description }}</td>
-            </tr>
+        <tr>
+            <th>Id_participation</th>
+            <td>{{ participation.idParticipation }}</td>
+        </tr>
+        <tr>
+            <th>Img_participation</th>
+            <td>{{ participation.imgParticipation }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ participation.description }}</td>
+        </tr>
         </tbody>
     </table>
 

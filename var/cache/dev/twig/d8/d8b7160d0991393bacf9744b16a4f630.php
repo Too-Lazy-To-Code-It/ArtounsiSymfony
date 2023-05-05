@@ -52,7 +52,7 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
     <meta content=\"\" name=\"keywords\">
 
     <!-- Favicons -->
-  <link href=\"";
+    <link href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
@@ -69,41 +69,42 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
     <link href=\"";
         // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        echo "\"
+          rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->
     <link href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/boxicons/css/boxicons.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.snow.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.bubble.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 26
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/remixicon/remixicon.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/simple-datatables/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Template Main CSS File -->
     <link href=\"";
-        // line 30
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
@@ -119,542 +120,620 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
+<!-- ======= Header ======= -->
+<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
-        <div class=\"d-flex align-items-center justify-content-between\">
-            <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-                <img src=\"";
-        // line 49
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/logoart.png"), "html", null, true);
-        echo "\" alt=\"\">
-                <span class=\"d-none d-lg-block\">ArTounsi</span>
-            </a>
-            <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-        </div>
-        <!-- End Logo -->
+    <div class=\"d-flex align-items-center justify-content-between\">
+        <a href=\"index.html\" class=\"logo d-flex align-items-center\">
+            <img src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/ARTounsi.png"), "html", null, true);
+        echo "\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
 
-        <div class=\"search-bar\">
-            <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-                <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-                <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
-            </form>
-        </div>
-        <!-- End Search Bar -->
+        </a>
+        <i class=\"bi bi-list toggle-sidebar-btn\"></i>
+    </div><!-- End Logo -->
 
-        <nav class=\"header-nav ms-auto\">
-            <ul class=\"d-flex align-items-center\">
+    <div class=\"search-bar\">
+        <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
+            <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+            <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+        </form>
+    </div><!-- End Search Bar -->
 
-                <li class=\"nav-item d-block d-lg-none\">
-                    <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-                        <i class=\"bi bi-search\"></i>
-                    </a>
-                </li>
-                <!-- End Search Icon-->
+    <nav class=\"header-nav ms-auto\">
+        <ul class=\"d-flex align-items-center\">
 
-                <li class=\"nav-item dropdown\">
+            <li class=\"nav-item d-block d-lg-none\">
+                <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+                    <i class=\"bi bi-search\"></i>
+                </a>
+            </li><!-- End Search Icon-->
 
-                    <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <i class=\"bi bi-bell\"></i>
-                        <span class=\"badge bg-primary badge-number\">4</span>
-                    </a>
-                    <!-- End Notification Icon -->
+            <li class=\"nav-item dropdown\">
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-                        <li class=\"dropdown-header\">
-                            You have 4 new notifications
-                            <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-bell\"></i>
+                    <span class=\"badge bg-primary badge-number\">4</span>
+                </a><!-- End Notification Icon -->
 
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+                    <li class=\"dropdown-header\">
+                        You have 4 new notifications
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-x-circle text-danger\"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-check-circle text-success\"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-info-circle text-primary\"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-chat-left-text\"></i>
+                    <span class=\"badge bg-success badge-number\">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+                    <li class=\"dropdown-header\">
+                        You have 3 new messages
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>Lorem Ipsum</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>30 min. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-x-circle text-danger\"></i>
-                            <div>
-                                <h4>Atque rerum nesciunt</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>1 hr. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-check-circle text-success\"></i>
-                            <div>
-                                <h4>Sit rerum fuga</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>2 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-info-circle text-primary\"></i>
-                            <div>
-                                <h4>Dicta reprehenderit</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
-                        </li>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-                        <li class=\"dropdown-footer\">
-                            <a href=\"#\">Show all notifications</a>
-                        </li>
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                    </ul>
-                    <!-- End Notification Dropdown Items -->
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                </li>
-                <!-- End Notification Nav -->
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all messages</a>
+                    </li>
 
-                <li class=\"nav-item dropdown\">
+                </ul><!-- End Messages Dropdown Items -->
 
-                    <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <i class=\"bi bi-chat-left-text\"></i>
-                        <span class=\"badge bg-success badge-number\">3</span>
-                    </a>
-                    <!-- End Messages Icon -->
+            </li><!-- End Messages Nav -->
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-                        <li class=\"dropdown-header\">
-                            You have 3 new messages
-                            <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+            <li class=\"nav-item dropdown pe-3\">
 
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"";
-        // line 171
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/messages-1.jpg"), "html", null, true);
-        echo "\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>Maria Hudson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>4 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"";
-        // line 185
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/messages-2.jpg"), "html", null, true);
-        echo "\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>Anna Nelson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>6 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"";
-        // line 199
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/messages-3.jpg"), "html", null, true);
-        echo "\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>David Muldon</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>8 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"dropdown-footer\">
-                            <a href=\"#\">Show all messages</a>
-                        </li>
-
-                    </ul>
-                    <!-- End Messages Dropdown Items -->
-
-                </li>
-                <!-- End Messages Nav -->
-
-                <li class=\"nav-item dropdown pe-3\">
-
-                    <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <img src=\"";
-        // line 224
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/profile-img.jpg"), "html", null, true);
+                <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <img src=\"";
+        // line 217
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/Avatars/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 217, $this->source); })()), "avatar", [], "any", false, false, false, 217))), "html", null, true);
         echo "\" alt=\"Profile\" class=\"rounded-circle\">
-                        <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-                    </a>
-                    <!-- End Profile Iamge Icon -->
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-                        <li class=\"dropdown-header\">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">";
+        // line 219
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 219, $this->source); })()), "name", [], "any", false, false, false, 219), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 219, $this->source); })()), "lastName", [], "any", false, false, false, 219), "html", null, true);
+        echo "</span>
+                </a><!-- End Profile Iamge Icon -->
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                                <i class=\"bi bi-person\"></i>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+                    <li class=\"dropdown-header\">
+                        <h6>";
+        // line 224
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 224, $this->source); })()), "name", [], "any", false, false, false, 224), "html", null, true);
+        echo ".";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 224, $this->source); })()), "lastName", [], "any", false, false, false, 224), "html", null, true);
+        echo "</h6>
+                        <span>";
+        // line 225
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 225, $this->source); })()), "type", [], "any", false, false, false, 225), "html", null, true);
+        echo "</span>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                                <i class=\"bi bi-gear\"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-person\"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                                <i class=\"bi bi-question-circle\"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-gear\"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                <i class=\"bi bi-box-arrow-right\"></i>
-                                <span>Sign Out</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                            <i class=\"bi bi-question-circle\"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                    </ul>
-                    <!-- End Profile Dropdown Items -->
-                </li>
-                <!-- End Profile Nav -->
-
-            </ul>
-        </nav>
-        <!-- End Icons Navigation -->
-
-    </header>
-    <!-- End Header -->
-
-             <aside id=\"sidebar\" class=\"sidebar\">
-
-        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
-
-            <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"";
-        // line 292
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"";
+        // line 262
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
         echo "\">
-                    <i class=\"bi bi-person\"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-         
-         
+                            <i class=\"bi bi-box-arrow-right\"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
 
-            <li class=\"nav-item\">
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+
+</header>
+
+<aside id=\"sidebar\" class=\"sidebar\">
+
+    <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+        ";
+        // line 279
+        if (((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 279, $this->source); })()), "type", [], "any", false, false, false, 279) == "Admin") || (twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 279, $this->source); })()), "type", [], "any", false, false, false, 279) == "Studio"))) {
+            // line 280
+            echo "            <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"";
-        // line 301
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
-        echo "\">
-                   <i class=\"bi bi-briefcase\"></i>
+            // line 281
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
+            echo "\">
+                    <i class=\"bi bi-briefcase\"></i>
                     <span>mes offres</span>
                 </a>
             </li>
-            <!-- End Profile Page Nav -->
-
-                <li class=\"nav-item\">
+        ";
+        }
+        // line 287
+        echo "        <!-- End Profile Page Nav -->
+        ";
+        // line 288
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 288, $this->source); })()), "type", [], "any", false, false, false, 288) == "Admin")) {
+            // line 289
+            echo "            <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"";
-        // line 309
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
-        echo "\">
+            // line 290
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
+            echo "\">
                     <i class=\"bi bi-person\"></i>
                     <span>gros mots</span>
                 </a>
             </li>
-            <!-- End F.A.Q Page Nav -->
-
-             <li class=\"nav-item\">
+        ";
+        }
+        // line 296
+        echo "        <!-- End F.A.Q Page Nav -->
+        ";
+        // line 297
+        if (((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 297, $this->source); })()), "type", [], "any", false, false, false, 297) == "Admin") || (twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 297, $this->source); })()), "type", [], "any", false, false, false, 297) == "Artist"))) {
+            // line 298
+            echo "            <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"";
-        // line 317
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
-        echo "\">
+            // line 299
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
+            echo "\">
                     <i class=\"bi bi-briefcase\"></i>
                     <span>Mes demandes</span>
                 </a>
             </li>
-         
+        ";
+        }
+        // line 305
+        echo "
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"";
+        // line 307
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Nouveau Produit</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"";
+        // line 313
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index_back");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Challenge</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"";
+        // line 319
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Tutoriel</span>
+            </a>
+        </li>
 
-        </ul>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"";
+        // line 326
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_home_page");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Explore</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"";
+        // line 332
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Shop</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"";
+        // line 338
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        echo "\">
+                <i class=\"bi bi-person\"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"";
+        // line 344
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ban_index");
+        echo "\">
+                <i class=\"bi bi-briefcase\"></i>
+                <span>Bans</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"";
+        // line 350
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 350, $this->source); })()), "id_user", [], "any", false, false, false, 350)]), "html", null, true);
+        echo "\">
+                <i class=\"bi bi-person-badge\"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
 
-    </aside>
-    <!-- End Sidebar-->
 
-    <main id=\"main\" class=\"main\">
+</aside>
 
-        <div class=\"pagetitle\">
-            <h1>Ajouter une offre</h1>
-            <nav>
-                <ol class=\"breadcrumb\">
-                    <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
-                    <li class=\"breadcrumb-item\">Mes Offres</li>
-                    <li class=\"breadcrumb-item active\">Ajouter une offre</li>
-                </ol>
-            </nav>
-        </div>
-        <!-- End Page Title -->
-<style>
- .color {
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #369;
-  padding: 10px;
- 
-}
+<main id=\"main\" class=\"main\">
 
-.error-message {
-    color: red;
-}
-</style>
-        <section class=\"section\">
-            <div class=\"row\">
-                <div class=\"col-lg-6\">
+    <div class=\"pagetitle\">
+        <h1>Ajouter une offre</h1>
+        <nav>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+                <li class=\"breadcrumb-item\">Mes Offres</li>
+                <li class=\"breadcrumb-item active\">Ajouter une offre</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .color {
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px #369;
+            padding: 10px;
 
-                    <div class=\"card color\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\"> offre d'emplois</h5>
+        }
 
-                            <!-- General Form Elements -->
-                           ";
-        // line 363
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 363, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact", "class" => "my-class"]]);
-        echo "
-                                <div class=\"row mb-3\">
-                                 ";
-        // line 365
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 365, $this->source); })()), "titreoffre", [], "any", false, false, false, 365), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Title"]);
-        echo "
-                                   
-                                    <div class=\"col-sm-10\">
-                                       ";
-        // line 368
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 368, $this->source); })()), "titreoffre", [], "any", false, false, false, 368), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                                          <div class=\"error-message\"> ";
-        // line 369
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 369, $this->source); })()), "titreoffre", [], "any", false, false, false, 369), 'errors');
-        echo "</div>
-</li>
-                               
-                                    </div>
-                                </div>
-                                <div class=\"row mb-3\">
-                                  ";
-        // line 375
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 375, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 375), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Description"]);
-        echo "
-                                    <div class=\"col-sm-10\">
-                                      ";
-        // line 377
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 377, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 377), 'widget', ["attr" => ["class" => "form-control"]]);
-        echo "
-                                    <div class=\"error-message\">  ";
-        // line 378
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 378, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 378), 'errors', ["attr" => ["class" => "error"]]);
-        echo "
-                                    </div></div>
-                                </div>
-                           
-                                <div class=\"row mb-3\">
-                                 ";
-        // line 383
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 383, $this->source); })()), "idcategorie", [], "any", false, false, false, 383), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Categorie"]);
-        echo "
-                                    
-                                    <div class=\"col-sm-10\">
-                                        ";
-        // line 386
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 386, $this->source); })()), "idcategorie", [], "any", false, false, false, 386), 'widget', ["attr" => ["class" => "form-select"]]);
-        echo "
-                                    </div>
-                                </div>
+        .error-message {
+            color: red;
+        }
+    </style>
+    <section class=\"section\">
+        <div class=\"row\">
+            <div class=\"col-lg-6\">
 
-                                  <div class=\"row mb-3\">
-                                 ";
-        // line 391
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 391, $this->source); })()), "typeoffre", [], "any", false, false, false, 391), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "typeoffre"]);
-        echo "
-                                    
-                                    <div class=\"col-sm-10\">
-                                      ";
+                <div class=\"card color\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\"> offre d'emplois</h5>
+
+                        <!-- General Form Elements -->
+                        ";
         // line 394
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 394, $this->source); })()), "typeoffre", [], "any", false, false, false, 394), 'widget', ["attr" => ["class" => "form-select"]]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 394, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact", "class" => "my-class"]]);
         echo "
-                                    </div>
-                                </div>
-  <div class=\"row mb-3\">
+                        <div class=\"row mb-3\">
+                            ";
+        // line 396
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 396, $this->source); })()), "titreoffre", [], "any", false, false, false, 396), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Title"]);
+        echo "
+
+                            <div class=\"col-sm-10\">
                                 ";
-        // line 398
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 398, $this->source); })()), "localisationoffre", [], "any", false, false, false, 398), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "localisationoffre"]);
+        // line 399
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 399, $this->source); })()), "titreoffre", [], "any", false, false, false, 399), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
-                                    
-                                    <div class=\"col-sm-10\">
-                                       ";
-        // line 401
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 401, $this->source); })()), "localisationoffre", [], "any", false, false, false, 401), 'widget', ["attr" => ["class" => "form-select"]]);
+                                <div class=\"error-message\"> ";
+        // line 400
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 400, $this->source); })()), "titreoffre", [], "any", false, false, false, 400), 'errors');
+        echo "</div>
+                                </li>
+
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+                            ";
+        // line 406
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 406, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 406), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Description"]);
         echo "
-                                       
-                                    </div>
-                                    ";
-        // line 404
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 408
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 408, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 408), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                                <div class=\"error-message\">  ";
+        // line 409
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 409, $this->source); })()), "descriptionoffre", [], "any", false, false, false, 409), 'errors', ["attr" => ["class" => "error"]]);
+        echo "
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=\"row mb-3\">
+                            ";
+        // line 415
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 415, $this->source); })()), "idcategorie", [], "any", false, false, false, 415), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "Categorie"]);
+        echo "
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 418
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 418, $this->source); })()), "idcategorie", [], "any", false, false, false, 418), 'widget', ["attr" => ["class" => "form-select"]]);
+        echo "
+                            </div>
+                        </div>
+
+                        <div class=\"row mb-3\">
+                            ";
+        // line 423
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 423, $this->source); })()), "typeoffre", [], "any", false, false, false, 423), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "typeoffre"]);
+        echo "
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 426
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 426, $this->source); })()), "typeoffre", [], "any", false, false, false, 426), 'widget', ["attr" => ["class" => "form-select"]]);
+        echo "
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+                            ";
+        // line 430
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 430, $this->source); })()), "localisationoffre", [], "any", false, false, false, 430), 'label', ["label_attr" => ["class" => "col-sm-2 col-form-label"], "label" => "localisationoffre"]);
+        echo "
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 433
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 433, $this->source); })()), "localisationoffre", [], "any", false, false, false, 433), 'widget', ["attr" => ["class" => "form-select"]]);
+        echo "
+
+                            </div>
+                            ";
+        // line 436
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 404, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 404));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 436, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 436));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 405
-            echo "                <div class=\"alert alert-danger\"> <strong><i class=\"fas fa-times\"></i> Erreur!</strong> ";
+            // line 437
+            echo "                                <div class=\"alert alert-danger\"><strong><i class=\"fas fa-times\"></i>
+                                        Erreur!</strong> ";
+            // line 438
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo " </div>
-                ";
+                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 407
-        echo "                                </div>
+        // line 440
+        echo "                        </div>
 
 
-                                <div class=\"row mb-3\">
-                                   
-                                    <div class=\"col-sm-10\">
-  <button type=\"submit\" id=\"form-submit\" class=\"btn btn-primary\">";
-        // line 413
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 413, $this->source); })()), "Ajouter")) : ("Ajouter")), "html", null, true);
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                <button type=\"submit\" id=\"form-submit\"
+                                        class=\"btn btn-primary\">";
+        // line 447
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 447, $this->source); })()), "Ajouter")) : ("Ajouter")), "html", null, true);
         echo "</button>
-                                     <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                                    </div>
-                                </div>
-
-                            ";
-        // line 418
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 418, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
-        echo "
-                            <!-- End General Form Elements -->
-
+                                <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
+                            </div>
                         </div>
-                    </div>
 
+                        ";
+        // line 452
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 452, $this->source); })()), 'form_end', ["attr" => ["novalidate" => "novalidate"]]);
+        echo "
+                        <!-- End General Form Elements -->
+
+                    </div>
                 </div>
 
-                <div class=\"col-lg-6\">
-
-                    <div class=\"card\">
-                        <img src=\"";
-        // line 429
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/offre.png"), "html", null, true);
-        echo "\" alt=\"\"  width=\"95%\" >
-                    </div>
-
-                </div>
             </div>
-        </section>
 
-    </main>
-    <!-- End #main -->
+            <div class=\"col-lg-6\">
 
-    <!-- ======= Footer ======= -->
-    <footer id=\"footer\" class=\"footer\">
-        <div class=\"copyright\">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+                <div class=\"card\">
+                    <img src=\"";
+        // line 463
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/offre.png"), "html", null, true);
+        echo "\" alt=\"\" width=\"95%\">
+                </div>
+
+            </div>
         </div>
-        <div class=\"credits\">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
-        </div>
-    </footer>
-    <!-- End Footer -->
+    </section>
 
-    <a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
+</main>
+<!-- End #main -->
 
-    <!-- Vendor JS Files -->
-    <script src=\"";
-        // line 457
+<!-- ======= Footer ======= -->
+<footer id=\"footer\" class=\"footer\">
+    <div class=\"copyright\">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class=\"credits\">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
+
+<!-- Vendor JS Files -->
+<script src=\"";
+        // line 492
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 458
+<script src=\"";
+        // line 493
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 459
+<script src=\"";
+        // line 494
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 460
+<script src=\"";
+        // line 495
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 461
+<script src=\"";
+        // line 496
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 462
+<script src=\"";
+        // line 497
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 463
+<script src=\"";
+        // line 498
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 464
+<script src=\"";
+        // line 499
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
-    <!-- Template Main JS File -->
-    <script src=\"";
-        // line 467
+<!-- Template Main JS File -->
+<script src=\"";
+        // line 502
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -681,7 +760,7 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
 
     public function getDebugInfo()
     {
-        return array (  658 => 467,  652 => 464,  648 => 463,  644 => 462,  640 => 461,  636 => 460,  632 => 459,  628 => 458,  624 => 457,  593 => 429,  579 => 418,  571 => 413,  563 => 407,  554 => 405,  550 => 404,  544 => 401,  538 => 398,  531 => 394,  525 => 391,  517 => 386,  511 => 383,  503 => 378,  499 => 377,  494 => 375,  485 => 369,  481 => 368,  475 => 365,  470 => 363,  421 => 317,  410 => 309,  399 => 301,  387 => 292,  316 => 224,  288 => 199,  271 => 185,  254 => 171,  129 => 49,  107 => 30,  101 => 27,  97 => 26,  93 => 25,  89 => 24,  85 => 23,  81 => 22,  77 => 21,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  737 => 502,  731 => 499,  727 => 498,  723 => 497,  719 => 496,  715 => 495,  711 => 494,  707 => 493,  703 => 492,  671 => 463,  657 => 452,  649 => 447,  640 => 440,  632 => 438,  629 => 437,  625 => 436,  619 => 433,  613 => 430,  606 => 426,  600 => 423,  592 => 418,  586 => 415,  577 => 409,  573 => 408,  568 => 406,  559 => 400,  555 => 399,  549 => 396,  544 => 394,  497 => 350,  488 => 344,  479 => 338,  470 => 332,  461 => 326,  451 => 319,  442 => 313,  433 => 307,  429 => 305,  420 => 299,  417 => 298,  415 => 297,  412 => 296,  403 => 290,  400 => 289,  398 => 288,  395 => 287,  386 => 281,  383 => 280,  381 => 279,  361 => 262,  321 => 225,  315 => 224,  305 => 219,  300 => 217,  130 => 50,  108 => 31,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -698,24 +777,25 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
     <meta content=\"\" name=\"keywords\">
 
     <!-- Favicons -->
-  <link href=\"{{asset('assets2/img/favicon.png') }}\" rel=\"icon\">
-    <link href=\"{{asset('assets2/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
+    <link href=\"{{ asset('assets2/img/favicon.png') }}\" rel=\"icon\">
+    <link href=\"{{ asset('assets2/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
 
     <!-- Google Fonts -->
-    <link href=\"{{asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
-    <link href=\"{{asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
+    <link href=\"{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\"
+          rel=\"stylesheet\">
 
     <!-- Vendor CSS Files -->
-    <link href=\"{{asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/boxicons/css/boxicons.min.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/quill/quill.snow.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/simple-datatables/style.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/boxicons/css/boxicons.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/quill/quill.snow.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/vendor/simple-datatables/style.css') }}\" rel=\"stylesheet\">
 
     <!-- Template Main CSS File -->
-    <link href=\"{{asset('assets2/css/style.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets2/css/style.css') }}\" rel=\"stylesheet\">
 
 
     <!-- =======================================================
@@ -729,430 +809,464 @@ class __TwigTemplate_a933256b289c493ba5b79f5916f915db extends Template
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
+<!-- ======= Header ======= -->
+<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
-        <div class=\"d-flex align-items-center justify-content-between\">
-            <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-                <img src=\"{{asset('assets2/img/logoart.png') }}\" alt=\"\">
-                <span class=\"d-none d-lg-block\">ArTounsi</span>
-            </a>
-            <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-        </div>
-        <!-- End Logo -->
+    <div class=\"d-flex align-items-center justify-content-between\">
+        <a href=\"index.html\" class=\"logo d-flex align-items-center\">
+            <img src=\"{{ asset('assets/img/ARTounsi.png') }}\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
 
-        <div class=\"search-bar\">
-            <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-                <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-                <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
-            </form>
-        </div>
-        <!-- End Search Bar -->
+        </a>
+        <i class=\"bi bi-list toggle-sidebar-btn\"></i>
+    </div><!-- End Logo -->
 
-        <nav class=\"header-nav ms-auto\">
-            <ul class=\"d-flex align-items-center\">
+    <div class=\"search-bar\">
+        <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
+            <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+            <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+        </form>
+    </div><!-- End Search Bar -->
 
-                <li class=\"nav-item d-block d-lg-none\">
-                    <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-                        <i class=\"bi bi-search\"></i>
-                    </a>
-                </li>
-                <!-- End Search Icon-->
+    <nav class=\"header-nav ms-auto\">
+        <ul class=\"d-flex align-items-center\">
 
-                <li class=\"nav-item dropdown\">
+            <li class=\"nav-item d-block d-lg-none\">
+                <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+                    <i class=\"bi bi-search\"></i>
+                </a>
+            </li><!-- End Search Icon-->
 
-                    <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <i class=\"bi bi-bell\"></i>
-                        <span class=\"badge bg-primary badge-number\">4</span>
-                    </a>
-                    <!-- End Notification Icon -->
+            <li class=\"nav-item dropdown\">
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-                        <li class=\"dropdown-header\">
-                            You have 4 new notifications
-                            <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-bell\"></i>
+                    <span class=\"badge bg-primary badge-number\">4</span>
+                </a><!-- End Notification Icon -->
 
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+                    <li class=\"dropdown-header\">
+                        You have 4 new notifications
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-x-circle text-danger\"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-check-circle text-success\"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-info-circle text-primary\"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-chat-left-text\"></i>
+                    <span class=\"badge bg-success badge-number\">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+                    <li class=\"dropdown-header\">
+                        You have 3 new messages
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
                             <div>
-                                <h4>Lorem Ipsum</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>30 min. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-x-circle text-danger\"></i>
-                            <div>
-                                <h4>Atque rerum nesciunt</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>1 hr. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-check-circle text-success\"></i>
-                            <div>
-                                <h4>Sit rerum fuga</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>2 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                            <i class=\"bi bi-info-circle text-primary\"></i>
-                            <div>
-                                <h4>Dicta reprehenderit</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
                                 <p>4 hrs. ago</p>
                             </div>
-                        </li>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-                        <li class=\"dropdown-footer\">
-                            <a href=\"#\">Show all notifications</a>
-                        </li>
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                    </ul>
-                    <!-- End Notification Dropdown Items -->
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                </li>
-                <!-- End Notification Nav -->
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all messages</a>
+                    </li>
 
-                <li class=\"nav-item dropdown\">
+                </ul><!-- End Messages Dropdown Items -->
 
-                    <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <i class=\"bi bi-chat-left-text\"></i>
-                        <span class=\"badge bg-success badge-number\">3</span>
-                    </a>
-                    <!-- End Messages Icon -->
+            </li><!-- End Messages Nav -->
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-                        <li class=\"dropdown-header\">
-                            You have 3 new messages
-                            <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+            <li class=\"nav-item dropdown pe-3\">
 
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"{{asset('assets2/img/messages-1.jpg') }}\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>Maria Hudson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>4 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <img src=\"{{ asset('uploads/Avatars/' ~ user.avatar) }}\" alt=\"Profile\" class=\"rounded-circle\">
 
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"{{asset('assets2/img/messages-2.jpg') }}\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>Anna Nelson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>6 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ user.name }} {{ user.lastName }}</span>
+                </a><!-- End Profile Iamge Icon -->
 
-                        <li class=\"message-item\">
-                            <a href=\"#\">
-                                <img src=\"{{asset('assets2/img/messages-3.jpg') }}\" alt=\"\" class=\"rounded-circle\">
-                                <div>
-                                    <h4>David Muldon</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>8 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+                    <li class=\"dropdown-header\">
+                        <h6>{{ user.name }}.{{ user.lastName }}</h6>
+                        <span>{{ user.type }}</span>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                        <li class=\"dropdown-footer\">
-                            <a href=\"#\">Show all messages</a>
-                        </li>
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-person\"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                    </ul>
-                    <!-- End Messages Dropdown Items -->
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-gear\"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                </li>
-                <!-- End Messages Nav -->
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                            <i class=\"bi bi-question-circle\"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
 
-                <li class=\"nav-item dropdown pe-3\">
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"{{ path('app_allusers_logout') }}\">
+                            <i class=\"bi bi-box-arrow-right\"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
 
-                    <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                        <img src=\"{{asset('assets2/img/profile-img.jpg') }}\" alt=\"Profile\" class=\"rounded-circle\">
-                        <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-                    </a>
-                    <!-- End Profile Iamge Icon -->
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
 
-                    <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-                        <li class=\"dropdown-header\">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+        </ul>
+    </nav><!-- End Icons Navigation -->
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                                <i class=\"bi bi-person\"></i>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+</header>
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                                <i class=\"bi bi-gear\"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
+<aside id=\"sidebar\" class=\"sidebar\">
 
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                                <i class=\"bi bi-question-circle\"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li>
-                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                <i class=\"bi bi-box-arrow-right\"></i>
-                                <span>Sign Out</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <!-- End Profile Dropdown Items -->
-                </li>
-                <!-- End Profile Nav -->
-
-            </ul>
-        </nav>
-        <!-- End Icons Navigation -->
-
-    </header>
-    <!-- End Header -->
-
-             <aside id=\"sidebar\" class=\"sidebar\">
-
-        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
-
-            <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"{{ path('app_dashboard_studiodashboard') }}\">
-                    <i class=\"bi bi-person\"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-         
-         
-
+    <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+        {% if(user.type=='Admin' or user.type=='Studio') %}
             <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_offres') }}\">
-                   <i class=\"bi bi-briefcase\"></i>
+                    <i class=\"bi bi-briefcase\"></i>
                     <span>mes offres</span>
                 </a>
             </li>
-            <!-- End Profile Page Nav -->
-
-                <li class=\"nav-item\">
+        {% endif %}
+        <!-- End Profile Page Nav -->
+        {% if(user.type=='Admin') %}
+            <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"{{ path('app_grosmots_index') }}\">
                     <i class=\"bi bi-person\"></i>
                     <span>gros mots</span>
                 </a>
             </li>
-            <!-- End F.A.Q Page Nav -->
-
-             <li class=\"nav-item\">
+        {% endif %}
+        <!-- End F.A.Q Page Nav -->
+        {% if(user.type=='Admin' or user.type=='Artist') %}
+            <li class=\"nav-item\">
                 <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_demandes') }}\">
                     <i class=\"bi bi-briefcase\"></i>
                     <span>Mes demandes</span>
                 </a>
             </li>
-         
+        {% endif %}
 
-        </ul>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"{{ path('app_produits_back_new') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Nouveau Produit</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"{{ path('app_challenge_index_back') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Challenge</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Tutoriel</span>
+            </a>
+        </li>
 
-    </aside>
-    <!-- End Sidebar-->
-
-    <main id=\"main\" class=\"main\">
-
-        <div class=\"pagetitle\">
-            <h1>Ajouter une offre</h1>
-            <nav>
-                <ol class=\"breadcrumb\">
-                    <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
-                    <li class=\"breadcrumb-item\">Mes Offres</li>
-                    <li class=\"breadcrumb-item active\">Ajouter une offre</li>
-                </ol>
-            </nav>
-        </div>
-        <!-- End Page Title -->
-<style>
- .color {
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #369;
-  padding: 10px;
- 
-}
-
-.error-message {
-    color: red;
-}
-</style>
-        <section class=\"section\">
-            <div class=\"row\">
-                <div class=\"col-lg-6\">
-
-                    <div class=\"card color\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\"> offre d'emplois</h5>
-
-                            <!-- General Form Elements -->
-                           {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': 'contact', 'class': 'my-class'}}) }}
-                                <div class=\"row mb-3\">
-                                 {{ form_label(form.titreoffre, 'Title', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
-                                   
-                                    <div class=\"col-sm-10\">
-                                       {{ form_widget(form.titreoffre, {'attr': {'class': 'form-control'}}) }}
-                                          <div class=\"error-message\"> {{ form_errors(form.titreoffre) }}</div>
-</li>
-                               
-                                    </div>
-                                </div>
-                                <div class=\"row mb-3\">
-                                  {{ form_label(form.descriptionoffre, 'Description', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
-                                    <div class=\"col-sm-10\">
-                                      {{ form_widget(form.descriptionoffre, {'attr': {'class': 'form-control'}}) }}
-                                    <div class=\"error-message\">  {{ form_errors(form.descriptionoffre, {'attr': {'class': 'error'}}) }}
-                                    </div></div>
-                                </div>
-                           
-                                <div class=\"row mb-3\">
-                                 {{ form_label(form.idcategorie, 'Categorie', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
-                                    
-                                    <div class=\"col-sm-10\">
-                                        {{ form_widget(form.idcategorie, {'attr': {'class': 'form-select'}}) }}
-                                    </div>
-                                </div>
-
-                                  <div class=\"row mb-3\">
-                                 {{ form_label(form.typeoffre, 'typeoffre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
-                                    
-                                    <div class=\"col-sm-10\">
-                                      {{ form_widget(form.typeoffre, {'attr': {'class': 'form-select'}}) }}
-                                    </div>
-                                </div>
-  <div class=\"row mb-3\">
-                                {{ form_label(form.localisationoffre, 'localisationoffre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
-                                    
-                                    <div class=\"col-sm-10\">
-                                       {{ form_widget(form.localisationoffre, {'attr': {'class': 'form-select'}}) }}
-                                       
-                                    </div>
-                                    {% for message in app.flashes('error') %}
-                <div class=\"alert alert-danger\"> <strong><i class=\"fas fa-times\"></i> Erreur!</strong> {{ message }} </div>
-                {% endfor %}
-                                </div>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"{{ path('app_dashboard_home_page') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Explore</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link \" href=\"{{ path('app_produits_back') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Shop</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_index') }}\">
+                <i class=\"bi bi-person\"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"{{ path('app_ban_index') }}\">
+                <i class=\"bi bi-briefcase\"></i>
+                <span>Bans</span>
+            </a>
+        </li>
+        <li class=\"nav-item\">
+            <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_edit',{'id_user': user.id_user}) }}\">
+                <i class=\"bi bi-person-badge\"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
 
 
-                                <div class=\"row mb-3\">
-                                   
-                                    <div class=\"col-sm-10\">
-  <button type=\"submit\" id=\"form-submit\" class=\"btn btn-primary\">{{ button_label|default('Ajouter') }}</button>
-                                     <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                                    </div>
-                                </div>
+</aside>
 
-                            {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
-                            <!-- End General Form Elements -->
+<main id=\"main\" class=\"main\">
 
+    <div class=\"pagetitle\">
+        <h1>Ajouter une offre</h1>
+        <nav>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Dashboard</a></li>
+                <li class=\"breadcrumb-item\">Mes Offres</li>
+                <li class=\"breadcrumb-item active\">Ajouter une offre</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <style>
+        .color {
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px #369;
+            padding: 10px;
+
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+    <section class=\"section\">
+        <div class=\"row\">
+            <div class=\"col-lg-6\">
+
+                <div class=\"card color\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\"> offre d'emplois</h5>
+
+                        <!-- General Form Elements -->
+                        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': 'contact', 'class': 'my-class'}}) }}
+                        <div class=\"row mb-3\">
+                            {{ form_label(form.titreoffre, 'Title', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+
+                            <div class=\"col-sm-10\">
+                                {{ form_widget(form.titreoffre, {'attr': {'class': 'form-control'}}) }}
+                                <div class=\"error-message\"> {{ form_errors(form.titreoffre) }}</div>
+                                </li>
+
+                            </div>
                         </div>
-                    </div>
+                        <div class=\"row mb-3\">
+                            {{ form_label(form.descriptionoffre, 'Description', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+                            <div class=\"col-sm-10\">
+                                {{ form_widget(form.descriptionoffre, {'attr': {'class': 'form-control'}}) }}
+                                <div class=\"error-message\">  {{ form_errors(form.descriptionoffre, {'attr': {'class': 'error'}}) }}
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class=\"row mb-3\">
+                            {{ form_label(form.idcategorie, 'Categorie', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+
+                            <div class=\"col-sm-10\">
+                                {{ form_widget(form.idcategorie, {'attr': {'class': 'form-select'}}) }}
+                            </div>
+                        </div>
+
+                        <div class=\"row mb-3\">
+                            {{ form_label(form.typeoffre, 'typeoffre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+
+                            <div class=\"col-sm-10\">
+                                {{ form_widget(form.typeoffre, {'attr': {'class': 'form-select'}}) }}
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+                            {{ form_label(form.localisationoffre, 'localisationoffre', {'label_attr': {'class': 'col-sm-2 col-form-label'}}) }}
+
+                            <div class=\"col-sm-10\">
+                                {{ form_widget(form.localisationoffre, {'attr': {'class': 'form-select'}}) }}
+
+                            </div>
+                            {% for message in app.flashes('error') %}
+                                <div class=\"alert alert-danger\"><strong><i class=\"fas fa-times\"></i>
+                                        Erreur!</strong> {{ message }} </div>
+                            {% endfor %}
+                        </div>
+
+
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                <button type=\"submit\" id=\"form-submit\"
+                                        class=\"btn btn-primary\">{{ button_label|default('Ajouter') }}</button>
+                                <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
+                            </div>
+                        </div>
+
+                        {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <!-- End General Form Elements -->
+
+                    </div>
                 </div>
 
-                <div class=\"col-lg-6\">
-
-                    <div class=\"card\">
-                        <img src=\"{{asset('assets2/img/offre.png') }}\" alt=\"\"  width=\"95%\" >
-                    </div>
-
-                </div>
             </div>
-        </section>
 
-    </main>
-    <!-- End #main -->
+            <div class=\"col-lg-6\">
 
-    <!-- ======= Footer ======= -->
-    <footer id=\"footer\" class=\"footer\">
-        <div class=\"copyright\">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+                <div class=\"card\">
+                    <img src=\"{{ asset('assets2/img/offre.png') }}\" alt=\"\" width=\"95%\">
+                </div>
+
+            </div>
         </div>
-        <div class=\"credits\">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
-        </div>
-    </footer>
-    <!-- End Footer -->
+    </section>
 
-    <a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
+</main>
+<!-- End #main -->
 
-    <!-- Vendor JS Files -->
-    <script src=\"{{asset('assets2/vendor/apexcharts/apexcharts.min.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/chart.js/chart.umd.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/echarts/echarts.min.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/quill/quill.min.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/simple-datatables/simple-datatables.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/tinymce/tinymce.min.js') }}\"></script>
-    <script src=\"{{asset('assets2/vendor/php-email-form/validate.js') }}\"></script>
+<!-- ======= Footer ======= -->
+<footer id=\"footer\" class=\"footer\">
+    <div class=\"copyright\">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class=\"credits\">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
+    </div>
+</footer>
+<!-- End Footer -->
 
-    <!-- Template Main JS File -->
-    <script src=\"{{asset('assets2/js/main.js') }}\"></script>
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
+
+<!-- Vendor JS Files -->
+<script src=\"{{ asset('assets2/vendor/apexcharts/apexcharts.min.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/chart.js/chart.umd.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/echarts/echarts.min.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/quill/quill.min.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/simple-datatables/simple-datatables.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/tinymce/tinymce.min.js') }}\"></script>
+<script src=\"{{ asset('assets2/vendor/php-email-form/validate.js') }}\"></script>
+
+<!-- Template Main JS File -->
+<script src=\"{{ asset('assets2/js/main.js') }}\"></script>
 
 </body>
 

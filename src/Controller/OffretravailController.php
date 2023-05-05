@@ -267,7 +267,7 @@ class OffretravailController extends AbstractController
         if ($form->isSubmitted() && $form->isValid() && $verif == true) {
             $offretravail->setIdUser($user);
             $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
-            $nickname = $allusersRepository->find(1)->getNickname();
+            $nickname = $allusersRepository->find($userId)->getNickname();
             $offretravail->setNickname($nickname);
             $offretravail->setIdUser($user);
             $offretravail->setCategorieoffre($nomcategorie);

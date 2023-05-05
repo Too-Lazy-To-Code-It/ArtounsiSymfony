@@ -136,8 +136,12 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
     <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-            <img src=\"assets/img/logo.png\" alt=\"\">
-            <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/ARTounsi.png"), "html", null, true);
+        echo "\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
+
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
     </div><!-- End Logo -->
@@ -302,14 +306,31 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
             <li class=\"nav-item dropdown pe-3\">
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                    <img src=\"";
+        // line 228
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/Avatars/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 228, $this->source); })()), "avatar", [], "any", false, false, false, 228))), "html", null, true);
+        echo "\" alt=\"Profile\" class=\"rounded-circle\">
+
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">";
+        // line 230
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 230, $this->source); })()), "name", [], "any", false, false, false, 230), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 230, $this->source); })()), "lastName", [], "any", false, false, false, 230), "html", null, true);
+        echo "</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
                     <li class=\"dropdown-header\">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6>";
+        // line 235
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 235, $this->source); })()), "name", [], "any", false, false, false, 235), "html", null, true);
+        echo ".";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 235, $this->source); })()), "lastName", [], "any", false, false, false, 235), "html", null, true);
+        echo "</h6>
+                        <span>";
+        // line 236
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 236, $this->source); })()), "type", [], "any", false, false, false, 236), "html", null, true);
+        echo "</span>
                     </li>
                     <li>
                         <hr class=\"dropdown-divider\">
@@ -346,7 +367,10 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
                     </li>
 
                     <li>
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"";
+        // line 273
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+        echo "\">
                             <i class=\"bi bi-box-arrow-right\"></i>
                             <span>Sign Out</span>
                         </a>
@@ -358,7 +382,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </ul>
     </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header>
 
 <!-- ======= Sidebar ======= -->
 <aside id=\"sidebar\" class=\"sidebar\">
@@ -367,7 +391,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
         <li class=\"nav-item\">
             <a class=\"nav-link collapsed\" href=\"";
-        // line 291
+        // line 293
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
         echo "\">
                 <i class=\"bi bi-briefcase\"></i>
@@ -378,7 +402,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
         <li class=\"nav-item\">
             <a class=\"nav-link collapsed\" href=\"";
-        // line 299
+        // line 301
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
         echo "\">
                 <i class=\"bi bi-person\"></i>
@@ -389,7 +413,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
         <li class=\"nav-item\">
             <a class=\"nav-link collapsed\" href=\"";
-        // line 307
+        // line 309
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
         echo "\">
                 <i class=\"bi bi-briefcase\"></i>
@@ -399,7 +423,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
         <li class=\"nav-item\">
             <a class=\"nav-link \" href=\"";
-        // line 314
+        // line 316
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
         echo "\">
                 <i class=\"bi bi-person\"></i>
@@ -408,44 +432,26 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link \" href=\"";
-        // line 320
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        // line 322
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index_back");
         echo "\">
                 <i class=\"bi bi-person\"></i>
-                <span>Users</span>
+                <span>Challenge</span>
             </a>
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link \" href=\"";
-        // line 326
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
+        // line 328
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
         echo "\">
                 <i class=\"bi bi-person\"></i>
-                <span>Users</span>
-            </a>
-        </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"";
-        // line 332
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
-        echo "\">
-                <i class=\"bi bi-person\"></i>
-                <span>Users</span>
-            </a>
-        </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"";
-        // line 338
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_index");
-        echo "\">
-                <i class=\"bi bi-person\"></i>
-                <span>Users</span>
+                <span>Tutoriel</span>
             </a>
         </li>
 
         <li class=\"nav-item\">
             <a class=\"nav-link \" href=\"";
-        // line 345
+        // line 335
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_home_page");
         echo "\">
                 <i class=\"bi bi-person\"></i>
@@ -454,7 +460,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link \" href=\"";
-        // line 351
+        // line 341
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
         echo "\">
                 <i class=\"bi bi-person\"></i>
@@ -463,7 +469,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link collapsed\" href=\"";
-        // line 357
+        // line 347
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ban_index");
         echo "\">
                 <i class=\"bi bi-briefcase\"></i>
@@ -472,8 +478,8 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link collapsed\" href=\"";
-        // line 363
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 363, $this->source); })()), "id_user", [], "any", false, false, false, 363)]), "html", null, true);
+        // line 353
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 353, $this->source); })()), "id_user", [], "any", false, false, false, 353)]), "html", null, true);
         echo "\">
                 <i class=\"bi bi-person-badge\"></i>
                 <span>Profile</span>
@@ -503,41 +509,41 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">Horizontal Form</h5>
                         ";
-        // line 391
-        $context["nomField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 391, $this->source); })()), "nom", [], "any", false, false, false, 391);
-        // line 392
+        // line 381
+        $context["nomField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 381, $this->source); })()), "nom", [], "any", false, false, false, 381);
+        // line 382
         echo "                        ";
-        $context["descriptionField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 392, $this->source); })()), "description", [], "any", false, false, false, 392);
-        // line 393
+        $context["descriptionField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 382, $this->source); })()), "description", [], "any", false, false, false, 382);
+        // line 383
         echo "                        ";
-        $context["prixField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 393, $this->source); })()), "prix", [], "any", false, false, false, 393);
-        // line 394
+        $context["prixField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 383, $this->source); })()), "prix", [], "any", false, false, false, 383);
+        // line 384
         echo "                        ";
-        $context["idcategorieField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 394, $this->source); })()), "idcategorie", [], "any", false, false, false, 394);
-        // line 395
+        $context["idcategorieField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 384, $this->source); })()), "idcategorie", [], "any", false, false, false, 384);
+        // line 385
         echo "                        ";
-        $context["imageField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 395, $this->source); })()), "image", [], "any", false, false, false, 395);
-        // line 396
+        $context["imageField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 385, $this->source); })()), "image", [], "any", false, false, false, 385);
+        // line 386
         echo "                        <!-- Horizontal Form -->
                         ";
-        // line 397
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 397, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
+        // line 387
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 387, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
                         <div class=\"row mb-3\">
 
                             <div class=\"col-sm-10\">
                                 ";
-        // line 401
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 401, $this->source); })()), 'label', ["label" => "Nom du produit"]);
+        // line 391
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 391, $this->source); })()), 'label', ["label" => "Nom du produit"]);
         echo "
                                 ";
-        // line 402
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 402, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        // line 392
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 392, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
         echo "
 
                                 <div class=\"error-message\">   ";
-        // line 404
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 404, $this->source); })()), 'errors');
+        // line 394
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 394, $this->source); })()), 'errors');
         echo "</div>
                             </div>
                         </div>
@@ -545,17 +551,17 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
                             <div class=\"col-sm-10\">
                                 ";
-        // line 410
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 410, $this->source); })()), 'label', ["label" => "Description du produit"]);
+        // line 400
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 400, $this->source); })()), 'label', ["label" => "Description du produit"]);
         echo "
                                 ";
-        // line 411
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 411, $this->source); })()), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        // line 401
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 401, $this->source); })()), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
         echo "
 
                                 <div class=\"error-message\">";
-        // line 413
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 413, $this->source); })()), 'errors');
+        // line 403
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 403, $this->source); })()), 'errors');
         echo "</div>
                             </div>
                         </div>
@@ -563,17 +569,17 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
                             <div class=\"col-sm-10\">
                                 ";
-        // line 419
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 419, $this->source); })()), 'label', ["label" => "Prix du produit"]);
+        // line 409
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 409, $this->source); })()), 'label', ["label" => "Prix du produit"]);
         echo "
                                 ";
-        // line 420
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 420, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        // line 410
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 410, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
         echo "
 
                                 <div class=\"error-message\"> ";
-        // line 422
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 422, $this->source); })()), 'errors');
+        // line 412
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 412, $this->source); })()), 'errors');
         echo "</div>
                             </div>
                         </div>
@@ -581,48 +587,48 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
                             <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
                             <div class=\"col-sm-10\">
                                 ";
-        // line 428
-        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 428, $this->source); })()), "image", [], "any", false, false, false, 428))) {
-            // line 429
+        // line 418
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 418, $this->source); })()), "image", [], "any", false, false, false, 418))) {
+            // line 419
             echo "                                    <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 429, $this->source); })()), "image", [], "any", false, false, false, 429))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 419, $this->source); })()), "image", [], "any", false, false, false, 419))), "html", null, true);
             echo "\"
                                          alt=\"";
-            // line 430
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 430, $this->source); })()), "nom", [], "any", false, false, false, 430), "html", null, true);
+            // line 420
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 420, $this->source); })()), "nom", [], "any", false, false, false, 420), "html", null, true);
             echo "\" style=\"border-radius: 20px; min-width: 195px;\">
                                     <br><br>
                                     <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"";
-            // line 432
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 432, $this->source); })()), "image", [], "any", false, false, false, 432), "html", null, true);
+            // line 422
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 422, $this->source); })()), "image", [], "any", false, false, false, 422), "html", null, true);
             echo "\">
                                 ";
         }
-        // line 434
+        // line 424
         echo "
                                 ";
-        // line 435
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 435, $this->source); })()), 'widget', ["attr" => ["type" => "file"]]);
+        // line 425
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 425, $this->source); })()), 'widget', ["attr" => ["type" => "file"]]);
         echo "
                                 ";
-        // line 436
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 436, $this->source); })()), 'errors');
+        // line 426
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 426, $this->source); })()), 'errors');
         echo "
                             </div>
                         </div>
                         <fieldset class=\"row mb-3\">
                             <div class=\"col-md-4\">
                                 ";
-        // line 441
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 441, $this->source); })()), 'label', ["label" => "Catégorie du produit"]);
+        // line 431
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 431, $this->source); })()), 'label', ["label" => "Catégorie du produit"]);
         echo "
                                 ";
-        // line 442
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 442, $this->source); })()), 'widget', ["attr" => ["class" => "main-button", "autocomplete" => "on"]]);
+        // line 432
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 432, $this->source); })()), 'widget', ["attr" => ["class" => "main-button", "autocomplete" => "on"]]);
         echo "
                                 ";
-        // line 443
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 443, $this->source); })()), 'errors');
+        // line 433
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 433, $this->source); })()), 'errors');
         echo "
                             </div>
                         </fieldset>
@@ -632,8 +638,8 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
                             <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
                         </div>
                         ";
-        // line 451
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 451, $this->source); })()), 'form_end');
+        // line 441
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 441, $this->source); })()), 'form_end');
         echo "
 
 
@@ -664,42 +670,42 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
 <!-- Vendor JS Files -->
 <script src=\"";
-        // line 480
+        // line 470
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 481
+        // line 471
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 482
+        // line 472
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 483
+        // line 473
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 484
+        // line 474
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 485
+        // line 475
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 486
+        // line 476
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 487
+        // line 477
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
 
 <!-- Template Main JS File -->
 <script src=\"";
-        // line 491
+        // line 481
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main2.js"), "html", null, true);
         echo "\"></script>
 
@@ -735,7 +741,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  703 => 491,  696 => 487,  692 => 486,  688 => 485,  684 => 484,  680 => 483,  676 => 482,  672 => 481,  668 => 480,  636 => 451,  625 => 443,  621 => 442,  617 => 441,  609 => 436,  605 => 435,  602 => 434,  597 => 432,  592 => 430,  587 => 429,  585 => 428,  576 => 422,  571 => 420,  567 => 419,  558 => 413,  553 => 411,  549 => 410,  540 => 404,  535 => 402,  531 => 401,  524 => 397,  521 => 396,  518 => 395,  515 => 394,  512 => 393,  509 => 392,  507 => 391,  476 => 363,  467 => 357,  458 => 351,  449 => 345,  439 => 338,  430 => 332,  421 => 326,  412 => 320,  403 => 314,  393 => 307,  382 => 299,  371 => 291,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
+        return array (  709 => 481,  702 => 477,  698 => 476,  694 => 475,  690 => 474,  686 => 473,  682 => 472,  678 => 471,  674 => 470,  642 => 441,  631 => 433,  627 => 432,  623 => 431,  615 => 426,  611 => 425,  608 => 424,  603 => 422,  598 => 420,  593 => 419,  591 => 418,  582 => 412,  577 => 410,  573 => 409,  564 => 403,  559 => 401,  555 => 400,  546 => 394,  541 => 392,  537 => 391,  530 => 387,  527 => 386,  524 => 385,  521 => 384,  518 => 383,  515 => 382,  513 => 381,  482 => 353,  473 => 347,  464 => 341,  455 => 335,  445 => 328,  436 => 322,  427 => 316,  417 => 309,  406 => 301,  395 => 293,  372 => 273,  332 => 236,  326 => 235,  316 => 230,  311 => 228,  141 => 61,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -800,8 +806,9 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
     <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-            <img src=\"assets/img/logo.png\" alt=\"\">
-            <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"{{ asset('assets/img/ARTounsi.png') }}\" width=\"50\" height=\"300\" alt=\"\">
+            <span class=\"d-none d-lg-block\">ArTounsi</span>
+
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
     </div><!-- End Logo -->
@@ -966,14 +973,15 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
             <li class=\"nav-item dropdown pe-3\">
 
                 <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                    <img src=\"{{ asset('uploads/Avatars/' ~ user.avatar) }}\" alt=\"Profile\" class=\"rounded-circle\">
+
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ user.name }} {{ user.lastName }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
                     <li class=\"dropdown-header\">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6>{{ user.name }}.{{ user.lastName }}</h6>
+                        <span>{{ user.type }}</span>
                     </li>
                     <li>
                         <hr class=\"dropdown-divider\">
@@ -1010,7 +1018,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
                     </li>
 
                     <li>
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"{{ path('app_allusers_logout') }}\">
                             <i class=\"bi bi-box-arrow-right\"></i>
                             <span>Sign Out</span>
                         </a>
@@ -1022,7 +1030,7 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         </ul>
     </nav><!-- End Icons Navigation -->
 
-</header><!-- End Header -->
+</header>
 
 <!-- ======= Sidebar ======= -->
 <aside id=\"sidebar\" class=\"sidebar\">
@@ -1059,27 +1067,15 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
             </a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"{{ path('app_allusers_index') }}\">
+            <a class=\"nav-link \" href=\"{{ path('app_challenge_index_back') }}\">
                 <i class=\"bi bi-person\"></i>
-                <span>Users</span>
+                <span>Challenge</span>
             </a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"{{ path('app_allusers_index') }}\">
+            <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
                 <i class=\"bi bi-person\"></i>
-                <span>Users</span>
-            </a>
-        </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"{{ path('app_allusers_index') }}\">
-                <i class=\"bi bi-person\"></i>
-                <span>Users</span>
-            </a>
-        </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link \" href=\"{{ path('app_allusers_index') }}\">
-                <i class=\"bi bi-person\"></i>
-                <span>Users</span>
+                <span>Tutoriel</span>
             </a>
         </li>
 
