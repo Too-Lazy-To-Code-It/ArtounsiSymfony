@@ -103,22 +103,79 @@ https://templatemo.com/tm-577-liberty-market
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class=\"nav\">
-                      <li><a href=\"index.html\">Home</a></li>
-                      <li><a href=\"";
-        // line 66
+                  <ul class=\"nav\">
+                    <div class=\"dropdown\">
+                      <li><a>Art</a></li>
+                      <div class=\"dropdown-content\">
+                        <li><a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
+        echo "\">Explore</a></li>
+                        <li><a href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
+        echo "\">Blog</a></li>
+                        <li><a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
+        echo "\">Studios</a></li>
+                        <li><a href=\"";
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
+        echo "\">Create Yours</a></li>
+
+                      </div>
+                    </div>
+                    <li><a href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+        echo "\">Offres</a></li>
+                    <li><a href=\"";
+        // line 76
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+        echo "\">Demandes</a></li>
+                    <li><a href=\"";
+        // line 77
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
         echo "\">Shop</a></li>
-                      <li><a href=\"";
-        // line 67
+                    <li><a href=\"";
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
         echo "\">Panier</a></li>
-                      <li><a href=\"";
-        // line 68
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_Dashboard_index");
-        echo "\">Dashboard</a></li>
-                      <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
-                    </ul>   
+                    <li><a href=\"";
+        // line 79
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                    <li><a href=\"";
+        // line 80
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                    ";
+        // line 81
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "type", [], "any", false, false, false, 81) == "Admin")) {
+            // line 82
+            echo "                      <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                    ";
+        }
+        // line 84
+        echo "                    ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 84, $this->source); })()), "idUser", [], "any", false, false, false, 84) == null)) {
+            // line 85
+            echo "                      <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                    ";
+        } else {
+            // line 87
+            echo "                      <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                    ";
+        }
+        // line 89
+        echo "                  </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -161,56 +218,56 @@ https://templatemo.com/tm-577-liberty-market
           </div>
         </div>
         ";
-        // line 112
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 112, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact"]]);
+        // line 131
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 131, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact"]]);
         echo "
         <div class=\"col-lg-12\">
             <div class=\"row\">
               <div class=\"col-lg-4\">
                 <fieldset>
                   ";
-        // line 117
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 117, $this->source); })()), "nom", [], "any", false, false, false, 117), 'label', ["label" => "Nom du produit"]);
+        // line 136
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 136, $this->source); })()), "nom", [], "any", false, false, false, 136), 'label', ["label" => "Nom du produit"]);
         echo "
                   ";
-        // line 118
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 118, $this->source); })()), "nom", [], "any", false, false, false, 118), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        // line 137
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 137, $this->source); })()), "nom", [], "any", false, false, false, 137), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
         echo "</div>
                   <div  class=\"error-message\">   ";
-        // line 119
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 119, $this->source); })()), "nom", [], "any", false, false, false, 119), 'errors');
+        // line 138
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 138, $this->source); })()), "nom", [], "any", false, false, false, 138), 'errors');
         echo "</div>
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                   ";
-        // line 124
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 124, $this->source); })()), "description", [], "any", false, false, false, 124), 'label', ["label" => "Description du produit"]);
+        // line 143
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 143, $this->source); })()), "description", [], "any", false, false, false, 143), 'label', ["label" => "Description du produit"]);
         echo "
                   ";
-        // line 125
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "description", [], "any", false, false, false, 125), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        // line 144
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 144, $this->source); })()), "description", [], "any", false, false, false, 144), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
         echo "
                   <div  class=\"error-message\">";
-        // line 126
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 126, $this->source); })()), "description", [], "any", false, false, false, 126), 'errors');
+        // line 145
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 145, $this->source); })()), "description", [], "any", false, false, false, 145), 'errors');
         echo "</div> 
                 </fieldset>
               </div>
               <div class=\"col-lg-4\">
                 <fieldset>
                    ";
-        // line 131
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 131, $this->source); })()), "prix", [], "any", false, false, false, 131), 'label', ["label" => "Prix du produit"]);
+        // line 150
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 150, $this->source); })()), "prix", [], "any", false, false, false, 150), 'label', ["label" => "Prix du produit"]);
         echo "
                   ";
-        // line 132
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 132, $this->source); })()), "prix", [], "any", false, false, false, 132), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        // line 151
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 151, $this->source); })()), "prix", [], "any", false, false, false, 151), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
         echo "</div>
                  <div  class=\"error-message\"> ";
-        // line 133
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 133, $this->source); })()), "prix", [], "any", false, false, false, 133), 'errors');
+        // line 152
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 152, $this->source); })()), "prix", [], "any", false, false, false, 152), 'errors');
         echo "</div>
                 </fieldset>
               </div>
@@ -218,16 +275,16 @@ https://templatemo.com/tm-577-liberty-market
                 <fieldset>
                   <div class=\"main-button\">
                     ";
-        // line 139
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 139, $this->source); })()), "idcategorie", [], "any", false, false, false, 139), 'label', ["label" => "Catégorie du produit"]);
+        // line 158
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 158, $this->source); })()), "idcategorie", [], "any", false, false, false, 158), 'label', ["label" => "Catégorie du produit"]);
         echo "
                     ";
-        // line 140
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 140, $this->source); })()), "idcategorie", [], "any", false, false, false, 140), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
+        // line 159
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 159, $this->source); })()), "idcategorie", [], "any", false, false, false, 159), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
         echo "
                     ";
-        // line 141
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 141, $this->source); })()), "idcategorie", [], "any", false, false, false, 141), 'errors');
+        // line 160
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 160, $this->source); })()), "idcategorie", [], "any", false, false, false, 160), 'errors');
         echo "
                   </div>
                     
@@ -246,12 +303,12 @@ https://templatemo.com/tm-577-liberty-market
                   <fieldset>
                     <label class=\"form-label\" >Image</label>
                     ";
-        // line 158
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 158, $this->source); })()), "image", [], "any", false, false, false, 158), 'widget');
+        // line 177
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 177, $this->source); })()), "image", [], "any", false, false, false, 177), 'widget');
         echo "
                     ";
-        // line 159
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 159, $this->source); })()), "image", [], "any", false, false, false, 159), 'errors');
+        // line 178
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 178, $this->source); })()), "image", [], "any", false, false, false, 178), 'errors');
         echo "
                   </fieldset>
           
@@ -260,16 +317,16 @@ https://templatemo.com/tm-577-liberty-market
                 <fieldset>
                   <button class=\"main-button\" type=\"submit\" class=\"orange-button\" onClick=\"validateSubmit()\">Ajouter article</button>
                   ";
-        // line 166
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 166, $this->source); })()), 'widget');
+        // line 185
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 185, $this->source); })()), 'widget');
         echo "
                 </fieldset>
               </div>
             </div>
         </div>
         ";
-        // line 171
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 171, $this->source); })()), 'form_end');
+        // line 190
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 190, $this->source); })()), 'form_end');
         echo "
 
 
@@ -303,34 +360,34 @@ https://templatemo.com/tm-577-liberty-market
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src=\"";
-        // line 203
+        // line 222
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 204
+        // line 223
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 <script src=\"";
-        // line 206
+        // line 225
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 207
+        // line 226
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
 
 <script src=\"";
-        // line 210
+        // line 229
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 211
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 212
+        // line 231
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -400,7 +457,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  379 => 26,  375 => 25,  371 => 24,  367 => 23,  363 => 22,  358 => 19,  348 => 18,  334 => 212,  330 => 211,  326 => 210,  320 => 207,  316 => 206,  311 => 204,  307 => 203,  272 => 171,  264 => 166,  254 => 159,  250 => 158,  230 => 141,  226 => 140,  222 => 139,  213 => 133,  209 => 132,  205 => 131,  197 => 126,  193 => 125,  189 => 124,  181 => 119,  177 => 118,  173 => 117,  165 => 112,  118 => 68,  114 => 67,  110 => 66,  71 => 29,  69 => 18,  63 => 15,  56 => 11,  44 => 1,);
+        return array (  436 => 26,  432 => 25,  428 => 24,  424 => 23,  420 => 22,  415 => 19,  405 => 18,  391 => 231,  387 => 230,  383 => 229,  377 => 226,  373 => 225,  368 => 223,  364 => 222,  329 => 190,  321 => 185,  311 => 178,  307 => 177,  287 => 160,  283 => 159,  279 => 158,  270 => 152,  266 => 151,  262 => 150,  254 => 145,  250 => 144,  246 => 143,  238 => 138,  234 => 137,  230 => 136,  222 => 131,  178 => 89,  172 => 87,  166 => 85,  163 => 84,  157 => 82,  155 => 81,  151 => 80,  147 => 79,  143 => 78,  139 => 77,  135 => 76,  131 => 75,  124 => 71,  120 => 70,  116 => 69,  112 => 68,  71 => 29,  69 => 18,  63 => 15,  56 => 11,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -468,13 +525,32 @@ https://templatemo.com/tm-577-liberty-market
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class=\"nav\">
-                      <li><a href=\"index.html\">Home</a></li>
-                      <li><a href=\"{{ path('app_produits_index')}}\">Shop</a></li>
-                      <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
-                      <li><a href=\"{{ path('app_Dashboard_index') }}\">Dashboard</a></li>
-                      <li><a href=\"create.html\" class=\"active\">Create Yours</a></li>
-                    </ul>   
+                  <ul class=\"nav\">
+                    <div class=\"dropdown\">
+                      <li><a>Art</a></li>
+                      <div class=\"dropdown-content\">
+                        <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                        <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                        <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                        <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+
+                      </div>
+                    </div>
+                    <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                    <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                    <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                    <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                    <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                    <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                    {%if(user.type=='Admin') %}
+                      <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                    {% endif %}
+                    {% if(user.idUser==null) %}
+                      <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                    {% else %}
+                      <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                    {% endif %}
+                  </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

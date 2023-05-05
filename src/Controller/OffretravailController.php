@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 
+use App\Entity\Allusers;
 use App\Entity\Offretravail;
+use MongoDB\Driver\Session;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Form\OffretravailType;
 use App\Repository\OffretravailRepository;
@@ -14,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\AllusersRepository;
 use Symfony\Component\Form\FormError;
@@ -32,13 +35,14 @@ use App\Entity\Offretravailarchive;
 class OffretravailController extends AbstractController
 {
     #[Route('/', name: 'app_offretravail_index', methods: ['GET'])]
-    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste,): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste,): Response
     {
 
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
 
-
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
         $offretravails = $offretravailRepository->findAll();
         $offretravails = $paginator->paginate(
             $offretravails, //on passe les données 
@@ -62,6 +66,7 @@ class OffretravailController extends AbstractController
             'offretravailbyid' => $offretravailbyid,
             'offre' => $listartistespostuler,
             'count' => $count,
+            'user'=>$user,
         ]);
     }
 

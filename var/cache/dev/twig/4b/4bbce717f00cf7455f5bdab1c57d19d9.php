@@ -46,11 +46,11 @@ class __TwigTemplate_13c3ac3017e49dfa31f3ba6df591f76b extends Template
 <html lang=\"en\">
 
 <head>
- <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
- ";
+    ";
         // line 9
         $this->displayBlock('stylesheet', $context, $blocks);
         // line 26
@@ -58,55 +58,59 @@ class __TwigTemplate_13c3ac3017e49dfa31f3ba6df591f76b extends Template
     <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js\"></script>
 
- <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"
+          sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5
+    \" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\"
+          rel=\"stylesheet\">
 
-<link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css' />
-   <link rel=\"stylesheet\" href=\"";
-        // line 34
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css'/>
+    <link rel=\"stylesheet\" href=\"";
+        // line 37
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/swiper-bundle.min.css"), "html", null, true);
         echo "\">
-     <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+          integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
 
-     <link rel=\"stylesheet\" href=\"";
-        // line 37
+    <link rel=\"stylesheet\" href=\"";
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css.css"), "html", null, true);
         echo "\">
-     
+
     <title>Liberty Template - NFT Item Detail Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href=\"";
-        // line 42
+        // line 46
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Additional CSS Files -->
     <link rel=\"stylesheet\" href=\"";
-        // line 45
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
-        echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 46
+        // line 49
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 47
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 51
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/templatemo-liberty-market.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 48
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 49
+        // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
         echo "\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 50
+    <link rel=\"stylesheet\" href=\"";
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/templatemo-cyborg-gaming.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\" />
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\"/>
     <!--
 
 TemplateMo 577 Liberty Market
@@ -114,656 +118,738 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
-  <!-- Google Font -->
+    <!-- Google Font -->
     <link href=\"https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap\" rel=\"stylesheet\">
-    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \"
+          rel=\"stylesheet\">
 
-   
+
     <link rel=\"stylesheet\" href=\"";
-        // line 64
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 65
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/font-awesome.min.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 66
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/elegant-icons.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 67
+        // line 72
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/owl.carousel.min.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 68
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/magnific-popup.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 69
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slicknav.min.css\" type=\"text/css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 70
+        // line 75
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css\" type=\"text/css"), "html", null, true);
         echo "\">
 </head>
 
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id=\"js-preloader\" class=\"js-preloader\">
-        <div class=\"preloader-inner\">
-            <span class=\"dot\"></span>
-            <div class=\"dots\">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<!-- ***** Preloader Start ***** -->
+<div id=\"js-preloader\" class=\"js-preloader\">
+    <div class=\"preloader-inner\">
+        <span class=\"dot\"></span>
+        <div class=\"dots\">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
+</div>
+<!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
-    <header class=\"header-area header-sticky\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-12\">
-                    <nav class=\"main-nav\">
-                        <!-- ***** Logo Start ***** -->
-                        <a href=\"index.html\" class=\"logo\">
-                            <img src=\"";
-        // line 96
+<!-- ***** Header Area Start ***** -->
+<header class=\"header-area header-sticky\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-12\">
+                <nav class=\"main-nav\">
+                    <!-- ***** Logo Start ***** -->
+                    <a href=\"index.html\" class=\"logo\">
+                        <img src=\"";
+        // line 101
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/logoart.png"), "html", null, true);
-        echo "\"  height=\"50\" width=\"30\" alt=\"\">
-               
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                         <ul class=\"nav\">
-                        <li><a href=\"#\" class=\"active\">Acceuil</a></li>
-                       
-                        <li><a href=\"";
-        // line 104
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
-        echo "\">Offres d'emplois</a></li>
-                        <li><a href=\"";
-        // line 105
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
-        echo "\">Demandes d'emplois</a></li>
-                       <li class=\"nav-item dropdown\">
- <a id=\"notification-dropdown\" class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-bell\"></i>
-          ";
-        // line 109
-        if (((isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 109, $this->source); })()) > 0)) {
-            // line 110
-            echo "  <span id=\"count\" class=\"badge bg-primary badge-number\">";
-            echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 110, $this->source); })()), "html", null, true);
-            echo "</span>
-";
-        }
+        echo "\" height=\"50\" width=\"30\" alt=\"\">
+
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class=\"nav\">
+                        <div class=\"dropdown\">
+                            <li><a>Art</a></li>
+                            <div class=\"dropdown-content\">
+                                <li><a href=\"";
+        // line 110
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
+        echo "\">Explore</a></li>
+                                <li><a href=\"";
+        // line 111
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
+        echo "\">Blog</a></li>
+                                <li><a href=\"";
         // line 112
-        echo "
-          </a>
-                         
-                    <!-- End Notification Icon -->
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
+        echo "\">Studios</a></li>
+                                <li><a href=\"";
+        // line 113
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
+        echo "\">Create Yours</a></li>
 
-                       <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-                       
-
-                       ";
-        // line 120
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["offre"]) || array_key_exists("offre", $context) ? $context["offre"] : (function () { throw new RuntimeError('Variable "offre" does not exist.', 120, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["notif"]) {
-            // line 121
-            echo "             
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                        
-                            <i class=\"bi bi-info-circle text-primary\"></i>
-                            <div>
-                                <h4 class=\"name\"> ";
-            // line 131
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "nomartiste", [], "any", false, false, false, 131), "html", null, true);
-            echo "</h4>
-                                <p class=\"post\"> postuler a l'offre ";
-            // line 132
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "titreoffre", [], "any", false, false, false, 132), "html", null, true);
-            echo "</p>
-                                <p class=\"post\">";
-            // line 133
-            ((twig_get_attribute($this->env, $this->source, $context["notif"], "datepostuler", [], "any", false, false, false, 133)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "datepostuler", [], "any", false, false, false, 133), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</p>
-                               
                             </div>
-                        </li>
+                        </div>
+                        <li><a href=\"";
+        // line 117
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+        echo "\">Offres</a></li>
+                        <li><a href=\"";
+        // line 118
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+        echo "\">Demandes</a></li>
+                        <li><a href=\"";
+        // line 119
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
+        echo "\">Shop</a></li>
+                        <li><a href=\"";
+        // line 120
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo "\">Panier</a></li>
+                        <li><a href=\"";
+        // line 121
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                        <li><a href=\"";
+        // line 122
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                        ";
+        // line 123
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 123, $this->source); })()), "type", [], "any", false, false, false, 123) == "Admin")) {
+            // line 124
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                        ";
+        }
+        // line 126
+        echo "                        ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 126, $this->source); })()), "idUser", [], "any", false, false, false, 126) == null)) {
+            // line 127
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                        ";
+        } else {
+            // line 129
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                        ";
+        }
+        // line 131
+        echo "                        <li class=\"nav-item dropdown\">
+                            <a id=\"notification-dropdown\" class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                                <i class=\"bi bi-bell\"></i>
+                                ";
+        // line 134
+        if (((isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 134, $this->source); })()) > 0)) {
+            // line 135
+            echo "                                    <span id=\"count\" class=\"badge bg-primary badge-number\">";
+            echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 135, $this->source); })()), "html", null, true);
+            echo "</span>
+                                ";
+        }
+        // line 137
+        echo "
+                            </a>
 
-                       
-             \t ";
+                            <!-- End Notification Icon -->
+
+                            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+
+
+                                ";
+        // line 145
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["offre"]) || array_key_exists("offre", $context) ? $context["offre"] : (function () { throw new RuntimeError('Variable "offre" does not exist.', 145, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["notif"]) {
+            // line 146
+            echo "
+
+                                    <li>
+                                        <hr class=\"dropdown-divider\">
+                                    </li>
+
+                                    <li class=\"notification-item\">
+
+                                        <i class=\"bi bi-info-circle text-primary\"></i>
+                                        <div>
+                                            <h4 class=\"name\"> ";
+            // line 156
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "nomartiste", [], "any", false, false, false, 156), "html", null, true);
+            echo "</h4>
+                                            <p class=\"post\"> postuler a l'offre ";
+            // line 157
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "titreoffre", [], "any", false, false, false, 157), "html", null, true);
+            echo "</p>
+                                            <p class=\"post\">";
+            // line 158
+            ((twig_get_attribute($this->env, $this->source, $context["notif"], "datepostuler", [], "any", false, false, false, 158)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notif"], "datepostuler", [], "any", false, false, false, 158), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo "</p>
+
+                                        </div>
+                                    </li>
+
+
+                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notif'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 140
+        // line 165
         echo "
-                    </ul>
-                    <!-- End Notification Dropdown Items -->
+                            </ul>
+                            <!-- End Notification Dropdown Items -->
 
-                </li>
-                      <li><a href=\"";
-        // line 145
+                        </li>
+                        <li><a href=\"";
+        // line 170
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
         echo "\">dashboard </a></li>
 
-                       
-                         
+
                     </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
             </div>
         </div>
-   
-     <script>
-    
-    \$(document).ready(function() {
-        // Select the notification dropdown
-        var dropdown = \$('#notification-dropdown');
-        
-        // Add a click event listener to the notification dropdown
-        dropdown.on('click', function() {
-            // Send an AJAX request to the Symfony controller to update the entities
-            \$.ajax({
-          url: \"";
-        // line 169
+    </div>
+
+    <script>
+
+        \$(document).ready(function () {
+            // Select the notification dropdown
+            var dropdown = \$('#notification-dropdown');
+
+            // Add a click event listener to the notification dropdown
+            dropdown.on('click', function () {
+                // Send an AJAX request to the Symfony controller to update the entities
+                \$.ajax({
+                    url: \"";
+        // line 193
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_notiftrue");
         echo "\",
-                type: \"POST\",
-                success: function(response) {
-                    // Update the notification count badge
-                    var badge = \$('#count');
-                    badge.text(\"0\");
-                    consol.log('tmchi');
-                   
-                },
-                error: function() {
-                    // Handle errors
-                }
+                    type: \"POST\",
+                    success: function (response) {
+                        // Update the notification count badge
+                        var badge = \$('#count');
+                        badge.text(\"0\");
+                        consol.log('tmchi');
+
+                    },
+                    error: function () {
+                        // Handle errors
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-  <script>
-  function addHoverEffect() {
-    \$.ajax({
-        url: 'your-server-url-here',
-        success: function(data) {
-            // Loop through the notification items and add the hover effect
-            \$('.notification-item').each(function() {
-                \$(this).hover(
-                    function() {
-                        \$(this).addClass('hovered');
-                    },
-                    function() {
-                        \$(this).removeClass('hovered');
-                    }
-                );
+    <script>
+        function addHoverEffect() {
+            \$.ajax({
+                url: 'your-server-url-here',
+                success: function (data) {
+                    // Loop through the notification items and add the hover effect
+                    \$('.notification-item').each(function () {
+                        \$(this).hover(
+                            function () {
+                                \$(this).addClass('hovered');
+                            },
+                            function () {
+                                \$(this).removeClass('hovered');
+                            }
+                        );
+                    });
+                }
             });
         }
-    });
-}
-\$(document).ready(function() {
-    addHoverEffect();
-});
 
-  </script>
+        \$(document).ready(function () {
+            addHoverEffect();
+        });
 
-<script>
-function updateNotifications() {
-  \$.ajax({
-    url: '";
-        // line 214
+    </script>
+
+    <script>
+        function updateNotifications() {
+            \$.ajax({
+                url: '";
+        // line 239
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
         echo "',
-    type: 'GET',
-    success: function(html) {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const count = doc.querySelector('#count').textContent;
-      document.querySelector('#count').textContent = count;
+                type: 'GET',
+                success: function (html) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const count = doc.querySelector('#count').textContent;
+                    document.querySelector('#count').textContent = count;
 
-      const notifications = doc.querySelectorAll('.notification-item');
-      const notificationsContainer = document.querySelector('.notifications');
-      notificationsContainer.innerHTML = '';
+                    const notifications = doc.querySelectorAll('.notification-item');
+                    const notificationsContainer = document.querySelector('.notifications');
+                    notificationsContainer.innerHTML = '';
 
-      notifications.forEach((notification) => {
-        notificationsContainer.appendChild(notification);
-      });
-    },
-    error: function(error) {
-      console.error(error);
-    }
-  });
-}
+                    notifications.forEach((notification) => {
+                        notificationsContainer.appendChild(notification);
+                    });
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        }
 
-setInterval(updateNotifications, 2000); // Call every 2 seconds
-</script>
+        setInterval(updateNotifications, 2000); // Call every 2 seconds
+    </script>
 
 
-<!-- The Modal -->
-<div class=\"modal\" id=\"myModal\">
-  <div class=\"modal-dialog modal-fullscreen\">
-    <div class=\"modal-content\">
+    <!-- The Modal -->
+    <div class=\"modal\" id=\"myModal\">
+        <div class=\"modal-dialog modal-fullscreen\">
+            <div class=\"modal-content\">
 
-      <!-- Modal Header -->
-      <div class=\"modal-header\">
-        <h4 class=\"modal-title\">Modal Heading</h4>
-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>
-      </div>
+                <!-- Modal Header -->
+                <div class=\"modal-header\">
+                    <h4 class=\"modal-title\">Modal Heading</h4>
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>
+                </div>
 
-      <!-- Modal body -->
-      <div class=\"modal-body\">
-        Modal body..
-      </div>
+                <!-- Modal body -->
+                <div class=\"modal-body\">
+                    Modal body..
+                </div>
 
-      <!-- Modal footer -->
-      <div class=\"modal-footer\">
-        <button type=\"button\" class=\"btn btn-danger\" data-bs-dismiss=\"modal\">Close</button>
-      </div>
+                <!-- Modal footer -->
+                <div class=\"modal-footer\">
+                    <button type=\"button\" class=\"btn btn-danger\" data-bs-dismiss=\"modal\">Close</button>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
-     <div class=\"page-heading normal-space\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <h6>Les offres d'emplois</h6>
-                    <h2>Consulter tous les offres</h2>
-                    <span>Acceuil > <a href=\"#\">Offre d'emplois</a></span>
-                    <div class=\"buttons\">
-                        <div class=\"main-button\">
-                            <a href=\"";
-        // line 276
+<div class=\"page-heading normal-space\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
+                <h6>Les offres d'emplois</h6>
+                <h2>Consulter tous les offres</h2>
+                <span>Acceuil > <a href=\"#\">Offre d'emplois</a></span>
+                <div class=\"buttons\">
+                    <div class=\"main-button\">
+                        <a href=\"";
+        // line 301
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_chercherdemande");
         echo "\">Cherchers demandes</a>
-                        </div>
-                     
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
- <style>
- .notification-item:hover {
-    background-color: #B0E0E6;
-    color: #000000;
-}
+</div>
+<style>
+    .notification-item:hover {
+        background-color: #B0E0E6;
+        color: #000000;
+    }
 
- .notification-item {
-  background-color: white; /* grey color */
-}
- 
- 
- .section-title {
-  border: 1px solid #7453fc; /* add border to the section */
-   border-radius: 20px; /* set the same radius for all corners */
-  padding: 10px; /* add padding to the section */
-  background-color:#7453fc;
-  display: inline-block; /* make the section inline-block so it wraps around its content */
-}
+    .notification-item {
+        background-color: white; /* grey color */
+    }
 
-.section-title {
-  margin: 0; /* remove margin from the title */
-}
 
-.link-style {
-  text-decoration: none; /* remove underline from the link */
-  color: white; /* set link color */
-  font-weight: bold; /* make the link bold */
-  margin-left: 10px; /* add margin to the left of the link */
-}
-.notifications {
-    max-height: 300px;
-    overflow-y: auto;
-}
-.name{color:black;
-*  font-size: 20px;}
-.post{color:grey;
-  font-size: 15px;}
-.dropdown-divider {
-  height: 1px;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  background-color: #e9ecef;
-}
+    .section-title {
+        border: 1px solid #7453fc; /* add border to the section */
+        border-radius: 20px; /* set the same radius for all corners */
+        padding: 10px; /* add padding to the section */
+        background-color: #7453fc;
+        display: inline-block; /* make the section inline-block so it wraps around its content */
+    }
+
+    .section-title {
+        margin: 0; /* remove margin from the title */
+    }
+
+    .link-style {
+        text-decoration: none; /* remove underline from the link */
+        color: white; /* set link color */
+        font-weight: bold; /* make the link bold */
+        margin-left: 10px; /* add margin to the left of the link */
+    }
+
+    .notifications {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .name {
+        color: black;
+        *font-size: 20px;
+    }
+
+    .post {
+        color: grey;
+        font-size: 15px;
+    }
+
+    .dropdown-divider {
+        height: 1px;
+        margin: 0.5rem 0;
+        overflow: hidden;
+        background-color: #e9ecef;
+    }
 
 </style>
 
- <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
-               
-              <div class=\"col-lg-6\">
-                               <div class=\"mini-heading\">
-  <h4 class=\"section-title\">Mes offres</h4></div>
-  
-  <a class=\"link-style\" href=\"";
-        // line 338
+<div class=\"item-details-page\">
+    <div class=\"container\">
+        <div class=\"row\">
+
+            <div class=\"col-lg-6\">
+                <div class=\"mini-heading\">
+                    <h4 class=\"section-title\">Mes offres</h4></div>
+
+                <a class=\"link-style\" href=\"";
+        // line 371
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
         echo "\"><u>Gérer mes offres</u></a>
- 
-                            </div>
-                          
-    
-    <div class=\"featured-explore\">
-      <div class=\"container-fluid\">
-        <div class=\"row\">
-          <div class=\"col-lg-12\">
-            <div class=\"owl-features owl-carousel\">
-           
-\t
-        
-                  ";
-        // line 351
+
+            </div>
+
+
+            <div class=\"featured-explore\">
+                <div class=\"container-fluid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-12\">
+                            <div class=\"owl-features owl-carousel\">
+
+
+                                ";
+        // line 383
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["offretravailbyid"]) || array_key_exists("offretravailbyid", $context) ? $context["offretravailbyid"] : (function () { throw new RuntimeError('Variable "offretravailbyid" does not exist.', 351, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["offretravailbyid"]) || array_key_exists("offretravailbyid", $context) ? $context["offretravailbyid"] : (function () { throw new RuntimeError('Variable "offretravailbyid" does not exist.', 383, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["offretravail"]) {
-            // line 352
-            echo "             
-                    
-\t
-
-\t\t<article class=\"postcardcar dark blue\">
-\t\t\t<a class=\"postcardcar__img_link\" href=\"#\">
-\t\t\t\t<img class=\"postcardcar__img\" src=\"https://picsum.photos/1000/1000\"  alt=\"Image Title\" />
-\t\t\t</a>
-\t\t\t<div class=\"postcardcar__text\">
-\t\t\t\t<h1 class=\"postcardcar__title blue\"><a>";
-            // line 361
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 361), "html", null, true);
-            echo "</a></h1>
-\t\t\t\t<div class=\"postcardcar__subtitle small\">
-\t\t\t\t\t<time datetime=\"2020-05-25 12:00:00\">
-\t\t\t\t\t\t<i class=\"fas fa-calendar-alt mr-2\"></i>";
-            // line 364
-            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 364)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 364), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 384
             echo "
-\t\t\t\t\t</time>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"postcardcar__bar\"></div>
-\t\t\t\t<div class=\"postcardcar__preview-txt\">";
-            // line 368
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 368), "html", null, true);
+
+
+
+                                    <article class=\"postcardcar dark blue\">
+                                        <a class=\"postcardcar__img_link\" href=\"#\">
+                                            <img class=\"postcardcar__img\" src=\"https://picsum.photos/1000/1000\"
+                                                 alt=\"Image Title\"/>
+                                        </a>
+                                        <div class=\"postcardcar__text\">
+                                            <h1 class=\"postcardcar__title blue\"><a>";
+            // line 394
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 394), "html", null, true);
+            echo "</a>
+                                            </h1>
+                                            <div class=\"postcardcar__subtitle small\">
+                                                <time datetime=\"2020-05-25 12:00:00\">
+                                                    <i class=\"fas fa-calendar-alt mr-2\"></i>";
+            // line 398
+            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 398)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 398), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo "
+                                                </time>
+                                            </div>
+                                            <div class=\"postcardcar__bar\"></div>
+                                            <div class=\"postcardcar__preview-txt\">";
+            // line 402
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 402), "html", null, true);
             echo "</div>
-\t\t\t\t<ul class=\"postcardcar__tagbox\">
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-tag mr-2\"></i>";
-            // line 370
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 370), "html", null, true);
-            echo "</li>
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>";
-            // line 371
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 371), "html", null, true);
-            echo "</li>
-                    \t
-
-                                
-                        
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-\t\t</article>
+                                            <ul class=\"postcardcar__tagbox\">
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-tag mr-2\"></i>";
+            // line 405
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 405), "html", null, true);
+            echo "
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>";
+            // line 408
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 408), "html", null, true);
+            echo "
+                                                </li>
 
 
-                
-             \t ";
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+
+
+                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offretravail'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 384
-        echo "            </div>
-         
-        </div>
-      </div>
-    </div>
-  </div>
+        // line 420
+        echo "                            </div>
 
-  </div>
-          
-    </div>
- </div>
-
-  <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
-
-
-                  
-                <div class=\"col-lg-12\">
-                    <div class=\"current-bid\">
-                        <div class=\"row\">
-                            <div class=\"col-lg-6\">
-                                <div class=\"mini-heading\">
-                                    <h4>Tous les offres</h4>
-                                </div>
-                            </div>
-                            <div class=\"col-lg-6\">
-                                <fieldset>
-                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                      <option selected>Sort By: Latest</option>
-                      <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
-                      <option value=\"low\">Sort By: Lowest</option>
-                      <option value=\"high\">Sort By: Highest</option>
-                  </select>
-                                </fieldset>
-                            </div>
-                              
-                               
-<section class=\"dark\">
-
-\t<div class=\"containercard py-4\">
-\t
-";
-        // line 426
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["offretravails"]) || array_key_exists("offretravails", $context) ? $context["offretravails"] : (function () { throw new RuntimeError('Variable "offretravails" does not exist.', 426, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["offretravail"]) {
-            // line 427
-            echo "\t\t<article class=\"postcard dark blue\">
-\t\t\t<a class=\"postcard__img_link\" href=\"#\">
-\t\t\t\t<img class=\"postcard__img\" src=\"https://picsum.photos/1000/1000\" alt=\"Image Title\" />
-\t\t\t</a>
-\t\t\t<div class=\"postcard__text\">
-\t\t\t\t<h1 class=\"postcard__title blue\"><a>";
-            // line 432
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 432), "html", null, true);
-            echo "</a></h1>
-\t\t\t\t<div class=\"postcard__subtitle small\">
-\t\t\t\t\t<time datetime=\"2020-05-25 12:00:00\">
-\t\t\t\t\t\t<i class=\"fas fa-calendar-alt mr-2\"></i>";
-            // line 435
-            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 435)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 435), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "
-\t\t\t\t\t</time>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"postcard__bar\"></div>
-\t\t\t\t<div class=\"postcard__preview-txt\">";
-            // line 439
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 439), "html", null, true);
-            echo "</div>
-\t\t\t\t<ul class=\"postcard__tagbox\">
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-tag mr-2\"></i>";
-            // line 441
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 441), "html", null, true);
-            echo "</li>
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>";
-            // line 442
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 442), "html", null, true);
-            echo "</li>
-                    \t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>";
-            // line 443
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "localisationoffre", [], "any", false, false, false, 443), "html", null, true);
-            echo "</li>
-\t\t\t\t
-                        
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-\t\t</article>
-\t ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offretravail'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 451
-        echo "\t</div>
-    <div>
-
-";
-        // line 454
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 455
-(isset($context["offretravails"]) || array_key_exists("offretravails", $context) ? $context["offretravails"] : (function () { throw new RuntimeError('Variable "offretravails" does not exist.', 455, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
-        // line 465
-        echo "
-</div>  
-</section>
-                           
-                    
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class=\"item-details-page\">
+    <div class=\"container\">
+        <div class=\"row\">
+
+
+            <div class=\"col-lg-12\">
+                <div class=\"current-bid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-6\">
+                            <div class=\"mini-heading\">
+                                <h4>Tous les offres</h4>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-6\">
+                            <fieldset>
+                                <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                        id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                    <option selected>Sort By: Latest</option>
+                                    <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
+                                    <option value=\"low\">Sort By: Lowest</option>
+                                    <option value=\"high\">Sort By: Highest</option>
+                                </select>
+                            </fieldset>
+                        </div>
+
+
+                        <section class=\"dark\">
+
+                            <div class=\"containercard py-4\">
+
+                                ";
+        // line 462
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["offretravails"]) || array_key_exists("offretravails", $context) ? $context["offretravails"] : (function () { throw new RuntimeError('Variable "offretravails" does not exist.', 462, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["offretravail"]) {
+            // line 463
+            echo "                                    <article class=\"postcard dark blue\">
+                                        <a class=\"postcard__img_link\" href=\"#\">
+                                            <img class=\"postcard__img\" src=\"https://picsum.photos/1000/1000\"
+                                                 alt=\"Image Title\"/>
+                                        </a>
+                                        <div class=\"postcard__text\">
+                                            <h1 class=\"postcard__title blue\"><a>";
+            // line 469
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 469), "html", null, true);
+            echo "</a></h1>
+                                            <div class=\"postcard__subtitle small\">
+                                                <time datetime=\"2020-05-25 12:00:00\">
+                                                    <i class=\"fas fa-calendar-alt mr-2\"></i>";
+            // line 472
+            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 472)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 472), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo "
+                                                </time>
+                                            </div>
+                                            <div class=\"postcard__bar\"></div>
+                                            <div class=\"postcard__preview-txt\">";
+            // line 476
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 476), "html", null, true);
+            echo "</div>
+                                            <ul class=\"postcard__tagbox\">
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-tag mr-2\"></i>";
+            // line 479
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 479), "html", null, true);
+            echo "
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>";
+            // line 482
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 482), "html", null, true);
+            echo "
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>";
+            // line 485
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "localisationoffre", [], "any", false, false, false, 485), "html", null, true);
+            echo "
+                                                </li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offretravail'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 494
+        echo "                            </div>
+                            <div>
+
+                                ";
+        // line 497
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 498
+(isset($context["offretravails"]) || array_key_exists("offretravails", $context) ? $context["offretravails"] : (function () { throw new RuntimeError('Variable "offretravails" does not exist.', 498, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
+        // line 508
+        echo "
+                            </div>
+                        </section>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    
 
-    <footer>
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp; Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"";
-        // line 483
+<footer>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
+                <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp;
+                    Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\"
+                                   href=\"";
+        // line 527
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://templatemo.com"), "html", null, true);
         echo "\" target=\"_blank\">TemplateMo</a></p>
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-   
 
-    text-alig
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-      <script src=\"";
-        // line 494
+text-alig
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src=\"";
+        // line 537
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 495
+<script src=\"";
+        // line 538
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
-    <script src=\"";
-        // line 497
+<script src=\"";
+        // line 540
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"assets/js/owl-carousel.js')}}\"></script>
+<script src=\"assets/js/owl-carousel.js')}}\"></script>
 
-    <script src=\"";
-        // line 500
+<script src=\"";
+        // line 543
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 501
+<script src=\"";
+        // line 544
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 502
+<script src=\"";
+        // line 545
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
-    
+
 <script src=\"";
-        // line 504
+        // line 547
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js"), "html", null, true);
-        echo "\" integrity=\"sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
-    <!-- JavaScript -->
-      <!--Uncomment this line-->
-       <script src=\"";
-        // line 507
+        echo "\"
+        integrity=\"sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==\"
+        crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<!-- JavaScript -->
+<!--Uncomment this line-->
+<script src=\"";
+        // line 552
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/index.js"), "html", null, true);
-        echo "\"></script> 
-       <script src=\"";
-        // line 508
+        echo "\"></script>
+<script src=\"";
+        // line 553
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 509
+<script src=\"";
+        // line 554
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 510
+<script src=\"";
+        // line 555
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.magnific-popup.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 511
+<script src=\"";
+        // line 556
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/mixitup.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
-        // line 512
+<script src=\"";
+        // line 557
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/test.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 513
+<script src=\"";
+        // line 558
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/masonry.pkgd.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 514
+<script src=\"";
+        // line 559
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery.slicknav.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 515
+<script src=\"";
+        // line 560
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 516
+<script src=\"";
+        // line 561
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "\"></script>
-     <script src=\"";
-        // line 517
+<script src=\"";
+        // line 562
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 518
+<script src=\"";
+        // line 563
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
-  <script src=\"";
-        // line 520
+<script src=\"";
+        // line 565
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
-  ";
-        // line 521
+";
+        // line 566
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 543
+        // line 588
         echo "
-    <script src=\"";
-        // line 544
+<script src=\"";
+        // line 589
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -789,38 +875,38 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
 
         // line 10
-        echo " <link href=\"";
+        echo "        <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
-    <link href=\"";
+        <link href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/apple-touch-icon.png"), "html", null, true);
         echo "\" rel=\"apple-touch-icon\">
-    <link href=\"";
+        <link href=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/boxicons/css/boxicons.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.snow.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/quill/quill.bubble.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/remixicon/remixicon.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link href=\"";
+        <link href=\"";
         // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/vendor/simple-datatables/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
@@ -851,7 +937,7 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
 
     }
 
-    // line 521
+    // line 566
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -861,44 +947,46 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 523
-        echo " <script src=\"";
+        // line 567
+        echo "    ";
+        // line 568
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
- 
-";
-        // line 526
-        echo "<script src=\"";
+
+    ";
+        // line 571
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
-";
-        // line 529
-        echo "<script src=\"";
+    ";
+        // line 574
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
 
-";
-        // line 532
-        echo "<script src=\"";
+    ";
+        // line 577
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
-";
-        // line 535
-        echo "<script src=\"";
+    ";
+        // line 580
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
 
-";
-        // line 538
-        echo "<script src=\"";
+    ";
+        // line 583
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
 
-";
-        // line 541
-        echo "<script src=\"";
+    ";
+        // line 586
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -922,7 +1010,7 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
 
     public function getDebugInfo()
     {
-        return array (  901 => 541,  895 => 538,  889 => 535,  883 => 532,  877 => 529,  871 => 526,  865 => 523,  855 => 521,  842 => 23,  838 => 22,  834 => 21,  830 => 20,  825 => 18,  821 => 17,  817 => 16,  813 => 15,  809 => 14,  805 => 13,  801 => 12,  797 => 11,  792 => 10,  782 => 9,  767 => 544,  764 => 543,  762 => 521,  758 => 520,  753 => 518,  749 => 517,  745 => 516,  741 => 515,  737 => 514,  733 => 513,  729 => 512,  725 => 511,  721 => 510,  717 => 509,  713 => 508,  709 => 507,  703 => 504,  698 => 502,  694 => 501,  690 => 500,  684 => 497,  679 => 495,  675 => 494,  661 => 483,  641 => 465,  639 => 455,  638 => 454,  633 => 451,  619 => 443,  615 => 442,  611 => 441,  606 => 439,  599 => 435,  593 => 432,  586 => 427,  582 => 426,  538 => 384,  519 => 371,  515 => 370,  510 => 368,  503 => 364,  497 => 361,  486 => 352,  482 => 351,  466 => 338,  401 => 276,  336 => 214,  288 => 169,  261 => 145,  254 => 140,  241 => 133,  237 => 132,  233 => 131,  221 => 121,  217 => 120,  207 => 112,  201 => 110,  199 => 109,  192 => 105,  188 => 104,  177 => 96,  148 => 70,  144 => 69,  140 => 68,  136 => 67,  132 => 66,  128 => 65,  124 => 64,  107 => 50,  103 => 49,  99 => 48,  95 => 47,  91 => 46,  87 => 45,  81 => 42,  73 => 37,  67 => 34,  57 => 26,  55 => 9,  45 => 1,);
+        return array (  989 => 586,  983 => 583,  977 => 580,  971 => 577,  965 => 574,  959 => 571,  953 => 568,  951 => 567,  941 => 566,  928 => 23,  924 => 22,  920 => 21,  916 => 20,  911 => 18,  907 => 17,  903 => 16,  899 => 15,  895 => 14,  891 => 13,  887 => 12,  883 => 11,  878 => 10,  868 => 9,  853 => 589,  850 => 588,  848 => 566,  844 => 565,  839 => 563,  835 => 562,  831 => 561,  827 => 560,  823 => 559,  819 => 558,  815 => 557,  811 => 556,  807 => 555,  803 => 554,  799 => 553,  795 => 552,  787 => 547,  782 => 545,  778 => 544,  774 => 543,  768 => 540,  763 => 538,  759 => 537,  746 => 527,  725 => 508,  723 => 498,  722 => 497,  717 => 494,  702 => 485,  696 => 482,  690 => 479,  684 => 476,  677 => 472,  671 => 469,  663 => 463,  659 => 462,  615 => 420,  597 => 408,  591 => 405,  585 => 402,  578 => 398,  571 => 394,  559 => 384,  555 => 383,  540 => 371,  467 => 301,  402 => 239,  353 => 193,  327 => 170,  320 => 165,  307 => 158,  303 => 157,  299 => 156,  287 => 146,  283 => 145,  273 => 137,  267 => 135,  265 => 134,  260 => 131,  254 => 129,  248 => 127,  245 => 126,  239 => 124,  237 => 123,  233 => 122,  229 => 121,  225 => 120,  221 => 119,  217 => 118,  213 => 117,  206 => 113,  202 => 112,  198 => 111,  194 => 110,  182 => 101,  153 => 75,  149 => 74,  145 => 73,  141 => 72,  137 => 71,  133 => 70,  129 => 69,  111 => 54,  107 => 53,  103 => 52,  99 => 51,  95 => 50,  91 => 49,  85 => 46,  77 => 41,  70 => 37,  57 => 26,  55 => 9,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -931,20 +1019,20 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
 <html lang=\"en\">
 
 <head>
- <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
- {% block stylesheet %}
- <link href=\"{{asset('assets2/img/favicon.png') }}\" rel=\"icon\">
-    <link href=\"{{asset('assets2/img/apple-touch-icon.png')}}\" rel=\"apple-touch-icon\">
-    <link href=\"{{asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/boxicons/css/boxicons.min.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/quill/quill.snow.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{asset('assets2/vendor/simple-datatables/style.css') }}\" rel=\"stylesheet\">
+    {% block stylesheet %}
+        <link href=\"{{ asset('assets2/img/favicon.png') }}\" rel=\"icon\">
+        <link href=\"{{ asset('assets2/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
+        <link href=\"{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/boxicons/css/boxicons.min.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/quill/quill.snow.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
+        <link href=\"{{ asset('assets2/vendor/simple-datatables/style.css') }}\" rel=\"stylesheet\">
 
         <link rel=\"stylesheet\" href=\"{{ asset('assets/css/fontawesome.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\">
@@ -956,28 +1044,32 @@ setInterval(updateNotifications, 2000); // Call every 2 seconds
     <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js\"></script>
 
- <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5\" crossorigin=\"anonymous\">
-    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity=\"
+          sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+2QLdMotoRxT1Pi6+nNJWv+UomT6P5
+    \" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap\"
+          rel=\"stylesheet\">
 
-<link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css' />
-   <link rel=\"stylesheet\" href=\"{{asset('assets/swiper-bundle.min.css')}}\">
-     <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper/swiper-bundle.min.css'/>
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/swiper-bundle.min.css') }}\">
+    <link rel=\"stylesheet\" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+          integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVpDMNlcbiIqYQUf5t8WvVZi0woX1uuK59j5M1Jw21t0\" crossorigin=\"anonymous\">
 
-     <link rel=\"stylesheet\" href=\"{{asset('assets/css.css')}}\">
-     
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css.css') }}\">
+
     <title>Liberty Template - NFT Item Detail Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
 
     <!-- Additional CSS Files -->
-    <link rel=\"stylesheet\" href=\"{{asset('assets/css/fontawesome.css')}}\">
-        <link rel=\"stylesheet\" href=\"{{asset('assets/css/fontawesome.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('assets/css/templatemo-liberty-market.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('assets/css/owl.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('assets/css/animate.css')}}\">
-        <link rel=\"stylesheet\" href=\"{{asset('/css/templatemo-cyborg-gaming.css')}}\">
-    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\" />
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/fontawesome.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/fontawesome.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/animate.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('/css/templatemo-cyborg-gaming.css') }}\">
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@7/swiper-bundle.min.css\"/>
     <!--
 
 TemplateMo 577 Liberty Market
@@ -985,492 +1077,533 @@ TemplateMo 577 Liberty Market
 https://templatemo.com/tm-577-liberty-market
 
 -->
-  <!-- Google Font -->
+    <!-- Google Font -->
     <link href=\"https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap\" rel=\"stylesheet\">
-    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap \"
+          rel=\"stylesheet\">
 
-   
-    <link rel=\"stylesheet\" href=\"{{asset('css/bootstrap.min.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/font-awesome.min.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/elegant-icons.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/owl.carousel.min.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/magnific-popup.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/slicknav.min.css\" type=\"text/css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/style.css\" type=\"text/css')}}\">
+
+    <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.min.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/font-awesome.min.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/elegant-icons.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/owl.carousel.min.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/magnific-popup.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/slicknav.min.css\" type=\"text/css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/style.css\" type=\"text/css') }}\">
 </head>
 
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id=\"js-preloader\" class=\"js-preloader\">
-        <div class=\"preloader-inner\">
-            <span class=\"dot\"></span>
-            <div class=\"dots\">
-                <span></span>
-                <span></span>
-                <span></span>
+<!-- ***** Preloader Start ***** -->
+<div id=\"js-preloader\" class=\"js-preloader\">
+    <div class=\"preloader-inner\">
+        <span class=\"dot\"></span>
+        <div class=\"dots\">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- ***** Header Area Start ***** -->
+<header class=\"header-area header-sticky\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-12\">
+                <nav class=\"main-nav\">
+                    <!-- ***** Logo Start ***** -->
+                    <a href=\"index.html\" class=\"logo\">
+                        <img src=\"{{ asset('assets2/img/logoart.png') }}\" height=\"50\" width=\"30\" alt=\"\">
+
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class=\"nav\">
+                        <div class=\"dropdown\">
+                            <li><a>Art</a></li>
+                            <div class=\"dropdown-content\">
+                                <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                                <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                                <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                                <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+
+                            </div>
+                        </div>
+                        <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                        <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                        <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                        <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                        {%if(user.type=='Admin') %}
+                            <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser==null) %}
+                            <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                        {% else %}
+                            <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                        {% endif %}
+                        <li class=\"nav-item dropdown\">
+                            <a id=\"notification-dropdown\" class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                                <i class=\"bi bi-bell\"></i>
+                                {% if count > 0 %}
+                                    <span id=\"count\" class=\"badge bg-primary badge-number\">{{ count }}</span>
+                                {% endif %}
+
+                            </a>
+
+                            <!-- End Notification Icon -->
+
+                            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+
+
+                                {% for notif in offre %}
+
+
+                                    <li>
+                                        <hr class=\"dropdown-divider\">
+                                    </li>
+
+                                    <li class=\"notification-item\">
+
+                                        <i class=\"bi bi-info-circle text-primary\"></i>
+                                        <div>
+                                            <h4 class=\"name\"> {{ notif.nomartiste }}</h4>
+                                            <p class=\"post\"> postuler a l'offre {{ notif.titreoffre }}</p>
+                                            <p class=\"post\">{{ notif.datepostuler ? notif.datepostuler|date('Y-m-d H:i:s') : '' }}</p>
+
+                                        </div>
+                                    </li>
+
+
+                                {% endfor %}
+
+                            </ul>
+                            <!-- End Notification Dropdown Items -->
+
+                        </li>
+                        <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
             </div>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
-    <header class=\"header-area header-sticky\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-12\">
-                    <nav class=\"main-nav\">
-                        <!-- ***** Logo Start ***** -->
-                        <a href=\"index.html\" class=\"logo\">
-                            <img src=\"{{asset('assets2/img/logoart.png') }}\"  height=\"50\" width=\"30\" alt=\"\">
-               
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                         <ul class=\"nav\">
-                        <li><a href=\"#\" class=\"active\">Acceuil</a></li>
-                       
-                        <li><a href=\"{{ path('app_offretravail_index') }}\">Offres d'emplois</a></li>
-                        <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes d'emplois</a></li>
-                       <li class=\"nav-item dropdown\">
- <a id=\"notification-dropdown\" class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-bell\"></i>
-          {% if count > 0 %}
-  <span id=\"count\" class=\"badge bg-primary badge-number\">{{ count }}</span>
-{% endif %}
+    <script>
 
-          </a>
-                         
-                    <!-- End Notification Icon -->
+        \$(document).ready(function () {
+            // Select the notification dropdown
+            var dropdown = \$('#notification-dropdown');
 
-                       <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-                       
+            // Add a click event listener to the notification dropdown
+            dropdown.on('click', function () {
+                // Send an AJAX request to the Symfony controller to update the entities
+                \$.ajax({
+                    url: \"{{ path('app_offretravail_notiftrue' ) }}\",
+                    type: \"POST\",
+                    success: function (response) {
+                        // Update the notification count badge
+                        var badge = \$('#count');
+                        badge.text(\"0\");
+                        consol.log('tmchi');
 
-                       {% for notif in offre %}
-             
-
-                        <li>
-                            <hr class=\"dropdown-divider\">
-                        </li>
-
-                        <li class=\"notification-item\">
-                        
-                            <i class=\"bi bi-info-circle text-primary\"></i>
-                            <div>
-                                <h4 class=\"name\"> {{notif.nomartiste}}</h4>
-                                <p class=\"post\"> postuler a l'offre {{notif.titreoffre}}</p>
-                                <p class=\"post\">{{ notif.datepostuler ? notif.datepostuler|date('Y-m-d H:i:s') : '' }}</p>
-                               
-                            </div>
-                        </li>
-
-                       
-             \t {% endfor %}
-
-                    </ul>
-                    <!-- End Notification Dropdown Items -->
-
-                </li>
-                      <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
-
-                       
-                         
-                    </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-   
-     <script>
-    
-    \$(document).ready(function() {
-        // Select the notification dropdown
-        var dropdown = \$('#notification-dropdown');
-        
-        // Add a click event listener to the notification dropdown
-        dropdown.on('click', function() {
-            // Send an AJAX request to the Symfony controller to update the entities
-            \$.ajax({
-          url: \"{{ path('app_offretravail_notiftrue' )}}\",
-                type: \"POST\",
-                success: function(response) {
-                    // Update the notification count badge
-                    var badge = \$('#count');
-                    badge.text(\"0\");
-                    consol.log('tmchi');
-                   
-                },
-                error: function() {
-                    // Handle errors
-                }
+                    },
+                    error: function () {
+                        // Handle errors
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-  <script>
-  function addHoverEffect() {
-    \$.ajax({
-        url: 'your-server-url-here',
-        success: function(data) {
-            // Loop through the notification items and add the hover effect
-            \$('.notification-item').each(function() {
-                \$(this).hover(
-                    function() {
-                        \$(this).addClass('hovered');
-                    },
-                    function() {
-                        \$(this).removeClass('hovered');
-                    }
-                );
+    <script>
+        function addHoverEffect() {
+            \$.ajax({
+                url: 'your-server-url-here',
+                success: function (data) {
+                    // Loop through the notification items and add the hover effect
+                    \$('.notification-item').each(function () {
+                        \$(this).hover(
+                            function () {
+                                \$(this).addClass('hovered');
+                            },
+                            function () {
+                                \$(this).removeClass('hovered');
+                            }
+                        );
+                    });
+                }
             });
         }
-    });
-}
-\$(document).ready(function() {
-    addHoverEffect();
-});
 
-  </script>
+        \$(document).ready(function () {
+            addHoverEffect();
+        });
 
-<script>
-function updateNotifications() {
-  \$.ajax({
-    url: '{{ path('app_offretravail_index') }}',
-    type: 'GET',
-    success: function(html) {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const count = doc.querySelector('#count').textContent;
-      document.querySelector('#count').textContent = count;
+    </script>
 
-      const notifications = doc.querySelectorAll('.notification-item');
-      const notificationsContainer = document.querySelector('.notifications');
-      notificationsContainer.innerHTML = '';
+    <script>
+        function updateNotifications() {
+            \$.ajax({
+                url: '{{ path('app_offretravail_index') }}',
+                type: 'GET',
+                success: function (html) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const count = doc.querySelector('#count').textContent;
+                    document.querySelector('#count').textContent = count;
 
-      notifications.forEach((notification) => {
-        notificationsContainer.appendChild(notification);
-      });
-    },
-    error: function(error) {
-      console.error(error);
-    }
-  });
-}
+                    const notifications = doc.querySelectorAll('.notification-item');
+                    const notificationsContainer = document.querySelector('.notifications');
+                    notificationsContainer.innerHTML = '';
 
-setInterval(updateNotifications, 2000); // Call every 2 seconds
-</script>
+                    notifications.forEach((notification) => {
+                        notificationsContainer.appendChild(notification);
+                    });
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        setInterval(updateNotifications, 2000); // Call every 2 seconds
+    </script>
 
 
-<!-- The Modal -->
-<div class=\"modal\" id=\"myModal\">
-  <div class=\"modal-dialog modal-fullscreen\">
-    <div class=\"modal-content\">
+    <!-- The Modal -->
+    <div class=\"modal\" id=\"myModal\">
+        <div class=\"modal-dialog modal-fullscreen\">
+            <div class=\"modal-content\">
 
-      <!-- Modal Header -->
-      <div class=\"modal-header\">
-        <h4 class=\"modal-title\">Modal Heading</h4>
-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>
-      </div>
+                <!-- Modal Header -->
+                <div class=\"modal-header\">
+                    <h4 class=\"modal-title\">Modal Heading</h4>
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>
+                </div>
 
-      <!-- Modal body -->
-      <div class=\"modal-body\">
-        Modal body..
-      </div>
+                <!-- Modal body -->
+                <div class=\"modal-body\">
+                    Modal body..
+                </div>
 
-      <!-- Modal footer -->
-      <div class=\"modal-footer\">
-        <button type=\"button\" class=\"btn btn-danger\" data-bs-dismiss=\"modal\">Close</button>
-      </div>
+                <!-- Modal footer -->
+                <div class=\"modal-footer\">
+                    <button type=\"button\" class=\"btn btn-danger\" data-bs-dismiss=\"modal\">Close</button>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
-     <div class=\"page-heading normal-space\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <h6>Les offres d'emplois</h6>
-                    <h2>Consulter tous les offres</h2>
-                    <span>Acceuil > <a href=\"#\">Offre d'emplois</a></span>
-                    <div class=\"buttons\">
-                        <div class=\"main-button\">
-                            <a href=\"{{ path('app_offretravail_chercherdemande') }}\">Cherchers demandes</a>
-                        </div>
-                     
+<div class=\"page-heading normal-space\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
+                <h6>Les offres d'emplois</h6>
+                <h2>Consulter tous les offres</h2>
+                <span>Acceuil > <a href=\"#\">Offre d'emplois</a></span>
+                <div class=\"buttons\">
+                    <div class=\"main-button\">
+                        <a href=\"{{ path('app_offretravail_chercherdemande') }}\">Cherchers demandes</a>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
- <style>
- .notification-item:hover {
-    background-color: #B0E0E6;
-    color: #000000;
-}
+</div>
+<style>
+    .notification-item:hover {
+        background-color: #B0E0E6;
+        color: #000000;
+    }
 
- .notification-item {
-  background-color: white; /* grey color */
-}
- 
- 
- .section-title {
-  border: 1px solid #7453fc; /* add border to the section */
-   border-radius: 20px; /* set the same radius for all corners */
-  padding: 10px; /* add padding to the section */
-  background-color:#7453fc;
-  display: inline-block; /* make the section inline-block so it wraps around its content */
-}
+    .notification-item {
+        background-color: white; /* grey color */
+    }
 
-.section-title {
-  margin: 0; /* remove margin from the title */
-}
 
-.link-style {
-  text-decoration: none; /* remove underline from the link */
-  color: white; /* set link color */
-  font-weight: bold; /* make the link bold */
-  margin-left: 10px; /* add margin to the left of the link */
-}
-.notifications {
-    max-height: 300px;
-    overflow-y: auto;
-}
-.name{color:black;
-*  font-size: 20px;}
-.post{color:grey;
-  font-size: 15px;}
-.dropdown-divider {
-  height: 1px;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  background-color: #e9ecef;
-}
+    .section-title {
+        border: 1px solid #7453fc; /* add border to the section */
+        border-radius: 20px; /* set the same radius for all corners */
+        padding: 10px; /* add padding to the section */
+        background-color: #7453fc;
+        display: inline-block; /* make the section inline-block so it wraps around its content */
+    }
+
+    .section-title {
+        margin: 0; /* remove margin from the title */
+    }
+
+    .link-style {
+        text-decoration: none; /* remove underline from the link */
+        color: white; /* set link color */
+        font-weight: bold; /* make the link bold */
+        margin-left: 10px; /* add margin to the left of the link */
+    }
+
+    .notifications {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .name {
+        color: black;
+        *font-size: 20px;
+    }
+
+    .post {
+        color: grey;
+        font-size: 15px;
+    }
+
+    .dropdown-divider {
+        height: 1px;
+        margin: 0.5rem 0;
+        overflow: hidden;
+        background-color: #e9ecef;
+    }
 
 </style>
 
- <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
-               
-              <div class=\"col-lg-6\">
-                               <div class=\"mini-heading\">
-  <h4 class=\"section-title\">Mes offres</h4></div>
-  
-  <a class=\"link-style\" href=\"{{ path('app_dashboard_offres') }}\"><u>Gérer mes offres</u></a>
- 
-                            </div>
-                          
-    
-    <div class=\"featured-explore\">
-      <div class=\"container-fluid\">
+<div class=\"item-details-page\">
+    <div class=\"container\">
         <div class=\"row\">
-          <div class=\"col-lg-12\">
-            <div class=\"owl-features owl-carousel\">
-           
-\t
-        
-                  {% for offretravail in offretravailbyid %}
-             
-                    
-\t
 
-\t\t<article class=\"postcardcar dark blue\">
-\t\t\t<a class=\"postcardcar__img_link\" href=\"#\">
-\t\t\t\t<img class=\"postcardcar__img\" src=\"https://picsum.photos/1000/1000\"  alt=\"Image Title\" />
-\t\t\t</a>
-\t\t\t<div class=\"postcardcar__text\">
-\t\t\t\t<h1 class=\"postcardcar__title blue\"><a>{{offretravail.titreoffre}}</a></h1>
-\t\t\t\t<div class=\"postcardcar__subtitle small\">
-\t\t\t\t\t<time datetime=\"2020-05-25 12:00:00\">
-\t\t\t\t\t\t<i class=\"fas fa-calendar-alt mr-2\"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
-\t\t\t\t\t</time>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"postcardcar__bar\"></div>
-\t\t\t\t<div class=\"postcardcar__preview-txt\">{{offretravail.descriptionoffre}}</div>
-\t\t\t\t<ul class=\"postcardcar__tagbox\">
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-tag mr-2\"></i>{{ offretravail.categorieoffre }}</li>
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>{{ offretravail.typeoffre }}</li>
-                    \t
+            <div class=\"col-lg-6\">
+                <div class=\"mini-heading\">
+                    <h4 class=\"section-title\">Mes offres</h4></div>
 
-                                
-                        
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-\t\t</article>
+                <a class=\"link-style\" href=\"{{ path('app_dashboard_offres') }}\"><u>Gérer mes offres</u></a>
 
-
-                
-             \t {% endfor %}
             </div>
-         
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-          
-    </div>
- </div>
-
-  <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
 
 
-                  
-                <div class=\"col-lg-12\">
-                    <div class=\"current-bid\">
-                        <div class=\"row\">
-                            <div class=\"col-lg-6\">
-                                <div class=\"mini-heading\">
-                                    <h4>Tous les offres</h4>
-                                </div>
+            <div class=\"featured-explore\">
+                <div class=\"container-fluid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-12\">
+                            <div class=\"owl-features owl-carousel\">
+
+
+                                {% for offretravail in offretravailbyid %}
+
+
+
+
+                                    <article class=\"postcardcar dark blue\">
+                                        <a class=\"postcardcar__img_link\" href=\"#\">
+                                            <img class=\"postcardcar__img\" src=\"https://picsum.photos/1000/1000\"
+                                                 alt=\"Image Title\"/>
+                                        </a>
+                                        <div class=\"postcardcar__text\">
+                                            <h1 class=\"postcardcar__title blue\"><a>{{ offretravail.titreoffre }}</a>
+                                            </h1>
+                                            <div class=\"postcardcar__subtitle small\">
+                                                <time datetime=\"2020-05-25 12:00:00\">
+                                                    <i class=\"fas fa-calendar-alt mr-2\"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
+                                                </time>
+                                            </div>
+                                            <div class=\"postcardcar__bar\"></div>
+                                            <div class=\"postcardcar__preview-txt\">{{ offretravail.descriptionoffre }}</div>
+                                            <ul class=\"postcardcar__tagbox\">
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-tag mr-2\"></i>{{ offretravail.categorieoffre }}
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>{{ offretravail.typeoffre }}
+                                                </li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+
+
+
+                                {% endfor %}
                             </div>
-                            <div class=\"col-lg-6\">
-                                <fieldset>
-                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                      <option selected>Sort By: Latest</option>
-                      <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
-                      <option value=\"low\">Sort By: Lowest</option>
-                      <option value=\"high\">Sort By: Highest</option>
-                  </select>
-                                </fieldset>
-                            </div>
-                              
-                               
-<section class=\"dark\">
 
-\t<div class=\"containercard py-4\">
-\t
-{% for offretravail in offretravails %}
-\t\t<article class=\"postcard dark blue\">
-\t\t\t<a class=\"postcard__img_link\" href=\"#\">
-\t\t\t\t<img class=\"postcard__img\" src=\"https://picsum.photos/1000/1000\" alt=\"Image Title\" />
-\t\t\t</a>
-\t\t\t<div class=\"postcard__text\">
-\t\t\t\t<h1 class=\"postcard__title blue\"><a>{{offretravail.titreoffre}}</a></h1>
-\t\t\t\t<div class=\"postcard__subtitle small\">
-\t\t\t\t\t<time datetime=\"2020-05-25 12:00:00\">
-\t\t\t\t\t\t<i class=\"fas fa-calendar-alt mr-2\"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
-\t\t\t\t\t</time>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"postcard__bar\"></div>
-\t\t\t\t<div class=\"postcard__preview-txt\">{{offretravail.descriptionoffre}}</div>
-\t\t\t\t<ul class=\"postcard__tagbox\">
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-tag mr-2\"></i>{{ offretravail.categorieoffre }}</li>
-\t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>{{ offretravail.typeoffre }}</li>
-                    \t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>{{ offretravail.localisationoffre }}</li>
-\t\t\t\t
-                        
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-\t\t</article>
-\t {% endfor %}
-\t</div>
-    <div>
-
-{{ knp_pagination_render(
-           offretravails,
-            '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
-            {
-                'queryParam1': 'param1 value',
-                'queryParam2': 'param2 value'
-            },
-            {
-                'align': 'center',
-                 
-            },
-        ) }}
-</div>  
-</section>
-                           
-                    
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class=\"item-details-page\">
+    <div class=\"container\">
+        <div class=\"row\">
+
+
+            <div class=\"col-lg-12\">
+                <div class=\"current-bid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-6\">
+                            <div class=\"mini-heading\">
+                                <h4>Tous les offres</h4>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-6\">
+                            <fieldset>
+                                <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                        id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                    <option selected>Sort By: Latest</option>
+                                    <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
+                                    <option value=\"low\">Sort By: Lowest</option>
+                                    <option value=\"high\">Sort By: Highest</option>
+                                </select>
+                            </fieldset>
+                        </div>
+
+
+                        <section class=\"dark\">
+
+                            <div class=\"containercard py-4\">
+
+                                {% for offretravail in offretravails %}
+                                    <article class=\"postcard dark blue\">
+                                        <a class=\"postcard__img_link\" href=\"#\">
+                                            <img class=\"postcard__img\" src=\"https://picsum.photos/1000/1000\"
+                                                 alt=\"Image Title\"/>
+                                        </a>
+                                        <div class=\"postcard__text\">
+                                            <h1 class=\"postcard__title blue\"><a>{{ offretravail.titreoffre }}</a></h1>
+                                            <div class=\"postcard__subtitle small\">
+                                                <time datetime=\"2020-05-25 12:00:00\">
+                                                    <i class=\"fas fa-calendar-alt mr-2\"></i>{{ offretravail.dateajoutoofre ? offretravail.dateajoutoofre|date('Y-m-d H:i:s') : '' }}
+                                                </time>
+                                            </div>
+                                            <div class=\"postcard__bar\"></div>
+                                            <div class=\"postcard__preview-txt\">{{ offretravail.descriptionoffre }}</div>
+                                            <ul class=\"postcard__tagbox\">
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-tag mr-2\"></i>{{ offretravail.categorieoffre }}
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>{{ offretravail.typeoffre }}
+                                                </li>
+                                                <li class=\"tag__item\"><i
+                                                            class=\"fas fa-clock mr-2\"></i>{{ offretravail.localisationoffre }}
+                                                </li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+                            </div>
+                            <div>
+
+                                {{ knp_pagination_render(
+                                    offretravails,
+                                    '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
+                                    {
+                                        'queryParam1': 'param1 value',
+                                        'queryParam2': 'param2 value'
+                                    },
+                                    {
+                                        'align': 'center',
+
+                                    },
+                                ) }}
+                            </div>
+                        </section>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    
 
-    <footer>
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp; Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"{{asset('https://templatemo.com')}}\" target=\"_blank\">TemplateMo</a></p>
-                </div>
+<footer>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-12\">
+                <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp;
+                    Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\"
+                                   href=\"{{ asset('https://templatemo.com') }}\" target=\"_blank\">TemplateMo</a></p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-   
 
-    text-alig
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-      <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
-    <script src=\"{{asset('vendor/bootstrap/js/bootstrap.min.js')}}\"></script>
-
-    <script src=\"{{asset('assets/js/isotope.min.js')}}\"></script>
-    <script src=\"assets/js/owl-carousel.js')}}\"></script>
-
-    <script src=\"{{asset('assets/js/tabs.js')}}\"></script>
-    <script src=\"{{asset('assets/js/popup.js')}}\"></script>
-    <script src=\"{{asset('assets/js/custom.js')}}\"></script>
-    
-<script src=\"{{asset('https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js')}}\" integrity=\"sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
-    <!-- JavaScript -->
-      <!--Uncomment this line-->
-       <script src=\"{{asset('assets/index.js')}}\"></script> 
-       <script src=\"{{asset('js/jquery-3.3.1.min.js')}}\"></script>
-    <script src=\"{{asset('js/bootstrap.min.js')}}\"></script>
-    <script src=\"{{asset('js/jquery.magnific-popup.min.js')}}\"></script>
-    <script src=\"{{asset('js/mixitup.min.js')}}\"></script>
-      <script src=\"{{asset('js/test.js')}}\"></script>
-    <script src=\"{{asset('js/masonry.pkgd.min.js')}}\"></script>
-    <script src=\"{{asset('js/jquery.slicknav.js')}}\"></script>
-    <script src=\"{{asset('js/owl.carousel.min.js')}}\"></script>
-    <script src=\"{{asset('js/main.js')}}\"></script>
-     <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/bootstrap/js/bootstrap.min.js')}}\"></script>
-
-  <script src=\"{{asset('assets/js/isotope.min.js')}}\"></script>
-  {% block javascripts %}
-{# <script src=\"vendor/jquery/jquery.min.js\"></script> #}
- <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
- 
-{# <script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script> #}
+text-alig
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
 <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
 
-{# <script src=\"assets/js/isotope.min.js\"></script> #}
 <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+<script src=\"assets/js/owl-carousel.js')}}\"></script>
 
-{# <script src=\"assets/js/owl-carousel.js\"></script> #}
-<script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
-
-{# <script src=\"assets/js/tabs.js\"></script> #}
 <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
-
-{# <script src=\"assets/js/popup.js\"></script> #}
 <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
-
-{# <script src=\"assets/js/custom.js\"></script>  #}
 <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+
+<script src=\"{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js') }}\"
+        integrity=\"sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==\"
+        crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<!-- JavaScript -->
+<!--Uncomment this line-->
+<script src=\"{{ asset('assets/index.js') }}\"></script>
+<script src=\"{{ asset('js/jquery-3.3.1.min.js') }}\"></script>
+<script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
+<script src=\"{{ asset('js/jquery.magnific-popup.min.js') }}\"></script>
+<script src=\"{{ asset('js/mixitup.min.js') }}\"></script>
+<script src=\"{{ asset('js/test.js') }}\"></script>
+<script src=\"{{ asset('js/masonry.pkgd.min.js') }}\"></script>
+<script src=\"{{ asset('js/jquery.slicknav.js') }}\"></script>
+<script src=\"{{ asset('js/owl.carousel.min.js') }}\"></script>
+<script src=\"{{ asset('js/main.js') }}\"></script>
+<script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
+<script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
+
+<script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+{% block javascripts %}
+    {# <script src=\"vendor/jquery/jquery.min.js\"></script> #}
+    <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
+
+    {# <script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script> #}
+    <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
+
+    {# <script src=\"assets/js/isotope.min.js\"></script> #}
+    <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+
+    {# <script src=\"assets/js/owl-carousel.js\"></script> #}
+    <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
+
+    {# <script src=\"assets/js/tabs.js\"></script> #}
+    <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
+
+    {# <script src=\"assets/js/popup.js\"></script> #}
+    <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
+
+    {# <script src=\"assets/js/custom.js\"></script>  #}
+    <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
 {% endblock %}
 
-    <script src=\"{{asset('https://unpkg.com/swiper/swiper-bundle.min.js')}}\"></script>
+<script src=\"{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js') }}\"></script>
 
 </body>
 

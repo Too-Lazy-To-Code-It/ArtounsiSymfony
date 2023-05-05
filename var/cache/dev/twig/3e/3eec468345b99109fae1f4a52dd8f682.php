@@ -40,75 +40,75 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "produits_back/edit.html.twig"));
 
         // line 1
-        echo "
-<!DOCTYPE html>
+        echo "<!DOCTYPE html>
 <html lang=\"en\">
-  <head>
+<head>
     <meta charset=\"utf-8\">
     <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
-  
+
     <title>Forms / Layouts - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
-  
+
     <!-- Favicons -->
-  <link href=\"";
-        // line 13
+    <link href=\"";
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
-  <link href=\"";
-        // line 14
+    <link href=\"";
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/apple-touch-icon.png"), "html", null, true);
         echo "\" rel=\"apple-touch-icon\">
 
-  <!-- Google Fonts -->
-  <link href=\"";
-        // line 17
+    <!-- Google Fonts -->
+    <link href=\"";
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.gstatic.com"), "html", null, true);
         echo "\" rel=\"preconnect\">
-  <link href=\"";
-        // line 18
+    <link href=\"";
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        echo "\"
+          rel=\"stylesheet\">
 
-  <!-- Vendor CSS Files -->
+    <!-- Vendor CSS Files -->
 
-  <link href=\"";
+    <link href=\"";
         // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/boxicons/css/boxicons.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.snow.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.bubble.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/remixicon/remixicon.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  <link href=\"";
+    <link href=\"";
         // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
-  <!-- Template Main CSS File -->
+    <!-- Template Main CSS File -->
 
- <link href=\"";
+    <link href=\"";
         // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  
+
     <!-- =======================================================
     * Template Name: NiceAdmin
     * Updated: Mar 09 2023 with Bootstrap v5.2.3
@@ -116,819 +116,705 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-  </head>
 
 
-  <body>
+    <style>
+        .error-message {
+            color: red;
 
-    <!-- ======= Header ======= -->
-    <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
-  
-      <div class=\"d-flex align-items-center justify-content-between\">
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
+
+    <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-          <img src=\"assets/img/logo.png\" alt=\"\">
-          <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"assets/img/logo.png\" alt=\"\">
+            <span class=\"d-none d-lg-block\">NiceAdmin</span>
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-      </div><!-- End Logo -->
-  
-      <div class=\"search-bar\">
+    </div><!-- End Logo -->
+
+    <div class=\"search-bar\">
         <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-          <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-          <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+            <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+            <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
         </form>
-      </div><!-- End Search Bar -->
-  
-      <nav class=\"header-nav ms-auto\">
+    </div><!-- End Search Bar -->
+
+    <nav class=\"header-nav ms-auto\">
         <ul class=\"d-flex align-items-center\">
-  
-          <li class=\"nav-item d-block d-lg-none\">
-            <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-              <i class=\"bi bi-search\"></i>
-            </a>
-          </li><!-- End Search Icon-->
-  
-          <li class=\"nav-item dropdown\">
-  
-            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <i class=\"bi bi-bell\"></i>
-              <span class=\"badge bg-primary badge-number\">4</span>
-            </a><!-- End Notification Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-              <li class=\"dropdown-header\">
-                You have 4 new notifications
-                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-exclamation-circle text-warning\"></i>
-                <div>
-                  <h4>Lorem Ipsum</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>30 min. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-x-circle text-danger\"></i>
-                <div>
-                  <h4>Atque rerum nesciunt</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>1 hr. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-check-circle text-success\"></i>
-                <div>
-                  <h4>Sit rerum fuga</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>2 hrs. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-info-circle text-primary\"></i>
-                <div>
-                  <h4>Dicta reprehenderit</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-              <li class=\"dropdown-footer\">
-                <a href=\"#\">Show all notifications</a>
-              </li>
-  
-            </ul><!-- End Notification Dropdown Items -->
-  
-          </li><!-- End Notification Nav -->
-  
-          <li class=\"nav-item dropdown\">
-  
-            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <i class=\"bi bi-chat-left-text\"></i>
-              <span class=\"badge bg-success badge-number\">3</span>
-            </a><!-- End Messages Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-              <li class=\"dropdown-header\">
-                You have 3 new messages
-                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>Maria Hudson</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>4 hrs. ago</p>
-                  </div>
+
+            <li class=\"nav-item d-block d-lg-none\">
+                <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+                    <i class=\"bi bi-search\"></i>
                 </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>Anna Nelson</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>6 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>David Muldon</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>8 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"dropdown-footer\">
-                <a href=\"#\">Show all messages</a>
-              </li>
-  
-            </ul><!-- End Messages Dropdown Items -->
-  
-          </li><!-- End Messages Nav -->
-  
-          <li class=\"nav-item dropdown pe-3\">
-  
-            <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-              <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-            </a><!-- End Profile Iamge Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-              <li class=\"dropdown-header\">
-                <h6>Kevin Anderson</h6>
-                <span>Web Designer</span>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                  <i class=\"bi bi-person\"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                  <i class=\"bi bi-gear\"></i>
-                  <span>Account Settings</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                  <i class=\"bi bi-question-circle\"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                  <i class=\"bi bi-box-arrow-right\"></i>
-                  <span>Sign Out</span>
-                </a>
-              </li>
-  
-            </ul><!-- End Profile Dropdown Items -->
-          </li><!-- End Profile Nav -->
-  
+            </li><!-- End Search Icon-->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-bell\"></i>
+                    <span class=\"badge bg-primary badge-number\">4</span>
+                </a><!-- End Notification Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+                    <li class=\"dropdown-header\">
+                        You have 4 new notifications
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-x-circle text-danger\"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-check-circle text-success\"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-info-circle text-primary\"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-chat-left-text\"></i>
+                    <span class=\"badge bg-success badge-number\">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+                    <li class=\"dropdown-header\">
+                        You have 3 new messages
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all messages</a>
+                    </li>
+
+                </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav -->
+
+            <li class=\"nav-item dropdown pe-3\">
+
+                <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+                    <li class=\"dropdown-header\">
+                        <h6>Kevin Anderson</h6>
+                        <span>Web Designer</span>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-person\"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-gear\"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                            <i class=\"bi bi-question-circle\"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                            <i class=\"bi bi-box-arrow-right\"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
         </ul>
-      </nav><!-- End Icons Navigation -->
-  
-    </header><!-- End Header -->
-  
-    <!-- ======= Sidebar ======= -->
-    <aside id=\"sidebar\" class=\"sidebar\">
-  
-      <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
-  
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id=\"sidebar\" class=\"sidebar\">
+
+    <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"index.html\">
-            <i class=\"bi bi-grid\"></i>
-            <span>Dashboard</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"index.html\">
+                <i class=\"bi bi-grid\"></i>
+                <span>Dashboard</span>
+            </a>
         </li><!-- End Dashboard Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"components-alerts.html\">
-                <i class=\"bi bi-circle\"></i><span>Alerts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-accordion.html\">
-                <i class=\"bi bi-circle\"></i><span>Accordion</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-badges.html\">
-                <i class=\"bi bi-circle\"></i><span>Badges</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-breadcrumbs.html\">
-                <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-buttons.html\">
-                <i class=\"bi bi-circle\"></i><span>Buttons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-cards.html\">
-                <i class=\"bi bi-circle\"></i><span>Cards</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-carousel.html\">
-                <i class=\"bi bi-circle\"></i><span>Carousel</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-list-group.html\">
-                <i class=\"bi bi-circle\"></i><span>List group</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-modal.html\">
-                <i class=\"bi bi-circle\"></i><span>Modal</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-tabs.html\">
-                <i class=\"bi bi-circle\"></i><span>Tabs</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-pagination.html\">
-                <i class=\"bi bi-circle\"></i><span>Pagination</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-progress.html\">
-                <i class=\"bi bi-circle\"></i><span>Progress</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-spinners.html\">
-                <i class=\"bi bi-circle\"></i><span>Spinners</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-tooltips.html\">
-                <i class=\"bi bi-circle\"></i><span>Tooltips</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"components-alerts.html\">
+                        <i class=\"bi bi-circle\"></i><span>Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-accordion.html\">
+                        <i class=\"bi bi-circle\"></i><span>Accordion</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-badges.html\">
+                        <i class=\"bi bi-circle\"></i><span>Badges</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-breadcrumbs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-buttons.html\">
+                        <i class=\"bi bi-circle\"></i><span>Buttons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-cards.html\">
+                        <i class=\"bi bi-circle\"></i><span>Cards</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-carousel.html\">
+                        <i class=\"bi bi-circle\"></i><span>Carousel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-list-group.html\">
+                        <i class=\"bi bi-circle\"></i><span>List group</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-modal.html\">
+                        <i class=\"bi bi-circle\"></i><span>Modal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-tabs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Tabs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-pagination.html\">
+                        <i class=\"bi bi-circle\"></i><span>Pagination</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-progress.html\">
+                        <i class=\"bi bi-circle\"></i><span>Progress</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-spinners.html\">
+                        <i class=\"bi bi-circle\"></i><span>Spinners</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-tooltips.html\">
+                        <i class=\"bi bi-circle\"></i><span>Tooltips</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Components Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link \" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link \" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
+
+                <li>
+                    <a href=\"";
+        // line 382
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+                        <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
+                    </a>
+                </li>
+
+            </ul>
         </li><!-- End Forms Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i
+                        class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"";
+        // line 397
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
+        echo "\">
+                        <i class=\"bi bi-circle\"></i><span>Shop</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Tables Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"charts-chartjs.html\">
-                <i class=\"bi bi-circle\"></i><span>Chart.js</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"charts-apexcharts.html\">
-                <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"charts-echarts.html\">
-                <i class=\"bi bi-circle\"></i><span>ECharts</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"charts-chartjs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Chart.js</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"charts-apexcharts.html\">
+                        <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"charts-echarts.html\">
+                        <i class=\"bi bi-circle\"></i><span>ECharts</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Charts Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"icons-bootstrap.html\">
-                <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"icons-remix.html\">
-                <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"icons-boxicons.html\">
-                <i class=\"bi bi-circle\"></i><span>Boxicons</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"icons-bootstrap.html\">
+                        <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"icons-remix.html\">
+                        <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"icons-boxicons.html\">
+                        <i class=\"bi bi-circle\"></i><span>Boxicons</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Icons Nav -->
-  
+
         <li class=\"nav-heading\">Pages</li>
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"users-profile.html\">
-            <i class=\"bi bi-person\"></i>
-            <span>Profile</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"users-profile.html\">
+                <i class=\"bi bi-person\"></i>
+                <span>Profile</span>
+            </a>
         </li><!-- End Profile Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
-            <i class=\"bi bi-question-circle\"></i>
-            <span>F.A.Q</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
+                <i class=\"bi bi-question-circle\"></i>
+                <span>F.A.Q</span>
+            </a>
         </li><!-- End F.A.Q Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
-            <i class=\"bi bi-envelope\"></i>
-            <span>Contact</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
+                <i class=\"bi bi-envelope\"></i>
+                <span>Contact</span>
+            </a>
         </li><!-- End Contact Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-register.html\">
-            <i class=\"bi bi-card-list\"></i>
-            <span>Register</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-register.html\">
+                <i class=\"bi bi-card-list\"></i>
+                <span>Register</span>
+            </a>
         </li><!-- End Register Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-login.html\">
-            <i class=\"bi bi-box-arrow-in-right\"></i>
-            <span>Login</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-login.html\">
+                <i class=\"bi bi-box-arrow-in-right\"></i>
+                <span>Login</span>
+            </a>
         </li><!-- End Login Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
-            <i class=\"bi bi-dash-circle\"></i>
-            <span>Error 404</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
+                <i class=\"bi bi-dash-circle\"></i>
+                <span>Error 404</span>
+            </a>
         </li><!-- End Error 404 Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
-            <i class=\"bi bi-file-earmark\"></i>
-            <span>Blank</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
+                <i class=\"bi bi-file-earmark\"></i>
+                <span>Blank</span>
+            </a>
         </li><!-- End Blank Page Nav -->
-  
-      </ul>
-  
-    </aside><!-- End Sidebar-->
-  
-    <main id=\"main\" class=\"main\">
-  
-      <div class=\"pagetitle\">
+
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id=\"main\" class=\"main\">
+
+    <div class=\"pagetitle\">
         <h1>Form Layouts</h1>
         <nav>
-          <ol class=\"breadcrumb\">
-            <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
-            <li class=\"breadcrumb-item\">Forms</li>
-            <li class=\"breadcrumb-item active\">Layouts</li>
-          </ol>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
+                <li class=\"breadcrumb-item\">Forms</li>
+                <li class=\"breadcrumb-item active\">Layouts</li>
+            </ol>
         </nav>
-      </div><!-- End Page Title -->
-      <section class=\"section\">
+    </div><!-- End Page Title -->
+    <section class=\"section\">
         <div class=\"row\">
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Horizontal Form</h5>
-  
-                <!-- Horizontal Form -->
-                <form>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Your Name</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"text\" class=\"form-control\" id=\"inputText\">
+            <div class=\"col-lg-12\">
+
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Horizontal Form</h5>
+                        ";
+        // line 524
+        $context["nomField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 524, $this->source); })()), "nom", [], "any", false, false, false, 524);
+        // line 525
+        echo "                        ";
+        $context["descriptionField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 525, $this->source); })()), "description", [], "any", false, false, false, 525);
+        // line 526
+        echo "                        ";
+        $context["prixField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 526, $this->source); })()), "prix", [], "any", false, false, false, 526);
+        // line 527
+        echo "                        ";
+        $context["idcategorieField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 527, $this->source); })()), "idcategorie", [], "any", false, false, false, 527);
+        // line 528
+        echo "                        ";
+        $context["imageField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 528, $this->source); })()), "image", [], "any", false, false, false, 528);
+        // line 529
+        echo "                        <!-- Horizontal Form -->
+                        ";
+        // line 530
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 530, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
+        echo "
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 534
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 534, $this->source); })()), 'label', ["label" => "Nom du produit"]);
+        echo "
+                                ";
+        // line 535
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 535, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        echo "
+
+                                <div class=\"error-message\">   ";
+        // line 537
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 537, $this->source); })()), 'errors');
+        echo "</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 543
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 543, $this->source); })()), 'label', ["label" => "Description du produit"]);
+        echo "
+                                ";
+        // line 544
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 544, $this->source); })()), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        echo "
+
+                                <div class=\"error-message\">";
+        // line 546
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 546, $this->source); })()), 'errors');
+        echo "</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 552
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 552, $this->source); })()), 'label', ["label" => "Prix du produit"]);
+        echo "
+                                ";
+        // line 553
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 553, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        echo "
+
+                                <div class=\"error-message\"> ";
+        // line 555
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 555, $this->source); })()), 'errors');
+        echo "</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+                            <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
+                            <div class=\"col-sm-10\">
+                                ";
+        // line 561
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 561, $this->source); })()), "image", [], "any", false, false, false, 561))) {
+            // line 562
+            echo "                                    <img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 562, $this->source); })()), "image", [], "any", false, false, false, 562))), "html", null, true);
+            echo "\"
+                                         alt=\"";
+            // line 563
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 563, $this->source); })()), "nom", [], "any", false, false, false, 563), "html", null, true);
+            echo "\" style=\"border-radius: 20px; min-width: 195px;\">
+                                    <br><br>
+                                    <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"";
+            // line 565
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 565, $this->source); })()), "image", [], "any", false, false, false, 565), "html", null, true);
+            echo "\">
+                                ";
+        }
+        // line 567
+        echo "
+                                ";
+        // line 568
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 568, $this->source); })()), 'widget', ["attr" => ["type" => "file"]]);
+        echo "
+                                ";
+        // line 569
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 569, $this->source); })()), 'errors');
+        echo "
+                            </div>
+                        </div>
+                        <fieldset class=\"row mb-3\">
+                            <div class=\"col-md-4\">
+                                ";
+        // line 574
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 574, $this->source); })()), 'label', ["label" => "Catégorie du produit"]);
+        echo "
+                                ";
+        // line 575
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 575, $this->source); })()), 'widget', ["attr" => ["class" => "main-button", "autocomplete" => "on"]]);
+        echo "
+                                ";
+        // line 576
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 576, $this->source); })()), 'errors');
+        echo "
+                            </div>
+                        </fieldset>
+
+                        <div class=\"text-center\">
+                            <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+                            <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
+                        </div>
+                        ";
+        // line 584
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 584, $this->source); })()), 'form_end');
+        echo "
+
+
                     </div>
-                  </div>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"email\" class=\"form-control\" id=\"inputEmail\">
-                    </div>
-                  </div>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
-                    </div>
-                  </div>
-                  <fieldset class=\"row mb-3\">
-                    <legend class=\"col-form-label col-sm-2 pt-0\">Radios</legend>
-                    <div class=\"col-sm-10\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios1\" value=\"option1\" checked=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios1\">
-                          First radio
-                        </label>
-                      </div>
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios2\" value=\"option2\">
-                        <label class=\"form-check-label\" for=\"gridRadios2\">
-                          Second radio
-                        </label>
-                      </div>
-                      <div class=\"form-check disabled\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios3\" value=\"option3\" disabled=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios3\">
-                          Third disabled radio
-                        </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class=\"row mb-3\">
-                    <div class=\"col-sm-10 offset-sm-2\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck1\">
-                        <label class=\"form-check-label\" for=\"gridCheck1\">
-                          Example checkbox
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Horizontal Form -->
-  
-              </div>
+                </div>
             </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Multi Columns Form</h5>
-  
-                <!-- Multi Columns Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <label for=\"inputName5\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputName5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputEmail5\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputPassword5\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword5\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress5\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddres5s\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress2\" class=\"form-label\">Address 2</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" placeholder=\"Apartment, studio, or floor\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputCity\" class=\"form-label\">City</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputCity\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <label for=\"inputState\" class=\"form-label\">State</label>
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <label for=\"inputZip\" class=\"form-label\">Zip</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputZip\">
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-check\">
-                      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-                      <label class=\"form-check-label\" for=\"gridCheck\">
-                        Check me out
-                      </label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Multi Columns Form -->
-  
-              </div>
-            </div>
-  
-          </div>
-  
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Vertical Form</h5>
-  
-                <!-- Vertical Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-12\">
-                    <label for=\"inputNanme4\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputNanme4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputEmail4\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputPassword4\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- Vertical Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">No Labels / Placeholders as labels Form</h5>
-  
-                <!-- No Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Your Name\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"email\" class=\"form-control\" placeholder=\"Email\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"password\" class=\"form-control\" placeholder=\"Password\">
-                  </div>
-                  <div class=\"col-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Address\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"City\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Zip\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End No Labels Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Floating labels Form</h5>
-  
-                <!-- Floating Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingName\" placeholder=\"Your Name\">
-                      <label for=\"floatingName\">Your Name</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"email\" class=\"form-control\" id=\"floatingEmail\" placeholder=\"Your Email\">
-                      <label for=\"floatingEmail\">Your Email</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"password\" class=\"form-control\" id=\"floatingPassword\" placeholder=\"Password\">
-                      <label for=\"floatingPassword\">Password</label>
-                    </div>
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-floating\">
-                      <textarea class=\"form-control\" placeholder=\"Address\" id=\"floatingTextarea\" style=\"height: 100px;\"></textarea>
-                      <label for=\"floatingTextarea\">Address</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"col-md-12\">
-                      <div class=\"form-floating\">
-                        <input type=\"text\" class=\"form-control\" id=\"floatingCity\" placeholder=\"City\">
-                        <label for=\"floatingCity\">City</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"col-md-4\">
-                    <div class=\"form-floating mb-3\">
-                      <select class=\"form-select\" id=\"floatingSelect\" aria-label=\"State\">
-                        <option selected=\"\">New York</option>
-                        <option value=\"1\">Oregon</option>
-                        <option value=\"2\">DC</option>
-                      </select>
-                      <label for=\"floatingSelect\">State</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingZip\" placeholder=\"Zip\">
-                      <label for=\"floatingZip\">Zip</label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End floating Labels Form -->
-  
-              </div>
-            </div>
-  
-          </div>
         </div>
-      </section>
-  
-    </main><!-- End #main -->
-  
-    <!-- ======= Footer ======= -->
-    <footer id=\"footer\" class=\"footer\">
-      <div class=\"copyright\">
+    </section>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id=\"footer\" class=\"footer\">
+    <div class=\"copyright\">
         © Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-      </div>
-      <div class=\"credits\">
+    </div>
+    <div class=\"credits\">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
         Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
-      </div>
-    </footer><!-- End Footer -->
-  
-    <a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
-  
-    <!-- Vendor JS Files -->
-  <script src=\"";
-        // line 812
+    </div>
+</footer><!-- End Footer -->
+
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
+
+<!-- Vendor JS Files -->
+<script src=\"";
+        // line 613
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 813
+<script src=\"";
+        // line 614
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 814
+<script src=\"";
+        // line 615
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 815
+<script src=\"";
+        // line 616
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 816
+<script src=\"";
+        // line 617
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 817
+<script src=\"";
+        // line 618
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 818
+<script src=\"";
+        // line 619
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
-  <script src=\"";
-        // line 819
+<script src=\"";
+        // line 620
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
-  
-  <!-- Template Main JS File -->
-  <script src=\"";
-        // line 823
+
+<!-- Template Main JS File -->
+<script src=\"";
+        // line 624
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main2.js"), "html", null, true);
         echo "\"></script>
-  
-  
-  <svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path id=\"SvgjsPath1004\" d=\"M0 0 \"></path></svg></body>
+
+
+<svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"
+     xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\"
+     style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\">
+    <defs id=\"SvgjsDefs1002\"></defs>
+    <polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline>
+    <path id=\"SvgjsPath1004\" d=\"M0 0 \"></path>
+</svg>
+</body>
 
 
 </html>";
@@ -952,44 +838,44 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  927 => 823,  920 => 819,  916 => 818,  912 => 817,  908 => 816,  904 => 815,  900 => 814,  896 => 813,  892 => 812,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  806 => 624,  799 => 620,  795 => 619,  791 => 618,  787 => 617,  783 => 616,  779 => 615,  775 => 614,  771 => 613,  739 => 584,  728 => 576,  724 => 575,  720 => 574,  712 => 569,  708 => 568,  705 => 567,  700 => 565,  695 => 563,  690 => 562,  688 => 561,  679 => 555,  674 => 553,  670 => 552,  661 => 546,  656 => 544,  652 => 543,  643 => 537,  638 => 535,  634 => 534,  627 => 530,  624 => 529,  621 => 528,  618 => 527,  615 => 526,  612 => 525,  610 => 524,  480 => 397,  462 => 382,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-<!DOCTYPE html>
+        return new Source("<!DOCTYPE html>
 <html lang=\"en\">
-  <head>
+<head>
     <meta charset=\"utf-8\">
     <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
-  
+
     <title>Forms / Layouts - NiceAdmin Bootstrap Template</title>
     <meta content=\"\" name=\"description\">
     <meta content=\"\" name=\"keywords\">
-  
+
     <!-- Favicons -->
-  <link href=\"{{asset('assets2/img/favicon.png')}}\" rel=\"icon\">
-  <link href=\"{{asset('assets2/img/apple-touch-icon.png')}}\" rel=\"apple-touch-icon\">
+    <link href=\"{{ asset('assets2/img/favicon.png') }}\" rel=\"icon\">
+    <link href=\"{{ asset('assets2/img/apple-touch-icon.png') }}\" rel=\"apple-touch-icon\">
 
-  <!-- Google Fonts -->
-  <link href=\"{{asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
-  <link href=\"{{asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\" rel=\"stylesheet\">
+    <!-- Google Fonts -->
+    <link href=\"{{ asset('https://fonts.gstatic.com') }}\" rel=\"preconnect\">
+    <link href=\"{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}\"
+          rel=\"stylesheet\">
 
-  <!-- Vendor CSS Files -->
+    <!-- Vendor CSS Files -->
 
-  <link href=\"{{asset('vendor2/bootstrap/css/bootstrap.min.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/bootstrap-icons/bootstrap-icons.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/boxicons/css/boxicons.min.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/quill/quill.snow.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/quill/quill.bubble.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/remixicon/remixicon.css')}}\" rel=\"stylesheet\">
-  <link href=\"{{asset('vendor2/simple-datatables/style.css')}}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/bootstrap-icons/bootstrap-icons.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/boxicons/css/boxicons.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/quill/quill.snow.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/quill/quill.bubble.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/remixicon/remixicon.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('vendor2/simple-datatables/style.css') }}\" rel=\"stylesheet\">
 
-  <!-- Template Main CSS File -->
+    <!-- Template Main CSS File -->
 
- <link href=\"{{asset('assets2/css/style.css')}}\" rel=\"stylesheet\">
-  
+    <link href=\"{{ asset('assets2/css/style.css') }}\" rel=\"stylesheet\">
+
     <!-- =======================================================
     * Template Name: NiceAdmin
     * Updated: Mar 09 2023 with Bootstrap v5.2.3
@@ -997,792 +883,600 @@ class __TwigTemplate_23c6bfd39d77a5477c4aa635af0866e2 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-  </head>
 
 
-  <body>
+    <style>
+        .error-message {
+            color: red;
 
-    <!-- ======= Header ======= -->
-    <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
-  
-      <div class=\"d-flex align-items-center justify-content-between\">
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
+
+    <div class=\"d-flex align-items-center justify-content-between\">
         <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-          <img src=\"assets/img/logo.png\" alt=\"\">
-          <span class=\"d-none d-lg-block\">NiceAdmin</span>
+            <img src=\"assets/img/logo.png\" alt=\"\">
+            <span class=\"d-none d-lg-block\">NiceAdmin</span>
         </a>
         <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-      </div><!-- End Logo -->
-  
-      <div class=\"search-bar\">
+    </div><!-- End Logo -->
+
+    <div class=\"search-bar\">
         <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-          <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-          <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+            <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+            <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
         </form>
-      </div><!-- End Search Bar -->
-  
-      <nav class=\"header-nav ms-auto\">
+    </div><!-- End Search Bar -->
+
+    <nav class=\"header-nav ms-auto\">
         <ul class=\"d-flex align-items-center\">
-  
-          <li class=\"nav-item d-block d-lg-none\">
-            <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-              <i class=\"bi bi-search\"></i>
-            </a>
-          </li><!-- End Search Icon-->
-  
-          <li class=\"nav-item dropdown\">
-  
-            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <i class=\"bi bi-bell\"></i>
-              <span class=\"badge bg-primary badge-number\">4</span>
-            </a><!-- End Notification Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-              <li class=\"dropdown-header\">
-                You have 4 new notifications
-                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-exclamation-circle text-warning\"></i>
-                <div>
-                  <h4>Lorem Ipsum</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>30 min. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-x-circle text-danger\"></i>
-                <div>
-                  <h4>Atque rerum nesciunt</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>1 hr. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-check-circle text-success\"></i>
-                <div>
-                  <h4>Sit rerum fuga</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>2 hrs. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"notification-item\">
-                <i class=\"bi bi-info-circle text-primary\"></i>
-                <div>
-                  <h4>Dicta reprehenderit</h4>
-                  <p>Quae dolorem earum veritatis oditseno</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </li>
-  
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-              <li class=\"dropdown-footer\">
-                <a href=\"#\">Show all notifications</a>
-              </li>
-  
-            </ul><!-- End Notification Dropdown Items -->
-  
-          </li><!-- End Notification Nav -->
-  
-          <li class=\"nav-item dropdown\">
-  
-            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <i class=\"bi bi-chat-left-text\"></i>
-              <span class=\"badge bg-success badge-number\">3</span>
-            </a><!-- End Messages Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-              <li class=\"dropdown-header\">
-                You have 3 new messages
-                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>Maria Hudson</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>4 hrs. ago</p>
-                  </div>
+
+            <li class=\"nav-item d-block d-lg-none\">
+                <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+                    <i class=\"bi bi-search\"></i>
                 </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>Anna Nelson</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>6 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"message-item\">
-                <a href=\"#\">
-                  <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
-                  <div>
-                    <h4>David Muldon</h4>
-                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                    <p>8 hrs. ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li class=\"dropdown-footer\">
-                <a href=\"#\">Show all messages</a>
-              </li>
-  
-            </ul><!-- End Messages Dropdown Items -->
-  
-          </li><!-- End Messages Nav -->
-  
-          <li class=\"nav-item dropdown pe-3\">
-  
-            <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-              <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
-              <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-            </a><!-- End Profile Iamge Icon -->
-  
-            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-              <li class=\"dropdown-header\">
-                <h6>Kevin Anderson</h6>
-                <span>Web Designer</span>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                  <i class=\"bi bi-person\"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                  <i class=\"bi bi-gear\"></i>
-                  <span>Account Settings</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                  <i class=\"bi bi-question-circle\"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
-              <li>
-                <hr class=\"dropdown-divider\">
-              </li>
-  
-              <li>
-                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                  <i class=\"bi bi-box-arrow-right\"></i>
-                  <span>Sign Out</span>
-                </a>
-              </li>
-  
-            </ul><!-- End Profile Dropdown Items -->
-          </li><!-- End Profile Nav -->
-  
+            </li><!-- End Search Icon-->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-bell\"></i>
+                    <span class=\"badge bg-primary badge-number\">4</span>
+                </a><!-- End Notification Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+                    <li class=\"dropdown-header\">
+                        You have 4 new notifications
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-exclamation-circle text-warning\"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-x-circle text-danger\"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-check-circle text-success\"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"notification-item\">
+                        <i class=\"bi bi-info-circle text-primary\"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class=\"nav-item dropdown\">
+
+                <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <i class=\"bi bi-chat-left-text\"></i>
+                    <span class=\"badge bg-success badge-number\">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+                    <li class=\"dropdown-header\">
+                        You have 3 new messages
+                        <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"message-item\">
+                        <a href=\"#\">
+                            <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li class=\"dropdown-footer\">
+                        <a href=\"#\">Show all messages</a>
+                    </li>
+
+                </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav -->
+
+            <li class=\"nav-item dropdown pe-3\">
+
+                <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+                    <img src=\"assets/img/profile-img.jpg\" alt=\"Profile\" class=\"rounded-circle\">
+                    <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+                    <li class=\"dropdown-header\">
+                        <h6>Kevin Anderson</h6>
+                        <span>Web Designer</span>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-person\"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                            <i class=\"bi bi-gear\"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                            <i class=\"bi bi-question-circle\"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class=\"dropdown-divider\">
+                    </li>
+
+                    <li>
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                            <i class=\"bi bi-box-arrow-right\"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
         </ul>
-      </nav><!-- End Icons Navigation -->
-  
-    </header><!-- End Header -->
-  
-    <!-- ======= Sidebar ======= -->
-    <aside id=\"sidebar\" class=\"sidebar\">
-  
-      <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
-  
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id=\"sidebar\" class=\"sidebar\">
+
+    <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"index.html\">
-            <i class=\"bi bi-grid\"></i>
-            <span>Dashboard</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"index.html\">
+                <i class=\"bi bi-grid\"></i>
+                <span>Dashboard</span>
+            </a>
         </li><!-- End Dashboard Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"components-alerts.html\">
-                <i class=\"bi bi-circle\"></i><span>Alerts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-accordion.html\">
-                <i class=\"bi bi-circle\"></i><span>Accordion</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-badges.html\">
-                <i class=\"bi bi-circle\"></i><span>Badges</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-breadcrumbs.html\">
-                <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-buttons.html\">
-                <i class=\"bi bi-circle\"></i><span>Buttons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-cards.html\">
-                <i class=\"bi bi-circle\"></i><span>Cards</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-carousel.html\">
-                <i class=\"bi bi-circle\"></i><span>Carousel</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-list-group.html\">
-                <i class=\"bi bi-circle\"></i><span>List group</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-modal.html\">
-                <i class=\"bi bi-circle\"></i><span>Modal</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-tabs.html\">
-                <i class=\"bi bi-circle\"></i><span>Tabs</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-pagination.html\">
-                <i class=\"bi bi-circle\"></i><span>Pagination</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-progress.html\">
-                <i class=\"bi bi-circle\"></i><span>Progress</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-spinners.html\">
-                <i class=\"bi bi-circle\"></i><span>Spinners</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"components-tooltips.html\">
-                <i class=\"bi bi-circle\"></i><span>Tooltips</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#components-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-menu-button-wide\"></i><span>Components</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"components-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"components-alerts.html\">
+                        <i class=\"bi bi-circle\"></i><span>Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-accordion.html\">
+                        <i class=\"bi bi-circle\"></i><span>Accordion</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-badges.html\">
+                        <i class=\"bi bi-circle\"></i><span>Badges</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-breadcrumbs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Breadcrumbs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-buttons.html\">
+                        <i class=\"bi bi-circle\"></i><span>Buttons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-cards.html\">
+                        <i class=\"bi bi-circle\"></i><span>Cards</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-carousel.html\">
+                        <i class=\"bi bi-circle\"></i><span>Carousel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-list-group.html\">
+                        <i class=\"bi bi-circle\"></i><span>List group</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-modal.html\">
+                        <i class=\"bi bi-circle\"></i><span>Modal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-tabs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Tabs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-pagination.html\">
+                        <i class=\"bi bi-circle\"></i><span>Pagination</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-progress.html\">
+                        <i class=\"bi bi-circle\"></i><span>Progress</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-spinners.html\">
+                        <i class=\"bi bi-circle\"></i><span>Spinners</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"components-tooltips.html\">
+                        <i class=\"bi bi-circle\"></i><span>Tooltips</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Components Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link \" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link \" data-bs-target=\"#forms-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
+
+                <li>
+                    <a href=\"{{ path('app_produits_back_new') }}\">
+                        <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
+                    </a>
+                </li>
+
+            </ul>
         </li><!-- End Forms Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#tables-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i
+                        class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"{{ path('app_produits_back') }}\">
+                        <i class=\"bi bi-circle\"></i><span>Shop</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Tables Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"charts-chartjs.html\">
-                <i class=\"bi bi-circle\"></i><span>Chart.js</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"charts-apexcharts.html\">
-                <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"charts-echarts.html\">
-                <i class=\"bi bi-circle\"></i><span>ECharts</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#charts-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-bar-chart\"></i><span>Charts</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"charts-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"charts-chartjs.html\">
+                        <i class=\"bi bi-circle\"></i><span>Chart.js</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"charts-apexcharts.html\">
+                        <i class=\"bi bi-circle\"></i><span>ApexCharts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"charts-echarts.html\">
+                        <i class=\"bi bi-circle\"></i><span>ECharts</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Charts Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
-            <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
-          </a>
-          <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-            <li>
-              <a href=\"icons-bootstrap.html\">
-                <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"icons-remix.html\">
-                <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"icons-boxicons.html\">
-                <i class=\"bi bi-circle\"></i><span>Boxicons</span>
-              </a>
-            </li>
-          </ul>
+            <a class=\"nav-link collapsed\" data-bs-target=\"#icons-nav\" data-bs-toggle=\"collapse\" href=\"#\">
+                <i class=\"bi bi-gem\"></i><span>Icons</span><i class=\"bi bi-chevron-down ms-auto\"></i>
+            </a>
+            <ul id=\"icons-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
+                <li>
+                    <a href=\"icons-bootstrap.html\">
+                        <i class=\"bi bi-circle\"></i><span>Bootstrap Icons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"icons-remix.html\">
+                        <i class=\"bi bi-circle\"></i><span>Remix Icons</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=\"icons-boxicons.html\">
+                        <i class=\"bi bi-circle\"></i><span>Boxicons</span>
+                    </a>
+                </li>
+            </ul>
         </li><!-- End Icons Nav -->
-  
+
         <li class=\"nav-heading\">Pages</li>
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"users-profile.html\">
-            <i class=\"bi bi-person\"></i>
-            <span>Profile</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"users-profile.html\">
+                <i class=\"bi bi-person\"></i>
+                <span>Profile</span>
+            </a>
         </li><!-- End Profile Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
-            <i class=\"bi bi-question-circle\"></i>
-            <span>F.A.Q</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-faq.html\">
+                <i class=\"bi bi-question-circle\"></i>
+                <span>F.A.Q</span>
+            </a>
         </li><!-- End F.A.Q Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
-            <i class=\"bi bi-envelope\"></i>
-            <span>Contact</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-contact.html\">
+                <i class=\"bi bi-envelope\"></i>
+                <span>Contact</span>
+            </a>
         </li><!-- End Contact Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-register.html\">
-            <i class=\"bi bi-card-list\"></i>
-            <span>Register</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-register.html\">
+                <i class=\"bi bi-card-list\"></i>
+                <span>Register</span>
+            </a>
         </li><!-- End Register Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-login.html\">
-            <i class=\"bi bi-box-arrow-in-right\"></i>
-            <span>Login</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-login.html\">
+                <i class=\"bi bi-box-arrow-in-right\"></i>
+                <span>Login</span>
+            </a>
         </li><!-- End Login Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
-            <i class=\"bi bi-dash-circle\"></i>
-            <span>Error 404</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-error-404.html\">
+                <i class=\"bi bi-dash-circle\"></i>
+                <span>Error 404</span>
+            </a>
         </li><!-- End Error 404 Page Nav -->
-  
+
         <li class=\"nav-item\">
-          <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
-            <i class=\"bi bi-file-earmark\"></i>
-            <span>Blank</span>
-          </a>
+            <a class=\"nav-link collapsed\" href=\"pages-blank.html\">
+                <i class=\"bi bi-file-earmark\"></i>
+                <span>Blank</span>
+            </a>
         </li><!-- End Blank Page Nav -->
-  
-      </ul>
-  
-    </aside><!-- End Sidebar-->
-  
-    <main id=\"main\" class=\"main\">
-  
-      <div class=\"pagetitle\">
+
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id=\"main\" class=\"main\">
+
+    <div class=\"pagetitle\">
         <h1>Form Layouts</h1>
         <nav>
-          <ol class=\"breadcrumb\">
-            <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
-            <li class=\"breadcrumb-item\">Forms</li>
-            <li class=\"breadcrumb-item active\">Layouts</li>
-          </ol>
+            <ol class=\"breadcrumb\">
+                <li class=\"breadcrumb-item\"><a href=\"index.html\">Home</a></li>
+                <li class=\"breadcrumb-item\">Forms</li>
+                <li class=\"breadcrumb-item active\">Layouts</li>
+            </ol>
         </nav>
-      </div><!-- End Page Title -->
-      <section class=\"section\">
+    </div><!-- End Page Title -->
+    <section class=\"section\">
         <div class=\"row\">
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Horizontal Form</h5>
-  
-                <!-- Horizontal Form -->
-                <form>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Your Name</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"text\" class=\"form-control\" id=\"inputText\">
+            <div class=\"col-lg-12\">
+
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">Horizontal Form</h5>
+                        {% set nomField = form.nom %}
+                        {% set descriptionField = form.description %}
+                        {% set prixField =form.prix %}
+                        {% set idcategorieField = form.idcategorie %}
+                        {% set imageField = form.image %}
+                        <!-- Horizontal Form -->
+                        {{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                {{ form_label(nomField, 'Nom du produit') }}
+                                {{ form_widget(nomField, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
+
+                                <div class=\"error-message\">   {{ form_errors(nomField) }}</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                {{ form_label(descriptionField, 'Description du produit') }}
+                                {{ form_widget(descriptionField, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
+
+                                <div class=\"error-message\">{{ form_errors(descriptionField) }}</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+
+                            <div class=\"col-sm-10\">
+                                {{ form_label(prixField, 'Prix du produit') }}
+                                {{ form_widget(prixField, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
+
+                                <div class=\"error-message\"> {{ form_errors(prixField) }}</div>
+                            </div>
+                        </div>
+                        <div class=\"row mb-3\">
+                            <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
+                            <div class=\"col-sm-10\">
+                                {% if produit.image is not null %}
+                                    <img src=\"{{ asset('uploads/images/'  ~ produit.image) }}\"
+                                         alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
+                                    <br><br>
+                                    <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"{{ produit.image }}\">
+                                {% endif %}
+
+                                {{ form_widget(imageField, {'attr': {'type': 'file'}}) }}
+                                {{ form_errors(imageField) }}
+                            </div>
+                        </div>
+                        <fieldset class=\"row mb-3\">
+                            <div class=\"col-md-4\">
+                                {{ form_label(idcategorieField, 'Catégorie du produit') }}
+                                {{ form_widget(idcategorieField, {'attr': {'class': 'main-button', 'autocomplete': 'on'}}) }}
+                                {{ form_errors(idcategorieField) }}
+                            </div>
+                        </fieldset>
+
+                        <div class=\"text-center\">
+                            <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+                            <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
+                        </div>
+                        {{ form_end(form) }}
+
+
                     </div>
-                  </div>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"email\" class=\"form-control\" id=\"inputEmail\">
-                    </div>
-                  </div>
-                  <div class=\"row mb-3\">
-                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>
-                    <div class=\"col-sm-10\">
-                      <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
-                    </div>
-                  </div>
-                  <fieldset class=\"row mb-3\">
-                    <legend class=\"col-form-label col-sm-2 pt-0\">Radios</legend>
-                    <div class=\"col-sm-10\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios1\" value=\"option1\" checked=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios1\">
-                          First radio
-                        </label>
-                      </div>
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios2\" value=\"option2\">
-                        <label class=\"form-check-label\" for=\"gridRadios2\">
-                          Second radio
-                        </label>
-                      </div>
-                      <div class=\"form-check disabled\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios3\" value=\"option3\" disabled=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios3\">
-                          Third disabled radio
-                        </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class=\"row mb-3\">
-                    <div class=\"col-sm-10 offset-sm-2\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck1\">
-                        <label class=\"form-check-label\" for=\"gridCheck1\">
-                          Example checkbox
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Horizontal Form -->
-  
-              </div>
+                </div>
             </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Multi Columns Form</h5>
-  
-                <!-- Multi Columns Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <label for=\"inputName5\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputName5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputEmail5\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputPassword5\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword5\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress5\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddres5s\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress2\" class=\"form-label\">Address 2</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" placeholder=\"Apartment, studio, or floor\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputCity\" class=\"form-label\">City</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputCity\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <label for=\"inputState\" class=\"form-label\">State</label>
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <label for=\"inputZip\" class=\"form-label\">Zip</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputZip\">
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-check\">
-                      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-                      <label class=\"form-check-label\" for=\"gridCheck\">
-                        Check me out
-                      </label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Multi Columns Form -->
-  
-              </div>
-            </div>
-  
-          </div>
-  
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Vertical Form</h5>
-  
-                <!-- Vertical Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-12\">
-                    <label for=\"inputNanme4\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputNanme4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputEmail4\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputPassword4\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- Vertical Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">No Labels / Placeholders as labels Form</h5>
-  
-                <!-- No Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Your Name\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"email\" class=\"form-control\" placeholder=\"Email\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"password\" class=\"form-control\" placeholder=\"Password\">
-                  </div>
-                  <div class=\"col-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Address\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"City\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Zip\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End No Labels Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Floating labels Form</h5>
-  
-                <!-- Floating Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingName\" placeholder=\"Your Name\">
-                      <label for=\"floatingName\">Your Name</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"email\" class=\"form-control\" id=\"floatingEmail\" placeholder=\"Your Email\">
-                      <label for=\"floatingEmail\">Your Email</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"password\" class=\"form-control\" id=\"floatingPassword\" placeholder=\"Password\">
-                      <label for=\"floatingPassword\">Password</label>
-                    </div>
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-floating\">
-                      <textarea class=\"form-control\" placeholder=\"Address\" id=\"floatingTextarea\" style=\"height: 100px;\"></textarea>
-                      <label for=\"floatingTextarea\">Address</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"col-md-12\">
-                      <div class=\"form-floating\">
-                        <input type=\"text\" class=\"form-control\" id=\"floatingCity\" placeholder=\"City\">
-                        <label for=\"floatingCity\">City</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"col-md-4\">
-                    <div class=\"form-floating mb-3\">
-                      <select class=\"form-select\" id=\"floatingSelect\" aria-label=\"State\">
-                        <option selected=\"\">New York</option>
-                        <option value=\"1\">Oregon</option>
-                        <option value=\"2\">DC</option>
-                      </select>
-                      <label for=\"floatingSelect\">State</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingZip\" placeholder=\"Zip\">
-                      <label for=\"floatingZip\">Zip</label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End floating Labels Form -->
-  
-              </div>
-            </div>
-  
-          </div>
         </div>
-      </section>
-  
-    </main><!-- End #main -->
-  
-    <!-- ======= Footer ======= -->
-    <footer id=\"footer\" class=\"footer\">
-      <div class=\"copyright\">
+    </section>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id=\"footer\" class=\"footer\">
+    <div class=\"copyright\">
         © Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-      </div>
-      <div class=\"credits\">
+    </div>
+    <div class=\"credits\">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
         Designed by <a href=\"https://bootstrapmade.com/\">BootstrapMade</a>
-      </div>
-    </footer><!-- End Footer -->
-  
-    <a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
-  
-    <!-- Vendor JS Files -->
-  <script src=\"{{asset('vendor2/apexcharts/apexcharts.min.js') }}\"></script>
-  <script src=\"{{asset('vendor2/bootstrap/js/bootstrap.bundle.min.js') }}\"></script>
-  <script src=\"{{asset('vendor2/chart.js/chart.umd.js') }}\"></script>
-  <script src=\"{{asset('vendor2/echarts/echarts.min.js') }}\"></script>
-  <script src=\"{{asset('vendor2/quill/quill.min.js') }}\"></script>
-  <script src=\"{{asset('vendor2/simple-datatables/simple-datatables.js') }}\"></script>
-  <script src=\"{{asset('vendor2/tinymce/tinymce.min.js') }}\"></script>
-  <script src=\"{{asset('vendor2/php-email-form/validate.js') }}\"></script>
+    </div>
+</footer><!-- End Footer -->
 
-  
-  <!-- Template Main JS File -->
-  <script src=\"{{asset('assets2/js/main2.js') }}\"></script>
-  
-  
-  <svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path id=\"SvgjsPath1004\" d=\"M0 0 \"></path></svg></body>
+<a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i
+            class=\"bi bi-arrow-up-short\"></i></a>
+
+<!-- Vendor JS Files -->
+<script src=\"{{ asset('vendor2/apexcharts/apexcharts.min.js') }}\"></script>
+<script src=\"{{ asset('vendor2/bootstrap/js/bootstrap.bundle.min.js') }}\"></script>
+<script src=\"{{ asset('vendor2/chart.js/chart.umd.js') }}\"></script>
+<script src=\"{{ asset('vendor2/echarts/echarts.min.js') }}\"></script>
+<script src=\"{{ asset('vendor2/quill/quill.min.js') }}\"></script>
+<script src=\"{{ asset('vendor2/simple-datatables/simple-datatables.js') }}\"></script>
+<script src=\"{{ asset('vendor2/tinymce/tinymce.min.js') }}\"></script>
+<script src=\"{{ asset('vendor2/php-email-form/validate.js') }}\"></script>
+
+
+<!-- Template Main JS File -->
+<script src=\"{{ asset('assets2/js/main2.js') }}\"></script>
+
+
+<svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"
+     xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\"
+     style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\">
+    <defs id=\"SvgjsDefs1002\"></defs>
+    <polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline>
+    <path id=\"SvgjsPath1004\" d=\"M0 0 \"></path>
+</svg>
+</body>
 
 
 </html>", "produits_back/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits_back\\edit.html.twig");

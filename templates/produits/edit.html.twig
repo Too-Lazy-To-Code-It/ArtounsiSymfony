@@ -1,57 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}"
+          rel="stylesheet">
 
     <title>Liberty Template - Create NFT Page</title>
 
     <!-- Bootstrap core CSS -->
-     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
 
     {% block stylesheets %}
- 
-    <!-- Additional CSS Files -->
-  
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
-    
-{% endblock %}
 
-TemplateMo 577 Liberty Market
+        <!-- Additional CSS Files -->
 
-https://templatemo.com/tm-577-liberty-market
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}">
 
--->
-  </head>
+    {% endblock %}
+
+    TemplateMo 577 Liberty Market
+
+    https://templatemo.com/tm-577-liberty-market
+
+    -->
+</head>
 
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
+<!-- ***** Preloader Start ***** -->
+<div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
+</div>
+<!-- ***** Preloader End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -62,32 +62,32 @@ https://templatemo.com/tm-577-liberty-market
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                  <ul class="nav">
-                    <div class="dropdown">
-                      <li><a>Art</a></li>
-                      <div class="dropdown-content">
-                        <li><a href="{{ path('app_explore') }}">Explore</a></li>
-                        <li><a href="{{ path('app_blog') }}">Blog</a></li>
-                        <li><a href="{{ path('app_map') }}">Studios</a></li>
-                        <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+                    <ul class="nav">
+                        <div class="dropdown">
+                            <li><a>Art</a></li>
+                            <div class="dropdown-content">
+                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
 
-                      </div>
-                    </div>
-                    <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
-                    <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
-                    <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
-                    <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
-                    <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
-                    <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
-                    {%if(user.type=='Admin') %}
-                      <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
-                    {% endif %}
-                    {% if(user.idUser==null) %}
-                      <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
-                    {% else %}
-                      <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
-                    {% endif %}
-                  </ul>
+                            </div>
+                        </div>
+                        <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                        <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                        <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                        <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                        <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                        {% if(user.type=='Admin') %}
+                            <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser==null) %}
+                            <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                        {% endif %}
+                    </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -96,135 +96,136 @@ https://templatemo.com/tm-577-liberty-market
             </div>
         </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
-  <div class="page-heading normal-space">
+<div class="page-heading normal-space">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h6>Bienvenue à ce formulaire</h6>
-          <h2>Votre espace pour modifier votre produit</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-details-page">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h2>Modifier <em>Votre Produit</em> Ici.</h2>
-          </div>
-        </div>
-
-        {% set nomField = form.nom %}
-        {% set descriptionField = form.description %}
-        {% set prixField =form.prix%}
-        {% set idcategorieField = form.idcategorie %}
-        {% set imageField = form.image %}
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id':'contact',} }) }}
-        <div class="col-lg-12">
-          
-            <div class="row">
-              <div class="col-lg-4">
-                <fieldset>
-                    {{ form_label(nomField, 'Nom du produit') }}
-                    {{ form_widget(nomField, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
-                    {{ form_errors(nomField) }}
-                </fieldset>
-              </div>
-              <div class="col-lg-4">
-                <fieldset>
-                    {{ form_label(descriptionField, 'Description du produit') }}
-                    {{ form_widget(descriptionField, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
-                    {{ form_errors(descriptionField) }}
-                </fieldset>
-              </div>
-              <div class="col-lg-4">
-                <fieldset>
-                  {{ form_label(prixField, 'Prix du produit') }}
-                  {{ form_widget(prixField, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
-                  {{ form_errors(prixField) }}
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                
-                    {{ form_label(idcategorieField, 'Catégorie du produit') }}
-                    {{ form_widget(idcategorieField, {'attr': {'class': 'main-button', 'autocomplete': 'on'}}) }}
-                    {{ form_errors(idcategorieField)}}
-                  
-                    
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                    
-
-
-
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                  <label class="form-label" >Image</label>
-              
-               {% if produit.image is not null %}
-                  <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
-                  <br><br>
-                  <input type="hidden" id="imageField" name="imageField" value="{{ produit.image }}">
-               {% endif %}
-                  
-				          {{ form_widget(imageField, {'attr': {'type': 'file'}}) }}
-                  {{ form_errors(imageField) }}
-          
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button class="main-button" type="submit" class="orange-button" onClick="validateSubmit()">Modifier le produit</button>
-                  {{ form_rest(form) }}
-              </fieldset>
-              </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>Bienvenue à ce formulaire</h6>
+                <h2>Votre espace pour modifier votre produit</h2>
             </div>
-      
         </div>
-        {{ form_end(form) }}
-
-
-    
-      </div>
     </div>
-  </div>
+</div>
 
-  <script>									
+<div class="item-details-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <div class="line-dec"></div>
+                    <h2>Modifier <em>Votre Produit</em> Ici.</h2>
+                </div>
+            </div>
+
+            {% set nomField = form.nom %}
+            {% set descriptionField = form.description %}
+            {% set prixField =form.prix %}
+            {% set idcategorieField = form.idcategorie %}
+            {% set imageField = form.image %}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id':'contact',} }) }}
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <fieldset>
+                            {{ form_label(nomField, 'Nom du produit') }}
+                            {{ form_widget(nomField, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
+                            {{ form_errors(nomField) }}
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-4">
+                        <fieldset>
+                            {{ form_label(descriptionField, 'Description du produit') }}
+                            {{ form_widget(descriptionField, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
+                            {{ form_errors(descriptionField) }}
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-4">
+                        <fieldset>
+                            {{ form_label(prixField, 'Prix du produit') }}
+                            {{ form_widget(prixField, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
+                            {{ form_errors(prixField) }}
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                        <fieldset>
+
+                            {{ form_label(idcategorieField, 'Catégorie du produit') }}
+                            {{ form_widget(idcategorieField, {'attr': {'class': 'main-button', 'autocomplete': 'on'}}) }}
+                            {{ form_errors(idcategorieField) }}
+
+
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                        <fieldset>
+
+
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                        <fieldset>
+                            <label class="form-label">Image</label>
+
+                            {% if produit.image is not null %}
+                                <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="{{ produit.nom }}"
+                                     style="border-radius: 20px; min-width: 195px;">
+                                <br><br>
+                                <input type="hidden" id="imageField" name="imageField" value="{{ produit.image }}">
+                            {% endif %}
+
+                            {{ form_widget(imageField, {'attr': {'type': 'file'}}) }}
+                            {{ form_errors(imageField) }}
+
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <fieldset>
+                            <button class="main-button" type="submit" class="orange-button" onClick="validateSubmit()">
+                                Modifier le produit
+                            </button>
+                            {{ form_rest(form) }}
+                        </fieldset>
+                    </div>
+                </div>
+
+            </div>
+            {{ form_end(form) }}
+
+
+        </div>
+    </div>
+</div>
+
+<script>
     function validateSubmit() {
-      result = confirm("Voulez-vous vraiment modifier ce produit ?");
+        result = confirm("Voulez-vous vraiment modifier ce produit ?");
         if (result) {
-          $('#form').submit();
+            $('#form').submit();
         }
     }
 </script>
 
 
-  <footer>
+<footer>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-          &nbsp;&nbsp;
-          Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                    &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                   target="_blank">TemplateMo</a></p>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
+</footer>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
 <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
@@ -235,5 +236,5 @@ https://templatemo.com/tm-577-liberty-market
 <script src="{{ asset('assets/js/popup.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
-  </body>
+</body>
 </html>

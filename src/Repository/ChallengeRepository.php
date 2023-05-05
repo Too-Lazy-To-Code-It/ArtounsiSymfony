@@ -39,6 +39,14 @@ class ChallengeRepository extends ServiceEntityRepository
         }
     }
 
+    public function orderedChallenges($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery('SELECT a.name , a.Last_Name , p.img_participation, p.id_participation ,AVG(r.rating) as average, COUNT(r.rating) numberRaters FROM APP\Entity\Allusers a, APP\Entity\Challenge c, APP\Entity\Participation p, App\Entity\Rating r WHERE c.id_challenge=p.id_challenge AND a.id_user=p.id_user AND p.id_user=r.participator_id AND c.id_challenge=r.challenge_id AND c.id_challenge=:id GROUP BY p.id_user ORDER BY average DESC')
+            ->setParameter('id', $id);
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Challenge[] Returns an array of Challenge objects
 //     */

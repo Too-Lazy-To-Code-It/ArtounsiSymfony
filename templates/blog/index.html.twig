@@ -151,17 +151,6 @@
                             </div>
                             <div class="col-lg-3">
                                 <fieldset>
-                                    <select name="Category" class="form-select" aria-label="Default select example"
-                                            id="chooseCategory" onchange="this.form.click()">
-                                        <option selected>All Categories</option>
-                                        {% for category in categories %}
-                                            <option value="{{ category.getId_category }}">{{ category.nameCategory }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-3">
-                                <fieldset>
                                     <select name="filter" class="form-select" aria-label="Default select example"
                                             id="choosefilter">
                                         <option selected>Filter</option>
@@ -173,6 +162,7 @@
                                 </fieldset>
 
                             </div>
+                        </div>
                     </form>
 
                     <div class="row">

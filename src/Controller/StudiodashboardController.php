@@ -37,9 +37,6 @@ class StudiodashboardController extends AbstractController
     public function offres(SessionInterface $session,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, Request $request): Response
     {
 
-        if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
-        }
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }

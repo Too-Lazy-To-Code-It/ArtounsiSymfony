@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Produits;
 use App\Entity\Panier;
 use App\Form\ProduitsType;
@@ -13,6 +14,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
@@ -24,10 +26,12 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 class ProduitsController extends AbstractController
 {
     #[Route('/', name: 'app_produits_index', methods: ['GET'])]
-    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $idpanier = $user->getPaniers()->first()->getidpanier();
         $produits = $produitsRepository->findAll();
 
@@ -46,10 +50,12 @@ class ProduitsController extends AbstractController
 
 
     #[Route('/new', name: 'app_produits_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository, Request $request, ProduitsRepository $produitsRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, ProduitsRepository $produitsRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
 
         $currentDate = new DateTime();
         $produit = new Produits();
@@ -84,6 +90,7 @@ class ProduitsController extends AbstractController
         return $this->renderForm('produits/new.html.twig', [
             'produit' => $produit,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

@@ -24,15 +24,13 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'body' => [$this, 'block_body'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+            'stylesheet' => [$this, 'block_stylesheet'],
+            'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -44,8 +42,14 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "challenge/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "challenge/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 2
+        $this->displayBlock('stylesheet', $context, $blocks);
+        // line 13
+        $this->displayBlock('body', $context, $blocks);
+        // line 108
+        echo "
+
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -54,7 +58,50 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
 
     }
 
-    // line 3
+    // line 2
+    public function block_stylesheet($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        // line 3
+        echo "    <link href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+
+
+    <!-- Additional CSS Files -->
+    <link rel=\"stylesheet\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/templatemo-liberty-market.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 13
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,7 +111,7 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 14
         echo "
     <div class=\"discover-items\">
         <div class=\"container\">
@@ -72,7 +119,7 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
                 <div class=\"buttons\">
                     <div class=\"border-button\">
                         <a href=";
-        // line 10
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_calendar");
         echo ">Show Calendar</a>
                     </div>
@@ -90,21 +137,21 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
                             <div class=\"col-lg-5\">
                                 <fieldset>
                                     ";
-        // line 25
-        if (((isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 25, $this->source); })()) == "")) {
-            // line 26
+        // line 35
+        if (((isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 35, $this->source); })()) == "")) {
+            // line 36
             echo "                                        <input id=\"searchTxt\" type=\"text\" name=\"keyword\" class=\"searchText\"
                                                placeholder=\"Type Something...\" autocomplete=\"on\">
                                     ";
         } else {
-            // line 29
+            // line 39
             echo "                                        <input value=";
-            echo twig_escape_filter($this->env, (isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 29, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["keyword"]) || array_key_exists("keyword", $context) ? $context["keyword"] : (function () { throw new RuntimeError('Variable "keyword" does not exist.', 39, $this->source); })()), "html", null, true);
             echo " id=\"searchTxt\" type=\"text\" name=\"keyword\"
                                                class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\">
                                     ";
         }
-        // line 32
+        // line 42
         echo "                                </fieldset>
                             </div>
                             <div class=\"col-lg-5\">
@@ -113,49 +160,49 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
                                             aria-label=\"Default select example\" id=\"chooseCategory\"
                                             onchange=\"this.form.click()\">
                                         ";
-        // line 39
-        if (((isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 39, $this->source); })()) == null)) {
-            // line 40
+        // line 49
+        if (((isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 49, $this->source); })()) == null)) {
+            // line 50
             echo "                                            <option value=null selected>All Categories</option>
                                         ";
         } else {
-            // line 42
+            // line 52
             echo "                                            <option value=null>All Categories</option>
                                         ";
         }
-        // line 44
+        // line 54
         echo "                                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 54, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 45
+            // line 55
             echo "                                            ";
-            if ((twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 45) == (isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 45, $this->source); })()))) {
-                // line 46
+            if ((twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 55) == (isset($context["Categorie"]) || array_key_exists("Categorie", $context) ? $context["Categorie"] : (function () { throw new RuntimeError('Variable "Categorie" does not exist.', 55, $this->source); })()))) {
+                // line 56
                 echo "                                                <option selected
                                                         value=\"";
-                // line 47
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 47), "html", null, true);
+                // line 57
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 57), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 47), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 57), "html", null, true);
                 echo "</option>
                                             ";
             } else {
-                // line 49
+                // line 59
                 echo "                                                <option value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 49), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "method", false, false, false, 59), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 49), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getNameCategory", [], "method", false, false, false, 59), "html", null, true);
                 echo "</option>
                                             ";
             }
-            // line 51
+            // line 61
             echo "                                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 52
+        // line 62
         echo "                                    </select>
                                 </fieldset>
                             </div>
@@ -172,22 +219,86 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
                 </html>
 
                 ";
-        // line 67
-        $this->loadTemplate("challenge/_content.html.twig", "challenge/index.html.twig", 67)->display($context);
-        // line 68
+        // line 77
+        $this->loadTemplate("challenge/_content.html.twig", "challenge/index.html.twig", 77)->display($context);
+        // line 78
         echo "                ";
-        $this->loadTemplate("chat/index.html.twig", "challenge/index.html.twig", 68)->display($context);
-        // line 69
+        $this->loadTemplate("chat/index.html.twig", "challenge/index.html.twig", 78)->display($context);
+        // line 79
         echo "
 
             </div>
         </div>
     </div></div>
-    <script src=\"";
-        // line 74
+    ";
+        // line 84
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 106
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/filters.js"), "html", null, true);
         echo "\"></script>
 ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 84
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 85
+        echo "        ";
+        // line 86
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 89
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 92
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 95
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 98
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 101
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 104
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
+        echo "\"></script>
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -201,20 +312,25 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
         return "challenge/index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  188 => 74,  181 => 69,  178 => 68,  176 => 67,  159 => 52,  153 => 51,  145 => 49,  138 => 47,  135 => 46,  132 => 45,  127 => 44,  123 => 42,  119 => 40,  117 => 39,  108 => 32,  101 => 29,  96 => 26,  94 => 25,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  298 => 104,  292 => 101,  286 => 98,  280 => 95,  274 => 92,  268 => 89,  262 => 86,  260 => 85,  250 => 84,  237 => 106,  235 => 84,  228 => 79,  225 => 78,  223 => 77,  206 => 62,  200 => 61,  192 => 59,  185 => 57,  182 => 56,  179 => 55,  174 => 54,  170 => 52,  166 => 50,  164 => 49,  155 => 42,  148 => 39,  143 => 36,  141 => 35,  123 => 20,  115 => 14,  105 => 13,  92 => 10,  88 => 9,  84 => 8,  80 => 7,  72 => 3,  62 => 2,  50 => 108,  48 => 13,  46 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{# {% extends 'base.html.twig' %} #}
+{% block stylesheet %}
+    <link href=\"{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
 
+
+    <!-- Additional CSS Files -->
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/fontawesome.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/animate.css') }}\">
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+{% endblock %}
 {% block body %}
 
     <div class=\"discover-items\">
@@ -286,6 +402,28 @@ class __TwigTemplate_748ca46afb92a3d4193f614eace46cc8 extends Template
             </div>
         </div>
     </div></div>
+    {% block javascripts %}
+        {# <script src=\"vendor/jquery/jquery.min.js\"></script> #}
+        <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
+
+        {# <script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script> #}
+        <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
+
+        {# <script src=\"assets/js/isotope.min.js\"></script> #}
+        <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+
+        {# <script src=\"assets/js/owl-carousel.js\"></script> #}
+        <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
+
+        {# <script src=\"assets/js/tabs.js\"></script> #}
+        <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
+
+        {# <script src=\"assets/js/popup.js\"></script> #}
+        <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
+
+        {# <script src=\"assets/js/custom.js\"></script>  #}
+        <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+    {% endblock %}
     <script src=\"{{ asset('assets/js/filters.js') }}\"></script>
 {% endblock %}
 

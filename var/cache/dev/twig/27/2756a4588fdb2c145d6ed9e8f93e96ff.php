@@ -105,13 +105,78 @@ https://templatemo.com/tm-577-liberty-market
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class=\"nav\">
-                        <li><a href=\"index.html\">Home</a></li>
-                        <li><a href=\"explore.html\" class=\"active\">Explore</a></li>
-                        <li><a href=\"details.html\">Item Details</a></li>
-                        <li><a href=\"Ajouter Produit .html\" class=\"active\">Add product</a></li>
-                        <li><a href=\"author.html\">Author</a></li>
-                        <li><a href=\"create.html\">Create Yours</a></li>
-                    </ul>   
+                        <div class=\"dropdown\">
+                            <li><a>Art</a></li>
+                            <div class=\"dropdown-content\">
+                                <li><a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
+        echo "\">Explore</a></li>
+                                <li><a href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
+        echo "\">Blog</a></li>
+                                <li><a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
+        echo "\">Studios</a></li>
+                                <li><a href=\"";
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
+        echo "\">Create Yours</a></li>
+
+                            </div>
+                        </div>
+                        <li><a href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+        echo "\">Offres</a></li>
+                        <li><a href=\"";
+        // line 76
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+        echo "\">Demandes</a></li>
+                        <li><a href=\"";
+        // line 77
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
+        echo "\">Shop</a></li>
+                        <li><a href=\"";
+        // line 78
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo "\">Panier</a></li>
+                        <li><a href=\"";
+        // line 79
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                        <li><a href=\"";
+        // line 80
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                        ";
+        // line 81
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "type", [], "any", false, false, false, 81) == "Admin")) {
+            // line 82
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                        ";
+        }
+        // line 84
+        echo "                        ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 84, $this->source); })()), "idUser", [], "any", false, false, false, 84) == null)) {
+            // line 85
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                        ";
+        } else {
+            // line 87
+            echo "                            <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                        ";
+        }
+        // line 89
+        echo "                    </ul>
                     <a class=\"menu-trigger\">
                         <span>Menu</span>
                     </a>
@@ -146,7 +211,7 @@ https://templatemo.com/tm-577-liberty-market
                       <!-- ***** Logo Start ***** -->
                       <a href=\"index.html\" class=\"logo\">
                         <img src=\"";
-        // line 105
+        // line 123
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/LOGO2.png"), "html", null, true);
         echo "\" alt=\"\" style=\" width: 110px;\">
                       </a>
@@ -177,7 +242,7 @@ https://templatemo.com/tm-577-liberty-market
           <div class=\"col-lg-12\">
           
             <img src=\"";
-        // line 133
+        // line 151
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/images/succes.png"), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 50px; width: 50px;\">
     
@@ -190,8 +255,8 @@ https://templatemo.com/tm-577-liberty-market
           </p>
           <div class=\"main-button\">
             <a href=\"";
-        // line 143
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pdf", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 143, $this->source); })())]), "html", null, true);
+        // line 161
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pdf", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 161, $this->source); })())]), "html", null, true);
         echo "\">Télécharger Facture</a>
           </div>
           </div>
@@ -209,32 +274,32 @@ https://templatemo.com/tm-577-liberty-market
               <div class=\"owl-stage-outer\"><div class=\"owl-stage\" style=\"transform: translate3d(-3370px, 0px, 0px); transition: all 0.25s ease 0s; width: 5392px;\">
                 
                 ";
-        // line 159
+        // line 177
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 159, $this->source); })()), "getLignepaniers", [], "method", false, false, false, 159));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 177, $this->source); })()), "getLignepaniers", [], "method", false, false, false, 177));
         foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
-            // line 160
+            // line 178
             echo "                    <div class=\"owl-item\">
                       <div class=\"item\">
                         <div class=\"thumb\">
                           <img src=\"";
-            // line 163
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 163), "image", [], "any", false, false, false, 163))), "html", null, true);
+            // line 181
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 181), "image", [], "any", false, false, false, 181))), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 163), "nom", [], "any", false, false, false, 163), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 181), "nom", [], "any", false, false, false, 181), "html", null, true);
             echo "\" style=\"border-radius: 20px;\">
                           <div class=\"hover-effect\">
                             <div class=\"content\">
                               <h4>";
-            // line 166
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 166), "nom", [], "any", false, false, false, 166), "html", null, true);
+            // line 184
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 184), "nom", [], "any", false, false, false, 184), "html", null, true);
             echo "</h4>
                               <div class=\"main-button\">
                                  <a href=\"";
-            // line 168
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 168), "image", [], "any", false, false, false, 168))), "html", null, true);
+            // line 186
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 186), "image", [], "any", false, false, false, 186))), "html", null, true);
             echo "\" download=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 168), "nom", [], "any", false, false, false, 168), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 186), "nom", [], "any", false, false, false, 186), "html", null, true);
             echo ".png\">Download</a>
                               </div>
                             </div>
@@ -247,7 +312,7 @@ https://templatemo.com/tm-577-liberty-market
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 176
+        // line 194
         echo "                
                 
                 <div class=\"owl-item cloned\" style=\"width: 644px; margin-right: 30px;\"><div class=\"item\">
@@ -284,40 +349,40 @@ https://templatemo.com/tm-577-liberty-market
    <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 211
+        // line 229
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 212
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"";
-        // line 214
+        // line 232
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 215
+        // line 233
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
     
     
     <script src=\"";
-        // line 218
+        // line 236
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 219
+        // line 237
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 220
+        // line 238
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"//code.jquery.com/jquery.js\"></script>
     <script src=\"";
-        // line 223
+        // line 241
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/js/flashy.js"), "html", null, true);
         echo "\"></script>
 
@@ -395,7 +460,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  374 => 24,  369 => 22,  365 => 21,  361 => 20,  357 => 19,  353 => 18,  348 => 15,  338 => 14,  321 => 223,  315 => 220,  311 => 219,  307 => 218,  301 => 215,  297 => 214,  292 => 212,  288 => 211,  251 => 176,  235 => 168,  230 => 166,  222 => 163,  217 => 160,  213 => 159,  194 => 143,  181 => 133,  150 => 105,  102 => 60,  67 => 27,  65 => 14,  60 => 12,  53 => 8,  44 => 1,);
+        return array (  439 => 24,  434 => 22,  430 => 21,  426 => 20,  422 => 19,  418 => 18,  413 => 15,  403 => 14,  386 => 241,  380 => 238,  376 => 237,  372 => 236,  366 => 233,  362 => 232,  357 => 230,  353 => 229,  316 => 194,  300 => 186,  295 => 184,  287 => 181,  282 => 178,  278 => 177,  259 => 161,  246 => 151,  215 => 123,  179 => 89,  173 => 87,  167 => 85,  164 => 84,  158 => 82,  156 => 81,  152 => 80,  148 => 79,  144 => 78,  140 => 77,  136 => 76,  132 => 75,  125 => 71,  121 => 70,  117 => 69,  113 => 68,  102 => 60,  67 => 27,  65 => 14,  60 => 12,  53 => 8,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -464,13 +529,31 @@ https://templatemo.com/tm-577-liberty-market
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class=\"nav\">
-                        <li><a href=\"index.html\">Home</a></li>
-                        <li><a href=\"explore.html\" class=\"active\">Explore</a></li>
-                        <li><a href=\"details.html\">Item Details</a></li>
-                        <li><a href=\"Ajouter Produit .html\" class=\"active\">Add product</a></li>
-                        <li><a href=\"author.html\">Author</a></li>
-                        <li><a href=\"create.html\">Create Yours</a></li>
-                    </ul>   
+                        <div class=\"dropdown\">
+                            <li><a>Art</a></li>
+                            <div class=\"dropdown-content\">
+                                <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                                <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                                <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                                <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+
+                            </div>
+                        </div>
+                        <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                        <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                        <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                        <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                        {%if(user.type=='Admin') %}
+                            <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser==null) %}
+                            <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                        {% else %}
+                            <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                        {% endif %}
+                    </ul>
                     <a class=\"menu-trigger\">
                         <span>Menu</span>
                     </a>

@@ -1,7 +1,35 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %} #}
+    {% block javascripts %}
+        {# <script src="vendor/jquery/jquery.min.js"></script> #}
+        <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 
-{% block css %}
-    {{ parent() }}
+        {# <script src="vendor/bootstrap/js/bootstrap.min.js"></script> #}
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+        {# <script src="assets/js/isotope.min.js"></script> #}
+        <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+
+        {# <script src="assets/js/owl-carousel.js"></script> #}
+        <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+
+        {# <script src="assets/js/tabs.js"></script> #}
+        <script src="{{ asset('assets/js/tabs.js') }}"></script>
+
+        {# <script src="assets/js/popup.js"></script> #}
+        <script src="{{ asset('assets/js/popup.js') }}"></script>
+
+        {# <script src="assets/js/custom.js"></script>  #}
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+    {% endblock %}
+{% block stylesheet %}
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+    {# {{ parent() }} #}
     <link data-require="fontawesome@*" data-semver="4.5.0" rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css"/>
     <style>
@@ -24,13 +52,12 @@
     <script>
         $(document).ready(function () {
 
-          if({{oldrating.getRating()}})
-            {
-              setRating({{oldrating.getRating()}});
+            if ({{ oldrating.getRating() }}) {
+                setRating({{ oldrating.getRating() }});
             }
 
             function setRating(rating) {
-                
+
                 $('#form_rating').val(rating);
                 // fill all the stars assigning the '.selected' class
                 $('.rating-star').removeClass('fa-star-o').addClass('selected');
@@ -61,17 +88,18 @@
                     var rating = $(e.target).data('rating');
                     $.ajax({
                         type: 'POST',
-                        url: 'http://127.0.0.1:8000/rating/new/'+$(e.target).data('rating')+'/'+parseInt(document.getElementById("challengeid").value) +'/'+parseInt(document.getElementById("participatorid").value),
+                        url: 'http://127.0.0.1:8000/rating/new/' + $(e.target).data('rating') + '/' + parseInt(document.getElementById("challengeid").value) + '/' + parseInt(document.getElementById("participatorid").value),
                         dataType: "json",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById("avg_rating").innerHTML = Math.round(response.avg.avg)+" Stars";
-                          document.getElementById("avg_flash").style.visibility = 'visible';
-                          setTimeout(myGreeting, 3000);
-                          function myGreeting() {
-                                                  document.getElementById("avg_flash").style.visibility = 'hidden'
-                                                }
-                            
+                            document.getElementById("avg_rating").innerHTML = Math.round(response.avg.avg) + " Stars";
+                            document.getElementById("avg_flash").style.visibility = 'visible';
+                            setTimeout(myGreeting, 3000);
+
+                            function myGreeting() {
+                                document.getElementById("avg_flash").style.visibility = 'hidden'
+                            }
+
                         }
                     });
                     setRating(rating);
@@ -90,33 +118,37 @@
 {% endblock %}
 
 {% block body %}
-<div class="item-details-page">
-  <div class="container">
-              <div class="col-lg-12">
-          <div class="current-bid">
-            <div class="row">
-          <div class="col-lg-7">
-            <div class="left-image">
-              <img src={{ asset('http://localhost/img/'~p.getIMGParticipation()) }} alt="" style="border-radius: 20px; max-height:480px; padding-top:20px;">
-            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-          </div>          
-          <div class="col-lg-5 align-self-center">
+    <div class="item-details-page">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="current-bid">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="left-image">
+                                <img src={{ asset('http://localhost/img/'~p.getIMGParticipation()) }} alt=""
+                                     style="border-radius: 20px; max-height:480px; padding-top:20px;">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 align-self-center">
             <span class="author">
-              <img src="{{ asset('/assets/images/author-02.jpg') }}" alt="" style="border-radius: 50%;height: 50px;width: 50px;">
-              <h6> {{ p.getIdUser().getName() }} {{ p.getIdUser().getLastName() }} <br><a href="/"> @{{ p.getIdUser().getNickname()}}</a></h6>
+              <img src="{{ asset('/assets/images/author-02.jpg') }}" alt=""
+                   style="border-radius: 50%;height: 50px;width: 50px;">
+              <h6> {{ p.getIdUser().getName() }} {{ p.getIdUser().getLastName() }} <br><a
+                          href="/"> @{{ p.getIdUser().getNickname() }}</a></h6>
             </span>
-            <p>{{ p.getDescription() }}</p>
-            <div class="row">
-              <div class="col-8">
+                            <p>{{ p.getDescription() }}</p>
+                            <div class="row">
+                                <div class="col-8">
                 <span class="bid">
-                <input id="challengeid" type="number" style="visibility: hidden;" value={{p.getIdChallenge().getId()}}>
-                <input id="participatorid" type="number" style="visibility: hidden;" value={{p.getIdUser().getid_user()}}>
-                <input id="participationid" type="number" style="visibility: hidden;" value={{p.getId()}}>
+                <input id="challengeid" type="number" style="visibility: hidden;" value={{ p.getIdChallenge().getId() }}>
+                <input id="participatorid" type="number" style="visibility: hidden;"
+                       value={{ p.getIdUser().getid_user() }}>
+                <input id="participationid" type="number" style="visibility: hidden;" value={{ p.getId() }}>
 
                 <div class="row">
                   <div class="col-5">
                     <span class="bid">
-                      Current Rate<br><strong id="avg_rating">{{avg.avg|round(1)}} Stars</strong><br>
+                      Current Rate<br><strong id="avg_rating">{{ avg.avg|round(1) }} Stars</strong><br>
                     </span>
                   </div>
     
@@ -128,21 +160,27 @@
                     <div class="rating" role="optgroup">
                         <!-- in Rails just use 1.upto(5) -->
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
-                          aria-label="Rate as one out of 5 stars" role="radio"></i>
+                           aria-label="Rate as one out of 5 stars" role="radio"></i>
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0"
-                          aria-label="Rate as two out of 5 stars" role="radio"></i>
+                           aria-label="Rate as two out of 5 stars" role="radio"></i>
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0"
-                          aria-label="Rate as three out of 5 stars" role="radio"></i>
+                           aria-label="Rate as three out of 5 stars" role="radio"></i>
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0"
-                          aria-label="Rate as four out of 5 stars" role="radio"></i>
+                           aria-label="Rate as four out of 5 stars" role="radio"></i>
                         <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
-                          aria-label="Rate as five out of 5 stars" role="radio"></i>
+                           aria-label="Rate as five out of 5 stars" role="radio"></i>
                     </div>
                     <div id="avg_flash" class="avg_flash" style="visibility: hidden;">
                       Thanks for your rating <i class="bi bi-check" style="width: 0;height: 100;color: #7453FC;"></i>
                     </div>
                   </div></div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div></div></div></div></div></div>
+        </div>
+    </div>
+
 {% endblock %}

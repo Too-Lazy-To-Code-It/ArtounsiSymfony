@@ -215,8 +215,6 @@ class DemandetravailController extends AbstractController
         $form->handleRequest($request);
         // Set the PDF file in the form
         $pd = $demandetravail->getPdf();
-        $newFilePath = $this->getParameter('upload_directory') . '/' . $pd;
-        $pdffile = new File ($newFilePath);
         //$form->get('pdf')->setData( $pdffile);
 
         $verif = true;
@@ -271,7 +269,7 @@ class DemandetravailController extends AbstractController
         return $this->renderForm('demandetravail/edit.html.twig', [
             'demandetravail' => $demandetravail,
             'form' => $form,
-            'pdf' => $pdffile,
+
         ]);
     }
 

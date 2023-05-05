@@ -182,7 +182,7 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
         // line 86
         if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 86, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 86, $this->source); })()), "getIdArtist", [], "method", false, false, false, 86), "getid_user", [], "method", false, false, false, 86))) {
             // line 87
-            echo "                <th scope=\"col\">Supprimer</th>
+            echo "                    <th scope=\"col\">Supprimer</th>
                 ";
         }
         // line 89
@@ -214,13 +214,13 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
             // line 99
             if (((isset($context["userid"]) || array_key_exists("userid", $context) ? $context["userid"] : (function () { throw new RuntimeError('Variable "userid" does not exist.', 99, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 99, $this->source); })()), "getIdArtist", [], "method", false, false, false, 99), "getid_user", [], "method", false, false, false, 99))) {
                 // line 100
-                echo "                    <td class=\"align-middle text-center text-sm\"><a
-                                href=\"";
+                echo "                        <td class=\"align-middle text-center text-sm\"><a
+                                    href=\"";
                 // line 101
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_participation_delete", ["id_participation" => twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 101)]), "html", null, true);
                 echo "\"
-                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                    </td>
+                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                        </td>
                     ";
             }
             // line 105
@@ -348,7 +348,7 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
                 <th scope=\"col\">Image</th>
                 <th scope=\"col\">Description</th>
                 {% if (userid==challenge.getIdArtist().getid_user()) %}
-                <th scope=\"col\">Supprimer</th>
+                    <th scope=\"col\">Supprimer</th>
                 {% endif %}
             </tr>
             </thead>
@@ -361,10 +361,10 @@ class __TwigTemplate_1cd7f94c4b7b4bf09f50f8766882498e extends Template
                              style=\"border-radius: 20px; width: 70px; height: 70px; \"></td>
                     <td>{{ p.description }}</td>
                     {% if (userid==challenge.getIdArtist().getid_user()) %}
-                    <td class=\"align-middle text-center text-sm\"><a
-                                href=\"{{ path('app_participation_delete', {'id_participation': p.getId()}) }}\"
-                                class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
-                    </td>
+                        <td class=\"align-middle text-center text-sm\"><a
+                                    href=\"{{ path('app_participation_delete', {'id_participation': p.getId()}) }}\"
+                                    class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
+                        </td>
                     {% endif %}
 
                 </tr>

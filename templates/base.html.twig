@@ -65,13 +65,17 @@
 
                                 </div>
                             </div>
+                            {% if(user.type=='Studio') %}
                             <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                            {% elseif(user.type=='Artist') %}
+
                             <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                            {% endif %}
                             <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
                             <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
                             <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
                             <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
-                            {%if(user.type=='Admin') %}
+                            {%if(user.type!='Observer') %}
                             <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
                             {% endif %}
                             {% if(user.idUser==null) %}

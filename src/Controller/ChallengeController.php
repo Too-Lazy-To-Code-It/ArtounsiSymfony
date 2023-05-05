@@ -11,12 +11,16 @@ use App\Form\ParticipationType;
 use App\Form\RatingType;
 use App\Repository\AllusersRepository;
 use App\Repository\ChallengeRepository;
+use App\Repository\OffretravailRepository;
+use App\Repository\PostRepository;
+use App\Repository\ProduitsRepository;
 use App\Repository\RatingRepository;
 use App\Repository\ParticipationRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -24,8 +28,13 @@ use Doctrine\Persistence\ManagerRegistry;
 class ChallengeController extends AbstractController
 {
     #[Route('/', name: 'app_challenge_index', methods: ['GET', 'POST'])]
-    public function index(Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
+    public function index(OffretravailRepository $offretravailRepository,CategoryRepository $categoryRepository,PostRepository $postRepository,ProduitsRepository $produitsRepository,SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
+
         $challenges = $challengeRepository->findAll();
         $keyword = null;
         $category = null;
@@ -43,12 +52,21 @@ class ChallengeController extends AbstractController
             else
                 $challenges = $challengeRepository->findBy(array( 'title'=>$keyword, 'id_categorie'=>$category ));
         }
+        $offretravails = $offretravailRepository->findby([], [], 3);
+        $categories = $categoryRepository->findAll();
+        $posts = $postRepository->findAll();
+        $produits = $produitsRepository->findby([], [], 6);
 
         return $this->render('challenge/index.html.twig', [
             'challenges' => $challenges,
             'categories' => $CategoryRepository->findAll(),
             'keyword' => $keyword,
             'Categorie' => $category,
+            'user'=>$user,
+            'posts' => $posts,
+            '$produits' => $produits,
+            'offretravails' => $offretravails,
+
         ]);
     }
 
@@ -142,7 +160,7 @@ class ChallengeController extends AbstractController
     }
 
     #[Route('/{id}/show', name: 'app_challenge_show', methods: ['GET', 'POST'])]
-    public function show(AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    public function show(ChallengeRepository $cr,AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
@@ -170,6 +188,7 @@ class ChallengeController extends AbstractController
                     return $this->render('challenge/show.html.twig', [
                         'challenge' => $challenge,
                         'form' => $form->createView(),
+                        "best" => $cr->orderedChallenges($challenge->getId()),
                     ]);                    
                 }
             $image = $form->get('Image')->getData();
@@ -205,6 +224,7 @@ class ChallengeController extends AbstractController
         return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,
             'form' => $form->createView(),
+            "best" => $cr->orderedChallenges($challenge->getId()),
             
         ]);
     }

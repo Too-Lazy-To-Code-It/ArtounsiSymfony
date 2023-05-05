@@ -24,16 +24,13 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
-            'css' => [$this, 'block_css'],
+            'javascripts' => [$this, 'block_javascripts'],
+            'stylesheet' => [$this, 'block_stylesheet'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,8 +42,16 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "challenge/participation.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "challenge/participation.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 2
+        echo "    ";
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 24
+        $this->displayBlock('stylesheet', $context, $blocks);
+        // line 119
+        echo "
+";
+        // line 120
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -55,21 +60,102 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
     }
 
-    // line 3
-    public function block_css($context, array $blocks = [])
+    // line 2
+    public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
+        // line 3
+        echo "        ";
         // line 4
-        echo "    ";
-        $this->displayParentBlock("css", $context, $blocks);
-        echo "
-    <link data-require=\"fontawesome@*\" data-semver=\"4.5.0\" rel=\"stylesheet\"
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 7
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 10
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 13
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 16
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 19
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
+        echo "\"></script>
+
+        ";
+        // line 22
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
+        echo "\"></script>
+    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 24
+    public function block_stylesheet($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        // line 25
+        echo "    <link href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <!-- Additional CSS Files -->
+    <link rel=\"stylesheet\" href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/templatemo-liberty-market.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+    ";
+        // line 33
+        echo "    <link data-require=\"fontawesome@*\" data-semver=\"4.5.0\" rel=\"stylesheet\"
           href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css\"/>
     <style>
         .rating {
@@ -91,19 +177,18 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
     <script>
         \$(document).ready(function () {
 
-          if(";
-        // line 27
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 27, $this->source); })()), "getRating", [], "method", false, false, false, 27), "html", null, true);
-        echo ")
-            {
-              setRating(";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 29, $this->source); })()), "getRating", [], "method", false, false, false, 29), "html", null, true);
+            if (";
+        // line 55
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 55, $this->source); })()), "getRating", [], "method", false, false, false, 55), "html", null, true);
+        echo ") {
+                setRating(";
+        // line 56
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 56, $this->source); })()), "getRating", [], "method", false, false, false, 56), "html", null, true);
         echo ");
             }
 
             function setRating(rating) {
-                
+
                 \$('#form_rating').val(rating);
                 // fill all the stars assigning the '.selected' class
                 \$('.rating-star').removeClass('fa-star-o').addClass('selected');
@@ -134,17 +219,18 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                     var rating = \$(e.target).data('rating');
                     \$.ajax({
                         type: 'POST',
-                        url: 'http://127.0.0.1:8000/rating/new/'+\$(e.target).data('rating')+'/'+parseInt(document.getElementById(\"challengeid\").value) +'/'+parseInt(document.getElementById(\"participatorid\").value),
+                        url: 'http://127.0.0.1:8000/rating/new/' + \$(e.target).data('rating') + '/' + parseInt(document.getElementById(\"challengeid\").value) + '/' + parseInt(document.getElementById(\"participatorid\").value),
                         dataType: \"json\",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg)+\" Stars\";
-                          document.getElementById(\"avg_flash\").style.visibility = 'visible';
-                          setTimeout(myGreeting, 3000);
-                          function myGreeting() {
-                                                  document.getElementById(\"avg_flash\").style.visibility = 'hidden'
-                                                }
-                            
+                            document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg) + \" Stars\";
+                            document.getElementById(\"avg_flash\").style.visibility = 'visible';
+                            setTimeout(myGreeting, 3000);
+
+                            function myGreeting() {
+                                document.getElementById(\"avg_flash\").style.visibility = 'hidden'
+                            }
+
                         }
                     });
                     setRating(rating);
@@ -169,7 +255,7 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
     }
 
-    // line 92
+    // line 120
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -179,61 +265,66 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 93
-        echo "<div class=\"item-details-page\">
-  <div class=\"container\">
-              <div class=\"col-lg-12\">
-          <div class=\"current-bid\">
-            <div class=\"row\">
-          <div class=\"col-lg-7\">
-            <div class=\"left-image\">
-              <img src=";
-        // line 100
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 100, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 100))), "html", null, true);
-        echo " alt=\"\" style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
-            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-          </div>          
-          <div class=\"col-lg-5 align-self-center\">
+        // line 121
+        echo "    <div class=\"item-details-page\">
+        <div class=\"container\">
+            <div class=\"col-lg-12\">
+                <div class=\"current-bid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-7\">
+                            <div class=\"left-image\">
+                                <img src=";
+        // line 128
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 128, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 128))), "html", null, true);
+        echo " alt=\"\"
+                                     style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
+                            </div>
+                        </div>
+                        <div class=\"col-lg-5 align-self-center\">
             <span class=\"author\">
               <img src=\"";
-        // line 105
+        // line 134
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/images/author-02.jpg"), "html", null, true);
-        echo "\" alt=\"\" style=\"border-radius: 50%;height: 50px;width: 50px;\">
+        echo "\" alt=\"\"
+                   style=\"border-radius: 50%;height: 50px;width: 50px;\">
               <h6> ";
-        // line 106
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getName", [], "method", false, false, false, 106), "html", null, true);
+        // line 136
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 136, $this->source); })()), "getIdUser", [], "method", false, false, false, 136), "getName", [], "method", false, false, false, 136), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getLastName", [], "method", false, false, false, 106), "html", null, true);
-        echo " <br><a href=\"/\"> @";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getNickname", [], "method", false, false, false, 106), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 136, $this->source); })()), "getIdUser", [], "method", false, false, false, 136), "getLastName", [], "method", false, false, false, 136), "html", null, true);
+        echo " <br><a
+                          href=\"/\"> @";
+        // line 137
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 137, $this->source); })()), "getIdUser", [], "method", false, false, false, 137), "getNickname", [], "method", false, false, false, 137), "html", null, true);
         echo "</a></h6>
             </span>
-            <p>";
-        // line 108
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 108, $this->source); })()), "getDescription", [], "method", false, false, false, 108), "html", null, true);
+                            <p>";
+        // line 139
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 139, $this->source); })()), "getDescription", [], "method", false, false, false, 139), "html", null, true);
         echo "</p>
-            <div class=\"row\">
-              <div class=\"col-8\">
+                            <div class=\"row\">
+                                <div class=\"col-8\">
                 <span class=\"bid\">
                 <input id=\"challengeid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 112
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 112, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 112), "getId", [], "method", false, false, false, 112), "html", null, true);
+        // line 143
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 143, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 143), "getId", [], "method", false, false, false, 143), "html", null, true);
         echo ">
-                <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 113
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 113, $this->source); })()), "getIdUser", [], "method", false, false, false, 113), "getid_user", [], "method", false, false, false, 113), "html", null, true);
+                <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\"
+                       value=";
+        // line 145
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 145, $this->source); })()), "getIdUser", [], "method", false, false, false, 145), "getid_user", [], "method", false, false, false, 145), "html", null, true);
         echo ">
                 <input id=\"participationid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 114
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 114, $this->source); })()), "getId", [], "method", false, false, false, 114), "html", null, true);
+        // line 146
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 146, $this->source); })()), "getId", [], "method", false, false, false, 146), "html", null, true);
         echo ">
 
                 <div class=\"row\">
                   <div class=\"col-5\">
                     <span class=\"bid\">
                       Current Rate<br><strong id=\"avg_rating\">";
-        // line 119
-        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 119, $this->source); })()), "avg", [], "any", false, false, false, 119), 1), "html", null, true);
+        // line 151
+        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 151, $this->source); })()), "avg", [], "any", false, false, false, 151), 1), "html", null, true);
         echo " Stars</strong><br>
                     </span>
                   </div>
@@ -246,23 +337,29 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                     <div class=\"rating\" role=\"optgroup\">
                         <!-- in Rails just use 1.upto(5) -->
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-1\" data-rating=\"1\" tabindex=\"0\"
-                          aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-2\" data-rating=\"2\" tabindex=\"0\"
-                          aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-3\" data-rating=\"3\" tabindex=\"0\"
-                          aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-4\" data-rating=\"4\" tabindex=\"0\"
-                          aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-5\" data-rating=\"5\" tabindex=\"0\"
-                          aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
                     </div>
                     <div id=\"avg_flash\" class=\"avg_flash\" style=\"visibility: hidden;\">
                       Thanks for your rating <i class=\"bi bi-check\" style=\"width: 0;height: 100;color: #7453FC;\"></i>
                     </div>
                   </div></div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div></div></div></div></div></div>
+        </div>
+    </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -277,22 +374,45 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         return "challenge/participation.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  236 => 119,  228 => 114,  224 => 113,  220 => 112,  213 => 108,  204 => 106,  200 => 105,  192 => 100,  183 => 93,  173 => 92,  101 => 29,  96 => 27,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  327 => 151,  319 => 146,  315 => 145,  310 => 143,  303 => 139,  298 => 137,  292 => 136,  287 => 134,  278 => 128,  269 => 121,  259 => 120,  186 => 56,  182 => 55,  158 => 33,  153 => 30,  149 => 29,  145 => 28,  141 => 27,  135 => 25,  125 => 24,  112 => 22,  106 => 19,  100 => 16,  94 => 13,  88 => 10,  82 => 7,  76 => 4,  74 => 3,  64 => 2,  54 => 120,  51 => 119,  49 => 24,  46 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{# {% extends 'base.html.twig' %} #}
+    {% block javascripts %}
+        {# <script src=\"vendor/jquery/jquery.min.js\"></script> #}
+        <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
 
-{% block css %}
-    {{ parent() }}
+        {# <script src=\"vendor/bootstrap/js/bootstrap.min.js\"></script> #}
+        <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
+
+        {# <script src=\"assets/js/isotope.min.js\"></script> #}
+        <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+
+        {# <script src=\"assets/js/owl-carousel.js\"></script> #}
+        <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
+
+        {# <script src=\"assets/js/tabs.js\"></script> #}
+        <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
+
+        {# <script src=\"assets/js/popup.js\"></script> #}
+        <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
+
+        {# <script src=\"assets/js/custom.js\"></script>  #}
+        <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+    {% endblock %}
+{% block stylesheet %}
+    <link href=\"{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+    <!-- Additional CSS Files -->
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/fontawesome.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/animate.css') }}\">
+    <link rel=\"stylesheet\" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+    {# {{ parent() }} #}
     <link data-require=\"fontawesome@*\" data-semver=\"4.5.0\" rel=\"stylesheet\"
           href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css\"/>
     <style>
@@ -315,13 +435,12 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
     <script>
         \$(document).ready(function () {
 
-          if({{oldrating.getRating()}})
-            {
-              setRating({{oldrating.getRating()}});
+            if ({{ oldrating.getRating() }}) {
+                setRating({{ oldrating.getRating() }});
             }
 
             function setRating(rating) {
-                
+
                 \$('#form_rating').val(rating);
                 // fill all the stars assigning the '.selected' class
                 \$('.rating-star').removeClass('fa-star-o').addClass('selected');
@@ -352,17 +471,18 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                     var rating = \$(e.target).data('rating');
                     \$.ajax({
                         type: 'POST',
-                        url: 'http://127.0.0.1:8000/rating/new/'+\$(e.target).data('rating')+'/'+parseInt(document.getElementById(\"challengeid\").value) +'/'+parseInt(document.getElementById(\"participatorid\").value),
+                        url: 'http://127.0.0.1:8000/rating/new/' + \$(e.target).data('rating') + '/' + parseInt(document.getElementById(\"challengeid\").value) + '/' + parseInt(document.getElementById(\"participatorid\").value),
                         dataType: \"json\",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg)+\" Stars\";
-                          document.getElementById(\"avg_flash\").style.visibility = 'visible';
-                          setTimeout(myGreeting, 3000);
-                          function myGreeting() {
-                                                  document.getElementById(\"avg_flash\").style.visibility = 'hidden'
-                                                }
-                            
+                            document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg) + \" Stars\";
+                            document.getElementById(\"avg_flash\").style.visibility = 'visible';
+                            setTimeout(myGreeting, 3000);
+
+                            function myGreeting() {
+                                document.getElementById(\"avg_flash\").style.visibility = 'hidden'
+                            }
+
                         }
                     });
                     setRating(rating);
@@ -381,33 +501,37 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 {% endblock %}
 
 {% block body %}
-<div class=\"item-details-page\">
-  <div class=\"container\">
-              <div class=\"col-lg-12\">
-          <div class=\"current-bid\">
-            <div class=\"row\">
-          <div class=\"col-lg-7\">
-            <div class=\"left-image\">
-              <img src={{ asset('http://localhost/img/'~p.getIMGParticipation()) }} alt=\"\" style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
-            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-          </div>          
-          <div class=\"col-lg-5 align-self-center\">
+    <div class=\"item-details-page\">
+        <div class=\"container\">
+            <div class=\"col-lg-12\">
+                <div class=\"current-bid\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-7\">
+                            <div class=\"left-image\">
+                                <img src={{ asset('http://localhost/img/'~p.getIMGParticipation()) }} alt=\"\"
+                                     style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
+                            </div>
+                        </div>
+                        <div class=\"col-lg-5 align-self-center\">
             <span class=\"author\">
-              <img src=\"{{ asset('/assets/images/author-02.jpg') }}\" alt=\"\" style=\"border-radius: 50%;height: 50px;width: 50px;\">
-              <h6> {{ p.getIdUser().getName() }} {{ p.getIdUser().getLastName() }} <br><a href=\"/\"> @{{ p.getIdUser().getNickname()}}</a></h6>
+              <img src=\"{{ asset('/assets/images/author-02.jpg') }}\" alt=\"\"
+                   style=\"border-radius: 50%;height: 50px;width: 50px;\">
+              <h6> {{ p.getIdUser().getName() }} {{ p.getIdUser().getLastName() }} <br><a
+                          href=\"/\"> @{{ p.getIdUser().getNickname() }}</a></h6>
             </span>
-            <p>{{ p.getDescription() }}</p>
-            <div class=\"row\">
-              <div class=\"col-8\">
+                            <p>{{ p.getDescription() }}</p>
+                            <div class=\"row\">
+                                <div class=\"col-8\">
                 <span class=\"bid\">
-                <input id=\"challengeid\" type=\"number\" style=\"visibility: hidden;\" value={{p.getIdChallenge().getId()}}>
-                <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\" value={{p.getIdUser().getid_user()}}>
-                <input id=\"participationid\" type=\"number\" style=\"visibility: hidden;\" value={{p.getId()}}>
+                <input id=\"challengeid\" type=\"number\" style=\"visibility: hidden;\" value={{ p.getIdChallenge().getId() }}>
+                <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\"
+                       value={{ p.getIdUser().getid_user() }}>
+                <input id=\"participationid\" type=\"number\" style=\"visibility: hidden;\" value={{ p.getId() }}>
 
                 <div class=\"row\">
                   <div class=\"col-5\">
                     <span class=\"bid\">
-                      Current Rate<br><strong id=\"avg_rating\">{{avg.avg|round(1)}} Stars</strong><br>
+                      Current Rate<br><strong id=\"avg_rating\">{{ avg.avg|round(1) }} Stars</strong><br>
                     </span>
                   </div>
     
@@ -419,23 +543,29 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                     <div class=\"rating\" role=\"optgroup\">
                         <!-- in Rails just use 1.upto(5) -->
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-1\" data-rating=\"1\" tabindex=\"0\"
-                          aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as one out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-2\" data-rating=\"2\" tabindex=\"0\"
-                          aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as two out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-3\" data-rating=\"3\" tabindex=\"0\"
-                          aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as three out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-4\" data-rating=\"4\" tabindex=\"0\"
-                          aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as four out of 5 stars\" role=\"radio\"></i>
                         <i class=\"fa fa-star-o fa-2x rating-star\" id=\"rating-5\" data-rating=\"5\" tabindex=\"0\"
-                          aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
+                           aria-label=\"Rate as five out of 5 stars\" role=\"radio\"></i>
                     </div>
                     <div id=\"avg_flash\" class=\"avg_flash\" style=\"visibility: hidden;\">
                       Thanks for your rating <i class=\"bi bi-check\" style=\"width: 0;height: 100;color: #7453FC;\"></i>
                     </div>
                   </div></div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div></div></div></div></div></div>
+        </div>
+    </div>
+
 {% endblock %}", "challenge/participation.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\participation.html.twig");
     }
 }

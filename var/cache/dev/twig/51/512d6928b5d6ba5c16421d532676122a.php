@@ -45,16 +45,12 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "explore/details.html.twig"));
 
         // line 1
-        echo "
-
-";
-        // line 3
         $this->displayBlock('head', $context, $blocks);
-        // line 28
+        // line 27
         echo "
 
     ";
-        // line 30
+        // line 29
         $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -64,7 +60,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 3
+    // line 1
     public function block_head($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,29 +70,30 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
-        // line 4
+        // line 2
         echo "    <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
     <link href=\"";
-        // line 8
+        // line 6
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        echo "\"
+          rel=\"stylesheet\">
 
     <title>Detail Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Additional CSS Files -->
     ";
-        // line 16
+        // line 15
         $this->displayBlock('stylesheet', $context, $blocks);
-        // line 23
+        // line 22
         echo "
 
 
@@ -110,7 +107,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 16
+    // line 15
     public function block_stylesheet($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -120,24 +117,24 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
 
-        // line 17
+        // line 16
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/fontawesome.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/templatemo-liberty-market.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 19
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 20
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/animate.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://unpkg.com/swiper@7/swiper-bundle.min.css"), "html", null, true);
         echo "\"/>
     ";
@@ -149,7 +146,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 30
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,183 +156,234 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 31
+        // line 30
         echo "
-    <!-- ***** Preloader Start ***** -->
-    ";
-        // line 43
+        <!-- ***** Preloader Start ***** -->
+        ";
+        // line 42
         echo "
-    <header class=\"header-area header-sticky\">
-    <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-12\">
-                <nav class=\"main-nav\">
-                    <!-- ***** Logo Start ***** -->
-                    <a href=\"index.html\" class=\"logo\">
-                    <img src=\"";
-        // line 51
+        <header class=\"header-area header-sticky\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-12\">
+                        <nav class=\"main-nav\">
+                            <!-- ***** Logo Start ***** -->
+                            <a href=\"index.html\" class=\"logo\">
+                                <img src=\"";
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo.png"), "html", null, true);
-        echo "\" alt=\"\" >
-                        ";
+        echo "\" alt=\"\">
+                                ";
+        // line 52
+        echo "                                ";
         // line 53
-        echo "                        ";
-        // line 54
-        echo "                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class=\"nav\">
-                        <li><a href=\"";
-        // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\">Home</a></li>
-                        <li><a href=\"";
-        // line 59
+        echo "                            </a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class=\"nav\">
+                                <div class=\"dropdown\">
+                                    <li><a>Art</a></li>
+                                    <div class=\"dropdown-content\">
+                                        <li><a href=\"";
+        // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
         echo "\">Explore</a></li>
-                        <li><a href=\"";
-        // line 60
+                                        <li><a href=\"";
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
         echo "\">Blog</a></li>
-                        <li><a href=\"";
-        // line 61
+                                        <li><a href=\"";
+        // line 62
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
-        echo "\">Famous Studios</a></li>
-                        <li><a href=\"details.html.twig\">Item Details</a></li>
-                        <li><a href=\"author.html\">Author</a></li>
-                        <li><a href=\"";
-        // line 64
+        echo "\">Studios</a></li>
+                                        <li><a href=\"";
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
         echo "\">Create Yours</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-    </header>
-    <div class=\"page-heading normal-space\">
-        <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-12\">
-            <h6>Liberty NFT Market</h6>
-            <h2>View Item Details</h2>
-            <span>Home > <a href=\"#\">Item Details</a></span>
-            <div class=\"buttons\">
-                <div class=\"main-button\">
-                <a href=\"explore.html\">Explore Our Items</a>
-                </div>
-                <div class=\"border-button\">
-                <a href=\"create.html\">Create Your NFT</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
 
-    <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <div class=\"section-heading\">
-                        <div class=\"line-dec\"></div>
-                        <h2>View Details <em>For Item</em> Here.</h2>
+                                    </div>
+                                </div>
+                                <li><a href=\"";
+        // line 67
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+        echo "\">Offres</a></li>
+                                <li><a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+        echo "\">Demandes</a></li>
+                                <li><a href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
+        echo "\">Shop</a></li>
+                                <li><a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo "\">Panier</a></li>
+                                <li><a href=\"";
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                                <li><a href=\"";
+        // line 72
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                                ";
+        // line 73
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 73, $this->source); })()), "type", [], "any", false, false, false, 73) == "Admin")) {
+            // line 74
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                                ";
+        }
+        // line 76
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 76, $this->source); })()), "idUser", [], "any", false, false, false, 76) == null)) {
+            // line 77
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                                ";
+        } else {
+            // line 79
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                                ";
+        }
+        // line 81
+        echo "                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
                     </div>
+                </div>
+            </div>
+        </header>
+        <div class=\"page-heading normal-space\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <h6>Liberty NFT Market</h6>
+                        <h2>View Item Details</h2>
+                        <span>Home > <a href=\"#\">Item Details</a></span>
+                        <div class=\"buttons\">
+                            <div class=\"main-button\">
+                                <a href=\"explore.html\">Explore Our Items</a>
+                            </div>
+                            <div class=\"border-button\">
+                                <a href=\"create.html\">Create Your NFT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=\"item-details-page\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <div class=\"section-heading\">
+                            <div class=\"line-dec\"></div>
+                            <h2>View Details <em>For Item</em> Here.</h2>
+                        </div>
                     </div>
                     <div class=\"col-lg-7\">
-                    <div class=\"left-image\">
-                        <img src=\"";
-        // line 106
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 106, $this->source); })()), "media", [], "any", false, false, false, 106), "html", null, true);
+                        <div class=\"left-image\">
+                            <img src=\"";
+        // line 122
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 122, $this->source); })()), "media", [], "any", false, false, false, 122), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 20px;\">
-                    </div>
+                        </div>
                     </div>
                     <div class=\"col-lg-5 align-self-center\">
-                    <h4>";
-        // line 110
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 110, $this->source); })()), "titleP", [], "any", false, false, false, 110), "html", null, true);
+                        <h4>";
+        // line 126
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 126, $this->source); })()), "titleP", [], "any", false, false, false, 126), "html", null, true);
         echo "</h4>
-                    ";
-        // line 112
-        echo "                    <span class=\"author\">
+                        ";
+        // line 128
+        echo "                        <span class=\"author\">
                         <img src=\"";
-        // line 113
+        // line 129
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/author-02.jpg"), "html", null, true);
-        echo "\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
+        echo "\" alt=\"\"
+                             style=\"max-width: 50px; border-radius: 50%;\">
                         <h6>Artist<br><a href=\"#\">";
-        // line 114
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 114, $this->source); })()), "getUserName", [], "any", false, false, false, 114), "html", null, true);
+        // line 131
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 131, $this->source); })()), "getUserName", [], "any", false, false, false, 131), "html", null, true);
         echo "</a></h6>
                     </span>
-                    <p>";
-        // line 116
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 116, $this->source); })()), "getDescriptionP", [], "any", false, false, false, 116), "html", null, true);
+                        <p>";
+        // line 133
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 133, $this->source); })()), "getDescriptionP", [], "any", false, false, false, 133), "html", null, true);
         echo "</p>
-                    <div class=\"row\">
-                        <div class=\"col-3\">
+                        <div class=\"row\">
+                            <div class=\"col-3\">
                         <span class=\"bid\">
                             Current Likes<br><strong>";
-        // line 120
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 120, $this->source); })()), "postLikes", [], "any", false, false, false, 120), "count", [], "any", false, false, false, 120), "html", null, true);
+        // line 137
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 137, $this->source); })()), "postLikes", [], "any", false, false, false, 137), "count", [], "any", false, false, false, 137), "html", null, true);
         echo "</strong><br>
                         </span>
-                        <span class=\"bid\">
+                                <span class=\"bid\">
                             <br><strong><a href=\"";
-        // line 123
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 123, $this->source); })()), "getId", [], "any", false, false, false, 123)]), "html", null, true);
+        // line 140
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 140, $this->source); })()), "getId", [], "any", false, false, false, 140)]), "html", null, true);
         echo "\">Edit Post</a></strong><br>
                             ";
-        // line 124
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 124, $this->source); })()), "id_user", [], "any", false, false, false, 124) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 124, $this->source); })()), "idUser", [], "any", false, false, false, 124), "getid_user", [], "method", false, false, false, 124))) {
-            // line 125
-            echo "                            ";
+        // line 141
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 141, $this->source); })()), "id_user", [], "any", false, false, false, 141) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 141, $this->source); })()), "idUser", [], "any", false, false, false, 141), "getid_user", [], "method", false, false, false, 141))) {
+            // line 142
+            echo "                                    ";
             echo twig_include($this->env, $context, "post/_delete_form.html.twig");
             echo "
                             
                         </span>
-                            ";
+                                ";
         }
-        // line 129
-        echo "                </div>
-                        <div class=\"fb-like\" id=\"like-btn\">
-                            ";
-        // line 131
+        // line 146
+        echo "                            </div>
+                            <div class=\"fb-like\" id=\"like-btn\">
+                                ";
+        // line 148
         echo twig_include($this->env, $context, "post_like/_form.html.twig");
-        echo "             
-                            <h1></h1>
-                        </div> 
-                    
-            </div>
+        echo "
+                                <h1></h1>
+                            </div>
 
-            </div>
-            <div class=\"col-lg-12\">
-            <div class=\"current-bid\">
-                <div class=\"row\">
-                <div class=\"col-lg-6\">
-                    <div class=\"mini-heading\"><h4>Current Comments</h4></div>
-                </div>
-                <div class=\"col-lg-6\">
-                    <fieldset>
-                        <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                            <option selected>Sort By: Latest</option>
-                            <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
-                            <option value=\"low\">Sort By: Lowest</option>
-                            <option value=\"high\">Sort By: Highest</option>
-                        </select>
-                    </fieldset>
-                </div>
-                <div class=\"row\">
-                
-                    ";
-        // line 156
-        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 156, $this->source); })()), 3);
-        // line 157
-        echo "                    ";
+                        </div>
+
+                    </div>
+                    <div class=\"col-lg-12\">
+                        <div class=\"current-bid\">
+                            <div class=\"row\">
+                                <div class=\"col-lg-6\">
+                                    <div class=\"mini-heading\"><h4>Current Comments</h4></div>
+                                </div>
+                                <div class=\"col-lg-6\">
+                                    <fieldset>
+                                        <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                                id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                            <option selected>Sort By: Latest</option>
+                                            <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
+                                            <option value=\"low\">Sort By: Lowest</option>
+                                            <option value=\"high\">Sort By: Highest</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class=\"row\">
+
+                                    ";
+        // line 174
+        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 174, $this->source); })()), 3);
+        // line 175
+        echo "                                    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 157, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 175, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -350,10 +398,10 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["group"]) {
-            // line 158
-            echo "                        <div class=\"row\">
-                            ";
-            // line 159
+            // line 176
+            echo "                                        <div class=\"row\">
+                                            ";
+            // line 177
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["group"]);
             $context['loop'] = [
@@ -370,54 +418,56 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 160
-                echo "                            ";
-                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 160, $this->source); })()), "getIdPost", [], "any", false, false, false, 160);
-                // line 161
-                echo "                            ";
-                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 161);
-                // line 162
-                echo "                            ";
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 162), "getIdPost", [], "method", false, false, false, 162) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 162, $this->source); })()), "getIdPost", [], "method", false, false, false, 162))) {
-                    // line 163
-                    echo "                                <div class=\"col-lg-4 col-md-6\">
-                                    <div class=\"item\">
-                                        <div class=\"right-content\">
-                                            <h4>Name : </h4>
-                                            <a href=\"#\">";
-                    // line 167
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 167), "getName", [], "method", false, false, false, 167), "html", null, true);
+                // line 178
+                echo "                                                ";
+                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 178, $this->source); })()), "getIdPost", [], "any", false, false, false, 178);
+                // line 179
+                echo "                                                ";
+                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 179);
+                // line 180
+                echo "                                                ";
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 180), "getIdPost", [], "method", false, false, false, 180) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 180, $this->source); })()), "getIdPost", [], "method", false, false, false, 180))) {
+                    // line 181
+                    echo "                                                    <div class=\"col-lg-4 col-md-6\">
+                                                        <div class=\"item\">
+                                                            <div class=\"right-content\">
+                                                                <h4>Name : </h4>
+                                                                <a href=\"#\">";
+                    // line 185
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 185), "getName", [], "method", false, false, false, 185), "html", null, true);
                     echo "</a>
-                                            <div class=\"line-dec\"></div>
-                                            <h6>Comment: <em>";
-                    // line 169
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 169), "html", null, true);
+                                                                <div class=\"line-dec\"></div>
+                                                                <h6>Comment: <em>";
+                    // line 187
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 187), "html", null, true);
                     echo "</em></h6>
-                                            <span class=\"date\">";
-                    // line 170
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 170), "Y-m-d H:i:s"), "html", null, true);
+                                                                <span class=\"date\">";
+                    // line 188
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 188), "Y-m-d H:i:s"), "html", null, true);
                     echo "</span>
-                                            <h6><a href=\"";
-                    // line 171
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 171)]), "html", null, true);
-                    echo "\">edit</a></h6>
-                                            ";
-                    // line 172
-                    if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 172, $this->source); })()), "idUser", [], "any", false, false, false, 172) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 172), "getid_user", [], "method", false, false, false, 172))) {
-                        // line 173
-                        echo "                                            <h6>";
+                                                                <h6>
+                                                                    <a href=\"";
+                    // line 190
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 190)]), "html", null, true);
+                    echo "\">edit</a>
+                                                                </h6>
+                                                                ";
+                    // line 192
+                    if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 192, $this->source); })()), "idUser", [], "any", false, false, false, 192) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 192), "getid_user", [], "method", false, false, false, 192))) {
+                        // line 193
+                        echo "                                                                    <h6>";
                         echo twig_include($this->env, $context, "comment/_delete_form.html.twig");
                         echo "</h6>
-                                                ";
+                                                                ";
                     }
-                    // line 175
-                    echo "                                        </div>
-                                    </div>
-                                </div>
-                                ";
+                    // line 195
+                    echo "                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ";
                 }
-                // line 179
-                echo "                            ";
+                // line 199
+                echo "                                            ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
                 $context['loop']['first'] = false;
@@ -430,9 +480,9 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 180
-            echo "                        </div>
-                    ";
+            // line 200
+            echo "                                        </div>
+                                    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
             $context['loop']['first'] = false;
@@ -445,95 +495,104 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 182
+        // line 202
         echo "
 
-                </div>
-                </div>
-            </div
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <form action=\"";
-        // line 189
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 189, $this->source); })()), "getIdPost", [], "any", false, false, false, 189)]), "html", null, true);
-        echo "\" method=\"post\">
-                        <input type=\"submit\" value=\"Add Comment\" style=\"font-size: 20px; padding: 10px;width: 100%;\" >
-                    </form>
+                                </div>
+                            </div>
+                        </div
+                        <div class=\"row\">
+                            <div class=\"col-lg-12\">
+                                <form action=\"";
+        // line 209
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 209, $this->source); })()), "getIdPost", [], "any", false, false, false, 209)]), "html", null, true);
+        echo "\"
+                                      method=\"post\">
+                                    <input type=\"submit\" value=\"Add Comment\"
+                                           style=\"font-size: 20px; padding: 10px;width: 100%;\">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
-    </div>
 
-    <div class=\"create-nft\">
-        <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-8\">
-            <div class=\"section-heading\">
-                <div class=\"line-dec\"></div>
-                <h2>Create Your NFT & Put It On The Market.</h2>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"main-button\">
-                <a href=\"create.html\">Create Your NFT Now</a>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item first-item\">
-                <div class=\"number\">
-                <h6>1</h6>
-                </div>
-                <div class=\"icon\">
-                <img src=\"";
-        // line 218
+            <div class=\"create-nft\">
+                <div class=\"container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-8\">
+                            <div class=\"section-heading\">
+                                <div class=\"line-dec\"></div>
+                                <h2>Create Your NFT & Put It On The Market.</h2>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"main-button\">
+                                <a href=\"create.html\">Create Your NFT Now</a>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item first-item\">
+                                <div class=\"number\">
+                                    <h6>1</h6>
+                                </div>
+                                <div class=\"icon\">
+                                    <img src=\"";
+        // line 240
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-02.png"), "html", null, true);
         echo "\" alt=\"\">
-                </div>
-                <h4>Set Up Your Wallet</h4>
-                <p>There are 5 different HTML pages included in this NFT <a href=\"https://templatemo.com/page/1\" target=\"_blank\" rel=\"nofollow\">website template</a>. You can edit or modify any section on any page as you required.</p>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item second-item\">
-                <div class=\"number\">
-                <h6>2</h6>
-                </div>
-                <div class=\"icon\">
-                    <img src=\"";
-        // line 230
+                                </div>
+                                <h4>Set Up Your Wallet</h4>
+                                <p>There are 5 different HTML pages included in this NFT <a
+                                            href=\"https://templatemo.com/page/1\" target=\"_blank\" rel=\"nofollow\">website
+                                        template</a>. You can edit or modify any section on any page as you required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item second-item\">
+                                <div class=\"number\">
+                                    <h6>2</h6>
+                                </div>
+                                <div class=\"icon\">
+                                    <img src=\"";
+        // line 255
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-04.png"), "html", null, true);
         echo "\" alt=\"\">
-                </div>
-                <h4>Add Your Digital NFT</h4>
-                <p>If you would like to support our TemplateMo website, please visit <a rel=\"nofollow\" href=\"https://templatemo.com/contact\" target=\"_parent\">our contact page</a> to make a PayPal contribution. Thank you.</p>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item\">
-                <div class=\"icon\">
-                <img src=\"";
-        // line 239
+                                </div>
+                                <h4>Add Your Digital NFT</h4>
+                                <p>If you would like to support our TemplateMo website, please visit <a rel=\"nofollow\"
+                                                                                                        href=\"https://templatemo.com/contact\"
+                                                                                                        target=\"_parent\">our
+                                        contact page</a> to make a PayPal contribution. Thank you.</p>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item\">
+                                <div class=\"icon\">
+                                    <img src=\"";
+        // line 267
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-06.png"), "html", null, true);
         echo "\" alt=\"\">
+                                </div>
+                                <h4>Sell Your NFT &amp; Make Profit</h4>
+                                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There
+                                    are many different kinds of NFTs in the industry.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h4>Sell Your NFT &amp; Make Profit</h4>
-                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There are many different kinds of NFTs in the industry.</p>
-            </div>
             </div>
         </div>
-        </div>
-    </div>
-    </div>
-";
-        // line 249
+        ";
+        // line 278
         $this->displayBlock('footer', $context, $blocks);
-        // line 262
+        // line 292
         echo "
-    ";
-        // line 263
+        ";
+        // line 293
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 272
+        // line 302
         echo "
 
     ";
@@ -545,7 +604,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 249
+    // line 278
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -555,19 +614,20 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 250
-        echo "<footer>
-    <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-12\">
-                <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-                    &nbsp;&nbsp;
-                    Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\" target=\"_blank\">TemplateMo</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-";
+        // line 279
+        echo "            <footer>
+                <div class=\"container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-12\">
+                            <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                                &nbsp;&nbsp;
+                                Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\"
+                                               target=\"_blank\">TemplateMo</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -576,7 +636,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 263
+    // line 293
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -586,35 +646,35 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 264
-        echo "        <script src=\"";
+        // line 294
+        echo "            <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 265
+            <script src=\"";
+        // line 295
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 266
+            <script src=\"";
+        // line 296
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 267
+            <script src=\"";
+        // line 297
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 268
+            <script src=\"";
+        // line 298
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 269
+            <script src=\"";
+        // line 299
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 270
+            <script src=\"";
+        // line 300
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
-    ";
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -630,19 +690,18 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     public function getDebugInfo()
     {
-        return array (  615 => 270,  611 => 269,  607 => 268,  603 => 267,  599 => 266,  595 => 265,  590 => 264,  580 => 263,  559 => 250,  549 => 249,  537 => 272,  535 => 263,  532 => 262,  530 => 249,  517 => 239,  505 => 230,  490 => 218,  458 => 189,  449 => 182,  434 => 180,  420 => 179,  414 => 175,  408 => 173,  406 => 172,  402 => 171,  398 => 170,  394 => 169,  389 => 167,  383 => 163,  380 => 162,  377 => 161,  374 => 160,  357 => 159,  354 => 158,  336 => 157,  334 => 156,  306 => 131,  302 => 129,  294 => 125,  292 => 124,  288 => 123,  282 => 120,  275 => 116,  270 => 114,  266 => 113,  263 => 112,  259 => 110,  252 => 106,  207 => 64,  201 => 61,  197 => 60,  193 => 59,  189 => 58,  183 => 54,  181 => 53,  177 => 51,  167 => 43,  163 => 31,  153 => 30,  141 => 21,  137 => 20,  133 => 19,  129 => 18,  124 => 17,  114 => 16,  100 => 23,  98 => 16,  92 => 13,  84 => 8,  78 => 4,  68 => 3,  58 => 30,  54 => 28,  52 => 3,  48 => 1,);
+        return array (  675 => 300,  671 => 299,  667 => 298,  663 => 297,  659 => 296,  655 => 295,  650 => 294,  640 => 293,  618 => 279,  608 => 278,  596 => 302,  594 => 293,  591 => 292,  589 => 278,  575 => 267,  560 => 255,  542 => 240,  508 => 209,  499 => 202,  484 => 200,  470 => 199,  464 => 195,  458 => 193,  456 => 192,  451 => 190,  446 => 188,  442 => 187,  437 => 185,  431 => 181,  428 => 180,  425 => 179,  422 => 178,  405 => 177,  402 => 176,  384 => 175,  382 => 174,  353 => 148,  349 => 146,  341 => 142,  339 => 141,  335 => 140,  329 => 137,  322 => 133,  317 => 131,  312 => 129,  309 => 128,  305 => 126,  298 => 122,  255 => 81,  249 => 79,  243 => 77,  240 => 76,  234 => 74,  232 => 73,  228 => 72,  224 => 71,  220 => 70,  216 => 69,  212 => 68,  208 => 67,  201 => 63,  197 => 62,  193 => 61,  189 => 60,  180 => 53,  178 => 52,  174 => 50,  164 => 42,  160 => 30,  150 => 29,  138 => 20,  134 => 19,  130 => 18,  126 => 17,  121 => 16,  111 => 15,  97 => 22,  95 => 15,  89 => 12,  80 => 6,  74 => 2,  64 => 1,  54 => 29,  50 => 27,  48 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-
-{% block head %}
+        return new Source("{% block head %}
     <meta charset=\"utf-8\">
     <meta name=\"author\" content=\"templatemo\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
-    <link href=\"{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}\"
+          rel=\"stylesheet\">
 
     <title>Detail Page</title>
 
@@ -666,8 +725,8 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     {% block body %}
 
-    <!-- ***** Preloader Start ***** -->
-    {# <div id=\"js-preloader\" class=\"js-preloader\">
+        <!-- ***** Preloader Start ***** -->
+        {# <div id=\"js-preloader\" class=\"js-preloader\">
         <div class=\"preloader-inner\">
         <span class=\"dot\"></span>
         <div class=\"dots\">
@@ -678,234 +737,265 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         </div>
     </div> #}
 
-    <header class=\"header-area header-sticky\">
-    <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-12\">
-                <nav class=\"main-nav\">
-                    <!-- ***** Logo Start ***** -->
-                    <a href=\"index.html\" class=\"logo\">
-                    <img src=\"{{ asset('assets/images/logo.png') }}\" alt=\"\" >
-                        {# <img src=\"assets/images/logo.png\" alt=\"\" href=\"{{ asset('assets/images/logo.png') }}\"> #}
-                        {# href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\"> #}
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class=\"nav\">
-                        <li><a href=\"{{ path('app_home') }}\">Home</a></li>
-                        <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
-                        <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
-                        <li><a href=\"{{ path('app_map') }}\">Famous Studios</a></li>
-                        <li><a href=\"details.html.twig\">Item Details</a></li>
-                        <li><a href=\"author.html\">Author</a></li>
-                        <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-    </header>
-    <div class=\"page-heading normal-space\">
-        <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-12\">
-            <h6>Liberty NFT Market</h6>
-            <h2>View Item Details</h2>
-            <span>Home > <a href=\"#\">Item Details</a></span>
-            <div class=\"buttons\">
-                <div class=\"main-button\">
-                <a href=\"explore.html\">Explore Our Items</a>
-                </div>
-                <div class=\"border-button\">
-                <a href=\"create.html\">Create Your NFT</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+        <header class=\"header-area header-sticky\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-12\">
+                        <nav class=\"main-nav\">
+                            <!-- ***** Logo Start ***** -->
+                            <a href=\"index.html\" class=\"logo\">
+                                <img src=\"{{ asset('assets/images/logo.png') }}\" alt=\"\">
+                                {# <img src=\"assets/images/logo.png\" alt=\"\" href=\"{{ asset('assets/images/logo.png') }}\"> #}
+                                {# href=\"{{ asset('assets/css/templatemo-liberty-market.css') }}\"> #}
+                            </a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class=\"nav\">
+                                <div class=\"dropdown\">
+                                    <li><a>Art</a></li>
+                                    <div class=\"dropdown-content\">
+                                        <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                                        <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                                        <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                                        <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
 
-    <div class=\"item-details-page\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <div class=\"section-heading\">
-                        <div class=\"line-dec\"></div>
-                        <h2>View Details <em>For Item</em> Here.</h2>
+                                    </div>
+                                </div>
+                                <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                                <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                                <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                                <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                                <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                                <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                                {%if(user.type=='Admin') %}
+                                    <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                                {% endif %}
+                                {% if(user.idUser==null) %}
+                                    <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                                {% else %}
+                                    <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                                {% endif %}
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
                     </div>
+                </div>
+            </div>
+        </header>
+        <div class=\"page-heading normal-space\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <h6>Liberty NFT Market</h6>
+                        <h2>View Item Details</h2>
+                        <span>Home > <a href=\"#\">Item Details</a></span>
+                        <div class=\"buttons\">
+                            <div class=\"main-button\">
+                                <a href=\"explore.html\">Explore Our Items</a>
+                            </div>
+                            <div class=\"border-button\">
+                                <a href=\"create.html\">Create Your NFT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=\"item-details-page\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <div class=\"section-heading\">
+                            <div class=\"line-dec\"></div>
+                            <h2>View Details <em>For Item</em> Here.</h2>
+                        </div>
                     </div>
                     <div class=\"col-lg-7\">
-                    <div class=\"left-image\">
-                        <img src=\"{{ post.media }}\" alt=\"\" style=\"border-radius: 20px;\">
-                    </div>
+                        <div class=\"left-image\">
+                            <img src=\"{{ post.media }}\" alt=\"\" style=\"border-radius: 20px;\">
+                        </div>
                     </div>
                     <div class=\"col-lg-5 align-self-center\">
-                    <h4>{{ post.titleP }}</h4>
-                    {# <h4>{{ post.getIdPost }} YESSSSSSSSSSSSSSSSSSS</h4> #}
-                    <span class=\"author\">
-                        <img src=\"{{ asset('assets/images/author-02.jpg') }}\" alt=\"\" style=\"max-width: 50px; border-radius: 50%;\">
+                        <h4>{{ post.titleP }}</h4>
+                        {# <h4>{{ post.getIdPost }} YESSSSSSSSSSSSSSSSSSS</h4> #}
+                        <span class=\"author\">
+                        <img src=\"{{ asset('assets/images/author-02.jpg') }}\" alt=\"\"
+                             style=\"max-width: 50px; border-radius: 50%;\">
                         <h6>Artist<br><a href=\"#\">{{ post.getUserName }}</a></h6>
                     </span>
-                    <p>{{ post.getDescriptionP }}</p>
-                    <div class=\"row\">
-                        <div class=\"col-3\">
+                        <p>{{ post.getDescriptionP }}</p>
+                        <div class=\"row\">
+                            <div class=\"col-3\">
                         <span class=\"bid\">
                             Current Likes<br><strong>{{ post.postLikes.count }}</strong><br>
                         </span>
-                        <span class=\"bid\">
+                                <span class=\"bid\">
                             <br><strong><a href=\"{{ path('app_post_edit', {'id_post': post.getId}) }}\">Edit Post</a></strong><br>
                             {% if(user.id_user==post.idUser.getid_user()) %}
-                            {{ include('post/_delete_form.html.twig') }}
+                                    {{ include('post/_delete_form.html.twig') }}
                             
                         </span>
-                            {% endif %}
-                </div>
-                        <div class=\"fb-like\" id=\"like-btn\">
-                            {{ include('post_like/_form.html.twig') }}             
-                            <h1></h1>
-                        </div> 
-                    
-            </div>
-
-            </div>
-            <div class=\"col-lg-12\">
-            <div class=\"current-bid\">
-                <div class=\"row\">
-                <div class=\"col-lg-6\">
-                    <div class=\"mini-heading\"><h4>Current Comments</h4></div>
-                </div>
-                <div class=\"col-lg-6\">
-                    <fieldset>
-                        <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                            <option selected>Sort By: Latest</option>
-                            <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
-                            <option value=\"low\">Sort By: Lowest</option>
-                            <option value=\"high\">Sort By: Highest</option>
-                        </select>
-                    </fieldset>
-                </div>
-                <div class=\"row\">
-                
-                    {% set commentGroups = comments|batch(3) %}
-                    {% for group in commentGroups %}
-                        <div class=\"row\">
-                            {% for comment in group %}
-                            {% set postId = post.getIdPost %}
-                            {% set commentId = comment.getIdPost %}
-                            {% if comment.getIdPost().getIdPost() == post.getIdPost() %}
-                                <div class=\"col-lg-4 col-md-6\">
-                                    <div class=\"item\">
-                                        <div class=\"right-content\">
-                                            <h4>Name : </h4>
-                                            <a href=\"#\">{{ comment.getIdUser().getName() }}</a>
-                                            <div class=\"line-dec\"></div>
-                                            <h6>Comment: <em>{{ comment.getComment }}</em></h6>
-                                            <span class=\"date\">{{ comment.getDateComment()|date('Y-m-d H:i:s') }}</span>
-                                            <h6><a href=\"{{ path('app_comment_edit', {'id_comment': comment.getId}) }}\">edit</a></h6>
-                                            {% if(user.idUser==comment.getIdUser().getid_user()) %}
-                                            <h6>{{ include('comment/_delete_form.html.twig') }}</h6>
-                                                {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
                                 {% endif %}
-                            {% endfor %}
+                            </div>
+                            <div class=\"fb-like\" id=\"like-btn\">
+                                {{ include('post_like/_form.html.twig') }}
+                                <h1></h1>
+                            </div>
+
                         </div>
-                    {% endfor %}
+
+                    </div>
+                    <div class=\"col-lg-12\">
+                        <div class=\"current-bid\">
+                            <div class=\"row\">
+                                <div class=\"col-lg-6\">
+                                    <div class=\"mini-heading\"><h4>Current Comments</h4></div>
+                                </div>
+                                <div class=\"col-lg-6\">
+                                    <fieldset>
+                                        <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                                id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                            <option selected>Sort By: Latest</option>
+                                            <option type=\"checkbox\" name=\"option1\" value=\"old\">Sort By: Oldest</option>
+                                            <option value=\"low\">Sort By: Lowest</option>
+                                            <option value=\"high\">Sort By: Highest</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class=\"row\">
+
+                                    {% set commentGroups = comments|batch(3) %}
+                                    {% for group in commentGroups %}
+                                        <div class=\"row\">
+                                            {% for comment in group %}
+                                                {% set postId = post.getIdPost %}
+                                                {% set commentId = comment.getIdPost %}
+                                                {% if comment.getIdPost().getIdPost() == post.getIdPost() %}
+                                                    <div class=\"col-lg-4 col-md-6\">
+                                                        <div class=\"item\">
+                                                            <div class=\"right-content\">
+                                                                <h4>Name : </h4>
+                                                                <a href=\"#\">{{ comment.getIdUser().getName() }}</a>
+                                                                <div class=\"line-dec\"></div>
+                                                                <h6>Comment: <em>{{ comment.getComment }}</em></h6>
+                                                                <span class=\"date\">{{ comment.getDateComment()|date('Y-m-d H:i:s') }}</span>
+                                                                <h6>
+                                                                    <a href=\"{{ path('app_comment_edit', {'id_comment': comment.getId}) }}\">edit</a>
+                                                                </h6>
+                                                                {% if(user.idUser==comment.getIdUser().getid_user()) %}
+                                                                    <h6>{{ include('comment/_delete_form.html.twig') }}</h6>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
 
 
-                </div>
-                </div>
-            </div
-            <div class=\"row\">
-                <div class=\"col-lg-12\">
-                    <form action=\"{{ path('app_comment_new', { 'id_post': post.getIdPost }) }}\" method=\"post\">
-                        <input type=\"submit\" value=\"Add Comment\" style=\"font-size: 20px; padding: 10px;width: 100%;\" >
-                    </form>
+                                </div>
+                            </div>
+                        </div
+                        <div class=\"row\">
+                            <div class=\"col-lg-12\">
+                                <form action=\"{{ path('app_comment_new', { 'id_post': post.getIdPost }) }}\"
+                                      method=\"post\">
+                                    <input type=\"submit\" value=\"Add Comment\"
+                                           style=\"font-size: 20px; padding: 10px;width: 100%;\">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
-    </div>
 
-    <div class=\"create-nft\">
-        <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-8\">
-            <div class=\"section-heading\">
-                <div class=\"line-dec\"></div>
-                <h2>Create Your NFT & Put It On The Market.</h2>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"main-button\">
-                <a href=\"create.html\">Create Your NFT Now</a>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item first-item\">
-                <div class=\"number\">
-                <h6>1</h6>
+            <div class=\"create-nft\">
+                <div class=\"container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-8\">
+                            <div class=\"section-heading\">
+                                <div class=\"line-dec\"></div>
+                                <h2>Create Your NFT & Put It On The Market.</h2>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"main-button\">
+                                <a href=\"create.html\">Create Your NFT Now</a>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item first-item\">
+                                <div class=\"number\">
+                                    <h6>1</h6>
+                                </div>
+                                <div class=\"icon\">
+                                    <img src=\"{{ asset('assets/images/icon-02.png') }}\" alt=\"\">
+                                </div>
+                                <h4>Set Up Your Wallet</h4>
+                                <p>There are 5 different HTML pages included in this NFT <a
+                                            href=\"https://templatemo.com/page/1\" target=\"_blank\" rel=\"nofollow\">website
+                                        template</a>. You can edit or modify any section on any page as you required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item second-item\">
+                                <div class=\"number\">
+                                    <h6>2</h6>
+                                </div>
+                                <div class=\"icon\">
+                                    <img src=\"{{ asset('assets/images/icon-04.png') }}\" alt=\"\">
+                                </div>
+                                <h4>Add Your Digital NFT</h4>
+                                <p>If you would like to support our TemplateMo website, please visit <a rel=\"nofollow\"
+                                                                                                        href=\"https://templatemo.com/contact\"
+                                                                                                        target=\"_parent\">our
+                                        contact page</a> to make a PayPal contribution. Thank you.</p>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"item\">
+                                <div class=\"icon\">
+                                    <img src=\"{{ asset('assets/images/icon-06.png') }}\" alt=\"\">
+                                </div>
+                                <h4>Sell Your NFT &amp; Make Profit</h4>
+                                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There
+                                    are many different kinds of NFTs in the industry.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class=\"icon\">
-                <img src=\"{{ asset('assets/images/icon-02.png') }}\" alt=\"\">
-                </div>
-                <h4>Set Up Your Wallet</h4>
-                <p>There are 5 different HTML pages included in this NFT <a href=\"https://templatemo.com/page/1\" target=\"_blank\" rel=\"nofollow\">website template</a>. You can edit or modify any section on any page as you required.</p>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item second-item\">
-                <div class=\"number\">
-                <h6>2</h6>
-                </div>
-                <div class=\"icon\">
-                    <img src=\"{{ asset('assets/images/icon-04.png') }}\" alt=\"\">
-                </div>
-                <h4>Add Your Digital NFT</h4>
-                <p>If you would like to support our TemplateMo website, please visit <a rel=\"nofollow\" href=\"https://templatemo.com/contact\" target=\"_parent\">our contact page</a> to make a PayPal contribution. Thank you.</p>
-            </div>
-            </div>
-            <div class=\"col-lg-4\">
-            <div class=\"item\">
-                <div class=\"icon\">
-                <img src=\"{{ asset('assets/images/icon-06.png') }}\" alt=\"\">
-                </div>
-                <h4>Sell Your NFT &amp; Make Profit</h4>
-                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There are many different kinds of NFTs in the industry.</p>
-            </div>
             </div>
         </div>
-        </div>
-    </div>
-    </div>
-{% block footer %}
-<footer>
-    <div class=\"container\">
-        <div class=\"row\">
-            <div class=\"col-lg-12\">
-                <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-                    &nbsp;&nbsp;
-                    Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\" target=\"_blank\">TemplateMo</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-{% endblock %}
+        {% block footer %}
+            <footer>
+                <div class=\"container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-12\">
+                            <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                                &nbsp;&nbsp;
+                                Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\"
+                                               target=\"_blank\">TemplateMo</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
 
-    {% block javascripts %}
-        <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
-        <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
-        <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
-        <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
-        <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
-        <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
-        <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
-    {% endblock %}
+        {% block javascripts %}
+            <script src=\"{{ asset('vendor/jquery/jquery.min.js') }}\"></script>
+            <script src=\"{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}\"></script>
+            <script src=\"{{ asset('assets/js/isotope.min.js') }}\"></script>
+            <script src=\"{{ asset('assets/js/owl-carousel.js') }}\"></script>
+            <script src=\"{{ asset('assets/js/tabs.js') }}\"></script>
+            <script src=\"{{ asset('assets/js/popup.js') }}\"></script>
+            <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+        {% endblock %}
 
 
     {% endblock %}

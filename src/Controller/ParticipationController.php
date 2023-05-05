@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Participation;
 use App\Entity\Rating;
 use App\Form\ParticipationType;
@@ -9,9 +10,11 @@ use App\Repository\ParticipationRepository;
 use App\Repository\RatingRepository;
 use App\Repository\AllusersRepository;
 
+use MongoDB\Driver\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -49,10 +52,12 @@ class ParticipationController extends AbstractController
     }
 
     #[Route('/{id_participation}', name: 'app_participation_show', methods: ['GET'])]
-    public function show(Request $request, ManagerRegistry $mr, AllusersRepository $allusersRepository, RatingRepository $ratingRepository, ParticipationRepository $participationRepository, Participation $participation, $id_participation): Response
+    public function show(SessionInterface $session,Request $request, ManagerRegistry $mr, AllusersRepository $allusersRepository, RatingRepository $ratingRepository, ParticipationRepository $participationRepository, Participation $participation, $id_participation): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $p = $participationRepository->find($id_participation);
         $em = $mr->getManager();
 
@@ -69,6 +74,7 @@ class ParticipationController extends AbstractController
             'p' => $p,
             'avg' => $avgrating[0],
             'oldrating' => $oldrating,
+            'user'=>$user,
         ]);
     }
 

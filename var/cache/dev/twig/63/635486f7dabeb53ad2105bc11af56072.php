@@ -170,7 +170,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
     ";
         // line 21
         $this->displayBlock('header', $context, $blocks);
-        // line 56
+        // line 73
         echo "
 <div class=\"item-details-page\">
         <div class=\"container\">
@@ -201,9 +201,9 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
                     </thead>
                     <tbody>
                     ";
-        // line 85
+        // line 102
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 85, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 102, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -219,64 +219,64 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 86
+            // line 103
             echo "                    ";
-            // line 87
+            // line 104
             echo "                    ";
-            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 87) == "portfolio")) {
-                // line 88
+            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 104) == "portfolio")) {
+                // line 105
                 echo "                        <tr>
                             <td style=\"color: white;\">";
-                // line 89
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 89), "html", null, true);
+                // line 106
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 106), "html", null, true);
                 echo "</td>
                             <td style=\"color: white;\">";
-                // line 90
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "descriptionP", [], "any", false, false, false, 90), "html", null, true);
+                // line 107
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "descriptionP", [], "any", false, false, false, 107), "html", null, true);
                 echo "</td>
                             
                             <td><img src=\"";
-                // line 92
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getMedia", [], "method", false, false, false, 92), "html", null, true);
+                // line 109
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getMedia", [], "method", false, false, false, 109), "html", null, true);
                 echo "\" alt=\"\" width=\"10%\" height=\"10%\"></td>
                             ";
-                // line 94
+                // line 111
                 echo "                            ";
-                // line 95
+                // line 112
                 echo "
 
 
                             <td style=\"color: white;\">";
-                // line 98
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 98), "html", null, true);
+                // line 115
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 115), "html", null, true);
                 echo "</td>
                             <td style=\"color: white;\">";
-                // line 99
-                ((twig_get_attribute($this->env, $this->source, $context["post"], "dateP", [], "any", false, false, false, 99)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "dateP", [], "any", false, false, false, 99), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+                // line 116
+                ((twig_get_attribute($this->env, $this->source, $context["post"], "dateP", [], "any", false, false, false, 116)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "dateP", [], "any", false, false, false, 116), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
                 echo "</td>
                             
                             <td style=\"color: white;\"> ";
-                // line 101
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 101), "html", null, true);
+                // line 118
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 118), "html", null, true);
                 echo "</td>
                             
                             <td>
                                 ";
-                // line 105
+                // line 122
                 echo "
                                 ";
-                // line 106
+                // line 123
                 echo twig_include($this->env, $context, "post/_delete_form.html.twig");
                 echo "
                                 <a href=\"";
-                // line 107
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 107)]), "html", null, true);
+                // line 124
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 124)]), "html", null, true);
                 echo "\">edit</a>
                             </td>
                         </tr>
                         ";
             }
-            // line 111
+            // line 128
             echo "                    ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
@@ -289,7 +289,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 112
+            // line 129
             echo "                        <tr>
                             <td colspan=\"7\">no records found</td>
                         </tr>
@@ -298,12 +298,12 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 116
+        // line 133
         echo "                    </tbody>
                 </table>
 
     <a href=\"";
-        // line 119
+        // line 136
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
         echo "\">Create new</a>
 
@@ -313,9 +313,9 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
     </div>
     </div>
 ";
-        // line 126
+        // line 143
         $this->displayBlock('footer', $context, $blocks);
-        // line 139
+        // line 156
         echo "    
 ";
         
@@ -354,29 +354,78 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class=\"nav\">
-                                <li><a href=\"";
-        // line 36
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\">Home</a></li>
-                                <li><a href=\"";
-        // line 37
+                                <div class=\"dropdown\">
+                                    <li><a>Art</a></li>
+                                    <div class=\"dropdown-content\">
+                                        <li><a href=\"";
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
         echo "\">Explore</a></li>
-                                <li><a href=\"";
-        // line 38
+                                        <li><a href=\"";
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
         echo "\">Blog</a></li>
-                                <li><a href=\"";
-        // line 39
+                                        <li><a href=\"";
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
-        echo "\">Famous Studios</a></li>
-                                <li><a href=\"details.html\">Item Details</a></li>
-                                <li><a href=\"author.html\">Author</a></li>
-                                <li><a href=\"";
+        echo "\">Studios</a></li>
+                                        <li><a href=\"";
         // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
         echo "\">Create Yours</a></li>
-                            </ul>
+
+                                    </div>
+                                </div>
+                                <li><a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+        echo "\">Offres</a></li>
+                                <li><a href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+        echo "\">Demandes</a></li>
+                                <li><a href=\"";
+        // line 48
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
+        echo "\">Shop</a></li>
+                                <li><a href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo "\">Panier</a></li>
+                                <li><a href=\"";
+        // line 50
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                                <li><a href=\"";
+        // line 51
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                                ";
+        // line 52
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 52, $this->source); })()), "type", [], "any", false, false, false, 52) == "Admin")) {
+            // line 53
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                                ";
+        }
+        // line 55
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 55, $this->source); })()), "idUser", [], "any", false, false, false, 55) == null)) {
+            // line 56
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                                ";
+        } else {
+            // line 58
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                                ";
+        }
+        // line 60
+        echo "                            </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
                             </a>
@@ -397,7 +446,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
 
     }
 
-    // line 126
+    // line 143
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -407,7 +456,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 127
+        // line 144
         echo "<footer>
     <div class=\"container\">
         <div class=\"row\">
@@ -435,7 +484,7 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
 
     public function getDebugInfo()
     {
-        return array (  411 => 127,  401 => 126,  377 => 42,  371 => 39,  367 => 38,  363 => 37,  359 => 36,  351 => 31,  340 => 22,  330 => 21,  319 => 139,  317 => 126,  307 => 119,  302 => 116,  293 => 112,  280 => 111,  273 => 107,  269 => 106,  266 => 105,  260 => 101,  255 => 99,  251 => 98,  246 => 95,  244 => 94,  240 => 92,  235 => 90,  231 => 89,  228 => 88,  225 => 87,  223 => 86,  205 => 85,  174 => 56,  172 => 21,  169 => 20,  159 => 19,  147 => 15,  143 => 14,  139 => 13,  135 => 12,  131 => 11,  123 => 7,  104 => 6,  99 => 5,  89 => 4,  70 => 3,  60 => 19,  57 => 18,  55 => 4,  53 => 3,  49 => 1,);
+        return array (  460 => 144,  450 => 143,  428 => 60,  422 => 58,  416 => 56,  413 => 55,  407 => 53,  405 => 52,  401 => 51,  397 => 50,  393 => 49,  389 => 48,  385 => 47,  381 => 46,  374 => 42,  370 => 41,  366 => 40,  362 => 39,  351 => 31,  340 => 22,  330 => 21,  319 => 156,  317 => 143,  307 => 136,  302 => 133,  293 => 129,  280 => 128,  273 => 124,  269 => 123,  266 => 122,  260 => 118,  255 => 116,  251 => 115,  246 => 112,  244 => 111,  240 => 109,  235 => 107,  231 => 106,  228 => 105,  225 => 104,  223 => 103,  205 => 102,  174 => 73,  172 => 21,  169 => 20,  159 => 19,  147 => 15,  143 => 14,  139 => 13,  135 => 12,  131 => 11,  123 => 7,  104 => 6,  99 => 5,  89 => 4,  70 => 3,  60 => 19,  57 => 18,  55 => 4,  53 => 3,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -475,13 +524,30 @@ class __TwigTemplate_89ec29e4e5a8c7600b67d2962892cb00 extends Template
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class=\"nav\">
-                                <li><a href=\"{{ path('app_home') }}\">Home</a></li>
-                                <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
-                                <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
-                                <li><a href=\"{{ path('app_map') }}\">Famous Studios</a></li>
-                                <li><a href=\"details.html\">Item Details</a></li>
-                                <li><a href=\"author.html\">Author</a></li>
-                                <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+                                <div class=\"dropdown\">
+                                    <li><a>Art</a></li>
+                                    <div class=\"dropdown-content\">
+                                        <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                                        <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                                        <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                                        <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+
+                                    </div>
+                                </div>
+                                <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                                <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                                <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                                <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                                <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                                <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                                {%if(user.type=='Admin') %}
+                                    <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                                {% endif %}
+                                {% if(user.idUser==null) %}
+                                    <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                                {% else %}
+                                    <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                                {% endif %}
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>

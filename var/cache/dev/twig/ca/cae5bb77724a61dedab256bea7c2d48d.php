@@ -349,31 +349,6 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                             </div>
                             <div class=\"col-lg-3\">
                                 <fieldset>
-                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
-                                            id=\"chooseCategory\">
-                                        <option selected>All Categories</option>
-                                        ";
-        // line 157
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 157, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 158
-            echo "                                            <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 158), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 158), "html", null, true);
-            echo "</option>
-                                        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 160
-        echo "                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class=\"col-lg-3\">
-                                <fieldset>
                                     <select name=\"filter\" class=\"form-select\" aria-label=\"Default select example\"
                                             id=\"choosefilter\">
                                         <option selected>Filter</option>
@@ -392,7 +367,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                     <div class=\"row\">
 
                         ";
-        // line 187
+        // line 176
         echo "                    </div>
                     </form>
                 </div>
@@ -401,9 +376,9 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
 
             <div class=\"row\" id=\"post-row\">
                 ";
-        // line 194
+        // line 183
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 194, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 183, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -418,10 +393,10 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 195
+            // line 184
             echo "                ";
-            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 195) == "portfolio")) {
-                // line 196
+            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 184) == "portfolio")) {
+                // line 185
                 echo "                <div class=\"col-lg-3 post-item\">
                     <div class=\"item\">
                         <div class=\"row\">
@@ -431,13 +406,13 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                                              style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
                                     </span>
                                 <img src=\"";
-                // line 204
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 204), "html", null, true);
+                // line 193
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 193), "html", null, true);
                 echo "\" width=\"244px\" height=\"199px\" alt=\"\"
                                      style=\"border-radius: 20px;\">
                                 <h4>";
-                // line 206
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 206), "html", null, true);
+                // line 195
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 195), "html", null, true);
                 echo "</h4>
                             </div>
                             <div class=\"col-lg-12\">
@@ -445,24 +420,24 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                                 <div class=\"row\">
                                     <div class=\"col-6\">
                                         <span>Artist: <br> <strong>";
-                // line 212
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 212), "html", null, true);
+                // line 201
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 201), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                     <div class=\"col-6\">
                                         <span>Likes: <br> <strong>";
-                // line 215
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "postLikes", [], "any", false, false, false, 215), "count", [], "any", false, false, false, 215), "html", null, true);
+                // line 204
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "postLikes", [], "any", false, false, false, 204), "count", [], "any", false, false, false, 204), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                     <div class=\"col-6\">
                                         <span>Category: <br><strong>";
-                // line 218
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getIdCategoryName", [], "any", false, false, false, 218), "html", null, true);
+                // line 207
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getIdCategoryName", [], "any", false, false, false, 207), "html", null, true);
                 echo "</strong></span>
                                         <span>Created At: <br> <strong>";
-                // line 219
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getDateP", [], "any", false, false, false, 219), "Y-m-d H:i:s"), "html", null, true);
+                // line 208
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getDateP", [], "any", false, false, false, 208), "Y-m-d H:i:s"), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                 </div>
@@ -470,9 +445,9 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                             <div class=\"col-lg-12\">
                                 <div class=\"main-button\">
                                     ";
-                // line 226
+                // line 215
                 echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_details", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 226)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_details", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 215)]), "html", null, true);
                 echo "\">View Details</a>
                                 </div>
                             </div>
@@ -480,17 +455,17 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                     </div>
                 </div>
                 ";
-                // line 232
-                if ((0 == twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 232) % 4)) {
-                    // line 233
+                // line 221
+                if ((0 == twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 221) % 4)) {
+                    // line 222
                     echo "            </div>
             <div class=\"row\">
                 ";
                 }
-                // line 236
+                // line 225
                 echo "                ";
             }
-            // line 237
+            // line 226
             echo "                ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -504,7 +479,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 238
+        // line 227
         echo "
             </div>
 
@@ -514,10 +489,10 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
     </div>
     <div style=\"display: flex; justify-content: center;\">
         ";
-        // line 246
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 247
-(isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 247, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
-        // line 258
+        // line 235
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 236
+(isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 236, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
+        // line 247
         echo "
     </div>
 
@@ -660,9 +635,9 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
     </footer>
 
     ";
-        // line 399
+        // line 388
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 446
+        // line 435
         echo "
 
 ";
@@ -674,7 +649,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
 
     }
 
-    // line 399
+    // line 388
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -684,32 +659,32 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 400
+        // line 389
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 401
+        // line 390
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 402
+        // line 391
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 403
+        // line 392
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 404
+        // line 393
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 405
+        // line 394
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 406
+        // line 395
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -766,7 +741,7 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  713 => 406,  709 => 405,  705 => 404,  701 => 403,  697 => 402,  693 => 401,  688 => 400,  678 => 399,  666 => 446,  664 => 399,  521 => 258,  519 => 247,  518 => 246,  508 => 238,  494 => 237,  491 => 236,  486 => 233,  484 => 232,  474 => 226,  465 => 219,  461 => 218,  455 => 215,  449 => 212,  440 => 206,  435 => 204,  425 => 196,  422 => 195,  405 => 194,  396 => 187,  372 => 160,  361 => 158,  357 => 157,  336 => 139,  316 => 121,  303 => 114,  296 => 110,  289 => 106,  285 => 104,  281 => 103,  252 => 76,  246 => 74,  240 => 72,  237 => 71,  231 => 69,  229 => 68,  225 => 67,  221 => 66,  217 => 65,  213 => 64,  209 => 63,  205 => 62,  198 => 58,  194 => 57,  190 => 56,  186 => 55,  158 => 29,  148 => 28,  136 => 20,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
+        return array (  688 => 395,  684 => 394,  680 => 393,  676 => 392,  672 => 391,  668 => 390,  663 => 389,  653 => 388,  641 => 435,  639 => 388,  496 => 247,  494 => 236,  493 => 235,  483 => 227,  469 => 226,  466 => 225,  461 => 222,  459 => 221,  449 => 215,  440 => 208,  436 => 207,  430 => 204,  424 => 201,  415 => 195,  410 => 193,  400 => 185,  397 => 184,  380 => 183,  371 => 176,  336 => 139,  316 => 121,  303 => 114,  296 => 110,  289 => 106,  285 => 104,  281 => 103,  252 => 76,  246 => 74,  240 => 72,  237 => 71,  231 => 69,  229 => 68,  225 => 67,  221 => 66,  217 => 65,  213 => 64,  209 => 63,  205 => 62,  198 => 58,  194 => 57,  190 => 56,  186 => 55,  158 => 29,  148 => 28,  136 => 20,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -920,17 +895,6 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
                             <div class=\"col-lg-2\">
                                 <fieldset>
                                     <button class=\"main-button\">Search</button>
-                                </fieldset>
-                            </div>
-                            <div class=\"col-lg-3\">
-                                <fieldset>
-                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
-                                            id=\"chooseCategory\">
-                                        <option selected>All Categories</option>
-                                        {% for category in categories %}
-                                            <option value=\"{{ category.getId_category }}\">{{ category.nameCategory }}</option>
-                                        {% endfor %}
-                                    </select>
                                 </fieldset>
                             </div>
                             <div class=\"col-lg-3\">

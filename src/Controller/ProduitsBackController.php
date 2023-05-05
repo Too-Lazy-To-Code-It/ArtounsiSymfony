@@ -2,8 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
+use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Produits;
 use App\Form\ProduitsType;
@@ -46,26 +51,26 @@ class ProduitsBackController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-               /** @var UploadedFile $image */
-              $image = $form->get('image')->getData();
+            /** @var UploadedFile $image */
+            $image = $form->get('image')->getData();
 
-          if ($image) {
-            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-         $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
 
-          try {
-             $image->move(
-               $this->getParameter('app.upload_dir'),
-                $newFilename
-            );
-       } catch (FileException $e) {
-         // handle exception
-       }
+                try {
+                    $image->move(
+                        $this->getParameter('app.upload_dir'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // handle exception
+                }
 
-       $produit->setImage($newFilename);
-      }
+                $produit->setImage($newFilename);
+            }
             $produitsRepository->save($produit, true);
-            return $this->redirectToRoute('app_produits_back_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_produits_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('produits_back/new.html.twig', [
@@ -75,56 +80,44 @@ class ProduitsBackController extends AbstractController
     }
 
     #[Route('/{idproduit}/editBack', name: 'app_produits_back_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
+    public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(ProduitsType::class, $produit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $image = $form->get('image')->getData();
 
-          if ($image) {
-            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-         $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
 
-          try {
-             $image->move(
-               $this->getParameter('app.upload_dir'),
-                $newFilename
-            );
-       } catch (FileException $e) {
-         // handle exception
-       }
-       $produit->setImage($newFilename);
-      }
+                try {
+                    $image->move(
+                        $this->getParameter('app.upload_dir'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // handle exception
+                }
+                $produit->setImage($newFilename);
+            }
 
             $produitsRepository->save($produit, true);
 
-            return $this->redirectToRoute('app_produits_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_produits_back', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('produits/edit.html.twig', [
+        return $this->renderForm('produits_back/edit.html.twig', [
             'produit' => $produit,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    
     #[Route('/deleteBack/{idproduit}', name: 'app_produits_delete_back', methods: ['GET', 'POST'])]
     public function delete(Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response

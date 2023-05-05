@@ -64,8 +64,6 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
 'App%5CController%5CAllusersController' => 0,
 '[C]App%5CController%5CAllusersController' => 1,
-'App%5CController%5CAllusersController%23isLoggedIn' => 0,
-'[C]App%5CController%5CAllusersController%23isLoggedIn' => 1,
 'App%5CController%5CAllusersController%23logout' => 0,
 '[C]App%5CController%5CAllusersController%23logout' => 1,
 'App%5CController%5CAllusersController%23login' => 0,
@@ -2494,7 +2492,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683222714,
+1 => 1683238531,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
