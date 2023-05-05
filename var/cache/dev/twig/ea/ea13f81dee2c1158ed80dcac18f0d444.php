@@ -40,7 +40,7 @@ class __TwigTemplate_36ce4557c64d8506dfd13d5449d17b5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "post/_form.html.twig"));
 
         // line 1
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), 'form_start');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate", "id" => "contact"]]);
         echo "
     <div class=\"form-group\">
         ";
@@ -137,7 +137,7 @@ class __TwigTemplate_36ce4557c64d8506dfd13d5449d17b5f extends Template
 
     public function getSourceContext()
     {
-        return new Source("{{ form_start(form) }}
+        return new Source("{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id':'contact'} }) }}
     <div class=\"form-group\">
         {{ form_label(form.title_p) }}
         {{ form_widget(form.title_p, {'attr': {'class': 'form-control'}}) }}

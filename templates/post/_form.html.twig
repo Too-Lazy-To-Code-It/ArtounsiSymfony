@@ -1,4 +1,4 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id':'contact'} }) }}
     <div class="form-group">
         {{ form_label(form.title_p) }}
         {{ form_widget(form.title_p, {'attr': {'class': 'form-control'}}) }}

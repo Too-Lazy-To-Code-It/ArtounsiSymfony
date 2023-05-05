@@ -182,6 +182,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
             echo "
                             </div>
                             <script>
+                            <script>
                                 setTimeout(function () {
                                     \$('#flash-message-succes').fadeOut(\"slow\", function () {
                                     });
@@ -192,17 +193,17 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 163
+        // line 164
         echo "
                         ";
-        // line 164
+        // line 165
         echo twig_include($this->env, $context, "post/_form.html.twig");
         echo "
                         <div class=\"g-recaptcha\" data-sitekey=\"6Ld8YeAlAAAAAPc-kJ8ePKrv71eupZ3trCvsd8no\" data-callback=\"submitForm\"></div>
 
 
                         <a href=\"";
-        // line 168
+        // line 169
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
         echo "\">back to list</a>
                     </div>
@@ -213,9 +214,9 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
     </div>
     ";
-        // line 176
+        // line 177
         $this->displayBlock('footer', $context, $blocks);
-        // line 190
+        // line 191
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
         
@@ -411,7 +412,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
     }
 
-    // line 176
+    // line 177
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -421,7 +422,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 177
+        // line 178
         echo "        <footer>
             <div class=\"container\">
                 <div class=\"row\">
@@ -443,7 +444,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
     }
 
-    // line 190
+    // line 191
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -453,7 +454,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 191
+        // line 192
         echo "
 
         <script src=\"https://www.google.com/recaptcha/api.js\"></script>
@@ -488,7 +489,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
 
     public function getDebugInfo()
     {
-        return array (  457 => 191,  447 => 190,  425 => 177,  415 => 176,  338 => 66,  332 => 64,  326 => 62,  323 => 61,  317 => 59,  315 => 58,  311 => 57,  307 => 56,  303 => 55,  298 => 54,  293 => 52,  290 => 51,  288 => 50,  283 => 49,  281 => 48,  274 => 44,  270 => 43,  266 => 42,  262 => 41,  251 => 33,  240 => 24,  230 => 23,  219 => 190,  217 => 176,  206 => 168,  199 => 164,  196 => 163,  181 => 154,  178 => 153,  174 => 152,  154 => 134,  152 => 23,  148 => 21,  138 => 20,  126 => 13,  122 => 12,  118 => 11,  114 => 10,  110 => 9,  102 => 5,  83 => 4,  77 => 2,  67 => 1,  57 => 20,  51 => 16,  49 => 1,);
+        return array (  458 => 192,  448 => 191,  426 => 178,  416 => 177,  339 => 66,  333 => 64,  327 => 62,  324 => 61,  318 => 59,  316 => 58,  312 => 57,  308 => 56,  304 => 55,  299 => 54,  294 => 52,  291 => 51,  289 => 50,  284 => 49,  282 => 48,  275 => 44,  271 => 43,  267 => 42,  263 => 41,  252 => 33,  241 => 24,  231 => 23,  220 => 191,  218 => 177,  207 => 169,  200 => 165,  197 => 164,  181 => 154,  178 => 153,  174 => 152,  154 => 134,  152 => 23,  148 => 21,  138 => 20,  126 => 13,  122 => 12,  118 => 11,  114 => 10,  110 => 9,  102 => 5,  83 => 4,  77 => 2,  67 => 1,  57 => 20,  51 => 16,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -648,6 +649,7 @@ class __TwigTemplate_0814731f27ed8f010cff4751108adb99 extends Template
                             <div class=\"alert alert-success\" id=\"flash-message-succes\">
                                 {{ message }}
                             </div>
+                            <script>
                             <script>
                                 setTimeout(function () {
                                     \$('#flash-message-succes').fadeOut(\"slow\", function () {
