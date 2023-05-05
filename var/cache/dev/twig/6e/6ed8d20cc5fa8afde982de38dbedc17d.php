@@ -256,6 +256,61 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
                             <span>Menu</span>
                         </a>
                         <!-- ***** Menu End ***** -->
+                        <style>
+                            .dropdown {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            .dropbtn {
+
+                                padding: 12px;
+                                font-size: 16px;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                z-index: 1;
+                            }
+
+                            .dropdown-submenu {
+                                position: relative;
+                            }
+
+                            .dropdown-submenu:hover .dropdown-submenu-content {
+                                display: block;
+                            }
+
+                            .dropdown-submenu-content {
+                                display: none;
+                                position: absolute;
+                                left: 100%;
+                                top: 0;
+                                margin-top: -1px;
+                            }
+
+                            .dropdown-content a {
+
+                                padding: 12px 16px;
+                                text-decoration: none;
+                                display: block;
+                            }
+
+                            .dropdown-content a:hover {
+
+                            }
+
+                            .dropdown:hover .dropdown-content {
+                                display: block;
+                            }
+
+                            .dropdown:hover .dropbtn {
+
+                            }
+                        </style>
                     </nav>
                 </div>
             </div>
@@ -277,30 +332,30 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
                     <div class=\"col-lg-12\">
                         <div class=\"owl-features owl-carousel\">
                             ";
-        // line 103
+        // line 158
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 103, $this->source); })()), 0, 7));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 158, $this->source); })()), 0, 7));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 104
+            // line 159
             echo "                                <div class=\"item\">
                                     <div class=\"thumb\">
                                         <img src=\"";
-            // line 106
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 106), "html", null, true);
+            // line 161
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 161), "html", null, true);
             echo "\" alt=\"\" width=\"100%\" height=\"400px\"
                                              style=\"border-radius: 20px;\">
                                         <div class=\"hover-effect\">
                                             <div class=\"content\">
                                                 <h4>";
-            // line 110
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 110), "html", null, true);
+            // line 165
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 165), "html", null, true);
             echo "</h4>
                                                 <span class=\"author\">
                                         <img src=\"assets/images/author.jpg\" alt=\"\"
                                              style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
                                         <h6>Artist<br><a href=\"#\">";
-            // line 114
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 114), "html", null, true);
+            // line 169
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 169), "html", null, true);
             echo "</a></h6>
                                     </span>
                                             </div>
@@ -312,7 +367,7 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 121
+        // line 176
         echo "
                         </div>
                     </div>
@@ -333,7 +388,7 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
                 <div class=\"col-lg-7\">
 
                     <form method=\"GET\" action=\"";
-        // line 140
+        // line 195
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_search_post");
         echo "\" id=\"search-form\">
                         <div class=\"row\">
@@ -349,22 +404,22 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
                                             id=\"chooseCategory\" onchange=\"this.form.click()\">
                                         <option selected>All Categories</option>
                                         ";
-        // line 153
+        // line 208
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 153, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 208, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 154
+            // line 209
             echo "                                            <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 154), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 209), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 154), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 209), "html", null, true);
             echo "</option>
                                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 156
+        // line 211
         echo "                                    </select>
                                 </fieldset>
                             </div>
@@ -554,9 +609,9 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
     </footer>
 
     ";
-        // line 344
+        // line 399
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 353
+        // line 408
         echo "
 ";
         
@@ -567,7 +622,7 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
 
     }
 
-    // line 344
+    // line 399
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -577,32 +632,32 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 345
+        // line 400
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 346
+        // line 401
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 347
+        // line 402
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 348
+        // line 403
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 349
+        // line 404
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 350
+        // line 405
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 351
+        // line 406
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -621,7 +676,7 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
 
     public function getDebugInfo()
     {
-        return array (  606 => 351,  602 => 350,  598 => 349,  594 => 348,  590 => 347,  586 => 346,  581 => 345,  571 => 344,  560 => 353,  558 => 344,  368 => 156,  357 => 154,  353 => 153,  337 => 140,  316 => 121,  303 => 114,  296 => 110,  289 => 106,  285 => 104,  281 => 103,  254 => 78,  248 => 76,  242 => 74,  239 => 73,  233 => 71,  231 => 70,  227 => 69,  223 => 68,  219 => 67,  215 => 66,  211 => 65,  207 => 64,  200 => 60,  196 => 59,  192 => 58,  188 => 57,  158 => 29,  148 => 28,  136 => 20,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
+        return array (  661 => 406,  657 => 405,  653 => 404,  649 => 403,  645 => 402,  641 => 401,  636 => 400,  626 => 399,  615 => 408,  613 => 399,  423 => 211,  412 => 209,  408 => 208,  392 => 195,  371 => 176,  358 => 169,  351 => 165,  344 => 161,  340 => 159,  336 => 158,  254 => 78,  248 => 76,  242 => 74,  239 => 73,  233 => 71,  231 => 70,  227 => 69,  223 => 68,  219 => 67,  215 => 66,  211 => 65,  207 => 64,  200 => 60,  196 => 59,  192 => 58,  188 => 57,  158 => 29,  148 => 28,  136 => 20,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -708,6 +763,61 @@ class __TwigTemplate_4325cdf9f843b3bb9a7355bd8f6a252e extends Template
                             <span>Menu</span>
                         </a>
                         <!-- ***** Menu End ***** -->
+                        <style>
+                            .dropdown {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            .dropbtn {
+
+                                padding: 12px;
+                                font-size: 16px;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                z-index: 1;
+                            }
+
+                            .dropdown-submenu {
+                                position: relative;
+                            }
+
+                            .dropdown-submenu:hover .dropdown-submenu-content {
+                                display: block;
+                            }
+
+                            .dropdown-submenu-content {
+                                display: none;
+                                position: absolute;
+                                left: 100%;
+                                top: 0;
+                                margin-top: -1px;
+                            }
+
+                            .dropdown-content a {
+
+                                padding: 12px 16px;
+                                text-decoration: none;
+                                display: block;
+                            }
+
+                            .dropdown-content a:hover {
+
+                            }
+
+                            .dropdown:hover .dropdown-content {
+                                display: block;
+                            }
+
+                            .dropdown:hover .dropbtn {
+
+                            }
+                        </style>
                     </nav>
                 </div>
             </div>

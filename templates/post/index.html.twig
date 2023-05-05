@@ -1,18 +1,17 @@
-
-
 {% block title %}Post index{% endblock %}
 {% block head %}
-    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}"
+          rel="stylesheet">
     {% block stylesheet %}
-    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <link rel="stylesheet"href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css')}}"/>
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}"/>
     {% endblock %}
 {% endblock %}
 
@@ -28,7 +27,7 @@
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
-                                <img src="{{asset('assets/images/logo.png')}}" alt="">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
@@ -49,7 +48,7 @@
                                 <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
                                 <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
                                 <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
-                                {%if(user.type=='Admin') %}
+                                {% if(user.type=='Admin') %}
                                     <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
                                 {% endif %}
                                 {% if(user.idUser==null) %}
@@ -68,90 +67,145 @@
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
+        <style>
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropbtn {
+
+                padding: 12px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .dropdown-submenu {
+                position: relative;
+            }
+
+            .dropdown-submenu:hover .dropdown-submenu-content {
+                display: block;
+            }
+
+            .dropdown-submenu-content {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                margin-top: -1px;
+            }
+
+            .dropdown-content a {
+
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+
+            }
+        </style>
 
     {% endblock %}
 
-<div class="item-details-page">
+    <div class="item-details-page">
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-            <div class="section-heading">
-                <div class="line-dec"></div>
-                <h2>View <em>The</em> Post</h2>
-            </div>
-            </div>
-            <div class="col-lg-12">
-    <form id="contact" action="" method="post">
-                            <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h2>View <em>The</em> Post</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <form id="contact" action="" method="post">
+                        <div class="row">
 
-                <h1>Post index</h1>
+                            <h1>Post index</h1>
 
-                <table class="table">
-                    <thead>
-                        <tr style="color: white;">
-                            <th>Id_post</th>
-                            <th>Post Description</th>
-                            <th>Media</th>
-                            <th>Post Title</th>
-                            <th>Post CreationDate</th>
-                            <th>Post Type</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for post in posts %}
-                    {# Conditon to show only if the post is of type portfolio #}
-                    {% if post.postType == 'portfolio' %}
-                        <tr>
-                            <td style="color: white;">{{ post.getId }}</td>
-                            <td style="color: white;">{{ post.descriptionP }}</td>
-                            
-                            <td><img src="{{ post.getMedia() }}" alt="" width="10%" height="10%"></td>
-                            {# <td><img src="{{ asset('img/'~post.media) }}" alt="{{ post.titleP }}"></td> #}
-                            {# <td><img src="{{ asset('img/'~post.media) }}" alt="{{ post.titleP }}" width="50" height="50"></td> #}
+                            <table class="table">
+                                <thead>
+                                <tr style="color: white;">
+                                    <th>Id_post</th>
+                                    <th>Post Description</th>
+                                    <th>Media</th>
+                                    <th>Post Title</th>
+                                    <th>Post CreationDate</th>
+                                    <th>Post Type</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for post in posts %}
+                                    {# Conditon to show only if the post is of type portfolio #}
+                                    {% if post.postType == 'portfolio' %}
+                                        <tr>
+                                            <td style="color: white;">{{ post.getId }}</td>
+                                            <td style="color: white;">{{ post.descriptionP }}</td>
+
+                                            <td><img src="{{ post.getMedia() }}" alt="" width="10%" height="10%"></td>
+                                            {# <td><img src="{{ asset('img/'~post.media) }}" alt="{{ post.titleP }}"></td> #}
+                                            {# <td><img src="{{ asset('img/'~post.media) }}" alt="{{ post.titleP }}" width="50" height="50"></td> #}
 
 
+                                            <td style="color: white;">{{ post.titleP }}</td>
+                                            <td style="color: white;">{{ post.dateP ? post.dateP|date('Y-m-d H:i:s') : '' }}</td>
 
-                            <td style="color: white;">{{ post.titleP }}</td>
-                            <td style="color: white;">{{ post.dateP ? post.dateP|date('Y-m-d H:i:s') : '' }}</td>
-                            
-                            <td style="color: white;"> {{ post.postType }}</td>
-                            
-                            <td>
-                                {# <a href="{{ path('app_post_show', {'id_post': post.getId}) }}">show</a> #}
+                                            <td style="color: white;"> {{ post.postType }}</td>
 
-                                {{ include('post/_delete_form.html.twig') }}
-                                <a href="{{ path('app_post_edit', {'id_post': post.getId}) }}">edit</a>
-                            </td>
-                        </tr>
-                        {% endif %}
-                    {% else %}
-                        <tr>
-                            <td colspan="7">no records found</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                                            <td>
+                                                {# <a href="{{ path('app_post_show', {'id_post': post.getId}) }}">show</a> #}
 
-    <a href="{{ path('app_post_new') }}">Create new</a>
+                                                {{ include('post/_delete_form.html.twig') }}
+                                                <a href="{{ path('app_post_edit', {'id_post': post.getId}) }}">edit</a>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="7">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
 
-            </div>
-            </div>
-        </div>
-    </div>
-    </div>
-{% block footer %}
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-                    &nbsp;&nbsp;
-                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                            <a href="{{ path('app_post_new') }}">Create new</a>
+
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-</footer>
-{% endblock %}
-    
+    {% block footer %}
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                            &nbsp;&nbsp;
+                            Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                           target="_blank">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% endblock %}
+
 {% endblock %}

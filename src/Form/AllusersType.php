@@ -24,9 +24,9 @@ class AllusersType extends AbstractType
             ->add('nationality')
             ->add('type', ChoiceType::class, [
                 'choices' => [
-                    'Observer' => 'observer',
-                    'Studio' => 'studio',
-                    'Artist' => 'artist',
+                    'Observer' => 'Observer',
+                    'Studio' => 'Studio',
+                    'Artist' => 'Artist',
                 ],
                 'attr' => [
                     'class' => 'form-control'

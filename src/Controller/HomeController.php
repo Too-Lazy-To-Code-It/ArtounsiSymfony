@@ -21,11 +21,10 @@ class HomeController extends AbstractController
     #[Route('/home', name: 'app_home')]
     public function index(OffretravailRepository $offretravailRepository, Request $request, SessionInterface $session, ProduitsRepository $produitsRepository, AllusersRepository $allusersRepository, CategoryRepository $categoryRepository, PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
-
         $offretravails = $offretravailRepository->findby([], [], 3);
         $categories = $categoryRepository->findAll();
         $posts = $postRepository->findAll();
@@ -36,7 +35,7 @@ class HomeController extends AbstractController
             'categories' => $categories,
             'posts' => $posts,
             '$produits' => $produits,
-            'user' => $user,
+            'user'=> $user,
             'offretravails' => $offretravails,
             'controller_name' => 'HomeController',
 

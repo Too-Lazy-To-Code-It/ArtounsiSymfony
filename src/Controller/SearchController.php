@@ -21,8 +21,8 @@ class SearchController extends AbstractController
      */
     public function search(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, PostRepository $postRepository,CategoryRepository $categoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $title = $request->get('title');

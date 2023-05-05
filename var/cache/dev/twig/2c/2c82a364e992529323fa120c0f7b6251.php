@@ -103,7 +103,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
 ";
         // line 32
         $this->displayBlock('body', $context, $blocks);
-        // line 318
+        // line 373
         echo "</body>
 
 </html>";
@@ -238,6 +238,61 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu:hover .dropdown-submenu-content {
+        display: block;
+    }
+
+    .dropdown-submenu-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-top: -1px;
+    }
+
+    .dropdown-content a {
+
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+
+    }
+</style>
 
     <div class=\"page-heading normal-space\">
         <div class=\"container\">
@@ -249,7 +304,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
                     <div class=\"buttons\">
                         <div class=\"main-button\">
                             <a href=\"";
-        // line 105
+        // line 160
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
         echo "\">tous les demandes</a>
                         </div>
@@ -292,7 +347,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
                 <fieldset>
                     <button type=\"submit\" id=\"form-submit\" class=\"dizebtn\">chercher</button>
                       <a href=\"";
-        // line 145
+        // line 200
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_offressimilaires");
         echo "\" class=\"dizebtn\">Demandes similaires</a>
                 </fieldset>
@@ -324,66 +379,66 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
                               
                            
                     ";
-        // line 174
+        // line 229
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["offretravailbyid"]) || array_key_exists("offretravailbyid", $context) ? $context["offretravailbyid"] : (function () { throw new RuntimeError('Variable "offretravailbyid" does not exist.', 174, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["offretravailbyid"]) || array_key_exists("offretravailbyid", $context) ? $context["offretravailbyid"] : (function () { throw new RuntimeError('Variable "offretravailbyid" does not exist.', 229, $this->source); })()));
         foreach ($context['_seq'] as $context["key"] => $context["offretravail"]) {
-            // line 175
+            // line 230
             echo "\t\t<article class=\"postcard dark blue\">
 \t\t\t<a class=\"postcard__img_link\" href=\"#\">
 \t\t\t\t<img class=\"postcard__img\" src=\"https://picsum.photos/1000/1000\" alt=\"Image Title\" />
 \t\t\t</a>
 \t\t\t<div class=\"postcard__text\">
 \t\t\t\t<h1 class=\"postcard__title blue\"><a>";
-            // line 180
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 180), "html", null, true);
+            // line 235
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "titreoffre", [], "any", false, false, false, 235), "html", null, true);
             echo "</a></h1>
 \t\t\t\t<div class=\"postcard__subtitle small\">
 \t\t\t\t\t<time datetime=\"2020-05-25 12:00:00\">
 \t\t\t\t\t\t<i class=\"fas fa-calendar-alt mr-2\"></i>";
-            // line 183
-            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 183)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 183), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 238
+            ((twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 238)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "dateajoutoofre", [], "any", false, false, false, 238), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "
 \t\t\t\t\t</time>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"postcard__bar\"></div>
 \t\t\t\t<div class=\"postcard__preview-txt\">";
-            // line 187
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 187), "html", null, true);
+            // line 242
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "descriptionoffre", [], "any", false, false, false, 242), "html", null, true);
             echo "</div>
 \t\t\t\t<ul class=\"postcard__tagbox\">
 \t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-tag mr-2\"></i>";
-            // line 189
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 189), "html", null, true);
+            // line 244
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "categorieoffre", [], "any", false, false, false, 244), "html", null, true);
             echo "</li>
 \t\t\t\t\t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>";
-            // line 190
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 190), "html", null, true);
+            // line 245
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "typeoffre", [], "any", false, false, false, 245), "html", null, true);
             echo "</li>
                     \t<li class=\"tag__item\"><i class=\"fas fa-clock mr-2\"></i>";
-            // line 191
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "localisationoffre", [], "any", false, false, false, 191), "html", null, true);
+            // line 246
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "localisationoffre", [], "any", false, false, false, 246), "html", null, true);
             echo "</li>
 \t\t";
-            // line 192
-            if (twig_get_attribute($this->env, $this->source, (isset($context["postulerStatusArray"]) || array_key_exists("postulerStatusArray", $context) ? $context["postulerStatusArray"] : (function () { throw new RuntimeError('Variable "postulerStatusArray" does not exist.', 192, $this->source); })()), $context["key"], [], "array", false, false, false, 192)) {
+            // line 247
+            if (twig_get_attribute($this->env, $this->source, (isset($context["postulerStatusArray"]) || array_key_exists("postulerStatusArray", $context) ? $context["postulerStatusArray"] : (function () { throw new RuntimeError('Variable "postulerStatusArray" does not exist.', 247, $this->source); })()), $context["key"], [], "array", false, false, false, 247)) {
                 echo "\t\t\t
     <li class=\"tag__item play blue\">
        
         <td> <button class=\"id\"data-id=\"";
-                // line 195
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "idoffre", [], "any", false, false, false, 195), "html", null, true);
+                // line 250
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offretravail"], "idoffre", [], "any", false, false, false, 250), "html", null, true);
                 echo " \">
                                        <i class=\"icon_close\">postuler</i>
                                    </button></td>
     </li>
 ";
             } else {
-                // line 200
+                // line 255
                 echo "    <span class=\"text-muted\">Déjà postulé</span>
 ";
             }
-            // line 202
+            // line 257
             echo "
                    
 
@@ -395,7 +450,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['offretravail'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 209
+        // line 264
         echo "   
          </div>
                     </div>
@@ -413,7 +468,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
     var btn = \$(this); // store the button element for later use
     \$.ajax({
       url: \"";
-        // line 225
+        // line 280
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_mail", ["idOffre" => "PLACEHOLDER"]);
         echo "\".replace(\"PLACEHOLDER\", id),
       method: 'GET',
@@ -465,15 +520,15 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
 }
 </style>
 ";
-        // line 274
+        // line 329
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 296
+        // line 351
         echo "    <footer>
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12\">
                     <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved. &nbsp;&nbsp; Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"";
-        // line 300
+        // line 355
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://templatemo.com"), "html", null, true);
         echo "\" target=\"_blank\">TemplateMo</a></p>
                 </div>
@@ -484,33 +539,33 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 308
+        // line 363
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 309
+        // line 364
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 311
+        // line 366
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 312
+        // line 367
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 314
+        // line 369
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 315
+        // line 370
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 316
+        // line 371
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -522,7 +577,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
 
     }
 
-    // line 274
+    // line 329
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -532,7 +587,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 275
+        // line 330
         echo "    <script>
         \$(document).ready(function() {
             \$('#submitBtn').click(function() {
@@ -549,7 +604,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
                 // redirect after 2 seconds
                 setTimeout(function() {
                     window.location.href = \"";
-        // line 290
+        // line 345
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demande_travail_chercheroffre");
         echo "\";
                 }, 2000);
@@ -577,7 +632,7 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
 
     public function getDebugInfo()
     {
-        return array (  553 => 290,  536 => 275,  526 => 274,  514 => 316,  510 => 315,  506 => 314,  501 => 312,  497 => 311,  492 => 309,  488 => 308,  477 => 300,  471 => 296,  469 => 274,  417 => 225,  399 => 209,  387 => 202,  383 => 200,  375 => 195,  369 => 192,  365 => 191,  361 => 190,  357 => 189,  352 => 187,  345 => 183,  339 => 180,  332 => 175,  328 => 174,  296 => 145,  253 => 105,  230 => 84,  224 => 82,  218 => 80,  215 => 79,  209 => 77,  207 => 76,  203 => 75,  199 => 74,  195 => 73,  191 => 72,  187 => 71,  183 => 70,  176 => 66,  172 => 65,  168 => 64,  164 => 63,  152 => 54,  129 => 33,  119 => 32,  107 => 318,  105 => 32,  96 => 26,  92 => 25,  88 => 24,  84 => 23,  80 => 22,  76 => 21,  70 => 18,  65 => 16,  57 => 11,  45 => 1,);
+        return array (  608 => 345,  591 => 330,  581 => 329,  569 => 371,  565 => 370,  561 => 369,  556 => 367,  552 => 366,  547 => 364,  543 => 363,  532 => 355,  526 => 351,  524 => 329,  472 => 280,  454 => 264,  442 => 257,  438 => 255,  430 => 250,  424 => 247,  420 => 246,  416 => 245,  412 => 244,  407 => 242,  400 => 238,  394 => 235,  387 => 230,  383 => 229,  351 => 200,  308 => 160,  230 => 84,  224 => 82,  218 => 80,  215 => 79,  209 => 77,  207 => 76,  203 => 75,  199 => 74,  195 => 73,  191 => 72,  187 => 71,  183 => 70,  176 => 66,  172 => 65,  168 => 64,  164 => 63,  152 => 54,  129 => 33,  119 => 32,  107 => 373,  105 => 32,  96 => 26,  92 => 25,  88 => 24,  84 => 23,  80 => 22,  76 => 21,  70 => 18,  65 => 16,  57 => 11,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -676,6 +731,61 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu:hover .dropdown-submenu-content {
+        display: block;
+    }
+
+    .dropdown-submenu-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-top: -1px;
+    }
+
+    .dropdown-content a {
+
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+
+    }
+</style>
 
     <div class=\"page-heading normal-space\">
         <div class=\"container\">

@@ -31,8 +31,8 @@ class PanierController extends AbstractController
     #[Route('/panier', name: 'app_panier_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,PanierRepository $panierRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('panier/index.html.twig', [
@@ -43,8 +43,8 @@ class PanierController extends AbstractController
 
     public function add(AllusersRepository $allusersRepository,$id, SessionInterface $session)
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $panier = $session->get('panier', []);
@@ -65,8 +65,8 @@ class PanierController extends AbstractController
     #[Route('/showpanier/{idpanier}', name: 'app_panier_show', methods: ['GET'])]
     public function show(AllusersRepository $allusersRepository,int $idpanier, LignepanierRepository $lignepanierRepository, SessionInterface $session, EntityManagerInterface $entityManager): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $lignesPanier = $lignepanierRepository->findBy(['idpanier' => $idpanier]);
@@ -120,8 +120,8 @@ class PanierController extends AbstractController
 
         $date = new \DateTime();
         // On récupère le panier actuel
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $panier=$user->getPaniers()->first();
@@ -161,8 +161,8 @@ class PanierController extends AbstractController
     #[Route('/viderpanier/{idpanier}', name: 'viderpanier')]
     public function ViderPanier(AllusersRepository $allusersRepository,string $idpanier, ManagerRegistry $doctrine, SessionInterface $session, LignepanierRepository $rep): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         // On récupère le panier actuel

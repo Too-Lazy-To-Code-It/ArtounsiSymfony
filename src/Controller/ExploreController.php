@@ -25,8 +25,8 @@ class ExploreController extends AbstractController
     #[Route('/explore', name: 'app_explore')]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository,Request $request,PostRepository $postRepository,PaginatorInterface $paginator): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $categories = $categoryRepository->findAll();

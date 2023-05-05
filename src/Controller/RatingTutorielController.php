@@ -24,10 +24,10 @@ class RatingTutorielController extends AbstractController
     #[Route('/new/{rating}/{idTutoriel}', name: 'app_rating_tutoriel_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository, $rating, $idTutoriel, Request $request, ManagerRegistry $doctrine, TutorielRepository $tutorielRepository, ManagerRegistry $mr, RatingTutorielRepository $ratingRepository): Response
     {
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
-
         $ratingTutorielRepositoty = $this->getDoctrine()->getRepository(RatingTutoriel::class);
         $requestData = $request;
 

@@ -33,8 +33,8 @@ class DemandetravailController extends AbstractController
     public function index(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, DemandetravailRepository $demandetravailRepository): Response
     {
 
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $demandetravails = $demandetravailRepository->findAll();
@@ -55,8 +55,8 @@ class DemandetravailController extends AbstractController
     public function sendEmail(SessionInterface $session,Request $request, ArtistepostulerRepository $artistrepo, OffretravailRepository $offretravailRepository, $idOffre, MailerInterface $mailer, AllusersRepository $allusersRepository): Response
     {
 
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $verif = true;
@@ -170,8 +170,8 @@ class DemandetravailController extends AbstractController
     #[Route('/chercher', name: 'app_demande_travail_chercheroffre', methods: ['GET', 'POST'])]
     public function chercheroffre(SessionInterface $session,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artistepostulerRepository, Request $request): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $resultOfSearch = $offretravailRepository->findAll();
@@ -199,8 +199,8 @@ class DemandetravailController extends AbstractController
     #[Route('/offressimilaires', name: 'app_demandetravail_offressimilaires', methods: ['GET'])]
     public function offressimilaires(SessionInterface $session,ArtistepostulerRepository $artistepostulerRepository, DemandetravailRepository $demandetravailRepository, Request $request, AllusersRepository $allusersRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $demandessimilaires = $demandetravailRepository->findByoffressimilaires($userId);
@@ -224,8 +224,8 @@ class DemandetravailController extends AbstractController
     #[Route('/{idDemande}/edit', name: 'app_demandetravail_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, $idDemande, CategoryRepository $categoryRepository, Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(DemandetravailType::class, $demandetravail);
@@ -295,8 +295,8 @@ class DemandetravailController extends AbstractController
     #[Route('/new', name: 'app_demandetravail_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, CategoryRepository $categoryRepository, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $demandetravail = new Demandetravail();
@@ -364,8 +364,8 @@ class DemandetravailController extends AbstractController
     #[Route('/{idDemande}', name: 'app_demandetravail_show', methods: ['GET'])]
     public function show(AllusersRepository $allusersRepository,SessionInterface $session,Demandetravail $demandetravail): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('demandetravail/show.html.twig', [

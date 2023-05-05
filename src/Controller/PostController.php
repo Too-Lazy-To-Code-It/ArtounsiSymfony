@@ -29,8 +29,8 @@ class PostController extends AbstractController
     #[Route('/', name: 'app_post_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
@@ -43,8 +43,8 @@ class PostController extends AbstractController
 
     public function base(AllusersRepository $allusersRepository,SessionInterface $session,PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $posts = $postRepository->findAll();
@@ -58,8 +58,8 @@ class PostController extends AbstractController
     #[Route('/new', name: 'app_post_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $post = new Post();
@@ -84,8 +84,8 @@ class PostController extends AbstractController
     #[Route('/{id_post}', name: 'app_post_show', methods: ['GET'])]
     public function show(SessionInterface $session,AllusersRepository $allusersRepository,Post $post): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('post/show.html.twig', [
@@ -97,8 +97,8 @@ class PostController extends AbstractController
     #[Route('/{id_post}/edit', name: 'app_post_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Post $post, PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(PostType::class, $post);
@@ -128,11 +128,12 @@ class PostController extends AbstractController
     }
 
     #[Route('/post/{id_post}', name: 'app_post_details', methods: ['GET', 'POST'])]
-    public function showPostDetails(AllusersRepository $allusersRepository,Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
+    public function showPostDetails(SessionInterface $session,AllusersRepository $allusersRepository,Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
-
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
+            $user = $allusersRepository->find($userId);
+        }
         $postLike = new PostLike();
         $postLike->setIdPost($entityManager->getReference(Post::class, $id_post));
         $postLike->setIdUser($entityManager->getReference(Allusers::class, $userId)); // set current user ID

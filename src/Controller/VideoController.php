@@ -25,8 +25,8 @@ class VideoController extends AbstractController
     #[Route('/', name: 'app_video_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,VideoRepository $videoRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('video/index.html.twig', [
@@ -38,8 +38,8 @@ class VideoController extends AbstractController
     #[Route('/new/{id_tutoriel}', name: 'app_videoo_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, VideoRepository $videoRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $videoentity = new Video();
@@ -85,8 +85,8 @@ class VideoController extends AbstractController
     #[Route('/{id_video}', name: 'app_video_show', methods: ['GET'])]
     public function show(SessionInterface $session,Request $request, ManagerRegistry $doctrine, AllusersRepository $allusersRepository, Video $video, ViewRepository $viewRepository,): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         //check if video is viewed before
@@ -113,8 +113,8 @@ class VideoController extends AbstractController
     #[Route('/{id_video}/edit', name: 'app_video_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Video $videoentity, VideoRepository $videoRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(VideoType::class, $videoentity);

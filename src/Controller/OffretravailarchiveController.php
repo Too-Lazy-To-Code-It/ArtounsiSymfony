@@ -22,8 +22,8 @@ class OffretravailarchiveController extends AbstractController
     #[Route('/', name: 'app_offretravailarchive_index', methods: ['GET'])]
     public function index(SessionInterface $session,Request $request,AllusersRepository $allusersRepository,OffretravailarchiveRepository $offretravailarchiveRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $offretravails = $offretravailarchiveRepository->findAll();
@@ -80,8 +80,8 @@ class OffretravailarchiveController extends AbstractController
     #[Route('/new', name: 'app_offretravailarchive_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, OffretravailarchiveRepository $offretravailarchiveRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $offretravailarchive = new Offretravailarchive();
@@ -104,8 +104,8 @@ class OffretravailarchiveController extends AbstractController
     #[Route('/{idoffre}', name: 'app_offretravailarchive_show', methods: ['GET'])]
     public function show(SessionInterface $session,AllusersRepository $allusersRepository,Offretravailarchive $offretravailarchive): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('offretravailarchive/show.html.twig', [

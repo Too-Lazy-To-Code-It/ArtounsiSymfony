@@ -633,7 +633,7 @@ class __TwigTemplate_2c77ba804068e88a1a3256216b5ec575 extends Template
         }
         // line 81
         echo "                            ";
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "idUser", [], "any", false, false, false, 81) == null)) {
+        if ((null === twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 81, $this->source); })()), "idUser", [], "any", false, false, false, 81))) {
             // line 82
             echo "                            <li><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
@@ -910,7 +910,7 @@ class __TwigTemplate_2c77ba804068e88a1a3256216b5ec575 extends Template
                             {%if(user.type!='Observer') %}
                             <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
                             {% endif %}
-                            {% if(user.idUser==null) %}
+                            {% if(user.idUser is null) %}
                             <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
                             {% else %}
                             <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>

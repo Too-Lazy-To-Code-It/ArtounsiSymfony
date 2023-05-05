@@ -33,8 +33,8 @@ class CommentController extends AbstractController
     #[Route('/', name: 'app_comment_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,CommentRepository $commentRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
@@ -67,8 +67,8 @@ class CommentController extends AbstractController
     #[Route('/new/{id_post}', name: 'app_comment_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, EntityManagerInterface $entityManager, $id_post): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $comment = new Comment();
@@ -95,8 +95,8 @@ class CommentController extends AbstractController
     #[Route('/{id_comment}', name: 'app_comment_show', methods: ['GET'])]
     public function show(AllusersRepository $allusersRepository,SessionInterface $session,Comment $comment): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('comment/show.html.twig', [
@@ -108,8 +108,8 @@ class CommentController extends AbstractController
     #[Route('/{id_comment}/edit', name: 'app_comment_edit', methods: ['GET', 'POST'])]
     public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Comment $comment, CommentRepository $commentRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(CommentType::class, $comment);

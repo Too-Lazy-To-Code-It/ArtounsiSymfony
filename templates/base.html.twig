@@ -78,7 +78,7 @@
                             {%if(user.type!='Observer') %}
                             <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
                             {% endif %}
-                            {% if(user.idUser==null) %}
+                            {% if(user.idUser is null) %}
                             <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
                             {% else %}
                             <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>

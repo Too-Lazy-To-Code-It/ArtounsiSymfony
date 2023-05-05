@@ -237,6 +237,61 @@ https://templatemo.com/tm-577-liberty-market
     </div>
 </header>
 <!-- ***** Header Area End ***** -->
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu:hover .dropdown-submenu-content {
+        display: block;
+    }
+
+    .dropdown-submenu-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-top: -1px;
+    }
+
+    .dropdown-content a {
+
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+
+    }
+</style>
 
 <!-- ***** Main Banner Area Start ***** -->
 <div class=\"main-banner\">
@@ -279,27 +334,27 @@ https://templatemo.com/tm-577-liberty-market
                         
                               <tbody   class=\"carte-table\">
                                 ";
-        // line 194
+        // line 249
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 194, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["lignesPanier"]) || array_key_exists("lignesPanier", $context) ? $context["lignesPanier"] : (function () { throw new RuntimeError('Variable "lignesPanier" does not exist.', 249, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
-            // line 195
+            // line 250
             echo "                                
                                 <tr>
                                   <td>
                                     <div class=\"left-image\">
                                       <img src=\"";
-            // line 199
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 199), "image", [], "any", false, false, false, 199))), "html", null, true);
+            // line 254
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 254), "image", [], "any", false, false, false, 254))), "html", null, true);
             echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                     </div>
                                   </td>
                                   <td>
                                     <div class=\"right-content\">
                                       <h4>";
-            // line 204
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 204), "nom", [], "any", false, false, false, 204), "html", null, true);
+            // line 259
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 259), "nom", [], "any", false, false, false, 259), "html", null, true);
             echo "</h4>
                                      
                                     </div> 
@@ -307,24 +362,24 @@ https://templatemo.com/tm-577-liberty-market
                                   <td>
                                     <span class=\"bid\">
                                       <h4><strong> ";
-            // line 210
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 210), "prix", [], "any", false, false, false, 210), "html", null, true);
+            // line 265
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 265), "prix", [], "any", false, false, false, 265), "html", null, true);
             echo "</strong></h4>
                                     </span>
                                   </td>
                                   <td>
                                     <span class=\"ends\">
                                       <h4><em>";
-            // line 215
-            ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 215)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 215), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 270
+            ((twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 270)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "dateajout", [], "any", false, false, false, 270), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</em></h4>
                                     </span>
                                   </td>
                                   <td>
                                     <div class=\"main-button\">
                                       <a href=\"";
-            // line 220
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 220)]), "html", null, true);
+            // line 275
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_lignepanier_delete", ["idlignepanier" => twig_get_attribute($this->env, $this->source, $context["ligne"], "idlignepanier", [], "any", false, false, false, 275)]), "html", null, true);
             echo "\" class=\"active\"><i class=\"fas fa-trash-alt\"></i></a>
                                     </div>
                                   </td>
@@ -333,7 +388,7 @@ https://templatemo.com/tm-577-liberty-market
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 224
+            // line 279
             echo " 
                                 <tr>
                                   <td colspan=\"4\">
@@ -348,7 +403,7 @@ https://templatemo.com/tm-577-liberty-market
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 234
+        // line 289
         echo "                              </tbody>
                             </table>
                             <div class=\"line-dec\"></div>
@@ -361,12 +416,12 @@ https://templatemo.com/tm-577-liberty-market
             <table class=\"carte-table\" border=\"0,5\"  class=\"currently-market\"  class=\"item\">
               <tr >
                  <th style=\"padding-right: 250px;\" ><div><h2> Nombre de produits:    ";
-        // line 245
-        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 245, $this->source); })()), "html", null, true);
+        // line 300
+        echo twig_escape_filter($this->env, (isset($context["count"]) || array_key_exists("count", $context) ? $context["count"] : (function () { throw new RuntimeError('Variable "count" does not exist.', 300, $this->source); })()), "html", null, true);
         echo " </h2></div></th>
                  <th style=\"padding-right: 250px;\" ><div><h2>Montant total:    ";
-        // line 246
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 246, $this->source); })()), "html", null, true);
+        // line 301
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 301, $this->source); })()), "html", null, true);
         echo "</h2></div></th>
                  <th style=\"padding-right: 250px;\" > <div class=\"main-button\" class=\"section-heading\">
                   <a href=\" class=active\">      Payer      </a>
@@ -413,34 +468,34 @@ https://templatemo.com/tm-577-liberty-market
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
     <script src=\"";
-        // line 291
+        // line 346
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 292
+        // line 347
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     
     <script src=\"";
-        // line 294
+        // line 349
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 295
+        // line 350
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
     
     
     <script src=\"";
-        // line 298
+        // line 353
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 299
+        // line 354
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 300
+        // line 355
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
 
@@ -509,7 +564,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  488 => 21,  484 => 20,  480 => 19,  476 => 18,  472 => 17,  468 => 15,  458 => 14,  444 => 300,  440 => 299,  436 => 298,  430 => 295,  426 => 294,  421 => 292,  417 => 291,  369 => 246,  365 => 245,  352 => 234,  337 => 224,  327 => 220,  319 => 215,  311 => 210,  302 => 204,  294 => 199,  288 => 195,  283 => 194,  229 => 142,  223 => 140,  217 => 138,  214 => 137,  208 => 135,  206 => 134,  202 => 133,  198 => 132,  194 => 131,  190 => 130,  186 => 129,  182 => 128,  175 => 124,  171 => 123,  167 => 122,  163 => 121,  64 => 24,  62 => 14,  57 => 12,  44 => 1,);
+        return array (  543 => 21,  539 => 20,  535 => 19,  531 => 18,  527 => 17,  523 => 15,  513 => 14,  499 => 355,  495 => 354,  491 => 353,  485 => 350,  481 => 349,  476 => 347,  472 => 346,  424 => 301,  420 => 300,  407 => 289,  392 => 279,  382 => 275,  374 => 270,  366 => 265,  357 => 259,  349 => 254,  343 => 250,  338 => 249,  229 => 142,  223 => 140,  217 => 138,  214 => 137,  208 => 135,  206 => 134,  202 => 133,  198 => 132,  194 => 131,  190 => 130,  186 => 129,  182 => 128,  175 => 124,  171 => 123,  167 => 122,  163 => 121,  64 => 24,  62 => 14,  57 => 12,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -666,6 +721,61 @@ https://templatemo.com/tm-577-liberty-market
     </div>
 </header>
 <!-- ***** Header Area End ***** -->
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu:hover .dropdown-submenu-content {
+        display: block;
+    }
+
+    .dropdown-submenu-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-top: -1px;
+    }
+
+    .dropdown-content a {
+
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+
+    }
+</style>
 
 <!-- ***** Main Banner Area Start ***** -->
 <div class=\"main-banner\">

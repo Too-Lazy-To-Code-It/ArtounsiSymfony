@@ -150,7 +150,62 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
         // line 22
         $this->displayBlock('header', $context, $blocks);
         // line 74
-        echo "
+        echo "    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
+
 
 
 
@@ -181,9 +236,9 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
         </thead>
         <tbody>
         ";
-        // line 104
+        // line 159
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 104, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 159, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -199,24 +254,24 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 105
+            // line 160
             echo "            <tr>
                 <td style=\"color: white;\">";
-            // line 106
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 106), "html", null, true);
+            // line 161
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 161), "html", null, true);
             echo "</td>
                 <td style=\"color: white;\">";
-            // line 107
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 107), "html", null, true);
+            // line 162
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 162), "html", null, true);
             echo "</td>
                 <td>
                     ";
-            // line 110
+            // line 165
             echo "                    <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id_category" => twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 110)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id_category" => twig_get_attribute($this->env, $this->source, $context["category"], "getId_category", [], "any", false, false, false, 165)]), "html", null, true);
             echo "\">edit</a>
                     ";
-            // line 111
+            // line 166
             echo twig_include($this->env, $context, "category/_delete_form.html.twig");
             echo "
                 </td>
@@ -233,7 +288,7 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 115
+            // line 170
             echo "            <tr>
                 <td colspan=\"3\">no records found</td>
             </tr>
@@ -242,12 +297,12 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 119
+        // line 174
         echo "        </tbody>
     </table>
 
         <a href=\"";
-        // line 122
+        // line 177
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_new");
         echo "\">Create new</a>
 
@@ -259,9 +314,9 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
     </div>
     </div>
 ";
-        // line 131
+        // line 186
         $this->displayBlock('footer', $context, $blocks);
-        // line 144
+        // line 199
         echo "    
 ";
         
@@ -392,7 +447,7 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
 
     }
 
-    // line 131
+    // line 186
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -402,7 +457,7 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 132
+        // line 187
         echo "<footer>
     <div class=\"container\">
         <div class=\"row\">
@@ -430,7 +485,7 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
 
     public function getDebugInfo()
     {
-        return array (  406 => 132,  396 => 131,  374 => 61,  368 => 59,  362 => 57,  359 => 56,  353 => 54,  351 => 53,  347 => 52,  343 => 51,  339 => 50,  335 => 49,  331 => 48,  327 => 47,  320 => 43,  316 => 42,  312 => 41,  308 => 40,  297 => 32,  286 => 23,  276 => 22,  265 => 144,  263 => 131,  251 => 122,  246 => 119,  237 => 115,  220 => 111,  215 => 110,  210 => 107,  206 => 106,  203 => 105,  185 => 104,  153 => 74,  151 => 22,  148 => 21,  138 => 20,  126 => 15,  122 => 14,  118 => 13,  114 => 12,  110 => 11,  102 => 7,  83 => 6,  78 => 5,  68 => 4,  58 => 20,  54 => 18,  52 => 4,  48 => 2,);
+        return array (  461 => 187,  451 => 186,  429 => 61,  423 => 59,  417 => 57,  414 => 56,  408 => 54,  406 => 53,  402 => 52,  398 => 51,  394 => 50,  390 => 49,  386 => 48,  382 => 47,  375 => 43,  371 => 42,  367 => 41,  363 => 40,  352 => 32,  341 => 23,  331 => 22,  320 => 199,  318 => 186,  306 => 177,  301 => 174,  292 => 170,  275 => 166,  270 => 165,  265 => 162,  261 => 161,  258 => 160,  240 => 159,  153 => 74,  151 => 22,  148 => 21,  138 => 20,  126 => 15,  122 => 14,  118 => 13,  114 => 12,  110 => 11,  102 => 7,  83 => 6,  78 => 5,  68 => 4,  58 => 20,  54 => 18,  52 => 4,  48 => 2,);
     }
 
     public function getSourceContext()
@@ -508,6 +563,61 @@ class __TwigTemplate_7e2cd0dab70a4197e0b48283d0cbd436 extends Template
         <!-- ***** Header Area End ***** -->
 
     {% endblock %}
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
 
 
 

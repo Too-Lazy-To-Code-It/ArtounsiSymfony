@@ -17,7 +17,8 @@ class StudiodashboardController extends AbstractController
     #[Route('/', name: 'app_dashboard_studiodashboard', methods: ['GET'])]
     public function index(SessionInterface $session,Request $request,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
     {
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $offretravails = $offretravailRepository->findAll();
@@ -34,7 +35,8 @@ class StudiodashboardController extends AbstractController
     public function offres(SessionInterface $session,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, Request $request): Response
     {
 
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $offretravails = $offretravailRepository->findAll();
@@ -52,7 +54,8 @@ class StudiodashboardController extends AbstractController
     public function demandes(SessionInterface $session,AllusersRepository $allusersRepository,DemandetravailRepository $demandetravailRepository, Request $request): Response
     {
 
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $offretravails = $demandetravailRepository->findAll();

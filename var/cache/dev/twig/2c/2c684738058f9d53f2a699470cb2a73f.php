@@ -257,7 +257,61 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
     <div class=\"page-heading\">
         <div class=\"container\">
             <div class=\"row\">
@@ -274,30 +328,30 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                     <div class=\"col-lg-12\">
                         <div class=\"owl-features owl-carousel\">
                             ";
-        // line 103
+        // line 157
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 103, $this->source); })()), 0, 7));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 157, $this->source); })()), 0, 7));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 104
+            // line 158
             echo "                                <div class=\"item\">
                                     <div class=\"thumb\">
                                         <img src=\"";
-            // line 106
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 106), "html", null, true);
+            // line 160
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 160), "html", null, true);
             echo "\" alt=\"\" width=\"100%\" height=\"400px\"
                                              style=\"border-radius: 20px;\">
                                         <div class=\"hover-effect\">
                                             <div class=\"content\">
                                                 <h4>";
-            // line 110
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 110), "html", null, true);
+            // line 164
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 164), "html", null, true);
             echo "</h4>
                                                 <span class=\"author\">
                                         <img src=\"assets/images/author.jpg\" alt=\"\"
                                              style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
                                         <h6>Artist<br><a href=\"#\">";
-            // line 114
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 114), "html", null, true);
+            // line 168
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 168), "html", null, true);
             echo "</a></h6>
                                     </span>
                                             </div>
@@ -309,7 +363,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 121
+        // line 175
         echo "
                         </div>
                     </div>
@@ -329,7 +383,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                 </div>
                 <div class=\"col-lg-7\">
                     <form method=\"GET\" action=\"";
-        // line 139
+        // line 193
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_search_post");
         echo "\" id=\"search-form\">
                         <div class=\"row\">
@@ -363,7 +417,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                     <div class=\"row\">
 
                         ";
-        // line 175
+        // line 229
         echo "                    </div>
                     </form>
                 </div>
@@ -372,9 +426,9 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
 
             <div class=\"row\" id=\"post-row\">
                 ";
-        // line 182
+        // line 236
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 182, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 236, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -389,10 +443,10 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 183
+            // line 237
             echo "                ";
-            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 183) == "blog")) {
-                // line 184
+            if ((twig_get_attribute($this->env, $this->source, $context["post"], "postType", [], "any", false, false, false, 237) == "blog")) {
+                // line 238
                 echo "                <div class=\"col-lg-3 post-item\">
                     <div class=\"item\">
                         <div class=\"row\">
@@ -402,13 +456,13 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                                                              style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
                                                     </span>
                                 <img src=\"";
-                // line 192
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 192), "html", null, true);
+                // line 246
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "media", [], "any", false, false, false, 246), "html", null, true);
                 echo "\" width=\"244px\" height=\"199px\" alt=\"\"
                                      style=\"border-radius: 20px;\">
                                 <h4>";
-                // line 194
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 194), "html", null, true);
+                // line 248
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "titleP", [], "any", false, false, false, 248), "html", null, true);
                 echo "</h4>
                             </div>
                             <div class=\"col-lg-12\">
@@ -416,24 +470,24 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                                 <div class=\"row\">
                                     <div class=\"col-6\">
                                         <span>Artist: <br> <strong>";
-                // line 200
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 200), "html", null, true);
+                // line 254
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getUserName", [], "any", false, false, false, 254), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                     <div class=\"col-6\">
                                         <span>Likes: <br> <strong>";
-                // line 203
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "postLikes", [], "any", false, false, false, 203), "count", [], "any", false, false, false, 203), "html", null, true);
+                // line 257
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "postLikes", [], "any", false, false, false, 257), "count", [], "any", false, false, false, 257), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                     <div class=\"col-6\">
                                         <span>Category: <br><strong>";
-                // line 206
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getIdCategoryName", [], "any", false, false, false, 206), "html", null, true);
+                // line 260
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getIdCategoryName", [], "any", false, false, false, 260), "html", null, true);
                 echo "</strong></span>
                                         <span>Created At: <br> <strong>";
-                // line 207
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getDateP", [], "any", false, false, false, 207), "Y-m-d H:i:s"), "html", null, true);
+                // line 261
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "getDateP", [], "any", false, false, false, 261), "Y-m-d H:i:s"), "html", null, true);
                 echo "</strong></span>
                                     </div>
                                 </div>
@@ -441,9 +495,9 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                             <div class=\"col-lg-12\">
                                 <div class=\"main-button\">
                                     ";
-                // line 214
+                // line 268
                 echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_details", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 214)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_details", ["id_post" => twig_get_attribute($this->env, $this->source, $context["post"], "getId", [], "any", false, false, false, 268)]), "html", null, true);
                 echo "\">View Details</a>
                                 </div>
                             </div>
@@ -451,17 +505,17 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
                     </div>
                 </div>
                 ";
-                // line 220
-                if ((0 == twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 220) % 4)) {
-                    // line 221
+                // line 274
+                if ((0 == twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 274) % 4)) {
+                    // line 275
                     echo "            </div>
             <div class=\"row\">
                 ";
                 }
-                // line 224
+                // line 278
                 echo "                ";
             }
-            // line 225
+            // line 279
             echo "                ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -475,7 +529,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 226
+        // line 280
         echo "
             </div>
 
@@ -486,10 +540,10 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
     </div>
     <div style=\"display: flex; justify-content: center;\">
         ";
-        // line 235
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 236
-(isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 236, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
-        // line 247
+        // line 289
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 290
+(isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 290, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
+        // line 301
         echo "
     </div>
 
@@ -632,9 +686,9 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
     </footer>
 
     ";
-        // line 388
+        // line 442
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 432
+        // line 486
         echo "
 
 ";
@@ -646,7 +700,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
 
     }
 
-    // line 388
+    // line 442
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -656,32 +710,32 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 389
+        // line 443
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 390
+        // line 444
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 391
+        // line 445
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 392
+        // line 446
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 393
+        // line 447
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 394
+        // line 448
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 395
+        // line 449
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
         <script>
@@ -735,7 +789,7 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
 
     public function getDebugInfo()
     {
-        return array (  685 => 395,  681 => 394,  677 => 393,  673 => 392,  669 => 391,  665 => 390,  660 => 389,  650 => 388,  638 => 432,  636 => 388,  493 => 247,  491 => 236,  490 => 235,  479 => 226,  465 => 225,  462 => 224,  457 => 221,  455 => 220,  445 => 214,  436 => 207,  432 => 206,  426 => 203,  420 => 200,  411 => 194,  406 => 192,  396 => 184,  393 => 183,  376 => 182,  367 => 175,  333 => 139,  313 => 121,  300 => 114,  293 => 110,  286 => 106,  282 => 104,  278 => 103,  249 => 76,  243 => 74,  237 => 72,  234 => 71,  228 => 69,  226 => 68,  222 => 67,  218 => 66,  214 => 65,  210 => 64,  206 => 63,  202 => 62,  195 => 58,  191 => 57,  187 => 56,  183 => 55,  155 => 29,  145 => 28,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
+        return array (  739 => 449,  735 => 448,  731 => 447,  727 => 446,  723 => 445,  719 => 444,  714 => 443,  704 => 442,  692 => 486,  690 => 442,  547 => 301,  545 => 290,  544 => 289,  533 => 280,  519 => 279,  516 => 278,  511 => 275,  509 => 274,  499 => 268,  490 => 261,  486 => 260,  480 => 257,  474 => 254,  465 => 248,  460 => 246,  450 => 238,  447 => 237,  430 => 236,  421 => 229,  387 => 193,  367 => 175,  354 => 168,  347 => 164,  340 => 160,  336 => 158,  332 => 157,  249 => 76,  243 => 74,  237 => 72,  234 => 71,  228 => 69,  226 => 68,  222 => 67,  218 => 66,  214 => 65,  210 => 64,  206 => 63,  202 => 62,  195 => 58,  191 => 57,  187 => 56,  183 => 55,  155 => 29,  145 => 28,  132 => 19,  128 => 18,  124 => 17,  119 => 16,  109 => 15,  95 => 22,  93 => 15,  87 => 12,  78 => 6,  72 => 2,  62 => 1,  52 => 28,  49 => 27,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -826,7 +880,61 @@ class __TwigTemplate_a5eedc5e9372b2e26ec8ea668b260f50 extends Template
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
     <div class=\"page-heading\">
         <div class=\"container\">
             <div class=\"row\">

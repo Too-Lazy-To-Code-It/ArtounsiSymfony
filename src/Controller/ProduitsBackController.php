@@ -24,8 +24,8 @@ class ProduitsBackController extends AbstractController
     #[Route('/produits/back', name: 'app_produits_back')]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,ProduitsRepository $produitsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('produits_back/index.html.twig', [
@@ -41,8 +41,8 @@ class ProduitsBackController extends AbstractController
     public function show(AllusersRepository $allusersRepository,SessionInterface $session,Produits $produit): Response
     
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('produitsBack/show.html.twig', [
@@ -55,8 +55,8 @@ class ProduitsBackController extends AbstractController
     #[Route('/newBack', name: 'app_produits_back_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ProduitsRepository $produitsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $currentDate = new DateTime();
@@ -98,8 +98,8 @@ class ProduitsBackController extends AbstractController
     #[Route('/{idproduit}/editBack', name: 'app_produits_back_edit', methods: ['GET', 'POST'])]
     public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(ProduitsType::class, $produit);

@@ -1,17 +1,16 @@
-
-
 {% block head %}
-    <link href="{{asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')}}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap') }}"
+          rel="stylesheet">
     {% block stylesheet %}
-    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/templatemo-liberty-market.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <link rel="stylesheet"href="{{asset('https://unpkg.com/swiper@7/swiper-bundle.min.css')}}"/>
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://unpkg.com/swiper@7/swiper-bundle.min.css') }}"/>
     {% endblock %}
 {% endblock %}
 
@@ -26,7 +25,7 @@
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
-                                <img src="{{asset('assets/images/logo.png')}}" alt="">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
@@ -47,7 +46,7 @@
                                 <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
                                 <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
                                 <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
-                                {%if(user.type=='Admin') %}
+                                {% if(user.type=='Admin') %}
                                     <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
                                 {% endif %}
                                 {% if(user.idUser==null) %}
@@ -66,6 +65,61 @@
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
+        <style>
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropbtn {
+
+                padding: 12px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .dropdown-submenu {
+                position: relative;
+            }
+
+            .dropdown-submenu:hover .dropdown-submenu-content {
+                display: block;
+            }
+
+            .dropdown-submenu-content {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                margin-top: -1px;
+            }
+
+            .dropdown-content a {
+
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+
+            }
+        </style>
 
     {% endblock %}
 
@@ -73,48 +127,49 @@
 
     <div class="item-details-page">
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-            <div class="section-heading">
-                <div class="line-dec"></div>
-                <h2>View <em>The</em> Post</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h2>View <em>The</em> Post</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+
+                    <div class="row">
+
+
+                        {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+
+                        <a href="{{ path('app_post_index') }}">back to list</a>
+
+                        {{ include('post/_delete_form.html.twig') }}
+                    </div>
+
+                </div>
+
             </div>
-            </div>
-            <div class="col-lg-12">
-            
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    {% block footer %}
+        <footer>
+            <div class="container">
                 <div class="row">
-
-
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_post_index') }}">back to list</a>
-
-    {{ include('post/_delete_form.html.twig') }}
-</div>
-            
+                    <div class="col-lg-12">
+                        <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                            &nbsp;&nbsp;
+                            Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                           target="_blank">TemplateMo</a></p>
+                    </div>
+                </div>
             </div>
-            
-            </div>
-            
-            
-        </div>
-        </div>
-    </div>
-
-
-
-    
-{% block footer %}
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-                    &nbsp;&nbsp;
-                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-{% endblock %}
+        </footer>
+    {% endblock %}
 {% endblock %}

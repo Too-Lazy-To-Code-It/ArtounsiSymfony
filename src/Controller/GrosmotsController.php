@@ -20,8 +20,8 @@ class GrosmotsController extends AbstractController
     #[Route('/', name: 'app_grosmots_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,GrosmotsRepository $grosmotsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('grosmots/index.html.twig', [
@@ -33,8 +33,8 @@ class GrosmotsController extends AbstractController
     #[Route('/new', name: 'app_grosmots_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, GrosmotsRepository $grosmotsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $grosmot = new Grosmots();
@@ -58,8 +58,8 @@ class GrosmotsController extends AbstractController
     #[Route('/{idMot}', name: 'app_grosmots_show', methods: ['GET'])]
     public function show(AllusersRepository $allusersRepository,SessionInterface $session,Grosmots $grosmot): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('grosmots/show.html.twig', [
@@ -71,8 +71,8 @@ class GrosmotsController extends AbstractController
     #[Route('/{idMot}/edit', name: 'app_grosmots_edit', methods: ['GET', 'POST'])]
     public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Grosmots $grosmot, GrosmotsRepository $grosmotsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(GrosmotsType::class, $grosmot);

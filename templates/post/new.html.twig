@@ -35,13 +35,34 @@
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li><a href="{{ path('app_home') }}">Home</a></li>
-                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
-                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
-                                <li><a href="{{ path('app_map') }}">Famous Studios</a></li>
-                                <li><a href="details.html">Item Details</a></li>
-                                <li><a href="author.html">Author</a></li>
-                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+                                <div class="dropdown">
+                                    <li><a>Art</a></li>
+                                    <div class="dropdown-content">
+                                        <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                        <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                        <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                        <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+
+                                    </div>
+                                </div>
+                                {% if(user.type=='Studio') %}
+                                    <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                                {% elseif(user.type=='Artist') %}
+
+                                    <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                                {% endif %}
+                                <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                                <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                                <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                                <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                                {%if(user.type!='Observer') %}
+                                    <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                                {% endif %}
+                                {% if(user.idUser==null) %}
+                                    <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                                {% else %}
+                                    <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                                {% endif %}
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
@@ -53,6 +74,61 @@
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
+        <style>
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropbtn {
+
+                padding: 12px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .dropdown-submenu {
+                position: relative;
+            }
+
+            .dropdown-submenu:hover .dropdown-submenu-content {
+                display: block;
+            }
+
+            .dropdown-submenu-content {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                margin-top: -1px;
+            }
+
+            .dropdown-content a {
+
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+
+            }
+        </style>
 
     {% endblock %}
 

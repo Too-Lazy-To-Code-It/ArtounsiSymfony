@@ -22,8 +22,8 @@ class PostLikeController extends AbstractController
     #[Route('/', name: 'app_post_like_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,PostLikeRepository $postLikeRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('post_like/index.html.twig', [
@@ -35,8 +35,8 @@ class PostLikeController extends AbstractController
     #[Route('/new', name: 'app_post_like_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, PostLikeRepository $postLikeRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $postLike = new PostLike();
@@ -59,8 +59,8 @@ class PostLikeController extends AbstractController
     #[Route('/{id_like}', name: 'app_post_like_show', methods: ['GET'])]
     public function show(SessionInterface $session,AllusersRepository $allusersRepository,PostLike $postLike): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('post_like/show.html.twig', [
@@ -72,8 +72,8 @@ class PostLikeController extends AbstractController
     #[Route('/{id_like}/edit', name: 'app_post_like_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, PostLike $postLike, PostLikeRepository $postLikeRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(PostLikeType::class, $postLike);

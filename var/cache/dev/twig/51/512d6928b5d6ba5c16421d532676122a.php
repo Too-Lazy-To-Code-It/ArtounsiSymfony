@@ -257,6 +257,61 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                 <span>Menu</span>
                             </a>
                             <!-- ***** Menu End ***** -->
+                            <style>
+                                .dropdown {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+
+                                .dropbtn {
+
+                                    padding: 12px;
+                                    font-size: 16px;
+                                    border: none;
+                                    cursor: pointer;
+                                }
+
+                                .dropdown-content {
+                                    display: none;
+                                    position: absolute;
+                                    z-index: 1;
+                                }
+
+                                .dropdown-submenu {
+                                    position: relative;
+                                }
+
+                                .dropdown-submenu:hover .dropdown-submenu-content {
+                                    display: block;
+                                }
+
+                                .dropdown-submenu-content {
+                                    display: none;
+                                    position: absolute;
+                                    left: 100%;
+                                    top: 0;
+                                    margin-top: -1px;
+                                }
+
+                                .dropdown-content a {
+
+                                    padding: 12px 16px;
+                                    text-decoration: none;
+                                    display: block;
+                                }
+
+                                .dropdown-content a:hover {
+
+                                }
+
+                                .dropdown:hover .dropdown-content {
+                                    display: block;
+                                }
+
+                                .dropdown:hover .dropbtn {
+
+                                }
+                            </style>
                         </nav>
                     </div>
                 </div>
@@ -294,50 +349,50 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                     <div class=\"col-lg-7\">
                         <div class=\"left-image\">
                             <img src=\"";
-        // line 122
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 122, $this->source); })()), "media", [], "any", false, false, false, 122), "html", null, true);
+        // line 177
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 177, $this->source); })()), "media", [], "any", false, false, false, 177), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 20px;\">
                         </div>
                     </div>
                     <div class=\"col-lg-5 align-self-center\">
                         <h4>";
-        // line 126
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 126, $this->source); })()), "titleP", [], "any", false, false, false, 126), "html", null, true);
+        // line 181
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 181, $this->source); })()), "titleP", [], "any", false, false, false, 181), "html", null, true);
         echo "</h4>
                         ";
-        // line 128
+        // line 183
         echo "                        <span class=\"author\">
                         <img src=\"";
-        // line 129
+        // line 184
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/author-02.jpg"), "html", null, true);
         echo "\" alt=\"\"
                              style=\"max-width: 50px; border-radius: 50%;\">
                         <h6>Artist<br><a href=\"#\">";
-        // line 131
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 131, $this->source); })()), "getUserName", [], "any", false, false, false, 131), "html", null, true);
+        // line 186
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 186, $this->source); })()), "getUserName", [], "any", false, false, false, 186), "html", null, true);
         echo "</a></h6>
                     </span>
                         <p>";
-        // line 133
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 133, $this->source); })()), "getDescriptionP", [], "any", false, false, false, 133), "html", null, true);
+        // line 188
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 188, $this->source); })()), "getDescriptionP", [], "any", false, false, false, 188), "html", null, true);
         echo "</p>
                         <div class=\"row\">
                             <div class=\"col-3\">
                         <span class=\"bid\">
                             Current Likes<br><strong>";
-        // line 137
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 137, $this->source); })()), "postLikes", [], "any", false, false, false, 137), "count", [], "any", false, false, false, 137), "html", null, true);
+        // line 192
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 192, $this->source); })()), "postLikes", [], "any", false, false, false, 192), "count", [], "any", false, false, false, 192), "html", null, true);
         echo "</strong><br>
                         </span>
                                 <span class=\"bid\">
                             <br><strong><a href=\"";
-        // line 140
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 140, $this->source); })()), "getId", [], "any", false, false, false, 140)]), "html", null, true);
+        // line 195
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 195, $this->source); })()), "getId", [], "any", false, false, false, 195)]), "html", null, true);
         echo "\">Edit Post</a></strong><br>
                             ";
-        // line 141
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 141, $this->source); })()), "id_user", [], "any", false, false, false, 141) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 141, $this->source); })()), "idUser", [], "any", false, false, false, 141), "getid_user", [], "method", false, false, false, 141))) {
-            // line 142
+        // line 196
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 196, $this->source); })()), "id_user", [], "any", false, false, false, 196) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 196, $this->source); })()), "idUser", [], "any", false, false, false, 196), "getid_user", [], "method", false, false, false, 196))) {
+            // line 197
             echo "                                    ";
             echo twig_include($this->env, $context, "post/_delete_form.html.twig");
             echo "
@@ -345,11 +400,11 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                         </span>
                                 ";
         }
-        // line 146
+        // line 201
         echo "                            </div>
                             <div class=\"fb-like\" id=\"like-btn\">
                                 ";
-        // line 148
+        // line 203
         echo twig_include($this->env, $context, "post_like/_form.html.twig");
         echo "
                                 <h1></h1>
@@ -378,12 +433,12 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                 <div class=\"row\">
 
                                     ";
-        // line 174
-        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 174, $this->source); })()), 3);
-        // line 175
+        // line 229
+        $context["commentGroups"] = twig_array_batch((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 229, $this->source); })()), 3);
+        // line 230
         echo "                                    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 175, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentGroups"]) || array_key_exists("commentGroups", $context) ? $context["commentGroups"] : (function () { throw new RuntimeError('Variable "commentGroups" does not exist.', 230, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -398,10 +453,10 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["group"]) {
-            // line 176
+            // line 231
             echo "                                        <div class=\"row\">
                                             ";
-            // line 177
+            // line 232
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["group"]);
             $context['loop'] = [
@@ -418,55 +473,55 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 178
+                // line 233
                 echo "                                                ";
-                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 178, $this->source); })()), "getIdPost", [], "any", false, false, false, 178);
-                // line 179
+                $context["postId"] = twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 233, $this->source); })()), "getIdPost", [], "any", false, false, false, 233);
+                // line 234
                 echo "                                                ";
-                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 179);
-                // line 180
+                $context["commentId"] = twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "any", false, false, false, 234);
+                // line 235
                 echo "                                                ";
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 180), "getIdPost", [], "method", false, false, false, 180) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 180, $this->source); })()), "getIdPost", [], "method", false, false, false, 180))) {
-                    // line 181
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdPost", [], "method", false, false, false, 235), "getIdPost", [], "method", false, false, false, 235) == twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 235, $this->source); })()), "getIdPost", [], "method", false, false, false, 235))) {
+                    // line 236
                     echo "                                                    <div class=\"col-lg-4 col-md-6\">
                                                         <div class=\"item\">
                                                             <div class=\"right-content\">
                                                                 <h4>Name : </h4>
                                                                 <a href=\"#\">";
-                    // line 185
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 185), "getName", [], "method", false, false, false, 185), "html", null, true);
+                    // line 240
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 240), "getName", [], "method", false, false, false, 240), "html", null, true);
                     echo "</a>
                                                                 <div class=\"line-dec\"></div>
                                                                 <h6>Comment: <em>";
-                    // line 187
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 187), "html", null, true);
+                    // line 242
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getComment", [], "any", false, false, false, 242), "html", null, true);
                     echo "</em></h6>
                                                                 <span class=\"date\">";
-                    // line 188
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 188), "Y-m-d H:i:s"), "html", null, true);
+                    // line 243
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "getDateComment", [], "method", false, false, false, 243), "Y-m-d H:i:s"), "html", null, true);
                     echo "</span>
                                                                 <h6>
                                                                     <a href=\"";
-                    // line 190
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 190)]), "html", null, true);
+                    // line 245
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id_comment" => twig_get_attribute($this->env, $this->source, $context["comment"], "getId", [], "any", false, false, false, 245)]), "html", null, true);
                     echo "\">edit</a>
                                                                 </h6>
                                                                 ";
-                    // line 192
-                    if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 192, $this->source); })()), "idUser", [], "any", false, false, false, 192) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 192), "getid_user", [], "method", false, false, false, 192))) {
-                        // line 193
+                    // line 247
+                    if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 247, $this->source); })()), "idUser", [], "any", false, false, false, 247) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getIdUser", [], "method", false, false, false, 247), "getid_user", [], "method", false, false, false, 247))) {
+                        // line 248
                         echo "                                                                    <h6>";
                         echo twig_include($this->env, $context, "comment/_delete_form.html.twig");
                         echo "</h6>
                                                                 ";
                     }
-                    // line 195
+                    // line 250
                     echo "                                                            </div>
                                                         </div>
                                                     </div>
                                                 ";
                 }
-                // line 199
+                // line 254
                 echo "                                            ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -480,7 +535,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 200
+            // line 255
             echo "                                        </div>
                                     ";
             ++$context['loop']['index0'];
@@ -495,7 +550,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 202
+        // line 257
         echo "
 
                                 </div>
@@ -504,8 +559,8 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                         <div class=\"row\">
                             <div class=\"col-lg-12\">
                                 <form action=\"";
-        // line 209
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 209, $this->source); })()), "getIdPost", [], "any", false, false, false, 209)]), "html", null, true);
+        // line 264
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new", ["id_post" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 264, $this->source); })()), "getIdPost", [], "any", false, false, false, 264)]), "html", null, true);
         echo "\"
                                       method=\"post\">
                                     <input type=\"submit\" value=\"Add Comment\"
@@ -538,7 +593,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                 </div>
                                 <div class=\"icon\">
                                     <img src=\"";
-        // line 240
+        // line 295
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-02.png"), "html", null, true);
         echo "\" alt=\"\">
                                 </div>
@@ -556,7 +611,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                 </div>
                                 <div class=\"icon\">
                                     <img src=\"";
-        // line 255
+        // line 310
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-04.png"), "html", null, true);
         echo "\" alt=\"\">
                                 </div>
@@ -571,7 +626,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                             <div class=\"item\">
                                 <div class=\"icon\">
                                     <img src=\"";
-        // line 267
+        // line 322
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/icon-06.png"), "html", null, true);
         echo "\" alt=\"\">
                                 </div>
@@ -585,14 +640,14 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
             </div>
         </div>
         ";
-        // line 278
+        // line 333
         $this->displayBlock('footer', $context, $blocks);
-        // line 292
+        // line 347
         echo "
         ";
-        // line 293
+        // line 348
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 302
+        // line 357
         echo "
 
     ";
@@ -604,7 +659,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 278
+    // line 333
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -614,7 +669,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 279
+        // line 334
         echo "            <footer>
                 <div class=\"container\">
                     <div class=\"row\">
@@ -636,7 +691,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     }
 
-    // line 293
+    // line 348
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -646,32 +701,32 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 294
+        // line 349
         echo "            <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 295
+        // line 350
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 296
+        // line 351
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/isotope.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 297
+        // line 352
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 298
+        // line 353
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabs.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 299
+        // line 354
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popup.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 300
+        // line 355
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -690,7 +745,7 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
 
     public function getDebugInfo()
     {
-        return array (  675 => 300,  671 => 299,  667 => 298,  663 => 297,  659 => 296,  655 => 295,  650 => 294,  640 => 293,  618 => 279,  608 => 278,  596 => 302,  594 => 293,  591 => 292,  589 => 278,  575 => 267,  560 => 255,  542 => 240,  508 => 209,  499 => 202,  484 => 200,  470 => 199,  464 => 195,  458 => 193,  456 => 192,  451 => 190,  446 => 188,  442 => 187,  437 => 185,  431 => 181,  428 => 180,  425 => 179,  422 => 178,  405 => 177,  402 => 176,  384 => 175,  382 => 174,  353 => 148,  349 => 146,  341 => 142,  339 => 141,  335 => 140,  329 => 137,  322 => 133,  317 => 131,  312 => 129,  309 => 128,  305 => 126,  298 => 122,  255 => 81,  249 => 79,  243 => 77,  240 => 76,  234 => 74,  232 => 73,  228 => 72,  224 => 71,  220 => 70,  216 => 69,  212 => 68,  208 => 67,  201 => 63,  197 => 62,  193 => 61,  189 => 60,  180 => 53,  178 => 52,  174 => 50,  164 => 42,  160 => 30,  150 => 29,  138 => 20,  134 => 19,  130 => 18,  126 => 17,  121 => 16,  111 => 15,  97 => 22,  95 => 15,  89 => 12,  80 => 6,  74 => 2,  64 => 1,  54 => 29,  50 => 27,  48 => 1,);
+        return array (  730 => 355,  726 => 354,  722 => 353,  718 => 352,  714 => 351,  710 => 350,  705 => 349,  695 => 348,  673 => 334,  663 => 333,  651 => 357,  649 => 348,  646 => 347,  644 => 333,  630 => 322,  615 => 310,  597 => 295,  563 => 264,  554 => 257,  539 => 255,  525 => 254,  519 => 250,  513 => 248,  511 => 247,  506 => 245,  501 => 243,  497 => 242,  492 => 240,  486 => 236,  483 => 235,  480 => 234,  477 => 233,  460 => 232,  457 => 231,  439 => 230,  437 => 229,  408 => 203,  404 => 201,  396 => 197,  394 => 196,  390 => 195,  384 => 192,  377 => 188,  372 => 186,  367 => 184,  364 => 183,  360 => 181,  353 => 177,  255 => 81,  249 => 79,  243 => 77,  240 => 76,  234 => 74,  232 => 73,  228 => 72,  224 => 71,  220 => 70,  216 => 69,  212 => 68,  208 => 67,  201 => 63,  197 => 62,  193 => 61,  189 => 60,  180 => 53,  178 => 52,  174 => 50,  164 => 42,  160 => 30,  150 => 29,  138 => 20,  134 => 19,  130 => 18,  126 => 17,  121 => 16,  111 => 15,  97 => 22,  95 => 15,  89 => 12,  80 => 6,  74 => 2,  64 => 1,  54 => 29,  50 => 27,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -780,6 +835,61 @@ class __TwigTemplate_6756a031b3603c817203eb7bca39af67 extends Template
                                 <span>Menu</span>
                             </a>
                             <!-- ***** Menu End ***** -->
+                            <style>
+                                .dropdown {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+
+                                .dropbtn {
+
+                                    padding: 12px;
+                                    font-size: 16px;
+                                    border: none;
+                                    cursor: pointer;
+                                }
+
+                                .dropdown-content {
+                                    display: none;
+                                    position: absolute;
+                                    z-index: 1;
+                                }
+
+                                .dropdown-submenu {
+                                    position: relative;
+                                }
+
+                                .dropdown-submenu:hover .dropdown-submenu-content {
+                                    display: block;
+                                }
+
+                                .dropdown-submenu-content {
+                                    display: none;
+                                    position: absolute;
+                                    left: 100%;
+                                    top: 0;
+                                    margin-top: -1px;
+                                }
+
+                                .dropdown-content a {
+
+                                    padding: 12px 16px;
+                                    text-decoration: none;
+                                    display: block;
+                                }
+
+                                .dropdown-content a:hover {
+
+                                }
+
+                                .dropdown:hover .dropdown-content {
+                                    display: block;
+                                }
+
+                                .dropdown:hover .dropbtn {
+
+                                }
+                            </style>
                         </nav>
                     </div>
                 </div>

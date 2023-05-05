@@ -30,8 +30,8 @@ class ChallengeController extends AbstractController
     #[Route('/', name: 'app_challenge_index', methods: ['GET', 'POST'])]
     public function index(OffretravailRepository $offretravailRepository,CategoryRepository $categoryRepository,PostRepository $postRepository,ProduitsRepository $produitsRepository,SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $challenges = $challengeRepository->findAll();
@@ -72,8 +72,8 @@ class ChallengeController extends AbstractController
     #[Route('/back', name: 'app_challenge_index_back', methods: ['GET', 'POST'])]
     public function indexback(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $challenges = $challengeRepository->findAll();
@@ -128,8 +128,8 @@ class ChallengeController extends AbstractController
     #[Route('/new', name: 'app_challenge_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $challenge = new Challenge();
@@ -166,8 +166,8 @@ class ChallengeController extends AbstractController
     #[Route('/{id}/show', name: 'app_challenge_show', methods: ['GET', 'POST'])]
     public function show(SessionInterface $session,ChallengeRepository $cr,AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $AllusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
@@ -239,8 +239,8 @@ class ChallengeController extends AbstractController
     #[Route('/{id}/showback', name: 'app_challenge_show_back', methods: ['GET', 'POST'])]
     public function showback(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, $id,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('challenge/showback.html.twig', [
@@ -253,8 +253,8 @@ class ChallengeController extends AbstractController
     #[Route('/edit/{id}', name: 'app_challenge_edit', methods: ['GET', 'POST'])]
     public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Challenge $challenge, ChallengeRepository $challengeRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(ChallengeType::class, $challenge);

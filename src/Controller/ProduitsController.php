@@ -28,8 +28,8 @@ class ProduitsController extends AbstractController
     #[Route('/', name: 'app_produits_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $idpanier = $user->getPaniers()->first()->getidpanier();
@@ -52,8 +52,8 @@ class ProduitsController extends AbstractController
     #[Route('/new', name: 'app_produits_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, ProduitsRepository $produitsRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $currentDate = new DateTime();
@@ -95,10 +95,9 @@ class ProduitsController extends AbstractController
 
     #[Route('/{idproduit}', name: 'app_produits_show', methods: ['GET'])]
     public function show(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
-
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $idpanier = $user->getPaniers()->first()->getidpanier();

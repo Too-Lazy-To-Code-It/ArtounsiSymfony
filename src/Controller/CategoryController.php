@@ -19,8 +19,8 @@ class CategoryController extends AbstractController
     #[Route('/', name: 'app_category_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('category/index.html.twig', [
@@ -35,8 +35,8 @@ class CategoryController extends AbstractController
     #[Route('/new', name: 'app_category_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, CategoryRepository $categoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $category = new Category();
@@ -57,18 +57,23 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id_category}', name: 'app_category_show', methods: ['GET'])]
-    public function show(Category $category): Response
+    public function show(SessionInterface $session,AllusersRepository $allusersRepository,Category $category): Response
     {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('category/show.html.twig', [
             'category' => $category,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_category}/edit', name: 'app_category_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(CategoryType::class, $category);

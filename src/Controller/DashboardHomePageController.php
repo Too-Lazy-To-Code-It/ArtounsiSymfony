@@ -34,8 +34,8 @@ class DashboardHomePageController extends AbstractController
     #[Route('/dashboard/home/page', name: 'app_dashboard_home_page')]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository, PostRepository $postRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $categories = $categoryRepository->findAll();
@@ -52,8 +52,8 @@ class DashboardHomePageController extends AbstractController
     #[Route('/dashboard_home_page/{id_post}', name: 'app_post_details_Dashboard', methods: ['GET', 'POST'])]
     public function showPostDetails(SessionInterface $session,AllusersRepository $allusersRepository,Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $currentUserId = 1;

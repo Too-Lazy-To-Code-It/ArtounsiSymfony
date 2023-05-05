@@ -22,8 +22,8 @@ class ParticipationController extends AbstractController
     #[Route('/', name: 'app_participation_index', methods: ['GET'])]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,ParticipationRepository $participationRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('participation/index.html.twig', [
@@ -35,8 +35,8 @@ class ParticipationController extends AbstractController
     #[Route('/new', name: 'app_participation_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, ParticipationRepository $participationRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $participation = new Participation();
@@ -60,8 +60,8 @@ class ParticipationController extends AbstractController
     #[Route('/{id_participation}', name: 'app_participation_show', methods: ['GET'])]
     public function show(SessionInterface $session,Request $request, ManagerRegistry $mr, AllusersRepository $allusersRepository, RatingRepository $ratingRepository, ParticipationRepository $participationRepository, Participation $participation, $id_participation): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $p = $participationRepository->find($id_participation);
@@ -87,8 +87,8 @@ class ParticipationController extends AbstractController
     #[Route('/{id_participation}/edit', name: 'app_participation_edit', methods: ['GET', 'POST'])]
     public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Participation $participation, ParticipationRepository $participationRepository): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(ParticipationType::class, $participation);

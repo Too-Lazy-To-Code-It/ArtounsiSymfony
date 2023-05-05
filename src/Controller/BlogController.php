@@ -18,8 +18,8 @@ class BlogController extends AbstractController
     #[Route('/blog', name: 'app_blog')]
     public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository,PostRepository $postRepository,Request $request,PaginatorInterface $paginator): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $categories = $categoryRepository->findAll();

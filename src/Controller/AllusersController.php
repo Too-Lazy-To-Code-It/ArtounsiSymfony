@@ -41,7 +41,7 @@ class AllusersController extends AbstractController
     public function login(Request $request, AllusersRepository $allusersRepository): Response
     {
         if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
+            return $this->redirectToRoute('app_home');
         }
         $form = $this->createForm(LoginType::class);
         $form->handleRequest($request);
@@ -79,8 +79,11 @@ class AllusersController extends AbstractController
                 $session->set('verification_code', $verification);
                 $this->sendSmsMessage($twilioClient, $user->getNumber(), $verification);
                 return $this->redirectToRoute('app_allusers_verif');
-            } else
+            } else if($user->getType()=='Admin')
                 return $this->redirectToRoute('app_allusers_index');
+            else
+                return $this->redirectToRoute('app_home');
+
         }
 
         return $this->render('allusers/Login.html.twig', [
@@ -211,7 +214,7 @@ class AllusersController extends AbstractController
             if ($verificationCode == $session->get('verification_code')) {
                 $session->remove('verification_code');
                 $this->addFlash('success', 'Your email address has been verified. You can now log in.');
-                return $this->redirectToRoute('app_allusers_index');
+                return $this->redirectToRoute('app_allusers_login');
             } else {
                 $session->clear();
                 $this->addFlash('error', 'Invalid verification code. Please try again.');

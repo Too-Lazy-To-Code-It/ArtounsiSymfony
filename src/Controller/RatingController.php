@@ -27,10 +27,10 @@ class RatingController extends AbstractController
     #[Route('/new/{rating}/{idChallenge}/{idparticipator}', name: 'app_rating_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session, AllusersRepository $allusersRepository, $rating, $idparticipator, $idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository, ParticipationRepository $participationRepository): Response
     {
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
-
 
         $requestData = $request;
 

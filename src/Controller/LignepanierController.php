@@ -24,8 +24,8 @@ class LignepanierController extends AbstractController
     #[Route('/', name: 'app_lignepanier_index', methods: ['GET'])]
     public function index(AllusersRepository $allusersRepository, SessionInterface $session, LignepanierRepository $lignepanierRepository): Response
     {
-        $user = new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('lignepanier/index.html.twig', [
@@ -37,8 +37,8 @@ class LignepanierController extends AbstractController
     #[Route('/new', name: 'app_lignepanier_new', methods: ['GET', 'POST'])]
     public function new(AllusersRepository $allusersRepository, SessionInterface $session, Request $request, LignepanierRepository $lignepanierRepository): Response
     {
-        $user = new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $lignepanier = new Lignepanier();
@@ -61,8 +61,8 @@ class LignepanierController extends AbstractController
     #[Route('/showlignepanier/{idlignepanier}', name: 'app_lignepanier_show', methods: ['GET'])]
     public function show(AllusersRepository $allusersRepository, SessionInterface $session, Lignepanier $lignepanier): Response
     {
-        $user = new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         return $this->render('lignepanier/show.html.twig', [
@@ -74,8 +74,8 @@ class LignepanierController extends AbstractController
     #[Route('/{idlignepanier}/edit', name: 'app_lignepanier_edit', methods: ['GET', 'POST'])]
     public function edit(AllusersRepository $allusersRepository, SessionInterface $session, Request $request, Lignepanier $lignepanier, LignepanierRepository $lignepanierRepository): Response
     {
-        $user = new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $form = $this->createForm(LignepanierType::class, $lignepanier);

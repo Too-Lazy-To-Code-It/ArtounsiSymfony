@@ -22,8 +22,8 @@ class FavorisTuroialController extends AbstractController
     #[Route('/Tutoriel/addfavori/{id_tutoriel}', name: 'app_favoris_tutoriel_new', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,Request $request, AllusersRepository $allusersRepository, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
     {
-        $user=new Allusers();
-        if ($userId = $session->get('user_id') != null) {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
         $favorisTuroial = new FavorisTuroial();

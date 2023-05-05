@@ -86,124 +86,127 @@ class __TwigTemplate_1624bd20be1f92749cfa2bc28971f1b0 extends Template
 
         // line 6
         echo "
-  <div class=\"discover-items\">
-    <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"col-lg-5\">
-          <div class=\"section-heading\">
-            <div class=\"line-dec\"></div>
-            <h2>Discover Our <em>Tutoriels</em>.</h2>
-          </div>
-        </div>
-        <div class=\"col-lg-7\">
-          <form id=\"search-form\" name=\"gs\" method=\"submit\" role=\"search\" action=\"#\">
+    <div class=\"discover-items\">
+        <div class=\"container\">
             <div class=\"row\">
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <input type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\" required>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                        <option selected>All Categories</option>
-                        <option type=\"checkbox\" name=\"option1\" value=\"Music\">Music</option>
-                        <option value=\"Digital\">Digital</option>
-                        <option value=\"Blockchain\">Blockchain</option>
-                        <option value=\"Virtual\">Virtual</option>
-                    </select>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-2\">                        
-                <fieldset>
-                    <button class=\"main-button\">Search</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        ";
-        // line 44
+                <div class=\"col-lg-5\">
+                    <div class=\"section-heading\">
+                        <div class=\"line-dec\"></div>
+                        <h2>Discover Our <em>Tutoriels</em>.</h2>
+                    </div>
+                </div>
+                <div class=\"col-lg-7\">
+                    <form id=\"search-form\" name=\"gs\" method=\"submit\" role=\"search\" action=\"#\">
+                        <div class=\"row\">
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <input type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\"
+                                           autocomplete=\"on\" required>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                            id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                        <option selected>All Categories</option>
+                                        <option type=\"checkbox\" name=\"option1\" value=\"Music\">Music</option>
+                                        <option value=\"Digital\">Digital</option>
+                                        <option value=\"Blockchain\">Blockchain</option>
+                                        <option value=\"Virtual\">Virtual</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-2\">
+                                <fieldset>
+                                    <button class=\"main-button\">Search</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                ";
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tutoriels"]) || array_key_exists("tutoriels", $context) ? $context["tutoriels"] : (function () { throw new RuntimeError('Variable "tutoriels" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tutoriels"]) || array_key_exists("tutoriels", $context) ? $context["tutoriels"] : (function () { throw new RuntimeError('Variable "tutoriels" does not exist.', 46, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["t"]) {
-            // line 45
-            echo "        <div class=\"col-lg-3\">
-          <div class=\"item\">
-            <div class=\"row\">
-              <div class=\"col-lg-12\">
+            // line 47
+            echo "                    <div class=\"col-lg-3\">
+                        <div class=\"item\">
+                            <div class=\"row\">
+                                <div class=\"col-lg-12\">
                 <span class=\"author\">
                   ";
-            // line 50
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 50), "getIdCategorie", [], "method", false, false, false, 50), "getNameCategory", [], "method", false, false, false, 50) == "2d")) {
-                // line 51
-                echo "                  <img src=\"";
+            // line 52
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 52), "getIdCategorie", [], "method", false, false, false, 52), "getNameCategory", [], "method", false, false, false, 52) == "2d")) {
+                // line 53
+                echo "                      <img src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/2d.png"), "html", null, true);
-                echo "\" alt=\"\" style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
-                ";
-            }
-            // line 53
-            echo "                ";
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 53), "getIdCategorie", [], "method", false, false, false, 53), "getNameCategory", [], "method", false, false, false, 53) == "3d")) {
-                // line 54
-                echo "                  <img src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/3d.png"), "html", null, true);
-                echo "\" alt=\"\" style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
-                ";
+                echo "\" alt=\"\"
+                           style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
+                  ";
             }
             // line 56
+            echo "                    ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 56), "getIdCategorie", [], "method", false, false, false, 56), "getNameCategory", [], "method", false, false, false, 56) == "3d")) {
+                // line 57
+                echo "                        <img src=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/3d.png"), "html", null, true);
+                echo "\" alt=\"\"
+                             style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
+                    ";
+            }
+            // line 60
             echo "                </span>
-                <img src=\"";
-            // line 57
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 57), "pathimg", [], "any", false, false, false, 57))), "html", null, true);
-            echo "\" alt=\"\" style=\"border-radius: 20px; max-width: 500px; height: 350px; \">
-                <h4>";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 58), "title", [], "any", false, false, false, 58), "html", null, true);
+                                    <img src=\"";
+            // line 61
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 61), "pathimg", [], "any", false, false, false, 61))), "html", null, true);
+            echo "\" alt=\"\"
+                                         style=\"border-radius: 20px; max-width: 500px; height: 350px; \">
+                                    <h4>";
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 63), "title", [], "any", false, false, false, 63), "html", null, true);
             echo "</h4>
-              </div>
-              <div class=\"col-lg-12\">
-                <div class=\"line-dec\"></div>
-                <div class=\"row\">
-                  <div class=\"col-6\">
-                    <span>Level: <br> <strong>";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 64), "niveau", [], "any", false, false, false, 64), "html", null, true);
+                                </div>
+                                <div class=\"col-lg-12\">
+                                    <div class=\"line-dec\"></div>
+                                    <div class=\"row\">
+                                        <div class=\"col-6\">
+                                            <span>Level: <br> <strong>";
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 69), "niveau", [], "any", false, false, false, 69), "html", null, true);
             echo "</strong></span>
-                  </div>
-                  <div class=\"col-6\">
-                    <span>Last Update: <br> <strong>26th Nov</strong></span>
-                  </div>
-                </div>
-              </div>
-              <div class=\"col-lg-12\">
-                <div class=\"main-button\">
-                <a href=\"";
-            // line 73
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 73), "getId", [], "method", false, false, false, 73)]), "html", null, true);
+                                        </div>
+                                        <div class=\"col-6\">
+                                            <span>Last Update: <br> <strong>26th Nov</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=\"col-lg-12\">
+                                    <div class=\"main-button\">
+                                        <a href=\"";
+            // line 78
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["t"], "getIdTutoriel", [], "method", false, false, false, 78), "getId", [], "method", false, false, false, 78)]), "html", null, true);
             echo "\">show</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        ";
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 80
-        echo "        
+        // line 85
+        echo "
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
 
 
     ";
-        // line 120
-        echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -224,7 +227,7 @@ class __TwigTemplate_1624bd20be1f92749cfa2bc28971f1b0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  206 => 120,  197 => 80,  184 => 73,  172 => 64,  163 => 58,  159 => 57,  156 => 56,  150 => 54,  147 => 53,  141 => 51,  139 => 50,  132 => 45,  128 => 44,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  202 => 85,  189 => 78,  177 => 69,  168 => 63,  163 => 61,  160 => 60,  153 => 57,  150 => 56,  143 => 53,  141 => 52,  134 => 47,  130 => 46,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -235,87 +238,92 @@ class __TwigTemplate_1624bd20be1f92749cfa2bc28971f1b0 extends Template
 
 {% block body %}
 
-  <div class=\"discover-items\">
-    <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"col-lg-5\">
-          <div class=\"section-heading\">
-            <div class=\"line-dec\"></div>
-            <h2>Discover Our <em>Tutoriels</em>.</h2>
-          </div>
-        </div>
-        <div class=\"col-lg-7\">
-          <form id=\"search-form\" name=\"gs\" method=\"submit\" role=\"search\" action=\"#\">
+    <div class=\"discover-items\">
+        <div class=\"container\">
             <div class=\"row\">
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <input type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\" autocomplete=\"on\" required>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-5\">
-                <fieldset>
-                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\" id=\"chooseCategory\" onchange=\"this.form.click()\">
-                        <option selected>All Categories</option>
-                        <option type=\"checkbox\" name=\"option1\" value=\"Music\">Music</option>
-                        <option value=\"Digital\">Digital</option>
-                        <option value=\"Blockchain\">Blockchain</option>
-                        <option value=\"Virtual\">Virtual</option>
-                    </select>
-                </fieldset>
-              </div>
-              <div class=\"col-lg-2\">                        
-                <fieldset>
-                    <button class=\"main-button\">Search</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        {% for t in tutoriels %}
-        <div class=\"col-lg-3\">
-          <div class=\"item\">
-            <div class=\"row\">
-              <div class=\"col-lg-12\">
+                <div class=\"col-lg-5\">
+                    <div class=\"section-heading\">
+                        <div class=\"line-dec\"></div>
+                        <h2>Discover Our <em>Tutoriels</em>.</h2>
+                    </div>
+                </div>
+                <div class=\"col-lg-7\">
+                    <form id=\"search-form\" name=\"gs\" method=\"submit\" role=\"search\" action=\"#\">
+                        <div class=\"row\">
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <input type=\"text\" name=\"keyword\" class=\"searchText\" placeholder=\"Type Something...\"
+                                           autocomplete=\"on\" required>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-5\">
+                                <fieldset>
+                                    <select name=\"Category\" class=\"form-select\" aria-label=\"Default select example\"
+                                            id=\"chooseCategory\" onchange=\"this.form.click()\">
+                                        <option selected>All Categories</option>
+                                        <option type=\"checkbox\" name=\"option1\" value=\"Music\">Music</option>
+                                        <option value=\"Digital\">Digital</option>
+                                        <option value=\"Blockchain\">Blockchain</option>
+                                        <option value=\"Virtual\">Virtual</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class=\"col-lg-2\">
+                                <fieldset>
+                                    <button class=\"main-button\">Search</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                {% for t in tutoriels %}
+                    <div class=\"col-lg-3\">
+                        <div class=\"item\">
+                            <div class=\"row\">
+                                <div class=\"col-lg-12\">
                 <span class=\"author\">
                   {% if(t.getIdTutoriel().getIdCategorie().getNameCategory()==\"2d\") %}
-                  <img src=\"{{ asset('assets/images/2d.png') }}\" alt=\"\" style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
-                {% endif %}
-                {% if(t.getIdTutoriel().getIdCategorie().getNameCategory()==\"3d\") %}
-                  <img src=\"{{ asset('assets/images/3d.png') }}\" alt=\"\" style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
-                {% endif %}
+                      <img src=\"{{ asset('assets/images/2d.png') }}\" alt=\"\"
+                           style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
+                  {% endif %}
+                    {% if(t.getIdTutoriel().getIdCategorie().getNameCategory()==\"3d\") %}
+                        <img src=\"{{ asset('assets/images/3d.png') }}\" alt=\"\"
+                             style=\"max-width: 50px; max-height: 50px; border-radius: 50%;\">
+                    {% endif %}
                 </span>
-                <img src=\"{{ asset('http://localhost/img/'~t.getIdTutoriel().pathimg) }}\" alt=\"\" style=\"border-radius: 20px; max-width: 500px; height: 350px; \">
-                <h4>{{t.getIdTutoriel().title}}</h4>
-              </div>
-              <div class=\"col-lg-12\">
-                <div class=\"line-dec\"></div>
-                <div class=\"row\">
-                  <div class=\"col-6\">
-                    <span>Level: <br> <strong>{{t.getIdTutoriel().niveau}}</strong></span>
-                  </div>
-                  <div class=\"col-6\">
-                    <span>Last Update: <br> <strong>26th Nov</strong></span>
-                  </div>
-                </div>
-              </div>
-              <div class=\"col-lg-12\">
-                <div class=\"main-button\">
-                <a href=\"{{ path('app_tutoriel_show', {'id_tutoriel': t.getIdTutoriel().getId()}) }}\">show</a>
-                </div>
-              </div>
+                                    <img src=\"{{ asset('http://localhost/img/'~t.getIdTutoriel().pathimg) }}\" alt=\"\"
+                                         style=\"border-radius: 20px; max-width: 500px; height: 350px; \">
+                                    <h4>{{ t.getIdTutoriel().title }}</h4>
+                                </div>
+                                <div class=\"col-lg-12\">
+                                    <div class=\"line-dec\"></div>
+                                    <div class=\"row\">
+                                        <div class=\"col-6\">
+                                            <span>Level: <br> <strong>{{ t.getIdTutoriel().niveau }}</strong></span>
+                                        </div>
+                                        <div class=\"col-6\">
+                                            <span>Last Update: <br> <strong>26th Nov</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=\"col-lg-12\">
+                                    <div class=\"main-button\">
+                                        <a href=\"{{ path('app_tutoriel_show', {'id_tutoriel': t.getIdTutoriel().getId()}) }}\">show</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
-          </div>
         </div>
-        {% endfor %}
-        
-        </div>
-      </div>
     </div>
-  </div>
+    </div>
 
 
-    {#<h1>Tutoriel index</h1>
+    {# <h1>Tutoriel index</h1>
 
     <table class=\"table\">
         <thead>
@@ -347,8 +355,8 @@ class __TwigTemplate_1624bd20be1f92749cfa2bc28971f1b0 extends Template
             </tr>
         {% endfor %}
         </tbody>
-    </table>#}
-    {% endblock %}
+    </table> #}
+{% endblock %}
 ", "tutoriel/favoris.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\tutoriel\\favoris.html.twig");
     }
 }
