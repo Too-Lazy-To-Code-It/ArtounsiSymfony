@@ -22,29 +22,44 @@ use DateTime;
 class ProduitsBackController extends AbstractController
 {
     #[Route('/produits/back', name: 'app_produits_back')]
-    public function index(ProduitsRepository $produitsRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,ProduitsRepository $produitsRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('produits_back/index.html.twig', [
             'controller_name' => 'ProduitsBackController',
             'produits' => $produitsRepository->findAll(),
+            'user'=>$user,
            
         ]);
     }
    
 
     #[Route('/showBack/{idproduit}', name: 'app_produitsBack_show', methods: ['GET'])]
-    public function show(Produits $produit): Response
+    public function show(AllusersRepository $allusersRepository,SessionInterface $session,Produits $produit): Response
     
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('produitsBack/show.html.twig', [
             'produit' => $produit,
+            'user'=>$user,
         ]);
     }
 
 
     #[Route('/newBack', name: 'app_produits_back_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ProduitsRepository $produitsRepository): Response
-    {   $currentDate = new DateTime();
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ProduitsRepository $produitsRepository): Response
+    {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
+        $currentDate = new DateTime();
         $produit = new Produits();
         $produit->setDateajout(new \DateTime());
         $form = $this->createForm(ProduitsType::class, $produit);
@@ -76,6 +91,7 @@ class ProduitsBackController extends AbstractController
         return $this->renderForm('produits_back/new.html.twig', [
             'produit' => $produit,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

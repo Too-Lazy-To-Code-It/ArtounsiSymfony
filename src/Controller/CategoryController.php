@@ -17,10 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends AbstractController
 {
     #[Route('/', name: 'app_category_index', methods: ['GET'])]
-    public function index(CategoryRepository $categoryRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('category/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
+            'user'=>$user,
         ]);
 
 
@@ -60,8 +65,12 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id_category}/edit', name: 'app_category_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Category $category, CategoryRepository $categoryRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
@@ -74,6 +83,7 @@ class CategoryController extends AbstractController
         return $this->renderForm('category/edit.html.twig', [
             'category' => $category,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Tutoriel;
 use App\Form\TutorielType;
 use App\Entity\RatingTutoriel;
@@ -28,11 +29,14 @@ use Knp\Component\Pager\PaginatorInterface;
 class TutorielController extends AbstractController
 {
     #[Route('/', name: 'app_tutoriel_index', methods: ['GET', 'POST'])]
-    public function index(Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
+    public function index(SessionInterface $session, AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
     {
         //dd($qrcodeService->qrcode('symfony'));
         //$qrCode = null;
-
+        $user = new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $em = $mr->getManager();
         $allTutorielsQuery = $tutorielRepository->createQueryBuilder('p');
 
@@ -74,13 +78,18 @@ class TutorielController extends AbstractController
             'tutoriels' => $tutoriels,
             'toptutoriels' => $tutorielRepository->findTop(),
             'categories' => $CategoryRepository->findAll(),
+            'user' => $user,
 
         ]);
     }
 
     #[Route('/show/names', name: 'app_tutoriel_names', methods: ['GET', 'POST'])]
-    public function names(Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
+    public function names(SessionInterface $session, AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
     {
+        $user = new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
 
         $em = $mr->getManager();
         $tutoriels = $tutorielRepository->findAll();
@@ -131,10 +140,12 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/back', name: 'app_tutoriel_index_back', methods: ['GET', 'POST'])]
-    public function indexback(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
+    public function indexback(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, TutorielRepository $tutorielRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(TutorielSearchType::class);
         $form->handleRequest($request);
         $tutorielsPerCategory = $tutorielRepository->tutorielsPerCategory();
@@ -157,11 +168,9 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/showfavoris', name: 'app_tutoriel_favoris', methods: ['GET'])]
-    public function showfavoris(SessionInterface $session,Request $request, TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
+    public function showfavoris(SessionInterface $session, Request $request, TutorielRepository $tutorielRepository, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository): Response
     {
-        if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
-        }
+
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
@@ -174,11 +183,8 @@ class TutorielController extends AbstractController
 
 
     #[Route('/new', name: 'app_tutoriel_new', methods: ['GET', 'POST'])]
-    public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, TutorielRepository $tutorielRepository): Response
+    public function new(SessionInterface $session, AllusersRepository $allusersRepository, Request $request, TutorielRepository $tutorielRepository): Response
     {
-        if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
-        }
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
@@ -213,10 +219,12 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/{id_tutoriel}', name: 'app_tutoriel_show', methods: ['GET', 'POST'])]
-    public function show(Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
+    public function show(SessionInterface $session,Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty, $id_tutoriel): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $em = $mr->getManager();
         if ($ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId))))
             $oldrating = $ratingTutorielRepositoty->findOneBy(array('tutorielId' => $tutorielRepository->find($id_tutoriel), 'idRater' => $allusersRepository->find($userId)));
@@ -232,16 +240,14 @@ class TutorielController extends AbstractController
             'oldrating' => $oldrating,
             'tutoriel' => $tutoriel,
             'favori' => $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel)),
-            'avg' => $avgrating[0]
+            'avg' => $avgrating[0],
+            'user'=>$user,
         ]);
     }
 
     #[Route('/back/{id_tutoriel}', name: 'app_tutoriel_show_back', methods: ['GET', 'POST'])]
-    public function showback(SessionInterface $session,$id_tutoriel, Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty): Response
+    public function showback(SessionInterface $session, $id_tutoriel, Request $request, ManagerRegistry $mr, Tutoriel $tutoriel, FavorisTuroialRepository $favorisTuroialRepository, TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, RatingTutorielRepository $ratingTutorielRepositoty): Response
     {
-        if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
-        }
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
@@ -268,8 +274,12 @@ class TutorielController extends AbstractController
     }
 
     #[Route('/{id_tutoriel}/edit', name: 'app_tutoriel_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Tutoriel $tutoriel, TutorielRepository $tutorielRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Tutoriel $tutoriel, TutorielRepository $tutorielRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(TutorielType::class, $tutoriel);
         $form->handleRequest($request);
 
@@ -293,6 +303,7 @@ class TutorielController extends AbstractController
         return $this->renderForm('tutoriel/edit.html.twig', [
             'tutoriel' => $tutoriel,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

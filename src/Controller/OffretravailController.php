@@ -71,35 +71,33 @@ class OffretravailController extends AbstractController
     }
 
     #[Route('/true', name: 'app_offretravail_notiftrue', methods: ['POST'])]
-    public function notiftrue(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
+    public function notiftrue(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artiste): Response
     {
-
-            $userId = $request->getSession()->get('user_id');
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
-
-
-
+        }
         $count = 0;
-
         $offres = $offretravailRepository->findBy(['id_user' => $userId]);
         $listartistespostuler = [];
-
         foreach ($offres as $f) {
             $idOffre = $f->getIdoffre();
             $artiste->notiftrue($idOffre);
-
-
         }
-        return $this->redirectToRoute('app_offretravail_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_offretravail_index', [
+            'user'=>$user,
+        ], Response::HTTP_SEE_OTHER);
 
     }
 
     #[Route('/{idDemande}/mail', name: 'app_offretravail_mail', methods: ['GET'])]
-    public function sendEmail(AllusersRepository $allusersRepository, DemandetravailRepository $demandetravailRepository, Request $request, $idDemande, MailerInterface $mailer): Response
+    public function sendEmail(SessionInterface $session,AllusersRepository $allusersRepository, DemandetravailRepository $demandetravailRepository, Request $request, $idDemande, MailerInterface $mailer): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $demande = $demandetravailRepository->find($idDemande);
         $demandetitre = $demande->getTitreDemande();
         $nickname = $demande->getNickname();
@@ -182,27 +180,36 @@ class OffretravailController extends AbstractController
                  ");
         $mailer->send($email);
 
-        return $this->redirectToRoute('app_offretravail_chercherdemande', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_offretravail_chercherdemande', [
+            'user'=>$user,
+        ], Response::HTTP_SEE_OTHER);
     }
 
 
     #[Route('/demandessimilaires', name: 'app_offretravail_demandessimilaires', methods: ['GET'])]
-    public function demandessimilaires(OffretravailRepository $offretravailRepository, Request $request, AllusersRepository $allusersRepository): Response
+    public function demandessimilaires(SessionInterface $session,OffretravailRepository $offretravailRepository, Request $request, AllusersRepository $allusersRepository): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $demandessimilaires = $offretravailRepository->findBydemandessimilaires($userId);
         return $this->render('offretravail/chercherdemande.html.twig', array(
             'offretravails' => $offretravailRepository->findAll(),
             'offretravailbyid' => $demandessimilaires,
+            'user'=>$user,
         ));
 
     }
 
     #[Route('/chercherdemande', name: 'app_offretravail_chercherdemande', methods: ['GET', 'POST'])]
-    public function chercherdemande(DemandetravailRepository $offretravailRepository, Request $request): Response
+    public function chercherdemande(SessionInterface $session,AllusersRepository $allusersRepository,DemandetravailRepository $offretravailRepository, Request $request): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $resultOfSearch = $offretravailRepository->findAll();
         if ($request->isMethod("POST")) {
             $keyword = $request->get('niveau');
@@ -211,17 +218,20 @@ class OffretravailController extends AbstractController
         return $this->render('offretravail/chercherdemande.html.twig', array(
             'offretravails' => $offretravailRepository->findAll(),
             'offretravailbyid' => $resultOfSearch,
+            'user'=>$user,
 
         ));
     }
 
 
     #[Route('/new', name: 'app_offretravail_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot, AllusersRepository $allusersRepository): Response
+    public function new(SessionInterface $session,Request $request, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot, AllusersRepository $allusersRepository): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $offretravail = new Offretravail();
         $user = $allusersRepository->find($userId);
 
@@ -271,23 +281,31 @@ class OffretravailController extends AbstractController
         return $this->renderForm('offretravail/new.html.twig', [
             'offretravail' => $offretravail,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{idoffre}', name: 'app_offretravail_show', methods: ['GET'])]
-    public function show(Offretravail $offretravail): Response
+    public function show(SessionInterface $session,AllusersRepository $allusersRepository,Offretravail $offretravail): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('offretravail/show.html.twig', [
             'offretravail' => $offretravail,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{idoffre}/edit', name: 'app_offretravail_edit', methods: ['GET', 'POST'])]
-    public function edit(AllusersRepository $allusersRepository, Request $request, Offretravail $offretravail, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, Offretravail $offretravail, CategoryRepository $categoryRepository, OffretravailRepository $offretravailRepository, GrosmotsRepository $mot): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(OffretravailType::class, $offretravail);
         $form->handleRequest($request);
         $verif = true;
@@ -341,6 +359,7 @@ class OffretravailController extends AbstractController
         return $this->renderForm('offretravail/edit.html.twig', [
             'offretravail' => $offretravail,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

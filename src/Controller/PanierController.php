@@ -29,15 +29,24 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class PanierController extends AbstractController
 {
     #[Route('/panier', name: 'app_panier_index', methods: ['GET'])]
-    public function index(PanierRepository $panierRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,PanierRepository $panierRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('panier/index.html.twig', [
             'paniers' => $panierRepository->findAll(),
+            'user'=>$user,
         ]);
     }
 
-    public function add($id, SessionInterface $session)
+    public function add(AllusersRepository $allusersRepository,$id, SessionInterface $session)
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $panier = $session->get('panier', []);
         if (!empty($panier[$id])) {
             $panier[$id]++;
@@ -54,8 +63,12 @@ class PanierController extends AbstractController
     #### Méthode d'affichage d'un panier selon l'id panier , et aussi calcul du montant total
 
     #[Route('/showpanier/{idpanier}', name: 'app_panier_show', methods: ['GET'])]
-    public function show(int $idpanier, LignepanierRepository $lignepanierRepository, SessionInterface $session, EntityManagerInterface $entityManager): Response
+    public function show(AllusersRepository $allusersRepository,int $idpanier, LignepanierRepository $lignepanierRepository, SessionInterface $session, EntityManagerInterface $entityManager): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $lignesPanier = $lignepanierRepository->findBy(['idpanier' => $idpanier]);
         $total = 0;
         $tauxTVA = 0.19;
@@ -96,17 +109,21 @@ class PanierController extends AbstractController
             'total' => $total,
             'count' => $count,
             'lignesPanier' => $lignesPanier,
+            'user'=>$user,
         ]);
     }
 
 
     #[Route('/panier/add/{idproduit}', name: 'add_product')]
-    public function ajouterProduitAuPanier(AllusersRepository $allusersRepository,Request $request, Produits $produit, ProduitsRepository $produitRepository, EntityManagerInterface $entityManager, SessionInterface $session): Response
+    public function ajouterProduitAuPanier(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Produits $produit, ProduitsRepository $produitRepository, EntityManagerInterface $entityManager): Response
     {
+
         $date = new \DateTime();
         // On récupère le panier actuel
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $panier=$user->getPaniers()->first();
 
         $lpexist = $entityManager->getRepository(LignePanier::class)->findOneBy(['idproduit' => $produit, 'idpanier' => $panier]);
@@ -131,7 +148,10 @@ class PanierController extends AbstractController
 
             $this->addFlash('success', 'Le produit a été ajouté au panier avec succès.');
         }
-        return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
+        return $this->redirectToRoute('app_produits_show', [
+            'idproduit' => $produit->getIdproduit(),
+            'user'=>$user,
+        ]);
     }
 
 
@@ -139,8 +159,12 @@ class PanierController extends AbstractController
 
 
     #[Route('/viderpanier/{idpanier}', name: 'viderpanier')]
-    public function ViderPanier(string $idpanier, ManagerRegistry $doctrine, SessionInterface $session, LignepanierRepository $rep): Response
+    public function ViderPanier(AllusersRepository $allusersRepository,string $idpanier, ManagerRegistry $doctrine, SessionInterface $session, LignepanierRepository $rep): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         // On récupère le panier actuel
         $panier = $session->get('panier', []);
 
@@ -170,6 +194,7 @@ class PanierController extends AbstractController
             'tauxTVA' => 0.19,
             'total' => 0,
             'count' => 0,
+            'user'=>$user,
         ]);
     }
 

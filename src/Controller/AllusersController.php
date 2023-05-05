@@ -38,14 +38,12 @@ class AllusersController extends AbstractController
     }
 
     #[Route('/Login', name: 'app_allusers_login', methods: ['GET', 'POST'])]
-    public function login(Request $request, AuthenticationUtils $authenticationUtils, AllusersRepository $allusersRepository): Response
+    public function login(Request $request, AllusersRepository $allusersRepository): Response
     {
         if ($allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_index');
         }
-        $error = $authenticationUtils->getLastAuthenticationError();
         $form = $this->createForm(LoginType::class);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -86,7 +84,6 @@ class AllusersController extends AbstractController
         }
 
         return $this->render('allusers/Login.html.twig', [
-            'error' => $error,
             'form' => $form->createView(),
         ]);
     }
@@ -114,7 +111,7 @@ class AllusersController extends AbstractController
     public function new(Request $request, AllusersRepository $allusersRepository, MailerInterface $mailer, SessionInterface $session): Response
     {
         if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
+            return $this->redirectToRoute('app_home');
         }
         $alluser = new Allusers();
         $form = $this->createForm(AllusersType::class, $alluser);
@@ -292,8 +289,9 @@ class AllusersController extends AbstractController
         if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
         }
+        else{
         $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user = $allusersRepository->find($userId);}
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
         $forme = $this->createForm(AuthType::class);

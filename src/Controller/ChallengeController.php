@@ -34,7 +34,6 @@ class ChallengeController extends AbstractController
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
-
         $challenges = $challengeRepository->findAll();
         $keyword = null;
         $category = null;
@@ -71,10 +70,12 @@ class ChallengeController extends AbstractController
     }
 
     #[Route('/back', name: 'app_challenge_index_back', methods: ['GET', 'POST'])]
-    public function indexback(AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
+    public function indexback(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository,CategoryRepository $CategoryRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $challenges = $challengeRepository->findAll();
         $keyword = null;
         $category = null;
@@ -125,10 +126,12 @@ class ChallengeController extends AbstractController
     }
     
     #[Route('/new', name: 'app_challenge_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ChallengeRepository $challengeRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $challenge = new Challenge();
         $form = $this->createForm(ChallengeType::class, $challenge);
         $form->handleRequest($request);
@@ -156,14 +159,17 @@ class ChallengeController extends AbstractController
         return $this->renderForm('challenge/new.html.twig', [
             'challenge' => $challenge,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id}/show', name: 'app_challenge_show', methods: ['GET', 'POST'])]
-    public function show(ChallengeRepository $cr,AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    public function show(SessionInterface $session,ChallengeRepository $cr,AllusersRepository $allusersRepository,Request $request,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $AllusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
         $oldparticipation = $participationRepository->findOneBy(array( 'id_challenge'=>$challenge, 'id_user'=>$AllusersRepository->findBy(array( 'id_user'=>$userId))[0] ));
 
@@ -189,6 +195,7 @@ class ChallengeController extends AbstractController
                         'challenge' => $challenge,
                         'form' => $form->createView(),
                         "best" => $cr->orderedChallenges($challenge->getId()),
+                        'user'=>$user,
                     ]);                    
                 }
             $image = $form->get('Image')->getData();
@@ -225,26 +232,33 @@ class ChallengeController extends AbstractController
             'challenge' => $challenge,
             'form' => $form->createView(),
             "best" => $cr->orderedChallenges($challenge->getId()),
+            'user'=>$user,
             
         ]);
     }
     #[Route('/{id}/showback', name: 'app_challenge_show_back', methods: ['GET', 'POST'])]
-    public function showback(AllusersRepository $allusersRepository,Request $request, $id,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    public function showback(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, $id,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('challenge/showback.html.twig', [
             'challenge' => $challenge,
             'userid'=>$userId,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/edit/{id}', name: 'app_challenge_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Challenge $challenge, ChallengeRepository $challengeRepository): Response
+    public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Challenge $challenge, ChallengeRepository $challengeRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(ChallengeType::class, $challenge);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             //on récupère l'image transmise
             $image = $form->get('Image')->getData();
@@ -255,9 +269,7 @@ class ChallengeController extends AbstractController
                 $fichier
             );
             //on stocke l'image dans la bd
-
             $challenge->setPathIMG($fichier);}
-
             $challengeRepository->save($challenge, true);
             $this->addFlash('success','Challenge Modified successfuly');
 
@@ -268,6 +280,7 @@ class ChallengeController extends AbstractController
         return $this->renderForm('challenge/edit.html.twig', [
             'challenge' => $challenge,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

@@ -1,10 +1,14 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Post;
+use App\Repository\AllusersRepository;
+use MongoDB\Driver\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Repository\CategoryRepository;
@@ -15,8 +19,12 @@ class SearchController extends AbstractController
     /**
      * @Route("/search", name="app_search_post")
      */
-    public function search(Request $request, PostRepository $postRepository,CategoryRepository $categoryRepository): Response
+    public function search(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, PostRepository $postRepository,CategoryRepository $categoryRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $title = $request->get('title');
         $post = $postRepository->findOneBy(['title_p' => $title]);
 
@@ -29,6 +37,7 @@ class SearchController extends AbstractController
                 'post' => $post,
                 'categories' => $categories,
                 'posts' => $posts,
+                'user'=>$user,
             ]);
         }
         $categories = $categoryRepository->findAll();
@@ -37,6 +46,7 @@ class SearchController extends AbstractController
             'post' => $post,
             'categories' => $categories,
             'posts' => $posts,
+            'user'=>$user,
         ]);
     }
 

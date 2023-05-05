@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Repository\AllusersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CategoryRepository;
 use App\Repository\PostRepository;
@@ -30,23 +32,31 @@ use Facebook\Exceptions\FacebookSDKException;
 class DashboardHomePageController extends AbstractController
 {
     #[Route('/dashboard/home/page', name: 'app_dashboard_home_page')]
-    public function index(CategoryRepository $categoryRepository, PostRepository $postRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,CategoryRepository $categoryRepository, PostRepository $postRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $categories = $categoryRepository->findAll();
         $posts = $postRepository->findAll();
         return $this->render('dashboard_home_page/index.html.twig', [
             'categories' => $categories,
             'posts' => $posts,
             'controller_name' => 'DashboardHomePageController',
+            'user'=>$user,
         ]);
     }
 
 
     #[Route('/dashboard_home_page/{id_post}', name: 'app_post_details_Dashboard', methods: ['GET', 'POST'])]
-    public function showPostDetails(Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
+    public function showPostDetails(SessionInterface $session,AllusersRepository $allusersRepository,Post $post, CommentRepository $commentRepository, EntityManagerInterface $entityManager, Request $request, PostLikeRepository $postLikeRepository, $id_post): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $currentUserId = 1;
-
         $postLike = new PostLike();
         $postLike->setIdPost($entityManager->getReference(Post::class, $id_post));
         $postLike->setIdUser($entityManager->getReference(Allusers::class, $currentUserId)); // set current user ID
@@ -75,12 +85,14 @@ class DashboardHomePageController extends AbstractController
             'comments' => $comments,
             'form' => $form->createView(), // use createView() method to get FormView object
             'post_like' => $postLike,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/postt/{id_post}', name: 'app_post_Dashboard_delete', methods: ['POST'])]
     public function deletePost(Request $request, Post $post, PostRepository $postRepository): Response
     {
+
         if ($this->isCsrfTokenValid('delete' . $post->getIdPost(), $request->request->get('_token'))) {
             $postRepository->remove($post, true);
         }
@@ -91,6 +103,7 @@ class DashboardHomePageController extends AbstractController
     #[Route('/comment/{id_comment}', name: 'app_comment_dashboard_delete', methods: ['POST'])]
     public function deleteCommentAdminSide(Request $request, Comment $comment, CommentRepository $commentRepository): Response
     {
+
         if ($this->isCsrfTokenValid('delete' . $comment->getId(), $request->request->get('_token'))) {
             $commentRepository->remove($comment, true);
         }

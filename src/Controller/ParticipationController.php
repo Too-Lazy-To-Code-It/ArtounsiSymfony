@@ -9,8 +9,6 @@ use App\Form\ParticipationType;
 use App\Repository\ParticipationRepository;
 use App\Repository\RatingRepository;
 use App\Repository\AllusersRepository;
-
-use MongoDB\Driver\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,18 +20,25 @@ use Doctrine\Persistence\ManagerRegistry;
 class ParticipationController extends AbstractController
 {
     #[Route('/', name: 'app_participation_index', methods: ['GET'])]
-    public function index(ParticipationRepository $participationRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,ParticipationRepository $participationRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('participation/index.html.twig', [
             'participations' => $participationRepository->findAll(),
+            'user'=>$user,
         ]);
     }
 
     #[Route('/new', name: 'app_participation_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository, Request $request, ParticipationRepository $participationRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, ParticipationRepository $participationRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $participation = new Participation();
         $form = $this->createForm(ParticipationType::class, $participation);
         $form->handleRequest($request);
@@ -48,6 +53,7 @@ class ParticipationController extends AbstractController
         return $this->renderForm('participation/new.html.twig', [
             'participation' => $participation,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
@@ -79,8 +85,12 @@ class ParticipationController extends AbstractController
     }
 
     #[Route('/{id_participation}/edit', name: 'app_participation_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Participation $participation, ParticipationRepository $participationRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Participation $participation, ParticipationRepository $participationRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(ParticipationType::class, $participation);
         $form->handleRequest($request);
 
@@ -93,6 +103,7 @@ class ParticipationController extends AbstractController
         return $this->renderForm('participation/edit.html.twig', [
             'participation' => $participation,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

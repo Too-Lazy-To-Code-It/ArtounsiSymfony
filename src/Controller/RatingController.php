@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -24,7 +25,7 @@ class RatingController extends AbstractController
 {
 
     #[Route('/new/{rating}/{idChallenge}/{idparticipator}', name: 'app_rating_new', methods: ['GET', 'POST'])]
-    public function new(SessionInterface $session,AllusersRepository $allusersRepository,$rating,$idparticipator,$idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository , ParticipationRepository $participationRepository): Response
+    public function new(SessionInterface $session, AllusersRepository $allusersRepository, $rating, $idparticipator, $idChallenge, Request $request, ManagerRegistry $doctrine, ChallengeRepository $challengeRepository, ManagerRegistry $mr, RatingRepository $ratingRepository, ParticipationRepository $participationRepository): Response
     {
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
@@ -32,27 +33,27 @@ class RatingController extends AbstractController
 
 
         $requestData = $request;
-        
+
         $ratingentity = new Rating();
         $entityManager = $doctrine->getManager();
 
-        $oldratingentity = $ratingRepository->findOneBy(array('challenge_id'=>$challengeRepository->find($idChallenge), 'participator_id'=>$allusersRepository->find($idparticipator),'rater_id'=>$allusersRepository->find($userId)));
+        $oldratingentity = $ratingRepository->findOneBy(array('challenge_id' => $challengeRepository->find($idChallenge), 'participator_id' => $allusersRepository->find($idparticipator), 'rater_id' => $allusersRepository->find($userId)));
 
 
-        if($oldratingentity){
+        if ($oldratingentity) {
             $oldratingentity->setRating((int)$rating);
-        }else{
-                    $ratingentity->setRating((int)$rating);
-                    $ratingentity->setChallengeId($challengeRepository->findOneBy(array('id_challenge'=>(int)$idChallenge)));  
-                    $ratingentity->setParticipatorId($allusersRepository->find($idparticipator));
-                    $ratingentity->setRaterId($allusersRepository->find($userId));
-                    $entityManager->persist($ratingentity);
-                    
-                }
-                $entityManager->flush();
+        } else {
+            $ratingentity->setRating((int)$rating);
+            $ratingentity->setChallengeId($challengeRepository->findOneBy(array('id_challenge' => (int)$idChallenge)));
+            $ratingentity->setParticipatorId($allusersRepository->find($idparticipator));
+            $ratingentity->setRaterId($allusersRepository->find($userId));
+            $entityManager->persist($ratingentity);
+
+        }
+        $entityManager->flush();
         $avgrating = $entityManager->createQuery("SELECT avg(r.rating) as avg FROM APP\Entity\Rating r WHERE r.challenge_id = :id_challenge AND r.participator_id = :idPartiipator")
-                            ->setParameter('id_challenge', $idChallenge)->setParameter('idPartiipator', $idparticipator)->getResult();
-        return new JsonResponse( ['success' => true,'avg' => $avgrating[0] ]);
+            ->setParameter('id_challenge', $idChallenge)->setParameter('idPartiipator', $idparticipator)->getResult();
+        return new JsonResponse(['success' => true, 'avg' => $avgrating[0]]);
     }
 
 }

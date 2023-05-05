@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\View;
 use App\Form\ViewType;
+use App\Repository\AllusersRepository;
 use App\Repository\ViewRepository;
+use MongoDB\Driver\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/view')]
@@ -22,8 +26,12 @@ class ViewController extends AbstractController
     }
 
     #[Route('/new', name: 'app_view_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ViewRepository $viewRepository): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, ViewRepository $viewRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $view = new View();
         $form = $this->createForm(ViewType::class, $view);
         $form->handleRequest($request);
@@ -37,20 +45,30 @@ class ViewController extends AbstractController
         return $this->renderForm('view/new.html.twig', [
             'view' => $view,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_view}', name: 'app_view_show', methods: ['GET'])]
-    public function show(View $view): Response
+    public function show(SessionInterface $session,AllusersRepository $allusersRepository,View $view): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('view/show.html.twig', [
             'view' => $view,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_view}/edit', name: 'app_view_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, View $view, ViewRepository $viewRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, View $view, ViewRepository $viewRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(ViewType::class, $view);
         $form->handleRequest($request);
 
@@ -63,6 +81,7 @@ class ViewController extends AbstractController
         return $this->renderForm('view/edit.html.twig', [
             'view' => $view,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

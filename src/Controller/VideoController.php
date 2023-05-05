@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Video;
 use App\Form\VideoType;
 use App\Entity\View;
@@ -13,6 +14,7 @@ use App\Repository\TutorielRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -21,17 +23,25 @@ use Doctrine\Persistence\ManagerRegistry;
 class VideoController extends AbstractController
 {
     #[Route('/', name: 'app_video_index', methods: ['GET'])]
-    public function index(VideoRepository $videoRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,VideoRepository $videoRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('video/index.html.twig', [
             'videos' => $videoRepository->findAll(),
+            'user'=>$user,
         ]);
     }
 
     #[Route('/new/{id_tutoriel}', name: 'app_videoo_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, VideoRepository $videoRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, VideoRepository $videoRepository, TutorielRepository $tutorielRepository, $id_tutoriel): Response
     {
-
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $videoentity = new Video();
         $form = $this->createForm(VideoType::class, $videoentity);
         $form->handleRequest($request);
@@ -68,14 +78,17 @@ class VideoController extends AbstractController
         return $this->renderForm('video/new.html.twig', [
             'video' => $videoentity,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_video}', name: 'app_video_show', methods: ['GET'])]
-    public function show(Request $request, ManagerRegistry $doctrine, AllusersRepository $allusersRepository, Video $video, ViewRepository $viewRepository,): Response
+    public function show(SessionInterface $session,Request $request, ManagerRegistry $doctrine, AllusersRepository $allusersRepository, Video $video, ViewRepository $viewRepository,): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         //check if video is viewed before
         $oldview = $viewRepository->findOneBy(array('id_video' => $video, 'id_user' => $allusersRepository->find($userId)));
         //add view if doesn't exist or modify it
@@ -93,12 +106,17 @@ class VideoController extends AbstractController
 
         return $this->render('video/show.html.twig', [
             'video' => $video,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_video}/edit', name: 'app_video_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Video $videoentity, VideoRepository $videoRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, Video $videoentity, VideoRepository $videoRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(VideoType::class, $videoentity);
         $form->handleRequest($request);
 
@@ -132,6 +150,7 @@ class VideoController extends AbstractController
         return $this->renderForm('video/edit.html.twig', [
             'video' => $videoentity,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

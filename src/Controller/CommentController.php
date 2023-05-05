@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\AllusersRepository;
@@ -9,6 +10,7 @@ use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Post;
@@ -29,12 +31,17 @@ class CommentController extends AbstractController
     //     ]);
     // }
     #[Route('/', name: 'app_comment_index', methods: ['GET'])]
-    public function index(CommentRepository $commentRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository,CommentRepository $commentRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
         return $this->render('comment/index.html.twig', [
             'comments' => $commentRepository->findAll(),
             'posts' => $posts,
+            'user'=>$user,
         ]);
     }
 
@@ -58,10 +65,12 @@ class CommentController extends AbstractController
     //     ]);
     // }
     #[Route('/new/{id_post}', name: 'app_comment_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository,Request $request, EntityManagerInterface $entityManager, $id_post): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, EntityManagerInterface $entityManager, $id_post): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $comment = new Comment();
         $comment->setIdPost($entityManager->getReference(Post::class, $id_post));
         $form = $this->createForm(CommentType::class, $comment);
@@ -78,21 +87,31 @@ class CommentController extends AbstractController
         return $this->renderForm('comment/new.html.twig', [
             'comment' => $comment,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
 
     #[Route('/{id_comment}', name: 'app_comment_show', methods: ['GET'])]
-    public function show(Comment $comment): Response
+    public function show(AllusersRepository $allusersRepository,SessionInterface $session,Comment $comment): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('comment/show.html.twig', [
             'comment' => $comment,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{id_comment}/edit', name: 'app_comment_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Comment $comment, CommentRepository $commentRepository): Response
+    public function edit(AllusersRepository $allusersRepository,SessionInterface $session,Request $request, Comment $comment, CommentRepository $commentRepository): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
@@ -105,6 +124,7 @@ class CommentController extends AbstractController
         return $this->renderForm('comment/edit.html.twig', [
             'comment' => $comment,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 

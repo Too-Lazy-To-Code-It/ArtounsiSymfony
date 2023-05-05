@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Allusers;
+use MongoDB\Driver\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 use App\Entity\Demandetravail;
@@ -27,11 +30,13 @@ use Symfony\Component\HttpFoundation\File\File;
 class DemandetravailController extends AbstractController
 {
     #[Route('/', name: 'app_demandetravail_index', methods: ['GET'])]
-    public function index(AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, DemandetravailRepository $demandetravailRepository): Response
+    public function index(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, DemandetravailRepository $demandetravailRepository): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $demandetravails = $demandetravailRepository->findAll();
         $demandetravails = $paginator->paginate(
             $demandetravails, //on passe les données 
@@ -42,15 +47,18 @@ class DemandetravailController extends AbstractController
         return $this->render('demandetravail/index.html.twig', [
             'demandetravails' => $demandetravails,
             'demandetravailbyid' => $demandetravailbyid,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{idOffre}/mail', name: 'app_demandetravail_mail', methods: ['GET'])]
-    public function sendEmail(Request $request, ArtistepostulerRepository $artistrepo, OffretravailRepository $offretravailRepository, $idOffre, MailerInterface $mailer, AllusersRepository $allusersRepository): Response
+    public function sendEmail(SessionInterface $session,Request $request, ArtistepostulerRepository $artistrepo, OffretravailRepository $offretravailRepository, $idOffre, MailerInterface $mailer, AllusersRepository $allusersRepository): Response
     {
 
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $verif = true;
         $demande = $offretravailRepository->find($idOffre);
         $offretitre = $demande->getTitreoffre();
@@ -150,7 +158,9 @@ class DemandetravailController extends AbstractController
             $artistepostuler->setDatepostuler($now);
             $artistrepo->save($artistepostuler, true);
 
-            return $this->redirectToRoute('app_demande_travail_chercheroffre', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_demande_travail_chercheroffre', [
+                'user'=>$user,
+            ], Response::HTTP_SEE_OTHER);
         }
 
     }
@@ -158,8 +168,12 @@ class DemandetravailController extends AbstractController
 
 
     #[Route('/chercher', name: 'app_demande_travail_chercheroffre', methods: ['GET', 'POST'])]
-    public function chercheroffre(OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artistepostulerRepository, Request $request): Response
+    public function chercheroffre(SessionInterface $session,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository, ArtistepostulerRepository $artistepostulerRepository, Request $request): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $resultOfSearch = $offretravailRepository->findAll();
         $postulerStatusArray = array_fill(0, count($resultOfSearch), true); // initialize all values to true
 
@@ -178,15 +192,17 @@ class DemandetravailController extends AbstractController
         return $this->render('demandetravail/chercheroffre.html.twig', array(
             'offretravailbyid' => $resultOfSearch,
             'postulerStatusArray' => $postulerStatusArray,
+            'user'=>$user,
         ));
     }
 
     #[Route('/offressimilaires', name: 'app_demandetravail_offressimilaires', methods: ['GET'])]
-    public function offressimilaires(ArtistepostulerRepository $artistepostulerRepository, DemandetravailRepository $demandetravailRepository, Request $request, AllusersRepository $allusersRepository): Response
+    public function offressimilaires(SessionInterface $session,ArtistepostulerRepository $artistepostulerRepository, DemandetravailRepository $demandetravailRepository, Request $request, AllusersRepository $allusersRepository): Response
     {
-
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $demandessimilaires = $demandetravailRepository->findByoffressimilaires($userId);
         $postulerStatusArray = array_fill(0, count($demandessimilaires), true);
         foreach ($demandessimilaires as $key => $offer) {
@@ -200,16 +216,18 @@ class DemandetravailController extends AbstractController
 
             'offretravailbyid' => $demandessimilaires,
             'postulerStatusArray' => $postulerStatusArray,
+            'user'=>$user,
         ));
 
     }
 
     #[Route('/{idDemande}/edit', name: 'app_demandetravail_edit', methods: ['GET', 'POST'])]
-    public function edit(AllusersRepository $allusersRepository, Request $request, $idDemande, CategoryRepository $categoryRepository, Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, $idDemande, CategoryRepository $categoryRepository, Demandetravail $demandetravail, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
     {
-
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $form = $this->createForm(DemandetravailType::class, $demandetravail);
 
         $form->handleRequest($request);
@@ -269,15 +287,18 @@ class DemandetravailController extends AbstractController
         return $this->renderForm('demandetravail/edit.html.twig', [
             'demandetravail' => $demandetravail,
             'form' => $form,
+            'user'=>$user,
 
         ]);
     }
 
     #[Route('/new', name: 'app_demandetravail_new', methods: ['GET', 'POST'])]
-    public function new(AllusersRepository $allusersRepository, Request $request, CategoryRepository $categoryRepository, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
+    public function new(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, CategoryRepository $categoryRepository, DemandetravailRepository $demandetravailRepository, GrosmotsRepository $mot): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $demandetravail = new Demandetravail();
         // Get the uploaded file
         $now = new DateTime();
@@ -311,9 +332,7 @@ class DemandetravailController extends AbstractController
         }
         if ($form->isSubmitted() && $form->isValid() && $verif == true) {
             // Get the uploaded file
-
             $nomcategorie = $categoryRepository->find($form->get('idcategorie')->getData())->getNameCategory();
-
             $demandetravail->setCategoriedemande($nomcategorie);
             $nickname = $allusersRepository->find(1)->getNickname();
             $demandetravail->setNickname($nickname);
@@ -338,14 +357,20 @@ class DemandetravailController extends AbstractController
         return $this->renderForm('demandetravail/new.html.twig', [
             'demandetravail' => $demandetravail,
             'form' => $form,
+            'user'=>$user,
         ]);
     }
 
     #[Route('/{idDemande}', name: 'app_demandetravail_show', methods: ['GET'])]
-    public function show(Demandetravail $demandetravail): Response
+    public function show(AllusersRepository $allusersRepository,SessionInterface $session,Demandetravail $demandetravail): Response
     {
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         return $this->render('demandetravail/show.html.twig', [
             'demandetravail' => $demandetravail,
+            'user'=>$user,
         ]);
     }
 

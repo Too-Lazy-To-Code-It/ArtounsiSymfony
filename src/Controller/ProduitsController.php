@@ -56,7 +56,6 @@ class ProduitsController extends AbstractController
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
-
         $currentDate = new DateTime();
         $produit = new Produits();
         $produit->setDateajout(new \DateTime());
@@ -95,11 +94,13 @@ class ProduitsController extends AbstractController
     }
 
     #[Route('/{idproduit}', name: 'app_produits_show', methods: ['GET'])]
-    public function show(AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
+    public function show(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
 
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $idpanier = $user->getPaniers()->first()->getidpanier();
 
         return $this->render('produits/show.html.twig', [
@@ -112,10 +113,12 @@ class ProduitsController extends AbstractController
     }
 
     #[Route('/{idproduit}/edit', name: 'app_produits_edit', methods: ['GET', 'POST'])]
-    public function edit(AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
+    public function edit(SessionInterface $session,AllusersRepository $allusersRepository, Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
     {
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);
+        $user=new Allusers();
+        if ($userId = $session->get('user_id') != null) {
+            $user = $allusersRepository->find($userId);
+        }
         $idpanier = $user->getPaniers()->first()->getidpanier();
         // Définir l'utilisateur actuel comme propriétaire du produit
         $produit->setIdUser($user);
@@ -149,6 +152,7 @@ class ProduitsController extends AbstractController
             'produit' => $produit,
             'form' => $form,
             'idpanier' => $idpanier,
+            'user'=>$user,
         ]);
     }
 

@@ -17,9 +17,6 @@ class StudiodashboardController extends AbstractController
     #[Route('/', name: 'app_dashboard_studiodashboard', methods: ['GET'])]
     public function index(SessionInterface $session,Request $request,AllusersRepository $allusersRepository,OffretravailRepository $offretravailRepository): Response
     {
-        if ($allusersRepository->isLoggedIn($request)) {
-            return $this->redirectToRoute('app_allusers_index');
-        }
         if ($userId = $session->get('user_id') != null) {
             $user = $allusersRepository->find($userId);
         }
@@ -48,6 +45,7 @@ class StudiodashboardController extends AbstractController
         return $this->render('dashboard/tables-data.html.twig', [
             'offretravails' => $offretravails,
             'offretravailbyid' => $offretravailbyid,
+            'user'=>$user,
         ]);
     }
     #[Route('/mesdemandess', name: 'app_dashboard_demandes', methods: ['GET'])]
