@@ -101,7 +101,7 @@ class AllusersController extends AbstractController
         $userId = $request->getSession()->get('user_id');
         $user = $allusersRepository->find($userId);
         return $this->render('allusers/users.html.twig', [
-            'logged' => $user,
+            'user' => $user,
             'allusers' => $allusersRepository->findAll(),
 
         ]);
@@ -282,7 +282,7 @@ class AllusersController extends AbstractController
 
         return $this->render('allusers/usershow.html.twig', [
             'alluser' => $alluser,
-            'logged' => $user,
+            'user' => $user,
         ]);
     }
 
@@ -318,7 +318,7 @@ class AllusersController extends AbstractController
         return $this->renderForm('allusers/usershow.html.twig', [
             'alluser' => $alluser,
             'form' => $form,
-            'logged' => $user,
+            'user' => $user,
             'forme' => $forme
         ]);
     }

@@ -103,275 +103,367 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
     <!-- ======= Header ======= -->
     <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
-    <div class=\"d-flex align-items-center justify-content-between\">
-       <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-                <img src=\"";
+      <div class=\"d-flex align-items-center justify-content-between\">
+        <a href=\"index.html\" class=\"logo d-flex align-items-center\">
+          <img src=\"";
         // line 54
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/icon.png"), "html", null, true);
-        echo "\"  width=\"50\" height=\"300\" alt=\"\">
-                 <span class=\"d-none d-lg-block\">ArTounsi</span>
-              
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/ARTounsi.png"), "html", null, true);
+        echo "\" width=\"50\" height=\"300\" alt=\"\">
+          <span class=\"d-none d-lg-block\">ArTounsi</span>
+
+        </a>
+        <i class=\"bi bi-list toggle-sidebar-btn\"></i>
+      </div><!-- End Logo -->
+
+      <div class=\"search-bar\">
+        <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
+          <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+          <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+        </form>
+      </div><!-- End Search Bar -->
+
+      <nav class=\"header-nav ms-auto\">
+        <ul class=\"d-flex align-items-center\">
+
+          <li class=\"nav-item d-block d-lg-none\">
+            <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+              <i class=\"bi bi-search\"></i>
             </a>
-      <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-    </div><!-- End Logo -->
+          </li><!-- End Search Icon-->
 
-    <div class=\"search-bar\">
-      <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-        <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-        <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+          <li class=\"nav-item dropdown\">
 
-    <nav class=\"header-nav ms-auto\">
-      <ul class=\"d-flex align-items-center\">
+            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <i class=\"bi bi-bell\"></i>
+              <span class=\"badge bg-primary badge-number\">4</span>
+            </a><!-- End Notification Icon -->
 
-        <li class=\"nav-item d-block d-lg-none\">
-          <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-            <i class=\"bi bi-search\"></i>
-          </a>
-        </li><!-- End Search Icon-->
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+              <li class=\"dropdown-header\">
+                You have 4 new notifications
+                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-        <li class=\"nav-item dropdown\">
-
-          <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-bell\"></i>
-            <span class=\"badge bg-primary badge-number\">4</span>
-          </a><!-- End Notification Icon -->
-
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-            <li class=\"dropdown-header\">
-              You have 4 new notifications
-              <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-exclamation-circle text-warning\"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-x-circle text-danger\"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-check-circle text-success\"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-info-circle text-primary\"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-            <li class=\"dropdown-footer\">
-              <a href=\"#\">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class=\"nav-item dropdown\">
-
-          <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-chat-left-text\"></i>
-            <span class=\"badge bg-success badge-number\">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-            <li class=\"dropdown-header\">
-              You have 3 new messages
-              <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+              <li class=\"notification-item\">
+                <i class=\"bi bi-exclamation-circle text-warning\"></i>
                 <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-x-circle text-danger\"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-check-circle text-success\"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-info-circle text-primary\"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
                   <p>4 hrs. ago</p>
                 </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              </li>
 
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+              <li class=\"dropdown-footer\">
+                <a href=\"#\">Show all notifications</a>
+              </li>
 
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+            </ul><!-- End Notification Dropdown Items -->
 
-            <li class=\"dropdown-footer\">
-              <a href=\"#\">Show all messages</a>
-            </li>
+          </li><!-- End Notification Nav -->
 
-          </ul><!-- End Messages Dropdown Items -->
+          <li class=\"nav-item dropdown\">
 
-        </li><!-- End Messages Nav -->
+            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <i class=\"bi bi-chat-left-text\"></i>
+              <span class=\"badge bg-success badge-number\">3</span>
+            </a><!-- End Messages Icon -->
 
-        <li class=\"nav-item dropdown pe-3\">
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+              <li class=\"dropdown-header\">
+                You have 3 new messages
+                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-          <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <img src=\"";
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"dropdown-footer\">
+                <a href=\"#\">Show all messages</a>
+              </li>
+
+            </ul><!-- End Messages Dropdown Items -->
+
+          </li><!-- End Messages Nav -->
+
+          <li class=\"nav-item dropdown pe-3\">
+
+            <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <img src=\"";
         // line 221
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/profile-img.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/Avatars/" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 221, $this->source); })()), "avatar", [], "any", false, false, false, 221))), "html", null, true);
         echo "\" alt=\"Profile\" class=\"rounded-circle\">
-            <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
 
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-            <li class=\"dropdown-header\">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <span class=\"d-none d-md-block dropdown-toggle ps-2\">";
+        // line 223
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 223, $this->source); })()), "name", [], "any", false, false, false, 223), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 223, $this->source); })()), "lastName", [], "any", false, false, false, 223), "html", null, true);
+        echo "</span>
+            </a><!-- End Profile Iamge Icon -->
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                <i class=\"bi bi-person\"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+              <li class=\"dropdown-header\">
+                <h6>";
+        // line 228
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 228, $this->source); })()), "name", [], "any", false, false, false, 228), "html", null, true);
+        echo ".";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 228, $this->source); })()), "lastName", [], "any", false, false, false, 228), "html", null, true);
+        echo "</h6>
+                <span>";
+        // line 229
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 229, $this->source); })()), "type", [], "any", false, false, false, 229), "html", null, true);
+        echo "</span>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                <i class=\"bi bi-gear\"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                  <i class=\"bi bi-person\"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                <i class=\"bi bi-question-circle\"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                  <i class=\"bi bi-gear\"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                <i class=\"bi bi-box-arrow-right\"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                  <i class=\"bi bi-question-circle\"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"";
+        // line 266
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+        echo "\">
+                  <i class=\"bi bi-box-arrow-right\"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
 
-      </ul>
-    </nav><!-- End Icons Navigation -->
+            </ul><!-- End Profile Dropdown Items -->
+          </li><!-- End Profile Nav -->
 
-  </header>
+        </ul>
+      </nav><!-- End Icons Navigation -->
+
+    </header>
   
     <aside id=\"sidebar\" class=\"sidebar\">
 
-        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+      <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
 
-            <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"";
-        // line 284
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"";
+        // line 285
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_offres");
         echo "\">
-                    <i class=\"bi bi-grid\"></i>
-                    <span>Tutoriels</span>
-                </a>
-            </li>
-         
-         
+            <i class=\"bi bi-briefcase\"></i>
+            <span>mes offres</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
 
-            <li class=\"nav-item\">
-                <a class=\"nav-link collapsed\" href=\"";
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"";
         // line 293
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_grosmots_index");
+        echo "\">
+            <i class=\"bi bi-person\"></i>
+            <span>gros mots</span>
+          </a>
+        </li>
+        <!-- End F.A.Q Page Nav -->
+
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"";
+        // line 301
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_demandes");
+        echo "\">
+            <i class=\"bi bi-briefcase\"></i>
+            <span>Mes demandes</span>
+          </a>
+        </li>
+
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"";
+        // line 308
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+            <i class=\"bi bi-person\"></i>
+            <span>Nouveau Produit</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"";
+        // line 314
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index_back");
         echo "\">
-                    <i class=\"fas fa-check-circle\"></i>
-                    <span>Challenges</span>
-                </a>
-            </li>
+            <i class=\"bi bi-person\"></i>
+            <span>Challenge</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"";
+        // line 320
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index_back");
+        echo "\">
+            <i class=\"bi bi-person\"></i>
+            <span>Tutoriel</span>
+          </a>
+        </li>
 
-        </ul>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"";
+        // line 327
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_home_page");
+        echo "\">
+            <i class=\"bi bi-person\"></i>
+            <span>Explore</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"";
+        // line 333
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
+        echo "\">
+            <i class=\"bi bi-person\"></i>
+            <span>Shop</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"";
+        // line 339
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ban_index");
+        echo "\">
+            <i class=\"bi bi-briefcase\"></i>
+            <span>Bans</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"";
+        // line 345
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_edit", ["id_user" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 345, $this->source); })()), "id_user", [], "any", false, false, false, 345)]), "html", null, true);
+        echo "\">
+            <i class=\"bi bi-person-badge\"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+
+      </ul>
 
     </aside>
      
     <!-- End Sidebar-->
 
 ";
-        // line 305
+        // line 357
         $this->displayBlock('body', $context, $blocks);
-        // line 953
+        // line 1005
         echo "  
   
   
@@ -383,45 +475,45 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
     <!-- Vendor JS Files -->
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\"></script>
     <script src=\"";
-        // line 963
+        // line 1015
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/starrating/js/rating.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 964
+        // line 1016
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 965
+        // line 1017
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 966
+        // line 1018
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 967
+        // line 1019
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 968
+        // line 1020
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 969
+        // line 1021
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 970
+        // line 1022
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 971
+        // line 1023
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin=\"anonymous\"></script>
     <!-- Template Main JS File -->
     <script src=\"";
-        // line 974
+        // line 1026
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -493,7 +585,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
     }
 
-    // line 305
+    // line 357
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -503,7 +595,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 306
+        // line 358
         echo "  <main id=\"main\" class=\"main\">
     <div class=\"pagetitle\">
       <h1>Dashboard</h1>
@@ -1111,7 +1203,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
               <div class=\"news\">
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 912
+        // line 964
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-1.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Nihil blanditiis at in nihil autem</a></h4>
@@ -1120,7 +1212,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 918
+        // line 970
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-2.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Quidem autem et impedit</a></h4>
@@ -1129,7 +1221,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 924
+        // line 976
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-3.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Id quia et et ut maxime similique occaecati ut</a></h4>
@@ -1138,7 +1230,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 930
+        // line 982
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-4.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Laborum corporis quo dara net para</a></h4>
@@ -1147,7 +1239,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
                 <div class=\"post-item clearfix\">
                   <img src=\"";
-        // line 936
+        // line 988
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/news-5.jpg"), "html", null, true);
         echo "\" alt=\"\">
                   <h4><a href=\"#\">Et dolores corrupti quae illo quod dolor</a></h4>
@@ -1186,7 +1278,7 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  1151 => 936,  1142 => 930,  1133 => 924,  1124 => 918,  1115 => 912,  507 => 306,  497 => 305,  484 => 32,  480 => 31,  476 => 30,  472 => 29,  468 => 28,  464 => 27,  460 => 26,  456 => 25,  453 => 24,  443 => 23,  425 => 974,  419 => 971,  415 => 970,  411 => 969,  407 => 968,  403 => 967,  399 => 966,  395 => 965,  391 => 964,  387 => 963,  375 => 953,  373 => 305,  358 => 293,  346 => 284,  280 => 221,  110 => 54,  89 => 36,  86 => 35,  84 => 23,  79 => 21,  75 => 20,  69 => 17,  65 => 16,  60 => 14,  45 => 1,);
+        return array (  1243 => 988,  1234 => 982,  1225 => 976,  1216 => 970,  1207 => 964,  599 => 358,  589 => 357,  576 => 32,  572 => 31,  568 => 30,  564 => 29,  560 => 28,  556 => 27,  552 => 26,  548 => 25,  545 => 24,  535 => 23,  517 => 1026,  511 => 1023,  507 => 1022,  503 => 1021,  499 => 1020,  495 => 1019,  491 => 1018,  487 => 1017,  483 => 1016,  479 => 1015,  467 => 1005,  465 => 357,  450 => 345,  441 => 339,  432 => 333,  423 => 327,  413 => 320,  404 => 314,  395 => 308,  385 => 301,  374 => 293,  363 => 285,  341 => 266,  301 => 229,  295 => 228,  285 => 223,  280 => 221,  110 => 54,  89 => 36,  86 => 35,  84 => 23,  79 => 21,  75 => 20,  69 => 17,  65 => 16,  60 => 14,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -1242,254 +1334,306 @@ class __TwigTemplate_44a934dd38c62c0114b1738012822ea3 extends Template
     <!-- ======= Header ======= -->
     <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
-    <div class=\"d-flex align-items-center justify-content-between\">
-       <a href=\"index.html\" class=\"logo d-flex align-items-center\">
-                <img src=\"{{asset('assets/icon.png') }}\"  width=\"50\" height=\"300\" alt=\"\">
-                 <span class=\"d-none d-lg-block\">ArTounsi</span>
-              
+      <div class=\"d-flex align-items-center justify-content-between\">
+        <a href=\"index.html\" class=\"logo d-flex align-items-center\">
+          <img src=\"{{ asset('assets/img/ARTounsi.png') }}\" width=\"50\" height=\"300\" alt=\"\">
+          <span class=\"d-none d-lg-block\">ArTounsi</span>
+
+        </a>
+        <i class=\"bi bi-list toggle-sidebar-btn\"></i>
+      </div><!-- End Logo -->
+
+      <div class=\"search-bar\">
+        <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
+          <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
+          <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
+        </form>
+      </div><!-- End Search Bar -->
+
+      <nav class=\"header-nav ms-auto\">
+        <ul class=\"d-flex align-items-center\">
+
+          <li class=\"nav-item d-block d-lg-none\">
+            <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
+              <i class=\"bi bi-search\"></i>
             </a>
-      <i class=\"bi bi-list toggle-sidebar-btn\"></i>
-    </div><!-- End Logo -->
+          </li><!-- End Search Icon-->
 
-    <div class=\"search-bar\">
-      <form class=\"search-form d-flex align-items-center\" method=\"POST\" action=\"#\">
-        <input type=\"text\" name=\"query\" placeholder=\"Search\" title=\"Enter search keyword\">
-        <button type=\"submit\" title=\"Search\"><i class=\"bi bi-search\"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+          <li class=\"nav-item dropdown\">
 
-    <nav class=\"header-nav ms-auto\">
-      <ul class=\"d-flex align-items-center\">
+            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <i class=\"bi bi-bell\"></i>
+              <span class=\"badge bg-primary badge-number\">4</span>
+            </a><!-- End Notification Icon -->
 
-        <li class=\"nav-item d-block d-lg-none\">
-          <a class=\"nav-link nav-icon search-bar-toggle \" href=\"#\">
-            <i class=\"bi bi-search\"></i>
-          </a>
-        </li><!-- End Search Icon-->
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
+              <li class=\"dropdown-header\">
+                You have 4 new notifications
+                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-        <li class=\"nav-item dropdown\">
-
-          <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-bell\"></i>
-            <span class=\"badge bg-primary badge-number\">4</span>
-          </a><!-- End Notification Icon -->
-
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications\">
-            <li class=\"dropdown-header\">
-              You have 4 new notifications
-              <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-exclamation-circle text-warning\"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-x-circle text-danger\"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-check-circle text-success\"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"notification-item\">
-              <i class=\"bi bi-info-circle text-primary\"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-            <li class=\"dropdown-footer\">
-              <a href=\"#\">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class=\"nav-item dropdown\">
-
-          <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <i class=\"bi bi-chat-left-text\"></i>
-            <span class=\"badge bg-success badge-number\">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
-            <li class=\"dropdown-header\">
-              You have 3 new messages
-              <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
-
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+              <li class=\"notification-item\">
+                <i class=\"bi bi-exclamation-circle text-warning\"></i>
                 <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-x-circle text-danger\"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-check-circle text-success\"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li class=\"notification-item\">
+                <i class=\"bi bi-info-circle text-primary\"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
                   <p>4 hrs. ago</p>
                 </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              </li>
 
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+              <li class=\"dropdown-footer\">
+                <a href=\"#\">Show all notifications</a>
+              </li>
 
-            <li class=\"message-item\">
-              <a href=\"#\">
-                <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+            </ul><!-- End Notification Dropdown Items -->
 
-            <li class=\"dropdown-footer\">
-              <a href=\"#\">Show all messages</a>
-            </li>
+          </li><!-- End Notification Nav -->
 
-          </ul><!-- End Messages Dropdown Items -->
+          <li class=\"nav-item dropdown\">
 
-        </li><!-- End Messages Nav -->
+            <a class=\"nav-link nav-icon\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <i class=\"bi bi-chat-left-text\"></i>
+              <span class=\"badge bg-success badge-number\">3</span>
+            </a><!-- End Messages Icon -->
 
-        <li class=\"nav-item dropdown pe-3\">
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow messages\">
+              <li class=\"dropdown-header\">
+                You have 3 new messages
+                <a href=\"#\"><span class=\"badge rounded-pill bg-primary p-2 ms-2\">View all</span></a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-          <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
-            <img src=\"{{asset('assets/img/profile-img.jpg')}}\" alt=\"Profile\" class=\"rounded-circle\">
-            <span class=\"d-none d-md-block dropdown-toggle ps-2\">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-1.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-          <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
-            <li class=\"dropdown-header\">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-2.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                <i class=\"bi bi-person\"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li class=\"message-item\">
+                <a href=\"#\">
+                  <img src=\"assets/img/messages-3.jpg\" alt=\"\" class=\"rounded-circle\">
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
-                <i class=\"bi bi-gear\"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+              <li class=\"dropdown-footer\">
+                <a href=\"#\">Show all messages</a>
+              </li>
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
-                <i class=\"bi bi-question-circle\"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class=\"dropdown-divider\">
-            </li>
+            </ul><!-- End Messages Dropdown Items -->
 
-            <li>
-              <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                <i class=\"bi bi-box-arrow-right\"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
+          </li><!-- End Messages Nav -->
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
+          <li class=\"nav-item dropdown pe-3\">
 
-      </ul>
-    </nav><!-- End Icons Navigation -->
+            <a class=\"nav-link nav-profile d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
+              <img src=\"{{ asset('uploads/Avatars/' ~ user.avatar) }}\" alt=\"Profile\" class=\"rounded-circle\">
 
-  </header>
+              <span class=\"d-none d-md-block dropdown-toggle ps-2\">{{ user.name }} {{ user.lastName }}</span>
+            </a><!-- End Profile Iamge Icon -->
+
+            <ul class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow profile\">
+              <li class=\"dropdown-header\">
+                <h6>{{ user.name }}.{{ user.lastName }}</h6>
+                <span>{{ user.type }}</span>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                  <i class=\"bi bi-person\"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"users-profile.html\">
+                  <i class=\"bi bi-gear\"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"pages-faq.html\">
+                  <i class=\"bi bi-question-circle\"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class=\"dropdown-divider\">
+              </li>
+
+              <li>
+                <a class=\"dropdown-item d-flex align-items-center\" href=\"{{ path('app_allusers_logout') }}\">
+                  <i class=\"bi bi-box-arrow-right\"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+
+            </ul><!-- End Profile Dropdown Items -->
+          </li><!-- End Profile Nav -->
+
+        </ul>
+      </nav><!-- End Icons Navigation -->
+
+    </header>
   
     <aside id=\"sidebar\" class=\"sidebar\">
 
-        <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
+      <ul class=\"sidebar-nav\" id=\"sidebar-nav\">
 
-            <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
-                    <i class=\"bi bi-grid\"></i>
-                    <span>Tutoriels</span>
-                </a>
-            </li>
-         
-         
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_offres') }}\">
+            <i class=\"bi bi-briefcase\"></i>
+            <span>mes offres</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
 
-            <li class=\"nav-item\">
-                <a class=\"nav-link collapsed\" href=\"{{ path('app_challenge_index_back') }}\">
-                    <i class=\"fas fa-check-circle\"></i>
-                    <span>Challenges</span>
-                </a>
-            </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"{{ path('app_grosmots_index') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>gros mots</span>
+          </a>
+        </li>
+        <!-- End F.A.Q Page Nav -->
 
-        </ul>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"{{ path('app_dashboard_demandes') }}\">
+            <i class=\"bi bi-briefcase\"></i>
+            <span>Mes demandes</span>
+          </a>
+        </li>
+
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"{{ path('app_produits_back_new') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>Nouveau Produit</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"{{ path('app_challenge_index_back') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>Challenge</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"{{ path('app_tutoriel_index_back') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>Tutoriel</span>
+          </a>
+        </li>
+
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"{{ path('app_dashboard_home_page') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>Explore</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link \" href=\"{{ path('app_produits_back') }}\">
+            <i class=\"bi bi-person\"></i>
+            <span>Shop</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"{{ path('app_ban_index') }}\">
+            <i class=\"bi bi-briefcase\"></i>
+            <span>Bans</span>
+          </a>
+        </li>
+        <li class=\"nav-item\">
+          <a class=\"nav-link collapsed\" href=\"{{ path('app_allusers_edit',{'id_user': user.id_user}) }}\">
+            <i class=\"bi bi-person-badge\"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+
+      </ul>
 
     </aside>
      

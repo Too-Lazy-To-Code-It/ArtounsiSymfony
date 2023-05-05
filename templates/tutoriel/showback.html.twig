@@ -122,14 +122,14 @@
                             </div>
                         </div>
                         {% if(userid==tutoriel.getIdArtist().getid_user()) %}
-                        <div class="ligne">
-                            <div class="col-6">
-                                <a href="{{ path('app_videoo_new',{'id_tutoriel':id_tutoriel}) }}">
-                                    <i class="fas fa-plus"></i>
-                                    Ajouter un video
-                                </a>
+                            <div class="ligne">
+                                <div class="col-6">
+                                    <a href="{{ path('app_videoo_new',{'id_tutoriel':id_tutoriel}) }}">
+                                        <i class="fas fa-plus"></i>
+                                        Ajouter un video
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                         {% endif %}
 
 
@@ -179,12 +179,12 @@
                                         {{ v.getDateP()|date("d:m:Y") }}
                                     </td>
                                     {% if(userid==tutoriel.getIdArtist().getid_user()) %}
-                                    <td class="align-middle text-center text-sm"><a
-                                                href="{{ path('app_video_edit', {'id_video': v.getId()}) }}"
-                                                class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
-                                    <td class="align-middle text-center text-sm"><a
-                                                href="{{ path('app_video_delete', {'id_video': v.getId()}) }}"
-                                                class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
+                                        <td class="align-middle text-center text-sm"><a
+                                                    href="{{ path('app_video_edit', {'id_video': v.getId()}) }}"
+                                                    class="text-primary"><i class="bi bi-pencil"></i> Modifier </a></td>
+                                        <td class="align-middle text-center text-sm"><a
+                                                    href="{{ path('app_video_delete', {'id_video': v.getId()}) }}"
+                                                    class="text-primary"><i class="bi bi-trash"></i> Supprimer </a></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}

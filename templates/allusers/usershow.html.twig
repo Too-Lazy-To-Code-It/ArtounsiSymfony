@@ -275,25 +275,82 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="{{ path('app_allusers_index') }}">
+            <a class="nav-link collapsed" href="{{ path('app_dashboard_offres') }}">
+                <i class="bi bi-briefcase"></i>
+                <span>mes offres</span>
+            </a>
+        </li>
+        <!-- End Profile Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_grosmots_index') }}">
                 <i class="bi bi-person"></i>
-                <span>Users</span>
+                <span>gros mots</span>
+            </a>
+        </li>
+        <!-- End F.A.Q Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_dashboard_demandes') }}">
+                <i class="bi bi-briefcase"></i>
+                <span>Mes demandes</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ path('app_produits_back_new') }}">
+                <i class="bi bi-person"></i>
+                <span>Nouveau Produit</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_allusers_index') }}">
+            <a class="nav-link " href="{{ path('app_challenge_index_back') }}">
+                <i class="bi bi-person"></i>
+                <span>Challenge</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{ path('app_tutoriel_index_back') }}">
+                <i class="bi bi-person"></i>
+                <span>Tutoriel</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ path('app_dashboard_home_page') }}">
+                <i class="bi bi-person"></i>
+                <span>Explore</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{ path('app_produits_back') }}">
+                <i class="bi bi-person"></i>
+                <span>Shop</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_ban_index') }}">
                 <i class="bi bi-briefcase"></i>
                 <span>Bans</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ path('app_allusers_edit',{'id_user': logged.id_user}) }}">
+            <a class="nav-link collapsed" href="{{ path('app_allusers_edit',{'id_user': user.id_user}) }}">
+                <i class="bi bi-person-badge"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ path('app_allusers_edit',{'id_user': user.id_user}) }}">
                 <i class="bi bi-person-badge"></i>
                 <span>Profile</span>
             </a>
         </li>
 
     </ul>
+
+
+
 
 </aside>
 
@@ -317,7 +374,7 @@
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="{{ asset('uploads/Avatars/' ~ logged.avatar) }}" alt="Profile" class="rounded-circle">
+                        <img src="{{ asset('uploads/Avatars/' ~ user.avatar) }}" alt="Profile" class="rounded-circle">
                         <h2>{{ alluser.name }} {{ alluser.LastName }}</h2>
                         <h3>{{ alluser.type }}</h3>
                         <div class="social-links mt-2">
@@ -418,7 +475,7 @@
                                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                         Image</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="{{ asset('uploads/Avatars/' ~ logged.avatar) }}" alt="Profile">
+                                        <img src="{{ asset('uploads/Avatars/' ~ user.avatar) }}" alt="Profile">
                                         <div class="pt-2">
                                             {{ form_row(form.avatar,{'attr':{'class':'form-control','placeholder':'Nickname'}}) }}
 
@@ -431,7 +488,7 @@
                                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                         Background</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="{{ asset('uploads/Backgrounds/' ~ logged.background) }}"
+                                        <img src="{{ asset('uploads/Backgrounds/' ~ user.background) }}"
                                              alt="Profile">
                                         <div class="pt-2">
                                             {{ form_row(form.background,{'attr':{'class':'form-control'}}) }}
