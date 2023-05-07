@@ -141,7 +141,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
         echo "\">Shop</a></li>
                         <li><a href=\"";
         // line 82
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => (isset($context["idpanier"]) || array_key_exists("idpanier", $context) ? $context["idpanier"] : (function () { throw new RuntimeError('Variable "idpanier" does not exist.', 82, $this->source); })())]), "html", null, true);
         echo "\">Panier</a></li>
                         <li><a href=\"";
         // line 83
@@ -312,7 +312,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
             // line 208
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 208))), "html", null, true);
             echo "\" alt=\"\"
-                                         style=\"border-radius: 20px; min-width: 195px;\">
+                                         style=\"border-radius: 20px; width: 110%; height: 280px;\">
                                 </div>
                                 <div class=\"right-content\">
                                     <h4>";
@@ -584,7 +584,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
                         <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
                         <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
                         <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
-                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                        <li><a href=\"{{ path('app_panier_show' , {'idpanier': idpanier}) }}\">Panier</a></li>
                         <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
                         <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
                         {% if(user.type=='Admin') %}
@@ -711,7 +711,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
                             <div class=\"item\">
                                 <div class=\"left-image\">
                                     <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\"
-                                         style=\"border-radius: 20px; min-width: 195px;\">
+                                         style=\"border-radius: 20px; width: 110%; height: 280px;\">
                                 </div>
                                 <div class=\"right-content\">
                                     <h4>{{ produit.nom }}</h4>

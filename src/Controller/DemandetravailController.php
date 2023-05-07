@@ -65,7 +65,7 @@ class DemandetravailController extends AbstractController
         $nickname = $demande->getNickname();
         $user = $allusersRepository->find($demande->getIdUser());
         $nameofconnnectedstudio = $allusersRepository->find($userId)->getNickname();
-        $iduserconnected = $allusersRepository->find(1)->getid_user();
+        $iduserconnected = $allusersRepository->find($userId)->getid_user();
         $descriptionstudioconnecter = $allusersRepository->find($userId)->getDescription();
         $mailstudioconnected = $allusersRepository->find($userId)->getEmail();
         $emailofuser = $user->getEmail();

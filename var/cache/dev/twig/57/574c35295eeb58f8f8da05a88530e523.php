@@ -116,7 +116,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Pie Chart -->
                         <div id=\"pieChart\" style=\"min-height: 400px;\" class=\"echart\"></div>
 
-                        <!--<script>
+                        <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 echarts.init(document.querySelector(\"#pieChart\")).setOption({
                                     title: {
@@ -135,12 +135,40 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                         name: 'Access From',
                                         type: 'pie',
                                         radius: '50%',
-                                      ";
-        // line 61
-        echo "]
+                                       data: [
+                                            {
+                                                value: ";
+        // line 45
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 45, $this->source); })()), 0, [], "array", false, false, false, 45), "aaa", [], "any", false, false, false, 45), "html", null, true);
+        echo ",
+                                                name: '";
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 46, $this->source); })()), 0, [], "array", false, false, false, 46), "name_category", [], "any", false, false, false, 46), "html", null, true);
+        echo "'
+                                            },
+                                            {
+                                                value: ";
+        // line 49
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 49, $this->source); })()), 1, [], "array", false, false, false, 49), "aaa", [], "any", false, false, false, 49), "html", null, true);
+        echo ",
+                                                name: '";
+        // line 50
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 50, $this->source); })()), 1, [], "array", false, false, false, 50), "name_category", [], "any", false, false, false, 50), "html", null, true);
+        echo "'
+                                            }
+
+                                        ],
+                                        emphasis: {
+                                            itemStyle: {
+                                                shadowBlur: 10,
+                                                shadowOffsetX: 0,
+                                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                            }
+                                        }
+                        }]
                                 });
                             });
-                        </script>-->
+                        </script>
                         <!-- End Pie Chart -->
 
                     </div>
@@ -155,13 +183,17 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Bar Chart -->
                         <div id=\"barChart\"></div>
 
-                        <!--    <script>
+                            <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 new ApexCharts(document.querySelector(\"#barChart\"), {
                                     series: [{
-                                       ";
-        // line 84
-        echo "],
+                                        data: [";
+        // line 83
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 83, $this->source); })()), 1, [], "array", false, false, false, 83), "views", [], "any", false, false, false, 83), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 83, $this->source); })()), 0, [], "array", false, false, false, 83), "views", [], "any", false, false, false, 83), "html", null, true);
+        echo "]
+                        ],
                                     chart: {
                                         type: 'bar',
                                         height: 350
@@ -180,7 +212,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
         // line 102
         echo "                                }).render();
                             });
-                        </script>-->
+                        </script>
                         <!-- End Bar Chart -->
 
                     </div>
@@ -196,7 +228,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
                     <!-- Line Chart -->
                     <div id=\"lineChart\"></div>
-                    <!--  <script>
+                     <script>
                         document.addEventListener(\"DOMContentLoaded\", () => {
                             new ApexCharts(document.querySelector(\"#lineChart\"), {
                                 series: [{
@@ -228,7 +260,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                 }
                             }).render();
                         });
-                    </script>-->
+                    </script>
                     <!-- End Line Chart -->
 
                 </div>
@@ -433,7 +465,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  404 => 280,  397 => 278,  391 => 275,  382 => 270,  380 => 269,  375 => 267,  371 => 266,  364 => 262,  358 => 259,  353 => 257,  347 => 254,  340 => 250,  333 => 245,  329 => 244,  302 => 220,  206 => 126,  181 => 102,  164 => 84,  140 => 61,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  436 => 280,  429 => 278,  423 => 275,  414 => 270,  412 => 269,  407 => 267,  403 => 266,  396 => 262,  390 => 259,  385 => 257,  379 => 254,  372 => 250,  365 => 245,  361 => 244,  334 => 220,  238 => 126,  213 => 102,  192 => 83,  156 => 50,  152 => 49,  146 => 46,  142 => 45,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -461,7 +493,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Pie Chart -->
                         <div id=\"pieChart\" style=\"min-height: 400px;\" class=\"echart\"></div>
 
-                        <!--<script>
+                        <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 echarts.init(document.querySelector(\"#pieChart\")).setOption({
                                     title: {
@@ -480,7 +512,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                         name: 'Access From',
                                         type: 'pie',
                                         radius: '50%',
-                                      {#  data: [
+                                       data: [
                                             {
                                                 value: {{ tutorielsPerCategory[0].aaa }},
                                                 name: '{{ tutorielsPerCategory[0].name_category }}'
@@ -498,10 +530,10 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                                 shadowColor: 'rgba(0, 0, 0, 0.5)'
                                             }
                                         }
-                        #}]
+                        }]
                                 });
                             });
-                        </script>-->
+                        </script>
                         <!-- End Pie Chart -->
 
                     </div>
@@ -516,12 +548,12 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         <!-- Bar Chart -->
                         <div id=\"barChart\"></div>
 
-                        <!--    <script>
+                            <script>
                             document.addEventListener(\"DOMContentLoaded\", () => {
                                 new ApexCharts(document.querySelector(\"#barChart\"), {
                                     series: [{
-                                       {# data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
-                        #}],
+                                        data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
+                        ],
                                     chart: {
                                         type: 'bar',
                                         height: 350
@@ -541,7 +573,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                         #}
                                 }).render();
                             });
-                        </script>-->
+                        </script>
                         <!-- End Bar Chart -->
 
                     </div>
@@ -557,7 +589,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
 
                     <!-- Line Chart -->
                     <div id=\"lineChart\"></div>
-                    <!--  <script>
+                     <script>
                         document.addEventListener(\"DOMContentLoaded\", () => {
                             new ApexCharts(document.querySelector(\"#lineChart\"), {
                                 series: [{
@@ -588,7 +620,7 @@ class __TwigTemplate_be55ddd9026400ca8a4581c56ba890c5 extends Template
                                 }
                             }).render();
                         });
-                    </script>-->
+                    </script>
                     <!-- End Line Chart -->
 
                 </div>

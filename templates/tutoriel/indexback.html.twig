@@ -21,7 +21,7 @@
                         <!-- Pie Chart -->
                         <div id="pieChart" style="min-height: 400px;" class="echart"></div>
 
-                        <!--<script>
+                        <script>
                             document.addEventListener("DOMContentLoaded", () => {
                                 echarts.init(document.querySelector("#pieChart")).setOption({
                                     title: {
@@ -40,7 +40,7 @@
                                         name: 'Access From',
                                         type: 'pie',
                                         radius: '50%',
-                                      {#  data: [
+                                       data: [
                                             {
                                                 value: {{ tutorielsPerCategory[0].aaa }},
                                                 name: '{{ tutorielsPerCategory[0].name_category }}'
@@ -58,10 +58,10 @@
                                                 shadowColor: 'rgba(0, 0, 0, 0.5)'
                                             }
                                         }
-                        #}]
+                        }]
                                 });
                             });
-                        </script>-->
+                        </script>
                         <!-- End Pie Chart -->
 
                     </div>
@@ -76,12 +76,12 @@
                         <!-- Bar Chart -->
                         <div id="barChart"></div>
 
-                        <!--    <script>
+                            <script>
                             document.addEventListener("DOMContentLoaded", () => {
                                 new ApexCharts(document.querySelector("#barChart"), {
                                     series: [{
-                                       {# data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
-                        #}],
+                                        data: [{{ tutorielsPerView[1].views }}, {{ tutorielsPerView[0].views }}]
+                        ],
                                     chart: {
                                         type: 'bar',
                                         height: 350
@@ -101,7 +101,7 @@
                         #}
                                 }).render();
                             });
-                        </script>-->
+                        </script>
                         <!-- End Bar Chart -->
 
                     </div>
@@ -117,7 +117,7 @@
 
                     <!-- Line Chart -->
                     <div id="lineChart"></div>
-                    <!--  <script>
+                     <script>
                         document.addEventListener("DOMContentLoaded", () => {
                             new ApexCharts(document.querySelector("#lineChart"), {
                                 series: [{
@@ -148,7 +148,7 @@
                                 }
                             }).render();
                         });
-                    </script>-->
+                    </script>
                     <!-- End Line Chart -->
 
                 </div>

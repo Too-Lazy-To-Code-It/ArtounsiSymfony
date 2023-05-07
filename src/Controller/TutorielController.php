@@ -6,6 +6,8 @@ use App\Entity\Allusers;
 use App\Entity\Tutoriel;
 use App\Form\TutorielType;
 use App\Entity\RatingTutoriel;
+use App\Repository\OffretravailRepository;
+use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use App\Repository\TutorielRepository;
@@ -29,7 +31,7 @@ use Knp\Component\Pager\PaginatorInterface;
 class TutorielController extends AbstractController
 {
     #[Route('/', name: 'app_tutoriel_index', methods: ['GET', 'POST'])]
-    public function index(SessionInterface $session, AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
+    public function index(OffretravailRepository $offretravailRepository,CategoryRepository $categoryRepository,PostRepository $postRepository,SessionInterface $session, AllusersRepository $allusersRepository, Request $request, PaginatorInterface $paginator, ManagerRegistry $mr, TutorielRepository $tutorielRepository, CategoryRepository $CategoryRepository): Response
     {
         //dd($qrcodeService->qrcode('symfony'));
         //$qrCode = null;
@@ -37,6 +39,9 @@ class TutorielController extends AbstractController
         if ($userId!=null) {
             $user = $allusersRepository->find($userId);
         }
+        $offretravails = $offretravailRepository->findby([], [], 3);
+        $categories = $categoryRepository->findAll();
+        $posts = $postRepository->findAll();
         $em = $mr->getManager();
         $allTutorielsQuery = $tutorielRepository->createQueryBuilder('p');
 
@@ -79,6 +84,8 @@ class TutorielController extends AbstractController
             'toptutoriels' => $tutorielRepository->findTop(),
             'categories' => $CategoryRepository->findAll(),
             'user' => $user,
+            'posts' => $posts,
+            'offretravails'=>$offretravails,
 
         ]);
     }

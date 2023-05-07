@@ -90,7 +90,7 @@ class __TwigTemplate_ce13c5a1deb6f3ada5e48fe059f0c90d extends Template
                             <div class=\"col-sm-10\">
                                 ";
         // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), "niveau", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => " form-control "]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), "niveau", [], "any", false, false, false, 45), 'widget');
         echo "
                             </div>
                         </div>
@@ -223,7 +223,7 @@ class __TwigTemplate_ce13c5a1deb6f3ada5e48fe059f0c90d extends Template
                         <div class=\"row mb-3\">
                             <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Niveau</label>
                             <div class=\"col-sm-10\">
-                                {{ form_widget(form.niveau, { attr:{'class':' form-control '}}) }}
+                                {{ form_widget(form.niveau) }}
                             </div>
                         </div>
                         <div class=\"row mb-3\">

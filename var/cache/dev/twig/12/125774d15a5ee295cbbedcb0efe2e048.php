@@ -30,6 +30,7 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
             'javascripts' => [$this, 'block_javascripts'],
             'stylesheet' => [$this, 'block_stylesheet'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -47,11 +48,14 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 24
         $this->displayBlock('stylesheet', $context, $blocks);
-        // line 119
+        // line 174
         echo "
 ";
-        // line 120
+        // line 175
         $this->displayBlock('body', $context, $blocks);
+        // line 289
+        echo "    ";
+        $this->displayBlock('footer', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -158,6 +162,61 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         echo "    <link data-require=\"fontawesome@*\" data-semver=\"4.5.0\" rel=\"stylesheet\"
           href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css\"/>
     <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
+    <style>
         .rating {
             cursor: pointer;
         }
@@ -178,12 +237,12 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         \$(document).ready(function () {
 
             if (";
-        // line 55
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 55, $this->source); })()), "getRating", [], "method", false, false, false, 55), "html", null, true);
+        // line 110
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 110, $this->source); })()), "getRating", [], "method", false, false, false, 110), "html", null, true);
         echo ") {
                 setRating(";
-        // line 56
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 56, $this->source); })()), "getRating", [], "method", false, false, false, 56), "html", null, true);
+        // line 111
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["oldrating"]) || array_key_exists("oldrating", $context) ? $context["oldrating"] : (function () { throw new RuntimeError('Variable "oldrating" does not exist.', 111, $this->source); })()), "getRating", [], "method", false, false, false, 111), "html", null, true);
         echo ");
             }
 
@@ -255,7 +314,7 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
     }
 
-    // line 120
+    // line 175
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -265,8 +324,114 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 121
-        echo "    <div class=\"item-details-page\">
+        // line 176
+        echo "    <header class=\"header-area header-sticky\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <nav class=\"main-nav\">
+                        <!-- ***** Logo Start ***** -->
+                        <a href=\"";
+        // line 182
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\" class=\"logo\">
+                            <img src=";
+        // line 183
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo.png"), "html", null, true);
+        echo " alt=\"\">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class=\"nav\">
+                            <div class=\"dropdown\">
+                                <li><a>Art</a></li>
+                                <div class=\"dropdown-content\">
+                                    <li><a href=\"";
+        // line 191
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_explore");
+        echo "\">Explore</a></li>
+                                    <li><a href=\"";
+        // line 192
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_blog");
+        echo "\">Blog</a></li>
+                                    <li><a href=\"";
+        // line 193
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_map");
+        echo "\">Studios</a></li>
+                                    <li><a href=\"";
+        // line 194
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_new");
+        echo "\">Create Yours</a></li>
+
+                                </div>
+                            </div>
+                            ";
+        // line 198
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 198, $this->source); })()), "type", [], "any", false, false, false, 198) == "Studio")) {
+            // line 199
+            echo "                                <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offretravail_index");
+            echo "\">Offres</a></li>
+                            ";
+        } elseif ((twig_get_attribute($this->env, $this->source,         // line 200
+(isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 200, $this->source); })()), "type", [], "any", false, false, false, 200) == "Artist")) {
+            // line 201
+            echo "
+                                <li><a href=\"";
+            // line 202
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_demandetravail_index");
+            echo "\">Demandes</a></li>
+                            ";
+        }
+        // line 204
+        echo "                            <li><a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_index");
+        echo "\">Shop</a></li>
+                            <li><a href=\"";
+        // line 205
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_show", ["idpanier" => "1"]);
+        echo "\">Panier</a></li>
+                            <li><a href=\"";
+        // line 206
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_index");
+        echo "\">Challenges</a></li>
+                            <li><a href=\"";
+        // line 207
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_index");
+        echo "\">Tutoriels</a></li>
+                            ";
+        // line 208
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 208, $this->source); })()), "type", [], "any", false, false, false, 208) != "Observer")) {
+            // line 209
+            echo "                                <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard_studiodashboard");
+            echo "\">dashboard </a></li>
+                            ";
+        }
+        // line 211
+        echo "                            ";
+        if ((null === twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 211, $this->source); })()), "idUser", [], "any", false, false, false, 211))) {
+            // line 212
+            echo "                                <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_login");
+            echo "\">Log In</a></li>
+                            ";
+        } else {
+            // line 214
+            echo "                                <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allusers_logout");
+            echo "\">Logout</a></li>
+                            ";
+        }
+        // line 216
+        echo "                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class=\"item-details-page\">
         <div class=\"container\">
             <div class=\"col-lg-12\">
                 <div class=\"current-bid\">
@@ -274,8 +439,8 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                         <div class=\"col-lg-7\">
                             <div class=\"left-image\">
                                 <img src=";
-        // line 128
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 128, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 128))), "html", null, true);
+        // line 230
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 230, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 230))), "html", null, true);
         echo " alt=\"\"
                                      style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
                             </div>
@@ -283,48 +448,48 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                         <div class=\"col-lg-5 align-self-center\">
             <span class=\"author\">
               <img src=\"";
-        // line 134
+        // line 236
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/images/author-02.jpg"), "html", null, true);
         echo "\" alt=\"\"
                    style=\"border-radius: 50%;height: 50px;width: 50px;\">
               <h6> ";
-        // line 136
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 136, $this->source); })()), "getIdUser", [], "method", false, false, false, 136), "getName", [], "method", false, false, false, 136), "html", null, true);
+        // line 238
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 238, $this->source); })()), "getIdUser", [], "method", false, false, false, 238), "getName", [], "method", false, false, false, 238), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 136, $this->source); })()), "getIdUser", [], "method", false, false, false, 136), "getLastName", [], "method", false, false, false, 136), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 238, $this->source); })()), "getIdUser", [], "method", false, false, false, 238), "getLastName", [], "method", false, false, false, 238), "html", null, true);
         echo " <br><a
                           href=\"/\"> @";
-        // line 137
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 137, $this->source); })()), "getIdUser", [], "method", false, false, false, 137), "getNickname", [], "method", false, false, false, 137), "html", null, true);
+        // line 239
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 239, $this->source); })()), "getIdUser", [], "method", false, false, false, 239), "getNickname", [], "method", false, false, false, 239), "html", null, true);
         echo "</a></h6>
             </span>
                             <p>";
-        // line 139
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 139, $this->source); })()), "getDescription", [], "method", false, false, false, 139), "html", null, true);
+        // line 241
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 241, $this->source); })()), "getDescription", [], "method", false, false, false, 241), "html", null, true);
         echo "</p>
                             <div class=\"row\">
                                 <div class=\"col-8\">
                 <span class=\"bid\">
                 <input id=\"challengeid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 143
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 143, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 143), "getId", [], "method", false, false, false, 143), "html", null, true);
+        // line 245
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 245, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 245), "getId", [], "method", false, false, false, 245), "html", null, true);
         echo ">
                 <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\"
                        value=";
-        // line 145
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 145, $this->source); })()), "getIdUser", [], "method", false, false, false, 145), "getid_user", [], "method", false, false, false, 145), "html", null, true);
+        // line 247
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 247, $this->source); })()), "getIdUser", [], "method", false, false, false, 247), "getid_user", [], "method", false, false, false, 247), "html", null, true);
         echo ">
                 <input id=\"participationid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 146
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 146, $this->source); })()), "getId", [], "method", false, false, false, 146), "html", null, true);
+        // line 248
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 248, $this->source); })()), "getId", [], "method", false, false, false, 248), "html", null, true);
         echo ">
 
                 <div class=\"row\">
                   <div class=\"col-5\">
                     <span class=\"bid\">
                       Current Rate<br><strong id=\"avg_rating\">";
-        // line 151
-        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 151, $this->source); })()), "avg", [], "any", false, false, false, 151), 1), "html", null, true);
+        // line 253
+        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 253, $this->source); })()), "avg", [], "any", false, false, false, 253), 1), "html", null, true);
         echo " Stars</strong><br>
                     </span>
                   </div>
@@ -369,6 +534,38 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
     }
 
+    // line 289
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 290
+        echo "        <footer>
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                            &nbsp;&nbsp;
+                            Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\"
+                                           target=\"_blank\">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "challenge/participation.html.twig";
@@ -376,7 +573,7 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 
     public function getDebugInfo()
     {
-        return array (  327 => 151,  319 => 146,  315 => 145,  310 => 143,  303 => 139,  298 => 137,  292 => 136,  287 => 134,  278 => 128,  269 => 121,  259 => 120,  186 => 56,  182 => 55,  158 => 33,  153 => 30,  149 => 29,  145 => 28,  141 => 27,  135 => 25,  125 => 24,  112 => 22,  106 => 19,  100 => 16,  94 => 13,  88 => 10,  82 => 7,  76 => 4,  74 => 3,  64 => 2,  54 => 120,  51 => 119,  49 => 24,  46 => 2,);
+        return array (  548 => 290,  538 => 289,  492 => 253,  484 => 248,  480 => 247,  475 => 245,  468 => 241,  463 => 239,  457 => 238,  452 => 236,  443 => 230,  427 => 216,  421 => 214,  415 => 212,  412 => 211,  406 => 209,  404 => 208,  400 => 207,  396 => 206,  392 => 205,  387 => 204,  382 => 202,  379 => 201,  377 => 200,  372 => 199,  370 => 198,  363 => 194,  359 => 193,  355 => 192,  351 => 191,  340 => 183,  336 => 182,  328 => 176,  318 => 175,  245 => 111,  241 => 110,  162 => 33,  157 => 30,  153 => 29,  149 => 28,  145 => 27,  139 => 25,  129 => 24,  116 => 22,  110 => 19,  104 => 16,  98 => 13,  92 => 10,  86 => 7,  80 => 4,  78 => 3,  68 => 2,  57 => 289,  55 => 175,  52 => 174,  50 => 24,  47 => 2,);
     }
 
     public function getSourceContext()
@@ -415,6 +612,61 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
     {# {{ parent() }} #}
     <link data-require=\"fontawesome@*\" data-semver=\"4.5.0\" rel=\"stylesheet\"
           href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css\"/>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
     <style>
         .rating {
             cursor: pointer;
@@ -501,6 +753,53 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
 {% endblock %}
 
 {% block body %}
+    <header class=\"header-area header-sticky\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <nav class=\"main-nav\">
+                        <!-- ***** Logo Start ***** -->
+                        <a href=\"{{ path('app_home') }}\" class=\"logo\">
+                            <img src={{ asset(\"assets/images/logo.png\") }} alt=\"\">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class=\"nav\">
+                            <div class=\"dropdown\">
+                                <li><a>Art</a></li>
+                                <div class=\"dropdown-content\">
+                                    <li><a href=\"{{ path('app_explore') }}\">Explore</a></li>
+                                    <li><a href=\"{{ path('app_blog') }}\">Blog</a></li>
+                                    <li><a href=\"{{ path('app_map') }}\">Studios</a></li>
+                                    <li><a href=\"{{ path('app_post_new') }}\">Create Yours</a></li>
+
+                                </div>
+                            </div>
+                            {% if(user.type=='Studio') %}
+                                <li><a href=\"{{ path('app_offretravail_index') }}\">Offres</a></li>
+                            {% elseif(user.type=='Artist') %}
+
+                                <li><a href=\"{{ path('app_demandetravail_index') }}\">Demandes</a></li>
+                            {% endif %}
+                            <li><a href=\"{{ path('app_produits_index') }}\">Shop</a></li>
+                            <li><a href=\"{{ path('app_panier_show' , {'idpanier': '1'}) }}\">Panier</a></li>
+                            <li><a href=\"{{ path('app_challenge_index') }}\">Challenges</a></li>
+                            <li><a href=\"{{ path('app_tutoriel_index') }}\">Tutoriels</a></li>
+                            {%if(user.type!='Observer') %}
+                                <li><a href=\"{{ path('app_dashboard_studiodashboard') }}\">dashboard </a></li>
+                            {% endif %}
+                            {% if(user.idUser is null) %}
+                                <li><a href=\"{{ path('app_allusers_login') }}\">Log In</a></li>
+                            {% else %}
+                                <li><a href=\"{{ path('app_allusers_logout') }}\">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class=\"item-details-page\">
         <div class=\"container\">
             <div class=\"col-lg-12\">
@@ -566,6 +865,20 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
         </div>
     </div>
 
-{% endblock %}", "challenge/participation.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\participation.html.twig");
+{% endblock %}
+    {% block footer %}
+        <footer>
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-lg-12\">
+                        <p>Copyright © 2022 <a href=\"#\">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                            &nbsp;&nbsp;
+                            Designed by <a title=\"HTML CSS Templates\" rel=\"sponsored\" href=\"https://templatemo.com\"
+                                           target=\"_blank\">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% endblock %}", "challenge/participation.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\participation.html.twig");
     }
 }

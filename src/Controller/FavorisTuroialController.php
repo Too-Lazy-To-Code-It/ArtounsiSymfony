@@ -38,8 +38,12 @@ class FavorisTuroialController extends AbstractController
     }
 
     #[Route('/Tutoriel/removefavori/{id_tutoriel}', name: 'app_favoris_turoial_delete', methods: ['GET', 'POST'])]
-    public function delete(Request $request, FavorisTuroial $favorisTuroial, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository, ManagerRegistry $mr, $id_tutoriel): Response
+    public function delete(SessionInterface $session,Request $request, FavorisTuroial $favorisTuroial, FavorisTuroialRepository $favorisTuroialRepository, AllusersRepository $allusersRepository, ManagerRegistry $mr, $id_tutoriel): Response
     {
+        $userId = $session->get('user_id');
+        if ($userId!=null) {
+            $user = $allusersRepository->find($userId);
+        }
         $em = $mr->getManager();
         $favori = $favorisTuroialRepository->findOneBy(array('id_user' => $allusersRepository->find($userId), 'id_tutoriel' => $id_tutoriel));
         $em->remove($favori);

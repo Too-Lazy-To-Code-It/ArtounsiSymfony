@@ -144,7 +144,8 @@ class VideoController extends AbstractController
 
             $videoRepository->save($videoentity, true);
 
-            return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel' => $videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel' => $videoentity->getIdTutoriel()->getId(),
+                'user'=>$user,], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('video/edit.html.twig', [

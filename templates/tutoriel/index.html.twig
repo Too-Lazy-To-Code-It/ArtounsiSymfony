@@ -1,8 +1,120 @@
-{% extends 'base.html.twig' %}
+{#  {% extends 'base.html.twig' %}#}
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{{ path('app_home') }}" class="logo">
+                        <img src={{ asset("assets/images/logo.png") }} alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <div class="dropdown">
+                            <li><a>Art</a></li>
+                            <div class="dropdown-content">
+                                <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
 
+                            </div>
+                        </div>
+                        {% if(user.type=='Studio') %}
+                            <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                        {% elseif(user.type=='Artist') %}
+
+                            <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                        {% endif %}
+                        <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                        <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                        <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                        <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                        {%if(user.type!='Observer') %}
+                            <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                        {% endif %}
+                        {% if(user.idUser is null) %}
+                            <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                        {% endif %}
+                    </ul>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+{% block stylesheet %}
+     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+     <!-- Additional CSS Files -->
+     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/css/templatemo-liberty-market.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+     <link rel="stylesheet" href='https://unpkg.com/swiper@7/swiper-bundle.min.css'/>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        .dropdown-content a {
+
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+
+        }
+    </style>
+ {% endblock %}
 {% block title %}Tutoriel index{% endblock %}
 {% block css %}
-    {{ parent() }}
+   {# {{ parent() }}#}
     <style>
 
         ul {
@@ -33,6 +145,53 @@
     </style>
 {% endblock %}
 {% block body %}
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{{ path('app_home') }}" class="logo">
+                            <img src={{ asset("assets/images/logo.png") }} alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <div class="dropdown">
+                                <li><a>Art</a></li>
+                                <div class="dropdown-content">
+                                    <li><a href="{{ path('app_explore') }}">Explore</a></li>
+                                    <li><a href="{{ path('app_blog') }}">Blog</a></li>
+                                    <li><a href="{{ path('app_map') }}">Studios</a></li>
+                                    <li><a href="{{ path('app_post_new') }}">Create Yours</a></li>
+
+                                </div>
+                            </div>
+                            {% if(user.type=='Studio') %}
+                                <li><a href="{{ path('app_offretravail_index') }}">Offres</a></li>
+                            {% elseif(user.type=='Artist') %}
+
+                                <li><a href="{{ path('app_demandetravail_index') }}">Demandes</a></li>
+                            {% endif %}
+                            <li><a href="{{ path('app_produits_index') }}">Shop</a></li>
+                            <li><a href="{{ path('app_panier_show' , {'idpanier': '1'}) }}">Panier</a></li>
+                            <li><a href="{{ path('app_challenge_index') }}">Challenges</a></li>
+                            <li><a href="{{ path('app_tutoriel_index') }}">Tutoriels</a></li>
+                            {%if(user.type!='Observer') %}
+                                <li><a href="{{ path('app_dashboard_studiodashboard') }}">dashboard </a></li>
+                            {% endif %}
+                            {% if(user.idUser is null) %}
+                                <li><a href="{{ path('app_allusers_login') }}">Log In</a></li>
+                            {% else %}
+                                <li><a href="{{ path('app_allusers_logout') }}">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="page-heading">
         <div class="container">
             <div class="row">
@@ -209,7 +368,7 @@
 
 {% endblock %}
   {% block js %}
-      {{ parent() }}
+      {#{{ parent() }}#}
       <script>
           $.ajax({
               type: 'GET',
@@ -309,5 +468,44 @@
           }
       </script>
       {% include "chat/index.html.twig" %}
+      {% block footer %}
+          <footer>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                              &nbsp;&nbsp;
+                              Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                             target="_blank">TemplateMo</a></p>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      {% endblock %}
+
+      <!-- Scripts -->
+      <!-- Bootstrap core JavaScript -->
+      {% block javascripts %}
+          {# <script src="vendor/jquery/jquery.min.js"></script> #}
+          <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+
+          {# <script src="vendor/bootstrap/js/bootstrap.min.js"></script> #}
+          <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+          {# <script src="assets/js/isotope.min.js"></script> #}
+          <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+
+          {# <script src="assets/js/owl-carousel.js"></script> #}
+          <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+
+          {# <script src="assets/js/tabs.js"></script> #}
+          <script src="{{ asset('assets/js/tabs.js') }}"></script>
+
+          {# <script src="assets/js/popup.js"></script> #}
+          <script src="{{ asset('assets/js/popup.js') }}"></script>
+
+          {# <script src="assets/js/custom.js"></script>  #}
+          <script src="{{ asset('assets/js/custom.js') }}"></script>
+      {% endblock %}
 
   {% endblock %}
