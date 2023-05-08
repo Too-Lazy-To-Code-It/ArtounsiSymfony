@@ -7980,6 +7980,23 @@
         <argument key="serializer" type="service_closure" id="serializer"/>
       </argument>
     </service>
+    <service id=".service_locator.yoajz3." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kVYz1HE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="allusersRepository" type="service_closure" id="App\Repository\AllusersRepository"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+        <argument key="normalizer" type="service_closure" id="serializer"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
     <service id=".service_locator.hR8zYrr" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8610,7 +8627,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.YW8FwTL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.g9N_qYs" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -8669,6 +8686,7 @@
         <argument key="App\Controller\GrosmotsController::new" type="service_closure" id=".service_locator.d.U5eO_"/>
         <argument key="App\Controller\GrosmotsController::show" type="service_closure" id=".service_locator.KOlj7hg"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.ukcMnvy"/>
+        <argument key="App\Controller\JsonController::Login" type="service_closure" id=".service_locator.kVYz1HE"/>
         <argument key="App\Controller\JsonController::delete" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController::edit" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController::editb" type="service_closure" id=".service_locator.5mTQzHl"/>
@@ -8676,8 +8694,10 @@
         <argument key="App\Controller\JsonController::indexb" type="service_closure" id=".service_locator.Bj9p3mR"/>
         <argument key="App\Controller\JsonController::new" type="service_closure" id=".service_locator.hR8zYrr"/>
         <argument key="App\Controller\JsonController::newb" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController::sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\JsonController::show" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController::showb" type="service_closure" id=".service_locator.3atRQwA"/>
+        <argument key="App\Controller\JsonController::vf" type="service_closure" id=".service_locator.yoajz3."/>
         <argument key="App\Controller\LignepanierController::deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController::edit" type="service_closure" id=".service_locator.yTKyqdZ"/>
         <argument key="App\Controller\LignepanierController::index" type="service_closure" id=".service_locator.aa6imOJ"/>
@@ -8850,6 +8870,7 @@
         <argument key="App\Controller\GrosmotsController:new" type="service_closure" id=".service_locator.d.U5eO_"/>
         <argument key="App\Controller\GrosmotsController:show" type="service_closure" id=".service_locator.KOlj7hg"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.ukcMnvy"/>
+        <argument key="App\Controller\JsonController:Login" type="service_closure" id=".service_locator.kVYz1HE"/>
         <argument key="App\Controller\JsonController:delete" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController:edit" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController:editb" type="service_closure" id=".service_locator.5mTQzHl"/>
@@ -8857,8 +8878,10 @@
         <argument key="App\Controller\JsonController:indexb" type="service_closure" id=".service_locator.Bj9p3mR"/>
         <argument key="App\Controller\JsonController:new" type="service_closure" id=".service_locator.hR8zYrr"/>
         <argument key="App\Controller\JsonController:newb" type="service_closure" id=".service_locator.hR8zYrr"/>
+        <argument key="App\Controller\JsonController:sendSmsMessage" type="service_closure" id=".service_locator.OIshshk"/>
         <argument key="App\Controller\JsonController:show" type="service_closure" id=".service_locator.QvTsKGT"/>
         <argument key="App\Controller\JsonController:showb" type="service_closure" id=".service_locator.3atRQwA"/>
+        <argument key="App\Controller\JsonController:vf" type="service_closure" id=".service_locator.yoajz3."/>
         <argument key="App\Controller\LignepanierController:deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController:edit" type="service_closure" id=".service_locator.yTKyqdZ"/>
         <argument key="App\Controller\LignepanierController:index" type="service_closure" id=".service_locator.aa6imOJ"/>
@@ -9864,12 +9887,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YW8FwTL"/>
+      <argument type="service" id=".service_locator.g9N_qYs"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YW8FwTL"/>
+      <argument type="service" id=".service_locator.g9N_qYs"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -10904,7 +10927,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YW8FwTL"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.g9N_qYs"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10943,6 +10966,8 @@
     <service id=".service_locator.6gRzooA" alias=".service_locator.o2Q4jAD"/>
     <service id=".service_locator.w1CLOvo" alias=".service_locator.Yz.riJM"/>
     <service id=".service_locator.j6BXkjQ" alias=".service_locator.ukcMnvy"/>
+    <service id=".service_locator.UcW6fDk" alias=".service_locator.yoajz3."/>
+    <service id=".service_locator.9046IfG" alias=".service_locator.kVYz1HE"/>
     <service id=".service_locator.dGUdAyI" alias=".service_locator.hR8zYrr"/>
     <service id=".service_locator.Dwg5hc8" alias=".service_locator.5mTQzHl"/>
     <service id=".service_locator.JQTWST2" alias=".service_locator.3atRQwA"/>
@@ -10979,7 +11004,7 @@
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.gU5UtXD" alias=".service_locator.cn5m30c"/>
     <service id=".service_locator.2DTqjGG" alias=".service_locator.ROlNY4_"/>
-    <service id=".service_locator..SjdM6H" alias=".service_locator.YW8FwTL"/>
+    <service id=".service_locator.fQzbIwd" alias=".service_locator.g9N_qYs"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1s1r2Me" alias=".service_locator.HA0YbZU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -11052,6 +11077,8 @@
     <service id=".service_locator.cw1VrzW" alias=".service_locator.jrXlUaF"/>
     <service id=".service_locator.b19a_Hy" alias=".service_locator.ukcMnvy"/>
     <service id=".service_locator.T1VvfMN" alias=".service_locator.Bj9p3mR"/>
+    <service id=".service_locator.3rK1qol" alias=".service_locator.yoajz3."/>
+    <service id=".service_locator.aT0.ylM" alias=".service_locator.kVYz1HE"/>
     <service id=".service_locator.Mxdmxan" alias=".service_locator.hR8zYrr"/>
     <service id=".service_locator.o0_WV8Y" alias=".service_locator.QvTsKGT"/>
     <service id=".service_locator.W0ZCV_5" alias=".service_locator.5mTQzHl"/>

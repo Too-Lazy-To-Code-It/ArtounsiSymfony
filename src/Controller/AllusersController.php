@@ -79,7 +79,7 @@ class AllusersController extends AbstractController
                 $session->set('verification_code', $verification);
                 $this->sendSmsMessage($twilioClient, $user->getNumber(), $verification);
                 return $this->redirectToRoute('app_allusers_verif');
-            } else if($user->getType()=='Admin')
+            } else if ($user->getType() == 'Admin')
                 return $this->redirectToRoute('app_allusers_index');
             else
                 return $this->redirectToRoute('app_home');
@@ -169,7 +169,7 @@ class AllusersController extends AbstractController
 
 
     #[Route('/verify', name: 'app_allusers_verify', methods: ['GET', 'POST'])]
-    public function verify(PanierRepository $panierRepository,Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
+    public function verify(PanierRepository $panierRepository, Request $request, SessionInterface $session, AllusersRepository $allusersRepository): Response
     {
         $alluser = $session->get('alluser');
 
@@ -181,7 +181,6 @@ class AllusersController extends AbstractController
 
             if ($verificationCode == $session->get('verification_code')) {
                 $allusersRepository->save($alluser, true);
-
                 $panier = new Panier();
                 $panier->setNbrProduits(0);
                 $panier->setMontantTotal(0);
@@ -291,10 +290,10 @@ class AllusersController extends AbstractController
     {
         if (!$allusersRepository->isLoggedIn($request)) {
             return $this->redirectToRoute('app_allusers_login');
+        } else {
+            $userId = $request->getSession()->get('user_id');
+            $user = $allusersRepository->find($userId);
         }
-        else{
-        $userId = $request->getSession()->get('user_id');
-        $user = $allusersRepository->find($userId);}
         $form = $this->createForm(AllusersType::class, $alluser);
         $form->handleRequest($request);
         $forme = $this->createForm(AuthType::class);
@@ -344,7 +343,6 @@ class AllusersController extends AbstractController
         ]);
         return new Response();
     }
-
 
 
 }

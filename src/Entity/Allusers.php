@@ -17,12 +17,30 @@ use symfony\Component\Serializer\Normalizer\NormalizerInterface;
 #[ORM\Entity(repositoryClass: AllusersRepository::class)]
 class Allusers implements UserInterface
 {
+    #[Groups("allusers")]
+    private ?int $code=null;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups("allusers")]
     private ?int $id_user = null;
+
+    /**
+     * @return int|null
+     */
+    public function getCode(): ?int
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param int|null $code
+     */
+    public function setCode(?int $code): void
+    {
+        $this->code = $code;
+    }
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "can't be empty")]
@@ -172,6 +190,7 @@ class Allusers implements UserInterface
     private Collection $produits;
 
     #[ORM\Column(length: 255)]
+    #[Groups("allusers")]
     private ?string $number = null;
 
     #[ORM\Column]
