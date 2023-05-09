@@ -138,13 +138,18 @@ class Post
 
     
    // TO put the media in this path "C:\xampp\htdocs\img"
-    public function setMedia(UploadedFile $media): self
+  /*  public function setMedia(UploadedFile $media): self
     {
         $extension = $media->getClientOriginalExtension();
         $newFileName = uniqid().'.'.$extension;
         $media->move('C:\xampp\htdocs\img', $newFileName);
         $this->media = $newFileName;
 
+        return $this;
+    }*/
+    public function setMedia(?string $media): self
+    {
+        $this->media = $media;
         return $this;
     }
 

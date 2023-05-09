@@ -8458,25 +8458,10 @@
         <argument key="postLikeRepository" type="service_closure" id="App\Repository\PostLikeRepository"/>
       </argument>
     </service>
-    <service id=".errored.auql5ZH" class="App\Controller\NormalizerInterface"/>
-    <service id=".service_locator.oxHi1QW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wr9s5g4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="normalizer" type="service_closure" id=".errored.auql5ZH"/>
-      </argument>
-    </service>
-    <service id=".errored.R8k6i7w" class="App\Controller\NormalizerInterface"/>
-    <service id=".service_locator.D2kFprr" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="Normalizer" type="service_closure" id=".errored.R8k6i7w"/>
-      </argument>
-    </service>
-    <service id=".errored.XkqK92e" class="App\Controller\NormalizerInterface"/>
-    <service id=".service_locator.CwE0YsZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="Normalizer" type="service_closure" id=".errored.XkqK92e"/>
+        <argument key="normalizer" type="service_closure" id="serializer"/>
       </argument>
     </service>
     <service id=".service_locator.wqncDav" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8835,7 +8820,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.JTqeAnl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Yslp1ag" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::VS" type="service_closure" id=".service_locator.h8IUTxs"/>
@@ -8969,15 +8954,15 @@
         <argument key="App\Controller\PaymentController::checkout" type="service_closure" id=".service_locator.ZxXXR_6"/>
         <argument key="App\Controller\PaymentController::pdf" type="service_closure" id=".service_locator.GMDLTwG"/>
         <argument key="App\Controller\PaymentController::successUrl" type="service_closure" id=".service_locator.koNxlQa"/>
-        <argument key="App\Controller\PostController::DeletePostJson" type="service_closure" id=".service_locator.CwE0YsZ"/>
+        <argument key="App\Controller\PostController::DeletePostJson" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\PostController::base" type="service_closure" id=".service_locator.CuaWXCQ"/>
         <argument key="App\Controller\PostController::delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::deletelike" type="service_closure" id=".service_locator.o6b1BO2"/>
         <argument key="App\Controller\PostController::edit" type="service_closure" id=".service_locator.HBPSozB"/>
-        <argument key="App\Controller\PostController::editpostjson" type="service_closure" id=".service_locator.D2kFprr"/>
+        <argument key="App\Controller\PostController::editpostjson" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\PostController::index" type="service_closure" id=".service_locator.CuaWXCQ"/>
         <argument key="App\Controller\PostController::new" type="service_closure" id=".service_locator.CuaWXCQ"/>
-        <argument key="App\Controller\PostController::newpostjson" type="service_closure" id=".service_locator.oxHi1QW"/>
+        <argument key="App\Controller\PostController::newpostjson" type="service_closure" id=".service_locator.wr9s5g4"/>
         <argument key="App\Controller\PostController::show" type="service_closure" id=".service_locator.89ET3Ob"/>
         <argument key="App\Controller\PostController::showPostDetails" type="service_closure" id=".service_locator.HKrc4q0"/>
         <argument key="App\Controller\PostLikeController::delete" type="service_closure" id=".service_locator.tghYLrc"/>
@@ -9186,15 +9171,15 @@
         <argument key="App\Controller\PaymentController:checkout" type="service_closure" id=".service_locator.ZxXXR_6"/>
         <argument key="App\Controller\PaymentController:pdf" type="service_closure" id=".service_locator.GMDLTwG"/>
         <argument key="App\Controller\PaymentController:successUrl" type="service_closure" id=".service_locator.koNxlQa"/>
-        <argument key="App\Controller\PostController:DeletePostJson" type="service_closure" id=".service_locator.CwE0YsZ"/>
+        <argument key="App\Controller\PostController:DeletePostJson" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\PostController:base" type="service_closure" id=".service_locator.CuaWXCQ"/>
         <argument key="App\Controller\PostController:delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:deletelike" type="service_closure" id=".service_locator.o6b1BO2"/>
         <argument key="App\Controller\PostController:edit" type="service_closure" id=".service_locator.HBPSozB"/>
-        <argument key="App\Controller\PostController:editpostjson" type="service_closure" id=".service_locator.D2kFprr"/>
+        <argument key="App\Controller\PostController:editpostjson" type="service_closure" id=".service_locator.i9GOSYV"/>
         <argument key="App\Controller\PostController:index" type="service_closure" id=".service_locator.CuaWXCQ"/>
         <argument key="App\Controller\PostController:new" type="service_closure" id=".service_locator.CuaWXCQ"/>
-        <argument key="App\Controller\PostController:newpostjson" type="service_closure" id=".service_locator.oxHi1QW"/>
+        <argument key="App\Controller\PostController:newpostjson" type="service_closure" id=".service_locator.wr9s5g4"/>
         <argument key="App\Controller\PostController:show" type="service_closure" id=".service_locator.89ET3Ob"/>
         <argument key="App\Controller\PostController:showPostDetails" type="service_closure" id=".service_locator.HKrc4q0"/>
         <argument key="App\Controller\PostLikeController:delete" type="service_closure" id=".service_locator.tghYLrc"/>
@@ -10185,12 +10170,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.JTqeAnl"/>
+      <argument type="service" id=".service_locator.Yslp1ag"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.JTqeAnl"/>
+      <argument type="service" id=".service_locator.Yslp1ag"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -11223,7 +11208,7 @@
     <service id="Endroid\QrCode\Builder\BuilderInterface $defaultQrCodeBuilder" alias="endroid_qr_code.default_builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.JTqeAnl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Yslp1ag"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -11315,7 +11300,7 @@
     <service id=".service_locator.uMSCx5J" alias=".service_locator.FhwHTHC"/>
     <service id=".service_locator.iz0lFL5" alias=".service_locator._EeCc6U"/>
     <service id=".service_locator.gU5UtXD" alias=".service_locator.cn5m30c"/>
-    <service id=".service_locator.oOeQQZ1" alias=".service_locator.JTqeAnl"/>
+    <service id=".service_locator.hx_wFE7" alias=".service_locator.Yslp1ag"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1s1r2Me" alias=".service_locator.HA0YbZU"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -11442,6 +11427,7 @@
     <service id=".service_locator.q2LNY4x" alias=".service_locator.89ET3Ob"/>
     <service id=".service_locator.mTRCNZs" alias=".service_locator.HBPSozB"/>
     <service id=".service_locator.aMA_s8j" alias=".service_locator.o6b1BO2"/>
+    <service id=".service_locator.R192xRJ" alias=".service_locator.wr9s5g4"/>
     <service id=".service_locator.slxO1ot" alias=".service_locator.wqncDav"/>
     <service id=".service_locator.SbqGBMg" alias=".service_locator.RqFyUmH"/>
     <service id=".service_locator.Komja6P" alias=".service_locator.BHKMwQv"/>

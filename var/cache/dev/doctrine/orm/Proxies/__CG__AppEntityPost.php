@@ -290,7 +290,7 @@ class Post extends \App\Entity\Post implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setMedia(\Symfony\Component\HttpFoundation\File\UploadedFile $media): \App\Entity\Post
+    public function setMedia(?string $media): \App\Entity\Post
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMedia', [$media]);
