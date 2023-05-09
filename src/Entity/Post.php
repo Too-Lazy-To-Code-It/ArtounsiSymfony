@@ -13,6 +13,7 @@ use App\Entity\Category;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 
@@ -25,6 +26,7 @@ class Post
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("post")]
     private ?int $id_post = null;
 
     
@@ -41,18 +43,23 @@ class Post
 
     #[Assert\Length(min:2,minMessage:"Le titre doit dépasser 2 caractéres")]
     #[ORM\Column(length: 255)]
+    #[Groups("post")]
     private ?string $description_p = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("post")]
     private ?string $media = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("post")]
     private ?string $title_p = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("post")]
     private ?\DateTimeInterface $date_p = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("post")]
     private ?string $post_type = null;
 
     #[ORM\OneToMany(mappedBy: 'id_post', targetEntity: Comment::class)]

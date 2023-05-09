@@ -20,7 +20,7 @@ class Offretravail
     #[ORM\ManyToOne(inversedBy: 'offretravails')]
     #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
     private ?Allusers $id_user = null;
-   
+
     #[ORM\Column(length: 255)]
     #[Groups("offres")]
     #[Assert\NotBlank(message:"veuiller saisir le titre de l'offre")]

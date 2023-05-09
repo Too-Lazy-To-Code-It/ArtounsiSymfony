@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\RatingTutorielRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: RatingTutorielRepository::class)]
 class RatingTutoriel
@@ -11,9 +12,11 @@ class RatingTutoriel
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("rating")]
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Groups("rating")]
     private ?int $rating = null;
 
     #[ORM\ManyToOne( targetEntity: Tutoriel::class )]

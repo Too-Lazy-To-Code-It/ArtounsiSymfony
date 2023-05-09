@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\GrosmotsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: GrosmotsRepository::class)]
 class Grosmots
@@ -11,9 +13,12 @@ class Grosmots
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("mot")]
     private ?int $idMot = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("mot")]
+    #[Assert\NotBlank(message:"veuiller saisir un gros mot ")]
     private ?string $mot = null;
 
     public function getidMot(): ?int

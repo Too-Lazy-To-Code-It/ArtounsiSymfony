@@ -77,6 +77,8 @@ class JsonController extends AbstractController
         $user->setAvatar($request->get('type'));
         $user->setBackground($request->get('type'));
         $user->setDescription($request->get('type'));
+        $user->setCode(0);
+        $user->set2fa(false);
         $allusersRepository->save($user, true);
         $AN = $serializer->serialize($user, 'json', ['groups' => 'allusers']);
         return new Response($AN);
@@ -188,9 +190,13 @@ class JsonController extends AbstractController
         $user->setNumber($request->get('number') ?? $user->getNumber());
         if ($user->getNumber() != 0 && $user->getNumber() != null)
             $user->set2fa(true);
+        else{
+            $user->setNumber(0);
+            $user->set2fa(false);
+        }
         $em->persist($user);
         $em->flush();
-        $AN = $serializer->serialize($user, 'json', ['groups' => 'alluserss']);
+        $AN = $serializer->serialize($user, 'json', ['groups' => 'allusers']);
         return new Response($AN);
 
     }
@@ -214,4 +220,5 @@ class JsonController extends AbstractController
         ]);
         return new Response();
     }
+
 }

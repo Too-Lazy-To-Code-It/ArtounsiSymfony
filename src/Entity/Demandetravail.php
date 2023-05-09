@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\DemandetravailRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,24 +9,28 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: DemandetravailRepository::class)]
 class Demandetravail
 {
-  #[ORM\Id]
-#[ORM\GeneratedValue]
-#[ORM\Column]
-public ?int $idDemande = null;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    #[Groups("demandes")]
+    public ?int $idDemande = null;
 
-#[ORM\ManyToOne(inversedBy: 'offretravails')]
-#[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
-private ?Allusers $id_user = null;
+    #[ORM\ManyToOne(inversedBy: 'offretravails')]
+    #[ORM\JoinColumn(name:'id_user',referencedColumnName:'id_user' ,nullable: false)]
+    private ?Allusers $id_user = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("demandes")]
     private ?string $nickname = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("demandes")]
     #[Assert\NotBlank(message:"veuiller saisir le titre de la demande")]
     #[Assert\Length(min:4, minMessage:"entrer un titre valide avec minimum 3 caracteres")]
     private ?string $titreDemande = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("demandes")]
     #[Assert\Length(min:15, minMessage:"entrer une description valide avec minimum 15caracteres")]
     #[Assert\NotBlank(message:"veuiller saisir la description de  la demande")]
     private ?string $descriptionDemande = null;
@@ -36,13 +40,16 @@ private ?Allusers $id_user = null;
     private ?Category $idcategorie = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("demandes")]
     #[Assert\NotBlank(message:"veuiller saisir votre cv avec format pdf")]
     private ?string $pdf = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups("demandes")]
     private ?\DateTimeInterface $dateajoutdemande = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("demandes")]
     private ?string $categoriedemande = null;
 
     public function getidemande(): ?int

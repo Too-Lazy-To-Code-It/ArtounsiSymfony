@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+
 
 #[Route('/category')]
 class CategoryController extends AbstractController
@@ -32,7 +34,7 @@ class CategoryController extends AbstractController
     }
 
 
-    #[Route('/new', name: 'app_category_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_category_new_json', methods: ['GET', 'POST'])]
     public function new(SessionInterface $session,AllusersRepository $allusersRepository,Request $request, CategoryRepository $categoryRepository): Response
     {
         $userId = $session->get('user_id');
@@ -101,6 +103,57 @@ class CategoryController extends AbstractController
 
         return $this->redirectToRoute('app_dashboard_home_page', [], Response::HTTP_SEE_OTHER);
     }
+//THIS FOR PASING JSON NEW CATEGORY
+    #[Route('/newcategoryjson', name: 'app_category_new_newcategoryjson')]
+    public function newcategoryjson(Request $req,NormalizerInterface $Normalizer)
+    {
 
+        $em = $this->getDoctrine()->getManager();
+        $category = new Category();
+        $category->setNameCategory($req->get('name_category'));
+        $em->persist($category);
+        $em->flush();
+
+        $jsonContent = [
+            'id_category' => $category->getId_category(),
+            'name_category' => $category->getNameCategory(),
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'category']);
+        return new Response(json_encode($jsonContent));
+
+    }
+
+    //UPDATE CATEGORY JSON
+    #[Route('/{id_category}/editcategoryjson', name: 'app_category_edit_category_json', methods: ['GET', 'POST'])]
+    public function editcategoryjson(Request $req,$id_category,NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $category = $em->getRepository(Category::class)->find($id_category);
+        $category->setNameCategory($req->get('name_category'));
+        $em->flush();
+        $jsonContent = [
+            'id_category' => $category->getId_category(),
+            'name_category' => $category->getNameCategory(),
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'category']);
+        return new Response("category updated successfully " .json_encode($jsonContent));
+
+    }
+    //DELETE JSON CATEGORY
+    #[Route('/{id_category}/deletecategoryjson', name: 'app_category_delete_json_category')]
+    public function deleteJSONCATEGORY(Request $req,$id_category,NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $category = $em->getRepository(Category::class)->find($id_category);
+        $em->remove($category);
+        $em->flush();
+        $jsonContent = [
+            'id_category' => $category->getId_category(),
+            'name_category' => $category->getNameCategory(),
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'category']);
+        return new Response("category deleted successfully " .json_encode($jsonContent));
+
+    }
 
 }

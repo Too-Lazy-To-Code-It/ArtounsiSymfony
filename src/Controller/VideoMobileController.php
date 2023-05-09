@@ -20,15 +20,8 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class VideoMobileController extends AbstractController
 {
-    #[Route('/', name: 'app_video_index', methods: ['GET'])]
-    public function index(VideoRepository $videoRepository): Response
-    {
-        return $this->render('video/index.html.twig', [
-            'videos' => $videoRepository->findAll(),
-        ]);
-    }
 
-    #[Route('/addVideo/{id_tutoriel}', name: 'app_video_new', methods: ['GET', 'POST'])]
+    #[Route('/addVideo/{id_tutoriel}', name: 'addVideo', methods: ['GET', 'POST'])]
     public function new(Request $req, NormalizerInterface $Normalizer, VideoRepository $videoRepository, TutorielRepository $tutorielRepository,$id_tutoriel): Response
     {
 
@@ -46,8 +39,8 @@ class VideoMobileController extends AbstractController
         return new Response(json_encode($jsonContent));
     }
 
-    #[Route('/modifyVideo/{id_video}/{id_tutoriel}', name: 'app_video_new', methods: ['GET', 'POST'])]
-    public function modifyvideo(Request $req, NormalizerInterface $Normalizer, VideoRepository $videoRepository, TutorielRepository $tutorielRepository,$id_tutoriel): Response
+    #[Route('/modifyVideo/{id_video}/{id_tutoriel}', name: 'modifyVideo', methods: ['GET', 'POST'])]
+    public function modifyvideo(Request $req, NormalizerInterface $Normalizer, VideoRepository $videoRepository, TutorielRepository $tutorielRepository,$id_tutoriel,$id_video): Response
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -62,75 +55,15 @@ class VideoMobileController extends AbstractController
         $jsonContent = $Normalizer->normalize($video, 'json', ['groups' => 'videos']);
         return new Response(json_encode($jsonContent));
     }
-
-    #[Route('/{id_video}', name: 'app_video_show', methods: ['GET'])]
-    public function show(ManagerRegistry $doctrine,AllusersRepository $allusersRepository, Video $video, ViewRepository $viewRepository,): Response
+    
+    #[Route("deleteVideo/{id}", name: "deleteVideo")]
+    public function deleteStudentJSON(Request $req, $id, NormalizerInterface $Normalizer)
     {
-        //check if video is viewed before
-        $oldview = $viewRepository->findOneBy(array('id_video'=>$video,'id_user'=>$allusersRepository->find(2)));
-        //add view if doesn't exist or modify it
-        $view = new View();
-        $entityManager = $doctrine->getManager();
-        if($oldview){
-            $oldview->setDateV(new \DateTime());
-        }
-        else {
-            $view->setIdVideo($video);
-            $view->setIdUser($allusersRepository->find(2));
-            $view->setDateV(new \DateTime());
-            $entityManager->persist($view);
-        }
-        $entityManager->flush(); 
-
-        return $this->render('video/show.html.twig', [
-            'video' => $video,
-        ]);
-    }
-
-    #[Route('/{id_video}/edit', name: 'app_video_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Video $videoentity, VideoRepository $videoRepository): Response
-    {
-        $form = $this->createForm(VideoType::class, $videoentity);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $image = $form->get('Image')->getData();
-            if($image!=null){
-            $fichierimg = md5(uniqid()) . '.' . $image->guessExtension();
-            $image->move(
-                $this->getParameter('images_directory'),
-                $fichierimg
-            );
-            $videoentity->setPathimage($fichierimg);}
-            
-            $video = $form->get('Video')->getData();
-            if($video!=null){
-            $fichiervid = md5(uniqid()) . '.' . $video->guessExtension();
-            $video->move(
-                $this->getParameter('videos_directory'),
-                $fichiervid
-            );
-            //on stocke l'image et le video dans la bd
-            $videoentity->setPathvideo($fichiervid);}
-
-            $videoRepository->save($videoentity, true);
-
-            return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel'=>$videoentity->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('video/edit.html.twig', [
-            'video' => $videoentity,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/delete/{id_video}', name: 'app_video_delete', methods: ['GET','POST'])]
-    public function delete(Request $request, Video $video, VideoRepository $videoRepository, ManagerRegistry $mr, $id_video): Response
-    {
-        $em = $mr->getManager();
-        $video = $videoRepository->find($id_video);
+        $em = $this->getDoctrine()->getManager();
+        $video = $em->getRepository(Video::class)->find($id);
         $em->remove($video);
         $em->flush();
-        return $this->redirectToRoute('app_tutoriel_show_back', ['id_tutoriel'=>$video->getIdTutoriel()->getId()], Response::HTTP_SEE_OTHER);
+        $jsonContent = $Normalizer->normalize($video, 'json', ['groups' => 'videos']);
+        return new Response("Video deleted successfully " . json_encode($jsonContent));
     }
 }

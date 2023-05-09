@@ -42,33 +42,43 @@ class TutorielRepository extends ServiceEntityRepository
     public function findTop()
     {
         $query = $this->getEntityManager()
-                              ->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\FavorisTuroial f WHERE t.id_tutoriel=f.id_tutoriel GROUP BY t.title ORDER BY count(f) DESC');
+            ->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\FavorisTuroial f WHERE t.id_tutoriel=f.id_tutoriel GROUP BY t.title ORDER BY count(f) DESC');
         return $query->getResult();
     }
 
     public function tutorielsPerCategory(){
         $number = $this->getEntityManager()
-        ->createQuery('SELECT count(t) FROM APP\Entity\Tutoriel t')
-        ->getResult();
+            ->createQuery('SELECT count(t) FROM APP\Entity\Tutoriel t')
+            ->getResult();
         $query = $this->getEntityManager()
-                              ->createQuery('SELECT c.name_category, count(c) as aaa FROM APP\Entity\Tutoriel t, APP\Entity\Category c WHERE t.id_categorie=c.id_category GROUP BY c.name_category');
+            ->createQuery('SELECT c.name_category, count(c) as aaa FROM APP\Entity\Tutoriel t, APP\Entity\Category c WHERE t.id_categorie=c.id_category GROUP BY c.name_category');
 
         return $query->getResult();
     }
 
+    public function showfavorisTutoriels($id){
+        $favoris = $this->getEntityManager()->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\FavorisTuroial f, App\Entity\Allusers a WHERE f.id_user = a.id_user AND f.id_tutoriel = t.id_tutoriel AND f.id_user = :id')->setParameter('id',$id);
+        return $favoris->getResult();
+    }
+
+    public function showbestTutoriels(){
+        $best = $this->getEntityManager()->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\RatingTutoriel r WHERE r.tutorielId = t.id_tutoriel GROUP BY t.id_tutoriel ORDER BY AVG(r.rating) DESC');
+        return $best->getResult();
+    }
+
     public function tutorielsPerView(){
         $query = $this->getEntityManager()
-                              ->createQuery('SELECT t.title, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video GROUP BY t.title ORDER BY views DESC');
+            ->createQuery('SELECT t.title, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video GROUP BY t.title ORDER BY views DESC');
         return $query->getResult();
     }
 
     public function ViewsPerMonth(int $id, int $m){
         $d = new \DateTime();
         $query = $this->getEntityManager()
-                              ->createQuery('SELECT MONTH(w.date_v) as month, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video AND MONTH(w.date_v)=:month AND YEAR(w.date_v)=Year(:d) AND t.id_artist = :id ORDER BY views DESC')
-                                            ->setParameter('month',$m)
-                                            ->setParameter('d',$d)
-                                            ->setParameter('id',$id);
+            ->createQuery('SELECT MONTH(w.date_v) as month, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video AND MONTH(w.date_v)=:month AND YEAR(w.date_v)=Year(:d) AND t.id_artist = :id ORDER BY views DESC')
+            ->setParameter('month',$m)
+            ->setParameter('d',$d)
+            ->setParameter('id',$id);
         return $query->getResult();
     }
 

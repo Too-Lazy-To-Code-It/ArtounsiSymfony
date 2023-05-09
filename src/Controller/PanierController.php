@@ -23,6 +23,7 @@ use Symfony\Component\VarDumper\VarDumper;
 use App\Controller\FlashyNotifier;
 use DateTime;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 
 #[Route('/panier')]

@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\CommentRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 date_default_timezone_set('Africa/Tunis');
 
@@ -14,6 +16,7 @@ class Comment
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("comment")]
     private ?int $id_comment = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
@@ -28,6 +31,7 @@ class Comment
     private ?\DateTimeInterface $date_comment = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("comment")]
     private ?string $comment = null;
 
 
@@ -89,5 +93,5 @@ class Comment
         return $this;
     }
 
-    
+
 }

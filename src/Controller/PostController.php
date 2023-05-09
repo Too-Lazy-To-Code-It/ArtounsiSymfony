@@ -21,6 +21,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Allusers;
 
 use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator;
+use Symfony\Component\Serializer\SerializerInterface;
 
 
 #[Route('/post')]
@@ -178,5 +179,87 @@ class PostController extends AbstractController
         return $this->redirectToRoute('app_post_details', ['id_post' => $post->getIdPost()]);
     }
 
+
+
+    #[Route('/newpostjson', name: 'app_post_new_newpostjson')]
+    public function newpostjson(Request $req, NormalizerInterface $normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $post = new Post();
+        $category = new Category();
+
+        $post->setDescriptionP($req->get('description_p'));
+        $post->setMedia($req->get('media'));
+        $post->setTitleP($req->get('title_p'));
+        $post->setPostType($req->get('post_type'));
+
+        $category = $em->getRepository(Category::class)->findOneBy(['id_category' => $req->get('id_category')]);
+        $post->setIdCategory($category);
+
+        $user = $em->getRepository(Allusers::class)->findOneBy(['id_user' => $req->get('id_user')]);
+        $post->setIdUser($user);
+
+        $em->persist($post);
+        $em->flush();
+
+        $jsonContent = [
+            'id_post' => $post->getId(),
+            'description_p' => $post->getDescriptionP(),
+            'media' => $post->getMedia(),
+            'title_p' => $post->getTitleP(),
+            'date_p' => $post->getDateP()->format('Y-m-d H:i:s'),
+            'post_type' => $post->getPostType(),
+            // 'category' => [
+            //         'id_category' => $category->getId_category(),
+            //         'name_category' => $category->getNameCategory(),
+            // ],
+            'user' => [
+                'id_user' => $user->getid_user(),
+            ],
+        ];
+
+        $jsonContent = $normalizer->normalize($jsonContent, 'json', ['groups' => 'post']);
+
+        return new Response(json_encode($jsonContent));
+    }
+    //UPDATE POST JSON
+    #[Route('/{id_post}/editpostjson', name: 'app_post_edit_category_json', methods: ['GET', 'POST'])]
+    public function editpostjson(Request $req,$id_post,NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository(Post::class)->find($id_post);
+        $post->setTitleP($req->get('title_p'));
+        $post->setDescriptionP($req->get('description_p'));
+        $em->flush();
+        $jsonContent = [
+            'id_post' => $post->getId(),
+            'title_p' => $post->getTitleP(),
+            'description_p' => $post->getDescriptionP(),
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'post']);
+        return new Response("Post updated successfully " .json_encode($jsonContent));
+
+    }
+    //Delete Post JSON
+    #[Route('/{id_post}/DeletePostJson', name: 'app_post_delete_json')]
+    public function DeletePostJson(Request $request, $id_post, NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository(Post::class)->find($id_post);
+
+        if (!$post) {
+            return new Response("Post not found.", 404);
+        }
+
+        $em->remove($post);
+        $em->flush();
+
+        $jsonContent = [
+            'id_post' => $post->getId(),
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'post']);
+        return new Response("Post deleted successfully " . json_encode($jsonContent));
+    }
 
 }

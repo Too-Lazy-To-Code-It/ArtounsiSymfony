@@ -58,7 +58,7 @@ class TutorielMobileController extends AbstractController
         $tutoriel->setPathimg($req->get('pathimg'));
         $tutoriel->setIdArtist($allusersRepository->find($req->get('id_artist')));
         $categorie = $categoryRepository->findOneBy(array('name_category'=>$req->get('id_categorie')));
-        $tutoriel->setIdCategorie($categoryRepository->find($categorie->getId_category()));
+        $tutoriel->setIdCategorie($categoryRepository->find($categorie->getIdCategory()));
         $em->persist($tutoriel);
         $em->flush();
 
@@ -94,5 +94,42 @@ class TutorielMobileController extends AbstractController
         $em->flush();
         $jsonContent = $Normalizer->normalize($tutoriel, 'json', ['groups' => 'tutoriel']);
         return new Response("Tutoriel deleted successfully " . json_encode($jsonContent));
+    }
+
+   /* #[Route('/showCat', name: 'app_category_show_json')]
+    public function showCat(CategoryRepository $categoryRepository, SerializerInterface $serializer): Response
+    {   
+        $categories = $categoryRepository->findAll();
+    
+        $data = [];
+        foreach ($categories as $category) {
+            $data[] = [
+                'id_category' => $category->getId_category(),
+                'name_category' => $category->getNameCategory()
+            ];
+        }
+    
+        $json = $serializer->serialize($data, 'json');
+    
+        return new Response($json);
+    }*/
+
+
+    #[Route('/showfavorisTutoriels/{id}', name: 'showfavorisTutoriels')]
+    public function showfavorisTutoriels($id ,TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, NormalizerInterface $normalizer): Response
+    {
+        $tutoriels = $tutorielRepository->showfavorisTutoriels($id);
+        $tutorielsNormalizes = $normalizer->normalize($tutoriels, 'json', ['groups' => "tutoriels"]);
+        $json = json_encode($tutorielsNormalizes);
+        return new Response($json);
+    }
+
+    #[Route('/showbestTutoriels', name: 'showbestTutoriels')]
+    public function showbestTutoriels(TutorielRepository $tutorielRepository, AllusersRepository $allusersRepository, NormalizerInterface $normalizer): Response
+    {
+        $tutoriels = $tutorielRepository->showbestTutoriels();
+        $tutorielsNormalizes = $normalizer->normalize($tutoriels, 'json', ['groups' => "tutoriels"]);
+        $json = json_encode($tutorielsNormalizes);
+        return new Response($json);
     }
 }

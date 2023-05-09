@@ -16,7 +16,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Post;
 use App\Repository\PostRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 #[Route('/comment')]
 class CommentController extends AbstractController
@@ -138,5 +139,88 @@ class CommentController extends AbstractController
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }
 
+    #[Route('/newjson/{id_post}', name: 'app_comment_new_json')]
+    public function newaddcommentjson(Request $req, EntityManagerInterface $entityManager, $id_post, NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $comment = new Comment();
+        $comment->setComment($req->get('comment'));
+        //$comment->setIdPost($entityManager->getReference(Post::class, $id_post));
+        //$comment->setIdPost($entityManager->getReference(Post::class, (int) $id_post));
+        $comment->setIdPost($entityManager->getReference(Post::class, (int) $id_post));
+
+        $user = $em->getRepository(Allusers::class)->findOneBy(['id_user' => $req->get('id_user')]);
+        $comment->setIdUser($user);
+
+        $em->persist($comment);
+        $em->flush();
+        $jsonContent = [
+            'id_comment' => $comment->getId(),
+            'comment' => $comment->getComment(),
+            'user' => [
+                'id_user' => $user->getid_user(),
+            ],
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'comment']);
+        return new Response(json_encode($jsonContent));
+    }
+    #[Route('/JSONCOMMENTSHOW/{id_post}', name: 'app_comment_show_json')]
+    public function getcomments(Request $req, CommentRepository $commentRepository, SerializerInterface $serializer, NormalizerInterface $Normalizer, $id_post): Response
+    {
+        $comments = $commentRepository->findBy(['id_post' => $id_post]);
+        $jsonContent = [];
+        foreach ($comments as $comment) {
+            $jsonContent[] = [
+                'id_comment' => $comment->getId(),
+                'comment' => $comment->getComment(),
+                'user' => [
+                    'id_user' => $comment->getIdUser()->getid_user(),
+                ],
+            ];
+        }
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'comment']);
+        return new Response(json_encode($jsonContent));
+    }
+
+    #[Route('/{id_comment}/editcommentjson', name: 'app_comment_edit_json', methods: ['GET', 'POST'])]
+    public function editjsoncomment(Request $req, $id_comment, CommentRepository $commentRepository, NormalizerInterface $normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $comment = $em->getRepository(Comment::class)->find($id_comment);
+
+        if (!$comment) {
+            throw $this->createNotFoundException('Comment not found');
+        }
+
+        $comment->setComment($req->get('comment'));
+        $em->flush();
+
+        $jsonContent = [
+            'id_comment' => $comment->getId(),
+            'comment' => $comment->getComment(),
+        ];
+
+        $jsonContent = $normalizer->normalize($jsonContent, 'json', ['groups' => 'comment']);
+
+        return new Response("Comment updated successfully " . json_encode($jsonContent));
+    }
+    //DELETE COMMENT JSON
+    #[Route('/{id_comment}/deletecommentjson', name: 'app_comment_delete_json', methods: ['POST'])]
+    public function deleteJSONCOMMENT(Request $req,$id_comment,NormalizerInterface $Normalizer)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $comment = $em->getRepository(Comment::class)->find($id_comment);
+        $em->remove($comment);
+        $em->flush();
+        $jsonContent[] = [
+            'id_comment' => $comment->getId(),
+            'comment' => $comment->getComment(),
+            'user' => [
+                'id_user' => $comment->getIdUser()->getid_user(),
+            ],
+        ];
+        $jsonContent = $Normalizer->normalize($jsonContent, 'json', ['groups' => 'comment']);
+        return new Response("Comment deleted successfully " .json_encode($jsonContent));
+    }
 
 }

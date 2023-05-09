@@ -6,6 +6,8 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
@@ -13,9 +15,11 @@ class Category
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("category")]
     private ?int $id_category = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("category")]
     private ?string $name_category = null;
 
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Demandetravail::class)]
@@ -57,7 +61,12 @@ class Category
 
     }
 
-    public function getId_category(): ?int
+    /**
+     * Get the value of id_category
+     *
+     * @return int
+     */
+    public function getIdCategory()
     {
         return $this->id_category;
     }
@@ -67,7 +76,7 @@ class Category
         return $this->name_category;
     }
 
-    public function setNameCategory(string $name_category): self
+    public function setNameCategory(?string $name_category): self
     {
         $this->name_category = $name_category;
 
@@ -320,6 +329,6 @@ class Category
         return $this->getNameCategory();
     }
 
-    
+
 
 }

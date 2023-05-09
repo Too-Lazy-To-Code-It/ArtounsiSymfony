@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request; // Nous avons besoin d'accéder à
 use Knp\Component\Pager\PaginatorInterface; 
 use App\Repository\CategoryRepository;
 use App\Repository\PostRepository;
-
+use Symfony\Component\Serializer\SerializerInterface;
 class BlogController extends AbstractController
 {
     #[Route('/blog', name: 'app_blog')]
@@ -35,5 +35,34 @@ class BlogController extends AbstractController
             'controller_name' => 'BlogController',
             'user'=>$user,
         ]);
+    }
+    #[Route('/showCat', name: 'app_category_show_json')]
+    public function showCat(CategoryRepository $categoryRepository, SerializerInterface $serializer): Response
+    {
+        $categories = $categoryRepository->findAll();
+
+        $data = [];
+        foreach ($categories as $category) {
+            $data[] = [
+                'id_category' => $category->getIdCategory(),
+                'name_category' => $category->getNameCategory()
+            ];
+        }
+
+        $json = $serializer->serialize($data, 'json');
+
+        return new Response($json);
+    }
+    #[Route('/blogjon', name: 'app_blog_json')]
+    public function getbolgs(CategoryRepository $categoryRepository,PostRepository $postRepository,Request $request,PaginatorInterface $paginator, SerializerInterface $serializer): Response
+    {
+        $categories = $categoryRepository->findAll();
+        $post = $postRepository->findAll();
+
+        $json = $serializer->serialize($post, 'json', ['groups' => "post"]);
+
+
+
+        return new Response($json);
     }
 }
