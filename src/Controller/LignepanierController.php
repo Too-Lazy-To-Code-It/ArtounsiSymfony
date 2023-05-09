@@ -75,7 +75,11 @@ class LignepanierController extends AbstractController
         ]);
     }
 
-  /*  #[Route('/deleteligne/{idlignepanier}', name: 'app_lignepanier_delete', methods: ['GET', 'POST'])]
+
+
+
+
+   #[Route('/deleteligne/{idlignepanier}', name: 'app_lignepanier_delete', methods: ['GET', 'POST'])]
     public function delete(int $idlignepanier,ManagerRegistry $doctrine,LignepanierRepository $rep): Response
     {   $entityManager = $doctrine->getManager();
         $lignePanier = $rep->find($idlignepanier);
@@ -85,25 +89,46 @@ class LignepanierController extends AbstractController
 
         return $this->redirectToRoute('app_panier_show', ['idpanier'=>1],);
     }
+
+###JSON Suppression
+/*
+#[Route('/deleteligneJSON/{idlignepanier}', name: 'app_lignepanier_deleteJSON', methods: ['GET', 'POST'])]
+public function deleteJSON(int $idlignepanier,ManagerRegistry $doctrine,LignepanierRepository $rep, NormalizerInterface $normalizer): JsonResponse
+{   
+    $entityManager = $doctrine->getManager();
+    $lignePanier = $rep->find($idlignepanier);
+    $idpanier = $lignePanier->getIdpanier();
+    $entityManager->remove($lignePanier);
+    $entityManager->flush();
+
+    $lignesPanier = $rep->findBy(['idpanier' => $idpanier]);
+    $jsonContent = $normalizer->normalize($lignesPanier, 'json', ['groups' => [ 'lignepaniers','produits','categ']]);
+    return new JsonResponse($jsonContent);
+}
+
 */
+
+
 
 ### méthode de suppression d'un produit du panier avec ajax  
 
-    #[Route('/deleteAjaxligne/{idlignepanier}', name: 'app_lignepanier_delete_with_ajax', methods: ['GET','POST'])]
+#[Route('/deleteAjaxligne/{idlignepanier}', name: 'app_lignepanier_delete_with_ajax', methods: ['POST'])]
 public function deleteWithAjax(int $idlignepanier, Request $request, ManagerRegistry $doctrine, LignepanierRepository $rep): JsonResponse
 {
-  $entityManager = $doctrine->getManager();
-  $lignePanier = $rep->find($idlignepanier);
-  $idpanier = $lignePanier->getIdpanier();
-  if ($this->isCsrfTokenValid('deleteproduit', $request->request->get('_token'))) {
-    $entityManager->remove($lignePanier);
-    $entityManager->flush();
-    return new JsonResponse(['success' => true]);
-  }
+    $entityManager = $doctrine->getManager();
+    $lignePanier = $rep->find($idlignepanier);
+    if (!$lignePanier) {
+        return new JsonResponse(['success' => false]);
+    }
+    if ($this->isCsrfTokenValid('deleteproduit', $request->request->get('_token'))) {
+        $entityManager->remove($lignePanier);
+        $entityManager->flush();
+        return new JsonResponse(['success' => true]);
+    }
 
-  return new JsonResponse(['success' => false]);
+    return new JsonResponse(['success' => false]);
 }
-   
+
 
 
 

@@ -37,6 +37,16 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+
+    <style>
+      .error-message {
+          color: red;
+          
+      }
+      
+      </style>
+      
   </head>
 
 
@@ -367,25 +377,12 @@
           </a>
           <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
             <li>
-              <a href="forms-elements.html">
-                <i class="bi bi-circle"></i><span>Form Elements</span>
+              <a href="{{ path('app_produits_back_new')}}">
+                <i class="bi bi-circle"></i><span>Ajouter un produit</span>
               </a>
             </li>
-            <li>
-              <a href="forms-layouts.html" class="active">
-                <i class="bi bi-circle"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href="forms-editors.html">
-                <i class="bi bi-circle"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href="forms-validation.html">
-                <i class="bi bi-circle"></i><span>Form Validation</span>
-              </a>
-            </li>
+           
+            
           </ul>
         </li><!-- End Forms Nav -->
   
@@ -395,15 +392,11 @@
           </a>
           <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="tables-general.html">
-                <i class="bi bi-circle"></i><span>General Tables</span>
+              <a href="{{ path('app_produits_back')}}">
+                <i class="bi bi-circle"></i><span>Shop</span>
               </a>
             </li>
-            <li>
-              <a href="tables-data.html">
-                <i class="bi bi-circle"></i><span>Data Tables</span>
-              </a>
-            </li>
+          
           </ul>
         </li><!-- End Tables Nav -->
   
@@ -553,7 +546,7 @@
                       {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}</div>
                       <div  class="error-message"> {{ form_errors(form.prix) }}</div>
                     </div>
-                  </div>
+                  
                   <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
                     <div class="col-sm-10"> 
@@ -589,6 +582,7 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
   
     </main><!-- End #main -->

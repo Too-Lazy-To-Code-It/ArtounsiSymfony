@@ -40,8 +40,7 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "produits_back/edit.html.twig"));
 
         // line 1
-        echo "
-<!DOCTYPE html>
+        echo "<!DOCTYPE html>
 <html lang=\"en\">
   <head>
     <meta charset=\"utf-8\">
@@ -53,59 +52,59 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
   
     <!-- Favicons -->
   <link href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/favicon.png"), "html", null, true);
         echo "\" rel=\"icon\">
   <link href=\"";
-        // line 14
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/img/apple-touch-icon.png"), "html", null, true);
         echo "\" rel=\"apple-touch-icon\">
 
   <!-- Google Fonts -->
   <link href=\"";
-        // line 17
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.gstatic.com"), "html", null, true);
         echo "\" rel=\"preconnect\">
   <link href=\"";
-        // line 18
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
   <!-- Vendor CSS Files -->
 
   <link href=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 24
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/boxicons/css/boxicons.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 25
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.snow.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 26
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.bubble.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 27
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/remixicon/remixicon.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   <link href=\"";
-        // line 28
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
   <!-- Template Main CSS File -->
 
  <link href=\"";
-        // line 32
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
   
@@ -116,6 +115,16 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+
+    <style>
+      .error-message {
+          color: red;
+          
+      }
+      
+      </style>
+      
   </head>
 
 
@@ -445,26 +454,16 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
             <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
           </a>
           <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
+            
             <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
+              <a href=\"";
+        // line 381
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+                <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
               </a>
             </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
+
           </ul>
         </li><!-- End Forms Nav -->
   
@@ -474,13 +473,11 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
           </a>
           <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
+              <a href=\"";
+        // line 395
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
+        echo "\">
+                <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
             </li>
           </ul>
@@ -601,53 +598,131 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
       </div><!-- End Page Title -->
       <section class=\"section\">
         <div class=\"row\">
-          <div class=\"col-lg-6\">
+          <div class=\"col-lg-12\">
   
             <div class=\"card\">
               <div class=\"card-body\">
                 <h5 class=\"card-title\">Horizontal Form</h5>
-  
-                <!-- Horizontal Form -->
-                <form>
+                ";
+        // line 522
+        $context["nomField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 522, $this->source); })()), "nom", [], "any", false, false, false, 522);
+        // line 523
+        echo "                ";
+        $context["descriptionField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 523, $this->source); })()), "description", [], "any", false, false, false, 523);
+        // line 524
+        echo "                ";
+        $context["prixField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 524, $this->source); })()), "prix", [], "any", false, false, false, 524);
+        // line 525
+        echo "                ";
+        $context["idcategorieField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 525, $this->source); })()), "idcategorie", [], "any", false, false, false, 525);
+        // line 526
+        echo "                ";
+        $context["imageField"] = twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 526, $this->source); })()), "image", [], "any", false, false, false, 526);
+        // line 527
+        echo "                <!-- Horizontal Form -->
+                ";
+        // line 528
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 528, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
+        echo "
                   <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Your Name</label>
+           
                     <div class=\"col-sm-10\">
-                      <input type=\"text\" class=\"form-control\" id=\"inputText\">
+                      ";
+        // line 532
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 532, $this->source); })()), 'label', ["label" => "Nom du produit"]);
+        echo "
+                    ";
+        // line 533
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 533, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        echo "
+            
+                  <div  class=\"error-message\">   ";
+        // line 535
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["nomField"]) || array_key_exists("nomField", $context) ? $context["nomField"] : (function () { throw new RuntimeError('Variable "nomField" does not exist.', 535, $this->source); })()), 'errors');
+        echo "</div>
                     </div>
                   </div>
                   <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>
+              
                     <div class=\"col-sm-10\">
-                      <input type=\"email\" class=\"form-control\" id=\"inputEmail\">
+                      ";
+        // line 541
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 541, $this->source); })()), 'label', ["label" => "Description du produit"]);
+        echo "
+                      ";
+        // line 542
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 542, $this->source); })()), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        echo "
+                    
+                      <div  class=\"error-message\">";
+        // line 544
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["descriptionField"]) || array_key_exists("descriptionField", $context) ? $context["descriptionField"] : (function () { throw new RuntimeError('Variable "descriptionField" does not exist.', 544, $this->source); })()), 'errors');
+        echo "</div> 
                     </div>
                   </div>
                   <div class=\"row mb-3\">
-                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>
+               
                     <div class=\"col-sm-10\">
-                      <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
+                      ";
+        // line 550
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 550, $this->source); })()), 'label', ["label" => "Prix du produit"]);
+        echo "
+                      ";
+        // line 551
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 551, $this->source); })()), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        echo "
+              
+                      <div  class=\"error-message\"> ";
+        // line 553
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["prixField"]) || array_key_exists("prixField", $context) ? $context["prixField"] : (function () { throw new RuntimeError('Variable "prixField" does not exist.', 553, $this->source); })()), 'errors');
+        echo "</div>
+                    </div>
+                  </div>
+                  <div class=\"row mb-3\">
+                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
+                    <div class=\"col-sm-10\"> 
+                      ";
+        // line 559
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 559, $this->source); })()), "image", [], "any", false, false, false, 559))) {
+            // line 560
+            echo "                      <img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 560, $this->source); })()), "image", [], "any", false, false, false, 560))), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 560, $this->source); })()), "nom", [], "any", false, false, false, 560), "html", null, true);
+            echo "\" style=\"border-radius: 20px; min-width: 195px;\">
+                      <br><br>
+                      <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"";
+            // line 562
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 562, $this->source); })()), "image", [], "any", false, false, false, 562), "html", null, true);
+            echo "\">
+                     ";
+        }
+        // line 564
+        echo "                      
+                      ";
+        // line 565
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 565, $this->source); })()), 'widget', ["attr" => ["type" => "file"]]);
+        echo "
+                      ";
+        // line 566
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["imageField"]) || array_key_exists("imageField", $context) ? $context["imageField"] : (function () { throw new RuntimeError('Variable "imageField" does not exist.', 566, $this->source); })()), 'errors');
+        echo "
                     </div>
                   </div>
                   <fieldset class=\"row mb-3\">
-                    <legend class=\"col-form-label col-sm-2 pt-0\">Radios</legend>
-                    <div class=\"col-sm-10\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios1\" value=\"option1\" checked=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios1\">
-                          First radio
-                        </label>
-                      </div>
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios2\" value=\"option2\">
-                        <label class=\"form-check-label\" for=\"gridRadios2\">
-                          Second radio
-                        </label>
-                      </div>
-                      <div class=\"form-check disabled\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios3\" value=\"option3\" disabled=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios3\">
-                          Third disabled radio
-                        </label>
-                      </div>
+                    <div class=\"col-md-4\">
+                      ";
+        // line 571
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 571, $this->source); })()), 'label', ["label" => "Catégorie du produit"]);
+        echo "
+                      ";
+        // line 572
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 572, $this->source); })()), 'widget', ["attr" => ["class" => "main-button", "autocomplete" => "on"]]);
+        echo "
+                      ";
+        // line 573
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["idcategorieField"]) || array_key_exists("idcategorieField", $context) ? $context["idcategorieField"] : (function () { throw new RuntimeError('Variable "idcategorieField" does not exist.', 573, $this->source); })()), 'errors');
+        echo "
                     </div>
                   </fieldset>
                   <div class=\"row mb-3\">
@@ -664,206 +739,14 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
                     <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
                     <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
                   </div>
-                </form><!-- End Horizontal Form -->
+                ";
+        // line 590
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 590, $this->source); })()), 'form_end');
+        echo "
+                
   
               </div>
             </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Multi Columns Form</h5>
-  
-                <!-- Multi Columns Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <label for=\"inputName5\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputName5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputEmail5\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputPassword5\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword5\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress5\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddres5s\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress2\" class=\"form-label\">Address 2</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" placeholder=\"Apartment, studio, or floor\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputCity\" class=\"form-label\">City</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputCity\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <label for=\"inputState\" class=\"form-label\">State</label>
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <label for=\"inputZip\" class=\"form-label\">Zip</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputZip\">
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-check\">
-                      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-                      <label class=\"form-check-label\" for=\"gridCheck\">
-                        Check me out
-                      </label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Multi Columns Form -->
-  
-              </div>
-            </div>
-  
-          </div>
-  
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Vertical Form</h5>
-  
-                <!-- Vertical Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-12\">
-                    <label for=\"inputNanme4\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputNanme4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputEmail4\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputPassword4\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- Vertical Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">No Labels / Placeholders as labels Form</h5>
-  
-                <!-- No Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Your Name\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"email\" class=\"form-control\" placeholder=\"Email\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"password\" class=\"form-control\" placeholder=\"Password\">
-                  </div>
-                  <div class=\"col-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Address\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"City\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Zip\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End No Labels Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Floating labels Form</h5>
-  
-                <!-- Floating Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingName\" placeholder=\"Your Name\">
-                      <label for=\"floatingName\">Your Name</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"email\" class=\"form-control\" id=\"floatingEmail\" placeholder=\"Your Email\">
-                      <label for=\"floatingEmail\">Your Email</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"password\" class=\"form-control\" id=\"floatingPassword\" placeholder=\"Password\">
-                      <label for=\"floatingPassword\">Password</label>
-                    </div>
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-floating\">
-                      <textarea class=\"form-control\" placeholder=\"Address\" id=\"floatingTextarea\" style=\"height: 100px;\"></textarea>
-                      <label for=\"floatingTextarea\">Address</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"col-md-12\">
-                      <div class=\"form-floating\">
-                        <input type=\"text\" class=\"form-control\" id=\"floatingCity\" placeholder=\"City\">
-                        <label for=\"floatingCity\">City</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"col-md-4\">
-                    <div class=\"form-floating mb-3\">
-                      <select class=\"form-select\" id=\"floatingSelect\" aria-label=\"State\">
-                        <option selected=\"\">New York</option>
-                        <option value=\"1\">Oregon</option>
-                        <option value=\"2\">DC</option>
-                      </select>
-                      <label for=\"floatingSelect\">State</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingZip\" placeholder=\"Zip\">
-                      <label for=\"floatingZip\">Zip</label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End floating Labels Form -->
-  
-              </div>
-            </div>
-  
           </div>
         </div>
       </section>
@@ -888,47 +771,48 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
   
     <!-- Vendor JS Files -->
   <script src=\"";
-        // line 812
+        // line 618
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 813
+        // line 619
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 814
+        // line 620
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 815
+        // line 621
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 816
+        // line 622
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 817
+        // line 623
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 818
+        // line 624
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 819
+        // line 625
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
   
   <!-- Template Main JS File -->
   <script src=\"";
-        // line 823
+        // line 629
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main2.js"), "html", null, true);
         echo "\"></script>
   
   
   <svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path id=\"SvgjsPath1004\" d=\"M0 0 \"></path></svg></body>
+
 
 
 </html>";
@@ -952,13 +836,12 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  927 => 823,  920 => 819,  916 => 818,  912 => 817,  908 => 816,  904 => 815,  900 => 814,  896 => 813,  892 => 812,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  810 => 629,  803 => 625,  799 => 624,  795 => 623,  791 => 622,  787 => 621,  783 => 620,  779 => 619,  775 => 618,  744 => 590,  724 => 573,  720 => 572,  716 => 571,  708 => 566,  704 => 565,  701 => 564,  696 => 562,  688 => 560,  686 => 559,  677 => 553,  672 => 551,  668 => 550,  659 => 544,  654 => 542,  650 => 541,  641 => 535,  636 => 533,  632 => 532,  625 => 528,  622 => 527,  619 => 526,  616 => 525,  613 => 524,  610 => 523,  608 => 522,  478 => 395,  461 => 381,  108 => 31,  101 => 27,  97 => 26,  93 => 25,  89 => 24,  85 => 23,  81 => 22,  77 => 21,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-<!DOCTYPE html>
+        return new Source("<!DOCTYPE html>
 <html lang=\"en\">
   <head>
     <meta charset=\"utf-8\">
@@ -997,6 +880,16 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+
+    <style>
+      .error-message {
+          color: red;
+          
+      }
+      
+      </style>
+      
   </head>
 
 
@@ -1326,26 +1219,13 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
             <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
           </a>
           <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
+            
             <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
+              <a href=\"{{ path('app_produits_back_new')}}\">
+                <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
               </a>
             </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
+
           </ul>
         </li><!-- End Forms Nav -->
   
@@ -1355,13 +1235,8 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
           </a>
           <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
+              <a href=\"{{ path('app_produits_back')}}\">
+                <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
             </li>
           </ul>
@@ -1482,53 +1357,63 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
       </div><!-- End Page Title -->
       <section class=\"section\">
         <div class=\"row\">
-          <div class=\"col-lg-6\">
+          <div class=\"col-lg-12\">
   
             <div class=\"card\">
               <div class=\"card-body\">
                 <h5 class=\"card-title\">Horizontal Form</h5>
-  
+                {% set nomField = form.nom %}
+                {% set descriptionField = form.description %}
+                {% set prixField =form.prix%}
+                {% set idcategorieField = form.idcategorie %}
+                {% set imageField = form.image %}
                 <!-- Horizontal Form -->
-                <form>
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
                   <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Your Name</label>
+           
                     <div class=\"col-sm-10\">
-                      <input type=\"text\" class=\"form-control\" id=\"inputText\">
+                      {{ form_label(nomField, 'Nom du produit') }}
+                    {{ form_widget(nomField, {'attr': {'placeholder': 'Entrer le nom du produit ici', 'autocomplete': 'on'}}) }}
+            
+                  <div  class=\"error-message\">   {{ form_errors(nomField) }}</div>
                     </div>
                   </div>
                   <div class=\"row mb-3\">
-                    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>
+              
                     <div class=\"col-sm-10\">
-                      <input type=\"email\" class=\"form-control\" id=\"inputEmail\">
+                      {{ form_label(descriptionField, 'Description du produit') }}
+                      {{ form_widget(descriptionField, {'attr': {'placeholder': 'décrir le produit ici', 'autocomplete': 'on'}}) }}
+                    
+                      <div  class=\"error-message\">{{ form_errors(descriptionField) }}</div> 
                     </div>
                   </div>
                   <div class=\"row mb-3\">
-                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>
+               
                     <div class=\"col-sm-10\">
-                      <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
+                      {{ form_label(prixField, 'Prix du produit') }}
+                      {{ form_widget(prixField, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}
+              
+                      <div  class=\"error-message\"> {{ form_errors(prixField) }}</div>
+                    </div>
+                  </div>
+                  <div class=\"row mb-3\">
+                    <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
+                    <div class=\"col-sm-10\"> 
+                      {% if produit.image is not null %}
+                      <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
+                      <br><br>
+                      <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"{{ produit.image }}\">
+                     {% endif %}
+                      
+                      {{ form_widget(imageField, {'attr': {'type': 'file'}}) }}
+                      {{ form_errors(imageField) }}
                     </div>
                   </div>
                   <fieldset class=\"row mb-3\">
-                    <legend class=\"col-form-label col-sm-2 pt-0\">Radios</legend>
-                    <div class=\"col-sm-10\">
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios1\" value=\"option1\" checked=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios1\">
-                          First radio
-                        </label>
-                      </div>
-                      <div class=\"form-check\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios2\" value=\"option2\">
-                        <label class=\"form-check-label\" for=\"gridRadios2\">
-                          Second radio
-                        </label>
-                      </div>
-                      <div class=\"form-check disabled\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"gridRadios\" id=\"gridRadios3\" value=\"option3\" disabled=\"\">
-                        <label class=\"form-check-label\" for=\"gridRadios3\">
-                          Third disabled radio
-                        </label>
-                      </div>
+                    <div class=\"col-md-4\">
+                      {{ form_label(idcategorieField, 'Catégorie du produit') }}
+                      {{ form_widget(idcategorieField, {'attr': {'class': 'main-button', 'autocomplete': 'on'}}) }}
+                      {{ form_errors(idcategorieField)}}
                     </div>
                   </fieldset>
                   <div class=\"row mb-3\">
@@ -1545,206 +1430,11 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
                     <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
                     <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
                   </div>
-                </form><!-- End Horizontal Form -->
+                {{ form_end(form) }}
+                
   
               </div>
             </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Multi Columns Form</h5>
-  
-                <!-- Multi Columns Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <label for=\"inputName5\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputName5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputEmail5\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail5\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputPassword5\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword5\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress5\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddres5s\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress2\" class=\"form-label\">Address 2</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" placeholder=\"Apartment, studio, or floor\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <label for=\"inputCity\" class=\"form-label\">City</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputCity\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <label for=\"inputState\" class=\"form-label\">State</label>
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <label for=\"inputZip\" class=\"form-label\">Zip</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputZip\">
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-check\">
-                      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-                      <label class=\"form-check-label\" for=\"gridCheck\">
-                        Check me out
-                      </label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End Multi Columns Form -->
-  
-              </div>
-            </div>
-  
-          </div>
-  
-          <div class=\"col-lg-6\">
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Vertical Form</h5>
-  
-                <!-- Vertical Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-12\">
-                    <label for=\"inputNanme4\" class=\"form-label\">Your Name</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputNanme4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputEmail4\" class=\"form-label\">Email</label>
-                    <input type=\"email\" class=\"form-control\" id=\"inputEmail4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputPassword4\" class=\"form-label\">Password</label>
-                    <input type=\"password\" class=\"form-control\" id=\"inputPassword4\">
-                  </div>
-                  <div class=\"col-12\">
-                    <label for=\"inputAddress\" class=\"form-label\">Address</label>
-                    <input type=\"text\" class=\"form-control\" id=\"inputAddress\" placeholder=\"1234 Main St\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- Vertical Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">No Labels / Placeholders as labels Form</h5>
-  
-                <!-- No Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Your Name\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"email\" class=\"form-control\" placeholder=\"Email\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"password\" class=\"form-control\" placeholder=\"Password\">
-                  </div>
-                  <div class=\"col-12\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Address\">
-                  </div>
-                  <div class=\"col-md-6\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"City\">
-                  </div>
-                  <div class=\"col-md-4\">
-                    <select id=\"inputState\" class=\"form-select\">
-                      <option selected=\"\">Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <input type=\"text\" class=\"form-control\" placeholder=\"Zip\">
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End No Labels Form -->
-  
-              </div>
-            </div>
-  
-            <div class=\"card\">
-              <div class=\"card-body\">
-                <h5 class=\"card-title\">Floating labels Form</h5>
-  
-                <!-- Floating Labels Form -->
-                <form class=\"row g-3\">
-                  <div class=\"col-md-12\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingName\" placeholder=\"Your Name\">
-                      <label for=\"floatingName\">Your Name</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"email\" class=\"form-control\" id=\"floatingEmail\" placeholder=\"Your Email\">
-                      <label for=\"floatingEmail\">Your Email</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"form-floating\">
-                      <input type=\"password\" class=\"form-control\" id=\"floatingPassword\" placeholder=\"Password\">
-                      <label for=\"floatingPassword\">Password</label>
-                    </div>
-                  </div>
-                  <div class=\"col-12\">
-                    <div class=\"form-floating\">
-                      <textarea class=\"form-control\" placeholder=\"Address\" id=\"floatingTextarea\" style=\"height: 100px;\"></textarea>
-                      <label for=\"floatingTextarea\">Address</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-6\">
-                    <div class=\"col-md-12\">
-                      <div class=\"form-floating\">
-                        <input type=\"text\" class=\"form-control\" id=\"floatingCity\" placeholder=\"City\">
-                        <label for=\"floatingCity\">City</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class=\"col-md-4\">
-                    <div class=\"form-floating mb-3\">
-                      <select class=\"form-select\" id=\"floatingSelect\" aria-label=\"State\">
-                        <option selected=\"\">New York</option>
-                        <option value=\"1\">Oregon</option>
-                        <option value=\"2\">DC</option>
-                      </select>
-                      <label for=\"floatingSelect\">State</label>
-                    </div>
-                  </div>
-                  <div class=\"col-md-2\">
-                    <div class=\"form-floating\">
-                      <input type=\"text\" class=\"form-control\" id=\"floatingZip\" placeholder=\"Zip\">
-                      <label for=\"floatingZip\">Zip</label>
-                    </div>
-                  </div>
-                  <div class=\"text-center\">
-                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-                    <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
-                  </div>
-                </form><!-- End floating Labels Form -->
-  
-              </div>
-            </div>
-  
           </div>
         </div>
       </section>
@@ -1783,6 +1473,7 @@ class __TwigTemplate_3471c120a0a9d6388e5d3f43c7e1b7e9 extends Template
   
   
   <svg id=\"SvgjsSvg1001\" width=\"2\" height=\"0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.dev\" style=\"overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;\"><defs id=\"SvgjsDefs1002\"></defs><polyline id=\"SvgjsPolyline1003\" points=\"0,0\"></polyline><path id=\"SvgjsPath1004\" d=\"M0 0 \"></path></svg></body>
+
 
 
 </html>", "produits_back/edit.html.twig", "C:\\Users\\aouad\\Desktop\\Pidev web\\ArtounsiSymfony-master\\templates\\produits_back\\edit.html.twig");

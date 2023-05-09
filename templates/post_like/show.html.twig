@@ -20,3 +20,88 @@
 
     {{ include('post_like/_delete_form.html.twig') }}
 {% endblock %}
+
+
+
+{% extends 'base-front.html.twig' %}
+
+{% block title %}Les formations
+{% endblock %}
+
+{% block body %}
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Isotope -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+
+<link href="{{asset('./Frontend/assets/css/style.css')}}" rel="stylesheet">
+
+   
+      
+       <section id="portfolio" class="portfolio"> 
+       <div class="section-title">
+          <h2>Nos formations</h2>
+          <a href="{{ path('app_formation_index') }}">Mes participations</a>
+        </div>
+        
+        
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-art">Art</li>
+          <li data-filter=".filter-cinema">Cinema</li>
+          <li data-filter=".filter-developpement_web">Web</li>
+          <li data-filter=".filter-marketing">Marketing</li>
+          <li data-filter=".filter-design_graphique">Design</li>
+        </ul>
+
+       {% for formation in formations %}
+        <div class="container" data-aos="fade-up">
+
+       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+         <div class="col-lg-4 col-md-6 portfolio-item filter-{{ formation.categorie }}" data-category="{{ formation.categorie }}">
+
+            <div class="portfolio-img"><img   src="{{asset('uploads/') ~ formation.imagesrc}}" class="img-fluid" alt="">
+            
+            
+            {# <img class="card-img-top" style="height: 200px; width:300px;" src="{{asset('uploads/') ~ outil.image}}" alt="Card image cap"> #}
+            
+            
+            <div class="portfolio-info">
+              <h4>{{ formation.titre }} </h4>
+              <p>{{ formation.categorie }}</p>
+              
+              {# <a href="{{path('app_evenements_detail')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ evenement.nomEv }}"><i class="bx bx-plus"></i></a> #}
+             
+               <a href="{{ path('app_formation_details', {'idFormation': formation.idFormation}) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+              
+              {# <a href="{{ path('app_participants_new' ,{'id': evenement.idEv})}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> #}
+        
+            </div> 
+            </div> 
+          </div>{% endfor %}
+          </div>
+          </div>  
+          </section>
+  
+<script>
+  $(window).on('load', function() {
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
+
+    $('#portfolio-flters li').on('click', function() {
+      $("#portfolio-flters li").removeClass('filter-active');
+      $(this).addClass('filter-active');
+
+      portfolioIsotope.isotope({
+        filter: $(this).data('filter')
+      });
+    });
+  });
+</script>
+
+ {% endblock %}

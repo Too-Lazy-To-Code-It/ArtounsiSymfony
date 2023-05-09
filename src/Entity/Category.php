@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
@@ -13,33 +14,44 @@ class Category
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+  
     private ?int $id_category = null;
-
+    
+    #[Groups(["categ"])]
     #[ORM\Column(length: 255)]
+ 
     private ?string $name_category = null;
-
+   
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Demandetravail::class)]
+
     private Collection $demandetravails;
 
     #[ORM\OneToMany(mappedBy: 'categoriedemande', targetEntity: Demandetravail::class)]
+
     private Collection $demandetravailsC;
 
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Offretravail::class)]
+    
     private Collection $offretravails;
 
     #[ORM\OneToMany(mappedBy: 'id_categorie', targetEntity: Challenge::class)]
+
     private Collection $challenges;
 
     #[ORM\OneToMany(mappedBy: 'id_category', targetEntity: Post::class)]
+
     private Collection $posts;
 
     #[ORM\OneToMany(mappedBy: 'id_categorie', targetEntity: Tutoriel::class)]
+
     private Collection $tutoriels;
 
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Offretravailarchive::class)]
+
     private Collection $offretravailarchives;
 
     #[ORM\OneToMany(mappedBy: 'idcategorie', targetEntity: Produits::class)]
+
     private Collection $produits;
 
 
@@ -57,7 +69,12 @@ class Category
 
     }
 
-    public function getId_category(): ?int
+   /**
+     * Get the value of id_category
+     *
+     * @return int
+     */
+    public function getIdCategory()
     {
         return $this->id_category;
     }

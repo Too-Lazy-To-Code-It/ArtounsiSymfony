@@ -17,6 +17,8 @@ use DateTime;
 #[Route('/produits')]
 class ProduitsController extends AbstractController
 {
+
+    
     #[Route('/', name: 'app_produits_index', methods: ['GET'])]
 public function index(Request $request, PaginatorInterface $paginator, ProduitsRepository $produitsRepository): Response
 {
@@ -93,7 +95,7 @@ public function index(Request $request, PaginatorInterface $paginator, ProduitsR
 
           if ($image) {
             $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-         $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
+            $newFilename = $originalFilename.'-'.uniqid().'.'.$image->guessExtension();
 
           try {
              $image->move(

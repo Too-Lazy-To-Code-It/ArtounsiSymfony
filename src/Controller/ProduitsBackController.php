@@ -65,7 +65,7 @@ class ProduitsBackController extends AbstractController
        $produit->setImage($newFilename);
       }
             $produitsRepository->save($produit, true);
-            return $this->redirectToRoute('app_produits_back_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_produits_back', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('produits_back/new.html.twig', [
@@ -73,6 +73,14 @@ class ProduitsBackController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    
+
+
+
+
+
+
 
     #[Route('/{idproduit}/editBack', name: 'app_produits_back_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Produits $produit, ProduitsRepository $produitsRepository): Response
@@ -100,10 +108,10 @@ class ProduitsBackController extends AbstractController
 
             $produitsRepository->save($produit, true);
 
-            return $this->redirectToRoute('app_produits_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_produits_back', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('produits/edit.html.twig', [
+        return $this->renderForm('produits_back/edit.html.twig', [
             'produit' => $produit,
             'form' => $form,
         ]);

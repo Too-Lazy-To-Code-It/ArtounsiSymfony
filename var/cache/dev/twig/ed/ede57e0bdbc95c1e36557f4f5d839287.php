@@ -187,13 +187,20 @@ https://templatemo.com/tm-577-liberty-market
         $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 130, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
             // line 131
-            echo "                    <div class=\"col-lg-6 currently-market-item all msc\">
+            echo "                    <div class=\"col-lg-6 currently-market-item all filters.";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 131), "getNameCategory", [], "method", false, false, false, 131), "html", null, true);
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 131), "getNameCategory", [], "method", false, false, false, 131) == "2D")) {
+                echo " msc";
+            } elseif ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 131), "getNameCategory", [], "method", false, false, false, 131) == "3D")) {
+                echo "dig ";
+            }
+            echo "\">
                         <div class=\"item\">
                             <div class=\"left-image\">
                                 <img src=\"";
             // line 134
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 134))), "html", null, true);
-            echo "\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 134))), "html", null, true);
+            echo "\" alt=\"\" style=\"border-radius: 20px; width: 110%; height: 280px;\">
                             </div>
                             <div class=\"right-content\">
                                 <h4>";
@@ -229,13 +236,15 @@ https://templatemo.com/tm-577-liberty-market
                                 </div>
                             </div>
                         </div>
+
+                        
                     </div>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 157
+        // line 159
         echo "                </div>
             </div>
             
@@ -247,14 +256,12 @@ https://templatemo.com/tm-577-liberty-market
 
     </div>
     ";
-        // line 167
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 168
-(isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 168, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
-        // line 179
+        // line 169
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env,         // line 170
+(isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 170, $this->source); })()), "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", ["queryParam1" => "param1 value", "queryParam2" => "param2 value"], ["align" => "center"]);
+        // line 181
         echo "
 </div>
-
-
 
 
 
@@ -381,7 +388,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  360 => 23,  356 => 22,  352 => 21,  348 => 20,  344 => 19,  339 => 16,  329 => 15,  310 => 215,  306 => 214,  302 => 213,  296 => 210,  292 => 209,  287 => 207,  283 => 206,  254 => 179,  252 => 168,  251 => 167,  239 => 157,  227 => 151,  221 => 148,  215 => 145,  211 => 144,  201 => 137,  195 => 134,  190 => 131,  186 => 130,  149 => 96,  122 => 72,  118 => 71,  114 => 70,  68 => 26,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
+        return array (  367 => 23,  363 => 22,  359 => 21,  355 => 20,  351 => 19,  346 => 16,  336 => 15,  317 => 215,  313 => 214,  309 => 213,  303 => 210,  299 => 209,  294 => 207,  290 => 206,  263 => 181,  261 => 170,  260 => 169,  248 => 159,  234 => 151,  228 => 148,  222 => 145,  218 => 144,  208 => 137,  202 => 134,  190 => 131,  186 => 130,  149 => 96,  122 => 72,  118 => 71,  114 => 70,  68 => 26,  66 => 15,  61 => 13,  53 => 8,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -516,10 +523,10 @@ https://templatemo.com/tm-577-liberty-market
             <div class=\"col-lg-12\">
                 <div class=\"row grid\">
                     {% for produit in produits %}
-                    <div class=\"col-lg-6 currently-market-item all msc\">
+                    <div class=\"col-lg-6 currently-market-item all filters.{{ produit.idcategorie.getNameCategory() }}{% if produit.idcategorie.getNameCategory() == '2D' %} msc{% elseif produit.idcategorie.getNameCategory() == '3D' %}dig {% endif %}\">
                         <div class=\"item\">
                             <div class=\"left-image\">
-                                <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
+                                <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px; width: 110%; height: 280px;\">
                             </div>
                             <div class=\"right-content\">
                                 <h4>{{ produit.nom }}</h4>
@@ -540,6 +547,8 @@ https://templatemo.com/tm-577-liberty-market
                                 </div>
                             </div>
                         </div>
+
+                        
                     </div>
                     {% endfor %}
                 </div>
@@ -566,8 +575,6 @@ https://templatemo.com/tm-577-liberty-market
          },
      ) }}
 </div>
-
-
 
 
 

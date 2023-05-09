@@ -366,7 +366,11 @@
           <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          
+          <li>
+            <a href="{{ path('app_produits_back_new')}}">
+              <i class="bi bi-circle"></i><span>Ajouter un produit</span>
+            </a>
+          </li>
           
         </ul>
       </li><!-- End Forms Nav -->
@@ -376,16 +380,8 @@
           <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html" class="active">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
+    
+          
           <li>
             <a href="{{ path('app_produits_back')}}">
               <i class="bi bi-circle"></i><span>Shop</span>
@@ -561,6 +557,7 @@
                     <th scope="col"  style="width: 150px;" >Prix</th>
                     <th scope="col"  style="width: 150px;" >Date d'ajout</th>
                     <th scope="col"  style="width: 150px;" >Spprimer</th>
+                    <th scope="col"  style="width: 150px;" >Modifier</th>
                    
                   </tr>
                 </thead>
@@ -575,8 +572,9 @@
                     <td>{{ produit.image }}</td>
                     <td>{{ produit.prix }}</td>
                     <td>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</td>
-                    <td> {{ include('produits_back/_delete_form.html.twig') }}</td>
-                  
+                    
+                    <td > {{ include('produits_back/_delete_form.html.twig') }}</td>
+                    <td ><a href="{{ path('app_produits_back_edit', {'idproduit': produit.idproduit}) }}" >Modifier</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>

@@ -115,6 +115,16 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+
+    <style>
+      .error-message {
+          color: red;
+          
+      }
+      
+      </style>
+      
   </head>
 
 
@@ -445,25 +455,15 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
           </a>
           <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
+              <a href=\"";
+        // line 380
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+                <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
               </a>
             </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
+           
+            
           </ul>
         </li><!-- End Forms Nav -->
   
@@ -473,15 +473,14 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
           </a>
           <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
+              <a href=\"";
+        // line 395
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
+        echo "\">
+                <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
             </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-              </a>
-            </li>
+          
           </ul>
         </li><!-- End Tables Nav -->
   
@@ -608,23 +607,23 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
   
                 <!-- Horizontal Form -->
                 ";
-        // line 532
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 532, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
+        // line 525
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 525, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
                   <div class=\"row mb-3\">
            
                     <div class=\"col-sm-10\">
                       ";
-        // line 536
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 536, $this->source); })()), "nom", [], "any", false, false, false, 536), 'label', ["label" => "Nom du produit"]);
+        // line 529
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 529, $this->source); })()), "nom", [], "any", false, false, false, 529), 'label', ["label" => "Nom du produit"]);
         echo "
                   ";
-        // line 537
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 537, $this->source); })()), "nom", [], "any", false, false, false, 537), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
+        // line 530
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 530, $this->source); })()), "nom", [], "any", false, false, false, 530), 'widget', ["attr" => ["placeholder" => "Entrer le nom du produit ici", "autocomplete" => "on"]]);
         echo "</div>
                   <div  class=\"error-message\">   ";
-        // line 538
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 538, $this->source); })()), "nom", [], "any", false, false, false, 538), 'errors');
+        // line 531
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 531, $this->source); })()), "nom", [], "any", false, false, false, 531), 'errors');
         echo "</div>
                     </div>
                   </div>
@@ -632,16 +631,16 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
               
                     <div class=\"col-sm-10\">
                       ";
-        // line 544
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 544, $this->source); })()), "description", [], "any", false, false, false, 544), 'label', ["label" => "Description du produit"]);
+        // line 537
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 537, $this->source); })()), "description", [], "any", false, false, false, 537), 'label', ["label" => "Description du produit"]);
         echo "
                       ";
-        // line 545
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 545, $this->source); })()), "description", [], "any", false, false, false, 545), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
+        // line 538
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 538, $this->source); })()), "description", [], "any", false, false, false, 538), 'widget', ["attr" => ["placeholder" => "décrir le produit ici", "autocomplete" => "on"]]);
         echo "
                       <div  class=\"error-message\">";
-        // line 546
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 546, $this->source); })()), "description", [], "any", false, false, false, 546), 'errors');
+        // line 539
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 539, $this->source); })()), "description", [], "any", false, false, false, 539), 'errors');
         echo "</div> 
                     </div>
                   </div>
@@ -649,45 +648,45 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
                
                     <div class=\"col-sm-10\">
                       ";
-        // line 552
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 552, $this->source); })()), "prix", [], "any", false, false, false, 552), 'label', ["label" => "Prix du produit"]);
+        // line 545
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 545, $this->source); })()), "prix", [], "any", false, false, false, 545), 'label', ["label" => "Prix du produit"]);
         echo "
                       ";
-        // line 553
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 553, $this->source); })()), "prix", [], "any", false, false, false, 553), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
+        // line 546
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 546, $this->source); })()), "prix", [], "any", false, false, false, 546), 'widget', ["attr" => ["placeholder" => "Entrer le prix du produit ici", "autocomplete" => "on"]]);
         echo "</div>
                       <div  class=\"error-message\"> ";
-        // line 554
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 554, $this->source); })()), "prix", [], "any", false, false, false, 554), 'errors');
+        // line 547
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 547, $this->source); })()), "prix", [], "any", false, false, false, 547), 'errors');
         echo "</div>
                     </div>
-                  </div>
+                  
                   <div class=\"row mb-3\">
                     <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
                     <div class=\"col-sm-10\"> 
                         ";
-        // line 560
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 560, $this->source); })()), "image", [], "any", false, false, false, 560), 'widget');
+        // line 553
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 553, $this->source); })()), "image", [], "any", false, false, false, 553), 'widget');
         echo "
                         ";
-        // line 561
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 561, $this->source); })()), "image", [], "any", false, false, false, 561), 'errors');
+        // line 554
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 554, $this->source); })()), "image", [], "any", false, false, false, 554), 'errors');
         echo "  
                     </div>
                   </div>
                   <fieldset class=\"row mb-3\">
                     <div class=\"col-md-4\">
                       ";
-        // line 566
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 566, $this->source); })()), "idcategorie", [], "any", false, false, false, 566), 'label', ["label" => "Catégorie du produit"]);
+        // line 559
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 559, $this->source); })()), "idcategorie", [], "any", false, false, false, 559), 'label', ["label" => "Catégorie du produit"]);
         echo "
                       ";
-        // line 567
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 567, $this->source); })()), "idcategorie", [], "any", false, false, false, 567), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
+        // line 560
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 560, $this->source); })()), "idcategorie", [], "any", false, false, false, 560), 'widget', ["attr" => ["placeholder" => "Entrer la catégorie du produit ici", "autocomplete" => "on"]]);
         echo "
                       ";
-        // line 568
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 568, $this->source); })()), "idcategorie", [], "any", false, false, false, 568), 'errors');
+        // line 561
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 561, $this->source); })()), "idcategorie", [], "any", false, false, false, 561), 'errors');
         echo "
                     </div>
                   </fieldset>
@@ -706,8 +705,8 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
                     <button type=\"reset\" class=\"btn btn-secondary\">Reset</button>
                   </div>
                 ";
-        // line 585
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 585, $this->source); })()), 'form_end');
+        // line 578
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 578, $this->source); })()), 'form_end');
         echo "
                 
   
@@ -715,6 +714,7 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
             </div>
           </div>
         </div>
+      </div>
       </section>
   
     </main><!-- End #main -->
@@ -737,42 +737,42 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
   
     <!-- Vendor JS Files -->
   <script src=\"";
-        // line 613
+        // line 607
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 614
+        // line 608
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 615
+        // line 609
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 616
+        // line 610
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 617
+        // line 611
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 618
+        // line 612
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 619
+        // line 613
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 620
+        // line 614
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
   
   <!-- Template Main JS File -->
   <script src=\"";
-        // line 624
+        // line 618
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main2.js"), "html", null, true);
         echo "\"></script>
   
@@ -802,7 +802,7 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
 
     public function getDebugInfo()
     {
-        return array (  776 => 624,  769 => 620,  765 => 619,  761 => 618,  757 => 617,  753 => 616,  749 => 615,  745 => 614,  741 => 613,  710 => 585,  690 => 568,  686 => 567,  682 => 566,  674 => 561,  670 => 560,  661 => 554,  657 => 553,  653 => 552,  644 => 546,  640 => 545,  636 => 544,  627 => 538,  623 => 537,  619 => 536,  612 => 532,  108 => 31,  101 => 27,  97 => 26,  93 => 25,  89 => 24,  85 => 23,  81 => 22,  77 => 21,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
+        return array (  776 => 618,  769 => 614,  765 => 613,  761 => 612,  757 => 611,  753 => 610,  749 => 609,  745 => 608,  741 => 607,  709 => 578,  689 => 561,  685 => 560,  681 => 559,  673 => 554,  669 => 553,  660 => 547,  656 => 546,  652 => 545,  643 => 539,  639 => 538,  635 => 537,  626 => 531,  622 => 530,  618 => 529,  611 => 525,  478 => 395,  460 => 380,  108 => 31,  101 => 27,  97 => 26,  93 => 25,  89 => 24,  85 => 23,  81 => 22,  77 => 21,  70 => 17,  66 => 16,  60 => 13,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -846,6 +846,16 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+
+    <style>
+      .error-message {
+          color: red;
+          
+      }
+      
+      </style>
+      
   </head>
 
 
@@ -1176,25 +1186,12 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
           </a>
           <ul id=\"forms-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"forms-elements.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Elements</span>
+              <a href=\"{{ path('app_produits_back_new')}}\">
+                <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
               </a>
             </li>
-            <li>
-              <a href=\"forms-layouts.html\" class=\"active\">
-                <i class=\"bi bi-circle\"></i><span>Form Layouts</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-editors.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Editors</span>
-              </a>
-            </li>
-            <li>
-              <a href=\"forms-validation.html\">
-                <i class=\"bi bi-circle\"></i><span>Form Validation</span>
-              </a>
-            </li>
+           
+            
           </ul>
         </li><!-- End Forms Nav -->
   
@@ -1204,15 +1201,11 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
           </a>
           <ul id=\"tables-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
             <li>
-              <a href=\"tables-general.html\">
-                <i class=\"bi bi-circle\"></i><span>General Tables</span>
+              <a href=\"{{ path('app_produits_back')}}\">
+                <i class=\"bi bi-circle\"></i><span>Shop</span>
               </a>
             </li>
-            <li>
-              <a href=\"tables-data.html\">
-                <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-              </a>
-            </li>
+          
           </ul>
         </li><!-- End Tables Nav -->
   
@@ -1362,7 +1355,7 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
                       {{ form_widget(form.prix, {'attr': {'placeholder': 'Entrer le prix du produit ici', 'autocomplete': 'on'}}) }}</div>
                       <div  class=\"error-message\"> {{ form_errors(form.prix) }}</div>
                     </div>
-                  </div>
+                  
                   <div class=\"row mb-3\">
                     <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Image</label>
                     <div class=\"col-sm-10\"> 
@@ -1398,6 +1391,7 @@ class __TwigTemplate_8d8d1d861517130e364f58c19b614669 extends Template
             </div>
           </div>
         </div>
+      </div>
       </section>
   
     </main><!-- End #main -->

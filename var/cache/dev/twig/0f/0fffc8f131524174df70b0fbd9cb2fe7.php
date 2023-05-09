@@ -444,7 +444,14 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
           <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
         </a>
         <ul id=\"forms-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-          
+          <li>
+            <a href=\"";
+        // line 370
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_new");
+        echo "\">
+              <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
+            </a>
+          </li>
           
         </ul>
       </li><!-- End Forms Nav -->
@@ -455,18 +462,8 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
         </a>
         <ul id=\"tables-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
           <li>
-            <a href=\"tables-general.html\">
-              <i class=\"bi bi-circle\"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href=\"tables-data.html\" class=\"active\">
-              <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-            </a>
-          </li>
-          <li>
             <a href=\"";
-        // line 390
+        // line 384
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back");
         echo "\">
               <i class=\"bi bi-circle\"></i><span>Shop</span>
@@ -642,14 +639,15 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
                     <th scope=\"col\"  style=\"width: 150px;\" >Prix</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Date d'ajout</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Spprimer</th>
+                    <th scope=\"col\"  style=\"width: 150px;\" >Modifier</th>
                    
                   </tr>
                 </thead>
                 <tbody>
                  ";
-        // line 568
+        // line 563
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 568, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 563, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -664,45 +662,49 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 569
+            // line 564
             echo "                  <tr>
                     <th scope=\"row\">";
+            // line 565
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 565), "html", null, true);
+            echo "</th>
+                    <th scope=\"row\">";
+            // line 566
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "iduser", [], "any", false, false, false, 566), "html", null, true);
+            echo "</th>
+                    <th scope=\"row\">";
+            // line 567
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 567), "html", null, true);
+            echo "</th>
+                    <td>";
+            // line 568
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 568), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 569
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 569), "html", null, true);
+            echo "</td>
+                    <td>";
             // line 570
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 570), "html", null, true);
-            echo "</th>
-                    <th scope=\"row\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 570), "html", null, true);
+            echo "</td>
+                    <td>";
             // line 571
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "iduser", [], "any", false, false, false, 571), "html", null, true);
-            echo "</th>
-                    <th scope=\"row\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 571), "html", null, true);
+            echo "</td>
+                    <td>";
             // line 572
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 572), "html", null, true);
-            echo "</th>
-                    <td>";
-            // line 573
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 573), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 572)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 572), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
-                    <td>";
+                    
+                    <td > ";
             // line 574
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 574), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 575
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 575), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 576
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 576), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 577
-            ((twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 577)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "dateajout", [], "any", false, false, false, 577), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                    <td> ";
-            // line 578
             echo twig_include($this->env, $context, "produits_back/_delete_form.html.twig");
             echo "</td>
-                  
+                    <td ><a href=\"";
+            // line 575
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produits_back_edit", ["idproduit" => twig_get_attribute($this->env, $this->source, $context["produit"], "idproduit", [], "any", false, false, false, 575)]), "html", null, true);
+            echo "\" >Modifier</a></td>
                   </tr>
                   ";
             ++$context['loop']['index0'];
@@ -717,7 +719,7 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 582
+        // line 578
         echo "                </tbody>
               </table>
               <!-- End Table with stripped rows -->
@@ -749,42 +751,42 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
 
   <!-- Vendor JS Files -->
   <script src=\"";
-        // line 612
+        // line 608
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 613
+        // line 609
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 614
+        // line 610
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/chart.js/chart.umd.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 615
+        // line 611
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/echarts/echarts.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 616
+        // line 612
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/quill/quill.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 617
+        // line 613
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/simple-datatables/simple-datatables.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 618
+        // line 614
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/tinymce/tinymce.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 619
+        // line 615
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor2/php-email-form/validate.js"), "html", null, true);
         echo "\"></script>
 
   
   <!-- Template Main JS File -->
   <script src=\"";
-        // line 623
+        // line 619
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets2/js/main2.js"), "html", null, true);
         echo "\"></script>
 
@@ -811,7 +813,7 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
 
     public function getDebugInfo()
     {
-        return array (  788 => 623,  781 => 619,  777 => 618,  773 => 617,  769 => 616,  765 => 615,  761 => 614,  757 => 613,  753 => 612,  721 => 582,  703 => 578,  699 => 577,  695 => 576,  691 => 575,  687 => 574,  683 => 573,  679 => 572,  675 => 571,  671 => 570,  668 => 569,  651 => 568,  470 => 390,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
+        return array (  790 => 619,  783 => 615,  779 => 614,  775 => 613,  771 => 612,  767 => 611,  763 => 610,  759 => 609,  755 => 608,  723 => 578,  706 => 575,  702 => 574,  697 => 572,  693 => 571,  689 => 570,  685 => 569,  681 => 568,  677 => 567,  673 => 566,  669 => 565,  666 => 564,  649 => 563,  467 => 384,  450 => 370,  109 => 32,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  78 => 22,  71 => 18,  67 => 17,  61 => 14,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -1184,7 +1186,11 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
           <i class=\"bi bi-journal-text\"></i><span>Forms</span><i class=\"bi bi-chevron-down ms-auto\"></i>
         </a>
         <ul id=\"forms-nav\" class=\"nav-content collapse \" data-bs-parent=\"#sidebar-nav\">
-          
+          <li>
+            <a href=\"{{ path('app_produits_back_new')}}\">
+              <i class=\"bi bi-circle\"></i><span>Ajouter un produit</span>
+            </a>
+          </li>
           
         </ul>
       </li><!-- End Forms Nav -->
@@ -1194,16 +1200,6 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
           <i class=\"bi bi-layout-text-window-reverse\"></i><span>Tables</span><i class=\"bi bi-chevron-down ms-auto\"></i>
         </a>
         <ul id=\"tables-nav\" class=\"nav-content collapse show\" data-bs-parent=\"#sidebar-nav\">
-          <li>
-            <a href=\"tables-general.html\">
-              <i class=\"bi bi-circle\"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href=\"tables-data.html\" class=\"active\">
-              <i class=\"bi bi-circle\"></i><span>Data Tables</span>
-            </a>
-          </li>
           <li>
             <a href=\"{{ path('app_produits_back')}}\">
               <i class=\"bi bi-circle\"></i><span>Shop</span>
@@ -1379,6 +1375,7 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
                     <th scope=\"col\"  style=\"width: 150px;\" >Prix</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Date d'ajout</th>
                     <th scope=\"col\"  style=\"width: 150px;\" >Spprimer</th>
+                    <th scope=\"col\"  style=\"width: 150px;\" >Modifier</th>
                    
                   </tr>
                 </thead>
@@ -1393,8 +1390,9 @@ class __TwigTemplate_c991ac4abd6c5f31e7339748a9bf10ad extends Template
                     <td>{{ produit.image }}</td>
                     <td>{{ produit.prix }}</td>
                     <td>{{ produit.dateajout ? produit.dateajout|date('Y-m-d H:i:s') : '' }}</td>
-                    <td> {{ include('produits_back/_delete_form.html.twig') }}</td>
-                  
+                    
+                    <td > {{ include('produits_back/_delete_form.html.twig') }}</td>
+                    <td ><a href=\"{{ path('app_produits_back_edit', {'idproduit': produit.idproduit}) }}\" >Modifier</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>

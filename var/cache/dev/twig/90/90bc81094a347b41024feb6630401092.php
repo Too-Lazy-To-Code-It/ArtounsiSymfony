@@ -178,7 +178,7 @@ class __TwigTemplate_78b1cc8ea1c31f66ecc2bbb8cce463e8 extends Template
             <div class=\"left-image\">
               <img src=\"";
         // line 106
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 106, $this->source); })()), "image", [], "any", false, false, false, 106))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 106, $this->source); })()), "image", [], "any", false, false, false, 106))), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 20px;\">
             </div>
           </div>
@@ -261,7 +261,7 @@ class __TwigTemplate_78b1cc8ea1c31f66ecc2bbb8cce463e8 extends Template
                     <div class=\"left-img\">
                       <img src=\"";
             // line 157
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 157))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 157))), "html", null, true);
             echo "\" alt=\"\">
                     </div>
                     <div class=\"right-content\">
@@ -608,7 +608,7 @@ class __TwigTemplate_78b1cc8ea1c31f66ecc2bbb8cce463e8 extends Template
           </div>
           <div class=\"col-lg-7\">
             <div class=\"left-image\">
-              <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px;\">
+              <img src=\"{{ asset('http://localhost/img/'~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px;\">
             </div>
           </div>
           <div class=\"col-lg-5 align-self-center\">
@@ -659,7 +659,7 @@ class __TwigTemplate_78b1cc8ea1c31f66ecc2bbb8cce463e8 extends Template
                 <div class=\"col-lg-4 col-md-6\">
                   <div class=\"item\">
                     <div class=\"left-img\">
-                      <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\">
+                      <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"\">
                     </div>
                     <div class=\"right-content\">
                       <h4>{{ produit.nom }}</h4>

@@ -154,7 +154,7 @@ https://templatemo.com/tm-577-liberty-market
                   <label class="form-label" >Image</label>
               
                {% if produit.image is not null %}
-                  <img src="{{ asset('uploads/images/' ~ produit.image) }}" alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
+                  <img src="{{ asset('http://localhost/img/' ~ produit.image) }}" alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
                   <br><br>
                   <input type="hidden" id="imageField" name="imageField" value="{{ produit.image }}">
                {% endif %}

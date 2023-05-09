@@ -49,7 +49,7 @@ class PanierController extends AbstractController
     }
 
 
-    #[Route('/NouveauPanier/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
+    /*#[Route('/NouveauPanier/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
     public function new(Request $request, PanierRepository $panierRepository,UserInterface $user): Response
     {
         $panier = new Panier();
@@ -68,6 +68,42 @@ class PanierController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    #[Route('/NouveauPanier/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    {//7atit kol shay mta form en commentaire alakhtr panier fihesh form
+        $panier = new Panier();
+
+
+        $user = $entityManager->getRepository(Allusers::class)->find(4); //baed  inscrire bedhabt tejra hethi baed mat5ou id user
+        $panierparuser = $entityManager->getRepository(Panier::class)->findOneBy(['id_user' => $Allusers]);
+        var_dump($$panierparuser);
+        $panier->setIdUser($user);
+
+        if ($panierparuser==null) {
+            $entityManager->persist($panier);
+            $entityManager->flush();
+            $successMessage = "Panier créé pour cet utilisateur  ! .";
+
+            return $this->redirectToRoute('app_panier_index', ['success_message' => $successMessage ], Response::HTTP_SEE_OTHER);
+        }else{
+            
+            $errorMessage = "Panier déjà existe  pour cet utilisateur!";
+            return $this->redirectToRoute('app_panier_index', [
+                'error_message' => $errorMessage, // texecuti fi index.panier mesh nbadloush route that's why i added script ghadi
+            ]);
+
+
+        }
+    }
+
+
+*/
+
+
+
+
+
 
  #### Méthode d'affichage d'un panier selon l'id panier , et aussi calcul du montant total 
 
@@ -150,7 +186,6 @@ public function ajouterProduitAuPanier(Request $request, Produits $produit, Prod
     }
     return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
 }
-
 
 
 

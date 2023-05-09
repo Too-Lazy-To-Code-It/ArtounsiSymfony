@@ -79,7 +79,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="app.upload_dir">uploads/images/</parameter>
+    <parameter key="app.upload_dir">C:\xampp\htdocs\img</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -441,6 +441,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PanierController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PanierMobileController" class="App\Controller\PanierMobileController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PanierMobileController"/>
       </call>
     </service>
     <service id="App\Controller\ParticipationController" class="App\Controller\ParticipationController" public="true" autowire="true" autoconfigure="true">
@@ -6636,6 +6643,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PanierMobileController" class="App\Controller\PanierMobileController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PanierMobileController" class="App\Controller\PanierMobileController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PanierMobileController" class="App\Controller\PanierMobileController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ParticipationController" class="App\Controller\ParticipationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ParticipationController" class="App\Controller\ParticipationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ParticipationController" class="App\Controller\ParticipationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7238,6 +7248,14 @@
         <argument key="grosmotsRepository" type="service_closure" id="App\Repository\GrosmotsRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.2BBjmYp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="produitsRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.koNxlQa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7308,13 +7326,6 @@
         <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0sKbf5B" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="panierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
-        <argument key="user" type="service_closure" id=".errored..service_locator.0sKbf5B.Symfony\Component\Security\Core\User\UserInterface"/>
-      </argument>
-    </service>
     <service id=".service_locator..ICFIua" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7327,6 +7338,45 @@
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="produit" type="service_closure" id=".errored..service_locator.8rT5SOI.App\Entity\Produits"/>
+        <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.o3Gga4j" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="panierRep" type="service_closure" id="App\Repository\PanierRepository"/>
+        <argument key="rep" type="service_closure" id="App\Repository\LignepanierRepository"/>
+        <argument key="ur" type="service_closure" id="App\Repository\AllusersRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Xmy14DA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="rep" type="service_closure" id="App\Repository\LignepanierRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.H6gEZIJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="panierRep" type="service_closure" id="App\Repository\PanierRepository"/>
+        <argument key="produitsRep" type="service_closure" id="App\Repository\ProduitsRepository"/>
+        <argument key="rep" type="service_closure" id="App\Repository\LignepanierRepository"/>
+        <argument key="ur" type="service_closure" id="App\Repository\AllusersRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.uzTwEQD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service_closure" id="serializer"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="panierRep" type="service_closure" id="App\Repository\PanierRepository"/>
+        <argument key="produit" type="service_closure" id=".errored..service_locator.uzTwEQD.App\Entity\Produits"/>
         <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitsRepository"/>
       </argument>
     </service>
@@ -7433,6 +7483,13 @@
         <argument key="serializer" type="service_closure" id="serializer"/>
       </argument>
     </service>
+    <service id=".service_locator.6QqXfb2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+      </argument>
+    </service>
     <service id=".service_locator.4vB6tzF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7446,6 +7503,13 @@
         <argument key="Normalizer" type="service_closure" id="serializer"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="usr" type="service_closure" id="App\Repository\AllusersRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.v4aZmVq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
       </argument>
     </service>
     <service id=".service_locator.hn0UC2A" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7524,7 +7588,7 @@
         <argument key="viewRepository" type="service_closure" id="App\Repository\ViewRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.sWUXqE9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.h3ISzMv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AllusersController::delete" type="service_closure" id=".service_locator._KOe8P1"/>
@@ -7567,6 +7631,8 @@
         <argument key="App\Controller\GrosmotsController::index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController::show" type="service_closure" id=".service_locator.YkIsf6u"/>
+        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.2BBjmYp"/>
+        <argument key="App\Controller\LignepanierController::delete" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController::deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController::edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController::index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -7585,8 +7651,11 @@
         <argument key="App\Controller\PanierController::ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\PanierController::ajouterProduitAuPanier" type="service_closure" id=".service_locator.8rT5SOI"/>
         <argument key="App\Controller\PanierController::index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController::new" type="service_closure" id=".service_locator.0sKbf5B"/>
         <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator..ICFIua"/>
+        <argument key="App\Controller\PanierMobileController::AfficherPanierJson" type="service_closure" id=".service_locator.o3Gga4j"/>
+        <argument key="App\Controller\PanierMobileController::AfficherPanierProduits" type="service_closure" id=".service_locator.H6gEZIJ"/>
+        <argument key="App\Controller\PanierMobileController::ajouterProduitAuPanierJson" type="service_closure" id=".service_locator.uzTwEQD"/>
+        <argument key="App\Controller\PanierMobileController::deleteLigneJson" type="service_closure" id=".service_locator.Xmy14DA"/>
         <argument key="App\Controller\ParticipationController::delete" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController::edit" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController::index" type="service_closure" id=".service_locator.GyXjEZA"/>
@@ -7615,10 +7684,12 @@
         <argument key="App\Controller\ProduitsController::index" type="service_closure" id=".service_locator.xBaJTPI"/>
         <argument key="App\Controller\ProduitsController::new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsController::show" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsMobileController::ProduitId" type="service_closure" id=".service_locator.4vB6tzF"/>
+        <argument key="App\Controller\ProduitsMobileController::ShowProduitMobile" type="service_closure" id=".service_locator.4vB6tzF"/>
         <argument key="App\Controller\ProduitsMobileController::ajouterProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
+        <argument key="App\Controller\ProduitsMobileController::getCategories" type="service_closure" id=".service_locator.v4aZmVq"/>
         <argument key="App\Controller\ProduitsMobileController::getProduits" type="service_closure" id=".service_locator.pQtBqWs"/>
         <argument key="App\Controller\ProduitsMobileController::modifierProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
+        <argument key="App\Controller\ProduitsMobileController::showCat" type="service_closure" id=".service_locator.6QqXfb2"/>
         <argument key="App\Controller\ProduitsMobileController::supprimerProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
         <argument key="App\Controller\RatingController::delete" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController::edit" type="service_closure" id=".service_locator.RA9EiuF"/>
@@ -7684,6 +7755,8 @@
         <argument key="App\Controller\GrosmotsController:index" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:new" type="service_closure" id=".service_locator.PSUZNGe"/>
         <argument key="App\Controller\GrosmotsController:show" type="service_closure" id=".service_locator.YkIsf6u"/>
+        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.2BBjmYp"/>
+        <argument key="App\Controller\LignepanierController:delete" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController:deleteWithAjax" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\LignepanierController:edit" type="service_closure" id=".service_locator.guFmUBj"/>
         <argument key="App\Controller\LignepanierController:index" type="service_closure" id=".service_locator.koNxlQa"/>
@@ -7702,8 +7775,11 @@
         <argument key="App\Controller\PanierController:ViderPanier" type="service_closure" id=".service_locator.9xv_eum"/>
         <argument key="App\Controller\PanierController:ajouterProduitAuPanier" type="service_closure" id=".service_locator.8rT5SOI"/>
         <argument key="App\Controller\PanierController:index" type="service_closure" id=".service_locator.tsnEguG"/>
-        <argument key="App\Controller\PanierController:new" type="service_closure" id=".service_locator.0sKbf5B"/>
         <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator..ICFIua"/>
+        <argument key="App\Controller\PanierMobileController:AfficherPanierJson" type="service_closure" id=".service_locator.o3Gga4j"/>
+        <argument key="App\Controller\PanierMobileController:AfficherPanierProduits" type="service_closure" id=".service_locator.H6gEZIJ"/>
+        <argument key="App\Controller\PanierMobileController:ajouterProduitAuPanierJson" type="service_closure" id=".service_locator.uzTwEQD"/>
+        <argument key="App\Controller\PanierMobileController:deleteLigneJson" type="service_closure" id=".service_locator.Xmy14DA"/>
         <argument key="App\Controller\ParticipationController:delete" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController:edit" type="service_closure" id=".service_locator.r.sZWL."/>
         <argument key="App\Controller\ParticipationController:index" type="service_closure" id=".service_locator.GyXjEZA"/>
@@ -7732,10 +7808,12 @@
         <argument key="App\Controller\ProduitsController:index" type="service_closure" id=".service_locator.xBaJTPI"/>
         <argument key="App\Controller\ProduitsController:new" type="service_closure" id=".service_locator.ALjzYuI"/>
         <argument key="App\Controller\ProduitsController:show" type="service_closure" id=".service_locator.XcJaAy8"/>
-        <argument key="App\Controller\ProduitsMobileController:ProduitId" type="service_closure" id=".service_locator.4vB6tzF"/>
+        <argument key="App\Controller\ProduitsMobileController:ShowProduitMobile" type="service_closure" id=".service_locator.4vB6tzF"/>
         <argument key="App\Controller\ProduitsMobileController:ajouterProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
+        <argument key="App\Controller\ProduitsMobileController:getCategories" type="service_closure" id=".service_locator.v4aZmVq"/>
         <argument key="App\Controller\ProduitsMobileController:getProduits" type="service_closure" id=".service_locator.pQtBqWs"/>
         <argument key="App\Controller\ProduitsMobileController:modifierProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
+        <argument key="App\Controller\ProduitsMobileController:showCat" type="service_closure" id=".service_locator.6QqXfb2"/>
         <argument key="App\Controller\ProduitsMobileController:supprimerProduitJSON" type="service_closure" id=".service_locator.9HlPIf8"/>
         <argument key="App\Controller\RatingController:delete" type="service_closure" id=".service_locator.RA9EiuF"/>
         <argument key="App\Controller\RatingController:edit" type="service_closure" id=".service_locator.RA9EiuF"/>
@@ -8304,6 +8382,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\PanierMobileController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PanierMobileController"/>
+      <argument>App\Controller\PanierMobileController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\ParticipationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ParticipationController"/>
       <argument>App\Controller\ParticipationController</argument>
@@ -8552,12 +8636,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.sWUXqE9"/>
+      <argument type="service" id=".service_locator.h3ISzMv"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.sWUXqE9"/>
+      <argument type="service" id=".service_locator.h3ISzMv"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8599,8 +8683,8 @@
     <service id=".errored..service_locator.qWtjbJS.App\Entity\Offretravail" class="App\Entity\Offretravail"/>
     <service id=".errored..service_locator.4NXkpsl.App\Entity\Offretravailarchive" class="App\Entity\Offretravailarchive"/>
     <service id=".errored..service_locator.UtbtSkp.App\Entity\Offretravailarchive" class="App\Entity\Offretravailarchive"/>
-    <service id=".errored..service_locator.0sKbf5B.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.8rT5SOI.App\Entity\Produits" class="App\Entity\Produits"/>
+    <service id=".errored..service_locator.uzTwEQD.App\Entity\Produits" class="App\Entity\Produits"/>
     <service id=".errored..service_locator.gTO9GIY.App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.r.sZWL..App\Entity\Participation" class="App\Entity\Participation"/>
     <service id=".errored..service_locator.4WI1Dtz.App\Entity\Post" class="App\Entity\Post"/>
@@ -9565,7 +9649,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.sWUXqE9"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.h3ISzMv"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9591,10 +9675,14 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.RsB4Wuo" alias=".service_locator..ICFIua"/>
     <service id=".service_locator..mx8GyK" alias=".service_locator.8rT5SOI"/>
+    <service id=".service_locator.45avSHg" alias=".service_locator.o3Gga4j"/>
+    <service id=".service_locator.OmmnSmu" alias=".service_locator.Xmy14DA"/>
+    <service id=".service_locator.MJnVIZh" alias=".service_locator.H6gEZIJ"/>
+    <service id=".service_locator.m_SWxmT" alias=".service_locator.uzTwEQD"/>
     <service id=".service_locator.ojPhsAD" alias=".service_locator.GMDLTwG"/>
     <service id=".service_locator.ekKOIBJ" alias=".service_locator.4vB6tzF"/>
     <service id=".service_locator.frnwObw" alias=".service_locator.9HlPIf8"/>
-    <service id=".service_locator.aY0bpN7" alias=".service_locator.sWUXqE9"/>
+    <service id=".service_locator.XK90nb9" alias=".service_locator.h3ISzMv"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.cxRDELV" alias=".service_locator.O3NFs6."/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -9646,6 +9734,7 @@
     <service id=".service_locator.r679aUT" alias=".service_locator.PSUZNGe"/>
     <service id=".service_locator.Xq6MMpm" alias=".service_locator.YkIsf6u"/>
     <service id=".service_locator.cw1VrzW" alias=".service_locator.jrXlUaF"/>
+    <service id=".service_locator.etXS1AB" alias=".service_locator.2BBjmYp"/>
     <service id=".service_locator.Z11eeIV" alias=".service_locator.koNxlQa"/>
     <service id=".service_locator.D8C1oba" alias=".service_locator.TGOvGF5"/>
     <service id=".service_locator.MGs0Osc" alias=".service_locator.guFmUBj"/>
@@ -9657,9 +9746,12 @@
     <service id=".service_locator.KJMAoM2" alias=".service_locator.4NXkpsl"/>
     <service id=".service_locator.oSzLUeJ" alias=".service_locator.UtbtSkp"/>
     <service id=".service_locator.PROaXcF" alias=".service_locator.tsnEguG"/>
-    <service id=".service_locator.1l58Xup" alias=".service_locator.0sKbf5B"/>
     <service id=".service_locator.V3i9AUI" alias=".service_locator..ICFIua"/>
     <service id=".service_locator.EnwMFzw" alias=".service_locator.8rT5SOI"/>
+    <service id=".service_locator.9dMlmhm" alias=".service_locator.o3Gga4j"/>
+    <service id=".service_locator.wZyvyM9" alias=".service_locator.Xmy14DA"/>
+    <service id=".service_locator.LgecFv0" alias=".service_locator.H6gEZIJ"/>
+    <service id=".service_locator.3kaxWFn" alias=".service_locator.uzTwEQD"/>
     <service id=".service_locator.P_46lET" alias=".service_locator.GyXjEZA"/>
     <service id=".service_locator._Sig4Np" alias=".service_locator.gTO9GIY"/>
     <service id=".service_locator.AAkRBCf" alias=".service_locator.r.sZWL."/>
@@ -9676,8 +9768,10 @@
     <service id=".service_locator.85_AghP" alias=".service_locator.XcJaAy8"/>
     <service id=".service_locator.UYLcJ9p" alias=".service_locator.xBaJTPI"/>
     <service id=".service_locator.qVOwlZv" alias=".service_locator.pQtBqWs"/>
+    <service id=".service_locator.IMakuMW" alias=".service_locator.6QqXfb2"/>
     <service id=".service_locator.umS3Gmt" alias=".service_locator.4vB6tzF"/>
     <service id=".service_locator.ir1CX7r" alias=".service_locator.9HlPIf8"/>
+    <service id=".service_locator.1z2fL_r" alias=".service_locator.v4aZmVq"/>
     <service id=".service_locator._XLYFNn" alias=".service_locator.hn0UC2A"/>
     <service id=".service_locator.SEIRRMh" alias=".service_locator.4C83FMe"/>
     <service id=".service_locator.eqiRiQV" alias=".service_locator.RA9EiuF"/>

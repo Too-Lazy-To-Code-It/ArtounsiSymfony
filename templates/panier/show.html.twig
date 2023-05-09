@@ -190,7 +190,7 @@ https://templatemo.com/tm-577-liberty-market
                                 <tr>
                                   <td>
                                     <div class="left-image">
-                                      <img src="{{ asset('uploads/images/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
+                                      <img src="{{ asset('http://localhost/img/' ~ ligne.idproduit.image) }}" alt="" style="border-radius: 20px; min-width: 195px;">
                                     </div>
                                   </td>
                                   
@@ -218,12 +218,13 @@ https://templatemo.com/tm-577-liberty-market
                                   <td>
                                     <h6>{{ ligne.dateajout ? ligne.dateajout|date('F jS, Y H:i') : '' }}</h6>
                                   </td>
+                                  {% if lignesPanier is not empty and ligne.idlignepanier is not empty %}
                                   <td>                                    
                                     <div class="main-button delete-product-button" data-idlignepanier="{{ ligne.idlignepanier }}">
                                       <a href="{{ path('app_lignepanier_delete_with_ajax', {'idlignepanier': ligne.idlignepanier}) }}"><i class="fas fa-trash-alt"></i></a>                                     
                                     </div> 
                                   </td>
-                                  
+                                  {% endif %}
                                     
                                 </tr>
                               {% endfor %}

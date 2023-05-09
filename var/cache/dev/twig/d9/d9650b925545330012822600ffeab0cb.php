@@ -258,7 +258,7 @@ https://templatemo.com/tm-577-liberty-market
         if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 156, $this->source); })()), "image", [], "any", false, false, false, 156))) {
             // line 157
             echo "                  <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "image", [], "any", false, false, false, 157))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "image", [], "any", false, false, false, 157))), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 157, $this->source); })()), "nom", [], "any", false, false, false, 157), "html", null, true);
             echo "\" style=\"border-radius: 20px; min-width: 195px;\">
@@ -588,7 +588,7 @@ https://templatemo.com/tm-577-liberty-market
                   <label class=\"form-label\" >Image</label>
               
                {% if produit.image is not null %}
-                  <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
+                  <img src=\"{{ asset('http://localhost/img/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\" style=\"border-radius: 20px; min-width: 195px;\">
                   <br><br>
                   <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"{{ produit.image }}\">
                {% endif %}
