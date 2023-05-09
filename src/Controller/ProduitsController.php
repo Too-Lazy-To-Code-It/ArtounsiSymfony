@@ -73,7 +73,7 @@ class ProduitsController extends AbstractController
 
                 try {
                     $image->move(
-                        $this->getParameter('app.upload_dir'),
+                        $this->getParameter('images_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {
@@ -133,7 +133,7 @@ class ProduitsController extends AbstractController
 
                 try {
                     $image->move(
-                        $this->getParameter('app.upload_dir'),
+                        $this->getParameter('images_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {

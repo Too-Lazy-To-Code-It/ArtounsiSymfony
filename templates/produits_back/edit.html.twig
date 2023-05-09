@@ -424,7 +424,7 @@
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
                             <div class="col-sm-10">
                                 {% if produit.image is not null %}
-                                    <img src="{{ asset('uploads/images/'  ~ produit.image) }}"
+                                    <img src="{{ asset('C:\xampp\htdocs\img'  ~ produit.image) }}"
                                          alt="{{ produit.nom }}" style="border-radius: 20px; min-width: 195px;">
                                     <br><br>
                                     <input type="hidden" id="imageField" name="imageField" value="{{ produit.image }}">
