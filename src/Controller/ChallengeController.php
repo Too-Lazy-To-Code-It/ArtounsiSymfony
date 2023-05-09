@@ -136,7 +136,7 @@ class ChallengeController extends AbstractController
     }
 
     #[Route('/{id}/show', name: 'app_challenge_show', methods: ['GET', 'POST'])]
-    public function show(Request $request, AllusersController $alluser,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    public function show(Request $request,$id, ChallengeRepository $cr ,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
     {
         $AllusersRepository =  $this->getDoctrine()->getRepository(Allusers::class);
         $oldparticipation = $participationRepository->findOneBy(array( 'id_challenge'=>$challenge, 'id_user'=>$AllusersRepository->findBy(array( 'id_user'=>2))[0] ));
@@ -193,11 +193,19 @@ class ChallengeController extends AbstractController
                 $this->addFlash('success',' Your participation is added successfuly');
             }
         }
-
         return $this->render('challenge/show.html.twig', [
             'challenge' => $challenge,
             'form' => $form->createView(),
-            
+            'best' => $cr->orderedChallenges($challengeRepository->find($id)->getId())
+        ]);
+    }
+
+
+    #[Route('/{id}/showback', name: 'app_challenge_show_back', methods: ['GET', 'POST'])]
+    public function showback(Request $request, $id, AllusersController $alluser,Challenge $challenge,ParticipationRepository $participationRepository,RatingRepository $ratingRepository): Response
+    {
+        return $this->render('challenge/showback.html.twig', [
+            'challenge' => $challenge,
         ]);
     }
 

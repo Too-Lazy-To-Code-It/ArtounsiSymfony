@@ -86,7 +86,25 @@ class __TwigTemplate_e90f6fa012320e12f8f6c56af21e28e1 extends Template
 
         // line 6
         echo "    <main id=\"main\" class=\"main\">
-
+    ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 7));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 8
+            echo "      <div class=\"alert alert-success\">
+        ";
+            // line 9
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo " <i class=\"bi bi-check\" style=\"width: 50;height: 50;color: #00ff00;\"></i>
+      </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "    
         <div class=\"pagetitle\">
             <h1>Mes Tutoriels</h1>
             <nav>
@@ -160,27 +178,27 @@ class __TwigTemplate_e90f6fa012320e12f8f6c56af21e28e1 extends Template
                     </thead>
                     <tbody>
                     ";
-        // line 80
+        // line 85
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 80, $this->source); })()), "participations", [], "any", false, false, false, 80));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["challenge"]) || array_key_exists("challenge", $context) ? $context["challenge"] : (function () { throw new RuntimeError('Variable "challenge" does not exist.', 85, $this->source); })()), "participations", [], "any", false, false, false, 85));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 81
+            // line 86
             echo "                      <tr>
                         <th scope=\"row\"><a href=\"#\">";
-            // line 82
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 82), "html", null, true);
+            // line 87
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 87), "html", null, true);
             echo "</a></th>
                         <td><img src=\"";
-            // line 83
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["p"], "getImgParticipation", [], "method", false, false, false, 83))), "html", null, true);
+            // line 88
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["p"], "getImgParticipation", [], "method", false, false, false, 88))), "html", null, true);
             echo "\" alt=\"\" style=\"border-radius: 20px; width: 70px; height: 70px; \"></td>
                         <td>";
-            // line 84
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 84), "html", null, true);
+            // line 89
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "description", [], "any", false, false, false, 89), "html", null, true);
             echo "</td>
                         <td class=\"align-middle text-center text-sm\"><a href=\"";
-            // line 85
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_participation_delete", ["id_participation" => twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 85)]), "html", null, true);
+            // line 90
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_participation_delete", ["id_participation" => twig_get_attribute($this->env, $this->source, $context["p"], "getId", [], "method", false, false, false, 90)]), "html", null, true);
             echo "\" class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                         </td>
                       </tr>
@@ -189,7 +207,7 @@ class __TwigTemplate_e90f6fa012320e12f8f6c56af21e28e1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 89
+        // line 94
         echo "                    </tbody>
                   </table>
 
@@ -215,7 +233,7 @@ class __TwigTemplate_e90f6fa012320e12f8f6c56af21e28e1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  193 => 89,  183 => 85,  179 => 84,  175 => 83,  171 => 82,  168 => 81,  164 => 80,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  211 => 94,  201 => 90,  197 => 89,  193 => 88,  189 => 87,  186 => 86,  182 => 85,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -226,7 +244,12 @@ class __TwigTemplate_e90f6fa012320e12f8f6c56af21e28e1 extends Template
 
 {% block body %}
     <main id=\"main\" class=\"main\">
-
+    {%for message in app.flashes('success')%}
+      <div class=\"alert alert-success\">
+        {{ message }} <i class=\"bi bi-check\" style=\"width: 50;height: 50;color: #00ff00;\"></i>
+      </div>
+    {% endfor %}
+    
         <div class=\"pagetitle\">
             <h1>Mes Tutoriels</h1>
             <nav>

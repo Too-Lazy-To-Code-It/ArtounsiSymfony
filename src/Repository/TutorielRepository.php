@@ -56,6 +56,16 @@ class TutorielRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function showfavorisTutoriels($id){
+        $favoris = $this->getEntityManager()->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\FavorisTuroial f, App\Entity\Allusers a WHERE f.id_user = a.id_user AND f.id_tutoriel = t.id_tutoriel AND f.id_user = :id')->setParameter('id',$id);
+        return $favoris->getResult();
+    }
+
+    public function showbestTutoriels(){
+        $best = $this->getEntityManager()->createQuery('SELECT t FROM APP\Entity\Tutoriel t, App\Entity\RatingTutoriel r WHERE r.tutorielId = t.id_tutoriel GROUP BY t.id_tutoriel ORDER BY AVG(r.rating) DESC');
+        return $best->getResult();
+    }
+
     public function tutorielsPerView(){
         $query = $this->getEntityManager()
                               ->createQuery('SELECT t.title, count(w) as views FROM APP\Entity\Tutoriel t, APP\Entity\Video v, App\Entity\View w WHERE t.id_tutoriel=v.id_tutoriel AND v.id_video=w.id_video GROUP BY t.title ORDER BY views DESC');

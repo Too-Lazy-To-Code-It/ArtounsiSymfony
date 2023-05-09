@@ -146,7 +146,7 @@ class __TwigTemplate_0a56c1e73a92ffc5b3866d25e6146c69 extends Template
   <div class=\"col-6\">
     <a href=\"";
         // line 122
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_new", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 122, $this->source); })()), "getId", [], "method", false, false, false, 122)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_videoo_new", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, (isset($context["tutoriel"]) || array_key_exists("tutoriel", $context) ? $context["tutoriel"] : (function () { throw new RuntimeError('Variable "tutoriel" does not exist.', 122, $this->source); })()), "getId", [], "method", false, false, false, 122)]), "html", null, true);
         echo "\">
       <i class=\"fas fa-plus\"></i>
       Ajouter un video
@@ -396,7 +396,7 @@ class __TwigTemplate_0a56c1e73a92ffc5b3866d25e6146c69 extends Template
                           
  <div class=\"ligne\">
   <div class=\"col-6\">
-    <a href=\"{{ path('app_video_new',{'id_tutoriel':tutoriel.getId()}) }}\">
+    <a href=\"{{ path('app_videoo_new',{'id_tutoriel':tutoriel.getId()}) }}\">
       <i class=\"fas fa-plus\"></i>
       Ajouter un video
     </a>

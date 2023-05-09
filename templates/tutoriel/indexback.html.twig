@@ -45,10 +45,6 @@
                         value: {{tutorielsPerCategory[0].aaa}},
                           name: '{{tutorielsPerCategory[0].name_category}}'
                         },
-                        {
-                        value: {{tutorielsPerCategory[1].aaa}},
-                          name: '{{tutorielsPerCategory[1].name_category}}'
-                        }
 
                             ],
                             emphasis: {
@@ -80,7 +76,7 @@
                   document.addEventListener("DOMContentLoaded", () => {
                     new ApexCharts(document.querySelector("#barChart"), {
                       series: [{
-                        data: [{{tutorielsPerView[1].views}}, {{tutorielsPerView[0].views}}]
+                        data: []
                       }],
                       chart: {
                         type: 'bar',

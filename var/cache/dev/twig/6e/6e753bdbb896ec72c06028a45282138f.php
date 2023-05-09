@@ -138,7 +138,10 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
                         dataType: \"json\",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg)+\" Stars\";
+                          var num = Number(response.avg.avg ) // The Number() only visualizes the type and is not needed
+                          var roundedString = num.toFixed(1);
+                          var rounded = Number(roundedString);
+                          document.getElementById(\"avg_rating\").innerHTML =rounded+\" Stars\";
                           document.getElementById(\"avg_flash\").style.visibility = 'visible';
                           setTimeout(myGreeting, 3000);
                           function myGreeting() {
@@ -169,7 +172,7 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
 
     }
 
-    // line 92
+    // line 95
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -179,7 +182,7 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 93
+        // line 96
         echo "<div class=\"item-details-page\">
   <div class=\"container\">
               <div class=\"col-lg-12\">
@@ -188,52 +191,52 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
           <div class=\"col-lg-7\">
             <div class=\"left-image\">
               <img src=";
-        // line 100
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 100, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 100))), "html", null, true);
+        // line 103
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 103, $this->source); })()), "getIMGParticipation", [], "method", false, false, false, 103))), "html", null, true);
         echo " alt=\"\" style=\"border-radius: 20px; max-height:480px; padding-top:20px;\">
             </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
           </div>          
           <div class=\"col-lg-5 align-self-center\">
             <span class=\"author\">
               <img src=\"";
-        // line 105
+        // line 108
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/images/author-02.jpg"), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 50%;height: 50px;width: 50px;\">
               <h6> ";
-        // line 106
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getName", [], "method", false, false, false, 106), "html", null, true);
+        // line 109
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 109, $this->source); })()), "getIdUser", [], "method", false, false, false, 109), "getName", [], "method", false, false, false, 109), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getLastName", [], "method", false, false, false, 106), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 109, $this->source); })()), "getIdUser", [], "method", false, false, false, 109), "getLastName", [], "method", false, false, false, 109), "html", null, true);
         echo " <br><a href=\"/\"> @";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 106, $this->source); })()), "getIdUser", [], "method", false, false, false, 106), "getNickname", [], "method", false, false, false, 106), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 109, $this->source); })()), "getIdUser", [], "method", false, false, false, 109), "getNickname", [], "method", false, false, false, 109), "html", null, true);
         echo "</a></h6>
             </span>
             <p>";
-        // line 108
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 108, $this->source); })()), "getDescription", [], "method", false, false, false, 108), "html", null, true);
+        // line 111
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 111, $this->source); })()), "getDescription", [], "method", false, false, false, 111), "html", null, true);
         echo "</p>
             <div class=\"row\">
               <div class=\"col-8\">
                 <span class=\"bid\">
                 <input id=\"challengeid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 112
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 112, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 112), "getId", [], "method", false, false, false, 112), "html", null, true);
+        // line 115
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 115, $this->source); })()), "getIdChallenge", [], "method", false, false, false, 115), "getId", [], "method", false, false, false, 115), "html", null, true);
         echo ">
                 <input id=\"participatorid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 113
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 113, $this->source); })()), "getIdUser", [], "method", false, false, false, 113), "getid_user", [], "method", false, false, false, 113), "html", null, true);
+        // line 116
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 116, $this->source); })()), "getIdUser", [], "method", false, false, false, 116), "getid_user", [], "method", false, false, false, 116), "html", null, true);
         echo ">
                 <input id=\"participationid\" type=\"number\" style=\"visibility: hidden;\" value=";
-        // line 114
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 114, $this->source); })()), "getId", [], "method", false, false, false, 114), "html", null, true);
+        // line 117
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["p"]) || array_key_exists("p", $context) ? $context["p"] : (function () { throw new RuntimeError('Variable "p" does not exist.', 117, $this->source); })()), "getId", [], "method", false, false, false, 117), "html", null, true);
         echo ">
 
                 <div class=\"row\">
                   <div class=\"col-5\">
                     <span class=\"bid\">
                       Current Rate<br><strong id=\"avg_rating\">";
-        // line 119
-        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 119, $this->source); })()), "avg", [], "any", false, false, false, 119), 1), "html", null, true);
+        // line 122
+        echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, (isset($context["avg"]) || array_key_exists("avg", $context) ? $context["avg"] : (function () { throw new RuntimeError('Variable "avg" does not exist.', 122, $this->source); })()), "avg", [], "any", false, false, false, 122), 1), "html", null, true);
         echo " Stars</strong><br>
                     </span>
                   </div>
@@ -284,7 +287,7 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  236 => 119,  228 => 114,  224 => 113,  220 => 112,  213 => 108,  204 => 106,  200 => 105,  192 => 100,  183 => 93,  173 => 92,  101 => 29,  96 => 27,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  239 => 122,  231 => 117,  227 => 116,  223 => 115,  216 => 111,  207 => 109,  203 => 108,  195 => 103,  186 => 96,  176 => 95,  101 => 29,  96 => 27,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -356,7 +359,10 @@ class __TwigTemplate_e19d141efc8dcc3ab325a458f50fa0c7 extends Template
                         dataType: \"json\",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById(\"avg_rating\").innerHTML = Math.round(response.avg.avg)+\" Stars\";
+                          var num = Number(response.avg.avg ) // The Number() only visualizes the type and is not needed
+                          var roundedString = num.toFixed(1);
+                          var rounded = Number(roundedString);
+                          document.getElementById(\"avg_rating\").innerHTML =rounded+\" Stars\";
                           document.getElementById(\"avg_flash\").style.visibility = 'visible';
                           setTimeout(myGreeting, 3000);
                           function myGreeting() {

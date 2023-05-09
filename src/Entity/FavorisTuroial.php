@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\FavorisTuroialRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: FavorisTuroialRepository::class)]
 class FavorisTuroial
@@ -11,6 +12,7 @@ class FavorisTuroial
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("favori")]
     private ?int $id_favoris = null;
 
     #[ORM\ManyToOne( targetEntity: Allusers::class )]
@@ -21,7 +23,7 @@ class FavorisTuroial
     #[ORM\JoinColumn(name:'id_tutoriel',referencedColumnName:'id_tutoriel',nullable: false)]
     private ?Tutoriel $id_tutoriel = null;
 
-    public function getId(): ?int
+    public function getIdFavoris(): ?int
     {
         return $this->id_favoris;
     }

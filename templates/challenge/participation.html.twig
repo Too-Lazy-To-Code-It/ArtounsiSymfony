@@ -65,7 +65,10 @@
                         dataType: "json",
                         contentType: 'application/json',
                         success: function (response) {
-                          document.getElementById("avg_rating").innerHTML = Math.round(response.avg.avg)+" Stars";
+                          var num = Number(response.avg.avg ) // The Number() only visualizes the type and is not needed
+                          var roundedString = num.toFixed(1);
+                          var rounded = Number(roundedString);
+                          document.getElementById("avg_rating").innerHTML =rounded+" Stars";
                           document.getElementById("avg_flash").style.visibility = 'visible';
                           setTimeout(myGreeting, 3000);
                           function myGreeting() {

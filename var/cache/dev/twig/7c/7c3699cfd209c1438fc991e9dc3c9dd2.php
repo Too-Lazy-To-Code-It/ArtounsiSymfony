@@ -146,16 +146,6 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 46, $this->source); })()), 0, [], "array", false, false, false, 46), "name_category", [], "any", false, false, false, 46), "html", null, true);
         echo "'
                         },
-                        {
-                        value: ";
-        // line 49
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 49, $this->source); })()), 1, [], "array", false, false, false, 49), "aaa", [], "any", false, false, false, 49), "html", null, true);
-        echo ",
-                          name: '";
-        // line 50
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerCategory"]) || array_key_exists("tutorielsPerCategory", $context) ? $context["tutorielsPerCategory"] : (function () { throw new RuntimeError('Variable "tutorielsPerCategory" does not exist.', 50, $this->source); })()), 1, [], "array", false, false, false, 50), "name_category", [], "any", false, false, false, 50), "html", null, true);
-        echo "'
-                        }
 
                             ],
                             emphasis: {
@@ -187,12 +177,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                   document.addEventListener(\"DOMContentLoaded\", () => {
                     new ApexCharts(document.querySelector(\"#barChart\"), {
                       series: [{
-                        data: [";
-        // line 83
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 83, $this->source); })()), 1, [], "array", false, false, false, 83), "views", [], "any", false, false, false, 83), "html", null, true);
-        echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 83, $this->source); })()), 0, [], "array", false, false, false, 83), "views", [], "any", false, false, false, 83), "html", null, true);
-        echo "]
+                        data: []
                       }],
                       chart: {
                         type: 'bar',
@@ -209,10 +194,10 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                       },
                       xaxis: {
                         categories: ['";
-        // line 99
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 99, $this->source); })()), 1, [], "array", false, false, false, 99), "title", [], "any", false, false, false, 99), "html", null, true);
+        // line 95
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 95, $this->source); })()), 1, [], "array", false, false, false, 95), "title", [], "any", false, false, false, 95), "html", null, true);
         echo "', '";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 99, $this->source); })()), 0, [], "array", false, false, false, 99), "title", [], "any", false, false, false, 99), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["tutorielsPerView"]) || array_key_exists("tutorielsPerView", $context) ? $context["tutorielsPerView"] : (function () { throw new RuntimeError('Variable "tutorielsPerView" does not exist.', 95, $this->source); })()), 0, [], "array", false, false, false, 95), "title", [], "any", false, false, false, 95), "html", null, true);
         echo "'
                         ],
                       }
@@ -240,30 +225,30 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                   series: [{
                     name: \"Views\",
                     data: [";
-        // line 125
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 1, [], "array", false, false, false, 125), "html", null, true);
+        // line 121
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 1, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 2, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 2, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 3, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 3, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 4, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 4, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 5, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 5, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 6, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 6, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 7, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 7, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 8, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 8, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 9, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 9, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 10, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 10, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 11, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 11, [], "array", false, false, false, 121), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 125, $this->source); })()), 12, [], "array", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["vpm"]) || array_key_exists("vpm", $context) ? $context["vpm"] : (function () { throw new RuntimeError('Variable "vpm" does not exist.', 121, $this->source); })()), 12, [], "array", false, false, false, 121), "html", null, true);
         echo "]
                   }],
                   chart: {
@@ -355,7 +340,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
  <div class=\"ligne\">
   <div class=\"col-6\">
     <a href=\"";
-        // line 215
+        // line 211
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_new");
         echo "\">
       <i class=\"fas fa-plus\"></i>
@@ -384,11 +369,11 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                                 <tbody>
                                 
                   ";
-        // line 241
+        // line 237
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tutoriels"]) || array_key_exists("tutoriels", $context) ? $context["tutoriels"] : (function () { throw new RuntimeError('Variable "tutoriels" does not exist.', 241, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tutoriels"]) || array_key_exists("tutoriels", $context) ? $context["tutoriels"] : (function () { throw new RuntimeError('Variable "tutoriels" does not exist.', 237, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["tutoriel"]) {
-            // line 242
+            // line 238
             echo "             
                                     <tr>
                                        
@@ -397,47 +382,47 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                                         
                                             <td class=\"align-middle text-center text-sm\">
                                                ";
-            // line 249
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 249), "html", null, true);
+            // line 245
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 245), "html", null, true);
             echo "
                                             </td>
                                             
                                             <td class=\"align-middle text-center text-sm\">
                                                <img src=\"";
-            // line 253
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["tutoriel"], "pathimg", [], "any", false, false, false, 253))), "html", null, true);
+            // line 249
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("http://localhost/img/" . twig_get_attribute($this->env, $this->source, $context["tutoriel"], "pathimg", [], "any", false, false, false, 249))), "html", null, true);
             echo "\" alt=\"\" style=\"border-radius: 20px; width: 70px; height: 70px; \">
                                             </td>
                                             <td class=\"align-middle text-center text-sm\">";
-            // line 255
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "title", [], "any", false, false, false, 255), "html", null, true);
+            // line 251
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "title", [], "any", false, false, false, 251), "html", null, true);
             echo "</td>
                                              <td class=\"align-middle text-center text-sm\">
                                                ";
-            // line 257
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "description", [], "any", false, false, false, 257), "html", null, true);
+            // line 253
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "description", [], "any", false, false, false, 253), "html", null, true);
             echo "
                                             </td>
                                              <td class=\"align-middle text-center text-sm\">
                                                 ";
-            // line 260
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "niveau", [], "any", false, false, false, 260), "html", null, true);
+            // line 256
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "niveau", [], "any", false, false, false, 256), "html", null, true);
             echo "
                                             </td>
                                            
                                                                                         <td class=\"align-middle text-center text-sm\"> <a class=\"btn btn-primary\" href=\"";
-            // line 263
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show_back", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 263)]), "html", null, true);
+            // line 259
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_show_back", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 259)]), "html", null, true);
             echo "\">show (";
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getVideos", [], "method", false, false, false, 263)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getVideos", [], "method", false, false, false, 259)), "html", null, true);
             echo ")</a></td>
                                                                                         <td class=\"align-middle text-center text-sm\"><a href=\"";
-            // line 264
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 264)]), "html", null, true);
+            // line 260
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_edit", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 260)]), "html", null, true);
             echo "\" class=\"text-primary\"><i class=\"bi bi-pencil\"></i> Modifier </a></td>
                                                                                         <td class=\"align-middle text-center text-sm\"><a href=\"";
-            // line 265
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 265)]), "html", null, true);
+            // line 261
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tutoriel_delete", ["id_tutoriel" => twig_get_attribute($this->env, $this->source, $context["tutoriel"], "getId", [], "method", false, false, false, 261)]), "html", null, true);
             echo "\" class=\"text-primary\"><i class=\"bi bi-trash\"></i> Supprimer </a></td>
                                     </tr>
                                     \t ";
@@ -445,7 +430,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tutoriel'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 268
+        // line 264
         echo "                                   
                                 </tbody>
                             </table>
@@ -478,7 +463,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  449 => 268,  440 => 265,  436 => 264,  430 => 263,  424 => 260,  418 => 257,  413 => 255,  408 => 253,  401 => 249,  392 => 242,  388 => 241,  359 => 215,  244 => 125,  213 => 99,  192 => 83,  156 => 50,  152 => 49,  146 => 46,  142 => 45,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  434 => 264,  425 => 261,  421 => 260,  415 => 259,  409 => 256,  403 => 253,  398 => 251,  393 => 249,  386 => 245,  377 => 238,  373 => 237,  344 => 211,  229 => 121,  198 => 95,  146 => 46,  142 => 45,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -530,10 +515,6 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                         value: {{tutorielsPerCategory[0].aaa}},
                           name: '{{tutorielsPerCategory[0].name_category}}'
                         },
-                        {
-                        value: {{tutorielsPerCategory[1].aaa}},
-                          name: '{{tutorielsPerCategory[1].name_category}}'
-                        }
 
                             ],
                             emphasis: {
@@ -565,7 +546,7 @@ class __TwigTemplate_dde7c1250c9dacda576ba0ad7a904bb8 extends Template
                   document.addEventListener(\"DOMContentLoaded\", () => {
                     new ApexCharts(document.querySelector(\"#barChart\"), {
                       series: [{
-                        data: [{{tutorielsPerView[1].views}}, {{tutorielsPerView[0].views}}]
+                        data: []
                       }],
                       chart: {
                         type: 'bar',

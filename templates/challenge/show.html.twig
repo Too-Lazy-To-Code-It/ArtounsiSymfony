@@ -2,6 +2,67 @@
 
 {% block title %}Challenge{% endblock %}
 
+{% block css %}
+{{ parent() }}
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+      .winner-card {
+        margin-bottom: 30px;
+        padding: 20px;
+        text-align: center;
+        background-color: #7453FC;
+        color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        display: inline-block;
+        min-width: 250px;
+      }
+      .winner-card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      .winner-card-title {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .item-details-page p{
+        margin-bottom: 5px;
+      }
+      .winner-picture {
+        max-width: 200px;
+        max-height: 200px;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        border: 5px solid #FFFFFF;
+      }
+      .purple-text {
+        color: #b6a9e6;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+      .rating {
+        font-size: 1.5rem;
+        color: #F5B041;
+        font-weight: bold;
+      }
+      .page-title {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #7453FC;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-top: 150px;
+      } 
+</style>
+{% endblock %}
+
+
 {% block body %}
     
     <div class="page-heading normal-space">
@@ -25,10 +86,10 @@
           <span>Level : {{ challenge.Niveau }}</span>
           <div class="buttons">
             <div class="main-button">
-              <a>Participate</a>
+              <a href="#section1">Participer</a>
             </div>
             <div class="border-button">
-              <a href="create.html">Show Participations</a>
+              <a href="#section2">Show Participations</a>
             </div>
           </div>
         </div>
@@ -37,7 +98,7 @@
   </div>
 
 {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
-  <div class="item-details-page">
+  <div class="item-details-page" id="section1">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -76,7 +137,56 @@
         </div>
         {{ form_end(form) }}
 
-         <div class="col-lg-12">
+        {% if(best|length>0) %}
+        
+        <h1 class="page-title">Challenge Best</h1>
+        <div class="winner-container container">
+          <div class="row justify-content-center">
+            
+            <div class="col-md-4">
+              <div class="winner-card">
+                <a href="{{path('app_participation_show',{'id_participation': best[0].id_participation })}}"><img class="winner-picture" src="{{ asset('http://localhost/img/'~best[0].img_participation) }}" alt="John Smith"></a>
+                <h3 class="winner-card-title">First Place</h3>
+                <p class="purple-text">{{ best[0].name }} {{ best[0].Last_Name }}</p>
+                <p>Rating: <span class="rating">{{best[0].average|round(1)}}</span></p>
+                {% if best[0].numberRaters!=0 %}
+                <p>Raters: <span class="rating">{{best[0].numberRaters}}</span></p>
+                {% endif %}
+              </div>
+            </div>
+            {% if(best|length>1) %}
+
+            <div class="col-md-4">
+              <div class="winner-card">
+                <a href="{{path('app_participation_show',{'id_participation': best[1].id_participation })}}"><img class="winner-picture" src="{{ asset('http://localhost/img/'~best[1].img_participation) }}" alt="Jane Doe"></a>
+                <h3 class="winner-card-title">Second Place</h3>
+                <p class="purple-text">{{ best[1].name }} {{ best[1].Last_Name }}</p>
+                <p>Rating: <span class="rating">{{best[1].average|round(1)}}</span></p>
+                {% if best[1].numberRaters!=0 %}
+                <p>Raters: <span class="rating">{{best[1].numberRaters}}</span></p>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+
+        {% if(best|length>2) %}
+            <div class="col-md-4">
+              <div class="winner-card">
+                <a href="{{path('app_participation_show',{'id_participation': best[2].id_participation })}}"><img class="winner-picture" src="{{ asset('http://localhost/img/'~best[2].img_participation) }}" alt="Bob Johnson"></a>
+                <h3 class="winner-card-title">Third Place</h3>
+                <p class="purple-text">{{ best[2].name }} {{ best[2].Last_Name }}</p>
+                <p>Rating: <span class="rating">{{best[2].average|round(1)}}</span></p>
+                {% if best[2].numberRaters!=0 %}
+                <p>Raters: <span class="rating">{{best[2].numberRaters}}</span></p>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+         <div class="col-lg-12" id="section2">
           <div class="current-bid">
             <div class="row">
               <div class="col-lg-6">
@@ -93,14 +203,24 @@
                   </select>
               </fieldset>
               </div>
+              
         {% for p in challenge.participations %}
 
-                    {% set k = 0 %}      
+                    {% set k = 0 %}
+                    {% set n = 0 %}     
                     {% for r in challenge.ratings %}
-                      {% if r.getParticipatorId().getid_user() == p.getIdUser().getid_user() and r.getRaterId().getid_user() == 1 %}
-                        {% set k = r.getRating() %}
+                      {% if(r.getParticipatorId().getid_user() == p.getIdUser.getid_user() ) %}
+                      
+                        {% set k = k + r.getRating() %}
+                        {% set n = n+1 %}
                       {% endif %}
+                      
                     {% endfor %}
+                    {% if n!=0 %}
+                      {% set m = k/n %}
+                    {% else %}
+                      {% set m = 0 %}
+                    {% endif %}
 
               <div class="col-lg-4 col-md-6">
                 <div class="item">
@@ -111,7 +231,16 @@
                     <h6>{{ p.getIdUser().getName()|capitalize }} {{ p.getIdUser().getLastName()|capitalize }}</h6>
                     <a href="#">@{{ p.getIdUser().getEmail() }}</a>
                     <div class="line-dec"></div>
-                    <h6>Rating: <em>{{k|round}} Stars</em></h6>
+                    {% if k!=0 %}
+                      <h6>Rating: <em>{{m}} Stars</em></h6>
+                    {% else %}
+                      <h6><em>not rated</em> yet</h6>
+                    {% endif %}
+
+                    {% if k!=0 %}
+                      <h6>Raters: <em> {{n}} </em></h6>
+                    {% endif %}
+
                     <a class="border-button" href="{{path('app_participation_show',{'id_participation': p.getId() })}}"> Show </a>
                   </div>
                 </div>

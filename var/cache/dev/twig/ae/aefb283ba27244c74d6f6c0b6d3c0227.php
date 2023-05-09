@@ -185,7 +185,7 @@ class __TwigTemplate_7d54cceac3bb6bc7e783490961dbe1f9 extends Template
                         <td>
                         <a class=\"btn btn-primary\" href=\"";
             // line 78
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_show", ["id" => twig_get_attribute($this->env, $this->source, $context["challenge"], "getId", [], "method", false, false, false, 78)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_challenge_show_back", ["id" => twig_get_attribute($this->env, $this->source, $context["challenge"], "getId", [], "method", false, false, false, 78)]), "html", null, true);
             echo "\">show (";
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["challenge"], "participations", [], "any", false, false, false, 78)), "html", null, true);
             echo ")</a>
@@ -320,7 +320,7 @@ class __TwigTemplate_7d54cceac3bb6bc7e783490961dbe1f9 extends Template
                         <td>{{ challenge.Niveau }}</td>
                         <td>{{ challenge.DateC ? challenge.DateC|date('d M') : '' }}</td>
                         <td>
-                        <a class=\"btn btn-primary\" href=\"{{ path('app_challenge_show', {'id': challenge.getId()}) }}\">show ({{challenge.participations|length}})</a>
+                        <a class=\"btn btn-primary\" href=\"{{ path('app_challenge_show_back', {'id': challenge.getId()}) }}\">show ({{challenge.participations|length}})</a>
                         </td>
                         <td style=\"\">
                         <a href=\"{{ path('app_challenge_edit', {'id': challenge.id}) }}\"><i class=\"bi bi-pencil-square\"></i></a>
