@@ -291,7 +291,8 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
                 <div class=\"left-image\">
                     <img src=\"";
         // line 181
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 181, $this->source); })()), "image", [], "any", false, false, false, 181))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("C:
+mpphtdocsimg" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 181, $this->source); })()), "image", [], "any", false, false, false, 181))), "html", null, true);
         echo "\" alt=\"\" style=\"border-radius: 20px;\">
                 </div>
             </div>
@@ -389,7 +390,8 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
                                     <div class=\"left-img\">
                                         <img src=\"";
             // line 235
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 235))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("C:
+mpphtdocsimg" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 235))), "html", null, true);
             echo "\" alt=\"\">
                                     </div>
                                     <div class=\"right-content\">
@@ -625,7 +627,7 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
 
     public function getDebugInfo()
     {
-        return array (  604 => 28,  599 => 26,  595 => 25,  591 => 24,  587 => 23,  583 => 22,  578 => 19,  568 => 18,  553 => 350,  547 => 346,  541 => 343,  537 => 342,  533 => 341,  527 => 338,  523 => 337,  518 => 335,  514 => 334,  430 => 252,  417 => 245,  411 => 242,  407 => 241,  402 => 239,  398 => 238,  392 => 235,  387 => 232,  383 => 231,  370 => 220,  364 => 217,  358 => 215,  355 => 214,  348 => 211,  346 => 210,  337 => 204,  329 => 199,  321 => 194,  314 => 190,  307 => 188,  301 => 185,  294 => 181,  270 => 159,  261 => 157,  257 => 156,  254 => 155,  245 => 153,  241 => 152,  170 => 83,  164 => 81,  158 => 79,  155 => 78,  149 => 76,  147 => 75,  143 => 74,  139 => 73,  135 => 72,  131 => 71,  127 => 70,  123 => 69,  116 => 65,  112 => 64,  108 => 63,  104 => 62,  71 => 31,  69 => 18,  64 => 16,  55 => 10,  44 => 1,);
+        return array (  606 => 28,  601 => 26,  597 => 25,  593 => 24,  589 => 23,  585 => 22,  580 => 19,  570 => 18,  555 => 350,  549 => 346,  543 => 343,  539 => 342,  535 => 341,  529 => 338,  525 => 337,  520 => 335,  516 => 334,  432 => 252,  419 => 245,  413 => 242,  409 => 241,  404 => 239,  400 => 238,  393 => 235,  388 => 232,  384 => 231,  371 => 220,  365 => 217,  359 => 215,  356 => 214,  349 => 211,  347 => 210,  338 => 204,  330 => 199,  322 => 194,  315 => 190,  308 => 188,  302 => 185,  294 => 181,  270 => 159,  261 => 157,  257 => 156,  254 => 155,  245 => 153,  241 => 152,  170 => 83,  164 => 81,  158 => 79,  155 => 78,  149 => 76,  147 => 75,  143 => 74,  139 => 73,  135 => 72,  131 => 71,  127 => 70,  123 => 69,  116 => 65,  112 => 64,  108 => 63,  104 => 62,  71 => 31,  69 => 18,  64 => 16,  55 => 10,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -810,7 +812,7 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
             </div>
             <div class=\"col-lg-7\">
                 <div class=\"left-image\">
-                    <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px;\">
+                    <img src=\"{{ asset('C:\\xampp\\htdocs\\img' ~ produit.image) }}\" alt=\"\" style=\"border-radius: 20px;\">
                 </div>
             </div>
             <div class=\"col-lg-5 align-self-center\">
@@ -864,7 +866,7 @@ class __TwigTemplate_5af1888a2bc19928a9c363324298429e extends Template
                             <div class=\"col-lg-4 col-md-6\">
                                 <div class=\"item\">
                                     <div class=\"left-img\">
-                                        <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\">
+                                        <img src=\"{{ asset('C:\\xampp\\htdocs\\img' ~ produit.image) }}\" alt=\"\">
                                     </div>
                                     <div class=\"right-content\">
                                         <h4>{{ produit.nom }}</h4>

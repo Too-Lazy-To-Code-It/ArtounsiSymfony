@@ -121,13 +121,16 @@ class PanierController extends AbstractController
 
         $date = new \DateTime();
         // On récupère le panier actuel
-        $userId = $session->get('user_id');
-        if ($userId!=null) {
-            $user = $allusersRepository->find($userId);
-        }
-        $panier=$user->getPaniers()->first();
+        $panier = $session->get('panier', []);
+        $lpexist = $entityManager->getRepository(LignePanier::class)->findOneBy(['idproduit' =>$produit, 'idpanier' => $panier]);
 
-        $lpexist = $entityManager->getRepository(LignePanier::class)->findOneBy(['idproduit' => $produit, 'idpanier' => $panier]);
+
+        if ($lpexist  !== null) {
+            // Le produit existe déjà dans le panier, on ne fait rien
+            $this->addFlash('warning', 'Le produit existe déjà dans  panier.');
+            return $this->redirectToRoute('app_produits_show', ['idproduit' => $produit->getIdproduit()]);
+
+        }
 
 
         if ($lpexist !== null) {

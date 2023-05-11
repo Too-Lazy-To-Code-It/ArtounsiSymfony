@@ -310,7 +310,8 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
                                 <div class=\"left-image\">
                                     <img src=\"";
             // line 208
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 208))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("C:
+mpphtdocsimg" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 208))), "html", null, true);
             echo "\" alt=\"\"
                                          style=\"border-radius: 20px; width: 110%; height: 280px;\">
                                 </div>
@@ -498,7 +499,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  476 => 22,  472 => 21,  468 => 20,  464 => 19,  459 => 16,  449 => 15,  431 => 284,  427 => 283,  423 => 282,  417 => 279,  413 => 278,  408 => 276,  404 => 275,  381 => 254,  379 => 243,  378 => 242,  368 => 234,  355 => 227,  349 => 224,  343 => 221,  339 => 220,  330 => 216,  325 => 214,  320 => 212,  313 => 208,  299 => 205,  295 => 204,  258 => 170,  179 => 93,  173 => 91,  167 => 89,  164 => 88,  158 => 86,  156 => 85,  152 => 84,  148 => 83,  144 => 82,  140 => 81,  136 => 80,  132 => 79,  125 => 75,  121 => 74,  117 => 73,  113 => 72,  65 => 26,  63 => 15,  58 => 13,  44 => 1,);
+        return array (  477 => 22,  473 => 21,  469 => 20,  465 => 19,  460 => 16,  450 => 15,  432 => 284,  428 => 283,  424 => 282,  418 => 279,  414 => 278,  409 => 276,  405 => 275,  382 => 254,  380 => 243,  379 => 242,  369 => 234,  356 => 227,  350 => 224,  344 => 221,  340 => 220,  331 => 216,  326 => 214,  321 => 212,  313 => 208,  299 => 205,  295 => 204,  258 => 170,  179 => 93,  173 => 91,  167 => 89,  164 => 88,  158 => 86,  156 => 85,  152 => 84,  148 => 83,  144 => 82,  140 => 81,  136 => 80,  132 => 79,  125 => 75,  121 => 74,  117 => 73,  113 => 72,  65 => 26,  63 => 15,  58 => 13,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -710,7 +711,7 @@ class __TwigTemplate_21d9aaed6f4bfa25d8b0add919a677b6 extends Template
                         <div class=\"col-lg-6 currently-market-item all filters.{{ produit.idcategorie.getNameCategory() }}{% if produit.idcategorie.getNameCategory() == '2D' %} msc{% elseif produit.idcategorie.getNameCategory() == '3D' %} {% else %}dig{% endif %}\">
                             <div class=\"item\">
                                 <div class=\"left-image\">
-                                    <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"\"
+                                    <img src=\"{{ asset('C:\\xampp\\htdocs\\img' ~ produit.image) }}\" alt=\"\"
                                          style=\"border-radius: 20px; width: 110%; height: 280px;\">
                                 </div>
                                 <div class=\"right-content\">

@@ -359,7 +359,8 @@ https://templatemo.com/tm-577-liberty-market
                                                 <div class=\"left-image\">
                                                     <img src=\"";
                 // line 262
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 262), "image", [], "any", false, false, false, 262))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("C:
+mpphtdocsimg" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ligne"], "idproduit", [], "any", false, false, false, 262), "image", [], "any", false, false, false, 262))), "html", null, true);
                 echo "\"
                                                          alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                                 </div>
@@ -691,7 +692,7 @@ https://templatemo.com/tm-577-liberty-market
 
     public function getDebugInfo()
     {
-        return array (  671 => 23,  667 => 22,  663 => 21,  659 => 20,  655 => 19,  650 => 16,  640 => 15,  602 => 422,  597 => 420,  592 => 418,  588 => 417,  584 => 416,  579 => 414,  575 => 413,  571 => 412,  520 => 364,  516 => 363,  502 => 352,  498 => 351,  475 => 331,  467 => 326,  461 => 323,  457 => 322,  444 => 311,  437 => 306,  432 => 303,  423 => 299,  415 => 294,  411 => 293,  407 => 291,  405 => 290,  400 => 288,  391 => 282,  381 => 275,  372 => 269,  362 => 262,  357 => 259,  353 => 258,  337 => 244,  335 => 243,  236 => 146,  230 => 144,  224 => 142,  221 => 141,  215 => 139,  213 => 138,  209 => 137,  205 => 136,  201 => 135,  197 => 134,  193 => 133,  189 => 132,  182 => 128,  178 => 127,  174 => 126,  170 => 125,  68 => 25,  66 => 15,  61 => 13,  52 => 7,  44 => 1,);
+        return array (  672 => 23,  668 => 22,  664 => 21,  660 => 20,  656 => 19,  651 => 16,  641 => 15,  603 => 422,  598 => 420,  593 => 418,  589 => 417,  585 => 416,  580 => 414,  576 => 413,  572 => 412,  521 => 364,  517 => 363,  503 => 352,  499 => 351,  476 => 331,  468 => 326,  462 => 323,  458 => 322,  445 => 311,  438 => 306,  433 => 303,  424 => 299,  416 => 294,  412 => 293,  408 => 291,  406 => 290,  401 => 288,  392 => 282,  382 => 275,  373 => 269,  362 => 262,  357 => 259,  353 => 258,  337 => 244,  335 => 243,  236 => 146,  230 => 144,  224 => 142,  221 => 141,  215 => 139,  213 => 138,  209 => 137,  205 => 136,  201 => 135,  197 => 134,  193 => 133,  189 => 132,  182 => 128,  178 => 127,  174 => 126,  170 => 125,  68 => 25,  66 => 15,  61 => 13,  52 => 7,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -957,7 +958,7 @@ https://templatemo.com/tm-577-liberty-market
                                         <tr>
                                             <td>
                                                 <div class=\"left-image\">
-                                                    <img src=\"{{ asset('uploads/images/' ~ ligne.idproduit.image) }}\"
+                                                    <img src=\"{{ asset('C:\\xampp\\htdocs\\img' ~ ligne.idproduit.image) }}\"
                                                          alt=\"\" style=\"border-radius: 20px; min-width: 195px;\">
                                                 </div>
                                             </td>
